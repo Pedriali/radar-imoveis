@@ -69,6 +69,7 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .card{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
   text-decoration:none;transition:border-color .15s,transform .15s}
+.card{cursor:pointer}
 .card:hover,.card:focus-visible{border-color:var(--green);transform:translateY(-2px);outline:none}
 .card::before,.card::after{content:"";position:absolute;width:12px;height:12px;border-color:var(--green);border-style:solid;opacity:.7;z-index:2}
 .card::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
@@ -79,6 +80,7 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .tag{position:absolute;top:8px;left:8px;background:rgba(5,10,7,.85);border:1px solid var(--green);color:var(--green);
   font-size:11px;letter-spacing:.12em;padding:2px 6px}
 .tag.age{left:auto;right:8px;border-color:var(--amber);color:var(--amber)}
+.tag.dup{top:auto;bottom:8px}
 .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .name{font-family:var(--head);font-weight:700;font-size:17px;color:#e6ffef;line-height:1.2}
 .name.unk{color:var(--fg);font-weight:500;font-size:15px}
@@ -91,8 +93,23 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .specs span{display:block;font-size:10.5px;letter-spacing:.12em;color:var(--dim)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--dim);margin-top:auto}
 .src{display:flex;gap:6px}
-.src a{border:1px solid var(--line);padding:2px 7px;text-decoration:none;color:var(--fg);position:relative;z-index:3}
-.src a:hover{border-color:var(--green);color:var(--green)}
+.src{color:var(--fg);font-size:11px;letter-spacing:.06em;line-height:1.5}
+.foot.portais{margin-top:0}
+dialog{background:var(--panel);color:var(--fg);border:1px solid var(--green);padding:0;width:min(460px,calc(100vw - 32px));
+  box-shadow:0 0 30px rgba(57,255,136,.2);font-family:var(--mono)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.dlg-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.dlg-h b{font-family:var(--head);color:#e6ffef;font-size:16px;display:block}
+.dlg-h span{color:var(--dim);font-size:12px}
+.dlg-x{background:none;border:1px solid var(--line);color:var(--fg);font:inherit;cursor:pointer;padding:2px 9px}
+.dlg-x:hover{border-color:var(--green);color:var(--green)}
+.paths{list-style:none;margin:0;padding:8px}
+.paths a{display:grid;grid-template-columns:92px 1fr auto;gap:10px;align-items:center;padding:11px 10px;text-decoration:none;border:1px solid transparent}
+.paths a:hover,.paths a:focus-visible{border-color:var(--green);outline:none;background:var(--panel2)}
+.paths .p{color:var(--green);letter-spacing:.08em;font-size:13px}
+.paths .d{color:var(--dim);font-size:12.5px}
+.paths .d em{font-style:normal;color:var(--amber)}
+.paths .go{color:var(--green)}
 footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
 @media (max-width:560px){
   header{gap:14px}
@@ -138,10 +155,17 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   </section>
 
   <footer>
-    Varredura automática 2× ao dia (08h e 20h, horário de Brasília) em Zap Imóveis, Viva Real e OLX.<br>
+    Varredura automática 2× ao dia (08h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.<br>
+    O mesmo apartamento anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.
   </footer>
 </div>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <div class="dlg-h"><div><b id="dlg-t"></b><span>Mesmo imóvel anunciado em mais de um lugar</span></div>
+  <button class="dlg-x" id="dlg-x" aria-label="Fechar">✕</button></div>
+  <ul class="paths" id="dlg-l"></ul>
+</dialog>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -150,13 +174,12 @@ const fmtDT = iso => new Date(iso).toLocaleString('pt-BR',{day:'2-digit',month:'
 const days = iso => iso ? Math.max(0, Math.floor((Date.now() - new Date(iso)) / 864e5)) : null;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
-const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX'};
+const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX', raulfulgencio:'RAUL FULGÊNCIO', gleba:'GLEBA IMÓVEIS',
+  santamerica:'SANTAMERICA', perez:'PEREZ', catuai:'CATUAÍ', inglaterra:'INGLATERRA', grupo:'ZAP/VIVA REAL'};
 
 let DATA = null, LAST = null;
 
-function card(x){
-  const links = Object.entries(x.links || {}).filter(([,u]) => u);
-  const main = (links.find(([k]) => k==='zap') || links.find(([k]) => k==='vivareal') || links[0] || [,'#'])[1];
+function card(x, i){
   const d = days(x.publicado);
   const ageTxt = d === null ? 'DATA N/D' : d === 0 ? 'HOJE' : d === 1 ? '1 DIA' : `${d} DIAS`;
   const name = x.predio ? `<div class="name">${esc(x.predio)}</div>` : `<div class="name unk">Edifício não identificado</div>`;
@@ -164,12 +187,15 @@ function card(x){
   const old = x.preco_anterior && x.preco_anterior !== x.preco ? `<small>${fmtBRL(x.preco_anterior)}</small>` : '';
   const m2 = x.preco && x.area ? `R$ ${Math.round(x.preco/x.area).toLocaleString('pt-BR')}/m²` : '';
   const v = n => n ?? '–';
-  return `<article class="card">
-    <a href="${esc(main)}" target="_blank" rel="noopener noreferrer" style="position:absolute;inset:0;z-index:1" aria-label="Abrir anúncio ${esc(x.predio || loc)}"></a>
+  const portais = [...new Set(x.fontes.map(f => f.portal))];
+  const n = x.fontes.length;
+  return `<article class="card" tabindex="0" role="button" data-i="${i}"
+      aria-label="${esc(x.predio || loc)} — ${n > 1 ? n + ' anúncios' : 'abrir anúncio'}">
     <div class="thumb">
       <div class="noimg">SEM IMAGEM</div>
       ${x.foto ? `<img src="${esc(x.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
       <span class="tag age" title="Dias anunciado">⌛ ${ageTxt}</span>
+      ${n > 1 ? `<span class="tag dup">${n} ANÚNCIOS</span>` : ''}
     </div>
     <div class="body">
       ${name}
@@ -181,12 +207,20 @@ function card(x){
         <div>${v(x.banheiros)}<span>BANH.</span></div>
         <div>${v(x.vagas)}<span>VAGAS</span></div>
       </div>
-      <div class="foot">
-        <span>${m2}</span>
-        <span class="src">${links.map(([k,u]) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${PORTAL[k]||k}</a>`).join('')}</span>
-      </div>
+      <div class="foot"><span>${m2}</span><span>${n > 1 ? 'VER ' + n + ' ANÚNCIOS ›' : 'ABRIR ANÚNCIO ›'}</span></div>
+      <div class="foot portais"><span class="src">${portais.map(k => PORTAL[k]||k.toUpperCase()).join(' · ')}</span></div>
     </div>
   </article>`;
+}
+
+let SHOWN = [];
+function open_(x){
+  if (x.fontes.length === 1) { window.open(x.fontes[0].url, '_blank', 'noopener'); return; }
+  $('#dlg-t').textContent = x.predio || [x.endereco, x.bairro].filter(Boolean).join(' · ') || 'Imóvel';
+  $('#dlg-l').innerHTML = x.fontes.map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
+    <span class="p">${PORTAL[f.portal]||f.portal.toUpperCase()}</span>
+    <span class="d"><em>${fmtBRL(f.preco)}</em> · ${f.area ?? '–'} m²</span><span class="go">↗</span></a></li>`).join('');
+  $('#dlg').showModal();
 }
 
 const SORTS = {
@@ -200,20 +234,21 @@ const SORTS = {
 
 function render(){
   const q = norm($('#q').value).trim();
-  const all = Object.values(DATA.listings).filter(x => x.visivel);
+  const all = DATA.imoveis;
   const hit = x => !q || norm([x.predio, x.bairro, x.endereco, x.titulo].join(' ')).includes(q);
   const sorter = SORTS[$('#sort').value];
   const nw = all.filter(x => x.detectado === LAST && hit(x)).sort(sorter);
   const od = all.filter(x => x.detectado !== LAST && hit(x)).sort(sorter);
   $('#n-new').textContent = nw.length; $('#n-old').textContent = od.length;
-  $('#g-new').innerHTML = nw.map(card).join('') || `<div class="empty">${q ? 'Nenhum alvo novo corresponde à busca.' : 'Nenhum alvo novo detectado na última varredura.'}</div>`;
-  $('#g-old').innerHTML = od.map(card).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
+  SHOWN = nw.concat(od);
+  $('#g-new').innerHTML = nw.map((x, i) => card(x, i)).join('') || `<div class="empty">${q ? 'Nenhum alvo novo corresponde à busca.' : 'Nenhum alvo novo detectado na última varredura.'}</div>`;
+  $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
 }
 
 function telemetry(){
   const r = DATA.runs[DATA.runs.length-1];
   const st = Object.entries(r.portais).map(([k,v]) => `<span>${PORTAL[k]||k}: <b class="${v==='ok'?'st-ok':'st-bad'}">${v==='ok'?'ONLINE':'FALHOU'}</b></span>`).join('');
-  const total = Object.values(DATA.listings).filter(x => x.visivel).length;
+  const total = DATA.imoveis.length;
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA: <b>${fmtDT(r.em)}</b></span><span>ALVOS: <b>${total}</b></span>${st}`;
 }
 
@@ -224,6 +259,11 @@ fetch('data/listings.json?t=' + Date.now())
     telemetry(); render();
     $('#q').addEventListener('input', render);
     $('#sort').addEventListener('change', render);
+    const pick = e => { const c = e.target.closest('.card'); if (c) open_(SHOWN[+c.dataset.i]); };
+    document.addEventListener('click', pick);
+    document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('card')) { e.preventDefault(); pick(e); } });
+    $('#dlg-x').addEventListener('click', () => $('#dlg').close());
+    $('#dlg').addEventListener('click', e => { if (e.target === $('#dlg')) $('#dlg').close(); });
   })
   .catch(() => { $('#tele').innerHTML = '<span class="st-bad">SEM DADOS — aguardando a primeira varredura.</span>'; });
 </script>
