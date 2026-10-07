@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Imóveis</title>
+<meta name="theme-color" content="#050a07">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23050a07' stroke='%2339ff88' stroke-width='2'/><circle cx='16' cy='16' r='7' fill='none' stroke='%2339ff88' stroke-width='1.5' opacity='.6'/><path d='M16 16 L28 10' stroke='%2339ff88' stroke-width='2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a07; --panel:#0a140e; --panel2:#0e1c13; --line:#1d3a27; --grid:rgba(57,255,136,.05);
+  --fg:#b8f5cf; --dim:#5f8f71; --green:#39ff88; --amber:#ffb03b; --red:#ff5b4a;
+  --mono:'Share Tech Mono',ui-monospace,Menlo,monospace; --head:'Chakra Petch',var(--mono);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono)}
+body{
+  min-height:100vh;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+body::after{ /* scanlines */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px 48px}
+
+/* cabeçalho */
+header{display:flex;gap:20px;align-items:center;padding:22px 0 18px;border-bottom:1px solid var(--line)}
+.scope{flex:none;width:92px;height:92px;border-radius:50%;position:relative;overflow:hidden;
+  border:1.5px solid var(--green);box-shadow:0 0 18px rgba(57,255,136,.25),inset 0 0 22px rgba(57,255,136,.15);
+  background:radial-gradient(circle,transparent 0 31%,rgba(57,255,136,.35) 31.5% 32%,transparent 32.5% 64%,rgba(57,255,136,.35) 64.5% 65%,transparent 65.5%),
+             linear-gradient(transparent 49.6%,rgba(57,255,136,.3) 49.6% 50.4%,transparent 50.4%),
+             linear-gradient(90deg,transparent 49.6%,rgba(57,255,136,.3) 49.6% 50.4%,transparent 50.4%)}
+.scope::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(57,255,136,.55),rgba(57,255,136,0) 70deg,transparent 360deg);
+  animation:sweep 3.2s linear infinite}
+.blip{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 3.2s infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+@keyframes blink{0%,100%{opacity:.15}10%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.scope::before,.blip{animation:none}}
+h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-size:clamp(20px,4.4vw,30px);color:var(--green);text-shadow:0 0 10px rgba(57,255,136,.45)}
+.sub{color:var(--dim);font-size:13px;letter-spacing:.08em;margin-top:4px}
+.telemetry{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:12.5px}
+.telemetry b{color:var(--green);font-weight:400}
+.st-ok{color:var(--green)} .st-bad{color:var(--red)}
+
+/* controles */
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.controls input,.controls select{
+  background:var(--panel);color:var(--fg);border:1px solid var(--line);font:inherit;font-size:14px;
+  padding:10px 12px;border-radius:2px;outline:none}
+.controls input{flex:1 1 260px}
+.controls input::placeholder{color:var(--dim)}
+.controls input:focus,.controls select:focus{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+
+/* seções */
+.sec{margin-top:26px}
+.sec h2{font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:.2em;margin:0 0 12px;
+  display:flex;align-items:center;gap:10px;color:var(--green)}
+.sec h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.sec h2 .n{color:var(--bg);background:var(--green);padding:1px 7px;font-size:12px;letter-spacing:.05em}
+.sec.old h2{color:var(--dim)} .sec.old h2 .n{background:var(--dim)}
+.empty{color:var(--dim);border:1px dashed var(--line);padding:18px;font-size:13.5px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
+  text-decoration:none;transition:border-color .15s,transform .15s}
+.card:hover,.card:focus-visible{border-color:var(--green);transform:translateY(-2px);outline:none}
+.card::before,.card::after{content:"";position:absolute;width:12px;height:12px;border-color:var(--green);border-style:solid;opacity:.7;z-index:2}
+.card::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.thumb{position:relative;aspect-ratio:3/2;background:var(--panel2);overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) contrast(1.05)}
+.thumb .noimg{position:absolute;inset:0;display:grid;place-items:center;color:var(--dim);font-size:12px;letter-spacing:.15em}
+.tag{position:absolute;top:8px;left:8px;background:rgba(5,10,7,.85);border:1px solid var(--green);color:var(--green);
+  font-size:11px;letter-spacing:.12em;padding:2px 6px}
+.tag.age{left:auto;right:8px;border-color:var(--amber);color:var(--amber)}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.name{font-family:var(--head);font-weight:700;font-size:17px;color:#e6ffef;line-height:1.2}
+.name.unk{color:var(--fg);font-weight:500;font-size:15px}
+.loc{color:var(--dim);font-size:12.5px;margin-top:-4px}
+.price{font-family:var(--head);font-weight:700;font-size:24px;color:var(--amber);text-shadow:0 0 12px rgba(255,176,59,.3)}
+.price small{font-size:12px;color:var(--dim);font-weight:500;margin-left:6px;text-decoration:line-through}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.specs div{padding:7px 0;text-align:center;font-size:15px;color:#e6ffef}
+.specs div+div{border-left:1px solid var(--line)}
+.specs span{display:block;font-size:10.5px;letter-spacing:.12em;color:var(--dim)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--dim);margin-top:auto}
+.src{display:flex;gap:6px}
+.src a{border:1px solid var(--line);padding:2px 7px;text-decoration:none;color:var(--fg);position:relative;z-index:3}
+.src a:hover{border-color:var(--green);color:var(--green)}
+footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
+@media (max-width:560px){
+  header{gap:14px}
+  .scope{width:64px;height:64px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="scope" aria-hidden="true">
+      <i class="blip" style="top:28%;left:62%;animation-delay:.5s"></i>
+      <i class="blip" style="top:66%;left:30%;animation-delay:1.9s"></i>
+      <i class="blip" style="top:44%;left:76%;animation-delay:.9s"></i>
+    </div>
+    <div>
+      <h1>RADAR IMÓVEIS</h1>
+      <div class="sub">SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · APTO 100–200 M² · VENDA</div>
+      <div class="telemetry" id="tele">Carregando dados…</div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input id="q" type="search" placeholder="Buscar prédio, bairro, rua…" aria-label="Buscar">
+    <select id="sort" aria-label="Ordenar">
+      <option value="rec">Mais recentes primeiro</option>
+      <option value="pub">Menos dias anunciado</option>
+      <option value="pa">Menor preço</option>
+      <option value="pd">Maior preço</option>
+      <option value="m2">Menor preço por m²</option>
+      <option value="area">Maior área</option>
+    </select>
+  </div>
+
+  <section class="sec" id="sec-new">
+    <h2>ALVOS NOVOS <span class="n" id="n-new">0</span></h2>
+    <div class="grid" id="g-new"></div>
+  </section>
+  <section class="sec old" id="sec-old">
+    <h2>ALVOS ANTERIORES <span class="n" id="n-old">0</span></h2>
+    <div class="grid" id="g-old"></div>
+  </section>
+
+  <footer>
+    Varredura automática 2× ao dia (08h e 20h, horário de Brasília) em Zap Imóveis, Viva Real e OLX.<br>
+    “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.
+  </footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const fmtBRL = v => v ? v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}) : 'Sob consulta';
+const fmtDT = iso => new Date(iso).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+const days = iso => iso ? Math.max(0, Math.floor((Date.now() - new Date(iso)) / 864e5)) : null;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX'};
+
+let DATA = null, LAST = null;
+
+function card(x){
+  const links = Object.entries(x.links || {}).filter(([,u]) => u);
+  const main = (links.find(([k]) => k==='zap') || links.find(([k]) => k==='vivareal') || links[0] || [,'#'])[1];
+  const d = days(x.publicado);
+  const ageTxt = d === null ? 'DATA N/D' : d === 0 ? 'HOJE' : d === 1 ? '1 DIA' : `${d} DIAS`;
+  const name = x.predio ? `<div class="name">${esc(x.predio)}</div>` : `<div class="name unk">Edifício não identificado</div>`;
+  const loc = [x.endereco, x.bairro].filter(Boolean).join(' · ');
+  const old = x.preco_anterior && x.preco_anterior !== x.preco ? `<small>${fmtBRL(x.preco_anterior)}</small>` : '';
+  const m2 = x.preco && x.area ? `R$ ${Math.round(x.preco/x.area).toLocaleString('pt-BR')}/m²` : '';
+  const v = n => n ?? '–';
+  return `<article class="card">
+    <a href="${esc(main)}" target="_blank" rel="noopener noreferrer" style="position:absolute;inset:0;z-index:1" aria-label="Abrir anúncio ${esc(x.predio || loc)}"></a>
+    <div class="thumb">
+      <div class="noimg">SEM IMAGEM</div>
+      ${x.foto ? `<img src="${esc(x.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+      <span class="tag age" title="Dias anunciado">⌛ ${ageTxt}</span>
+    </div>
+    <div class="body">
+      ${name}
+      <div class="loc">${esc(loc)}</div>
+      <div class="price">${fmtBRL(x.preco)}${old}</div>
+      <div class="specs">
+        <div>${v(x.area)}<span>M² ÚTIL</span></div>
+        <div>${v(x.quartos)}<span>QUARTOS</span></div>
+        <div>${v(x.banheiros)}<span>BANH.</span></div>
+        <div>${v(x.vagas)}<span>VAGAS</span></div>
+      </div>
+      <div class="foot">
+        <span>${m2}</span>
+        <span class="src">${links.map(([k,u]) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${PORTAL[k]||k}</a>`).join('')}</span>
+      </div>
+    </div>
+  </article>`;
+}
+
+const SORTS = {
+  rec: (a,b) => (b.detectado||'').localeCompare(a.detectado||'') || (b.publicado||'').localeCompare(a.publicado||''),
+  pub: (a,b) => (b.publicado||'').localeCompare(a.publicado||''),
+  pa: (a,b) => (a.preco||9e12) - (b.preco||9e12),
+  pd: (a,b) => (b.preco||0) - (a.preco||0),
+  m2: (a,b) => (a.preco/a.area||9e12) - (b.preco/b.area||9e12),
+  area: (a,b) => (b.area||0) - (a.area||0),
+};
+
+function render(){
+  const q = norm($('#q').value).trim();
+  const all = Object.values(DATA.listings).filter(x => x.visivel);
+  const hit = x => !q || norm([x.predio, x.bairro, x.endereco, x.titulo].join(' ')).includes(q);
+  const sorter = SORTS[$('#sort').value];
+  const nw = all.filter(x => x.detectado === LAST && hit(x)).sort(sorter);
+  const od = all.filter(x => x.detectado !== LAST && hit(x)).sort(sorter);
+  $('#n-new').textContent = nw.length; $('#n-old').textContent = od.length;
+  $('#g-new').innerHTML = nw.map(card).join('') || `<div class="empty">${q ? 'Nenhum alvo novo corresponde à busca.' : 'Nenhum alvo novo detectado na última varredura.'}</div>`;
+  $('#g-old').innerHTML = od.map(card).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
+}
+
+function telemetry(){
+  const r = DATA.runs[DATA.runs.length-1];
+  const st = Object.entries(r.portais).map(([k,v]) => `<span>${PORTAL[k]||k}: <b class="${v==='ok'?'st-ok':'st-bad'}">${v==='ok'?'ONLINE':'FALHOU'}</b></span>`).join('');
+  const total = Object.values(DATA.listings).filter(x => x.visivel).length;
+  $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA: <b>${fmtDT(r.em)}</b></span><span>ALVOS: <b>${total}</b></span>${st}`;
+}
+
+fetch('data/listings.json?t=' + Date.now())
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    DATA = d; LAST = d.runs.length ? d.runs[d.runs.length-1].em : null;
+    telemetry(); render();
+    $('#q').addEventListener('input', render);
+    $('#sort').addEventListener('change', render);
+  })
+  .catch(() => { $('#tele').innerHTML = '<span class="st-bad">SEM DADOS — aguardando a primeira varredura.</span>'; });
+</script>
+</body>
+</html>

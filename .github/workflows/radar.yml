@@ -1,0 +1,26 @@
+name: varredura
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08h Brasília
+    - cron: '0 23 * * *'   # 20h Brasília
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: varredura
+jobs:
+  varredura:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install curl_cffi
+      - run: python scraper/radar.py
+      - name: Salvar dados
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/listings.json
+          git diff --cached --quiet || git commit -m "Varredura $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

@@ -1,0 +1,15 @@
+{
+  "area_min": 100,
+  "area_max": 200,
+  "bairros": ["palhano", "santa rosa", "guanabara", "bela suica", "leonor"],
+  "grupo_zap_searches": [
+    "pr+londrina++gleba-palhano",
+    "pr+londrina++santa-rosa",
+    "pr+londrina++guanabara"
+  ],
+  "olx_search": "https://www.olx.com.br/imoveis/venda/apartamentos/estado-pr/regiao-de-londrina/londrina",
+  "max_pages_initial": 20,
+  "max_pages": 6,
+  "initial_recent_days": 7,
+  "max_age_days_new": 30
+}
