@@ -43,6 +43,9 @@ def fetch(url, tries=3):
             r = S.get(url, timeout=45)
             if r.status_code == 200:
                 return r.text
+            if r.status_code == 404:
+                log(f"  HTTP 404 {url}")
+                return None
             log(f"  HTTP {r.status_code} {url}")
         except Exception as e:  # noqa: BLE001
             log(f"  erro {e} {url}")
@@ -331,6 +334,7 @@ def main():
         twin = next((x for x in L.values() if x.get("visivel") and same_property(x, rec)), None)
         if twin:
             twin["links"].update(rec["links"])
+            twin["predio"] = twin.get("predio") or rec.get("predio")
             rec["visivel"] = False
             rec["duplicado_de"] = twin["id"]
         else:
