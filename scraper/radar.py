@@ -265,7 +265,7 @@ def scan_olx(known, max_pages, found):
 
 def olx_detail(rec):
     page = fetch(rec["links"]["olx"])
-    if not page or rec.get("predio"):
+    if not page:
         return
     t = htmllib.unescape(page)
     m = re.search(r'"body":"(.{0,1500})', t)
@@ -298,20 +298,35 @@ def main():
     for k, rec in found.items():
         if k in L:
             cur = L[k]
+            cur["visto"] = NOW_ISO
+            if not cur.get("visivel"):
+                continue
             cur["links"].update(rec["links"])
             if rec.get("preco") and rec["preco"] != cur.get("preco"):
                 cur.setdefault("preco_anterior", cur.get("preco"))
                 cur["preco"] = rec["preco"]
             cur["visto"] = NOW_ISO
 
-    added = 0
-    for k in new_ids:
+    limite = CFG["initial_recent_days"] if initial else CFG["max_age_days_new"]
+    # Grupo Zap: IDs crescem com o tempo, então os maiores são os mais novos. Ao encontrar
+    # vários anúncios seguidos mais velhos que o limite, os restantes não precisam ser abertos.
+    grupo_new = sorted((k for k in new_ids if k.startswith("g")), key=lambda k: -int(k[1:]))
+    olx_new = [k for k in new_ids if k.startswith("o")]
+    added = old_streak = 0
+    for k in grupo_new + olx_new:
         rec = found[k]
         if k.startswith("g"):
-            grupo_detail(rec)
+            if old_streak < 6:
+                grupo_detail(rec)
+                time.sleep(1)
+                idade = age_days(rec.get("publicado"))
+                old_streak = old_streak + 1 if idade is not None and idade > limite else 0
+            recente = old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite
         else:
-            olx_detail(rec)
-        time.sleep(1)
+            recente = (age_days(rec.get("publicado")) or 0) <= limite
+            if recente and not rec.get("predio"):
+                olx_detail(rec)
+                time.sleep(1)
         # Mesmo imóvel já listado por outro portal? Junta os links.
         twin = next((x for x in L.values() if x.get("visivel") and same_property(x, rec)), None)
         if twin:
@@ -319,10 +334,10 @@ def main():
             rec["visivel"] = False
             rec["duplicado_de"] = twin["id"]
         else:
-            idade = age_days(rec.get("publicado"))
-            limite = CFG["initial_recent_days"] if initial else CFG["max_age_days_new"]
-            rec["visivel"] = idade is None or idade <= limite
-            added += rec["visivel"]
+            rec["visivel"] = recente
+            added += recente
+        if not rec["visivel"]:
+            rec = {"id": k, "visivel": False, "area": rec["area"], "preco": rec["preco"], "bairro": rec["bairro"]}
         rec["detectado"] = NOW_ISO
         rec["visto"] = NOW_ISO
         L[k] = rec
