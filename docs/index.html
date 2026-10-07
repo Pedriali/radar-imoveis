@@ -245,11 +245,22 @@ function render(){
   $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
 }
 
+// Horários do agendamento em .github/workflows/radar.yml (UTC): 11h e 23h = 08h e 20h de Brasília
+const RUN_HOURS_UTC = [11, 23];
+function nextRun(){
+  const now = new Date();
+  for (let d = 0; d < 2; d++)
+    for (const h of RUN_HOURS_UTC) {
+      const t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + d, h));
+      if (t > now) return t;
+    }
+}
+
 function telemetry(){
   const r = DATA.runs[DATA.runs.length-1];
   const st = Object.entries(r.portais).map(([k,v]) => `<span>${PORTAL[k]||k}: <b class="${v==='ok'?'st-ok':'st-bad'}">${v==='ok'?'ONLINE':'FALHOU'}</b></span>`).join('');
   const total = DATA.imoveis.length;
-  $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA: <b>${fmtDT(r.em)}</b></span><span>ALVOS: <b>${total}</b></span>${st}`;
+  $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA: <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA: <b>${fmtDT(nextRun())}</b></span><span>ALVOS: <b>${total}</b></span>${st}`;
 }
 
 fetch('data/listings.json?t=' + Date.now())
