@@ -1,15 +1,79 @@
 {
-  "area_min": 100,
-  "area_max": 200,
-  "bairros": ["palhano", "santa rosa", "guanabara", "bela suica", "leonor"],
-  "grupo_zap_searches": [
-    "pr+londrina++gleba-palhano",
-    "pr+londrina++santa-rosa",
-    "pr+londrina++guanabara"
-  ],
-  "olx_search": "https://www.olx.com.br/imoveis/venda/apartamentos/estado-pr/regiao-de-londrina/londrina",
-  "max_pages_initial": 5,
-  "max_pages": 6,
-  "initial_recent_days": 7,
-  "max_age_days_new": 30
+  "comum": {
+    "max_pages_initial": 5,
+    "max_pages": 6,
+    "initial_recent_days": 7,
+    "max_age_days_new": 30
+  },
+  "perfis": {
+    "apartamentos": {
+      "aba": "Gleba Palhano",
+      "dados": "listings.json",
+      "tipo": "apartamento",
+      "area_min": 100,
+      "area_max": 200,
+      "bairros": [
+        "palhano",
+        "santa rosa",
+        "guanabara",
+        "bela suica",
+        "leonor"
+      ],
+      "grupo_zap_searches": [
+        "pr+londrina++gleba-palhano",
+        "pr+londrina++santa-rosa",
+        "pr+londrina++guanabara"
+      ],
+      "olx_search": "https://www.olx.com.br/imoveis/venda/apartamentos/estado-pr/regiao-de-londrina/londrina"
+    },
+    "casas": {
+      "aba": "Casas em condomínio",
+      "dados": "casas.json",
+      "tipo": "casa_condominio",
+      "area_min": 1,
+      "area_max": 1000000,
+      "bairros": [
+        "palhano",
+        "esperanca",
+        "simon frazer",
+        "vivendas do arvoredo",
+        "vale do arvoredo",
+        "alphaville",
+        "recanto do salto",
+        "sun lake",
+        "saltinho",
+        "tambore",
+        "royal forest",
+        "royal park",
+        "royal tennis",
+        "royal maison",
+        "royal golf",
+        "bom tempo",
+        "villa noah",
+        "terra de santana",
+        "terras de santana",
+        "santana residence",
+        "santa paula",
+        "montecatini",
+        "parque das artes",
+        "terra bonita",
+        "jose lazaro gouvea",
+        "ville campestre",
+        "bela suica",
+        "guanabara",
+        "santa rosa"
+      ],
+      "excluir": [
+        "taua",
+        "arangua",
+        "araguari",
+        "aracari",
+        "indaia",
+        "tangara",
+        "heimtal",
+        "golden park",
+        "marumbi"
+      ]
+    }
+  }
 }

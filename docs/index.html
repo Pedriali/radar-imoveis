@@ -48,6 +48,16 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .telemetry b{color:var(--green);font-weight:400}
 .st-ok{color:var(--green)} .st-bad{color:var(--red)}
 
+/* abas */
+.tabs{display:flex;gap:0;margin-top:18px;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.tabs button{background:none;border:1px solid transparent;border-bottom:none;color:var(--dim);font-family:var(--head);
+  font-weight:500;font-size:14px;letter-spacing:.16em;padding:10px 16px;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.tabs button:hover{color:var(--fg)}
+.tabs button[aria-selected="true"]{color:var(--green);border-color:var(--line);background:var(--panel);
+  border-bottom:1px solid var(--panel);text-shadow:0 0 8px rgba(57,255,136,.4)}
+.tabs button:focus-visible{outline:1px solid var(--green)}
+.tabs .n{font-family:var(--mono);font-size:11px;margin-left:6px;color:var(--dim)}
+
 /* controles */
 .controls{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
 .controls input,.controls select{
@@ -81,6 +91,8 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
   font-size:11px;letter-spacing:.12em;padding:2px 6px}
 .tag.age{left:auto;right:8px;border-color:var(--amber);color:var(--amber)}
 .tag.dup{top:auto;bottom:8px}
+.tag.tipo{top:auto;bottom:8px;left:auto;right:8px;border-color:var(--fg);color:var(--fg)}
+.specs .wide{grid-column:span 4}
 .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .name{font-family:var(--head);font-weight:700;font-size:17px;color:#e6ffef;line-height:1.2}
 .name.unk{color:var(--fg);font-weight:500;font-size:15px}
@@ -128,13 +140,20 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
     </div>
     <div>
       <h1>RADAR IMÓVEIS</h1>
-      <div class="sub">SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · APTO 100–200 M² · VENDA</div>
+      <div class="sub" id="sub"></div>
       <div class="telemetry" id="tele">Carregando dados…</div>
     </div>
   </header>
 
+  <nav class="tabs" role="tablist" aria-label="Buscas" id="tabs"></nav>
+
   <div class="controls">
     <input id="q" type="search" placeholder="Buscar prédio, bairro, rua…" aria-label="Buscar">
+    <select id="tipo" aria-label="Tipo de imóvel" hidden>
+      <option value="">Casas e terrenos</option>
+      <option value="casa">Só casas</option>
+      <option value="terreno">Só terrenos</option>
+    </select>
     <select id="sort" aria-label="Ordenar">
       <option value="rec">Mais recentes primeiro</option>
       <option value="pub">Menos dias anunciado</option>
@@ -156,7 +175,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
 
   <footer>
     Varredura automática 2× ao dia (08h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.<br>
-    O mesmo apartamento anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
+    O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.
   </footer>
 </div>
@@ -177,16 +196,33 @@ const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowe
 const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX', raulfulgencio:'RAUL FULGÊNCIO', gleba:'GLEBA IMÓVEIS',
   santamerica:'SANTAMERICA', perez:'PEREZ', catuai:'CATUAÍ', inglaterra:'INGLATERRA', grupo:'ZAP/VIVA REAL'};
 
-let DATA = null, LAST = null;
+// Uma aba por perfil de busca (scraper/config.json → "perfis"); "dados" é o arquivo em docs/data/
+const ABAS = [
+  {id:'palhano', nome:'GLEBA PALHANO', dados:'listings.json', item:'apartamento', predio:'Edifício',
+   sub:'SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · APTO 100–200 M² · VENDA',
+   busca:'Buscar prédio, bairro, rua…'},
+  {id:'casas', nome:'CASAS EM CONDOMÍNIO', dados:'casas.json', item:'imóvel', predio:'Condomínio', tipos:true,
+   sub:'SETOR LONDRINA/PR · ZONA SUL · CASAS E TERRENOS EM CONDOMÍNIO FECHADO · VENDA',
+   busca:'Buscar condomínio, bairro, rua…'},
+];
+const CACHE = {};
+let ABA = ABAS[0], DATA = null, LAST = null;
 
 function card(x, i){
   const d = days(x.publicado);
   const ageTxt = d === null ? 'DATA N/D' : d === 0 ? 'HOJE' : d === 1 ? '1 DIA' : `${d} DIAS`;
-  const name = x.predio ? `<div class="name">${esc(x.predio)}</div>` : `<div class="name unk">Edifício não identificado</div>`;
+  const name = x.predio ? `<div class="name">${esc(x.predio)}</div>` : `<div class="name unk">${ABA.predio} não identificado</div>`;
   const loc = [x.endereco, x.bairro].filter(Boolean).join(' · ');
   const old = x.preco_anterior && x.preco_anterior !== x.preco ? `<small>${fmtBRL(x.preco_anterior)}</small>` : '';
   const m2 = x.preco && x.area ? `R$ ${Math.round(x.preco/x.area).toLocaleString('pt-BR')}/m²` : '';
   const v = n => n ?? '–';
+  const terreno = x.tipo === 'terreno';
+  const specs = terreno
+    ? `<div class="wide">${v(x.area)}<span>M² DE TERRENO</span></div>`
+    : `<div>${v(x.area)}<span>${x.tipo === 'casa' ? 'M² CONSTR.' : 'M² ÚTIL'}</span></div>
+        <div>${v(x.quartos)}<span>QUARTOS</span></div>
+        <div>${v(x.banheiros)}<span>BANH.</span></div>
+        <div>${v(x.vagas)}<span>VAGAS</span></div>`;
   const portais = [...new Set(x.fontes.map(f => f.portal))];
   const n = x.fontes.length;
   return `<article class="card" tabindex="0" role="button" data-i="${i}"
@@ -196,17 +232,13 @@ function card(x, i){
       ${x.foto ? `<img src="${esc(x.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
       <span class="tag age" title="Dias anunciado">⌛ ${ageTxt}</span>
       ${n > 1 ? `<span class="tag dup">${n} ANÚNCIOS</span>` : ''}
+      ${x.tipo ? `<span class="tag tipo">${x.tipo === 'terreno' ? 'TERRENO' : 'CASA'}</span>` : ''}
     </div>
     <div class="body">
       ${name}
       <div class="loc">${esc(loc)}</div>
       <div class="price">${fmtBRL(x.preco)}${old}</div>
-      <div class="specs">
-        <div>${v(x.area)}<span>M² ÚTIL</span></div>
-        <div>${v(x.quartos)}<span>QUARTOS</span></div>
-        <div>${v(x.banheiros)}<span>BANH.</span></div>
-        <div>${v(x.vagas)}<span>VAGAS</span></div>
-      </div>
+      <div class="specs">${specs}</div>
       <div class="foot"><span>${m2}</span><span>${n > 1 ? 'VER ' + n + ' ANÚNCIOS ›' : 'ABRIR ANÚNCIO ›'}</span></div>
       <div class="foot portais"><span class="src">${portais.map(k => PORTAL[k]||k.toUpperCase()).join(' · ')}</span></div>
     </div>
@@ -235,7 +267,8 @@ const SORTS = {
 function render(){
   const q = norm($('#q').value).trim();
   const all = DATA.imoveis;
-  const hit = x => !q || norm([x.predio, x.bairro, x.endereco, x.titulo].join(' ')).includes(q);
+  const tipo = ABA.tipos ? $('#tipo').value : '';
+  const hit = x => (!tipo || x.tipo === tipo) && (!q || norm([x.predio, x.bairro, x.endereco, x.titulo].join(' ')).includes(q));
   const sorter = SORTS[$('#sort').value];
   const nw = all.filter(x => x.detectado === LAST && hit(x)).sort(sorter);
   const od = all.filter(x => x.detectado !== LAST && hit(x)).sort(sorter);
@@ -258,25 +291,53 @@ function nextRun(){
 
 function telemetry(){
   const r = DATA.runs[DATA.runs.length-1];
+  if (!r) { $('#tele').innerHTML = '<span class="st-bad">SEM DADOS — aguardando a primeira varredura.</span>'; return; }
   const st = Object.entries(r.portais).map(([k,v]) => `<span>${PORTAL[k]||k}: <b class="${v==='ok'?'st-ok':'st-bad'}">${v==='ok'?'ONLINE':'FALHOU'}</b></span>`).join('');
   const total = DATA.imoveis.length;
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA: <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA: <b>${fmtDT(nextRun())}</b></span><span>ALVOS: <b>${total}</b></span>${st}`;
 }
 
-fetch('data/listings.json?t=' + Date.now())
+const carregar = a => CACHE[a.id] ??= fetch('data/' + a.dados + '?t=' + Date.now())
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => {
-    DATA = d; LAST = d.runs.length ? d.runs[d.runs.length-1].em : null;
-    telemetry(); render();
+  .catch(() => ({runs: [], imoveis: []}));
+
+function abas(){
+  $('#tabs').innerHTML = ABAS.map(a => `<button role="tab" data-aba="${a.id}" aria-selected="${a === ABA}">${a.nome}<span class="n" id="tn-${a.id}"></span></button>`).join('');
+}
+
+async function mostrar(a){
+  ABA = a;
+  try { localStorage.setItem('radar-aba', a.id); } catch {}
+  if (location.hash.slice(1) !== a.id) history.replaceState(null, '', '#' + a.id);
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.aba === a.id));
+  $('#sub').textContent = a.sub;
+  $('#q').placeholder = a.busca;
+  $('#tipo').hidden = !a.tipos;
+  $('#tele').textContent = 'Carregando dados…';
+  $('#g-new').innerHTML = $('#g-old').innerHTML = '';
+  const d = await carregar(a);
+  if (ABA !== a) return;
+  DATA = d; LAST = d.runs.length ? d.runs[d.runs.length-1].em : null;
+  telemetry(); render();
+}
+
+let inicial = null;
+try { inicial = ABAS.find(a => a.id === location.hash.slice(1)) || ABAS.find(a => a.id === localStorage.getItem('radar-aba')); } catch {}
+ABA = inicial || ABAS[0];
+abas();
+ABAS.forEach(a => carregar(a).then(d => { $('#tn-' + a.id).textContent = (d.imoveis || []).length || ''; }));
+mostrar(ABA).then(() => {
     $('#q').addEventListener('input', render);
     $('#sort').addEventListener('change', render);
+    $('#tipo').addEventListener('change', render);
+    $('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) mostrar(ABAS.find(a => a.id === b.dataset.aba)); });
+    window.addEventListener('hashchange', () => { const a = ABAS.find(a => a.id === location.hash.slice(1)); if (a && a !== ABA) mostrar(a); });
     const pick = e => { const c = e.target.closest('.card'); if (c) open_(SHOWN[+c.dataset.i]); };
     document.addEventListener('click', pick);
     document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('card')) { e.preventDefault(); pick(e); } });
     $('#dlg-x').addEventListener('click', () => $('#dlg').close());
     $('#dlg').addEventListener('click', e => { if (e.target === $('#dlg')) $('#dlg').close(); });
-  })
-  .catch(() => { $('#tele').innerHTML = '<span class="st-bad">SEM DADOS — aguardando a primeira varredura.</span>'; });
+});
 </script>
 </body>
 </html>
