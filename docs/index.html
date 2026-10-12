@@ -47,13 +47,10 @@ a{color:inherit}
 @keyframes blink{0%,100%{opacity:.12}10%{opacity:1}}
 @media (prefers-reduced-motion:reduce){.scope::before,.blip{animation:none}}
 .title{position:relative;z-index:1;min-width:0}
-.kicker{font-family:var(--label);font-weight:700;font-size:13px;letter-spacing:.22em;display:flex;align-items:center;gap:8px}
-.kicker::before{content:"★";color:var(--red);font-size:15px;letter-spacing:0}
-h1{font-family:var(--head);font-weight:400;margin:6px 0 0;line-height:.95;font-size:clamp(30px,7vw,66px);letter-spacing:-.01em}
+h1{font-family:var(--head);font-weight:400;margin:0;line-height:.95;font-size:clamp(30px,7vw,66px);letter-spacing:-.01em}
 h1 .a{display:block}
 h1 .b{display:inline-block;margin-top:8px;background:var(--red);color:var(--cream);padding:4px 14px 6px;
   transform:rotate(-3deg);transform-origin:left;font-size:.62em;box-shadow:6px 6px 0 var(--ink)}
-.ru{font-family:var(--label);font-weight:700;font-size:14px;letter-spacing:.42em;margin-top:14px;opacity:.75}
 
 /* pulpito de telemetria */
 .console{margin-top:-8px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:14px 18px 14px;position:relative;
@@ -167,8 +164,6 @@ footer .sig::before{content:"★ ";color:var(--red)}
   .scope{width:76px;height:76px;border-width:5px}
   .wedge{width:34%}
   .bar{right:2%} .bar.b2{display:none}
-  .kicker{font-size:11px;letter-spacing:.14em}
-  .ru{font-size:11px;letter-spacing:.25em}
   .sec h2 .ru{display:none}
   .grid{grid-template-columns:1fr}
 }
@@ -185,9 +180,7 @@ footer .sig::before{content:"★ ";color:var(--red)}
       <i class="blip" style="top:44%;left:76%;animation-delay:.9s"></i>
     </div>
     <div class="title">
-      <div class="kicker">ESTAÇÃO Nº 1 · LONDRINA/PR</div>
       <h1><span class="a">RADAR</span><span class="b">IMÓVEIS</span></h1>
-      <div class="ru" lang="ru">РАДАР НЕДВИЖИМОСТИ</div>
     </div>
   </header>
 
@@ -349,9 +342,9 @@ function nextRun(){
 function telemetry(){
   const r = DATA.runs[DATA.runs.length-1];
   if (!r) { $('#tele').innerHTML = '<span class="st-bad"><i class="lamp bad"></i>SEM DADOS — aguardando a primeira varredura.</span>'; return; }
-  const st = Object.entries(r.portais).map(([k,v]) => v === 'ok'
-    ? `<span><i class="lamp"></i>${PORTAL[k]||k}</span>`
-    : `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
+  // Portais só aparecem quando falham
+  const st = Object.entries(r.portais).filter(([, v]) => v !== 'ok')
+    .map(([k]) => `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
   const total = DATA.imoveis.length;
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA <b>${fmtDT(nextRun())}</b></span><span>ALVOS <b>${total}</b></span>${st}`;
 }
