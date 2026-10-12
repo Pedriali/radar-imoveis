@@ -1,9 +1,18 @@
 name: varredura
+# Horários: 08h, 14h e 20h de Brasília (11h, 17h e 23h UTC).
+# O agendamento do GitHub atrasa horas, então quem dispara no horário é o Mac
+# (scraper/agendador: `gh workflow run radar.yml -f agendada=true`). O cron daqui
+# é reserva: roda de hora em hora e só varre se o horário mais recente ainda
+# não teve varredura. Disparo manual pelo botão sempre varre.
 on:
   schedule:
-    - cron: '0 11 * * *'   # 08h Brasília
-    - cron: '0 23 * * *'   # 20h Brasília
+    - cron: '17 * * * *'
   workflow_dispatch:
+    inputs:
+      agendada:
+        description: 'Pular se este horário já foi varrido'
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency: varredura
@@ -13,11 +22,30 @@ jobs:
     timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Horário já varrido?
+        id: trava
+        if: github.event_name == 'schedule' || inputs.agendada
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, datetime as dt
+          agora = dt.datetime.now(dt.timezone.utc)
+          slots = [agora.replace(hour=h, minute=0, second=0, microsecond=0) - dt.timedelta(days=d)
+                   for d in (0, 1) for h in (11, 17, 23)]
+          slot = max(s for s in slots if s <= agora + dt.timedelta(minutes=10))
+          runs = json.load(open('docs/data/listings.json')).get('runs', [])
+          ultima = dt.datetime.fromisoformat(runs[-1]['em'].replace('Z', '+00:00')) if runs else None
+          feita = ultima is not None and ultima >= slot - dt.timedelta(minutes=15)
+          print(f"pular={'true' if feita else 'false'}")
+          EOF
+      - if: steps.trava.outputs.pular != 'true'
+        uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: pip install curl_cffi
-      - run: python scraper/radar.py
+      - if: steps.trava.outputs.pular != 'true'
+        run: pip install curl_cffi
+      - if: steps.trava.outputs.pular != 'true'
+        run: python scraper/radar.py
       - name: Salvar dados
+        if: steps.trava.outputs.pular != 'true'
         run: |
           git config user.name "radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
