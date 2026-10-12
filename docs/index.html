@@ -27,14 +27,12 @@ a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:16px 16px 48px}
 
 /* cartaz do cabeçalho */
-.poster{position:relative;overflow:hidden;display:flex;gap:26px;align-items:center;padding:26px 28px 44px;
-  background:var(--noise),var(--paper);background-size:180px 180px,auto;color:var(--ink);
-  clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),0 100%)}
+.poster{position:relative;overflow:hidden;display:flex;gap:18px;align-items:center;padding:18px 4px 24px;color:var(--cream)}
 .wedge{position:absolute;right:0;top:0;bottom:0;width:42%;background:var(--red);clip-path:polygon(100% 0,100% 100%,0 58%)}
-.bar{position:absolute;right:6%;top:-20%;width:14px;height:150%;background:var(--ink);transform:rotate(28deg)}
+.bar{position:absolute;right:6%;top:-20%;width:12px;height:150%;background:var(--cream);transform:rotate(28deg)}
 .bar.b2{right:12%;width:5px}
 /* antena giratória (estilo radar soviético P-12/P-18): o painel gira em 3D sobre o mastro */
-.antenna{flex:none;position:relative;width:170px;height:186px;perspective:520px;z-index:1;zoom:1.3;margin:0 0 -22px}
+.antenna{flex:none;position:relative;width:170px;height:186px;perspective:520px;z-index:1;zoom:.62;color:var(--cream)}
 .array{position:absolute;left:5px;top:0;width:160px;height:84px;transform-style:preserve-3d;animation:spin 7s linear infinite}
 .array svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .array .back{transform:translateZ(-16px)}
@@ -45,13 +43,13 @@ a{color:inherit}
 @keyframes beacon{50%{opacity:.15}}
 @media (prefers-reduced-motion:reduce){.array{animation:none;transform:rotateY(-28deg)}.beacon{animation:none}}
 .title{position:relative;z-index:1;min-width:0}
-h1{font-family:var(--head);font-weight:400;margin:0;line-height:.95;font-size:clamp(30px,7vw,66px);letter-spacing:-.01em}
+h1{font-family:var(--head);font-weight:400;margin:0;line-height:.95;font-size:clamp(26px,5.2vw,50px);letter-spacing:-.01em}
 h1 .a{display:block}
 h1 .b{display:inline-block;margin-top:8px;background:var(--red);color:var(--cream);padding:4px 14px 6px;
   transform:rotate(-3deg);transform-origin:left;font-size:.62em;box-shadow:6px 6px 0 var(--ink)}
 
 /* pulpito de telemetria */
-.console{margin-top:-8px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:14px 18px 14px;position:relative;
+.console{margin-top:0;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:14px 18px 14px;position:relative;
   box-shadow:inset 0 1px 0 var(--bevel),0 6px 20px rgba(0,0,0,.35)}
 .console::before,.console::after{content:"";position:absolute;top:9px;width:7px;height:7px;border-radius:50%;
   background:radial-gradient(circle at 35% 35%,#8d9a94,#3a4540);box-shadow:0 1px 1px #000}
@@ -155,8 +153,8 @@ dialog::backdrop{background:rgba(5,8,7,.78)}
 footer{margin-top:44px;color:var(--dim);font-size:12px;border-top:2px solid var(--red);padding-top:14px;line-height:1.7}
 
 @media (max-width:620px){
-  .poster{gap:16px;padding:20px 16px 38px}
-  .antenna{zoom:.72;margin:0 0 -10px}
+  .poster{gap:12px;padding:14px 0 18px}
+  .antenna{zoom:.44}
   .wedge{width:34%}
   .bar{right:2%} .bar.b2{display:none}
   .grid{grid-template-columns:1fr}
@@ -169,8 +167,8 @@ footer{margin-top:44px;color:var(--dim);font-size:12px;border-top:2px solid var(
     <div class="wedge" aria-hidden="true"></div>
     <div class="bar" aria-hidden="true"></div><div class="bar b2" aria-hidden="true"></div>
     <div class="antenna" aria-hidden="true">
-      <div class="array"><svg class="back" viewBox="0 0 160 84"><g fill="none" stroke="#17130f"><rect x="2" y="6" width="156" height="72" stroke-width="2"/><path d="M2 10H158M2 15H158M2 20H158M2 25H158M2 30H158M2 35H158M2 40H158M2 45H158M2 50H158M2 55H158M2 60H158M2 65H158M2 70H158M2 75H158" stroke-width="1" opacity=".5"/></g></svg><svg class="front" viewBox="0 0 160 84"><g fill="none" stroke="#17130f"><rect x="2" y="6" width="156" height="72" stroke-width="3"/><path d="M41 6V78M80 6V78M119 6V78M2 26H158M2 42H158M2 58H158" stroke-width="1.2" opacity=".55"/><path d="M80 6V-4" stroke-width="2"/></g><g stroke="#17130f" stroke-width="7" stroke-linecap="round"><path d='M6.5 18H36.5'/><path d='M45.5 18H75.5'/><path d='M84.5 18H114.5'/><path d='M123.5 18H153.5'/><path d='M6.5 34H36.5'/><path d='M45.5 34H75.5'/><path d='M84.5 34H114.5'/><path d='M123.5 34H153.5'/><path d='M6.5 50H36.5'/><path d='M45.5 50H75.5'/><path d='M84.5 50H114.5'/><path d='M123.5 50H153.5'/><path d='M6.5 66H36.5'/><path d='M45.5 66H75.5'/><path d='M84.5 66H114.5'/><path d='M123.5 66H153.5'/></g><g stroke="#ff8a1e" stroke-width="4" stroke-linecap="round"><path d='M6.5 18H36.5'/><path d='M45.5 18H75.5'/><path d='M84.5 18H114.5'/><path d='M123.5 18H153.5'/><path d='M6.5 34H36.5'/><path d='M45.5 34H75.5'/><path d='M84.5 34H114.5'/><path d='M123.5 34H153.5'/><path d='M6.5 50H36.5'/><path d='M45.5 50H75.5'/><path d='M84.5 50H114.5'/><path d='M123.5 50H153.5'/><path d='M6.5 66H36.5'/><path d='M45.5 66H75.5'/><path d='M84.5 66H114.5'/><path d='M123.5 66H153.5'/></g><g fill="#17130f"><circle cx='21.5' cy='18' r='2.2'/><circle cx='60.5' cy='18' r='2.2'/><circle cx='99.5' cy='18' r='2.2'/><circle cx='138.5' cy='18' r='2.2'/><circle cx='21.5' cy='34' r='2.2'/><circle cx='60.5' cy='34' r='2.2'/><circle cx='99.5' cy='34' r='2.2'/><circle cx='138.5' cy='34' r='2.2'/><circle cx='21.5' cy='50' r='2.2'/><circle cx='60.5' cy='50' r='2.2'/><circle cx='99.5' cy='50' r='2.2'/><circle cx='138.5' cy='50' r='2.2'/><circle cx='21.5' cy='66' r='2.2'/><circle cx='60.5' cy='66' r='2.2'/><circle cx='99.5' cy='66' r='2.2'/><circle cx='138.5' cy='66' r='2.2'/></g><circle class="beacon" cx="80" cy="-6" r="3.6" fill="#d8261c" stroke="#17130f" stroke-width="1.2"/></svg></div>
-      <svg class="mast" viewBox="0 0 60 112"><rect x="20" y="0" width="20" height="14" fill="#17130f"/><g fill="none" stroke="#17130f" stroke-width="3" stroke-linejoin="round"><path d="M24 14L9 104M36 14L51 104"/><path d="M25 14L35 30L22 46L38 62L19 78L41 94L15 104" stroke-width="1.6"/></g><path d="M21 38L39 38L41 50L19 50Z M16 70L44 70L46 80L14 80Z" fill="#d8261c" stroke="#17130f" stroke-width="1.2"/><rect x="0" y="102" width="60" height="10" fill="#17130f"/></svg>
+      <div class="array"><svg class="back" viewBox="0 0 160 84"><g fill="none" stroke="currentColor"><rect x="2" y="6" width="156" height="72" stroke-width="2"/><path d="M2 10H158M2 15H158M2 20H158M2 25H158M2 30H158M2 35H158M2 40H158M2 45H158M2 50H158M2 55H158M2 60H158M2 65H158M2 70H158M2 75H158" stroke-width="1" opacity=".5"/></g></svg><svg class="front" viewBox="0 0 160 84"><g fill="none" stroke="currentColor"><rect x="2" y="6" width="156" height="72" stroke-width="3"/><path d="M41 6V78M80 6V78M119 6V78M2 26H158M2 42H158M2 58H158" stroke-width="1.2" opacity=".55"/><path d="M80 6V-4" stroke-width="2"/></g><g stroke="#141c19" stroke-width="7" stroke-linecap="round"><path d='M6.5 18H36.5'/><path d='M45.5 18H75.5'/><path d='M84.5 18H114.5'/><path d='M123.5 18H153.5'/><path d='M6.5 34H36.5'/><path d='M45.5 34H75.5'/><path d='M84.5 34H114.5'/><path d='M123.5 34H153.5'/><path d='M6.5 50H36.5'/><path d='M45.5 50H75.5'/><path d='M84.5 50H114.5'/><path d='M123.5 50H153.5'/><path d='M6.5 66H36.5'/><path d='M45.5 66H75.5'/><path d='M84.5 66H114.5'/><path d='M123.5 66H153.5'/></g><g stroke="#ff8a1e" stroke-width="4" stroke-linecap="round"><path d='M6.5 18H36.5'/><path d='M45.5 18H75.5'/><path d='M84.5 18H114.5'/><path d='M123.5 18H153.5'/><path d='M6.5 34H36.5'/><path d='M45.5 34H75.5'/><path d='M84.5 34H114.5'/><path d='M123.5 34H153.5'/><path d='M6.5 50H36.5'/><path d='M45.5 50H75.5'/><path d='M84.5 50H114.5'/><path d='M123.5 50H153.5'/><path d='M6.5 66H36.5'/><path d='M45.5 66H75.5'/><path d='M84.5 66H114.5'/><path d='M123.5 66H153.5'/></g><g fill="currentColor"><circle cx='21.5' cy='18' r='2.2'/><circle cx='60.5' cy='18' r='2.2'/><circle cx='99.5' cy='18' r='2.2'/><circle cx='138.5' cy='18' r='2.2'/><circle cx='21.5' cy='34' r='2.2'/><circle cx='60.5' cy='34' r='2.2'/><circle cx='99.5' cy='34' r='2.2'/><circle cx='138.5' cy='34' r='2.2'/><circle cx='21.5' cy='50' r='2.2'/><circle cx='60.5' cy='50' r='2.2'/><circle cx='99.5' cy='50' r='2.2'/><circle cx='138.5' cy='50' r='2.2'/><circle cx='21.5' cy='66' r='2.2'/><circle cx='60.5' cy='66' r='2.2'/><circle cx='99.5' cy='66' r='2.2'/><circle cx='138.5' cy='66' r='2.2'/></g><circle class="beacon" cx="80" cy="-6" r="3.6" fill="#d8261c" stroke="currentColor" stroke-width="1.2"/></svg></div>
+      <svg class="mast" viewBox="0 0 60 112"><rect x="20" y="0" width="20" height="14" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M24 14L9 104M36 14L51 104"/><path d="M25 14L35 30L22 46L38 62L19 78L41 94L15 104" stroke-width="1.6"/></g><path d="M21 38L39 38L41 50L19 50Z M16 70L44 70L46 80L14 80Z" fill="#d8261c" stroke="currentColor" stroke-width="1.2"/><rect x="0" y="102" width="60" height="10" fill="currentColor"/></svg>
     </div>
     <div class="title">
       <h1><span class="a">RADAR</span><span class="b">IMÓVEIS</span></h1>
