@@ -1,6 +1,6 @@
 # Radar Imóveis
 
-Varredura automática (3× ao dia: 08h, 14h e 20h) de imóveis à venda em Londrina/PR, em duas abas:
+Varredura automática (3× ao dia: 09h, 14h e 20h) de imóveis à venda em Londrina/PR, em duas abas:
 
 - **Gleba Palhano** — apartamentos de 100–200 m² na Gleba Palhano, Santa Rosa, Guanabara e arredores.
 - **Casas em condomínio** — casas e terrenos em condomínio fechado na zona sul (zona norte e leste ficam de fora).
@@ -11,6 +11,6 @@ Fontes: Zap Imóveis, Viva Real, OLX e as imobiliárias Raul Fulgêncio, Gleba I
 - Busca: `scraper/radar.py` (configuração em `scraper/config.json`: cada item de `perfis` é uma busca/aba). `python scraper/radar.py casas` roda só uma.
 - Zona sul: em condomínio o "bairro" do anúncio costuma ser o nome do condomínio, então `perfis.casas.bairros` lista bairros **e** condomínios da zona sul; `excluir` derruba condomínios da zona leste/norte, assim como anúncios que dizem "zona/região norte ou leste". Os bairros descartados em cada varredura ficam em `runs[].fora_da_zona` de `docs/data/casas.json`, para revisar a lista.
 - Dados: `docs/data/listings.json` (apartamentos) e `docs/data/casas.json` — `listings` guarda cada anúncio; `imoveis` é o que a página mostra, com os anúncios do mesmo apartamento (em portais diferentes ou repetidos no mesmo portal) agrupados num card só. Clicar no card mostra todos os anúncios.
-- Agendamento: o cron do GitHub atrasa horas, então quem dispara no horário é o Mac (`scraper/agendador/com.pedriali.radar-imoveis.plist`, instalado em `~/Library/LaunchAgents`; se o Mac estiver dormindo, dispara ao acordar). `.github/workflows/radar.yml` roda de hora em hora como reserva e só varre se o horário mais recente (08h, 14h ou 20h) ainda não teve varredura. Para rodar agora: aba **Actions → varredura → Run workflow** (o botão sempre varre).
+- Agendamento: o cron do GitHub atrasa horas, então quem dispara no horário é o Mac (`scraper/agendador/com.pedriali.radar-imoveis.plist`, instalado em `~/Library/LaunchAgents`; se o Mac estiver dormindo, dispara ao acordar). `.github/workflows/radar.yml` roda de hora em hora como reserva e só varre se o horário mais recente (09h, 14h ou 20h) ainda não teve varredura. Para rodar agora: aba **Actions → varredura → Run workflow** (o botão sempre varre).
 
 Portal estreando: anúncios com data de publicação seguem a regra da varredura inicial (só os da última semana viram card). Os sem data (Gleba, Santamerica, Catuaí, Inglaterra) entram como estoque de referência — não viram card, mas aparecem como anúncio extra quando o mesmo apartamento surge em outro lugar. Daí em diante, todo anúncio que aparecer neles é novo.

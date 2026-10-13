@@ -209,7 +209,7 @@ footer{margin-top:44px;color:var(--dim);font-size:12px;border-top:2px solid var(
   </section>
 
   <footer>
-    Varredura automática 3× ao dia (08h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.<br>
+    Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.<br>
     O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.
   </footer>
@@ -318,8 +318,8 @@ function render(){
   $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
 }
 
-// Horários do agendamento (UTC): 11h, 17h e 23h = 08h, 14h e 20h de Brasília
-const RUN_HOURS_UTC = [11, 17, 23];
+// Horários do agendamento (UTC): 12h, 17h e 23h = 09h, 14h e 20h de Brasília
+const RUN_HOURS_UTC = [12, 17, 23];
 function nextRun(){
   const now = new Date();
   for (let d = 0; d < 2; d++)

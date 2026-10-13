@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- Dispara a varredura no GitHub às 08h, 14h e 20h (horário do Mac).
+<!-- Dispara a varredura no GitHub às 09h, 14h e 20h (horário do Mac).
      Se o Mac estiver dormindo, dispara ao acordar; a trava do workflow evita repetir.
      Instalar: cp scraper/agendador/com.pedriali.radar-imoveis.plist ~/Library/LaunchAgents/
                launchctl load ~/Library/LaunchAgents/com.pedriali.radar-imoveis.plist -->
@@ -16,7 +16,7 @@
   </array>
   <key>StartCalendarInterval</key>
   <array>
-    <dict><key>Hour</key><integer>8</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>20</integer><key>Minute</key><integer>0</integer></dict>
   </array>
