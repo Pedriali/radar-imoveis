@@ -38,6 +38,12 @@ def apto():
     return CFG["tipo"] == "apartamento"
 
 
+def terrenos():
+    """Perfil só de terrenos em condomínio (busca ampla: também lotes sem a marca de condomínio,
+    aceitos quando o anúncio prova que é condomínio — ver condominio_ok)."""
+    return CFG["tipo"] == "terreno_condominio"
+
+
 def log(*a):
     print(*a, flush=True)
 
@@ -52,23 +58,53 @@ def bairro_ok(name):
     return any(b in n for b in CFG["bairros"])
 
 
-ZONA_FORA = re.compile(r"\b(?:zona|regiao) (?:norte|leste)\b")
 FORA = {}  # bairros descartados pela zona nesta varredura (para revisar a lista de bairros)
 
 
+def fora(motivo):
+    FORA[motivo or "?"] = FORA.get(motivo or "?", 0) + 1
+
+
 def local_ok(bairro, *textos):
-    """Apartamentos: bairro na lista. Casas: bairro ou nome do condomínio na lista da zona sul
+    """Apartamentos: bairro na lista. Casas/terrenos: bairro ou nome do condomínio na lista da zona sul
     (em condomínio o "bairro" costuma ser o nome do próprio condomínio); anúncio que se declara
-    zona norte/leste fica de fora mesmo assim."""
+    de outra zona (zonas_fora) ou cita um nome de "excluir" fica de fora mesmo assim."""
     if apto():
         return bairro_ok(bairro)
     t = norm(" ".join(x for x in (bairro, *textos) if x))
-    if ZONA_FORA.search(t) or any(x in t for x in CFG.get("excluir", [])):
+    zonas = "|".join(CFG.get("zonas_fora", ["norte", "leste"]))
+    if re.search(rf"\b(?:zona|regiao) (?:{zonas})\b", t) or any(x in t for x in CFG.get("excluir", [])):
         return False
-    if any(b in t for b in CFG["bairros"]) or re.search(r"\b(?:zona|regiao) sul\b", t):
+    if any(b in t for b in CFG["bairros"] + CFG.get("condominios", [])) or re.search(r"\b(?:zona|regiao) sul\b", t):
         return True
-    FORA[bairro or "?"] = FORA.get(bairro or "?", 0) + 1
+    fora(bairro)
     return False
+
+
+def coord_ok(addr):
+    """Zap/Viva Real trazem latitude/longitude: com localização exata fora da caixa da zona sul do
+    perfil ("caixa"), o anúncio sai mesmo que o bairro esteja na lista (há bairro cadastrado errado)."""
+    cx = CFG.get("caixa")
+    c = (addr or {}).get("coordinates")
+    if not cx or not isinstance(c, dict) or addr.get("isApproximateLocation") or not c.get("latitude"):
+        return True
+    lat, lon = c["latitude"], c.get("longitude") or 0
+    if lat <= cx["lat_max"] and cx["lon_min"] <= lon <= cx["lon_max"]:
+        return True
+    fora(f"{addr.get('neighborhood')} (coordenadas fora da zona sul)")
+    return False
+
+
+# Prova de condomínio para lotes de buscas sem essa marca: nome de condomínio conhecido ou o texto
+# do anúncio falando em condomínio/loteamento fechado ("ao lado do condomínio" não conta).
+COND_TXT = re.compile(r"\bcondominio\b|\bcond\b|loteamento fechado|\bfechado\b")
+COND_PERTO = re.compile(r"\b(?:ao lado|proximo|perto|vizinho|em frente|atras)(?:\s+(?:a|ao|do|de|da|dos)\b)?"
+                        r"(?:\s+(?:condominio|cond)\b\.?)?(?:\s+[a-z0-9]+){0,3}")
+
+
+def condominio_ok(*textos):
+    t = COND_PERTO.sub(" ", norm(" ".join(x for x in textos if x)))
+    return any(c in t for c in CFG.get("condominios", [])) or bool(COND_TXT.search(t))
 
 
 def area_ok(a):
@@ -194,9 +230,10 @@ def grupo_record(o):
 def grupo_detail(rec):
     """Página do anúncio: data de criação e descrição (para achar o nome do prédio)."""
     url = rec["links"].get("zap") or rec["links"].get("vivareal")
-    page = fetch(url) if url else None
+    page = fetch(url, tries=1) if url else None
     if not page:
-        return
+        return False
+    rec.pop("detalhe_pendente", None)
     m = re.search(r'\\?"createdAt\\?":\\?"(\d{4}-\d\d-\d\dT[\d:.]+Z)', page)
     if m:
         rec["publicado"] = m.group(1)[:19] + "Z"
@@ -204,17 +241,43 @@ def grupo_detail(rec):
         descs = re.findall(r'"description":"(.{20,2000}?)"[,}]', page)
         desc = htmllib.unescape(re.sub(r"<[^>]+>", " ", max(descs, key=len))) if descs else ""
         rec["predio"] = building_from_text(rec.get("titulo"), desc)
+    return True
+
+
+DETALHES_POR_VARREDURA = 40  # anúncios do Zap/Viva Real cuja página ficou para depois (bloqueio 429)
+
+
+class Detalhes:
+    """Abre páginas de anúncio do Zap/Viva Real. O Zap bloqueia (HTTP 429) depois de muitas páginas
+    seguidas: com 3 falhas seguidas, para de abrir nesta varredura e marca o anúncio como pendente
+    (as próximas varreduras abrem até DETALHES_POR_VARREDURA pendentes)."""
+
+    def __init__(self, pausa):
+        self.pausa, self.falhas = pausa, 0
+
+    def abrir(self, rec):
+        if self.falhas >= 3:
+            rec["detalhe_pendente"] = True
+            return False
+        ok = grupo_detail(rec)
+        self.falhas = 0 if ok else self.falhas + 1
+        if not ok:
+            rec["detalhe_pendente"] = True
+            if self.falhas == 3:
+                log("  zap: páginas de anúncio bloqueadas; o resto fica para as próximas varreduras")
+        time.sleep(self.pausa)
+        return ok
 
 
 # Casas: unitType CONDOMINIUM = casa de condomínio; RESIDENTIAL_ALLOTMENT_LAND = lote. A busca de lotes
 # "em condomínio" do Zap traz todos os lotes residenciais, por isso vai com amenities=Condomínio fechado.
 # Para lotes, usableAreas é a área do terreno. condominiumName vem vazio: o nome sai da descrição.
-GRUPO_TIPOS = {"CONDOMINIUM": "casa", "RESIDENTIAL_ALLOTMENT_LAND": "terreno"}
+GRUPO_TIPOS = {"CONDOMINIUM": "casa", "RESIDENTIAL_ALLOTMENT_LAND": "terreno", "ALLOTMENT_LAND": "terreno"}
 GRUPO_FECHADO = "amenities=Condom%C3%ADnio%20fechado&"
 
 
 def grupo_buscas(portal):
-    """[(url com '?' e parâmetros, unitTypes aceitos)] da busca do perfil no portal."""
+    """[(url com '?' e parâmetros, unitTypes aceitos, exige prova de condomínio)] da busca do perfil no portal."""
     if apto():
         out = []
         for slug in CFG["grupo_zap_searches"]:
@@ -222,23 +285,31 @@ def grupo_buscas(portal):
                 url0 = f"https://www.zapimoveis.com.br/venda/apartamentos/{slug}/"
             else:
                 url0 = f"https://www.vivareal.com.br/venda/parana/londrina/bairros/{slug.split('++')[1]}/apartamento_residencial/"
-            out.append((f"{url0}?areaMinima={CFG['area_min']}&areaMaxima={CFG['area_max']}&", ("APARTMENT", None)))
+            out.append((f"{url0}?areaMinima={CFG['area_min']}&areaMaxima={CFG['area_max']}&", ("APARTMENT", None), False))
         return out
-    if portal == "zap":
-        return [("https://www.zapimoveis.com.br/venda/casas-de-condominio/pr+londrina/?", ("CONDOMINIUM",)),
-                ("https://www.zapimoveis.com.br/venda/terrenos-lotes-condominios/pr+londrina/?" + GRUPO_FECHADO,
-                 ("RESIDENTIAL_ALLOTMENT_LAND",))]
-    return [("https://www.vivareal.com.br/venda/parana/londrina/condominio_residencial/?", ("CONDOMINIUM",)),
-            ("https://www.vivareal.com.br/venda/parana/londrina/lote-terreno_residencial/?" + GRUPO_FECHADO,
-             ("RESIDENTIAL_ALLOTMENT_LAND",))]
+    lotes = ("https://www.zapimoveis.com.br/venda/terrenos-lotes-condominios/pr+londrina/?" if portal == "zap" else
+             "https://www.vivareal.com.br/venda/parana/londrina/lote-terreno_residencial/?")
+    tipos_lote = ("RESIDENTIAL_ALLOTMENT_LAND", "ALLOTMENT_LAND")
+    if terrenos():  # lotes marcados como condomínio fechado + todos os lotes (com prova de condomínio)
+        return [(lotes + GRUPO_FECHADO, tipos_lote, False), (lotes, tipos_lote, True)]
+    casas = ("https://www.zapimoveis.com.br/venda/casas-de-condominio/pr+londrina/?" if portal == "zap" else
+             "https://www.vivareal.com.br/venda/parana/londrina/condominio_residencial/?")
+    return [(casas, ("CONDOMINIUM",), False), (lotes + GRUPO_FECHADO, ("RESIDENTIAL_ALLOTMENT_LAND",), False)]
+
+
+def parar(known, sem_novos):
+    """Busca incremental: para depois de N páginas seguidas sem anúncio desconhecido no filtro
+    (perfil "paginas_sem_novos"; buscas amplas têm muitas páginas sem nada do filtro)."""
+    return bool(known) and sem_novos >= CFG.get("paginas_sem_novos", 1)
 
 
 def scan_grupo(known, max_pages, found):
     status = {}
     for portal in ("zap", "vivareal"):
         ok = 0
-        for url0, tipos in grupo_buscas(portal):
-            slug = url0.split("/venda/")[1].split("?")[0].strip("/")
+        for url0, tipos, prova in grupo_buscas(portal):
+            slug = url0.split("/venda/")[1].split("?")[0].strip("/") + (" (ampla)" if prova else "")
+            sem_novos = 0
             for p in range(1, max_pages + 1):
                 url = f"{url0}ordem=MOST_RECENT&pagina={p}"
                 page = fetch(url)
@@ -252,7 +323,10 @@ def scan_grupo(known, max_pages, found):
                 for o in items:
                     if o.get("business") != "SALE" or o.get("unitType") not in tipos:
                         continue
-                    if not local_ok((o.get("address") or {}).get("neighborhood"), o.get("title")):
+                    addr = o.get("address") or {}
+                    if prova and not condominio_ok(o.get("title"), addr.get("neighborhood")):
+                        continue
+                    if not local_ok(addr.get("neighborhood"), o.get("title")) or not coord_ok(addr):
                         continue
                     rec = grupo_record(o)
                     if not rec:
@@ -262,7 +336,8 @@ def scan_grupo(known, max_pages, found):
                     if rec["id"] not in known:
                         fresh += 1
                 log(f"  {portal} {slug} p{p}: {len(items)} anúncios, {fresh} desconhecidos")
-                if known and fresh == 0:
+                sem_novos = 0 if fresh else sem_novos + 1
+                if parar(known, sem_novos):
                     break
                 time.sleep(1.5)
         status[portal] = "ok" if ok else "falhou"
@@ -284,6 +359,9 @@ OLX_LONDRINA = "estado-pr/regiao-de-londrina/londrina"
 def olx_buscas():
     if apto():
         return [(f"{CFG['olx_search']}?ss={CFG['area_min']}&se={CFG['area_max']}&", None)]
+    if terrenos():  # busca "condominio" + todos os lotes à venda (olx_tipo_ok exige prova de condomínio)
+        return [(f"https://www.olx.com.br/imoveis/terrenos/lotes/{OLX_LONDRINA}?sst=s&q=condominio&", "terreno"),
+                (f"https://www.olx.com.br/imoveis/terrenos/lotes/{OLX_LONDRINA}?sst=s&", "terreno")]
     return [(f"https://www.olx.com.br/imoveis/venda/casas/casas-de-condominio/{OLX_LONDRINA}?", "casa"),
             (f"https://www.olx.com.br/imoveis/terrenos/lotes/{OLX_LONDRINA}?sst=s&q=condominio&", "terreno")]
 
@@ -293,6 +371,8 @@ def olx_tipo_ok(tipo, props, subject):
         return "venda" in norm(props.get("real_estate_type", "venda"))
     if tipo == "casa":
         return "condominio fechado" in norm(props.get("real_estate_type"))
+    if terrenos():
+        return bool(olx_num(props.get("condominio"))) or condominio_ok(subject)
     return bool(olx_num(props.get("condominio"))) or bool(
         re.search(r"\bcond(?:ominio)?\b|residencial|alphaville", norm(subject)) and "ao lado" not in norm(subject))
 
@@ -305,7 +385,7 @@ def scan_olx(known, max_pages, found):
 
 
 def _scan_olx(url0, tipo, known, max_pages, found):
-    pages_ok = 0
+    pages_ok = sem_novos = 0
     for p in range(1, max_pages * 2 + 1):
         url = f"{url0}sf=1&o={p}"
         page = fetch(url)
@@ -348,11 +428,12 @@ def _scan_olx(url0, tipo, known, max_pages, found):
                 "publicado": datetime.fromtimestamp(a["date"], timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ") if a.get("date") else None,
                 "links": {"olx": a.get("url")},
             }
-            found.setdefault(rid, rec)
-            if rid not in known:
+            if rid not in found and rid not in known:
                 fresh += 1
+            found.setdefault(rid, rec)
         log(f"  olx {tipo or ''} p{p}: {len(ads)} anúncios, {fresh} desconhecidos")
-        if not ads or (known and fresh == 0):
+        sem_novos = 0 if fresh else sem_novos + 1
+        if not ads or parar(known, sem_novos):
             break
         time.sleep(1.5)
     return pages_ok
@@ -426,7 +507,7 @@ def _rf_publicado(o):
 
 def scan_raulfulgencio(found):
     """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
-    q = {"type": "S", "idtCityList": [RF_LONDRINA], "idtsCategories": [1] if apto() else [2, 5],
+    q = {"type": "S", "idtCityList": [RF_LONDRINA], "idtsCategories": [1] if apto() else [5] if terrenos() else [2, 5],
          "start": 0, "numRows": 3000,
          "getAccess": True, "fieldList": RF_FIELDS}
     resp = _rf_search(q)
@@ -446,7 +527,10 @@ def scan_raulfulgencio(found):
                 continue
             tipo, area = None, _rf_int(o.get("prop_char_95"))
         else:
-            if o.get("idtCategory") not in (2, 5) or (o.get("idtSubCategory") not in RF_COND_SUBS and not predio):
+            if o.get("idtCategory") not in ((5,) if terrenos() else (2, 5)):
+                continue
+            if o.get("idtSubCategory") not in RF_COND_SUBS and not predio and not (
+                    terrenos() and condominio_ok(o.get("desTitleSite"))):
                 continue
             tipo = "casa" if o["idtCategory"] == 2 else "terreno"
             area = _rf_int(o.get("prop_char_1" if tipo == "casa" else "prop_char_2"))
@@ -522,7 +606,8 @@ def scan_gleba(found):
     if apto():
         return _scan_gleba(f"{GLEBA_BASE}/imoveis/a-venda/apartamento/londrina"
                            f"?area={CFG['area_min']}~{CFG['area_max']}&", "apartamento", found)
-    st = [_scan_gleba(f"{GLEBA_BASE}/imoveis/a-venda/{t}/londrina?", t, found) for t in ("casa", "terreno")]
+    tipos = ("terreno",) if terrenos() else ("casa", "terreno")
+    st = [_scan_gleba(f"{GLEBA_BASE}/imoveis/a-venda/{t}/londrina?", t, found) for t in tipos]
     return "ok" if "ok" in st else "falhou"
 
 
@@ -548,7 +633,8 @@ def _scan_gleba(url0, tipo, found):
                 continue
             if norm(o.get("city")) != "londrina":
                 continue
-            if tipo != "apartamento" and not (o.get("condo_name") or "GATED_COMMUNITY" in (o.get("amenities") or [])):
+            if tipo != "apartamento" and not (o.get("condo_name") or "GATED_COMMUNITY" in (o.get("amenities") or [])
+                                              or (terrenos() and condominio_ok(o.get("website_title")))):
                 continue
             bairro = o.get("neighborhood_display") or o.get("neighborhood") or ""
             area = _gleba_first(o.get("area"))
@@ -658,7 +744,8 @@ def scan_santamerica(found):
             q += f"&area_tipo=area-util&a_min={CFG['area_min']}&a_max={CFG['area_max']}"
             q += f"&a_util_min={CFG['area_min']}&a_util_max={CFG['area_max']}"
         else:  # a zona é filtrada aqui, pelo bairro/nome do condomínio
-            q = "locacao_venda=V&id_cidade[]=2&" + "&".join(f"id_tipo_imovel[]={t}" for t in SA_TIPOS_COND)
+            q = "locacao_venda=V&id_cidade[]=2&" + "&".join(
+                f"id_tipo_imovel[]={t}" for t, tp in SA_TIPOS_COND.items() if not terrenos() or tp == "terreno")
         cards, seen, ok_pages = [], set(), 0
         for pag in range(1, 12):
             page = fetch(f"{SA_BASE}/pesquisa-de-imoveis/?{q}" + (f"&pag={pag}" if pag > 1 else ""))
@@ -820,7 +907,7 @@ def scan_perez(found):
         buscas = {"Apartamento": dict(base, propertyType="Apartamento", minArea=max(0, CFG["area_min"] - 1),
                                       maxArea=CFG["area_max"] + 1)}
     else:
-        buscas = {t: dict(base, propertyType=t) for t in PZ_TIPOS}
+        buscas = {t: dict(base, propertyType=t) for t, tp in PZ_TIPOS.items() if not terrenos() or tp == "terreno"}
     itens = []
     for t, q in buscas.items():
         r = _pz_busca(q)
@@ -904,6 +991,9 @@ def scan_catuai(found):
     if apto():
         searches = [f"{base}/imoveis/apartamento/a-venda/londrina-pr?mt_minima={amin}&mt_maxima={amax}",
                     f"{base}/imoveis/apartamento-na-planta/a-venda/londrina-pr?mt_minima={amin}&mt_maxima={amax}"]
+    elif terrenos():  # categoria de condomínio + todos os terrenos (estes com prova de condomínio no título)
+        searches = [f"{base}/imoveis/terreno-em-condominio/a-venda/londrina-pr?x=1",
+                    f"{base}/imoveis/terreno/a-venda/londrina-pr?x=1"]
     else:
         searches = [f"{base}/imoveis/casa-em-condominio/a-venda/londrina-pr?x=1",
                     f"{base}/imoveis/terreno-em-condominio/a-venda/londrina-pr?x=1"]
@@ -955,6 +1045,8 @@ def scan_catuai(found):
                 bairro, _, cidade = clean(addr.group(1)).rpartition(" - ")
                 if norm(cidade) != "londrina" or not local_ok(bairro, titulo):
                     continue
+                if "/terreno/" in url0 and not condominio_ok(titulo):
+                    continue
                 am = re.search(r"<b>\s*([\d.,]+)\s*m²\s*</b>\s*<span>\s*privativ", ch)
                 area = num(am.group(1)) if am else None
                 if apto() and not area_ok(area):
@@ -966,7 +1058,7 @@ def scan_catuai(found):
                 link = f"{base}/imovel/{slug.group(1)}"
                 recs["ct" + code] = {
                     "id": "ct" + code, "predio": None,
-                    "tipo": None if apto() else ("terreno" if "/terreno-" in url0 else "casa"), "endereco": None, "bairro": bairro,
+                    "tipo": None if apto() else ("terreno" if "/terreno" in url0 else "casa"), "endereco": None, "bairro": bairro,
                     "foto": foto.group(1) if foto else None, "area": area,
                     "preco": num(pm.group(1)) if pm else None,
                     "quartos": None, "banheiros": None, "vagas": None, "titulo": titulo,
@@ -1050,6 +1142,8 @@ def scan_inglaterra(found):
     if apto():
         urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/apartamento/londrina"
                  f"?area={CFG['area_min']}~{CFG['area_max']}&size=48", None)]
+    elif terrenos():  # todos os terrenos; os sem a etiqueta de condomínio precisam de prova (_scan_inglaterra)
+        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/terreno/londrina?size=48", "terreno")]
     else:  # não há tipo "em condomínio"; casa e terreno com a etiqueta de condomínio fechado
         urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/{t}/londrina?size=48&tags=GATED_COMMUNITY", t)
                 for t in ("casa", "terreno")]
@@ -1071,7 +1165,7 @@ def scan_inglaterra(found):
 
 def _in_lista(url):
     items, total, page = [], None, 1
-    while page <= 10:
+    while page <= 15:
         try:
             r = S.get(url + f"&pagina={page}", timeout=45, headers={"Accept": "application/json"})
             j = r.json() if r.status_code == 200 else None
@@ -1099,6 +1193,9 @@ def _scan_inglaterra(items, total, found):
             continue
         bairro = x.get("neighborhood_display") or x.get("neighborhood") or ""
         if norm(x.get("city")) != "londrina" or not local_ok(bairro, x.get("condo_name"), x.get("picture_title")):
+            continue
+        if terrenos() and not (x.get("condo_name") or "GATED_COMMUNITY" in (x.get("amenities") or [])
+                               or condominio_ok(x.get("picture_title"), x.get("website_title"))):
             continue
         area = _in_int(x.get("area"))
         if not area_ok(area):
@@ -1214,7 +1311,14 @@ def texto(x):
 def conflito(a, b):
     """a e b certamente NÃO são o mesmo apartamento. Os prédios da Gleba têm muitas unidades
     iguais (mesma planta), então as tolerâncias são apertadas: o que separa unidades é o preço."""
-    if bairro_key(a.get("bairro")) != bairro_key(b.get("bairro")) or a.get("tipo") != b.get("tipo"):
+    if a.get("tipo") != b.get("tipo"):
+        return True
+    if terrenos():
+        # Lotes: o bairro varia entre portais (a OLX erra muito) e o Zap inventa número de rua;
+        # o que separa é o condomínio (ver chave_cond), a área e o preço.
+        ca, cb = chave_cond([a]), chave_cond([b])
+        return bool(ca and cb and ca != cb) or abs(a["area"] - b["area"]) > 3 or preco_conflita(a, b)
+    if bairro_key(a.get("bairro")) != bairro_key(b.get("bairro")):
         return True
     for f in ("quartos", "vagas"):
         if a.get(f) and b.get(f) and a[f] != b[f]:
@@ -1226,6 +1330,10 @@ def conflito(a, b):
     (ra, na), (rb, nb) = street(a.get("endereco")), street(b.get("endereco"))
     if ra and rb and (not mesma_rua(ra, rb) or (na and nb and na != nb)):
         return True
+    return preco_conflita(a, b)
+
+
+def preco_conflita(a, b):
     pa, pb = a.get("preco"), b.get("preco")
     if pa and pb:
         dif = abs(pa - pb) / max(pa, pb)
@@ -1235,6 +1343,8 @@ def conflito(a, b):
 
 
 def mesmo_predio(a, b):
+    if terrenos():
+        return bool(chave_cond([a])) and chave_cond([a]) == chave_cond([b])
     if a.get("predio") and b.get("predio"):
         return True  # sem conflito, então são o mesmo nome
     ra, rb = street(a.get("endereco"))[0], street(b.get("endereco"))[0]
@@ -1291,6 +1401,7 @@ def group_imoveis(L):
             if juntou:
                 break
 
+    medias = medias_m2(grupos) if CFG.get("media") else {}
     out = []
     for g in grupos:
         vis = [x for x in g if x.get("visivel")]
@@ -1324,8 +1435,91 @@ def group_imoveis(L):
                     vistos.add(url)
                     fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area")})
         im["fontes"] = fontes
+        if terrenos() and not im["predio"] and chave_cond(g):  # condomínio citado só no título/bairro
+            im["predio"] = chave_cond(g).title()
+        if medias:
+            im.update(abaixo_da_media(g, medias))
         out.append(im)
     return out
+
+
+# ---------- preço abaixo da média (perfil com "media") ----------
+# Referência: mediana do R$/m² dos imóveis (grupos, já sem anúncios repetidos) do mesmo condomínio
+# vistos nos últimos dias; com poucos no condomínio, a do bairro. Inclui o estoque de referência
+# (anúncios que não viraram card), para a mediana ter mais base.
+def chave_cond(g):
+    """Condomínio do grupo: o nome da lista "condominios" mais citado no nome/título/bairro dos anúncios."""
+    achados = []
+    for x in g:
+        for campo in ("predio", "titulo", "bairro"):
+            t = norm(x.get(campo))
+            c = max((c for c in CFG.get("condominios", []) if c in t), key=len, default=None)
+            if c:
+                achados.append(CFG.get("condominios_iguais", {}).get(c, c))
+                break
+    return max(set(achados), key=achados.count) if achados else None
+
+
+def m2_grupo(g):
+    """R$/m² do grupo (anúncio com preço e área mais recente); None se faltar dado ou a área for
+    pequena demais para ser lote (erro de cadastro comum: "10 m²")."""
+    ok = [x for x in g if x.get("preco") and x.get("area") and x["area"] >= CFG["media"]["area_min"]]
+    if not ok:
+        return None
+    x = max(ok, key=lambda x: x.get("visto") or "")
+    return x["preco"] / x["area"]
+
+
+def base_media(g):
+    c = chave_cond(g)
+    b = bairro_key(next((x.get("bairro") for x in g if x.get("bairro")), ""))
+    return [("cond", c)] * bool(c) + [("bairro", b)] * bool(b)
+
+
+def medias_m2(grupos):
+    """{(base, nome): [(área, R$/m²), ...]} dos grupos vistos nos últimos dias."""
+    lim = CFG["media"]
+    recentes = [g for g in grupos if (age_days(max(x.get("visto") or x.get("detectado") or "" for x in g) or None) or 0)
+                <= lim["dias"]]
+    vals = {}
+    for g in recentes:
+        v = m2_grupo(g)
+        if v:
+            for k in base_media(g):
+                vals.setdefault(k, []).append((area_grupo(g), v))
+    return vals
+
+
+def area_grupo(g):
+    ok = [x for x in g if x.get("preco") and x.get("area") and x["area"] >= CFG["media"]["area_min"]]
+    return max(ok, key=lambda x: x.get("visto") or "")["area"]
+
+
+def mediana(v):
+    v, n = sorted(v), len(v)
+    return v[n // 2] if n % 2 else (v[n // 2 - 1] + v[n // 2]) / 2
+
+
+def abaixo_da_media(g, medias):
+    """Compara com lotes de tamanho parecido (metade ao dobro da área): lote grande tem R$/m² menor."""
+    v = m2_grupo(g)
+    if not v:
+        return {}
+    a = area_grupo(g)
+    for k in base_media(g):
+        ref = [m for ar, m in medias.get(k, []) if a / 2 <= ar <= a * 2]
+        if len(ref) < CFG["media"]["min_amostra"]:
+            continue
+        ref = {"m2": mediana(ref), "n": len(ref)}
+        pct = round((v / ref["m2"] - 1) * 100)
+        nome = k[1].title() if k[0] == "cond" else f"bairro {k[1].title()}"
+        media = {"ref_m2": round(ref["m2"]), "base": nome, "n": ref["n"], "pct": pct}
+        if pct <= -CFG["media"]["pct_alerta"]:
+            # muito abaixo costuma ser erro de cadastro (área ou preço), não pechincha
+            media["suspeito"] = pct <= -CFG["media"]["pct_suspeito"]
+            return {"media": media, "abaixo": True}
+        return {"media": media}
+    return {}
 
 
 # ---------- principal ----------
@@ -1386,23 +1580,25 @@ def main(perfil):
     # vários anúncios seguidos mais velhos que o limite, os restantes não precisam ser abertos.
     grupo_new = sorted((k for k in new_ids if found[k]["origem"] == "grupo"), key=lambda k: -int(k[1:]))
     outros_new = [k for k in new_ids if found[k]["origem"] != "grupo"]
+    # Perfil com "inicial_mostra_tudo": na estreia todo o estoque vira card (mercado, não só lançamentos).
+    tudo = initial and CFG.get("inicial_mostra_tudo")
+    det = Detalhes(3 if tudo else 1)
     old_streak = 0
     for k in grupo_new + outros_new:
         rec = found[k]
         estreante = rec["origem"] not in conhecidos  # primeira varredura deste portal
         limite = CFG["initial_recent_days"] if initial or estreante else CFG["max_age_days_new"]
         if rec["origem"] == "grupo":
-            if old_streak < 6:
-                grupo_detail(rec)
-                time.sleep(1)
+            if tudo or old_streak < 6:
+                det.abrir(rec)
                 idade = age_days(rec.get("publicado"))
                 old_streak = old_streak + 1 if idade is not None and idade > limite else 0
-            recente = old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite
+            recente = tudo or (old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite)
         else:
             idade = age_days(rec.get("publicado"))
             # Sem data de publicação: na estreia do portal não dá para saber se é novo, então o
             # estoque atual entra só como referência (links extras em imóveis já mostrados).
-            recente = idade <= limite if idade is not None else not estreante
+            recente = tudo or (idade <= limite if idade is not None else not estreante)
             if recente and rec["origem"] == "olx" and not rec.get("predio"):
                 olx_detail(rec)
                 time.sleep(1)
@@ -1413,6 +1609,12 @@ def main(perfil):
         rec["detectado"] = NOW_ISO
         rec["visto"] = NOW_ISO
         L[k] = rec
+
+    # Páginas de anúncio que ficaram para depois (bloqueio do Zap), só dos que estão na página
+    pend = [x for x in L.values() if x.get("detalhe_pendente") and x.get("visivel") and x["id"] not in new_ids]
+    for rec in pend[:DETALHES_POR_VARREDURA]:
+        if not det.abrir(rec) and det.falhas >= 3:
+            break
 
     state["imoveis"] = group_imoveis(L)
     novos = sum(1 for im in state["imoveis"] if im["detectado"] == NOW_ISO)
