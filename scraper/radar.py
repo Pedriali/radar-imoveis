@@ -1470,10 +1470,30 @@ def m2_grupo(g):
     return x["preco"] / x["area"]
 
 
+def chave_predio(g):
+    """Prédio do grupo (apartamentos): o nome mais citado; sem nome, rua + número."""
+    nomes = [x["predio"] for x in g if x.get("predio") and name_key(x["predio"])]
+    if nomes:
+        chaves = [name_key(n) for n in nomes]
+        i = max(range(len(nomes)), key=lambda i: (chaves.count(chaves[i]), -i))
+        return chaves[i], nomes[i].title()
+    for x in g:
+        rua, num = street(x.get("endereco"))
+        if rua and num:
+            return f"{rua}|{num}", x["endereco"].split(",")[0].strip().title() + ", " + num
+    return None
+
+
 def base_media(g):
-    c = chave_cond(g)
+    """[(tipo, chave, rótulo)] em ordem de preferência: condomínio/prédio, depois bairro."""
     b = bairro_key(next((x.get("bairro") for x in g if x.get("bairro")), ""))
-    return [("cond", c)] * bool(c) + [("bairro", b)] * bool(b)
+    if apto():
+        p = chave_predio(g)
+        primeiro = [("predio", p[0], p[1])] if p else []
+    else:
+        c = chave_cond(g)
+        primeiro = [("cond", c, c.title())] if c else []
+    return primeiro + [("bairro", b, f"bairro {b.title()}")] * bool(b)
 
 
 def medias_m2(grupos):
@@ -1486,7 +1506,7 @@ def medias_m2(grupos):
         v = m2_grupo(g)
         if v:
             for k in base_media(g):
-                vals.setdefault(k, []).append((area_grupo(g), v))
+                vals.setdefault(k[:2], []).append((area_grupo(g), v))
     return vals
 
 
@@ -1501,18 +1521,22 @@ def mediana(v):
 
 
 def abaixo_da_media(g, medias):
-    """Compara com lotes de tamanho parecido (metade ao dobro da área): lote grande tem R$/m² menor."""
+    """Compara com imóveis de tamanho parecido (por padrão, metade ao dobro da área): lote grande
+    tem R$/m² menor. O próprio grupo fica fora da sua referência."""
     v = m2_grupo(g)
     if not v:
         return {}
     a = area_grupo(g)
-    for k in base_media(g):
-        ref = [m for ar, m in medias.get(k, []) if a / 2 <= ar <= a * 2]
-        if len(ref) < CFG["media"]["min_amostra"]:
+    f = CFG["media"].get("faixa_area", 2)
+    for tipo, chave, nome in base_media(g):
+        ref = [m for ar, m in medias.get((tipo, chave), []) if a / f <= ar <= a * f]
+        if v in ref:
+            ref.remove(v)
+        minimo = CFG["media"].get("min_amostra_" + tipo, CFG["media"]["min_amostra"])
+        if len(ref) < minimo:
             continue
         ref = {"m2": mediana(ref), "n": len(ref)}
         pct = round((v / ref["m2"] - 1) * 100)
-        nome = k[1].title() if k[0] == "cond" else f"bairro {k[1].title()}"
         media = {"ref_m2": round(ref["m2"]), "base": nome, "n": ref["n"], "pct": pct}
         if pct <= -CFG["media"]["pct_alerta"]:
             # muito abaixo costuma ser erro de cadastro (área ou preço), não pechincha
