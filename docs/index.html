@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
 :root{
   /* tela de radar: fósforo verde sobre fundo quase preto */
@@ -17,6 +18,7 @@
   --mono:'Share Tech Mono',ui-monospace,Menlo,monospace; --head:'Chakra Petch',var(--mono);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono)}
 body{min-height:100vh;overflow-x:hidden;
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
@@ -135,6 +137,67 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 .paths .d em{font-style:normal;color:var(--amber)}
 .paths .go{color:var(--green)}
 
+/* lista × mapa */
+.vista{display:flex;border:1px solid var(--line)}
+.vista button{background:var(--panel);color:var(--dim);border:none;font-family:var(--head);font-weight:500;font-size:13px;
+  letter-spacing:.16em;padding:0 14px;cursor:pointer;min-height:42px}
+.vista button+button{border-left:1px solid var(--line)}
+.vista button[aria-pressed="true"]{background:var(--green);color:var(--bg)}
+.vista button:focus-visible{outline:1px solid var(--green);outline-offset:2px}
+
+/* mapa: Londrina na tela do radar */
+#sec-map{margin-top:18px}
+.mapbox{position:relative;height:min(72vh,720px);min-height:380px;border:1px solid var(--green);
+  box-shadow:0 0 24px rgba(57,255,136,.15);overflow:hidden;background:#020604}
+#mapa{position:absolute;inset:0;background:#020604}
+#mapa .leaflet-tile-pane{filter:invert(1) grayscale(1) brightness(.55) contrast(1.6) sepia(1) hue-rotate(75deg) saturate(2.6)}
+.varre{position:absolute;inset:0;pointer-events:none;z-index:500;overflow:hidden}
+.varre::before{content:"";position:absolute;left:50%;top:50%;width:250vmax;height:250vmax;margin:-125vmax 0 0 -125vmax;border-radius:50%;
+  background:conic-gradient(from 0deg,transparent 0 300deg,rgba(57,255,136,.04) 300deg,rgba(57,255,136,.32) 359.4deg,rgba(57,255,136,.9) 359.6deg,transparent 360deg);
+  animation:sweep var(--T,6s) linear infinite}
+.varre::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,transparent 0 calc(16% - 1px),rgba(57,255,136,.22) 16%,transparent calc(16% + 1px) calc(33% - 1px),
+    rgba(57,255,136,.18) 33%,transparent calc(33% + 1px) calc(50% - 1px),rgba(57,255,136,.14) 50%,transparent calc(50% + 1px) calc(67% - 1px),
+    rgba(57,255,136,.1) 67%,transparent calc(67% + 1px)),
+    linear-gradient(transparent calc(50% - .5px),rgba(57,255,136,.18) 50%,transparent calc(50% + .5px)),
+    linear-gradient(90deg,transparent calc(50% - .5px),rgba(57,255,136,.18) 50%,transparent calc(50% + .5px)),
+    radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55))}
+.hud{position:absolute;z-index:600;pointer-events:none;font-size:11.5px;letter-spacing:.12em;color:var(--green);
+  background:rgba(2,6,4,.78);border:1px solid var(--line);padding:6px 9px;line-height:1.6}
+.hud.tl{top:10px;left:10px} .hud.bl{bottom:22px;left:10px}
+.hud i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.hud .k1{background:var(--hi);box-shadow:0 0 6px var(--green)} .hud .k2{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.hud .k3{background:var(--green)} .hud .k4{border:1px solid var(--green);opacity:.7}
+
+.alvo b{position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 8px var(--green);animation:acende var(--T,6s) linear infinite;animation-delay:var(--d,0s)}
+.alvo.aprox b{background:transparent;border:1.5px solid var(--green);box-shadow:none;width:10px;height:10px;margin:-5px 0 0 -5px}
+.alvo.abx b{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.alvo.novo b{width:12px;height:12px;margin:-6px 0 0 -6px;background:var(--hi);box-shadow:0 0 12px var(--green),0 0 3px #fff}
+.alvo.novo::after{content:"";position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;
+  border:1px solid var(--green);animation:ping 2s ease-out infinite}
+.alvo:hover b{transform:scale(1.6)}
+@keyframes acende{0%{opacity:1;transform:scale(1.5)}12%{opacity:1;transform:scale(1)}70%{opacity:.38}100%{opacity:.38}}
+@keyframes ping{from{transform:scale(.3);opacity:1}to{transform:scale(1.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){.varre::before,.alvo b,.alvo.novo::after{animation:none}}
+.leaflet-container{font-family:var(--mono)}
+.leaflet-control-attribution{background:rgba(2,6,4,.8)!important;color:var(--dim)!important;font-size:10px}
+.leaflet-control-attribution a{color:var(--fg)!important}
+.leaflet-bar a{background:var(--panel)!important;color:var(--green)!important;border-color:var(--line)!important}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--fg);border:1px solid var(--green);border-radius:0;
+  box-shadow:0 0 18px rgba(57,255,136,.25)}
+.leaflet-popup-content{margin:0;width:250px!important}
+.leaflet-container a.leaflet-popup-close-button{color:var(--green)}
+.pop img{display:block;width:100%;height:130px;object-fit:cover;filter:saturate(.85)}
+.pop .pb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:5px}
+.pop .name{font-size:15px} .pop .price{font-size:19px} .pop .loc{margin:0;font-size:11.5px}
+.pop .ln{font-size:12px;color:var(--fg)} .pop .aprox{font-size:11px;color:var(--amber)}
+.pop .alerta{font-size:11.5px;padding:4px 8px}
+.pop button{margin-top:4px;background:none;border:1px solid var(--green);color:var(--green);font:inherit;font-size:12px;letter-spacing:.1em;
+  padding:7px;cursor:pointer}
+.pop button:hover{background:var(--green);color:var(--bg)}
+.vazio-mapa{position:absolute;inset:0;z-index:650;display:grid;place-items:center;color:var(--dim);font-size:13px;pointer-events:none}
+
 footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
 
 @media (max-width:560px){
@@ -177,7 +240,21 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
       <option value="area">Maior área</option>
       <option value="abx" hidden>Mais abaixo da média</option>
     </select>
+    <div class="vista" role="group" aria-label="Visualização">
+      <button type="button" data-v="lista" aria-pressed="true">LISTA</button>
+      <button type="button" data-v="mapa" aria-pressed="false">MAPA</button>
+    </div>
   </div>
+
+  <section id="sec-map" hidden>
+    <div class="mapbox">
+      <div id="mapa"></div>
+      <div class="varre" aria-hidden="true"></div>
+      <div class="hud tl" id="hud"></div>
+      <div class="hud bl"><i class="k1"></i>NOVO<br><i class="k2"></i>ABAIXO DA MÉDIA<br><i class="k3"></i>ALVO<br><i class="k4"></i>LOCAL APROXIMADO</div>
+      <div class="vazio-mapa" id="vazio-mapa" hidden></div>
+    </div>
+  </section>
 
   <section class="sec" id="sec-new">
     <h2><span class="t">ALVOS NOVOS</span> <span class="n" id="n-new">0</span></h2>
@@ -189,11 +266,13 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   </section>
 
   <footer>
-    Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.<br>
+    Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX, Chaves na Mão e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco e Cube Imóveis.<br>
     O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.<br>
     Terrenos: “abaixo da média” = R$/m² pelo menos 15% menor que a mediana dos terrenos do mesmo condomínio (ou do bairro, quando o condomínio tem menos de 4) vistos nos últimos 30 dias. Terreno maior costuma ter R$/m² menor.<br>
-    Apartamentos: mesma regra, comparando com outros apartamentos do mesmo prédio (pelo menos 3) ou, se não houver, do bairro, de área parecida (até 50% maior ou menor). Abaixo da média do bairro pode ser só prédio mais antigo ou mais simples.
+    Apartamentos: mesma regra, comparando com outros apartamentos do mesmo prédio (pelo menos 3) ou, se não houver, do bairro, de área parecida (até 50% maior ou menor). Abaixo da média do bairro pode ser só prédio mais antigo ou mais simples.<br>
+    Centro: só compara com o mesmo prédio (o bairro mistura prédios novos e antigos).<br>
+    Mapa: alvo cheio = endereço do anúncio ou do prédio; alvo vazado = local aproximado (rua ou bairro). Mapa © colaboradores do OpenStreetMap.
   </footer>
 </div>
 
@@ -203,6 +282,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   <ul class="paths" id="dlg-l"></ul>
 </dialog>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const $ = s => document.querySelector(s);
 const fmtBRL = v => v ? v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}) : 'Sob consulta';
@@ -211,13 +291,17 @@ const days = iso => iso ? Math.max(0, Math.floor((Date.now() - new Date(iso)) / 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX', raulfulgencio:'RAUL FULGÊNCIO', gleba:'GLEBA IMÓVEIS',
-  santamerica:'SANTAMERICA', perez:'PEREZ', catuai:'CATUAÍ', inglaterra:'INGLATERRA', grupo:'ZAP/VIVA REAL'};
+  santamerica:'SANTAMERICA', perez:'PEREZ', catuai:'CATUAÍ', inglaterra:'INGLATERRA', grupo:'ZAP/VIVA REAL',
+  chavesnamao:'CHAVES NA MÃO', aurora:'AURORA IMOBI', casttelo:'CASTTELO', monaco:'MONACO', cube:'CUBE IMÓVEIS'};
 
 // Uma aba por perfil de busca (scraper/config.json → "perfis"); "dados" é o arquivo em docs/data/
 const ABAS = [
   {id:'palhano', nome:'GLEBA PALHANO', dados:'listings.json', item:'apartamento', predio:'Edifício', media:'apartamentos',
    sub:'SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · APTO 100–200 M² · VENDA',
    busca:'Buscar prédio, bairro, rua…'},
+  {id:'centro', nome:'CENTRO', dados:'centro.json', item:'apartamento', predio:'Edifício', media:'apartamentos',
+   sub:'SETOR LONDRINA/PR · CENTRO · APARTAMENTOS A PARTIR DE R$ 300 MIL · VENDA',
+   busca:'Buscar prédio, rua…'},
   {id:'casas', nome:'CASAS EM CONDOMÍNIO', dados:'casas.json', item:'imóvel', predio:'Condomínio', tipos:true,
    sub:'SETOR LONDRINA/PR · ZONA SUL · CASAS E TERRENOS EM CONDOMÍNIO FECHADO · VENDA',
    busca:'Buscar condomínio, bairro, rua…'},
@@ -244,13 +328,7 @@ function card(x, i){
         <div>${v(x.banheiros)}<span>BANH.</span></div>
         <div>${v(x.vagas)}<span>VAGAS</span></div>`;
   const portais = [...new Set(x.fontes.map(f => f.portal))];
-  const md = ABA.media && x.media;
-  const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
-  const alerta = !md ? '' : x.abaixo
-    ? `<div class="alerta${md.suspeito ? ' susp' : ''}" title="R$/m² deste ${ABA.item} comparado à mediana de ${md.n} ${ABA.media} (${esc(md.base)})"><b>▼ ${-md.pct}%</b><span>${md.suspeito
-        ? 'MUITO ABAIXO DA MÉDIA — confira área e preço'
-        : 'ABAIXO DA MÉDIA de ' + esc(md.base)} · média ${brl(md.ref_m2)}/m²</span></div>`
-    : `<div class="media">${md.pct >= 0 ? '+' : ''}${md.pct}% vs média de ${esc(md.base)} (${brl(md.ref_m2)}/m², ${md.n} ${ABA.media})</div>`;
+  const alerta = alertaHTML(x);
   const n = x.fontes.length;
   return `<article class="card" tabindex="0" role="button" data-i="${i}"
       aria-label="${esc(x.predio || loc)} — ${n > 1 ? n + ' anúncios' : 'abrir anúncio'}">
@@ -272,6 +350,16 @@ function card(x, i){
       <div class="foot portais"><span class="src">${portais.map(k => PORTAL[k]||k.toUpperCase()).join(' · ')}</span></div>
     </div>
   </article>`;
+}
+
+function alertaHTML(x){
+  const md = ABA.media && x.media;
+  const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
+  return !md ? '' : x.abaixo
+    ? `<div class="alerta${md.suspeito ? ' susp' : ''}" title="R$/m² deste ${ABA.item} comparado à mediana de ${md.n} ${ABA.media} (${esc(md.base)})"><b>▼ ${-md.pct}%</b><span>${md.suspeito
+        ? 'MUITO ABAIXO DA MÉDIA — confira área e preço'
+        : 'ABAIXO DA MÉDIA de ' + esc(md.base)} · média ${brl(md.ref_m2)}/m²</span></div>`
+    : `<div class="media">${md.pct >= 0 ? '+' : ''}${md.pct}% vs média de ${esc(md.base)} (${brl(md.ref_m2)}/m², ${md.n} ${ABA.media})</div>`;
 }
 
 let SHOWN = [];
@@ -304,8 +392,109 @@ function render(){
   const od = all.filter(x => x.detectado !== LAST && hit(x)).sort(sorter);
   $('#n-new').textContent = nw.length; $('#n-old').textContent = od.length;
   SHOWN = nw.concat(od);
+  const mapa = VISTA === 'mapa';
+  $('#sec-map').hidden = !mapa;
+  $('#sec-new').hidden = $('#sec-old').hidden = mapa;
+  if (mapa) { desenharMapa(SHOWN, q); return; }
   $('#g-new').innerHTML = nw.map((x, i) => card(x, i)).join('') || `<div class="empty">${q ? 'Nenhum alvo novo corresponde à busca.' : 'Nenhum alvo novo detectado na última varredura.'}</div>`;
   $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
+}
+
+// ---------- mapa: os imóveis como alvos na tela do radar ----------
+// Cada alvo acende quando a varredura passa por ele (atraso da animação = ângulo a partir do centro).
+const T_VARRE = 6;
+let MAPA = null, CAMADA = null, MARCAS = [], VISTA = 'lista', ENQUADRADO = null;
+const hash = s => { let h = 2166136261; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return (h >>> 0) / 4294967296; };
+
+function posicao(x, usados){
+  // local aproximado (bairro) espalha num raio de ~400 m; vários no mesmo ponto (mesmo prédio) ficam em volta dele
+  let [lat, lon] = [x.lat, x.lon];
+  const k = lat.toFixed(5) + ',' + lon.toFixed(5), n = usados[k] = (usados[k] || 0) + 1;
+  const r = x.geo === 'bairro' ? 0.0012 + hash(x.id) * 0.0028 : n > 1 ? 0.00022 * Math.sqrt(n) : 0;
+  const a = (x.geo === 'bairro' ? hash(x.id + 'a') : n * 0.618) * 2 * Math.PI;
+  return [lat + r * Math.sin(a), lon + r * Math.cos(a) / Math.cos(lat * Math.PI / 180)];
+}
+
+function iniciarMapa(){
+  MAPA = L.map('mapa', {zoomControl: false, attributionControl: true, minZoom: 11, maxZoom: 18, zoomSnap: 0.5})
+    .setView([-23.318, -51.17], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(MAPA);
+  L.control.zoom({position: 'topright'}).addTo(MAPA);
+  CAMADA = L.layerGroup().addTo(MAPA);
+  MAPA.on('move zoom resize', sincronizar);
+  document.querySelector('.mapbox').style.setProperty('--T', T_VARRE + 's');
+}
+
+function sincronizar(){
+  // atraso de cada alvo = quando a linha da varredura (girando do norte, sentido horário) passa por ele
+  if (!MAPA) return;
+  const c = MAPA.getSize().divideBy(2);
+  for (const m of MARCAS) {
+    const el = m.getElement(); if (!el) continue;
+    const p = MAPA.latLngToContainerPoint(m.getLatLng());
+    const ang = (Math.atan2(p.x - c.x, c.y - p.y) * 180 / Math.PI + 360) % 360;
+    el.style.setProperty('--d', (ang / 360 * T_VARRE - T_VARRE).toFixed(2) + 's');
+  }
+}
+
+function popup(x, i){
+  const loc = [x.endereco, x.bairro].filter(Boolean).join(' · ');
+  const n = x.fontes.length;
+  const aprox = {bairro: 'LOCAL APROXIMADO (BAIRRO)', rua: 'LOCAL APROXIMADO (RUA)', predio: 'LOCAL PELO PRÉDIO'}[x.geo];
+  const specs = x.tipo === 'terreno' ? `${x.area ?? '–'} m² de terreno`
+    : `${x.area ?? '–'} m² · ${x.quartos ?? '–'} qts · ${x.vagas ?? '–'} vagas`;
+  return `<div class="pop">${x.foto ? `<img src="${esc(x.foto)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+    <div class="pb">
+      <div class="name${x.predio ? '' : ' unk'}">${esc(x.predio || ABA.predio + ' não identificado')}</div>
+      <div class="loc">${esc(loc)}</div>
+      <div class="price">${fmtBRL(x.preco)}</div>
+      <div class="ln">${specs}${x.preco && x.area ? ' · R$ ' + Math.round(x.preco / x.area).toLocaleString('pt-BR') + '/m²' : ''}</div>
+      ${alertaHTML(x)}
+      ${aprox && x.geo !== 'predio' ? `<div class="aprox">◌ ${aprox}</div>` : ''}
+      <button type="button" data-abre="${i}">${n > 1 ? 'VER ' + n + ' ANÚNCIOS ›' : 'ABRIR ANÚNCIO ›'}</button>
+    </div></div>`;
+}
+
+function desenharMapa(lista, q){
+  if (typeof L === 'undefined') { $('#vazio-mapa').hidden = false; $('#vazio-mapa').textContent = 'Mapa indisponível (sem conexão com o servidor de mapas).'; return; }
+  if (!MAPA) iniciarMapa();
+  MAPA.invalidateSize();
+  CAMADA.clearLayers(); MARCAS = [];
+  const usados = {}, com = lista.map((x, i) => [x, i]).filter(([x]) => x.lat);
+  for (const [x, i] of com) {
+    const cls = ['alvo', x.detectado === LAST ? 'novo' : '', ABA.media && x.abaixo && !x.media?.suspeito ? 'abx' : '',
+                 x.geo === 'bairro' || x.geo === 'rua' ? 'aprox' : ''].filter(Boolean).join(' ');
+    const m = L.marker(posicao(x, usados), {
+      icon: L.divIcon({className: cls, html: '<b></b>', iconSize: [22, 22]}),
+      title: (x.predio || x.bairro || '') + ' · ' + fmtBRL(x.preco),
+      zIndexOffset: x.detectado === LAST ? 1000 : x.abaixo ? 500 : 0,
+    }).bindPopup(() => popup(x, i), {maxWidth: 260, minWidth: 250, autoPanPadding: [30, 30]});
+    m.addTo(CAMADA); MARCAS.push(m);
+  }
+  const novos = com.filter(([x]) => x.detectado === LAST).length;
+  const aprox = com.filter(([x]) => x.geo === 'bairro').length;
+  $('#hud').innerHTML = `ALVOS NO MAPA <b>${com.length}</b>${novos ? ` · NOVOS <b>${novos}</b>` : ''}${aprox ? `<br>${aprox} com local aproximado` : ''}${lista.length > com.length ? `<br>${lista.length - com.length} sem localização` : ''}`;
+  $('#vazio-mapa').hidden = com.length > 0;
+  $('#vazio-mapa').textContent = q ? 'Nenhum alvo corresponde à busca.' : 'Ainda não há alvos localizados nesta aba (a próxima varredura localiza).';
+  // enquadra os alvos ao trocar de aba (não a cada tecla da busca)
+  if (com.length && ENQUADRADO !== ABA.id) {
+    // enquadra o miolo (sem os 3% mais afastados de cada lado, que costumam ser erro de cadastro)
+    const q_ = (v, f) => v.sort((a, b) => a - b)[Math.min(v.length - 1, Math.floor(v.length * f))];
+    const lats = MARCAS.map(m => m.getLatLng().lat), lons = MARCAS.map(m => m.getLatLng().lng);
+    const f = MARCAS.length >= 30 ? 0.03 : 0;
+    MAPA.fitBounds([[q_(lats, f), q_(lons, f)], [q_(lats, 1 - f), q_(lons, 1 - f)]], {maxZoom: 15, padding: [30, 30]});
+    ENQUADRADO = ABA.id;
+  }
+  requestAnimationFrame(sincronizar);
+}
+
+function vista(v){
+  VISTA = v;
+  try { localStorage.setItem('radar-vista', v); } catch {}
+  document.querySelectorAll('.vista button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v));
+  if (DATA) render();
 }
 
 // Horários do agendamento (UTC): 12h, 17h e 23h = 09h, 14h e 20h de Brasília
@@ -342,6 +531,7 @@ async function mostrar(a){
   try { localStorage.setItem('radar-aba', a.id); } catch {}
   if (location.hash.slice(1) !== a.id) history.replaceState(null, '', '#' + a.id);
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.aba === a.id));
+  document.querySelector(`#tabs button[data-aba="${a.id}"]`)?.scrollIntoView({block: 'nearest', inline: 'nearest'});
   $('#sub').textContent = a.sub;
   $('#q').placeholder = a.busca;
   $('#tipo').hidden = !a.tipos;
@@ -361,7 +551,11 @@ try { inicial = ABAS.find(a => a.id === location.hash.slice(1)) || ABAS.find(a =
 ABA = inicial || ABAS[0];
 abas();
 ABAS.forEach(a => carregar(a).then(d => { $('#tn-' + a.id).textContent = (d.imoveis || []).length || ''; }));
+try { VISTA = (new URLSearchParams(location.search).get('vista') || localStorage.getItem('radar-vista')) === 'mapa' ? 'mapa' : 'lista'; } catch {}
+document.querySelectorAll('.vista button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === VISTA));
 mostrar(ABA).then(() => {
+    document.querySelector('.vista').addEventListener('click', e => { const b = e.target.closest('button'); if (b) vista(b.dataset.v); });
+    document.addEventListener('click', e => { const b = e.target.closest('[data-abre]'); if (b) open_(SHOWN[+b.dataset.abre]); });
     $('#q').addEventListener('input', render);
     $('#sort').addEventListener('change', render);
     $('#tipo').addEventListener('change', render);

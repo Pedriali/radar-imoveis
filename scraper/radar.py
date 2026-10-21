@@ -12,6 +12,7 @@ import sys
 import time
 import unicodedata
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -140,6 +141,25 @@ def age_days(iso):
     return (NOW - dt).total_seconds() / 86400
 
 
+# Caixa de Londrina (área urbana e condomínios da zona sul): coordenada fora dela é erro de cadastro.
+LONDRINA = {"lat": (-23.45, -23.20), "lon": (-51.32, -51.05)}
+
+
+def em_londrina(lat, lon):
+    return LONDRINA["lat"][0] <= lat <= LONDRINA["lat"][1] and LONDRINA["lon"][0] <= lon <= LONDRINA["lon"][1]
+
+
+def coords(lat, lon, aproximada=False):
+    """{"lat", "lon"} quando o portal informa a localização exata (dentro de Londrina); senão {}."""
+    try:
+        lat, lon = float(lat), float(lon)
+    except (TypeError, ValueError):
+        return {}
+    if aproximada or not em_londrina(lat, lon):
+        return {}
+    return {"lat": round(lat, 6), "lon": round(lon, 6)}
+
+
 # ---------- nome do prédio ----------
 NAME_RE = re.compile(
     r"\b(?i:Ed\.|Edif\.|Edif[ií]cio|Residencial|Condom[ií]nio|Cond\.|Torre|Res\.)\s+"
@@ -224,6 +244,8 @@ def grupo_record(o):
         "vagas": pick("parkingSpaces"),
         "titulo": o.get("title"),
         "links": {},
+        **coords((addr.get("coordinates") or {}).get("latitude"), (addr.get("coordinates") or {}).get("longitude"),
+                 aproximada=addr.get("isApproximateLocation")),
     }
 
 
@@ -465,7 +487,8 @@ RF_LONDRINA = 564
 RF_FIELDS = ["idtProperty", "indType", "indStatus", "namCity", "namDistrict", "namStreet", "numNumber",
              "namCondominium", "namCategory", "desTitleSite", "prop_char_95", "prop_char_5", "prop_char_7",
              "prop_char_176", "prop_char_12", "valSales", "flgHideValSaleSite", "dtaRegister",
-             "dtaRegisterCaptivatorSales", "idtCategory", "idtSubCategory", "prop_char_1", "prop_char_2"]
+             "dtaRegisterCaptivatorSales", "idtCategory", "idtSubCategory", "prop_char_1", "prop_char_2",
+             "latitude", "longitude", "flgShowMapSite"]
 # Casas em condomínio: categoria 2 (Casas) subcategorias 10 (Condomínio) e 40 (Sobrado Condomínio);
 # terrenos: categoria 5 subcategoria 22 (Condomínio). A API ignora filtro por subcategoria. Há casas e
 # terrenos de condomínio cadastrados em outras subcategorias, mas com namCondominium preenchido.
@@ -555,6 +578,7 @@ def scan_raulfulgencio(found):
             "titulo": (o.get("desTitleSite") or "").strip(" |") or None,
             "publicado": _rf_publicado(o),
             "links": {"raulfulgencio": f"{RF_BASE}/imovel/{pid}"},  # redireciona para a URL canônica
+            **coords(o.get("latitude"), o.get("longitude"), aproximada=not o.get("flgShowMapSite")),
         }
     # Fotos (campo pesado) só para os que passaram no filtro.
     if recs:
@@ -970,6 +994,7 @@ def scan_perez(found):
             "titulo": o.get("title"),
             "publicado": publicado,
             "links": {"perez": _pz_link(o)},
+            **coords(o.get("latitude"), o.get("longitude")),
         }
         n += 1
     log(f"  perez: {n} no filtro")
@@ -1255,6 +1280,439 @@ def _scan_inglaterra(items, total, found):
     return "ok"
 
 
+# ---------- Chaves na Mão (chavesnamao.com.br) ----------
+# Portal grande (Next.js, app router). A página de busca traz os anúncios no fluxo RSC (rsc(): objetos
+# "dataBySegment": {...}, 15 por página) e um JSON-LD (RealEstateListing) com foto, endereço e coordenadas
+# de cada um. Filtros pela URL: /<tipo>-a-venda/pr-londrina/[<bairro>/]?filtro=amin:100,amax:200,pmin:N,or:6&pg=N
+# (or:6 = mais recentes). Nos cards as áreas vêm como "2.783" (ponto = milhar); o primeiro anúncio da
+# página vem completo (com createdAt) e aí a área tem decimal ("40.470" = 40,47 m²).
+# Data de publicação (createdAt, horário de Brasília sem fuso) só na página do anúncio: é aberta para os
+# anúncios desconhecidos no filtro, até CM_DETALHES_MAX por varredura (traz também a descrição).
+# Coordenadas: as do JSON-LD só quando o endereço é público e tem número (sem número é o centro do bairro).
+CM_BASE = "https://www.chavesnamao.com.br"
+CM_DETALHES_MAX = 40
+CM_LDJSON = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
+
+
+def cm_buscas():
+    """[(caminho com '?filtro=...', tipo, exige prova de condomínio)] da busca do perfil."""
+    if apto():
+        f = [f"amin:{CFG['area_min']}", f"amax:{CFG['area_max']}"]
+        if CFG.get("preco_min"):
+            f.append(f"pmin:{CFG['preco_min']}")
+        # Perfil de um bairro só (Centro): busca no bairro; senão a cidade toda (os nomes de bairro variam:
+        # "Gleba Palhano", "Gleba Fazenda Palhano", "Palhano 1"...) e o bairro é filtrado aqui.
+        b = f"{re.sub(r'[^a-z0-9]+', '-', CFG['bairros'][0])}/" if len(CFG["bairros"]) == 1 else ""
+        return [(f"/apartamentos-a-venda/pr-londrina/{b}?filtro={','.join(f)},or:6", None, False)]
+    lotes = "/terrenos-em-condominio-a-venda/pr-londrina/?filtro=or:6"
+    if terrenos():  # lotes de condomínio + todos os lotes (com prova de condomínio)
+        return [(lotes, "terreno", False), ("/terrenos-a-venda/pr-londrina/?filtro=or:6", "terreno", True)]
+    return [("/casas-em-condominio-a-venda/pr-londrina/?filtro=or:6", "casa", False), (lotes, "terreno", False)]
+
+
+def cm_area(v, decimal):
+    v = str(v or "").strip()
+    if not re.fullmatch(r"[\d.,]+", v):
+        return None
+    try:
+        a = float(v.replace(",", ".")) if decimal else float(v.replace(".", "").replace(",", "."))
+    except ValueError:
+        return None
+    return round(a) or None
+
+
+def cm_ld(page):
+    """{url do anúncio: itemOffered do JSON-LD} da página de busca."""
+    out = {}
+    for b in CM_LDJSON.findall(page):
+        try:
+            d = json.loads(b)
+        except ValueError:
+            continue
+        if isinstance(d, dict) and d.get("@type") == "RealEstateListing":
+            for e in (d.get("offers") or {}).get("itemListElement") or []:
+                if isinstance(e, dict) and e.get("url"):
+                    out[e["url"]] = e.get("itemOffered") or {}
+    return out
+
+
+def cm_itens(s):
+    dec = json.JSONDecoder()
+    out, vistos = [], set()
+    for m in re.finditer(r'"dataBySegment":(?=\{"id":\d+)', s):
+        try:
+            o = dec.raw_decode(s, m.end())[0]
+        except ValueError:
+            continue
+        if o.get("id") not in vistos:
+            vistos.add(o.get("id"))
+            out.append(o)
+    return out
+
+
+def cm_publicado(v):
+    """createdAt "2026-10-20T19:35:39.000" (Brasília, UTC-3) -> ISO UTC."""
+    try:
+        dt = datetime.fromisoformat(str(v)[:19]).replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+    return datetime.fromtimestamp(dt.timestamp() + 3 * 3600, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def cm_record(o, ld, tipo):
+    loc = o.get("location") or {}
+    area = o.get("area") or {}
+    dec = "createdAt" in o  # anúncio completo: área com decimal
+    if tipo == "terreno":
+        a = cm_area(area.get("total"), dec) or cm_area(area.get("useful"), dec)
+    else:
+        a = cm_area(area.get("useful"), dec) or cm_area(area.get("total"), dec)
+    if not area_ok(a):
+        return None
+    rua = ((loc.get("street") or {}).get("name") or "").strip()
+    num = ((loc.get("street") or {}).get("addressNumber") or "").strip()
+    if not loc.get("publicAddress") or "dispon" in norm(rua):
+        rua = num = ""
+    num = num if re.fullmatch(r"\d+", num) and num != "0" else ""
+    url = CM_BASE + o["url"]
+    item = ld.get(url) or {}
+    geo = item.get("geo") or {}
+    pr = o.get("prices") or {}
+    img = item.get("image")
+    rec = {
+        "id": f"cm{o['id']}",
+        "tipo": tipo,
+        "predio": building_from_text(o.get("title")),
+        "endereco": (f"{rua}, {num}" if num else rua) or None,
+        "bairro": (loc.get("neighborhood") or {}).get("name"),
+        "foto": (img[0] if isinstance(img, list) and img else img) or None,
+        "area": a,
+        "preco": pr.get("rawPrice") if isinstance(pr.get("rawPrice"), int) and pr["rawPrice"] > 0 else None,
+        "quartos": (o.get("bedrooms") or {}).get("count") if isinstance(o.get("bedrooms"), dict) else None,
+        "banheiros": (o.get("bathrooms") or {}).get("count") if isinstance(o.get("bathrooms"), dict) else None,
+        "vagas": (o.get("garages") or {}).get("count") if isinstance(o.get("garages"), dict) else None,
+        "titulo": o.get("title"),
+        "publicado": cm_publicado(o["createdAt"]) if o.get("createdAt") else None,
+        "links": {"chavesnamao": url},
+    }
+    rec.update(coords(geo.get("latitude"), geo.get("longitude"), aproximada=not num))
+    return rec
+
+
+def cm_detalhe(rec):
+    """Página do anúncio: data de publicação e descrição (nome do prédio)."""
+    page = fetch(rec["links"]["chavesnamao"], tries=2)
+    if not page:
+        return
+    s = rsc(page)
+    m = re.search(r'"data":(?=\{"id":' + rec["id"][2:] + r",)", s)
+    try:
+        d = json.JSONDecoder().raw_decode(s, m.end())[0] if m else {}
+    except ValueError:
+        d = {}
+    if d.get("createdAt"):
+        rec["publicado"] = cm_publicado(d["createdAt"])
+    if not rec.get("predio"):
+        rec["predio"] = building_from_text(rec.get("titulo"), d.get("descriptionRaw"))
+
+
+def scan_chavesnamao(known, max_pages, found):
+    pages_ok, detalhes = 0, 0
+    for path, tipo, prova in cm_buscas():
+        sem_novos = 0
+        for p in range(1, max_pages + 1):
+            page = fetch(CM_BASE + path + (f"&pg={p}" if p > 1 else ""))
+            if page is None:
+                break
+            itens = cm_itens(rsc(page))
+            ld = cm_ld(page)
+            pages_ok += 1
+            fresh = 0
+            for o in itens:
+                if o.get("transaction") != "SELL" or not o.get("url") or not o.get("id"):
+                    continue
+                loc = o.get("location") or {}
+                if norm((loc.get("city") or {}).get("name")) != "londrina":
+                    continue
+                bairro = (loc.get("neighborhood") or {}).get("name")
+                if prova and not condominio_ok(o.get("title"), bairro):
+                    continue
+                if not local_ok(bairro, o.get("title")):
+                    continue
+                rec = cm_record(o, ld, tipo)
+                if not rec:
+                    continue
+                if rec.get("lat") and not coord_ok({"coordinates": {"latitude": rec["lat"], "longitude": rec["lon"]},
+                                                     "neighborhood": bairro}):
+                    continue
+                if rec["id"] in found:
+                    continue
+                if rec["id"] not in known:
+                    fresh += 1
+                    if detalhes < CM_DETALHES_MAX:
+                        detalhes += 1
+                        time.sleep(1)
+                        cm_detalhe(rec)
+                found[rec["id"]] = rec
+            log(f"  chavesnamao {path.split('/')[1]}{' (ampla)' if prova else ''} p{p}: "
+                f"{len(itens)} anúncios, {fresh} desconhecidos")
+            sem_novos = 0 if fresh else sem_novos + 1
+            if len(itens) < 15 or parar(known, sem_novos):
+                break
+            time.sleep(1)
+    return {"chavesnamao": "ok" if pages_ok else "falhou"}
+
+
+# ---------- Imobiliárias Aurora Imobi, Casttelo e Monaco (Londrina) — sites Kenlo ----------
+# Mesmo motor do site da Inglaterra (ver acima): API JSON interna
+#   /api/listings/a-venda/<apartamento|casa|terreno>/londrina[/<bairro>]?area=MIN~MAX&size=48&pagina=N
+# devolve {"data": [...], "count": N}; tags=GATED_COMMUNITY = só condomínio fechado. Não há filtro de preço
+# nem data de cadastro (só updated_at). /api/listing/<ref> traz o prédio ("building"), o endereço com número
+# e latitude/longitude: aberto para os anúncios no filtro, até KENLO_DETALHES_MAX por site e varredura
+# (coordenadas só quando o endereço tem número; sem ele a posição é aproximada).
+KENLO_SITES = {  # chave do portal: (site, prefixo do id)
+    "aurora": ("https://www.auroraimobi.com.br", "au"),
+    "casttelo": ("https://www.imobiliariacasttelo.com.br", "cs"),
+    "monaco": ("https://www.imobiliariamonaco.com.br", "mn"),
+}
+KENLO_DETALHES_MAX = 40
+
+
+def _kenlo_json(url):
+    for i in range(2):
+        try:
+            r = S.get(url, timeout=45, headers={"Accept": "application/json"})
+            if r.status_code == 200:
+                return r.json()
+            log(f"  HTTP {r.status_code} {url}")
+            if r.status_code == 404:
+                return None
+        except Exception as e:  # noqa: BLE001
+            log(f"  erro {e} {url}")
+        time.sleep(3 * (i + 1))
+    return None
+
+
+def _kenlo_lista(url):
+    items, total, page = [], 0, 1
+    while page <= 15:
+        j = _kenlo_json(url + f"&pagina={page}")
+        if not isinstance(j, dict) or not isinstance(j.get("data"), list):
+            return None if page == 1 else (items, total)
+        total = j.get("count") or 0
+        items += j["data"]
+        if not j["data"] or len(items) >= total:
+            break
+        page += 1
+        time.sleep(1)
+    return items, total
+
+
+def _kenlo_buscas(base):
+    api = f"{base}/api/listings/a-venda"
+    if apto():  # perfil de um bairro só (Centro): busca no bairro; senão a cidade toda
+        b = f"/{re.sub(r'[^a-z0-9]+', '-', CFG['bairros'][0])}" if len(CFG["bairros"]) == 1 else ""
+        return [(f"{api}/apartamento/londrina{b}?area={CFG['area_min']}~{CFG['area_max']}&size=48", None)]
+    if terrenos():  # todos os terrenos; os sem marca de condomínio precisam de prova
+        return [(f"{api}/terreno/londrina?size=48", "terreno")]
+    return [(f"{api}/{t}/londrina?size=48&tags=GATED_COMMUNITY", t) for t in ("casa", "terreno")]
+
+
+def _kenlo_detalhe(base, ref, rec):
+    d = _kenlo_json(f"{base}/api/listing/{ref}")
+    if not isinstance(d, dict):
+        return
+    if not rec["predio"]:
+        rec["predio"] = (d.get("building") or "").split("|")[0].strip() or building_from_text(
+            d.get("title"), d.get("listing_description"))
+    rua = (d.get("full_address") or "").split(" - ")[0].strip()
+    if re.search(r",\s*\d+", rua):
+        rec["endereco"] = rua
+        rec.update(coords(d.get("latitude"), d.get("longitude")))
+    ua = _in_int(d.get("usable_floor_area")) or _in_int(d.get("private_floor_area"))
+    if ua and area_ok(ua) and rec["tipo"] is None:
+        rec["area"] = ua
+
+
+def _scan_kenlo(chave, found):
+    base, pref = KENLO_SITES[chave]
+    items, total, ok = [], 0, False
+    for url, tipo in _kenlo_buscas(base):
+        got = _kenlo_lista(url)
+        time.sleep(1)
+        if got is None:
+            log(f"  {chave}: falha na busca {url}")
+            continue
+        ok = True
+        for x in got[0]:
+            x["_tipo"] = tipo
+        items += got[0]
+        total += got[1]
+    if not ok:
+        return "falhou"
+    recs = {}
+    for x in items:
+        if x.get("type") != "imob_property" or "FOR_SALE" not in str(x.get("property_purposes")):
+            continue
+        bairro = x.get("neighborhood_display") or x.get("neighborhood") or ""
+        if norm(x.get("city")) != "londrina" or not local_ok(bairro, x.get("condo_name"), x.get("picture_title")):
+            continue
+        if terrenos() and not (x.get("condo_name") or "GATED_COMMUNITY" in (x.get("amenities") or [])
+                               or condominio_ok(x.get("picture_title"), x.get("website_title"))):
+            continue
+        area = _in_int(x.get("area"))
+        ref = x.get("property_full_reference")
+        if not area_ok(area) or not ref:
+            continue
+        ptitle = x.get("picture_title")
+        condo = (x.get("condo_name") or "").split("|")[0].strip() or None
+        recs[ref] = {
+            "id": pref + ref,
+            "tipo": x["_tipo"],
+            "predio": condo or building_from_text(ptitle, x.get("listing_description")),
+            "endereco": _in_street(x.get("full_address")),
+            "bairro": bairro,
+            "foto": x.get("picture_full") or x.get("picture_thumb"),
+            "area": area,
+            "preco": _in_int(x.get("sale_price")),
+            "quartos": _in_int(x.get("bedrooms")),
+            "banheiros": _in_int(x.get("bathrooms")),
+            "vagas": _in_int(x.get("garages")),
+            "titulo": ptitle if _in_title_ok(ptitle) else (x.get("website_title") or x.get("heading1")),
+            "publicado": None,  # o site só expõe updated_at (data de atualização)
+            "links": {chave: base + x["url"] if x.get("url") else base},
+        }
+    # detalhe: primeiro os que estão sem nome de prédio
+    fila = sorted(recs, key=lambda r: bool(recs[r]["predio"]))[:KENLO_DETALHES_MAX]
+    for ref in fila:
+        time.sleep(1)
+        _kenlo_detalhe(base, ref, recs[ref])
+    for rec in recs.values():
+        found[rec["id"]] = rec
+    log(f"  {chave}: {len(recs)} no filtro ({len(items)} de {total} lidos, {len(fila)} detalhes)")
+    return "ok"
+
+
+def scan_aurora(found):
+    """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
+    return _scan_kenlo("aurora", found)
+
+
+def scan_casttelo(found):
+    """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
+    return _scan_kenlo("casttelo", found)
+
+
+def scan_monaco(found):
+    """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
+    return _scan_kenlo("monaco", found)
+
+
+# ---------- Cube Imóveis (cubeimoveis.com.br) — CRM Vista, site Next.js (Loft/gtmcapital) ----------
+# A busca /busca?finalidade=Venda&tipo=<Categoria>&cidade=Londrina[&bairro=X][&areaPrivativaMin=&areaPrivativaMax=]&page=N
+# é renderizada no servidor: o fluxo RSC (rsc()) traz "properties": [...] com os campos do Vista (Codigo,
+# Categoria, Bairro, AreaPrivativa/AreaTotal, ValorVenda, Dormitorios, Vagas, Empreendimento, Endereco sem
+# número, Latitude/Longitude, DataCadastro só com o dia) e "total"/"quantity" (12 por página).
+# Coordenadas às vezes vêm zeradas ou fora da cidade: coords() só fica com as que caem em Londrina.
+CUBE_BASE = "https://cubeimoveis.com.br"
+CUBE_TIPOS = {"Apartamento": None, "Casa em Condomínio": "casa", "Terreno": "terreno"}
+
+
+def _cube_buscas():
+    """[(parâmetros da busca, tipo, exige prova de condomínio)]."""
+    q = "finalidade=Venda&cidade=Londrina&tipo="
+    if apto():
+        b = f"&bairro={urllib.parse.quote(CFG['bairros'][0].title())}" if len(CFG["bairros"]) == 1 else ""
+        return [(f"{q}Apartamento{b}&areaPrivativaMin={CFG['area_min']}&areaPrivativaMax={CFG['area_max']}", None, False)]
+    t = urllib.parse.quote("Casa em Condomínio")
+    # não há "Terreno em Condomínio": lotes de condomínio vêm em "Terreno" (com prova de condomínio)
+    return ([] if terrenos() else [(q + t, "casa", False)]) + [(q + "Terreno", "terreno", True)]
+
+
+def _cube_link(o):
+    a = o.get("AreaPrivativa") or 0
+    a = int(a) if float(a).is_integer() else a
+    parts = [_pz_slug(o.get("Categoria")), _pz_slug(o.get("Bairro")), _pz_slug(o.get("Cidade")), _pz_slug(o.get("UF")),
+             f"{o['Dormitorios']}-quartos" if (o.get("Dormitorios") or 0) > 0 else "", f"{a}m2" if a else ""]
+    return f"{CUBE_BASE}/imovel/{'-'.join(p for p in parts if p)}-{o['Codigo']}"
+
+
+def scan_cube(found):
+    """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
+    ok, n, lidos = False, 0, 0
+    dec = json.JSONDecoder()
+    for q, tipo, prova in _cube_buscas():
+        page, total = 1, 0
+        while page <= 20:
+            html = fetch(f"{CUBE_BASE}/busca?{q}&page={page}")
+            if not html:
+                break
+            s = rsc(html)
+            i = s.find('"properties":[')
+            if i < 0:
+                log("  cube: lista de imóveis não encontrada")
+                break
+            try:
+                props = dec.raw_decode(s, i + len('"properties":'))[0]
+            except ValueError:
+                break
+            ok = True
+            m = re.search(r'"total":(\d+),"page":\d+,"quantity":(\d+)', s)
+            total, qtd = (int(m.group(1)), int(m.group(2))) if m else (0, 12)
+            lidos += len(props)
+            for o in props:
+                if not o.get("Codigo") or not (o.get("FinalidadeStatus") or {}).get("VENDA"):
+                    continue
+                if norm(o.get("Cidade")) != "londrina" or CUBE_TIPOS.get(o.get("Categoria"), 0) != tipo:
+                    continue
+                titulo = (o.get("TituloSite") or "").strip() or None
+                bairro = o.get("Bairro") or ""
+                emp = (o.get("Empreendimento") or "").strip()
+                desc = o.get("DescricaoWebResumo") or ""
+                if prova and not condominio_ok(titulo, emp, desc):
+                    continue
+                if not local_ok(bairro, emp, titulo):
+                    continue
+                if tipo == "terreno":
+                    area = round(o.get("AreaTotal") or o.get("AreaPrivativa") or 0) or None
+                else:
+                    area = round(o.get("AreaPrivativa") or o.get("AreaTotal") or 0) or None
+                if not area_ok(area):
+                    continue
+                rua = " ".join(x for x in (o.get("TipoEndereco"), o.get("Endereco")) if x).strip()
+                predio = re.sub(r"(?i)^(?:ed\.|edif\.|edif[ií]cio|residencial|condom[ií]nio)\s+", "", emp.split("|")[0]).strip()
+                if re.match(r"(?i)(?:terreno|lote|casa)\b", predio):  # "Terreno - Rua X"
+                    predio = ""
+                dc = str(o.get("DataCadastro") or "")
+                rec = {
+                    "id": "cb" + o["Codigo"],
+                    "tipo": tipo,
+                    "predio": predio or building_from_text(titulo, desc),
+                    "endereco": rua if o.get("Endereco") else None,
+                    "bairro": bairro,
+                    "foto": o.get("FotoDestaque") or o.get("FotoDestaquePequena") or None,
+                    "area": area,
+                    "preco": int(o["ValorVenda"]) if o.get("ValorVenda") else None,
+                    "quartos": o.get("Dormitorios") or None,
+                    # TotalBanheiros = BanheiroSocialQtd + Suites, mas o "social" já costuma contar os das suítes
+                    "banheiros": o.get("BanheiroSocialQtd") or o.get("TotalBanheiros") or None,
+                    "vagas": o.get("Vagas") if o.get("Vagas") or tipo != "terreno" else None,
+                    "titulo": titulo,
+                    "publicado": dc[:10] + "T00:00:00Z" if re.match(r"\d{4}-\d\d-\d\d", dc) else None,
+                    "links": {"cube": _cube_link(o)},
+                }
+                rec.update(coords(o.get("Latitude"), o.get("Longitude")))
+                found[rec["id"]] = rec
+                n += 1
+            if not props or page * qtd >= total:
+                break
+            page += 1
+            time.sleep(1)
+        time.sleep(1)
+    log(f"  cube: {n} no filtro ({lidos} lidos)")
+    return "ok" if ok else "falhou"
+
+
 # ---------- desduplicação ----------
 # O mesmo apartamento costuma aparecer em vários portais (e às vezes 2× no mesmo portal, por
 # imobiliárias diferentes). Cada anúncio fica guardado separado em "listings"; a cada varredura
@@ -1419,6 +1877,9 @@ def group_imoveis(L):
         if nomes:
             chaves = [name_key(n) for n in nomes]
             im["predio"] = nomes[max(range(len(nomes)), key=lambda i: (chaves.count(chaves[i]), -i))]
+        geo = next((x for x in g if x.get("lat")), None)
+        if geo:
+            im.update(lat=geo["lat"], lon=geo["lon"], geo="exato")
         for k in ("endereco", "foto", "quartos", "banheiros", "vagas"):
             if not im[k]:
                 im[k] = next((x[k] for x in g if x.get(k)), None)
@@ -1439,7 +1900,12 @@ def group_imoveis(L):
             im["predio"] = chave_cond(g).title()
         if medias:
             im.update(abaixo_da_media(g, medias))
+        local = chave_cond(g) if terrenos() else (chave_predio(g) or [None])[0]
+        if local and apto():  # mesmo nome de prédio em bairros diferentes
+            local = f"{bairro_key(im.get('bairro'))}|{local}"
+        im["_local"] = local
         out.append(im)
+    localizar(out)
     return out
 
 
@@ -1493,7 +1959,9 @@ def base_media(g):
     else:
         c = chave_cond(g)
         primeiro = [("cond", c, c.title())] if c else []
-    return primeiro + [("bairro", b, f"bairro {b.title()}")] * bool(b)
+    bases = primeiro + [("bairro", b, f"bairro {b.title()}")] * bool(b)
+    # "bases" restringe a referência (Centro: só o prédio; o bairro mistura prédios novos e antigos)
+    return [x for x in bases if x[0] in CFG["media"].get("bases", ("predio", "cond", "bairro"))]
 
 
 def medias_m2(grupos):
@@ -1546,6 +2014,139 @@ def abaixo_da_media(g, medias):
     return {}
 
 
+# ---------- localização no mapa ----------
+# Coordenada exata (Zap/Viva Real sem "localização aproximada", Raul Fulgêncio, Perez) vale para o
+# prédio todo: os outros imóveis do mesmo prédio/condomínio herdam a mediana dela. Sem isso, busca no
+# OpenStreetMap (Nominatim, gratuito, no máximo 1 consulta/s) a rua com número, depois o nome do prédio
+# e, por fim, o bairro. "geo" diz a precisão: exato, predio, rua ou bairro. As respostas (inclusive as
+# vazias) ficam em docs/data/geocache.json, então cada endereço só é consultado uma vez.
+GEOCACHE = DATA_DIR / "geocache.json"
+GEO_MAX_CONSULTAS = 80  # por perfil e varredura; o resto fica para as próximas
+NOMINATIM = "https://nominatim.openstreetmap.org/search"
+# Resultado do Nominatim aceito como "o prédio/condomínio" (evita casar nome com loja ou rua)
+GEO_CLASSES = {"building", "landuse", "place", "leisure", "amenity"}
+
+
+class Geo:
+    def __init__(self):
+        try:
+            self.cache = json.loads(GEOCACHE.read_text())
+        except (OSError, ValueError):
+            self.cache = {}
+        self.consultas = 0
+
+    def salvar(self):
+        GEOCACHE.write_text(json.dumps(self.cache, ensure_ascii=False, indent=0, sort_keys=True))
+
+    def buscar(self, chave, params, aceita=lambda r: True):
+        if chave in self.cache:
+            return self.cache[chave]
+        if self.consultas >= GEO_MAX_CONSULTAS:
+            return None
+        self.consultas += 1
+        q = dict(params, format="jsonv2", limit=5, countrycodes="br", viewbox="-51.32,-23.20,-51.05,-23.45", bounded=1)
+        url = NOMINATIM + "?" + urllib.parse.urlencode(q)
+        res = None
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "radar-imoveis/1.0 (github.com/Pedriali/radar-imoveis)",
+                                                       "Accept-Language": "pt-BR"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                for o in json.load(r):
+                    lat, lon = float(o["lat"]), float(o["lon"])
+                    if em_londrina(lat, lon) and aceita(o):
+                        res = [round(lat, 6), round(lon, 6), o.get("category")]
+                        break
+        except Exception as e:  # noqa: BLE001 — sem rede/limite: tenta de novo na próxima varredura
+            log(f"  geo: erro {e}")
+            time.sleep(1.1)
+            return None
+        time.sleep(1.1)
+        self.cache[chave] = res
+        return res
+
+
+# Último recurso para o bairro, quando nenhum imóvel dele tem coordenada e o OpenStreetMap não acha
+BAIRROS_CENTRO = {"palhano": [-23.3325, -51.1835], "centro": [-23.3105, -51.1625]}
+
+
+def _meio(pts):
+    return [round(mediana([a for a, _ in pts]), 6), round(mediana([b for _, b in pts]), 6)]
+
+
+def localizar(imoveis):
+    geo = Geo()
+    # 1) prédio/condomínio com coordenada exata em algum anúncio (desta varredura ou de antes)
+    exatos = {}
+    for im in imoveis:
+        if im.get("lat") and im.get("_local"):
+            exatos.setdefault(im["_local"], []).append((im["lat"], im["lon"]))
+    for k, v in exatos.items():
+        geo.cache["local:" + k] = _meio(v)
+    pend = []
+    for im in imoveis:
+        k = im.get("_local")
+        if im.get("lat"):
+            continue
+        achado = None
+        if k and geo.cache.get("local:" + k):
+            achado = geo.cache["local:" + k], "predio"
+        rua, num = street(im.get("endereco"))
+        if not achado and rua and num and not terrenos():  # o Zap inventa número em lote de condomínio
+            nome = im["endereco"].split(",")[0].strip()
+            r = geo.buscar(f"rua:{norm(nome)}|{num}", {"street": f"{num} {nome}", "city": "Londrina", "state": "Paraná"})
+            # sem o número no OpenStreetMap, ele devolve a rua inteira: posição aproximada
+            achado = r and (r[:2], "rua" if r[2] == "highway" else "exato")
+        if not achado and im.get("predio"):
+            p = re.sub(r"(?i)^(ed\.?|edif[ií]cio|residencial|condom[ií]nio)\s+", "", im["predio"])
+            pref = "Condomínio" if CFG["tipo"] != "apartamento" else "Edifício"
+            r = geo.buscar(f"predio:{norm(p)}", {"q": f"{pref} {p}, Londrina"},
+                           lambda o: o.get("category") in GEO_CLASSES and o.get("type") not in ("city", "town", "administrative"))
+            achado = r and (r[:2], "predio")
+        if achado:
+            (im["lat"], im["lon"]), im["geo"] = achado
+        else:
+            pend.append(im)
+    # 2) outros imóveis do mesmo prédio já localizados (pela rua); 3) o bairro: mediana dos imóveis
+    # localizados dele, senão o OpenStreetMap, senão BAIRROS_CENTRO
+    por_local, por_bairro = {}, {}
+    for im in imoveis:
+        if im.get("lat"):
+            if im.get("_local"):
+                por_local.setdefault(im["_local"], []).append((im["lat"], im["lon"]))
+            if im.get("geo") in ("exato", "rua", "predio"):
+                por_bairro.setdefault(bairro_key(im.get("bairro")), []).append((im["lat"], im["lon"]))
+    # Resposta do OpenStreetMap longe (mais de ~3 km) dos imóveis exatos do bairro é outro lugar com o mesmo nome
+    for im in imoveis:
+        b = por_bairro.get(bairro_key(im.get("bairro")), [])
+        if im.get("geo") in ("rua", "predio") and len(b) >= 5:
+            c = _meio(b)
+            if abs(im["lat"] - c[0]) + abs(im["lon"] - c[1]) > 0.03:
+                im.pop("lat"), im.pop("lon"), im.pop("geo")
+                pend.append(im)
+    sem = 0
+    for im in pend:
+        k, b = im.get("_local"), bairro_key(im.get("bairro"))
+        if k in por_local:
+            im["lat"], im["lon"] = _meio(por_local[k])
+            im["geo"] = "predio"
+            continue
+        r = None
+        if len(por_bairro.get(b, [])) >= 3:
+            r = _meio(por_bairro[b])
+        elif im.get("bairro"):
+            r = (geo.buscar(f"bairro:{norm(im['bairro'])}", {"q": f"{im['bairro']}, Londrina, Paraná"}) or [None])[:2]
+            r = r if r[0] else BAIRROS_CENTRO.get(b)
+        if r:
+            im["lat"], im["lon"] = r
+            im["geo"] = "bairro"
+        else:
+            sem += 1
+    for im in imoveis:
+        im.pop("_local", None)
+    geo.salvar()
+    log(f"  mapa: {len(imoveis) - sem} de {len(imoveis)} imóveis localizados ({geo.consultas} consultas ao OpenStreetMap)")
+
+
 # ---------- principal ----------
 SCANNERS = [
     # (chave, função, recebe (known, max_pages, found)?)
@@ -1557,6 +2158,11 @@ SCANNERS = [
     ("perez", scan_perez, False),
     ("catuai", scan_catuai, False),
     ("inglaterra", scan_inglaterra, False),
+    ("chavesnamao", scan_chavesnamao, True),
+    ("aurora", scan_aurora, False),
+    ("casttelo", scan_casttelo, False),
+    ("monaco", scan_monaco, False),
+    ("cube", scan_cube, False),
 ]
 
 
@@ -1584,6 +2190,11 @@ def main(perfil):
         for k in set(found) - antes:
             found[k]["origem"] = chave
 
+    # Perfil com "preco_min": fica de fora o que tem preço abaixo dele (sem preço = "sob consulta", entra)
+    if CFG.get("preco_min"):
+        for k in [k for k, x in found.items() if x.get("preco") and x["preco"] < CFG["preco_min"]]:
+            del found[k]
+
     new_ids = [k for k in found if k not in L]
     log(f"{len(found)} anúncios no filtro, {len(new_ids)} novos")
 
@@ -1593,7 +2204,7 @@ def main(perfil):
             cur = L[k]
             cur["visto"] = NOW_ISO
             cur.setdefault("links", {}).update(rec["links"])
-            for f in ("predio", "endereco", "bairro", "quartos", "banheiros", "vagas"):
+            for f in ("predio", "endereco", "bairro", "quartos", "banheiros", "vagas", "lat", "lon"):
                 if cur.get(f) is None and rec.get(f) is not None:
                     cur[f] = rec[f]
             if rec.get("preco") and rec["preco"] != cur.get("preco"):

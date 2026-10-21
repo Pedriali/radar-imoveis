@@ -35,6 +35,34 @@
         "pct_suspeito": 50
       }
     },
+    "centro": {
+      "aba": "Centro",
+      "dados": "centro.json",
+      "tipo": "apartamento",
+      "area_min": 20,
+      "area_max": 2000,
+      "preco_min": 300000,
+      "bairros": [
+        "centro"
+      ],
+      "grupo_zap_searches": [
+        "pr+londrina++centro"
+      ],
+      "olx_search": "https://www.olx.com.br/imoveis/venda/apartamentos/estado-pr/regiao-de-londrina/londrina",
+      "media": {
+        "area_min": 30,
+        "dias": 30,
+        "min_amostra": 4,
+        "min_amostra_predio": 3,
+        "faixa_area": 1.5,
+        "pct_alerta": 15,
+        "pct_suspeito": 50,
+        "bases": [
+          "predio"
+        ]
+      },
+      "inicial_mostra_tudo": true
+    },
     "casas": {
       "aba": "Casas em condomínio",
       "dados": "casas.json",

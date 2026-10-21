@@ -19,7 +19,7 @@ concurrency: varredura
 jobs:
   varredura:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Horário já varrido?

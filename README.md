@@ -1,19 +1,21 @@
 # Radar Imóveis
 
-Varredura automática (3× ao dia: 09h, 14h e 20h) de imóveis à venda em Londrina/PR, em três abas:
+Varredura automática (3× ao dia: 09h, 14h e 20h) de imóveis à venda em Londrina/PR, em quatro abas:
 
 - **Gleba Palhano** — apartamentos de 100–200 m² na Gleba Palhano, Santa Rosa, Guanabara e arredores.
+- **Centro** — apartamentos no Centro, a partir de R$ 300 mil (`preco_min`), qualquer área. Aviso de preço abaixo da média só pelo mesmo prédio (`media.bases`), porque o bairro mistura prédios novos e antigos.
 - **Casas em condomínio** — casas e terrenos em condomínio fechado na zona sul (zona norte e leste ficam de fora).
 - **Terrenos em condomínio** — só terrenos em condomínio fechado na zona sul, sem filtro de área ou preço. Busca ampla: além das categorias "condomínio" dos portais, varre todos os lotes de Londrina e aceita os que provam ser de condomínio (nome de condomínio conhecido, taxa de condomínio ou o texto do anúncio). Cards com R$/m² 15% ou mais abaixo da mediana do condomínio (ou do bairro) ganham um aviso.
 
-Fontes: Zap Imóveis, Viva Real, OLX e as imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí e Inglaterra.
+Fontes: Zap Imóveis, Viva Real, OLX, Chaves na Mão e as imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco e Cube Imóveis (Imovelweb bloqueia robôs; QuintoAndar não vende em Londrina).
 
 - Página: https://pedriali.github.io/radar-imoveis/
 - Busca: `scraper/radar.py` (configuração em `scraper/config.json`: cada item de `perfis` é uma busca/aba). `python scraper/radar.py casas` roda só uma.
 - Zona sul: em condomínio o "bairro" do anúncio costuma ser o nome do condomínio, então `perfis.casas.bairros` lista bairros **e** condomínios da zona sul; `excluir` derruba condomínios da zona leste/norte, assim como anúncios que dizem "zona/região norte ou leste". Os bairros descartados em cada varredura ficam em `runs[].fora_da_zona` de `docs/data/casas.json`, para revisar a lista.
 - Terrenos: `perfis.terrenos` separa `bairros` (zona sul, exigem prova de condomínio nas buscas amplas) de `condominios` (nomes que já provam). Anúncios do Zap/Viva Real com localização exata fora de `caixa` (lat/lon da zona sul) saem mesmo com bairro na lista. `zonas_fora` derruba quem se declara zona norte, leste ou oeste. O aviso de preço é configurado em `media`.
 - Gleba Palhano: o mesmo aviso, comparando o R$/m² com apartamentos do mesmo prédio (nome ou rua + número; mínimo 3) ou do bairro, com área até 50% maior ou menor (`perfis.apartamentos.media`). O próprio imóvel não entra na sua média.
-- Dados: `docs/data/listings.json` (apartamentos), `docs/data/casas.json` e `docs/data/terrenos.json` — `listings` guarda cada anúncio; `imoveis` é o que a página mostra, com os anúncios do mesmo apartamento (em portais diferentes ou repetidos no mesmo portal) agrupados num card só. Clicar no card mostra todos os anúncios.
+- Mapa: botão **MAPA** (ou `?vista=mapa` no endereço) mostra os imóveis como alvos sobre o mapa de Londrina (OpenStreetMap, via Leaflet), acendendo quando a varredura passa. Posição: coordenada exata do portal (Zap/Viva Real, Raul Fulgêncio, Perez); senão a de outro imóvel do mesmo prédio/condomínio; senão o OpenStreetMap (Nominatim) pela rua com número ou pelo nome do prédio; por fim o bairro (alvo vazado = local aproximado). Consultas ao Nominatim ficam em `docs/data/geocache.json` (até 80 novas por aba e varredura).
+- Dados: `docs/data/listings.json` (apartamentos), `docs/data/centro.json`, `docs/data/casas.json` e `docs/data/terrenos.json` — `listings` guarda cada anúncio; `imoveis` é o que a página mostra, com os anúncios do mesmo apartamento (em portais diferentes ou repetidos no mesmo portal) agrupados num card só. Clicar no card mostra todos os anúncios.
 - Agendamento: o cron do GitHub atrasa horas, então quem dispara no horário é o Mac (`scraper/agendador/com.pedriali.radar-imoveis.plist`, instalado em `~/Library/LaunchAgents`; se o Mac estiver dormindo, dispara ao acordar). `.github/workflows/radar.yml` roda de hora em hora como reserva e só varre se o horário mais recente (09h, 14h ou 20h) ainda não teve varredura. Para rodar agora: aba **Actions → varredura → Run workflow** (o botão sempre varre).
 
 Portal estreando: anúncios com data de publicação seguem a regra da varredura inicial (só os da última semana viram card). Os sem data (Gleba, Santamerica, Catuaí, Inglaterra) entram como estoque de referência — não viram card, mas aparecem como anúncio extra quando o mesmo apartamento surge em outro lugar. Daí em diante, todo anúncio que aparecer neles é novo.
