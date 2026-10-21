@@ -61,7 +61,14 @@
           "predio"
         ]
       },
-      "inicial_mostra_tudo": true
+      "inicial_mostra_tudo": true,
+      "bairro_exato": true,
+      "caixa": {
+        "lat_min": -23.328,
+        "lat_max": -23.292,
+        "lon_min": -51.185,
+        "lon_max": -51.14
+      }
     },
     "casas": {
       "aba": "Casas em condomínio",

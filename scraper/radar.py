@@ -28,6 +28,29 @@ NOW_ISO = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 S = requests.Session(impersonate="chrome")
 
 
+# Anúncios já guardados do perfil em uso (preenchido em main): as páginas de anúncio que só servem para
+# completar dados (prédio, endereço, área, quartos) não são abertas de novo; o resto vem da busca.
+CONHECIDOS = {}
+CAMPOS_DETALHE = ("tipo", "predio", "endereco", "bairro", "foto", "area", "quartos", "banheiros", "vagas", "titulo",
+                  "publicado", "lat", "lon")
+
+
+def conhecido(rid, links, **novos):
+    """Registro de um anúncio já guardado, sem abrir a página dele: os campos guardados + o que a busca
+    trouxe agora (preço, por exemplo). None se o anúncio é desconhecido."""
+    k = CONHECIDOS.get(rid)
+    if not k:
+        return None
+    rec = {f: k.get(f) for f in CAMPOS_DETALHE if k.get(f) is not None}
+    rec.update({f: v for f, v in novos.items() if v is not None}, id=rid, links=links)
+    return rec
+
+
+def preco_ok(p):
+    """Perfil com "preco_min" (sem preço = "sob consulta", passa)."""
+    return not (CFG.get("preco_min") and p and p < CFG["preco_min"])
+
+
 def usar_perfil(nome):
     CFG.clear()
     CFG.update(CONFIG["comum"])
@@ -56,6 +79,8 @@ def norm(s):
 
 def bairro_ok(name):
     n = norm(name)
+    if CFG.get("bairro_exato"):  # Centro: "Centro" e só ele (não "Centro Cívico", "Jardim do Centro"...)
+        return re.sub(r"\s*[-,/(].*$", "", n) in CFG["bairros"]
     return any(b in n for b in CFG["bairros"])
 
 
@@ -82,6 +107,11 @@ def local_ok(bairro, *textos):
     return False
 
 
+def na_caixa(lat, lon):
+    cx = CFG.get("caixa")
+    return not cx or (cx.get("lat_min", -90) <= lat <= cx["lat_max"] and cx["lon_min"] <= lon <= cx["lon_max"])
+
+
 def coord_ok(addr):
     """Zap/Viva Real trazem latitude/longitude: com localização exata fora da caixa da zona sul do
     perfil ("caixa"), o anúncio sai mesmo que o bairro esteja na lista (há bairro cadastrado errado)."""
@@ -89,8 +119,7 @@ def coord_ok(addr):
     c = (addr or {}).get("coordinates")
     if not cx or not isinstance(c, dict) or addr.get("isApproximateLocation") or not c.get("latitude"):
         return True
-    lat, lon = c["latitude"], c.get("longitude") or 0
-    if lat <= cx["lat_max"] and cx["lon_min"] <= lon <= cx["lon_max"]:
+    if na_caixa(c["latitude"], c.get("longitude") or 0):
         return True
     fora(f"{addr.get('neighborhood')} (coordenadas fora da zona sul)")
     return False
@@ -790,6 +819,11 @@ def scan_santamerica(found):
         for c in cards:
             if "londrina" not in norm(c["cidade"]) or not local_ok(c["bairro"], c["titulo"]):
                 continue
+            rec = conhecido("sa" + c["cod"], {"santamerica": c["url"]}, preco=c["preco"])
+            if rec:
+                found[rec["id"]] = rec
+                n += 1
+                continue
             page = fetch(c["url"])
             time.sleep(1)
             if not page:
@@ -959,6 +993,13 @@ def scan_perez(found):
             area = round(o.get("builtArea") or (o.get("totalArea") if tipo else 0) or 0) or None
         if not local_ok(bairro, o.get("title")) or not area_ok(area):
             continue
+        fotos = o.get("photos") or []
+        rec = conhecido(f"pz{o['code']}", {"perez": _pz_link(o)}, preco=int(o["price"]) if o.get("price") else None,
+                        foto=fotos[0]["url"] if fotos else None)
+        if rec:
+            found[rec["id"]] = rec
+            n += 1
+            continue
         endereco = None
         det = _pz_get(f"/property/{o['code']}", {})
         time.sleep(1)
@@ -1096,7 +1137,13 @@ def scan_catuai(found):
             time.sleep(1)
 
     # Página do anúncio: quartos, banheiros, vagas, rua e descrição (nome do prédio). O site não expõe data de cadastro.
-    for rec in recs.values():
+    for rid, rec in list(recs.items()):
+        k = conhecido(rid, rec["links"], preco=rec["preco"], foto=rec["foto"])
+        if k:
+            recs[rid] = rec = k
+            if area_ok(rec.get("area")):
+                found[rid] = rec
+            continue
         time.sleep(1)
         page = fetch(rec["links"]["catuai"])
         if page:
@@ -1253,7 +1300,7 @@ def _scan_inglaterra(items, total, found):
     # detalhe (prédio + endereço com número) para quem ficou sem nome de prédio
     n = 0
     for ref, rec in recs:
-        if rec["predio"] or n >= INGLATERRA_DETAIL_MAX:
+        if rec["predio"] or n >= INGLATERRA_DETAIL_MAX or rec["id"] in CONHECIDOS or not preco_ok(rec["preco"]):
             continue
         n += 1
         time.sleep(1)
@@ -1583,7 +1630,12 @@ def _scan_kenlo(chave, found):
             "links": {chave: base + x["url"] if x.get("url") else base},
         }
     # detalhe: primeiro os que estão sem nome de prédio
-    fila = sorted(recs, key=lambda r: bool(recs[r]["predio"]))[:KENLO_DETALHES_MAX]
+    for ref, rec in recs.items():  # já guardado: o detalhe foi aberto antes
+        k = conhecido(rec["id"], rec["links"], preco=rec["preco"], foto=rec["foto"])
+        if k:
+            recs[ref] = k
+    fila = sorted((r for r in recs if recs[r]["id"] not in CONHECIDOS and preco_ok(recs[r]["preco"])),
+                  key=lambda r: bool(recs[r]["predio"]))[:KENLO_DETALHES_MAX]
     for ref in fila:
         time.sleep(1)
         _kenlo_detalhe(base, ref, recs[ref])
@@ -1906,7 +1958,8 @@ def group_imoveis(L):
         im["_local"] = local
         out.append(im)
     localizar(out)
-    return out
+    # endereço localizado com número fora da caixa do perfil: não é do setor
+    return [im for im in out if im.get("geo") != "exato" or na_caixa(im["lat"], im["lon"])]
 
 
 # ---------- preço abaixo da média (perfil com "media") ----------
@@ -2147,6 +2200,33 @@ def localizar(imoveis):
     log(f"  mapa: {len(imoveis) - sem} de {len(imoveis)} imóveis localizados ({geo.consultas} consultas ao OpenStreetMap)")
 
 
+# ---------- arquivos da página ----------
+# O estado completo (todos os anúncios, histórico de varreduras) fica em docs/data/<dados>; a página só baixa
+# docs/data/pagina/<dados> (cards e última varredura, sem campos vazios) e resumo.json (alvos por aba).
+PAGINA_DIR = DATA_DIR / "pagina"
+
+
+def enxuto(v):
+    if isinstance(v, dict):
+        return {k: enxuto(x) for k, x in v.items() if x not in (None, "", [], {})}
+    if isinstance(v, list):
+        return [enxuto(x) for x in v]
+    return v
+
+
+def pagina(state):
+    PAGINA_DIR.mkdir(exist_ok=True)
+    p = {"atualizado": state["atualizado"], "runs": state["runs"][-1:], "imoveis": enxuto(state["imoveis"])}
+    (PAGINA_DIR / CFG["dados"]).write_text(json.dumps(p, ensure_ascii=False, separators=(",", ":")))
+    f = PAGINA_DIR / "resumo.json"
+    try:
+        resumo = json.loads(f.read_text())
+    except (OSError, ValueError):
+        resumo = {}
+    resumo[CFG["dados"]] = len(state["imoveis"])
+    f.write_text(json.dumps(resumo, ensure_ascii=False, indent=0, sort_keys=True))
+
+
 # ---------- principal ----------
 SCANNERS = [
     # (chave, função, recebe (known, max_pages, found)?)
@@ -2176,6 +2256,8 @@ def main(perfil):
     max_pages = CFG["max_pages_initial"] if initial else CFG["max_pages"]
     log(f"Varredura {perfil} {NOW_ISO} ({'inicial' if initial else 'incremental'})")
     conhecidos = {origem(x) for x in L.values()}
+    CONHECIDOS.clear()
+    CONHECIDOS.update(L)
 
     found = {}
     status = {}
@@ -2190,10 +2272,12 @@ def main(perfil):
         for k in set(found) - antes:
             found[k]["origem"] = chave
 
-    # Perfil com "preco_min": fica de fora o que tem preço abaixo dele (sem preço = "sob consulta", entra)
-    if CFG.get("preco_min"):
-        for k in [k for k, x in found.items() if x.get("preco") and x["preco"] < CFG["preco_min"]]:
-            del found[k]
+    # Perfil com "preco_min": fica de fora o que tem preço abaixo dele (sem preço = "sob consulta", entra).
+    # Localização exata fora da "caixa" do perfil também sai, venha de qualquer fonte (bairro cadastrado errado).
+    for k in [k for k, x in found.items() if not preco_ok(x.get("preco")) or (x.get("lat") and not na_caixa(x["lat"], x["lon"]))]:
+        del found[k]
+    for k in [k for k, x in L.items() if x.get("lat") and not na_caixa(x["lat"], x["lon"])]:
+        del L[k]  # guardados antes da caixa existir
 
     new_ids = [k for k in found if k not in L]
     log(f"{len(found)} anúncios no filtro, {len(new_ids)} novos")
@@ -2261,6 +2345,7 @@ def main(perfil):
     state["atualizado"] = NOW_ISO
     DATA.parent.mkdir(parents=True, exist_ok=True)
     DATA.write_text(json.dumps(state, ensure_ascii=False, indent=1))
+    pagina(state)
     log(f"Status: {status}. Imóveis novos: {novos}. Imóveis na página: {len(state['imoveis'])}. Anúncios armazenados: {len(L)}")
     return not all(v == "falhou" for v in status.values())
 

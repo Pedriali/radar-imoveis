@@ -518,7 +518,8 @@ function telemetry(){
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA <b>${fmtDT(nextRun())}</b></span><span>ALVOS <b>${total}</b></span>${st}`;
 }
 
-const carregar = a => CACHE[a.id] ??= fetch('data/' + a.dados + '?t=' + Date.now())
+// data/pagina/: só o que a página usa (o estado completo do scraper fica em data/)
+const carregar = a => CACHE[a.id] ??= fetch('data/pagina/' + a.dados + '?t=' + Date.now())
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .catch(() => ({runs: [], imoveis: []}));
 
@@ -550,7 +551,8 @@ let inicial = null;
 try { inicial = ABAS.find(a => a.id === location.hash.slice(1)) || ABAS.find(a => a.id === localStorage.getItem('radar-aba')); } catch {}
 ABA = inicial || ABAS[0];
 abas();
-ABAS.forEach(a => carregar(a).then(d => { $('#tn-' + a.id).textContent = (d.imoveis || []).length || ''; }));
+fetch('data/pagina/resumo.json?t=' + Date.now()).then(r => r.json())
+  .then(n => ABAS.forEach(a => { $('#tn-' + a.id).textContent = n[a.dados] || ''; })).catch(() => {});
 try { VISTA = (new URLSearchParams(location.search).get('vista') || localStorage.getItem('radar-vista')) === 'mapa' ? 'mapa' : 'lista'; } catch {}
 document.querySelectorAll('.vista button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === VISTA));
 mostrar(ABA).then(() => {
