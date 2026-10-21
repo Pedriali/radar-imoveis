@@ -37,6 +37,10 @@
 "landuse"
 ],
 "bairro:terra bonita": null,
+"local:alcides turini|150": [
+-23.366573,
+-51.220339
+],
 "local:alphaville": [
 -23.351995,
 -51.187355
@@ -73,13 +77,21 @@
 -23.34515,
 -51.1635
 ],
+"local:benezer luiz da costa|5": [
+-23.362413,
+-51.21738
+],
 "local:bom tempo": [
 -23.366126,
 -51.221356
 ],
 "local:centro|acapulco": [
--23.314285,
--51.160889
+-23.31491,
+-51.161402
+],
+"local:centro|acquajardin": [
+-23.309292,
+-51.164164
 ],
 "local:centro|alagoas|1017": [
 -23.317882,
@@ -509,6 +521,10 @@
 -23.317255,
 -51.168026
 ],
+"local:centro|novittaresidence": [
+-23.303305,
+-51.162478
+],
 "local:centro|novoinaja": [
 -23.316106,
 -51.156191
@@ -604,6 +620,10 @@
 "local:centro|pontevedraexcelente": [
 -23.314645,
 -51.169692
+],
+"local:centro|portaldagoiascentrodelondrina": [
+-23.315698,
+-51.162177
 ],
 "local:centro|portoseguro": [
 -23.321407,
@@ -914,8 +934,8 @@
 -51.16096
 ],
 "local:estancia cabral": [
--23.366665,
--51.222599
+-23.364539,
+-51.219989
 ],
 "local:estancia santa paula": [
 -23.358044,
@@ -933,9 +953,17 @@
 -23.351465,
 -51.196732
 ],
+"local:gil de abreu souza|1": [
+-23.347702,
+-51.19554
+],
 "local:gil de abreu souza|2335": [
 -23.346267,
 -51.213994
+],
+"local:gil de abreu souza|750": [
+-23.349515,
+-51.202823
 ],
 "local:guanabara|potylazarotto": [
 -23.33574,
@@ -973,13 +1001,17 @@
 -23.332745,
 -51.223658
 ],
+"local:moradasdovalelondrina": [
+-23.25013,
+-51.18841
+],
 "local:palhano|allure": [
--23.330382,
--51.181952
+-23.329951,
+-51.180798
 ],
 "local:palhano|almeria": [
--23.33019,
--51.17873
+-23.330079,
+-51.178714
 ],
 "local:palhano|anitamalfatti": [
 -23.333738,
@@ -997,8 +1029,12 @@
 -23.333845,
 -51.183827
 ],
+"local:palhano|archpalhano": [
+-23.333845,
+-51.183827
+],
 "local:palhano|atrio": [
--23.330516,
+-23.330493,
 -51.18318
 ],
 "local:palhano|aura": [
@@ -1018,8 +1054,8 @@
 -51.18038
 ],
 "local:palhano|chelsea": [
--23.332791,
--51.182236
+-23.333073,
+-51.185547
 ],
 "local:palhano|coracoralina": [
 -23.334427,
@@ -1034,8 +1070,8 @@
 -51.179106
 ],
 "local:palhano|eurico hummig|405": [
--23.331241,
--51.179597
+-23.331155,
+-51.179656
 ],
 "local:palhano|evidence": [
 -23.33532,
@@ -1065,17 +1101,25 @@
 -23.334418,
 -51.186459
 ],
+"local:palhano|harmonie": [
+-23.329499,
+-51.180796
+],
 "local:palhano|hause": [
 -23.330685,
 -51.182759
 ],
 "local:palhano|huma": [
--23.32748,
--51.18213
+-23.327289,
+-51.182266
 ],
 "local:palhano|joanmiro": [
 -23.32826,
 -51.17796
+],
+"local:palhano|lacroyal": [
+-23.328286,
+-51.176516
 ],
 "local:palhano|lumiere": [
 -23.329947,
@@ -1089,6 +1133,10 @@
 -23.330748,
 -51.179271
 ],
+"local:palhano|maisonlegacy": [
+-23.330516,
+-51.183585
+],
 "local:palhano|marcchagal": [
 -23.333452,
 -51.174659
@@ -1101,6 +1149,18 @@
 -23.334474,
 -51.18122
 ],
+"local:palhano|oxfordovillage": [
+-23.333858,
+-51.181372
+],
+"local:palhano|parcrocher": [
+-23.328924,
+-51.180738
+],
+"local:palhano|pe vermelho|50": [
+-23.329947,
+-51.180613
+],
 "local:palhano|pedro candido romero|55": [
 -23.327132,
 -51.180841
@@ -1110,12 +1170,12 @@
 -51.175819
 ],
 "local:palhano|sunflowers": [
--23.33195,
--51.174804
+-23.331944,
+-51.174878
 ],
 "local:palhano|sunflowersresidence": [
--23.33219,
--51.174618
+-23.332179,
+-51.174766
 ],
 "local:palhano|terrabrasil": [
 -23.33301,
@@ -1175,7 +1235,7 @@
 ],
 "local:royalforest": [
 -23.347029,
--51.212682
+-51.212786
 ],
 "local:royalforestreseresort": [
 -23.34966,
@@ -1186,8 +1246,8 @@
 -51.210711
 ],
 "local:royaltennis": [
--23.349123,
--51.207308
+-23.348634,
+-51.209199
 ],
 "local:royaltennisresidenceresort": [
 -23.348145,
@@ -1225,6 +1285,10 @@
 -23.346104,
 -51.190573
 ],
+"local:sobradocondominiovillanoah": [
+-23.374955,
+-51.212389
+],
 "local:sonora": [
 -23.357545,
 -51.181718
@@ -1236,6 +1300,10 @@
 "local:sunset dream": [
 -23.36529,
 -51.211042
+],
+"local:sunsetdream": [
+-23.36667,
+-51.207892
 ],
 "local:terra bonita": [
 -23.347101,
@@ -1250,8 +1318,8 @@
 -51.172371
 ],
 "local:valedoarvoredo": [
--23.350088,
--51.171419
+-23.350541,
+-51.173043
 ],
 "local:villa noah": [
 -23.374955,
@@ -1593,6 +1661,11 @@
 "predio:terrazas jardim": [
 -23.315941,
 -51.167727,
+"building"
+],
+"predio:terroir gleba fazenda palhano": [
+-23.331818,
+-51.174151,
 "building"
 ],
 "predio:the euro royal": null,
