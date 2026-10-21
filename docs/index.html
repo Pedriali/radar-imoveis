@@ -368,7 +368,7 @@ function open_(x){
   $('#dlg-t').textContent = x.predio || [x.endereco, x.bairro].filter(Boolean).join(' · ') || 'Imóvel';
   $('#dlg-l').innerHTML = x.fontes.map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
     <span class="p">${PORTAL[f.portal]||f.portal.toUpperCase()}</span>
-    <span class="d"><em>${fmtBRL(f.preco)}</em> · ${f.area ?? '–'} m²</span><span class="go">↗</span></a></li>`).join('');
+    <span class="d"><em>${fmtBRL(f.preco)}</em> · ${f.area ?? '–'} m²${f.area_anunciada ? ` útil (anúncio diz ${f.area_anunciada})` : ''}</span><span class="go">↗</span></a></li>`).join('');
   $('#dlg').showModal();
 }
 

@@ -141,6 +141,46 @@ def area_ok(a):
     return a is not None and CFG["area_min"] <= a <= CFG["area_max"]
 
 
+# Área útil citada no texto do anúncio. Muitos anunciantes põem a área total (com garagem e áreas comuns)
+# no campo "área útil" do portal, mas a descrição diz "181 m² privativos", "área útil de 114 m²"...
+_NUM = r"(\d{1,3}(?:\.\d{3})*(?:,\d{1,2})?|\d+(?:[.,]\d{1,2})?)"
+_M2 = r"(?:m²|m2|mts?2?|metros?(?: quadrados)?)"
+_UTIL = r"(?:privativ[ao]s?|ute?is|util|interna|construid[ao]s?|de constru[cç]ao)"
+AREA_UTIL_TXT = [
+    re.compile(_NUM + r"\s*" + _M2 + r"\s*(?:de\s+)?(?:area\s+)?" + _UTIL),
+    re.compile(r"area\s+" + _UTIL + r"\s*(?:total\s*)?(?:de|:|-|=|com|e)?\s*(?:aprox\w*\.?\s*)?" + _NUM + r"\s*" + _M2),
+    re.compile(r"(?:parte|area) interna (?:sao|e|tem|com|de) " + _NUM + r"\s*" + _M2),
+]
+
+
+def _num_area(s):
+    s = s.replace(".", "") if re.fullmatch(r"\d{1,3}(?:\.\d{3})+(?:,\d+)?", s) else s
+    try:
+        return round(float(s.replace(",", ".")))
+    except ValueError:
+        return None
+
+
+def area_util_texto(*textos):
+    """Menor área útil/privativa/construída citada nos textos (None se nenhuma). A menor, porque o
+    texto às vezes cita também a do terraço, a total etc. — e área útil abaixo de 25 m² é ruído."""
+    t = norm(" ".join(x for x in textos if x)).replace("\\n", " ")
+    vals = [_num_area(m.group(1)) for rx in AREA_UTIL_TXT for m in rx.finditer(t)]
+    vals = [v for v in vals if v and v >= 25]
+    return min(vals) if vals else None
+
+
+def corrige_area(rec, *textos):
+    """Troca a área do anúncio pela área útil citada no texto, se esta for menor (o campo do portal
+    trazia a total). Terreno fica com a área do lote. Guarda a original em area_anunciada."""
+    if rec.get("tipo") == "terreno" or not rec.get("area"):
+        return
+    u = area_util_texto(rec.get("titulo"), *textos)
+    if u and u < rec["area"] - 1 and u >= rec["area"] * 0.4:
+        rec.setdefault("area_anunciada", rec["area"])
+        rec["area"] = u
+
+
 def fetch(url, tries=3):
     for i in range(tries):
         try:
@@ -279,7 +319,7 @@ def grupo_record(o):
 
 
 def grupo_detail(rec):
-    """Página do anúncio: data de criação e descrição (para achar o nome do prédio)."""
+    """Página do anúncio: data de criação e descrição (nome do prédio, área útil citada no texto)."""
     url = rec["links"].get("zap") or rec["links"].get("vivareal")
     page = fetch(url, tries=1) if url else None
     if not page:
@@ -288,9 +328,10 @@ def grupo_detail(rec):
     m = re.search(r'\\?"createdAt\\?":\\?"(\d{4}-\d\d-\d\dT[\d:.]+Z)', page)
     if m:
         rec["publicado"] = m.group(1)[:19] + "Z"
+    descs = re.findall(r'"description":"(.{20,4000}?)"[,}]', rsc(page))
+    desc = htmllib.unescape(re.sub(r"<[^>]+>", " ", max(descs, key=len))) if descs else ""
+    corrige_area(rec, desc)
     if not rec.get("predio"):
-        descs = re.findall(r'"description":"(.{20,2000}?)"[,}]', page)
-        desc = htmllib.unescape(re.sub(r"<[^>]+>", " ", max(descs, key=len))) if descs else ""
         rec["predio"] = building_from_text(rec.get("titulo"), desc)
     return True
 
@@ -495,8 +536,11 @@ def olx_detail(rec):
     if not page:
         return
     t = htmllib.unescape(page)
-    m = re.search(r'"body":"(.{0,1500})', t)
-    rec["predio"] = building_from_text(rec.get("titulo"), m.group(1) if m else "")
+    m = re.search(r'"body":"(.{0,4000}?)","', t)
+    body = m.group(1) if m else ""
+    corrige_area(rec, body)
+    if not rec.get("predio"):
+        rec["predio"] = building_from_text(rec.get("titulo"), body)
 
 
 # ---------- imobiliárias locais ----------
@@ -718,6 +762,7 @@ def _scan_gleba(url0, tipo, found):
                 "publicado": None,  # o site só expõe updated_at
                 "links": {"gleba": GLEBA_BASE + o["url"] if o.get("url") else None},
             }
+            corrige_area(found["gi" + ref], o.get("listing_description"))
             n += 1
         if not data or page * 12 >= total:
             break
@@ -1295,6 +1340,7 @@ def _scan_inglaterra(items, total, found):
             "publicado": None,  # o site só expõe updated_at (data de atualização)
             "links": {"inglaterra": INGLATERRA_BASE + x["url"] if x.get("url") else INGLATERRA_BASE},
         }
+        corrige_area(rec, x.get("listing_description"))
         recs.append((ref, rec))
 
     # detalhe (prédio + endereço com número) para quem ficou sem nome de prédio
@@ -1459,6 +1505,7 @@ def cm_detalhe(rec):
         d = {}
     if d.get("createdAt"):
         rec["publicado"] = cm_publicado(d["createdAt"])
+    corrige_area(rec, d.get("descriptionRaw"))
     if not rec.get("predio"):
         rec["predio"] = building_from_text(rec.get("titulo"), d.get("descriptionRaw"))
 
@@ -1629,6 +1676,7 @@ def _scan_kenlo(chave, found):
             "publicado": None,  # o site só expõe updated_at (data de atualização)
             "links": {chave: base + x["url"] if x.get("url") else base},
         }
+        corrige_area(recs[ref], x.get("listing_description"))
     # detalhe: primeiro os que estão sem nome de prédio
     for ref, rec in recs.items():  # já guardado: o detalhe foi aberto antes
         k = conhecido(rec["id"], rec["links"], preco=rec["preco"], foto=rec["foto"])
@@ -1946,7 +1994,8 @@ def group_imoveis(L):
             for portal, url in x["links"].items():
                 if url and url not in vistos:
                     vistos.add(url)
-                    fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area")})
+                    fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area"),
+                                   "area_anunciada": x.get("area_anunciada")})
         im["fontes"] = fontes
         if terrenos() and not im["predio"] and chave_cond(g):  # condomínio citado só no título/bairro
             im["predio"] = chave_cond(g).title()
@@ -2318,9 +2367,12 @@ def main(perfil):
             # Sem data de publicação: na estreia do portal não dá para saber se é novo, então o
             # estoque atual entra só como referência (links extras em imóveis já mostrados).
             recente = tudo or (idade <= limite if idade is not None else not estreante)
-            if recente and rec["origem"] == "olx" and not rec.get("predio"):
+            if recente and rec["origem"] == "olx":
                 olx_detail(rec)
                 time.sleep(1)
+        corrige_area(rec)
+        if not area_ok(rec.get("area")):  # a área útil do texto ficou fora da faixa do perfil
+            recente = False
         rec["visivel"] = recente
         if not recente:
             rec.pop("foto", None)

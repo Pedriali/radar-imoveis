@@ -2229,7 +2229,7 @@
   "g2916431738": {
    "id": "g2916431738",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Royal Park Residence",
    "endereco": "Avenida Gil de Abreu Souza, 1777",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/2b014d62ac62040d02c34d2fd5ae381f/foto.webp?action=crop&dimension=360x240",
@@ -2252,7 +2252,7 @@
   "g2916428801": {
    "id": "g2916428801",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Royal Golf Residence",
    "endereco": "Alameda Eliana Maria Tarasconi Peixe, 300",
    "bairro": "Condomínio Royal Golf Residence",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/45931093cc4072c68bd1c0a840aca56d/foto.webp?action=crop&dimension=360x240",
@@ -2293,7 +2293,8 @@
    "publicado": "2026-10-07T10:16:22Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-14T23:00:16Z"
+   "visto": "2026-10-14T23:00:16Z",
+   "detalhe_pendente": true
   },
   "g2916282983": {
    "id": "g2916282983",
@@ -2302,7 +2303,7 @@
    "endereco": "",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/9e2864194a2e7b1f70ce5f3d8cde28cb/foto.webp?action=crop&dimension=360x240",
-   "area": 299,
+   "area": 256,
    "preco": 2750000,
    "quartos": 4,
    "banheiros": 5,
@@ -2316,7 +2317,8 @@
    "publicado": "2026-10-07T05:33:10Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-13T22:52:56Z"
+   "visto": "2026-10-13T22:52:56Z",
+   "area_anunciada": 299
   },
   "g2916136648": {
    "id": "g2916136648",
@@ -2362,7 +2364,8 @@
    "publicado": "2026-10-06T10:17:07Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-12T19:44:39Z"
+   "visto": "2026-10-12T19:44:39Z",
+   "detalhe_pendente": true
   },
   "g2916112292": {
    "id": "g2916112292",
@@ -2386,7 +2389,8 @@
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
    "visto": "2026-10-11T16:27:01Z",
-   "preco_anterior": 3599430
+   "preco_anterior": 3599430,
+   "detalhe_pendente": true
   },
   "g2916095848": {
    "id": "g2916095848",
@@ -2410,7 +2414,8 @@
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
    "visto": "2026-10-11T16:27:01Z",
-   "preco_anterior": 9999030
+   "preco_anterior": 9999030,
+   "detalhe_pendente": true
   },
   "g2916084338": {
    "id": "g2916084338",
@@ -2507,7 +2512,7 @@
   "g2916064071": {
    "id": "g2916064071",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Vale do Arvoredo",
    "endereco": "Rua Tereza Kuhn Heringer, 50",
    "bairro": "Condomínio Vale do Arvoredo",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/76de2687a408872bc44b4d5a3c64685a/foto.webp?action=crop&dimension=360x240",
@@ -2594,7 +2599,8 @@
    "publicado": "2026-10-05T08:50:58Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-08T19:00:17Z"
+   "visto": "2026-10-08T19:00:17Z",
+   "detalhe_pendente": true
   },
   "g2915778056": {
    "id": "g2915778056",
@@ -2603,7 +2609,7 @@
    "endereco": "Avenida Gil de Abreu Souza",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/de7ec4ec306c57ce22e534d8ecdbb8b6/foto.webp?action=crop&dimension=360x240",
-   "area": 300,
+   "area": 256,
    "preco": 2750000,
    "quartos": 4,
    "banheiros": 5,
@@ -2617,7 +2623,8 @@
    "publicado": "2026-10-04T09:26:22Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-10T02:02:47Z"
+   "visto": "2026-10-10T02:02:47Z",
+   "area_anunciada": 300
   },
   "g2915633257": {
    "id": "g2915633257",
@@ -2640,7 +2647,8 @@
    "publicado": "2026-10-03T07:36:49Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-10T02:02:47Z"
+   "visto": "2026-10-10T02:02:47Z",
+   "detalhe_pendente": true
   },
   "g2915630253": {
    "id": "g2915630253",
@@ -2732,7 +2740,8 @@
    "publicado": "2026-10-02T16:20:24Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-08T19:00:17Z"
+   "visto": "2026-10-08T19:00:17Z",
+   "detalhe_pendente": true
   },
   "g2915514727": {
    "id": "g2915514727",
@@ -2755,7 +2764,8 @@
    "publicado": "2026-10-02T16:19:04Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-08T19:00:17Z"
+   "visto": "2026-10-08T19:00:17Z",
+   "detalhe_pendente": true
   },
   "g2915447114": {
    "id": "g2915447114",
@@ -2856,7 +2866,7 @@
    "endereco": "",
    "bairro": "Terra Bonita",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/8d0e1269b5dc9071449e954e0304c037/foto.webp?action=crop&dimension=360x240",
-   "area": 327,
+   "area": 300,
    "preco": 2500000,
    "quartos": 4,
    "banheiros": 5,
@@ -2870,7 +2880,8 @@
    "publicado": "2026-10-01T22:24:55Z",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-08T19:00:17Z"
+   "visto": "2026-10-08T19:00:17Z",
+   "area_anunciada": 327
   },
   "g2915314742": {
    "id": "g2915314742",
@@ -6023,7 +6034,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/79/795612285929729.jpg",
-   "area": 182,
+   "area": 180,
    "preco": 1980000,
    "quartos": 3,
    "banheiros": 4,
@@ -6036,7 +6047,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-20T12:00:13Z"
+   "visto": "2026-10-20T12:00:13Z",
+   "area_anunciada": 182
   },
   "o1542069651": {
    "id": "o1542069651",
@@ -6067,7 +6079,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/54/545652333317093.jpg",
-   "area": 299,
+   "area": 256,
    "preco": 2750000,
    "quartos": 4,
    "banheiros": 5,
@@ -6080,7 +6092,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-15T23:04:50Z"
+   "visto": "2026-10-15T23:04:50Z",
+   "area_anunciada": 299
   },
   "o1541762807": {
    "id": "o1541762807",
@@ -6265,7 +6278,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/99/997609695074406.jpg",
-   "area": 300,
+   "area": 256,
    "preco": 2750000,
    "quartos": 4,
    "banheiros": 5,
@@ -6278,7 +6291,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-14T23:00:16Z"
+   "visto": "2026-10-14T23:00:16Z",
+   "area_anunciada": 300
   },
   "o1540754357": {
    "id": "o1540754357",
@@ -6353,7 +6367,7 @@
    "endereco": null,
    "bairro": "Terra Bonita",
    "foto": "https://img.olx.com.br/images/20/206608212991619.jpg",
-   "area": 327,
+   "area": 300,
    "preco": 2500000,
    "quartos": 4,
    "banheiros": 5,
@@ -6366,7 +6380,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-10-12T02:01:52Z"
+   "visto": "2026-10-12T02:01:52Z",
+   "area_anunciada": 327
   },
   "o1540684597": {
    "id": "o1540684597",
@@ -24594,7 +24609,8 @@
    "visivel": true,
    "detectado": "2026-10-09T17:14:06Z",
    "visto": "2026-10-13T17:00:13Z",
-   "preco_anterior": 1699550
+   "preco_anterior": 1699550,
+   "detalhe_pendente": true
   },
   "g2916628192": {
    "id": "g2916628192",
@@ -24622,7 +24638,7 @@
   "g2916626980": {
    "id": "g2916626980",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville II",
    "endereco": "Rodovia Mabio Gonçalves Palhano, 150",
    "bairro": "Gleba Fazenda Palhano",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/c3067040d30e76bb2a4f04b218389242/foto.webp?action=crop&dimension=360x240",
@@ -24729,7 +24745,8 @@
    "publicado": "2026-10-10T00:49:27Z",
    "visivel": true,
    "detectado": "2026-10-10T02:02:47Z",
-   "visto": "2026-10-13T22:52:56Z"
+   "visto": "2026-10-13T22:52:56Z",
+   "detalhe_pendente": true
   },
   "g2916763314": {
    "id": "g2916763314",
@@ -24757,7 +24774,7 @@
   "g2916761176": {
    "id": "g2916761176",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Villa Noah",
    "endereco": "Rodovia Mabio Gonçalves Palhano, 0001",
    "bairro": "Gleba Fazenda Palhano",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/f9cf6e329cb164dceb22b0a42fdd6b6f/foto.webp?action=crop&dimension=360x240",
@@ -25006,7 +25023,7 @@
   "g2916791063": {
    "id": "g2916791063",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Acácia Imperial",
    "endereco": "Avenida Gil de Abreu Souza, 1770",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/64f92675dc4d90c96595ba930274498a/foto.webp?action=crop&dimension=360x240",
@@ -25279,7 +25296,7 @@
    "endereco": "Avenida Gil de Abreu Souza, 2335",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/f29b7b051e1646a1f77c8522413807af/foto.webp?action=crop&dimension=360x240",
-   "area": 213,
+   "area": 200,
    "preco": 1990000,
    "quartos": 3,
    "banheiros": 5,
@@ -25293,7 +25310,8 @@
    "publicado": "2026-10-11T03:43:17Z",
    "visivel": true,
    "detectado": "2026-10-11T16:27:01Z",
-   "visto": "2026-10-15T23:04:50Z"
+   "visto": "2026-10-15T23:04:50Z",
+   "area_anunciada": 213
   },
   "g2916978048": {
    "id": "g2916978048",
@@ -25316,7 +25334,8 @@
    "publicado": "2026-10-11T03:43:17Z",
    "visivel": true,
    "detectado": "2026-10-11T16:27:01Z",
-   "visto": "2026-10-15T23:04:50Z"
+   "visto": "2026-10-15T23:04:50Z",
+   "detalhe_pendente": true
   },
   "g2916810034": {
    "id": "g2916810034",
@@ -25370,7 +25389,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/18/184603336316914.jpg",
-   "area": 213,
+   "area": 200,
    "preco": 1990000,
    "quartos": 3,
    "banheiros": 5,
@@ -25383,7 +25402,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-11T16:27:01Z",
-   "visto": "2026-10-20T12:00:13Z"
+   "visto": "2026-10-20T12:00:13Z",
+   "area_anunciada": 213
   },
   "o1543382143": {
    "id": "o1543382143",
@@ -25429,7 +25449,8 @@
    "visivel": true,
    "detectado": "2026-10-12T19:44:39Z",
    "visto": "2026-10-16T23:02:11Z",
-   "preco_anterior": 3599570
+   "preco_anterior": 3599570,
+   "detalhe_pendente": true
   },
   "g2917152733": {
    "id": "g2917152733",
@@ -25453,7 +25474,8 @@
    "visivel": true,
    "detectado": "2026-10-12T19:44:39Z",
    "visto": "2026-10-16T23:02:11Z",
-   "preco_anterior": 9999590
+   "preco_anterior": 9999590,
+   "detalhe_pendente": true
   },
   "g2917300542": {
    "id": "g2917300542",
@@ -25616,7 +25638,7 @@
   "o1543821865": {
    "id": "o1543821865",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville Imbuías",
    "endereco": null,
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://img.olx.com.br/images/73/733647216467479.jpg",
@@ -25789,7 +25811,8 @@
    "visivel": true,
    "detectado": "2026-10-13T22:52:56Z",
    "visto": "2026-10-18T12:06:20Z",
-   "preco_anterior": 1499160
+   "preco_anterior": 1499160,
+   "detalhe_pendente": true
   },
   "o1543965579": {
    "id": "o1543965579",
@@ -25878,7 +25901,8 @@
    "publicado": "2026-10-14T21:25:14Z",
    "visivel": true,
    "detectado": "2026-10-14T23:00:16Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917512347": {
    "id": "g2917512347",
@@ -26057,7 +26081,8 @@
    "publicado": "2026-10-15T10:13:53Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917590535": {
    "id": "g2917590535",
@@ -26154,7 +26179,7 @@
   "g2917571683": {
    "id": "g2917571683",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville 2",
    "endereco": "Rua Paulo César Braga Abelha, 50",
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/cbbce69f75987466a396c2c79c87262b/foto.webp?action=crop&dimension=360x240",
@@ -26195,7 +26220,8 @@
    "publicado": "2026-10-15T03:25:53Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917564836": {
    "id": "g2917564836",
@@ -26218,7 +26244,8 @@
    "publicado": "2026-10-15T03:25:53Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917563082": {
    "id": "g2917563082",
@@ -26241,7 +26268,8 @@
    "publicado": "2026-10-15T03:25:53Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917563080": {
    "id": "g2917563080",
@@ -26289,7 +26317,8 @@
    "publicado": "2026-10-15T03:25:53Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-18T17:06:58Z"
+   "visto": "2026-10-18T17:06:58Z",
+   "detalhe_pendente": true
   },
   "g2917557238": {
    "id": "g2917557238",
@@ -26761,7 +26790,7 @@
   "g2917732672": {
    "id": "g2917732672",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Villa Noah",
    "endereco": "Rodovia Mabio Gonçalves Palhano",
    "bairro": "Gleba Fazenda Palhano",
    "foto": "https://resizedimgs.vivareal.com/img/vr-listing/70581494a261a1bc23ccacd5a857ce6e/foto.webp?action=crop&dimension=360x240",
@@ -27531,7 +27560,7 @@
   "g2918350173": {
    "id": "g2918350173",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Royal Forest",
    "endereco": "Avenida Gil de Abreu Souza, 2335",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.vivareal.com/img/vr-listing/ba0c317106c96fedc11b2a7198ffa8dd/foto.webp?action=crop&dimension=360x240",
@@ -28089,7 +28118,7 @@
   "g2918510560": {
    "id": "g2918510560",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville Imbuías",
    "endereco": "Rua Carlota Ilnicki",
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/6a61a80bb75d0dc50311e0819298f972/foto.webp?action=crop&dimension=360x240",
@@ -28112,7 +28141,7 @@
   "o1545977579": {
    "id": "o1545977579",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville Imbuías",
    "endereco": null,
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://img.olx.com.br/images/66/660605933950844.jpg",
@@ -28522,7 +28551,7 @@
    "endereco": "Rodovia Mabio Gonçalves Palhano",
    "bairro": "Gleba Fazenda Palhano",
    "foto": "https://www.chavesnamao.com.br/imn/0340X0250/N/80/imoveis/190110/47734961/pr-londrina-gleba-fazenda-palhano-rodovia-mabio-goncalves-palhano-casa-sobrado-em-condominio-a-venda-3-quartos-6acfdc02-1.jpg",
-   "area": 200,
+   "area": 180,
    "preco": 1680000,
    "quartos": 3,
    "banheiros": 4,
@@ -28535,7 +28564,8 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-21T01:14:09Z"
+   "visto": "2026-10-21T01:14:09Z",
+   "area_anunciada": 200
   },
   "cm47720438": {
    "id": "cm47720438",
@@ -33558,7 +33588,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/64/643673696014490.jpg",
-   "area": 330,
+   "area": 200,
    "preco": 1700000,
    "quartos": 3,
    "banheiros": 2,
@@ -33571,7 +33601,8 @@
    "origem": "olx",
    "visivel": true,
    "detectado": "2026-10-21T17:04:53Z",
-   "visto": "2026-10-21T17:04:53Z"
+   "visto": "2026-10-21T17:04:53Z",
+   "area_anunciada": 330
   },
   "o1500228484": {
    "id": "o1500228484",
@@ -33760,7 +33791,7 @@
    "endereco": null,
    "bairro": "Terra Bonita",
    "foto": "https://img.olx.com.br/images/20/206608212991619.jpg",
-   "area": 327,
+   "area": 300,
    "preco": 2500000,
    "preco_anterior": null,
    "quartos": 4,
@@ -33774,19 +33805,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-terra-bonita-londrina-pr-327m2-id-2915390693/",
      "preco": 2500000,
-     "area": 327
+     "area": 300,
+     "area_anunciada": 327
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-terra-bonita-bairros-londrina-com-garagem-327m2-venda-RS2500000-id-2915390693/",
      "preco": 2500000,
-     "area": 327
+     "area": 300,
+     "area_anunciada": 327
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-em-condominio-fechado-zona-sul-de-londrina-1540696031",
      "preco": 2500000,
-     "area": 327
+     "area": 300,
+     "area_anunciada": 327
     }
    ],
    "lat": -23.355588,
@@ -33814,19 +33848,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-recanto-do-salto-londrina-pr-195m2-id-2915393740/",
      "preco": 2300000,
-     "area": 195
+     "area": 195,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-recanto-do-salto-bairros-londrina-com-garagem-195m2-venda-RS2300000-id-2915393740/",
      "preco": 2300000,
-     "area": 195
+     "area": 195,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-sunset-dream-residence-1540684597",
      "preco": 2300000,
-     "area": 195
+     "area": 195,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36894,
@@ -33854,19 +33891,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-156m2-id-2915441871/",
      "preco": 1490000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-156m2-venda-RS1490000-id-2915441871/",
      "preco": 1490000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/golden-hill-r-1-490-000-casa-terrea-a-venda-3-suites-152m-2-vagas-esperanca-lon-1459728252",
      "preco": 1490000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -33894,19 +33934,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-lavanderia-coletiva-terras-de-santana-ii-londrina-pr-300m2-id-2915447114/",
      "preco": 2950000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-terras-de-santana-ii-bairros-londrina-com-garagem-300m2-venda-RS2950000-id-2915447114/",
      "preco": 2950000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-4-suites-1540754357",
      "preco": 2950000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347917,
@@ -33934,13 +33977,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-royal-forest-londrina-pr-300m2-id-2915630253/",
      "preco": 850000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-royal-forest-bairros-londrina-300m2-venda-RS850000-id-2915630253/",
      "preco": 850000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ],
    "lat": -23.346689,
@@ -33968,25 +34013,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-lavanderia-coletiva-esperanca-londrina-pr-178m2-id-2915633257/",
      "preco": 1550000,
-     "area": 178
+     "area": 178,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-178m2-venda-RS1550000-id-2915633257/",
      "preco": 1550000,
-     "area": 178
+     "area": 178,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-royal-forest-fase-ii-1541521106",
      "preco": 1550000,
-     "area": 178
+     "area": 178,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/20281",
      "preco": 1550000,
-     "area": 178
+     "area": 178,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -34000,7 +34049,7 @@
    "endereco": "Avenida Gil de Abreu Souza",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/de7ec4ec306c57ce22e534d8ecdbb8b6/foto.webp?action=crop&dimension=360x240",
-   "area": 300,
+   "area": 256,
    "preco": 2750000,
    "preco_anterior": null,
    "quartos": 4,
@@ -34014,19 +34063,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-300m2-id-2915778056/",
      "preco": 2750000,
-     "area": 300
+     "area": 256,
+     "area_anunciada": 300
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-300m2-venda-RS2750000-id-2915778056/",
      "preco": 2750000,
-     "area": 300
+     "area": 256,
+     "area_anunciada": 300
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-condominio-royal-forest-1541427379",
      "preco": 2750000,
-     "area": 300
+     "area": 256,
+     "area_anunciada": 300
     }
    ],
    "lat": -23.347029,
@@ -34054,19 +34106,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-mobiliado-estancia-santa-paula-londrina-pr-609m2-id-2915993000/",
      "preco": 6000000,
-     "area": 609
+     "area": 609,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-estancia-santa-paula-bairros-londrina-com-garagem-609m2-venda-RS6000000-id-2915993000/",
      "preco": 6000000,
-     "area": 609
+     "area": 609,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-e-locacao-em-londrina-estancia-santa-paula-com-4-suites-com-609-m-estanc-1541564557",
      "preco": 6000000,
-     "area": 609
+     "area": 609,
+     "area_anunciada": null
     }
    ],
    "lat": -23.358916,
@@ -34094,25 +34149,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-gleba-fazenda-palhano-londrina-pr-135m2-id-2916033111/",
      "preco": 1690000,
-     "area": 135
+     "area": 135,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-fazenda-palhano-bairros-londrina-com-garagem-135m2-venda-RS1690000-id-2916033111/",
      "preco": 1690000,
-     "area": 135
+     "area": 135,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-pronta-no-villa-noah-qualidade-de-vida-em-area-nobre-1541666876",
      "preco": 1690000,
-     "area": 135
+     "area": 135,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-nova-no-cond-villa-noah-com-3-quartos-1-suite-infra-de-ar-e-carro-eletrico-1540351726",
      "preco": 1686000,
-     "area": 135
+     "area": 135,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -34140,25 +34199,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-condominio-vale-do-arvoredo-londrina-pr-298m2-id-2916064071/",
      "preco": 2499000,
-     "area": 298
+     "area": 298,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-condominio-vale-do-arvoredo-bairros-londrina-com-garagem-298m2-venda-RS2499000-id-2916064071/",
      "preco": 2499000,
-     "area": 298
+     "area": 298,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-quartos-a-venda-298-m-por-r-2-499-000-condominio-vale-do-arvoredo-lon-1541694513",
      "preco": 2499000,
-     "area": 298
+     "area": 298,
+     "area_anunciada": null
     },
     {
      "portal": "inglaterra",
      "url": "https://www.imobiliariainglaterra.com.br/imovel/casa-londrina-4-quartos-298-m/CA5445-INIC",
      "preco": 2499000,
-     "area": 298
+     "area": 298,
+     "area_anunciada": null
     }
    ],
    "lat": -23.350541,
@@ -34189,25 +34252,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-esperanca-londrina-pr-345m2-id-2916081673/",
      "preco": 3750000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-345m2-venda-RS3750000-id-2916081673/",
      "preco": 3750000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-no-cond-royal-forest-totalmente-reformado-com-330m-de-area-construida-e-04-suite-1541707173",
      "preco": 3750000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23238",
      "preco": 3750000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ]
   },
@@ -34235,25 +34302,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-recanto-do-salto-londrina-pr-380m2-id-2916084051/",
      "preco": 5500000,
-     "area": 380
+     "area": 380,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-recanto-do-salto-bairros-londrina-com-garagem-380m2-venda-RS5500000-id-2916084051/",
      "preco": 5500000,
-     "area": 380
+     "area": 380,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-alugar-no-recanto-do-salto-em-londrina-1541707062",
      "preco": 5500000,
-     "area": 380
+     "area": 380,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/19716",
      "preco": 5500000,
-     "area": 380
+     "area": 380,
+     "area_anunciada": null
     }
    ]
   },
@@ -34278,19 +34349,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-esperanca-londrina-pr-506m2-id-2916084338/",
      "preco": 1350000,
-     "area": 506
+     "area": 506,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-506m2-venda-RS1350000-id-2916084338/",
      "preco": 1350000,
-     "area": 506
+     "area": 506,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/cond-maison-jardin-terreno-1541706892",
      "preco": 1350000,
-     "area": 506
+     "area": 506,
+     "area_anunciada": null
     }
    ],
    "lat": -23.34933,
@@ -34321,50 +34395,56 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-610m2-id-2916095848/",
      "preco": 9999770,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-610m2-venda-RS9999770-id-2916095848/",
      "preco": 9999770,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-610m2-id-2917152733/",
      "preco": 9999710,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-610m2-venda-RS9999710-id-2917152733/",
      "preco": 9999710,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-610m2-id-2918123468/",
      "preco": 9999700,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-610m2-venda-RS9999700-id-2918123468/",
      "preco": 9999700,
-     "area": 610
+     "area": 610,
+     "area_anunciada": null
     }
    ]
   },
   {
-   "id": "g2916112292",
+   "id": "g2918350173",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Royal Forest",
    "endereco": "Avenida Gil de Abreu Souza, 2335",
    "bairro": "Esperança",
-   "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/ba0c317106c96fedc11b2a7198ffa8dd/foto.webp?action=crop&dimension=360x240",
+   "foto": "https://resizedimgs.vivareal.com/img/vr-listing/ba0c317106c96fedc11b2a7198ffa8dd/foto.webp?action=crop&dimension=360x240",
    "area": 330,
-   "preco": 3599430,
-   "preco_anterior": 3599430,
+   "preco": 3599740,
+   "preco_anterior": 3599370,
    "quartos": 4,
    "banheiros": 6,
    "vagas": 4,
@@ -34379,37 +34459,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-330m2-id-2916112292/",
      "preco": 3599430,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-330m2-venda-RS3599430-id-2916112292/",
      "preco": 3599430,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-330m2-id-2917189157/",
      "preco": 3599770,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-330m2-venda-RS3599770-id-2917189157/",
      "preco": 3599770,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-330m2-venda-RS3599740-id-2918350173/",
      "preco": 3599740,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-330m2-id-2918350173/",
      "preco": 3599740,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ]
   },
@@ -34434,37 +34520,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-400m2-id-2916118544/",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-400m2-venda-RS5190000-id-2916118544/",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-royal-park-londrina-pr-1541762807",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-400m2-id-2917599979/",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-400m2-venda-RS5190000-id-2917599979/",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-royal-park-londrina-pr-1544342256",
      "preco": 5190000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -34492,67 +34584,78 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-esperanca-londrina-pr-316m2-id-2916136648/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-316m2-venda-RS890000-id-2916136648/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/royal-forest-residence-resort-terreno-em-condominio-esperanca-a-venda--londri-1541820292",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-esperanca-londrina-pr-316m2-id-2910054722/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-316m2-venda-RS890000-id-2910054722/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-royal-forest-londrina-pr-316m2-id-2910942161/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-royal-forest-bairros-londrina-316m2-venda-RS890000-id-2910942161/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-316-m-por-r-890-000-00-condominio-royal-forest-londrina-pr-1477932398",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-316-m-por-r-890-000-no-condominio-royal-forest-londrina-pr-1532655056",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-royal-forest-em-londrina-1533959609",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-esperanca-316m2-RS890000/id-47695104/",
      "preco": 890000,
-     "area": 316
+     "area": 316,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -34562,42 +34665,101 @@
   {
    "id": "g2916282983",
    "tipo": "casa",
-   "predio": null,
-   "endereco": null,
+   "predio": "ROYAL FOREST ESPERANÇA",
+   "endereco": "Avenida Gil de Abreu Souza, 2335",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/9e2864194a2e7b1f70ce5f3d8cde28cb/foto.webp?action=crop&dimension=360x240",
-   "area": 299,
+   "area": 256,
    "preco": 2750000,
    "preco_anterior": null,
    "quartos": 4,
    "banheiros": 5,
    "vagas": 4,
    "titulo": "Casa de condomínio para comprar com 299 m², 4 quartos, 5 banheiros, 4 vagas",
-   "publicado": "2026-10-07T05:33:10Z",
+   "publicado": "2026-09-24T05:30:24Z",
    "detectado": "2026-10-08T19:00:17Z",
    "fontes": [
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-299m2-id-2916282983/",
      "preco": 2750000,
-     "area": 299
+     "area": 256,
+     "area_anunciada": 299
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-299m2-venda-RS2750000-id-2916282983/",
      "preco": 2750000,
-     "area": 299
+     "area": 256,
+     "area_anunciada": 299
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-299-m-venda-por-r-2-750-000-00-ou-aluguel-por-r-13-100-00-1542035173",
      "preco": 2750000,
-     "area": 299
+     "area": 256,
+     "area_anunciada": 299
+    },
+    {
+     "portal": "zap",
+     "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-256m2-id-2913939374/",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "vivareal",
+     "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-256m2-venda-RS2750000-id-2913939374/",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "zap",
+     "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-256m2-id-2915011345/",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "vivareal",
+     "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-256m2-venda-RS2750000-id-2915011345/",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-4-quartos-256-m-venda-por-r-2-750-000-ou-aluguel-por-r-13-433-mes-condomi-1538353926",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-venda-no-condominio-royal-forest-esperanca-zona-sul-londrina-pr-1539982164",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-venda-no-condominio-royal-forest-esperanca-zona-sul-londrina-pr-1540004956",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
+    },
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-venda-no-condominio-royal-forest-esperanca-zona-sul-londrina-pr-1540025221",
+     "preco": 2750000,
+     "area": 256,
+     "area_anunciada": null
     }
    ],
-   "lat": -23.347543,
-   "lon": -51.211091,
-   "geo": "bairro"
+   "lat": -23.346689,
+   "lon": -51.212577,
+   "geo": "exato"
   },
   {
    "id": "g2916314988",
@@ -34620,19 +34782,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-400m2-id-2916314988/",
      "preco": 6499999,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-400m2-venda-RS6499999-id-2916314988/",
      "preco": 6499999,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-venda-e-locacao-condominio-royal-park-residence-resort-1542069651",
      "preco": 6499999,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -34660,19 +34825,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-condominio-royal-golf-residence-londrina-pr-501m2-id-2916428801/",
      "preco": 12500000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-condominio-royal-golf-residence-bairros-londrina-501m2-venda-RS12500000-id-2916428801/",
      "preco": 12500000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-condominio-royal-golf-residence-em-londrina-1542325156",
      "preco": 12500000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347072,
@@ -34682,7 +34850,7 @@
   {
    "id": "g2916431738",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Royal Park Residence",
    "endereco": "Avenida Gil de Abreu Souza, 1777",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/2b014d62ac62040d02c34d2fd5ae381f/foto.webp?action=crop&dimension=360x240",
@@ -34700,13 +34868,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-490m2-id-2916431738/",
      "preco": 6500000,
-     "area": 490
+     "area": 490,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-490m2-venda-RS6500000-id-2916431738/",
      "preco": 6500000,
-     "area": 490
+     "area": 490,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -34734,25 +34904,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-146m2-id-2916482349/",
      "preco": 1590000,
-     "area": 146
+     "area": 146,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-146m2-venda-RS1590000-id-2916482349/",
      "preco": 1590000,
-     "area": 146
+     "area": 146,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-uma-suite-terreno-de-312m-e-146m-construidos-por-r-1-590-000-1542388502",
      "preco": 1590000,
-     "area": 146
+     "area": 146,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/casa-londrina-3-quartos-146-m/CA4612-AURO",
      "preco": 1590000,
-     "area": 146
+     "area": 146,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -34780,19 +34954,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-315m2-id-2916503546/",
      "preco": 3800000,
-     "area": 315
+     "area": 315,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-com-garagem-315m2-venda-RS3800000-id-2916503546/",
      "preco": 3800000,
-     "area": 315
+     "area": 315,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-com-5-dormitorios-por-r-3-800-000-00-condominio-royal-tennis-esperanca-lo-1542419698",
      "preco": 3800000,
-     "area": 315
+     "area": 315,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348634,
@@ -34820,13 +34997,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-condominio-golden-hill-1475708983",
      "preco": 1199000,
-     "area": 157
+     "area": 157,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-esperanca-250m2-RS1190000/id-47695654/",
      "preco": 1190000,
-     "area": 157
+     "area": 157,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -34854,7 +35033,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-de-condominio-para-venda-possui-592-metros-quadrados-com-4-quartos-1491384954",
      "preco": 9800000,
-     "area": 592
+     "area": 592,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -34868,7 +35048,7 @@
    "endereco": "Avenida Gil de Abreu Souza",
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/79/795612285929729.jpg",
-   "area": 182,
+   "area": 180,
    "preco": 1980000,
    "preco_anterior": null,
    "quartos": 3,
@@ -34885,19 +35065,22 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-de-condominio-para-venda-possui-182-metros-quadrados-com-3-quartos-1503753682",
      "preco": 1980000,
-     "area": 182
+     "area": 180,
+     "area_anunciada": 182
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-royal-maison-1532675385",
      "preco": 1980000,
-     "area": 182
+     "area": 182,
+     "area_anunciada": null
     },
     {
      "portal": "cube",
      "url": "https://cubeimoveis.com.br/imovel/casa-em-condominio-esperanca-londrina-pr-3-quartos-182m2-CI182",
      "preco": 1980000,
-     "area": 182
+     "area": 182,
+     "area_anunciada": null
     }
    ]
   },
@@ -34922,13 +35105,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/golden-hill-residence-1540749424",
      "preco": 1490000,
-     "area": 154
+     "area": 154,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-condominio-golden-hill-1467653762",
      "preco": 1490000,
-     "area": 154
+     "area": 154,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -34956,7 +35141,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1-457-70-m-1541385928",
      "preco": 3280000,
-     "area": 1457
+     "area": 1457,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -34984,7 +35170,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1200-99-m-1541386040",
      "preco": 2703000,
-     "area": 1200
+     "area": 1200,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35012,7 +35199,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1-316-23-m-1541386072",
      "preco": 3490000,
-     "area": 1316
+     "area": 1316,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35040,7 +35228,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1-316-72-m-1541386269",
      "preco": 2815000,
-     "area": 1316
+     "area": 1316,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35068,7 +35257,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1-509-30-m-1541386374",
      "preco": 3396000,
-     "area": 1509
+     "area": 1509,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35096,7 +35286,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1205-11-m-1541515694",
      "preco": 2712000,
-     "area": 1205
+     "area": 1205,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35124,7 +35315,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-londrina-condominio-the-euro-royal-com-1260-67-m-1541536231",
      "preco": 2837000,
-     "area": 1260
+     "area": 1260,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -35152,7 +35344,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-3-quartos-sun-lake-1541682170",
      "preco": 3700000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -35180,7 +35373,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-condominio-sunset-1542214401",
      "preco": 1700000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -35208,7 +35402,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-condominio-royal-park-em-londrina-1542325127",
      "preco": 5700000,
-     "area": 490
+     "area": 490,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -35239,73 +35434,85 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-venda-condominio-villa-noah-proximo-ao-cond-sun-lake-1542338194",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-200m2-id-2916597556/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-200m2-venda-RS470000-id-2916597556/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-200m2-id-2916600234/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-200m2-venda-RS470000-id-2916600234/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-200m2-id-2916600235/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-200m2-venda-RS470000-id-2916600235/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-200m2-id-2916600333/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-200m2-venda-RS470000-id-2916600333/",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600697",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600699",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600735",
      "preco": 470000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     }
    ]
   },
@@ -35330,37 +35537,43 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-e-para-alugar-em-londrina-esperanca-com-3-quartos-com-175-m-royal-forest-1542382129",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-175m2-id-2914177766/",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-175m2-venda-RS1670000-id-2914177766/",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-175-m-venda-por-r-1-670-000-00-ou-aluguel-por-r-10-900-00-mes-1534455942",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-175-m-venda-por-r-1-670-000-00-ou-aluguel-por-r-10-900-01-mes-1538696426",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-175-m-venda-por-r-1-670-000-00-ou-aluguel-por-r-11-400-00-mes-1538703178",
      "preco": 1670000,
-     "area": 175
+     "area": 175,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -35391,31 +35604,36 @@
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23257",
      "preco": 1350000,
-     "area": 507
+     "area": 507,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-esperanca-londrina-pr-507m2-id-2911986028/",
      "preco": 1350000,
-     "area": 507
+     "area": 507,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-507m2-venda-RS1350000-id-2911986028/",
      "preco": 1350000,
-     "area": 507
+     "area": 507,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-esperanca-506m2-RS1350000/id-46758431/",
      "preco": 1350000,
-     "area": 506
+     "area": 506,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-esperanca-506m2-RS1350000/id-47438157/",
      "preco": 1350000,
-     "area": 506
+     "area": 506,
+     "area_anunciada": null
     }
    ]
   },
@@ -35443,19 +35661,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-248m2-id-2916597557/",
      "preco": 578469,
-     "area": 248
+     "area": 248,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-248m2-venda-RS578469-id-2916597557/",
      "preco": 578469,
-     "area": 248
+     "area": 248,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600725",
      "preco": 578469,
-     "area": 248
+     "area": 248,
+     "area_anunciada": null
     }
    ]
   },
@@ -35483,19 +35704,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-292m2-id-2916598462/",
      "preco": 701520,
-     "area": 292
+     "area": 292,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-292m2-venda-RS701520-id-2916598462/",
      "preco": 701520,
-     "area": 292
+     "area": 292,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600701",
      "preco": 701520,
-     "area": 292
+     "area": 292,
+     "area_anunciada": null
     }
    ]
   },
@@ -35523,19 +35747,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-esperanca-londrina-pr-1527m2-id-2916598483/",
      "preco": 1200000,
-     "area": 1527
+     "area": 1527,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-1527m2-venda-RS1200000-id-2916598483/",
      "preco": 1200000,
-     "area": 1527
+     "area": 1527,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-esperanca-1527m2-RS1200000/id-47610873/",
      "preco": 1200000,
-     "area": 1527
+     "area": 1527,
+     "area_anunciada": null
     }
    ]
   },
@@ -35563,55 +35790,64 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-vivendas-do-arvoredo-londrina-pr-463m2-id-2916598484/",
      "preco": 1250000,
-     "area": 463
+     "area": 463,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-vivendas-do-arvoredo-bairros-londrina-463m2-venda-RS1250000-id-2916598484/",
      "preco": 1250000,
-     "area": 463
+     "area": 463,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-vivendas-do-arvoredo-londrina-pr-462m2-id-2900381187/",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-vivendas-do-arvoredo-bairros-londrina-462m2-venda-RS1250000-id-2900381187/",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-vivendas-do-arvoredo-londrina-pr-462m2-id-2900381874/",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-vivendas-do-arvoredo-bairros-londrina-462m2-venda-RS1250000-id-2900381874/",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/terreno-londrina-462-m/TE1777-AURO",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/terreno-londrina-462-m/TE1778-AURO",
      "preco": 1250000,
-     "area": 462
+     "area": 462,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-vivendas-do-arvoredo-463m2-RS1250000/id-47610877/",
      "preco": 1250000,
-     "area": 463
+     "area": 463,
+     "area_anunciada": null
     }
    ]
   },
@@ -35639,13 +35875,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-208m2-id-2916599443/",
      "preco": 489669,
-     "area": 208
+     "area": 208,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-208m2-venda-RS489669-id-2916599443/",
      "preco": 489669,
-     "area": 208
+     "area": 208,
+     "area_anunciada": null
     }
    ]
   },
@@ -35670,37 +35908,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-220m2-id-2916600146/",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-220m2-venda-RS517000-id-2916600146/",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-220m2-id-2916600147/",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-220m2-venda-RS517000-id-2916600147/",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600692",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600702",
      "preco": 517000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -35731,19 +35975,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-266m2-id-2916600148/",
      "preco": 619896,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-266m2-venda-RS619896-id-2916600148/",
      "preco": 619896,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600740",
      "preco": 619896,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     }
    ]
   },
@@ -35771,19 +36018,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-282m2-id-2916600149/",
      "preco": 677448,
-     "area": 282
+     "area": 282,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-282m2-venda-RS677448-id-2916600149/",
      "preco": 677448,
-     "area": 282
+     "area": 282,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600737",
      "preco": 677448,
-     "area": 282
+     "area": 282,
+     "area_anunciada": null
     }
    ]
   },
@@ -35811,19 +36061,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-gleba-palhano-londrina-pr-233m2-id-2916600334/",
      "preco": 544963,
-     "area": 233
+     "area": 233,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-gleba-palhano-bairros-londrina-233m2-venda-RS544963-id-2916600334/",
      "preco": 544963,
-     "area": 233
+     "area": 233,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-villa-noah-com-233-89-m-em-londrina-1542600727",
      "preco": 544963,
-     "area": 233
+     "area": 233,
+     "area_anunciada": null
     }
    ]
   },
@@ -35848,37 +36101,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-295m2-id-2916606046/",
      "preco": 2900000,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-295m2-venda-RS2900000-id-2916606046/",
      "preco": 2900000,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-295m2-id-2916791063/",
      "preco": 2900000,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-295m2-venda-RS2900000-id-2916791063/",
      "preco": 2900000,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-suites-a-venda-267-m-por-r-2-900-000-acacia-imperial-londrina-pr-1542932140",
      "preco": 2900000,
-     "area": 267
+     "area": 267,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-residencial-acacia-imperial-na-regiao-sul-de-londrina-1536544957",
      "preco": 2900000,
-     "area": 266
+     "area": 266,
+     "area_anunciada": null
     }
    ],
    "lat": -23.349019,
@@ -35906,7 +36165,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-em-condominio-290m-3-suites-a-venda-condominio-acacia-imperial-londrina-1542610317",
      "preco": 2900000,
-     "area": 290
+     "area": 290,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -35934,19 +36194,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-alphaville-ii-londrina-pr-357m2-id-2916626980/",
      "preco": 4790000,
-     "area": 357
+     "area": 357,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-alphaville-ii-bairros-londrina-com-garagem-357m2-venda-RS4790000-id-2916626980/",
      "preco": 4790000,
-     "area": 357
+     "area": 357,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-suites-a-venda-357-m-por-r-4-790-000-alphaville-ii-londrina-pr-1542645321",
      "preco": 4790000,
-     "area": 357
+     "area": 357,
+     "area_anunciada": null
     }
    ],
    "lat": -23.355855,
@@ -35974,13 +36237,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-recanto-do-salto-londrina-pr-267m2-id-2916628192/",
      "preco": 568016,
-     "area": 267
+     "area": 267,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-recanto-do-salto-bairros-londrina-267m2-venda-RS568016-id-2916628192/",
      "preco": 568016,
-     "area": 267
+     "area": 267,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -36008,7 +36273,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-quartos-a-venda-130-m-por-r-1-680-000-condominio-villa-noah-londrina-pr-1542645378",
      "preco": 1680000,
-     "area": 130
+     "area": 130,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -36036,37 +36302,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-gleba-palhano-londrina-pr-206m2-id-2916761176/",
      "preco": 1890000,
-     "area": 206
+     "area": 206,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-palhano-bairros-londrina-com-garagem-206m2-venda-RS1890000-id-2916761176/",
      "preco": 1890000,
-     "area": 206
+     "area": 206,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-piscina-e-3-suites-a-venda-no-condominio-villa-noah-em-londrina-1542891956",
      "preco": 1890000,
-     "area": 206
+     "area": 206,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/villa-noah-r-1-890-000-casa-em-condominio-a-venda-3-suites-203m-2-vagas-londrina-1539658918",
      "preco": 1890000,
-     "area": 203
+     "area": 203,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-gleba-fazenda-palhano-londrina-pr-203m2-id-2914814362/",
      "preco": 1890000,
-     "area": 203
+     "area": 203,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-fazenda-palhano-bairros-londrina-com-garagem-203m2-venda-RS1890000-id-2914814362/",
      "preco": 1890000,
-     "area": 203
+     "area": 203,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -36094,25 +36366,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-esperanca-londrina-pr-225m2-id-2916763314/",
      "preco": 1980000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-225m2-venda-RS1980000-id-2916763314/",
      "preco": 1980000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-225-m-venda-por-r-1-980-000-00-ou-aluguel-por-r-9-890-00-mes-esperanca-lond-1542902910",
      "preco": 1980000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-3-dormitorios-225-m-venda-por-r-1-980-000-ou-aluguel-por-r-9-950-mes-c-1542934073",
      "preco": 1980000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -36140,19 +36416,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-esperanca-londrina-pr-190m2-id-2916768336/",
      "preco": 200000,
-     "area": 190
+     "area": 190,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-190m2-venda-RS200000-id-2916768336/",
      "preco": 200000,
-     "area": 190
+     "area": 190,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-e-locacao-no-condominio-royal-maison-1542898727",
      "preco": 200000,
-     "area": 190
+     "area": 190,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -36180,7 +36459,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-royal-forest-resort-residence-1271962947",
      "preco": 3300000,
-     "area": 284
+     "area": 284,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -36208,13 +36488,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-sun-lake-1479027356",
      "preco": 2950000,
-     "area": 311
+     "area": 311,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-cond-sun-lake-em-londrina-1535459079",
      "preco": 2950000,
-     "area": 311
+     "area": 311,
+     "area_anunciada": null
     }
    ],
    "lat": -23.366573,
@@ -36242,25 +36524,29 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-estancia-cabral-zona-sul-de-londrina-1542892755",
      "preco": 650000,
-     "area": 1500
+     "area": 1500,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-estancia-cabral-em-cambepr-1544267585",
      "preco": 650000,
-     "area": 1500
+     "area": 1500,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-estancia-cabral-em-cambepr-1544337496",
      "preco": 650000,
-     "area": 1500
+     "area": 1500,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-estancia-cabral-em-cambepr-1544341946",
      "preco": 650000,
-     "area": 1500
+     "area": 1500,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -36291,25 +36577,29 @@
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23304",
      "preco": 1980000,
-     "area": 183
+     "area": 183,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-em-condominio-1542938924",
      "preco": 1980000,
-     "area": 183
+     "area": 183,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-lavanderia-coletiva-esperanca-londrina-pr-183m2-id-2916810034/",
      "preco": 1980000,
-     "area": 183
+     "area": 183,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-183m2-venda-RS1980000-id-2916810034/",
      "preco": 1980000,
-     "area": 183
+     "area": 183,
+     "area_anunciada": null
     }
    ]
   },
@@ -36337,25 +36627,29 @@
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23307",
      "preco": 1500000,
-     "area": 171
+     "area": 171,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-esperanca-londrina-pr-171m2-id-2916807949/",
      "preco": 1500000,
-     "area": 171
+     "area": 171,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-171m2-venda-RS1500000-id-2916807949/",
      "preco": 1500000,
-     "area": 171
+     "area": 171,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-em-condominio-1542938942",
      "preco": 1500000,
-     "area": 171
+     "area": 171,
+     "area_anunciada": null
     }
    ]
   },
@@ -36383,25 +36677,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-esperanca-londrina-pr-330m2-id-2916776366/",
      "preco": 850000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-330m2-venda-RS850000-id-2916776366/",
      "preco": 850000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-330-m-por-r-850-000-condominio-royal-forest-londrina-pr-1542920789",
      "preco": 850000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/condominio-residencial-royal-forest-1489933800",
      "preco": 850000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ]
   },
@@ -36426,19 +36724,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-vivendas-do-arvoredo-londrina-pr-499m2-id-2916781799/",
      "preco": 5700000,
-     "area": 499
+     "area": 499,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-vivendas-do-arvoredo-bairros-londrina-com-garagem-499m2-venda-RS5700000-id-2916781799/",
      "preco": 5700000,
-     "area": 499
+     "area": 499,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-e-para-alugar-em-londrina-vivendas-do-arvoredo-com-4-suites-com-499-m-1542922038",
      "preco": 5700000,
-     "area": 499
+     "area": 499,
+     "area_anunciada": null
     }
    ],
    "lat": -23.34855,
@@ -36466,19 +36767,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-vivendas-do-arvoredo-londrina-pr-300m2-id-2916821432/",
      "preco": 3200000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-vivendas-do-arvoredo-bairros-londrina-com-garagem-300m2-venda-RS3200000-id-2916821432/",
      "preco": 3200000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-com-4-quartos-no-condominio-alphaville-2-vivendas-do-arvoredo-londrina-pr-1542982538",
      "preco": 3200000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -36506,7 +36810,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/santana-residence-casa-a-venda-com-4-dormitorios-343-m-e-3-vagas-gleba-palhano-lon-1542918002",
      "preco": 2850000,
-     "area": 343
+     "area": 343,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347917,
@@ -36534,19 +36839,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-1-quarto-com-piscina-recanto-do-salto-londrina-pr-150m2-id-2916978048/",
      "preco": 3950000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-1-quartos-recanto-do-salto-bairros-londrina-com-garagem-150m2-venda-RS3950000-id-2916978048/",
      "preco": 3950000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-recanto-do-salto-1543228463",
      "preco": 3950000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -36560,7 +36868,7 @@
    "endereco": "Avenida Gil de Abreu Souza, 2335",
    "bairro": "Esperança",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/f29b7b051e1646a1f77c8522413807af/foto.webp?action=crop&dimension=360x240",
-   "area": 213,
+   "area": 200,
    "preco": 1990000,
    "preco_anterior": null,
    "quartos": 3,
@@ -36574,23 +36882,26 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-213m2-id-2916979439/",
      "preco": 1990000,
-     "area": 213
+     "area": 200,
+     "area_anunciada": 213
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-213m2-venda-RS1990000-id-2916979439/",
      "preco": 1990000,
-     "area": 213
+     "area": 200,
+     "area_anunciada": 213
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-maison-residence-resort-1543228459",
      "preco": 1990000,
-     "area": 213
+     "area": 200,
+     "area_anunciada": 213
     }
    ],
-   "lat": -23.346267,
-   "lon": -51.213994,
+   "lat": -23.345506,
+   "lon": -51.215203,
    "geo": "predio"
   },
   {
@@ -36614,7 +36925,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-residence-resort-03-suites-piscina-espaco-gourmet-1543382143",
      "preco": 1890000,
-     "area": 189
+     "area": 189,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -36642,25 +36954,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-churrasqueira-esperanca-londrina-pr-196m2-id-2917298492/",
      "preco": 1700000,
-     "area": 196
+     "area": 196,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-196m2-venda-RS1700000-id-2917298492/",
      "preco": 1700000,
-     "area": 196
+     "area": 196,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-a-venda-196-m-por-r-1-700-000-00-condominio-royal-forest-lon-1543821731",
      "preco": 1700000,
-     "area": 196
+     "area": 196,
+     "area_anunciada": null
     },
     {
      "portal": "monaco",
      "url": "https://www.imobiliariamonaco.com.br/imovel/casa-londrina-3-quartos-196-m/CA4247-MONA",
      "preco": 1700000,
-     "area": 196
+     "area": 196,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -36688,13 +37004,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-2-quartos-com-piscina-recanto-do-salto-londrina-pr-240m2-id-2917299944/",
      "preco": 3300000,
-     "area": 240
+     "area": 240,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-2-quartos-recanto-do-salto-bairros-londrina-com-garagem-240m2-venda-RS3300000-id-2917299944/",
      "preco": 3300000,
-     "area": 240
+     "area": 240,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36894,
@@ -36722,25 +37040,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-600m2-id-2917300339/",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-600m2-venda-RS9900000-id-2917300339/",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-esperanca-londrina-pr-600m2-id-2914176459/",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-600m2-venda-RS9900000-id-2914176459/",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -36771,25 +37093,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-vivendas-do-arvoredo-londrina-pr-394m2-id-2917300346/",
      "preco": 6500000,
-     "area": 394
+     "area": 394,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-vivendas-do-arvoredo-bairros-londrina-com-garagem-394m2-venda-RS6500000-id-2917300346/",
      "preco": 6500000,
-     "area": 394
+     "area": 394,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-394-m-venda-por-r-6-500-000-00-ou-aluguel-por-r-28-850-00-mes-condominio-a-1543821865",
      "preco": 6500000,
-     "area": 394
+     "area": 394,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/18053",
      "preco": 6500000,
-     "area": 394
+     "area": 394,
+     "area_anunciada": null
     }
    ]
   },
@@ -36814,19 +37140,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-gleba-fazenda-palhano-londrina-pr-330m2-id-2917300542/",
      "preco": 3980000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-gleba-fazenda-palhano-bairros-londrina-com-garagem-330m2-venda-RS3980000-id-2917300542/",
      "preco": 3980000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-a-venda-330-m-por-r-3-980-000-00-gleba-fazenda-palhano-londrina-pr-1543821932",
      "preco": 3980000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -36854,7 +37183,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-condominio-fechado-1481134916",
      "preco": 900000,
-     "area": 551
+     "area": 551,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -36882,13 +37212,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-a-venda-600-m-por-r-9-900-000-00-royal-park-residence-res-1543821632",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-600-m-venda-por-r-9-900-000-00-ou-aluguel-por-r-43-400-00-1538696262",
      "preco": 9900000,
-     "area": 600
+     "area": 600,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -36919,13 +37251,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-314-m-venda-por-r-3-200-000-00-ou-aluguel-por-r-14-450-00-1543821678",
      "preco": 3200000,
-     "area": 314
+     "area": 314,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/21064",
      "preco": 3200000,
-     "area": 314
+     "area": 314,
+     "area_anunciada": null
     }
    ]
   },
@@ -36950,7 +37284,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-6-dormitorios-330-m-venda-por-r-3-000-000-00-ou-aluguel-por-r-13-000-00-1543821683",
      "preco": 3000000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -36978,7 +37313,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-2-dormitorios-240-m-venda-por-r-3-300-000-00-ou-aluguel-por-r-9-250-00-mes-1543821732",
      "preco": 3300000,
-     "area": 240
+     "area": 240,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -37009,31 +37345,36 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-condominio-vale-do-arvoredo-londrina-pr-168m2-id-2917323973/",
      "preco": 1499600,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-condominio-vale-do-arvoredo-bairros-londrina-com-garagem-168m2-venda-RS1499600-id-2917323973/",
      "preco": 1499600,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-condominio-vale-do-arvoredo-bairros-londrina-com-garagem-168m2-venda-RS1499550-id-2918345200/",
      "preco": 1499550,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-condominio-vale-do-arvoredo-londrina-pr-168m2-id-2918345200/",
      "preco": 1499550,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-quartos-condominio-vale-do-arvoredo-1527510209",
      "preco": 1500000,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     }
    ]
   },
@@ -37058,7 +37399,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-golden-hill-londrina-1543965579",
      "preco": 1300000,
-     "area": 150
+     "area": 150,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -37086,7 +37428,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-em-condominio-fechado-londrina-meari-regiao-do-catuai-gleba-palhano-360-m-1544114351",
      "preco": 353000,
-     "area": 360
+     "area": 360,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -37114,7 +37457,8 @@
      "portal": "catuai",
      "url": "https://www.catuaiimoveis.com.br/imovel/casa-em-condominio-a-venda-sun-lake-residence-londrina",
      "preco": 3500000,
-     "area": 460
+     "area": 460,
+     "area_anunciada": null
     }
    ],
    "lat": -23.359938,
@@ -37142,13 +37486,15 @@
      "portal": "catuai",
      "url": "https://www.catuaiimoveis.com.br/imovel/casa-em-condominio-a-venda-alphaville-2-londrina-8",
      "preco": 2850000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     },
     {
      "portal": "monaco",
      "url": "https://www.imobiliariamonaco.com.br/imovel/sobrado-londrina-4-quartos-286-m/SO0612-MONA",
      "preco": 2800000,
-     "area": 286
+     "area": 286,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -37156,19 +37502,19 @@
    "geo": "predio"
   },
   {
-   "id": "rf23373",
+   "id": "g2917732672",
    "tipo": "casa",
    "predio": "Villa Noah",
    "endereco": "Rodovia Mabio Gonçalves Palhano, 1",
    "bairro": "Gleba Fazenda Palhano",
-   "foto": "https://s3.amazonaws.com/msys-imob-raulfulgencio/imovel/fotos/23373/f289e8f41ec330dcd850a67ab3172e8fAT.jpg",
+   "foto": "https://resizedimgs.vivareal.com/img/vr-listing/70581494a261a1bc23ccacd5a857ce6e/foto.webp?action=crop&dimension=360x240",
    "area": 180,
    "preco": 1680000,
    "preco_anterior": null,
    "quartos": 3,
-   "banheiros": 3,
+   "banheiros": 4,
    "vagas": 2,
-   "titulo": "CONDOMÍNIO VILLA NOAH | SOBRADO A VENDA | 03 SUÍTES",
+   "titulo": "Casa de condomínio para comprar com 180 m², 3 quartos, 4 banheiros, 2 vagas",
    "lat": -23.340449,
    "lon": -51.187628,
    "geo": "exato",
@@ -37179,73 +37525,92 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-gleba-fazenda-palhano-londrina-pr-180m2-id-2917512347/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-fazenda-palhano-bairros-londrina-com-garagem-180m2-venda-RS1680000-id-2917512347/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-fechado-villa-noah-sobrado-a-venda-180m-zona-sul-londrina-1544223607",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-fazenda-palhano-bairros-londrina-com-garagem-180m2-venda-RS1680000-id-2917732672/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-gleba-fazenda-palhano-londrina-pr-180m2-id-2917732672/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-3-suites-a-venda-180-m-condominio-villa-noah-londrina-pr-1544600025",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23373",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
+    },
+    {
+     "portal": "chavesnamao",
+     "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-gleba-fazenda-palhano-200m2-RS1680000/id-47734961/",
+     "preco": 1680000,
+     "area": 180,
+     "area_anunciada": 200
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-gleba-fazenda-palhano-200m2-RS1680000/id-47830716/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-gleba-fazenda-palhano-180m2-RS1680000/id-47954753/",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-em-condominio-fechado-1525523514",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-nova-condominio-villa-noah-180-m-construcao-gleba-fazenda-palhano-londr-1529423595",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/sobrado-londrina-3-quartos-180-m/SO1362-AURO",
      "preco": 1670000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     }
    ]
   },
@@ -37270,19 +37635,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-2-quartos-terras-de-santana-ii-londrina-pr-340m2-id-2917518872/",
      "preco": 3500000,
-     "area": 340
+     "area": 340,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-2-quartos-terras-de-santana-ii-bairros-londrina-com-garagem-340m2-venda-RS3500000-id-2917518872/",
      "preco": 3500000,
-     "area": 340
+     "area": 340,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/vende-se-casa-cond-santana-residence-1544245207",
      "preco": 3500000,
-     "area": 340
+     "area": 340,
+     "area_anunciada": null
     }
    ],
    "lat": -23.345744,
@@ -37310,13 +37678,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-vivendas-do-arvoredo-londrina-pr-450m2-id-2917557238/",
      "preco": 6500000,
-     "area": 450
+     "area": 450,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-vivendas-do-arvoredo-bairros-londrina-com-garagem-450m2-venda-RS6500000-id-2917557238/",
      "preco": 6500000,
-     "area": 450
+     "area": 450,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347563,
@@ -37344,13 +37714,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-mobiliado-recanto-do-salto-londrina-pr-585m2-id-2917562575/",
      "preco": 8900000,
-     "area": 585
+     "area": 585,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-recanto-do-salto-bairros-londrina-com-garagem-585m2-venda-RS8900000-id-2917562575/",
      "preco": 8900000,
-     "area": 585
+     "area": 585,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -37381,37 +37753,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-esperanca-londrina-pr-330m2-id-2917563080/",
      "preco": 949000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-330m2-venda-RS949000-id-2917563080/",
      "preco": 949000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/condominio-royal-forest-terreno-em-condominio-royal-forest-gleba-palhano-londrina-pr-1544314757",
      "preco": 949000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-em-condominio-fechado-no-bairro-esperanca-londrina-1439782156",
      "preco": 950000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-royal-forest-330-metros-excelente-localizacao-esquina-gl-1503253477",
      "preco": 950000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/19558",
      "preco": 950000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ]
   },
@@ -37436,25 +37814,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-terras-de-santana-ii-londrina-pr-209m2-id-2917563082/",
      "preco": 1800000,
-     "area": 209
+     "area": 209,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-terras-de-santana-ii-bairros-londrina-com-garagem-209m2-venda-RS1800000-id-2917563082/",
      "preco": 1800000,
-     "area": 209
+     "area": 209,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-casa-terrea-em-condominio-santana-residence-1544314788",
      "preco": 1800000,
-     "area": 209
+     "area": 209,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-casa-terrea-em-condominio-santana-residence-1536883447",
      "preco": 1800000,
-     "area": 209
+     "area": 209,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347917,
@@ -37482,25 +37864,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-mobiliado-terras-de-santana-ii-londrina-pr-288m2-id-2917564836/",
      "preco": 2950000,
-     "area": 288
+     "area": 288,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-terras-de-santana-ii-bairros-londrina-com-garagem-288m2-venda-RS2950000-id-2917564836/",
      "preco": 2950000,
-     "area": 288
+     "area": 288,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-sobrado-a-venda-condominio-santana-residence-1544314718",
      "preco": 2950000,
-     "area": 288
+     "area": 288,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-sobrado-a-venda-condominio-santana-residence-1536883453",
      "preco": 2950000,
-     "area": 288
+     "area": 288,
+     "area_anunciada": null
     }
    ],
    "lat": -23.345744,
@@ -37528,25 +37914,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-gleba-palhano-londrina-pr-230m2-id-2917564840/",
      "preco": 1390000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-gleba-palhano-bairros-londrina-com-garagem-230m2-venda-RS1390000-id-2917564840/",
      "preco": 1390000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-casa-a-venda-condominio-santana-residence-bairro-gleba-palh-1544314741",
      "preco": 1390000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-santana-residence-casa-a-venda-condominio-santana-residence-bairro-gleba-palh-1536883491",
      "preco": 1390000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     }
    ],
    "lat": -23.377506,
@@ -37556,7 +37946,7 @@
   {
    "id": "g2917571683",
    "tipo": "casa",
-   "predio": "À Venda Alphaville 2 Londrina",
+   "predio": "Alphaville 2",
    "endereco": "Rua Paulo César Braga Abelha, 50",
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/cbbce69f75987466a396c2c79c87262b/foto.webp?action=crop&dimension=360x240",
@@ -37574,24 +37964,27 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-alphaville-ii-londrina-pr-285m2-id-2917571683/",
      "preco": 2850000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-alphaville-ii-bairros-londrina-com-garagem-285m2-venda-RS2850000-id-2917571683/",
      "preco": 2850000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-em-condominio-venda-alphaville-2-londrina-1544321828",
      "preco": 2850000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     }
    ],
-   "lat": -23.347852,
-   "lon": -51.183549,
-   "geo": "rua"
+   "lat": -23.35544,
+   "lon": -51.18819,
+   "geo": "predio"
   },
   {
    "id": "g2917587040",
@@ -37617,31 +38010,36 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-276m2-id-2917587040/",
      "preco": 4500000,
-     "area": 276
+     "area": 276,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-276m2-venda-RS4500000-id-2917587040/",
      "preco": 4500000,
-     "area": 276
+     "area": 276,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-a-venda-275-m-por-r-4-500-000-00-esperanca-londrina-pr-1544334686",
      "preco": 4500000,
-     "area": 276
+     "area": 276,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-esperanca-650m2-RS4500000/id-47784065/",
      "preco": 4500000,
-     "area": 275
+     "area": 275,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/casa-londrina-3-quartos-276-m/CA4605-AURO",
      "preco": 4500000,
-     "area": 276
+     "area": 276,
+     "area_anunciada": null
     }
    ]
   },
@@ -37669,31 +38067,36 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-5-quartos-com-piscina-esperanca-londrina-pr-500m2-id-2917587192/",
      "preco": 4500000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-5-quartos-esperanca-bairros-londrina-500m2-venda-RS4500000-id-2917587192/",
      "preco": 4500000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-em-condominio-royal-tennis-com-05-suites-1544333283",
      "preco": 4500000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-5-quartos-pr-londrina-esperanca-500m2-RS4500000/id-47748812/",
      "preco": 4500000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/21737",
      "preco": 4500000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     }
    ]
   },
@@ -37721,25 +38124,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-esperanca-londrina-pr-570m2-id-2917588786/",
      "preco": 2200000,
-     "area": 570
+     "area": 570,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-570m2-venda-RS2200000-id-2917588786/",
      "preco": 2200000,
-     "area": 570
+     "area": 570,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-condominio-royal-tennis-londrina-1470178939",
      "preco": 2200000,
-     "area": 570
+     "area": 570,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/18305",
      "preco": 2200000,
-     "area": 570
+     "area": 570,
+     "area_anunciada": null
     }
    ]
   },
@@ -37764,19 +38171,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-alphaville-ii-londrina-pr-286m2-id-2917590535/",
      "preco": 2800000,
-     "area": 286
+     "area": 286,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-alphaville-ii-bairros-londrina-com-garagem-286m2-venda-RS2800000-id-2917590535/",
      "preco": 2800000,
-     "area": 286
+     "area": 286,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-a-venda-286-m-por-r-2-800-000-00-alphaville-ii-londrina-p-1544333048",
      "preco": 2800000,
-     "area": 286
+     "area": 286,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -37804,7 +38214,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-4-dormitorios-a-venda-450-m-por-r-6-500-000-00-condominio-alphaville-jacaran-1544314227",
      "preco": 6500000,
-     "area": 450
+     "area": 450,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -37832,13 +38243,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/recanto-do-salto-casa-terrea-em-condominio-a-venda-recanto-do-salto-1544314764",
      "preco": 8900000,
-     "area": 585
+     "area": 585,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/recanto-do-salto-casa-terrea-em-condominio-a-venda-recanto-do-salto-1536883441",
      "preco": 8900000,
-     "area": 585
+     "area": 585,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -37866,7 +38279,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/condominio-villa-noah-londrina-1544346089",
      "preco": 450000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     }
    ]
   },
@@ -37891,7 +38305,8 @@
      "portal": "inglaterra",
      "url": "https://www.imobiliariainglaterra.com.br/imovel/casa-londrina-3-quartos-180-m/CA5456-INIC",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -37919,7 +38334,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-200m-condominio-villa-noah-avos-empreendimentos-pronto-pra-construir-1544437730",
      "preco": 180000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -37950,25 +38366,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-gleba-palhano-londrina-pr-259m2-id-2917665279/",
      "preco": 2300000,
-     "area": 259
+     "area": 259,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-gleba-palhano-bairros-londrina-com-garagem-259m2-venda-RS2300000-id-2917665279/",
      "preco": 2300000,
-     "area": 259
+     "area": 259,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-royal-forest-4-dormitorios-259-m-2-vagas-1544484820",
      "preco": 2300000,
-     "area": 259
+     "area": 259,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-royal-forest-londrina-pr-1544933104",
      "preco": 2300000,
-     "area": 260
+     "area": 260,
+     "area_anunciada": null
     }
    ]
   },
@@ -37993,13 +38413,15 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-terra-bonita-bairros-londrina-com-garagem-225m2-venda-RS1990000-id-2917714966/",
      "preco": 1990000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-terra-bonita-londrina-pr-225m2-id-2917714966/",
      "preco": 1990000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     }
    ]
   },
@@ -38024,19 +38446,22 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-gleba-palhano-bairros-londrina-com-garagem-110m2-venda-RS750000-id-2917728669/",
      "preco": 750000,
-     "area": 110
+     "area": 110,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-mobiliado-gleba-palhano-londrina-pr-110m2-id-2917728669/",
      "preco": 750000,
-     "area": 110
+     "area": 110,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-venda-e-locacao-em-londrina-pr-1544595398",
      "preco": 750000,
-     "area": 110
+     "area": 110,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -38064,25 +38489,29 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-328m2-venda-RS2500000-id-2917732309/",
      "preco": 2500000,
-     "area": 328
+     "area": 328,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-328-m-venda-por-r-2-500-000-00-ou-aluguel-por-r-13-100-00-1544601408",
      "preco": 2500000,
-     "area": 328
+     "area": 328,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-328-m-venda-por-r-2-500-000-00-ou-aluguel-por-r-13-100-00-1532041628",
      "preco": 2500000,
-     "area": 328
+     "area": 328,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-esperanca-396m2-RS2500000/id-47695632/",
      "preco": 2500000,
-     "area": 328
+     "area": 328,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -38110,19 +38539,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-churrasqueira-esperanca-londrina-pr-368m2-id-2917748200/",
      "preco": 680000,
-     "area": 368
+     "area": 368,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-esperanca-bairros-londrina-368m2-venda-RS680000-id-2917748200/",
      "preco": 680000,
-     "area": 368
+     "area": 368,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-367-m-por-r-680-000-zona-sul-londrina-pr-condominio-malie-1544642182",
      "preco": 680000,
-     "area": 368
+     "area": 368,
+     "area_anunciada": null
     }
    ],
    "lat": -23.364958,
@@ -38150,7 +38582,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-3-dormitorios-a-venda-210-m-por-r-3-750-000-01-condominio-alphaville-2-lon-1544584721",
      "preco": 3750000,
-     "area": 210
+     "area": 210,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -38178,7 +38611,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-catuai-park-03-quartos-01-suite-aquecedor-solar-225-m-util-1544587773",
      "preco": 1990000,
-     "area": 225
+     "area": 225,
+     "area_anunciada": null
     }
    ]
   },
@@ -38203,7 +38637,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-de-alto-padrao-no-golden-ville-200m-proximo-a-gleba-palhano-e-uel-1544601155",
      "preco": 1749000,
-     "area": 200
+     "area": 200,
+     "area_anunciada": null
     }
    ],
    "lat": -23.327824,
@@ -38231,25 +38666,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-churrasqueira-terra-bonita-londrina-pr-215m2-id-2917852177/",
      "preco": 1980000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-terra-bonita-bairros-londrina-com-garagem-215m2-venda-RS1980000-id-2917852177/",
      "preco": 1980000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-condominio-bela-manha-1544832990",
      "preco": 1980000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/bela-manha-r-1-980-000-casa-a-venda-3-suites-215m-2-vagas-terra-bonita-londrina-1500078888",
      "preco": 1980000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     }
    ],
    "lat": -23.355588,
@@ -38280,61 +38719,71 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-vivendas-do-arvoredo-londrina-pr-501m2-id-2917874935/",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-vivendas-do-arvoredo-bairros-londrina-501m2-venda-RS1090000-id-2917874935/",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-artesano-londrina-1544884943",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-terreno-lote-condominio-com-piscina-vivendas-do-arvoredo-londrina-pr-501m2-id-2901125371/",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/lote-terreno-vivendas-do-arvoredo-bairros-londrina-501m2-venda-RS1090000-id-2901125371/",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/oportunidade-de-terreno-a-venda-no-condominio-artesano-londrina-1499348362",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-condominio-artesano-a-venda-1520897335",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/21596",
      "preco": 1100000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/terreno-londrina-501-m/TE1784-AURO",
      "preco": 1090000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     },
     {
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-vivendas-do-arvoredo-501m2-RS1100000/id-46623116/",
      "preco": 1100000,
-     "area": 501
+     "area": 501,
+     "area_anunciada": null
     }
    ]
   },
@@ -38362,19 +38811,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-esperanca-londrina-pr-230m2-id-2917928336/",
      "preco": 2590000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-230m2-venda-RS2590000-id-2917928336/",
      "preco": 2590000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-esperanca-londrina-pr-1544933165",
      "preco": 2590000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     }
    ]
   },
@@ -38402,13 +38854,15 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-esperanca-londrina-pr-260m2-id-2917928337/",
      "preco": 2300000,
-     "area": 260
+     "area": 260,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-260m2-venda-RS2300000-id-2917928337/",
      "preco": 2300000,
-     "area": 260
+     "area": 260,
+     "area_anunciada": null
     }
    ]
   },
@@ -38436,37 +38890,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-terra-bonita-londrina-pr-215m2-id-2918029462/",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-terra-bonita-bairros-londrina-com-garagem-215m2-venda-RS1950000-id-2918029462/",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-disponivel-a-venda-no-condominio-residencial-sonora-terra-bonita-1545123835",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-terra-bonita-londrina-pr-215m2-id-2918036060/",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-terra-bonita-bairros-londrina-com-garagem-215m2-venda-RS1950000-id-2918036060/",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-disponivel-a-venda-no-condominio-residencial-sonora-terra-bonita-1545134640",
      "preco": 1950000,
-     "area": 215
+     "area": 215,
+     "area_anunciada": null
     }
    ]
   },
@@ -38494,19 +38954,22 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-mobiliado-esperanca-londrina-pr-294m2-id-2918082451/",
      "preco": 3490000,
-     "area": 294
+     "area": 294,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-esperanca-bairros-londrina-com-garagem-294m2-venda-RS3490000-id-2918082451/",
      "preco": 3490000,
-     "area": 294
+     "area": 294,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-no-condominio-royal-tennis-com-3-suites-a-venda-294-m-por-r-3-490-000-royal-tenn-1545200850",
      "preco": 3490000,
-     "area": 294
+     "area": 294,
+     "area_anunciada": null
     }
    ]
   },
@@ -38531,7 +38994,8 @@
      "portal": "gleba",
      "url": "https://www.glebaimoveis.com/imovel/casa-londrina-3-quartos-262-m/CA0499-GLI",
      "preco": 4030000,
-     "area": 262
+     "area": 262,
+     "area_anunciada": null
     }
    ],
    "lat": -23.355855,
@@ -38562,19 +39026,22 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-3-quartos-alphaville-2-bairros-londrina-com-garagem-272m2-venda-RS3800000-id-2918360344/",
      "preco": 3800000,
-     "area": 272
+     "area": 272,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-3-quartos-com-piscina-alphaville-2-londrina-pr-272m2-id-2918360344/",
      "preco": 3800000,
-     "area": 272
+     "area": 272,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-para-alugar-no-alphaville-2-em-londrina-1545682868",
      "preco": 3800000,
-     "area": 272
+     "area": 272,
+     "area_anunciada": null
     }
    ]
   },
@@ -38602,25 +39069,29 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-1-quartos-recanto-do-salto-bairros-londrina-100m2-venda-RS3950000-id-2918379516/",
      "preco": 3950000,
-     "area": 100
+     "area": 100,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-1-quarto-recanto-do-salto-londrina-pr-100m2-id-2918379516/",
      "preco": 3950000,
-     "area": 100
+     "area": 100,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-1-quarto-recanto-do-salto-1545711978",
      "preco": 3950000,
-     "area": 100
+     "area": 100,
+     "area_anunciada": null
     },
     {
      "portal": "santamerica",
      "url": "https://www.santamerica.com.br/comprar/Londrina/Casa/Condominio/Recanto-do-Salto/55988",
      "preco": 3950000,
-     "area": 100
+     "area": 100,
+     "area_anunciada": null
     }
    ]
   },
@@ -38645,13 +39116,15 @@
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-esperanca-bairros-londrina-com-garagem-365m2-venda-RS4200000-id-2918403357/",
      "preco": 4200000,
-     "area": 365
+     "area": 365,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-364-m-venda-por-r-4-200-000-00-ou-aluguel-por-r-18-100-00-1545755598",
      "preco": 4200000,
-     "area": 365
+     "area": 365,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -38679,7 +39152,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/vende-se-terreno-condominio-santana-residence-1545590117",
      "preco": 1500000,
-     "area": 396
+     "area": 396,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347917,
@@ -38707,7 +39181,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-alphaville-ii-locacao-londrina-3-suites-churrasqueira-1545747931",
      "preco": 4030000,
-     "area": 262
+     "area": 262,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -38735,7 +39210,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/terreno-a-venda-no-condominio-haus-casa-club-229-m-por-r-500-000-gleba-esperanca-1545764404",
      "preco": 500000,
-     "area": 229
+     "area": 229,
+     "area_anunciada": null
     }
    ],
    "lat": -23.324987,
@@ -38763,7 +39239,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/ville-campestre-casa-com-4-dormitorios-3-suites-a-venda-300-m-por-r-3-300-000-lon-1339607603",
      "preco": 3300000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ]
   },
@@ -38788,7 +39265,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/estancia-bom-tempo-r-8-000-000-casa-de-alto-padrao-a-venda-7-quartos-5-suites-744-1339607604",
      "preco": 8000000,
-     "area": 744
+     "area": 744,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36894,
@@ -38816,7 +39294,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/vale-do-arvoredo-r-1-160-000-terreno-a-venda-300m-condominio-vale-do-arvoredo-lond-1374158732",
      "preco": 1160000,
-     "area": 300
+     "area": 300,
+     "area_anunciada": null
     }
    ],
    "lat": -23.350541,
@@ -38844,13 +39323,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sun-lake-r-3-200-000-casa-terrea-a-venda-4-quartos-2-suites-londrina-pr-1414086353",
      "preco": 3200000,
-     "area": 311
+     "area": 311,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-no-condominio-sun-lake-1535479509",
      "preco": 3200000,
-     "area": 311
+     "area": 311,
+     "area_anunciada": null
     }
    ],
    "lat": -23.366573,
@@ -38878,7 +39359,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-r-1-780-000-casa-a-venda-3-quartos-01-suite-168m-2-vagas-esperanca-1442254048",
      "preco": 1780000,
-     "area": 168
+     "area": 168,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -38906,7 +39388,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/acacia-imperial-r-4-000-000-casa-a-venda-4-suites-420m-4-vagas-esperanca-londr-1486384757",
      "preco": 4000000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -38934,7 +39417,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-r-2-400-000-casa-a-venda-3-suite-5-vagas-229m-analisa-permuta-espe-1492929901",
      "preco": 2400000,
-     "area": 229
+     "area": 229,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -38962,7 +39446,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-r-2-500-000-casa-a-venda-4-quartos-2-suites-340m-4-vagas-analisa-1494794336",
      "preco": 2500000,
-     "area": 267
+     "area": 267,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -38990,7 +39475,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/vale-do-arvoredo-r-2-800-000-casa-a-venda-4-suites-320m-4-vagas-londrina-pr-1500084179",
      "preco": 2800000,
-     "area": 320
+     "area": 320,
+     "area_anunciada": null
     }
    ],
    "lat": -23.350541,
@@ -39018,13 +39504,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sun-lake-residence-r-2-890-000-casa-a-venda-4-quartos-2-suites-e-2-demi-suites-24-1506278305",
      "preco": 2890000,
-     "area": 244
+     "area": 244,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-condominio-sun-lake-londrina-pr-1528295763",
      "preco": 2900000,
-     "area": 243
+     "area": 243,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -39052,19 +39540,22 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/estancia-santa-paula-r-2-070-000-casa-a-venda-04-quartos-198m-4-vagas-estancia-s-1506946629",
      "preco": 2070000,
-     "area": 198
+     "area": 198,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-estancia-santa-paula-londrina-pr-198m2-id-2914179134/",
      "preco": 2100000,
-     "area": 198
+     "area": 198,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-estancia-santa-paula-bairros-londrina-com-garagem-198m2-venda-RS2100000-id-2914179134/",
      "preco": 2100000,
-     "area": 198
+     "area": 198,
+     "area_anunciada": null
     }
    ],
    "lat": -23.358916,
@@ -39092,13 +39583,15 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-r-2-800-000-casa-a-venda-03-quartos-280m-4-vagas-esperanca-londrin-1514950237",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-forest-royal-forest-casa-a-venda-no-bairro-esperanca-londrina-pr-1532329094",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -39126,7 +39619,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/royal-park-r-4-500-000-casa-a-venda-4-suites-400m-4-vagas-londrina-pr-1515239815",
      "preco": 4500000,
-     "area": 400
+     "area": 400,
+     "area_anunciada": null
     }
    ],
    "lat": -23.348865,
@@ -39154,7 +39648,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/prime-house-r-1-295-000-casa-a-venda-3-quartos-1-suite-170m-2-vagas-terras-de-s-1532658047",
      "preco": 1295000,
-     "area": 170
+     "area": 170,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347917,
@@ -39164,7 +39659,7 @@
   {
    "id": "g2918510560",
    "tipo": "casa",
-   "predio": null,
+   "predio": "Alphaville Imbuías",
    "endereco": "Rua Carlota Ilnicki",
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/6a61a80bb75d0dc50311e0819298f972/foto.webp?action=crop&dimension=360x240",
@@ -39182,24 +39677,27 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-conjunto-residencial-vivendas-do-arvoredo-londrina-pr-331m2-id-2918510560/",
      "preco": 4900000,
-     "area": 331
+     "area": 331,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-conjunto-residencial-vivendas-do-arvoredo-bairros-londrina-com-garagem-331m2-venda-RS4900000-id-2918510560/",
      "preco": 4900000,
-     "area": 331
+     "area": 331,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-alto-padrao-a-venda-e-para-locacao-no-alphaville-imbuias-4-suites-piscina-332m-t-1545977579",
      "preco": 4900000,
-     "area": 331
+     "area": 331,
+     "area_anunciada": null
     }
    ],
-   "lat": -23.35544,
-   "lon": -51.18819,
-   "geo": "bairro"
+   "lat": -23.34855,
+   "lon": -51.18652,
+   "geo": "predio"
   },
   {
    "id": "cm47711528",
@@ -39225,7 +39723,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-esperanca-316m2-RS2630000/id-47711528/",
      "preco": 2630000,
-     "area": 290
+     "area": 290,
+     "area_anunciada": null
     }
    ]
   },
@@ -39253,37 +39752,10 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-esperanca-360m2-RS2300000/id-47720438/",
      "preco": 2300000,
-     "area": 247
+     "area": 247,
+     "area_anunciada": null
     }
    ]
-  },
-  {
-   "id": "cm47734961",
-   "tipo": "casa",
-   "predio": null,
-   "endereco": "Rodovia Mabio Gonçalves Palhano",
-   "bairro": "Gleba Fazenda Palhano",
-   "foto": "https://www.chavesnamao.com.br/imn/0340X0250/N/80/imoveis/190110/47734961/pr-londrina-gleba-fazenda-palhano-rodovia-mabio-goncalves-palhano-casa-sobrado-em-condominio-a-venda-3-quartos-6acfdc02-1.jpg",
-   "area": 200,
-   "preco": 1680000,
-   "preco_anterior": null,
-   "quartos": 3,
-   "banheiros": 4,
-   "vagas": 2,
-   "titulo": "Condominio fechado villa noah - sobrado a venda 180m² - zona sul londrina",
-   "publicado": "2026-10-14T19:46:10Z",
-   "detectado": "2026-10-21T01:14:09Z",
-   "fontes": [
-    {
-     "portal": "chavesnamao",
-     "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-gleba-fazenda-palhano-200m2-RS1680000/id-47734961/",
-     "preco": 1680000,
-     "area": 200
-    }
-   ],
-   "lat": -23.374955,
-   "lon": -51.212389,
-   "geo": "bairro"
   },
   {
    "id": "cm47735559",
@@ -39309,7 +39781,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-vivendas-do-arvoredo-1m2-RS2850000/id-47735559/",
      "preco": 2850000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     }
    ]
   },
@@ -39337,7 +39810,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-5-quartos-com-garagem-pr-londrina-esperanca-316m2-RS3200000/id-47747305/",
      "preco": 3200000,
-     "area": 255
+     "area": 255,
+     "area_anunciada": null
     }
    ]
   },
@@ -39365,7 +39839,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-estancia-santa-paula-1800m2-RS3300000/id-47773321/",
      "preco": 3300000,
-     "area": 330
+     "area": 330,
+     "area_anunciada": null
     }
    ]
   },
@@ -39390,25 +39865,29 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-recanto-do-salto-360m2-RS2800000/id-47785918/",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-recanto-do-salto-londrina-pr-280m2-id-2914179239/",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-recanto-do-salto-bairros-londrina-com-garagem-280m2-venda-RS2800000-id-2914179239/",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-a-venda-280-m-por-r-2-800-000-00-sunset-dream-residence-l-1538696281",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -39436,7 +39915,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-condominio-royal-forest-396m2-RS2500000/id-47786107/",
      "preco": 2500000,
-     "area": 328
+     "area": 328,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -39467,13 +39947,15 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-pr-londrina-jardim-nova-esperanca-330m2-RS2950000/id-47800374/",
      "preco": 2950000,
-     "area": 218
+     "area": 218,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/20264",
      "preco": 2950000,
-     "area": 218
+     "area": 218,
+     "area_anunciada": null
     }
    ]
   },
@@ -39498,7 +39980,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-pr-londrina-jardim-nova-esperanca-285m2-RS2750000/id-47813064/",
      "preco": 2750000,
-     "area": 285
+     "area": 285,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -39526,7 +40009,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-recanto-do-salto-2503m2-RS3700000/id-47816756/",
      "preco": 3700000,
-     "area": 2503
+     "area": 2503,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -39554,7 +40038,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-estancia-bom-tempo-2000m2-RS4200000/id-47826211/",
      "preco": 4200000,
-     "area": 420
+     "area": 420,
+     "area_anunciada": null
     }
    ],
    "lat": -23.361168,
@@ -39582,7 +40067,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-pr-londrina-vivendas-do-arvoredo-440m2-RS3700000/id-47826214/",
      "preco": 3700000,
-     "area": 211
+     "area": 211,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -39610,7 +40096,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-gleba-esperanca-200m2-RS1470000/id-47826220/",
      "preco": 1470000,
-     "area": 187
+     "area": 187,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -39638,7 +40125,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-recanto-do-salto-2500m2-RS4700000/id-47826226/",
      "preco": 4700000,
-     "area": 320
+     "area": 320,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -39666,7 +40154,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-5-quartos-com-garagem-pr-londrina-estancia-bom-tempo-1100m2-RS3900000/id-47826228/",
      "preco": 3900000,
-     "area": 420
+     "area": 420,
+     "area_anunciada": null
     }
    ],
    "lat": -23.361168,
@@ -39694,7 +40183,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-condominio-royal-forest-330m2-RS4200000/id-47902831/",
      "preco": 4200000,
-     "area": 364
+     "area": 364,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347029,
@@ -39725,7 +40215,8 @@
      "portal": "cube",
      "url": "https://cubeimoveis.com.br/imovel/casa-em-condominio-gleba-fazenda-palhano-londrina-pr-3-quartos-180m2-CI432",
      "preco": 1680000,
-     "area": 180
+     "area": 180,
+     "area_anunciada": null
     }
    ]
   },
@@ -39753,13 +40244,15 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-royal-tennis-residence-e-resort-552m2-RS3490000/id-47874523/",
      "preco": 3490000,
-     "area": 294
+     "area": 294,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/casa-londrina-3-quartos-294-m/CA4609-AURO",
      "preco": 3490000,
-     "area": 294
+     "area": 294,
+     "area_anunciada": null
     }
    ]
   },
@@ -39787,7 +40280,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-gleba-esperanca-200m2-RS1500000/id-47937428/",
      "preco": 1500000,
-     "area": 220
+     "area": 220,
+     "area_anunciada": null
     }
    ]
   },
@@ -39815,7 +40309,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/terreno-em-condominio-a-venda-pr-londrina-estancia-bom-tempo-1500m2-RS650000/id-47937435/",
      "preco": 650000,
-     "area": 2
+     "area": 2,
+     "area_anunciada": null
     }
    ]
   },
@@ -39843,7 +40338,8 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-4-quartos-com-garagem-pr-londrina-recanto-do-salto-500m2-RS2900000/id-47942062/",
      "preco": 2900000,
-     "area": 253
+     "area": 253,
+     "area_anunciada": null
     }
    ]
   },
@@ -39868,13 +40364,15 @@
      "portal": "chavesnamao",
      "url": "https://www.chavesnamao.com.br/imovel/casa-em-condominio-a-venda-3-quartos-com-garagem-pr-londrina-conjunto-residencial-vivendas-do-arvoredo-430m2-RS3500000/id-47943956/",
      "preco": 3500000,
-     "area": 210
+     "area": 210,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-alphaville-2-casa-terrea-3-quartos-sendo-3-suites-1546097155",
      "preco": 3500000,
-     "area": 210
+     "area": 210,
+     "area_anunciada": null
     }
    ],
    "lat": -23.35544,
@@ -39905,37 +40403,43 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-varanda-recanto-do-salto-londrina-pr-280m2-id-2918566336/",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-recanto-do-salto-bairros-londrina-com-garagem-280m2-venda-RS2800000-id-2918566336/",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-dormitorios-a-venda-280-m-por-r-2-800-000-00-sunset-dream-residence-l-1546078575",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-4-suites-no-condominio-sunset-dream-1528014498",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-cond-sunset-dream-residence-1535480021",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     },
     {
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/22908",
      "preco": 2800000,
-     "area": 280
+     "area": 280,
+     "area_anunciada": null
     }
    ]
   },
@@ -39963,25 +40467,29 @@
      "portal": "zap",
      "url": "https://www.zapimoveis.com.br/imovel/venda-casa-de-condominio-4-quartos-com-piscina-condominio-vale-do-arvoredo-londrina-pr-164m2-id-2918596485/",
      "preco": 1250000,
-     "area": 164
+     "area": 164,
+     "area_anunciada": null
     },
     {
      "portal": "vivareal",
      "url": "https://www.vivareal.com.br/imovel/casa-de-condominio-4-quartos-condominio-vale-do-arvoredo-bairros-londrina-com-garagem-164m2-venda-RS1250000-id-2918596485/",
      "preco": 1250000,
-     "area": 164
+     "area": 164,
+     "area_anunciada": null
     },
     {
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-no-condominio-vale-do-arvoredo-com-4-dormitorios-a-venda-164-m-por-r-1-250-000-c-1546100725",
      "preco": 1250000,
-     "area": 164
+     "area": 164,
+     "area_anunciada": null
     },
     {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/casa-londrina-4-quartos-164-m/CA4533-AURO",
      "preco": 1250000,
-     "area": 164
+     "area": 164,
+     "area_anunciada": null
     }
    ]
   },
@@ -40006,7 +40514,8 @@
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/terreno-londrina-1-200-m/TE1808-AURO",
      "preco": 1450000,
-     "area": 1200
+     "area": 1200,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36894,
@@ -40034,7 +40543,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-com-5-dormitorios-a-venda-415-00-m-vivendas-do-arvoredo-londrina-pr-1384578826",
      "preco": 3990000,
-     "area": 500
+     "area": 500,
+     "area_anunciada": null
     }
    ],
    "lat": -23.355855,
@@ -40062,7 +40572,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/sobrado-com-3-quartos-sendo-1-suite-com-gourmet-esperanca-londrina-pr-1384579134",
      "preco": 1500000,
-     "area": 192
+     "area": 192,
+     "area_anunciada": null
     }
    ],
    "lat": -23.347543,
@@ -40090,7 +40601,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-com-4-quartos-sendo-4-suites-estancia-santa-paula-londrina-pr-1430888755",
      "preco": 3500000,
-     "area": 356
+     "area": 356,
+     "area_anunciada": null
     }
    ],
    "lat": -23.358916,
@@ -40118,7 +40630,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-de-luxo-em-condominio-fechado-conforto-seguranca-e-estilo-1453522269",
      "preco": 2950000,
-     "area": 311
+     "area": 311,
+     "area_anunciada": null
     }
    ],
    "lat": -23.36665,
@@ -40146,7 +40659,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-terrea-a-venda-no-condominio-ville-campestre-londrina-pr-1500228484",
      "preco": 2300000,
-     "area": 165
+     "area": 165,
+     "area_anunciada": null
     }
    ]
   },
@@ -40157,7 +40671,7 @@
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/64/643673696014490.jpg",
-   "area": 330,
+   "area": 200,
    "preco": 1700000,
    "preco_anterior": null,
    "quartos": 3,
@@ -40171,7 +40685,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-a-venda-no-condominio-royal-forest-zona-sul-londrina-pr-1511110443",
      "preco": 1700000,
-     "area": 330
+     "area": 200,
+     "area_anunciada": 330
     }
    ],
    "lat": -23.347029,
@@ -40199,7 +40714,8 @@
      "portal": "olx",
      "url": "https://pr.olx.com.br/regiao-de-londrina/terrenos/parque-das-artes-terreno-em-condominio-fechado-1546117222",
      "preco": 250000,
-     "area": 435
+     "area": 435,
+     "area_anunciada": null
     }
    ],
    "lat": -23.374955,
@@ -40227,7 +40743,8 @@
      "portal": "raulfulgencio",
      "url": "https://raulfulgencio.com.br/imovel/23382",
      "preco": 2500000,
-     "area": 230
+     "area": 230,
+     "area_anunciada": null
     }
    ],
    "lat": -23.366573,
