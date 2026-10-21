@@ -833,6 +833,10 @@
 -23.306275,
 -51.169089
 ],
+"local:centro|spot": [
+-23.306622,
+-51.167286
+],
 "local:centro|spotcentroresidence": [
 -23.306538,
 -51.168185
@@ -1034,7 +1038,7 @@
 -51.183827
 ],
 "local:palhano|atrio": [
--23.330493,
+-23.33047,
 -51.18318
 ],
 "local:palhano|aura": [
@@ -1044,6 +1048,10 @@
 "local:palhano|botanicoplaenge": [
 -23.334096,
 -51.181307
+],
+"local:palhano|cambridgevillage": [
+-23.33367,
+-51.18123
 ],
 "local:palhano|champselysees": [
 -23.329156,
@@ -1062,8 +1070,8 @@
 -51.180905
 ],
 "local:palhano|elegance": [
--23.33137,
--51.182312
+-23.331229,
+-51.182366
 ],
 "local:palhano|eurico hummig|280": [
 -23.333198,
@@ -1134,8 +1142,8 @@
 -51.179271
 ],
 "local:palhano|maisonlegacy": [
--23.330516,
--51.183585
+-23.330978,
+-51.181573
 ],
 "local:palhano|marcchagal": [
 -23.333452,
@@ -1148,6 +1156,10 @@
 "local:palhano|maria lucia da paz|246": [
 -23.334474,
 -51.18122
+],
+"local:palhano|martinho lutero|99": [
+-23.337272,
+-51.185842
 ],
 "local:palhano|oxfordovillage": [
 -23.333858,
@@ -1184,6 +1196,10 @@
 "local:palhano|terroir": [
 -23.331612,
 -51.174167
+],
+"local:palhano|terroirglebafazendapalhano": [
+-23.331435,
+-51.174393
 ],
 "local:palhano|terroirresidence": [
 -23.331705,
@@ -1367,6 +1383,7 @@
 "predio:bela cintra centro": null,
 "predio:bela cintra conforto": null,
 "predio:bela manha": null,
+"predio:botanico": null,
 "predio:boulevar park": null,
 "predio:boulevard village": null,
 "predio:caminhoto": [
@@ -1436,6 +1453,7 @@
 "predio:estancia cabral": null,
 "predio:estancia santa paula": null,
 "predio:exclusividade lharmonie allure": null,
+"predio:fechado conforto": null,
 "predio:fechado londrina": null,
 "predio:fernando pessoa londrina": [
 -23.33186,
@@ -1456,6 +1474,7 @@
 "landuse"
 ],
 "predio:golden hill": null,
+"predio:golden hill residence": null,
 "predio:golden ville": [
 -23.327824,
 -51.186127,
@@ -1578,6 +1597,7 @@
 -51.156155,
 "building"
 ],
+"predio:parque das artes": null,
 "predio:paseo santos - plaenge": null,
 "predio:polaris": null,
 "predio:portal da goias": null,
@@ -1786,6 +1806,11 @@
 -51.212912,
 "highway"
 ],
+"rua:rua alcides turini|150": [
+-23.366573,
+-51.220339,
+"building"
+],
 "rua:rua alcides turini|2000": [
 -23.36894,
 -51.233113,
@@ -1932,6 +1957,7 @@
 "highway"
 ],
 "rua:rua sebastiao buranello|87": null,
+"rua:rua ulrico zuimglio|365": null,
 "rua:rua ulrico zuinglio|450": [
 -23.334336,
 -51.18288,
