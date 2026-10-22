@@ -550,7 +550,7 @@
 -51.166415
 ],
 "local:centro|odyssey": [
--23.307673,
+-23.30755,
 -51.173264
 ],
 "local:centro|olga": [
@@ -854,8 +854,8 @@
 -51.167648
 ],
 "local:centro|solarsainthonore": [
--23.312961,
--51.169014
+-23.312951,
+-51.169037
 ],
 "local:centro|solarsainthonore106": [
 -23.313684,
@@ -1204,6 +1204,10 @@
 "local:palhano|maisonlegacy": [
 -23.330978,
 -51.181573
+],
+"local:palhano|maisonprovence": [
+-23.329018,
+-51.1758
 ],
 "local:palhano|marcchagal": [
 -23.333452,
@@ -1764,6 +1768,7 @@
 "building"
 ],
 "predio:the euro royal": null,
+"predio:the euro royal res e resort": null,
 "predio:torre de viena": null,
 "predio:torre madri": [
 -23.330216,
@@ -1874,6 +1879,11 @@
 "rua:avenida martiniano do valle filho|333": [
 -23.314699,
 -51.14523,
+"highway"
+],
+"rua:avenida sao paulo|774": [
+-23.311128,
+-51.160213,
 "highway"
 ],
 "rua:rodovia mabio goncalves palhano|100": [
