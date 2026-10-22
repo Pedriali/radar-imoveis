@@ -62,8 +62,8 @@
 -51.18652
 ],
 "local:artesano": [
--23.36622,
--51.20012
+-23.366228,
+-51.202139
 ],
 "local:artesanolondrina": [
 -23.36622,
@@ -585,6 +585,10 @@
 -23.311385,
 -51.169047
 ],
+"local:centro|paranagua|800": [
+-23.312655,
+-51.169597
+],
 "local:centro|paranagua|81": [
 -23.306281,
 -51.169017
@@ -838,8 +842,8 @@
 -51.161981
 ],
 "local:centro|solarmontreaux": [
--23.3176,
--51.167931
+-23.317548,
+-51.167835
 ],
 "local:centro|solarphiladelphogarcia": [
 -23.317203,
@@ -862,8 +866,8 @@
 -51.169089
 ],
 "local:centro|spot": [
--23.306622,
--51.167286
+-23.306569,
+-51.167782
 ],
 "local:centro|spotcentroresidence": [
 -23.306538,
@@ -908,6 +912,10 @@
 "local:centro|tokio": [
 -23.30971,
 -51.158232
+],
+"local:centro|toquio": [
+-23.309833,
+-51.162777
 ],
 "local:centro|torresbrasil": [
 -23.317309,
@@ -981,13 +989,17 @@
 -23.358044,
 -51.244311
 ],
+"local:estanciabomtempo": [
+-23.366158,
+-51.221423
+],
 "local:estanciasantapaulao": [
 -23.34919,
 -51.23958
 ],
 "local:euro royal": [
--23.361173,
--51.196412
+-23.361683,
+-51.196444
 ],
 "local:garnet": [
 -23.351465,
@@ -1012,6 +1024,10 @@
 "local:guanabara|potylazzarotto": [
 -23.33566,
 -51.17604
+],
+"local:hauscasa": [
+-23.33531,
+-51.21823
 ],
 "local:maanaim": [
 -23.360583,
@@ -1110,8 +1126,8 @@
 -51.180905
 ],
 "local:palhano|elegance": [
--23.331229,
--51.182366
+-23.33137,
+-51.182312
 ],
 "local:palhano|eurico hummig|280": [
 -23.333198,
@@ -1130,8 +1146,8 @@
 -51.17874
 ],
 "local:palhano|flora": [
--23.328659,
--51.18301
+-23.328666,
+-51.183045
 ],
 "local:palhano|gaudi": [
 -23.332857,
@@ -1144,6 +1160,10 @@
 "local:palhano|gloriaresidence": [
 -23.330588,
 -51.178907
+],
+"local:palhano|greenwich": [
+-23.337272,
+-51.185842
 ],
 "local:palhano|greenwichpark": [
 -23.334418,
@@ -1162,8 +1182,8 @@
 -51.182266
 ],
 "local:palhano|joanmiro": [
--23.32826,
--51.17796
+-23.328173,
+-51.178033
 ],
 "local:palhano|lacroyal": [
 -23.328286,
@@ -1246,8 +1266,8 @@
 -51.174393
 ],
 "local:palhano|terroirresidence": [
--23.331705,
--51.174125
+-23.331612,
+-51.174167
 ],
 "local:palhano|trianon": [
 -23.24976,
@@ -1300,6 +1320,10 @@
 "local:royalforestreseresort": [
 -23.34966,
 -51.2038
+],
+"local:royalforestresidence": [
+-23.347029,
+-51.212786
 ],
 "local:royalmaison": [
 -23.348075,
@@ -1492,6 +1516,11 @@
 "predio:dom camilo": null,
 "predio:edificio visconde de barbacena": null,
 "predio:embaixador": null,
+"predio:escalada": [
+-23.318295,
+-51.162474,
+"building"
+],
 "predio:esmeralda cristina 141": null,
 "predio:estancia bom tempo": null,
 "predio:estancia cabral": null,
@@ -1647,6 +1676,7 @@
 "predio:portal da goias": null,
 "predio:portal fazenda": null,
 "predio:porto velho": null,
+"predio:premiatto": null,
 "predio:prime house": null,
 "predio:principe de gales": null,
 "predio:queen elizabeth": null,
@@ -1940,6 +1970,11 @@
 -23.329015,
 -51.175808,
 "highway"
+],
+"rua:rua joao huss|881": [
+-23.329166,
+-51.182888,
+"building"
 ],
 "rua:rua luiz lerco|797": [
 -23.355588,
