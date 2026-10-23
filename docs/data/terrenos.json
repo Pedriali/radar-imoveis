@@ -1968,6 +1968,69 @@
     "Nikko": 5,
     "Vila Brasil": 5
    }
+  },
+  {
+   "em": "2026-10-23T18:04:39Z",
+   "novos": 0,
+   "portais": {
+    "zap": "ok",
+    "vivareal": "ok",
+    "olx": "ok",
+    "raulfulgencio": "ok",
+    "gleba": "ok",
+    "santamerica": "ok",
+    "perez": "ok",
+    "catuai": "ok",
+    "inglaterra": "ok",
+    "chavesnamao": "ok",
+    "aurora": "ok",
+    "casttelo": "ok",
+    "monaco": "ok",
+    "cube": "ok"
+   },
+   "inicial": false,
+   "fora_da_zona": {
+    "Centro": 41,
+    "Esperança": 24,
+    "Maanaim": 23,
+    "Olímpico": 21,
+    "Condomínio Royal Golf Residence": 19,
+    "Condomínio Villa Noah": 17,
+    "Colúmbia": 15,
+    "Califórnia": 13,
+    "Jardim Morumbi": 12,
+    "Gleba Esperança": 12,
+    "Gleba Palhano": 11,
+    "Colinas": 11,
+    "Tucano": 10,
+    "Jardim Agari": 10,
+    "Jardim Tókio": 10,
+    "Bandeirantes": 9,
+    "Jardim Nova Londrina": 9,
+    "Cidade Industrial 1": 9,
+    "Jardim Higienópolis": 8,
+    "Jardim Olímpico": 8,
+    "Parque Leblon": 8,
+    "Portal de Versalhes 1": 8,
+    "Jardim Tropical": 8,
+    "Conjunto Habitacional Alexandre Urbanas": 7,
+    "Indústrias Leves": 7,
+    "Leonor": 7,
+    "Guanabara": 7,
+    "Columbia": 7,
+    "Jardim Imagawa": 6,
+    "Terras de Santana II": 6,
+    "Residencial José B Almeida": 6,
+    "Conjunto Vivi Xavier": 6,
+    "Distrito Maravilha": 6,
+    "Jardim Neman Sahyun": 6,
+    "Helena": 6,
+    "Gleba Fazenda Palhano": 5,
+    "Rodocentro": 5,
+    "Vila Matarazzo": 5,
+    "Nikko": 5,
+    "Vila Brasil": 5
+   }
   }
  ],
  "listings": {
@@ -1992,7 +2055,7 @@
    "publicado": "2026-10-10T02:12:21Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347029,
    "lon": -51.212786
   },
@@ -2017,7 +2080,7 @@
    "publicado": "2026-10-09T04:54:39Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2916600334": {
    "id": "g2916600334",
@@ -2040,7 +2103,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2066,7 +2129,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2092,7 +2155,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2118,7 +2181,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2144,7 +2207,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2170,7 +2233,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2196,7 +2259,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2222,7 +2285,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2248,7 +2311,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2274,7 +2337,7 @@
    "publicado": "2026-10-09T00:19:08Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.366236,
    "lon": -51.204158
   },
@@ -2299,7 +2362,7 @@
    "publicado": "2026-10-09T00:19:08Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.354846,
    "lon": -51.155272
   },
@@ -2324,7 +2387,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2350,7 +2413,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2376,7 +2439,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -2402,7 +2465,7 @@
    "publicado": "2026-10-06T13:12:11Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "condominio": "Royal Forest"
   },
   "g2916084338": {
@@ -2426,7 +2489,7 @@
    "publicado": "2026-10-06T07:39:18Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2915630253": {
    "id": "g2915630253",
@@ -2449,7 +2512,7 @@
    "publicado": "2026-10-03T07:04:33Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347029,
    "lon": -51.212786
   },
@@ -2498,7 +2561,7 @@
    "publicado": "2026-10-01T00:15:58Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.366181,
    "lon": -51.220816
   },
@@ -2546,7 +2609,7 @@
    "publicado": "2026-09-25T05:01:50Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2914152374": {
    "id": "g2914152374",
@@ -2569,7 +2632,7 @@
    "publicado": "2026-09-25T01:45:49Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.35238,
    "lon": -51.217263,
    "condominio": "Koa"
@@ -2595,7 +2658,7 @@
    "publicado": "2026-09-25T01:45:49Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.35238,
    "lon": -51.217263,
    "condominio": "Koa"
@@ -2621,7 +2684,7 @@
    "publicado": "2026-09-25T01:45:49Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.35238,
    "lon": -51.217263,
    "condominio": "Koa"
@@ -2647,7 +2710,7 @@
    "publicado": "2026-09-24T00:03:34Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.365824,
    "lon": -51.208775
   },
@@ -2672,7 +2735,7 @@
    "publicado": "2026-09-21T23:12:25Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.358044,
    "lon": -51.244311
   },
@@ -2697,7 +2760,7 @@
    "publicado": "2026-09-19T12:50:44Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.349244,
    "lon": -51.206742,
    "condominio": ""
@@ -2723,7 +2786,7 @@
    "publicado": "2026-09-18T04:25:59Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2912230717": {
    "id": "g2912230717",
@@ -2746,7 +2809,7 @@
    "publicado": "2026-09-16T03:52:53Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2912180189": {
    "id": "g2912180189",
@@ -2769,7 +2832,7 @@
    "publicado": "2026-09-15T22:38:05Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.364958,
    "lon": -51.211405
   },
@@ -2794,7 +2857,7 @@
    "publicado": "2026-09-15T01:22:33Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "condominio": "Maison Jardim"
   },
   "g2911538629": {
@@ -2818,7 +2881,7 @@
    "publicado": "2026-09-12T15:45:26Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "preco_anterior": 430000
   },
   "g2910942161": {
@@ -2842,7 +2905,7 @@
    "publicado": "2026-09-09T20:26:41Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347029,
    "lon": -51.212786,
    "condominio": "Royal Forest"
@@ -2868,7 +2931,7 @@
    "publicado": "2026-09-05T02:40:54Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347029,
    "lon": -51.212786,
    "condominio": "Royal Forest"
@@ -2894,7 +2957,7 @@
    "publicado": "2026-09-03T23:24:39Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.365851,
    "lon": -51.207248
   },
@@ -2919,7 +2982,7 @@
    "publicado": "2026-09-03T20:42:18Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.349348,
    "lon": -51.207552
   },
@@ -2944,7 +3007,7 @@
    "publicado": "2026-09-03T19:23:33Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347029,
    "lon": -51.212786
   },
@@ -27286,7 +27349,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.360326,
    "lon": -51.196517
   },
@@ -27334,7 +27397,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.3377,
    "lon": -51.17552
   },
@@ -27358,7 +27421,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -27382,7 +27445,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.34666,
    "lon": -51.21162
   },
@@ -27406,7 +27469,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.34855,
    "lon": -51.18652
   },
@@ -27454,7 +27517,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -27478,7 +27541,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf22851": {
    "id": "rf22851",
@@ -27500,7 +27563,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.35544,
    "lon": -51.18819
   },
@@ -27524,7 +27587,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.34966,
    "lon": -51.2038
   },
@@ -27572,7 +27635,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.359838,
    "lon": -51.209464
   },
@@ -27596,7 +27659,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.355351,
    "lon": -51.18812
   },
@@ -27644,7 +27707,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -27715,7 +27778,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf19401": {
    "id": "rf19401",
@@ -27737,7 +27800,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -27785,7 +27848,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -27809,7 +27872,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -27857,7 +27920,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.355351,
    "lon": -51.18812
   },
@@ -27881,7 +27944,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -27927,7 +27990,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.372553,
    "lon": -51.181225
   },
@@ -27951,7 +28014,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.34938,
    "lon": -51.20712
   },
@@ -27975,7 +28038,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -28048,7 +28111,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -28072,7 +28135,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf20408": {
    "id": "rf20408",
@@ -28140,7 +28203,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf22932": {
    "id": "rf22932",
@@ -28210,7 +28273,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf22398": {
    "id": "rf22398",
@@ -28232,7 +28295,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -28256,7 +28319,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -28280,7 +28343,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -28304,7 +28367,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf20060": {
    "id": "rf20060",
@@ -28326,7 +28389,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -28350,7 +28413,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0409-GLI": {
    "id": "giTE0409-GLI",
@@ -28372,7 +28435,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0410-GLI": {
    "id": "giTE0410-GLI",
@@ -28394,7 +28457,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0373-GLI": {
    "id": "giTE0373-GLI",
@@ -28416,7 +28479,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0381-GLI": {
    "id": "giTE0381-GLI",
@@ -28438,7 +28501,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0411-GLI": {
    "id": "giTE0411-GLI",
@@ -28460,7 +28523,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0413-GLI": {
    "id": "giTE0413-GLI",
@@ -28482,7 +28545,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "giTE0403-GLI": {
    "id": "giTE0403-GLI",
@@ -28548,7 +28611,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "sa53719": {
    "id": "sa53719",
@@ -28614,7 +28677,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "pz11446": {
    "id": "pz11446",
@@ -28730,7 +28793,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.366665,
    "lon": -51.222599
   },
@@ -28754,7 +28817,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.369614,
    "lon": -51.228707
   },
@@ -28778,7 +28841,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.368583,
    "lon": -51.228311
   },
@@ -28802,7 +28865,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.368623,
    "lon": -51.228344
   },
@@ -28826,7 +28889,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.337892,
    "lon": -51.175431
   },
@@ -28850,7 +28913,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.361033,
    "lon": -51.182432
   },
@@ -28898,7 +28961,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.346922,
    "lon": -51.212724
   },
@@ -28922,7 +28985,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.346991,
    "lon": -51.212322
   },
@@ -28970,7 +29033,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.360072,
    "lon": -51.196444
   },
@@ -28994,7 +29057,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC287662": {
    "id": "ctTC287662",
@@ -29016,7 +29079,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC187286": {
    "id": "ctTC187286",
@@ -29038,7 +29101,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC287666": {
    "id": "ctTC287666",
@@ -29060,7 +29123,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC194660": {
    "id": "ctTC194660",
@@ -29082,7 +29145,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC310610": {
    "id": "ctTC310610",
@@ -29104,7 +29167,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ct694897": {
    "id": "ct694897",
@@ -29126,7 +29189,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ct708661": {
    "id": "ct708661",
@@ -29148,7 +29211,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTC287657": {
    "id": "ctTC287657",
@@ -29170,7 +29233,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "ctTE287660": {
    "id": "ctTE287660",
@@ -29192,7 +29255,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0973-INIC": {
    "id": "inTE0973-INIC",
@@ -29236,7 +29299,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1309-INIC": {
    "id": "inTE1309-INIC",
@@ -29324,7 +29387,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1640-INIC": {
    "id": "inTE1640-INIC",
@@ -29346,7 +29409,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1782-INIC": {
    "id": "inTE1782-INIC",
@@ -29368,7 +29431,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0892-INIC": {
    "id": "inTE0892-INIC",
@@ -29390,7 +29453,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1807-INIC": {
    "id": "inTE1807-INIC",
@@ -29412,7 +29475,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1417-INIC": {
    "id": "inTE1417-INIC",
@@ -29478,7 +29541,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1817-INIC": {
    "id": "inTE1817-INIC",
@@ -29500,7 +29563,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1829-INIC": {
    "id": "inTE1829-INIC",
@@ -29566,7 +29629,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0976-INIC": {
    "id": "inTE0976-INIC",
@@ -29610,7 +29673,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1788-INIC": {
    "id": "inTE1788-INIC",
@@ -29632,7 +29695,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1348-INIC": {
    "id": "inTE1348-INIC",
@@ -29654,7 +29717,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0967-INIC": {
    "id": "inTE0967-INIC",
@@ -29698,7 +29761,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1635-INIC": {
    "id": "inTE1635-INIC",
@@ -29720,7 +29783,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0977-INIC": {
    "id": "inTE0977-INIC",
@@ -29764,7 +29827,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1145-INIC": {
    "id": "inTE1145-INIC",
@@ -29786,7 +29849,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1799-INIC": {
    "id": "inTE1799-INIC",
@@ -29918,7 +29981,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1403-INIC": {
    "id": "inTE1403-INIC",
@@ -29940,7 +30003,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1045-INIC": {
    "id": "inTE1045-INIC",
@@ -29962,7 +30025,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1633-INIC": {
    "id": "inTE1633-INIC",
@@ -29984,7 +30047,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1581-INIC": {
    "id": "inTE1581-INIC",
@@ -30006,7 +30069,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1814-INIC": {
    "id": "inTE1814-INIC",
@@ -30028,7 +30091,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1315-INIC": {
    "id": "inTE1315-INIC",
@@ -30050,7 +30113,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1368-INIC": {
    "id": "inTE1368-INIC",
@@ -30094,7 +30157,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1091-INIC": {
    "id": "inTE1091-INIC",
@@ -30116,7 +30179,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1641-INIC": {
    "id": "inTE1641-INIC",
@@ -30138,7 +30201,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1748-INIC": {
    "id": "inTE1748-INIC",
@@ -30160,7 +30223,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1615-INIC": {
    "id": "inTE1615-INIC",
@@ -30578,7 +30641,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0811-INIC": {
    "id": "inTE0811-INIC",
@@ -30666,7 +30729,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1595-INIC": {
    "id": "inTE1595-INIC",
@@ -30688,7 +30751,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1780-INIC": {
    "id": "inTE1780-INIC",
@@ -30710,7 +30773,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE0975-INIC": {
    "id": "inTE0975-INIC",
@@ -30798,7 +30861,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1365-INIC": {
    "id": "inTE1365-INIC",
@@ -30820,7 +30883,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1596-INIC": {
    "id": "inTE1596-INIC",
@@ -30908,7 +30971,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1815-INIC": {
    "id": "inTE1815-INIC",
@@ -30930,7 +30993,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "inTE1259-INIC": {
    "id": "inTE1259-INIC",
@@ -30952,7 +31015,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "o1534229022": {
    "id": "o1534229022",
@@ -30994,7 +31057,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T22:52:56Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2917393567": {
    "id": "g2917393567",
@@ -31081,7 +31144,7 @@
    "origem": "raulfulgencio",
    "visivel": false,
    "detectado": "2026-10-14T17:04:45Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -31150,7 +31213,7 @@
    "origem": "raulfulgencio",
    "visivel": false,
    "detectado": "2026-10-14T23:00:16Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "lat": -23.349123,
    "lon": -51.207308
   },
@@ -31175,7 +31238,7 @@
    "publicado": "2026-10-15T07:53:05Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2917563080": {
    "id": "g2917563080",
@@ -31442,7 +31505,7 @@
    "publicado": "2026-10-16T07:30:45Z",
    "visivel": true,
    "detectado": "2026-10-16T12:00:14Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "o1544642182": {
    "id": "o1544642182",
@@ -31486,7 +31549,7 @@
    "origem": "grupo",
    "visivel": true,
    "detectado": "2026-10-17T12:00:14Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "publicado": "2026-10-16T23:31:51Z"
   },
   "g2911295723": {
@@ -31509,7 +31572,7 @@
    "origem": "grupo",
    "visivel": true,
    "detectado": "2026-10-17T17:03:16Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "publicado": "2026-09-11T12:01:35Z",
    "lat": -23.366236,
    "lon": -51.204158
@@ -31837,7 +31900,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47695693": {
    "id": "cm47695693",
@@ -31857,7 +31920,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47695618": {
    "id": "cm47695618",
@@ -31877,7 +31940,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47695591": {
    "id": "cm47695591",
@@ -31897,7 +31960,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47695538": {
    "id": "cm47695538",
@@ -31917,7 +31980,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47695380": {
    "id": "cm47695380",
@@ -31937,7 +32000,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47610877": {
    "id": "cm47610877",
@@ -31999,7 +32062,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47438157": {
    "id": "cm47438157",
@@ -37169,7 +37232,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47742309": {
    "id": "cm47742309",
@@ -37313,7 +37376,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1611-AURO": {
    "id": "auTE1611-AURO",
@@ -37333,7 +37396,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1627-AURO": {
    "id": "auTE1627-AURO",
@@ -37373,7 +37436,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1747-AURO": {
    "id": "auTE1747-AURO",
@@ -37393,7 +37456,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1484-AURO": {
    "id": "auTE1484-AURO",
@@ -37413,7 +37476,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1764-AURO": {
    "id": "auTE1764-AURO",
@@ -37433,7 +37496,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1126-AURO": {
    "id": "auTE1126-AURO",
@@ -37475,7 +37538,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1716-AURO": {
    "id": "auTE1716-AURO",
@@ -37495,7 +37558,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1485-AURO": {
    "id": "auTE1485-AURO",
@@ -37515,7 +37578,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1745-AURO": {
    "id": "auTE1745-AURO",
@@ -37535,7 +37598,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1779-AURO": {
    "id": "auTE1779-AURO",
@@ -37555,7 +37618,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1646-AURO": {
    "id": "auTE1646-AURO",
@@ -37575,7 +37638,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1690-AURO": {
    "id": "auTE1690-AURO",
@@ -37615,7 +37678,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1778-AURO": {
    "id": "auTE1778-AURO",
@@ -37635,7 +37698,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1678-AURO": {
    "id": "auTE1678-AURO",
@@ -37675,7 +37738,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1775-AURO": {
    "id": "auTE1775-AURO",
@@ -37695,7 +37758,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1776-AURO": {
    "id": "auTE1776-AURO",
@@ -37715,7 +37778,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1683-AURO": {
    "id": "auTE1683-AURO",
@@ -37737,7 +37800,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1703-AURO": {
    "id": "auTE1703-AURO",
@@ -37777,7 +37840,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1772-AURO": {
    "id": "auTE1772-AURO",
@@ -37797,7 +37860,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1774-AURO": {
    "id": "auTE1774-AURO",
@@ -37817,7 +37880,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1780-AURO": {
    "id": "auTE1780-AURO",
@@ -37837,7 +37900,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1783-AURO": {
    "id": "auTE1783-AURO",
@@ -37857,7 +37920,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1771-AURO": {
    "id": "auTE1771-AURO",
@@ -37877,7 +37940,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1784-AURO": {
    "id": "auTE1784-AURO",
@@ -37897,7 +37960,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1768-AURO": {
    "id": "auTE1768-AURO",
@@ -37917,7 +37980,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1769-AURO": {
    "id": "auTE1769-AURO",
@@ -37937,7 +38000,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1770-AURO": {
    "id": "auTE1770-AURO",
@@ -37957,7 +38020,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1767-AURO": {
    "id": "auTE1767-AURO",
@@ -37977,7 +38040,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1773-AURO": {
    "id": "auTE1773-AURO",
@@ -37997,7 +38060,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1781-AURO": {
    "id": "auTE1781-AURO",
@@ -38017,7 +38080,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1782-AURO": {
    "id": "auTE1782-AURO",
@@ -38037,7 +38100,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1474-AURO": {
    "id": "auTE1474-AURO",
@@ -38077,7 +38140,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1669-AURO": {
    "id": "auTE1669-AURO",
@@ -38157,7 +38220,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1634-AURO": {
    "id": "auTE1634-AURO",
@@ -38177,7 +38240,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1656-AURO": {
    "id": "auTE1656-AURO",
@@ -38197,7 +38260,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1613-AURO": {
    "id": "auTE1613-AURO",
@@ -38217,7 +38280,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1679-AURO": {
    "id": "auTE1679-AURO",
@@ -38359,7 +38422,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1796-AURO": {
    "id": "auTE1796-AURO",
@@ -38439,7 +38502,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1576-AURO": {
    "id": "auTE1576-AURO",
@@ -38559,7 +38622,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE1258-MONA": {
    "id": "mnTE1258-MONA",
@@ -38579,7 +38642,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE1234-MONA": {
    "id": "mnTE1234-MONA",
@@ -38599,7 +38662,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0995-MONA": {
    "id": "mnTE0995-MONA",
@@ -38639,7 +38702,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0561-MONA": {
    "id": "mnTE0561-MONA",
@@ -38659,7 +38722,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE1008-MONA": {
    "id": "mnTE1008-MONA",
@@ -38679,7 +38742,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0861-MONA": {
    "id": "mnTE0861-MONA",
@@ -38699,7 +38762,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE1000-MONA": {
    "id": "mnTE1000-MONA",
@@ -38819,7 +38882,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0914-MONA": {
    "id": "mnTE0914-MONA",
@@ -38839,7 +38902,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0788-MONA": {
    "id": "mnTE0788-MONA",
@@ -38859,7 +38922,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0564-MONA": {
    "id": "mnTE0564-MONA",
@@ -38879,7 +38942,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI241": {
    "id": "cbCI241",
@@ -38923,7 +38986,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI170": {
    "id": "cbCI170",
@@ -38945,7 +39008,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI153": {
    "id": "cbCI153",
@@ -38989,7 +39052,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI69": {
    "id": "cbCI69",
@@ -39011,7 +39074,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI70": {
    "id": "cbCI70",
@@ -39033,7 +39096,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cbCI6": {
    "id": "cbCI6",
@@ -39124,7 +39187,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-21T12:00:13Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "auTE1808-AURO": {
    "id": "auTE1808-AURO",
@@ -39146,7 +39209,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-10-21T17:04:53Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2918759165": {
    "id": "g2918759165",
@@ -39170,7 +39233,7 @@
    "origem": "grupo",
    "visivel": true,
    "detectado": "2026-10-22T12:00:16Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "publicado": "2026-10-22T07:45:43Z"
   },
   "o1546482046": {
@@ -39217,7 +39280,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-22T12:00:16Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "condominio": ""
   },
   "rf23416": {
@@ -39240,7 +39303,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-22T17:14:51Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "rf23415": {
    "id": "rf23415",
@@ -39262,7 +39325,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-22T17:14:51Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "o1546682943": {
    "id": "o1546682943",
@@ -39307,7 +39370,7 @@
    "publicado": "2026-10-23T08:06:17Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2918924259": {
    "id": "g2918924259",
@@ -39330,7 +39393,7 @@
    "publicado": "2026-10-23T08:06:17Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2918895352": {
    "id": "g2918895352",
@@ -39355,7 +39418,7 @@
    "publicado": "2026-10-23T03:30:08Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2918894859": {
    "id": "g2918894859",
@@ -39380,7 +39443,7 @@
    "publicado": "2026-10-23T03:30:08Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "g2918864742": {
    "id": "g2918864742",
@@ -39405,7 +39468,7 @@
    "publicado": "2026-10-22T22:52:48Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "o1546799521": {
    "id": "o1546799521",
@@ -39515,7 +39578,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm48042419": {
    "id": "cm48042419",
@@ -39537,7 +39600,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm48039247": {
    "id": "cm48039247",
@@ -39559,7 +39622,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm48039097": {
    "id": "cm48039097",
@@ -39581,7 +39644,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm47610873": {
    "id": "cm47610873",
@@ -39627,7 +39690,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T17:09:38Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "cm48047178": {
    "id": "cm48047178",
@@ -39649,7 +39712,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T17:09:38Z",
-   "visto": "2026-10-23T17:45:31Z",
+   "visto": "2026-10-23T18:04:39Z",
    "condominio": ""
   },
   "csTE0319-CBEX": {
@@ -39672,7 +39735,7 @@
    "origem": "casttelo",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "csTE0482-CBEX": {
    "id": "csTE0482-CBEX",
@@ -39694,7 +39757,7 @@
    "origem": "casttelo",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE1038-MONA": {
    "id": "mnTE1038-MONA",
@@ -39716,7 +39779,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   },
   "mnTE0964-MONA": {
    "id": "mnTE0964-MONA",
@@ -39738,7 +39801,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-10-23T17:45:31Z"
+   "visto": "2026-10-23T18:04:39Z"
   }
  },
  "imoveis": [
@@ -40377,7 +40440,7 @@
   {
    "id": "g2645830878",
    "tipo": "terreno",
-   "predio": "Ville CampestreLote",
+   "predio": "Ville Campestre",
    "endereco": "Rua Luiz Pieralisi",
    "bairro": "Residencial José Lázaro Gouvea",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/969211539409e5f6490df0c9c7a3b5ff/foto.webp?action=crop&dimension=360x240",
@@ -46333,7 +46396,7 @@
   {
    "id": "g2878780778",
    "tipo": "terreno",
-   "predio": "Diferenciais",
+   "predio": "Recanto do Salto",
    "endereco": "Rua Alcides Turini, 1933",
    "bairro": "Recanto do Salto",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/9ca69243a7067e123adfc789c4015ef3/foto.webp?action=crop&dimension=360x240",
@@ -49628,7 +49691,7 @@
   {
    "id": "g2916628192",
    "tipo": "terreno",
-   "predio": "COM 267",
+   "predio": "Recanto do Salto",
    "endereco": "Rua Alcides Turini",
    "bairro": "Recanto do Salto",
    "foto": "https://resizedimgs.zapimoveis.com.br/img/vr-listing/72f1cebb9c0484cb22649ba14ba16ad3/foto.webp?action=crop&dimension=360x240",
@@ -49840,7 +49903,7 @@
   {
    "id": "inTE1259-INIC",
    "tipo": "terreno",
-   "predio": "Completo",
+   "predio": "Royal Park",
    "endereco": "Gil de Abreu e Souza",
    "bairro": "Royal Park Residence & Resort",
    "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3xl3NNF6Dw6n-g-Zb66uiquzouL5fSWnBXMyanVo5fhi--BX8La4bBl9P-cKHCcmfZ7ZfU4CkUiOvk-XRDTYdmqDGNfnGLQimPXEpseaWVH7yoyikpX9nG+eLWC0XIehXC5IN3TphOmZ5DUDXZDQPlLCdkx8QdQ8Bi1SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1Bn6IBiA+RSLBJ7E3qxYDHhKyoOx+OMQU59bHN8PW5NP76Sar4OU+etakss8+IBuR8CauSKFR3czMlcGBd+x7z+LeLsE36IGDY9xBJWF6NzpZ55mQ6.jpg",
@@ -50372,7 +50435,7 @@
   {
    "id": "o1244195162",
    "tipo": "terreno",
-   "predio": "SUNSET DREAMLiberado",
+   "predio": "Sun Lake",
    "endereco": null,
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/33/337605530558845.jpg",
@@ -50967,7 +51030,7 @@
   {
    "id": "o1357140971",
    "tipo": "terreno",
-   "predio": "Ateliê 423m2",
+   "predio": "Parque das Artes",
    "endereco": null,
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/72/723490586701345.jpg",
@@ -52161,7 +52224,7 @@
   {
    "id": "o1470934486",
    "tipo": "terreno",
-   "predio": "Horizontal de Alto Padrão",
+   "predio": "Recanto do Salto",
    "endereco": null,
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/20/208670673459059.jpg",
@@ -53985,7 +54048,7 @@
   {
    "id": "o1471392253",
    "tipo": "terreno",
-   "predio": "COND",
+   "predio": "Royal Forest",
    "endereco": null,
    "bairro": "Esperança",
    "foto": "https://img.olx.com.br/images/60/603692201991659.jpg",
@@ -55827,7 +55890,7 @@
   {
    "id": "o1502897803",
    "tipo": "terreno",
-   "predio": "500m²",
+   "predio": "Sun Lake",
    "endereco": "Rua Alcides Turini, 19",
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/54/547686081222784.jpg",
@@ -55869,7 +55932,7 @@
   {
    "id": "o1502898085",
    "tipo": "terreno",
-   "predio": "533m²",
+   "predio": "Sun Lake",
    "endereco": "Rua Alcides Turini, 150",
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/47/474604686322327.jpg",
@@ -55975,7 +56038,7 @@
   {
    "id": "o1503755164",
    "tipo": "terreno",
-   "predio": "COM 400M² A VENDA EM",
+   "predio": "Recanto do Salto",
    "endereco": null,
    "bairro": "Recanto do Salto",
    "foto": "https://img.olx.com.br/images/52/523636201329017.jpg",
@@ -56206,7 +56269,7 @@
   {
    "id": "rf21746",
    "tipo": "terreno",
-   "predio": "Res",
+   "predio": "Artesano",
    "endereco": "Rua Joaquim Barbosa, 3477",
    "bairro": "Vivendas do Arvoredo",
    "foto": "https://s3.amazonaws.com/msys-imob-raulfulgencio/imovel/fotos/21746/1d8cf93937f4beb3cb39dcf21062e3e0AT.jpg",
@@ -56283,7 +56346,7 @@
   {
    "id": "o1510632630",
    "tipo": "terreno",
-   "predio": "Terreno",
+   "predio": "Royal Park",
    "endereco": null,
    "bairro": "Brasília",
    "foto": "https://img.olx.com.br/images/63/639646551866539.jpg",
@@ -58731,7 +58794,7 @@
   {
    "id": "cm48057430",
    "tipo": "terreno",
-   "predio": "Consolidado",
+   "predio": "Estância Santa Paula",
    "endereco": "Rua Amarílis, 388",
    "bairro": "Estância Santa Paula",
    "foto": "https://www.chavesnamao.com.br/imn/0340X0250/N/80/imoveis/1464100/48057430/pr-londrina-estancia-santa-paula-rua-amarilis-terreno-em-condominio-a-venda-6adb7d69-1.jpg",
@@ -58888,5 +58951,5 @@
    "geo": "predio"
   }
  ],
- "atualizado": "2026-10-23T17:45:31Z"
+ "atualizado": "2026-10-23T18:04:39Z"
 }
