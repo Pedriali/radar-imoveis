@@ -193,10 +193,15 @@ def alvo_detalhe(rec, *textos):
         rec["condominio"] = c[0] if c else ""
 
 
-def cond_rec(x):
-    """Condomínio (alvo ou outro) do anúncio guardado."""
-    c = cond_citado(x.get("predio"), x.get("titulo"), x.get("bairro"))
-    return x.get("condominio") or (c[0] if c else None)
+def cond_rec(x, peso=False):
+    """Condomínio (alvo ou outro) do anúncio guardado; com peso=True, (nome, peso): o citado só no bairro
+    vale menos que o do nome/título/descrição (Sunset Dream fica no bairro Recanto do Salto)."""
+    c = cond_citado(x.get("predio"), x.get("titulo"))
+    nome, p = (x.get("condominio") or (c[0] if c else None)), 2
+    if not nome:
+        c, p = cond_citado(x.get("bairro")), 1
+        nome = c[0] if c else None
+    return (nome, p) if peso else nome
 
 
 def area_ok(a):
@@ -2094,7 +2099,7 @@ def group_imoveis(L):
                     fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area"),
                                    "area_anunciada": x.get("area_anunciada")})
         im["fontes"] = fontes
-        if cond and not im["predio"]:  # condomínio citado só no título/bairro/descrição
+        if cond and alvo(im["predio"]) != cond:  # sem nome ou com o do bairro (Vivendas do Arvoredo)
             im["predio"] = cond
         if medias:
             im.update(abaixo_da_media(g, medias))
@@ -2114,8 +2119,11 @@ def group_imoveis(L):
 # (anúncios que não viraram card), para a mediana ter mais base.
 def chave_cond(g):
     """Condomínio do grupo (alvo ou outro): o mais citado nos anúncios (ver cond_rec)."""
-    achados = [c for c in map(cond_rec, g) if c]
-    return max(set(achados), key=achados.count) if achados else None
+    pesos = {}
+    for nome, p in (cond_rec(x, peso=True) for x in g):
+        if nome:
+            pesos[nome] = pesos.get(nome, 0) + p
+    return max(pesos, key=pesos.get) if pesos else None
 
 
 def m2_grupo(g):
