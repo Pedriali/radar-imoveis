@@ -9,16 +9,37 @@
 -51.138818,
 "landuse"
 ],
+"bairro:conjunto habitacional saltinho": [
+-23.390586,
+-51.138818,
+"landuse"
+],
 "bairro:estancia bom tempo": [
 -23.361168,
 -51.222362,
 "landuse"
+],
+"bairro:guanabara": [
+-23.33317,
+-51.171994,
+"place"
+],
+"bairro:igapo": [
+-23.334272,
+-51.159789,
+"water"
+],
+"bairro:jardim acapulco": [
+-23.363317,
+-51.157234,
+"place"
 ],
 "bairro:jardim marissol": [
 -23.294232,
 -51.121179,
 "place"
 ],
+"bairro:jardim neman sahyun": null,
 "bairro:lagoa dourada": [
 -23.356296,
 -51.143958,
@@ -30,11 +51,23 @@
 "place"
 ],
 "bairro:parque residencial alcantara": null,
+"bairro:reserva saltinho": null,
+"bairro:residencial jose b almeida": null,
 "bairro:residencial jose lazaro gouvea": null,
+"bairro:santa rosa": [
+-23.30879,
+-51.143535,
+"highway"
+],
 "bairro:sun lake residence": [
 -23.359938,
 -51.2081,
 "landuse"
+],
+"bairro:taroba": [
+-23.36709,
+-51.146614,
+"place"
 ],
 "bairro:terra bonita": null,
 "local:alcides turini|150": [
@@ -178,8 +211,8 @@
 -51.1671
 ],
 "local:centro|boulevardpark": [
--23.312685,
--51.166466
+-23.311898,
+-51.161124
 ],
 "local:centro|brickell": [
 -23.314134,
@@ -238,8 +271,8 @@
 -51.169971
 ],
 "local:centro|centrocomercial": [
--23.313385,
--51.158344
+-23.313392,
+-51.158346
 ],
 "local:centro|charleville": [
 -23.31539,
@@ -288,6 +321,10 @@
 "local:centro|domjoaovi": [
 -23.314876,
 -51.164203
+],
+"local:centro|dommanoel": [
+-23.324489,
+-51.154088
 ],
 "local:centro|donfernando": [
 -23.314148,
@@ -610,8 +647,8 @@
 -51.156307
 ],
 "local:centro|paseosantos": [
--23.312829,
--51.164118
+-23.31244,
+-51.167732
 ],
 "local:centro|paseosantosruasantos": [
 -23.31244,
@@ -638,8 +675,8 @@
 -51.160102
 ],
 "local:centro|pontevedra": [
--23.31464,
--51.1697
+-23.314456,
+-51.162694
 ],
 "local:centro|pontevedraexcelente": [
 -23.314645,
@@ -749,6 +786,10 @@
 -23.312381,
 -51.161693
 ],
+"local:centro|santos": [
+-23.317096,
+-51.167729
+],
 "local:centro|santos1250": [
 -23.31699,
 -51.16826
@@ -851,7 +892,7 @@
 ],
 "local:centro|solarrembrandt": [
 -23.312691,
--51.167648
+-51.167734
 ],
 "local:centro|solarsainthonore": [
 -23.312951,
@@ -1017,6 +1058,10 @@
 -23.349515,
 -51.202823
 ],
+"local:goldenhill": [
+-23.33776,
+-51.214076
+],
 "local:guanabara|potylazarotto": [
 -23.33574,
 -51.17627
@@ -1074,8 +1119,8 @@
 -51.178884
 ],
 "local:palhano|arboeflora": [
--23.328634,
--51.183005
+-23.328659,
+-51.18301
 ],
 "local:palhano|arboflora": [
 -23.328557,
@@ -1154,8 +1199,8 @@
 -51.174663
 ],
 "local:palhano|gloria": [
--23.330588,
--51.178907
+-23.330363,
+-51.178908
 ],
 "local:palhano|gloriaresidence": [
 -23.330588,
@@ -1184,6 +1229,10 @@
 "local:palhano|joanmiro": [
 -23.328173,
 -51.178033
+],
+"local:palhano|joao wyclif|420": [
+-23.331818,
+-51.174151
 ],
 "local:palhano|lacroyal": [
 -23.328286,
@@ -1373,6 +1422,18 @@
 -23.346104,
 -51.190573
 ],
+"local:santanaresidence": [
+-23.346275,
+-51.190601
+],
+"local:santiago|280": [
+-23.333046,
+-51.167381
+],
+"local:sebastiao buranello|141": [
+-23.340761,
+-51.191448
+],
 "local:sobradocondominiovillanoah": [
 -23.374955,
 -51.212389
@@ -1384,6 +1445,14 @@
 "local:sun lake": [
 -23.365295,
 -51.206554
+],
+"local:sunlake": [
+-23.360879,
+-51.204942
+],
+"local:sunlakeexcelentelocalizacao": [
+-23.366573,
+-51.220339
 ],
 "local:sunset dream": [
 -23.36529,
@@ -1429,6 +1498,7 @@
 "landuse"
 ],
 "predio:aguas claras": null,
+"predio:alcantara": null,
 "predio:alcantara londrina": null,
 "predio:alohi": null,
 "predio:alphaville jacaran": null,
@@ -1532,6 +1602,7 @@
 "predio:exclusividade lharmonie allure": null,
 "predio:fechado conforto": null,
 "predio:fechado londrina": null,
+"predio:fechado villa noah": null,
 "predio:fernando pessoa londrina": [
 -23.33186,
 -51.175483,
@@ -1545,12 +1616,18 @@
 "building"
 ],
 "predio:giardini": null,
+"predio:gleba esperanca": [
+-23.347543,
+-51.206691,
+"landuse"
+],
 "predio:gleba esperanca londrina": [
 -23.347543,
 -51.206691,
 "landuse"
 ],
 "predio:golden hill": null,
+"predio:golden hill londrina": null,
 "predio:golden hill residence": null,
 "predio:golden ville": [
 -23.327824,
@@ -1588,6 +1665,7 @@
 "building"
 ],
 "predio:joao nicolau": null,
+"predio:jose b almeida": null,
 "predio:jose garcia de souza": null,
 "predio:l'harmonie": null,
 "predio:lac royal": [
@@ -1676,6 +1754,7 @@
 ],
 "predio:parque das artes": null,
 "predio:paseo santos - plaenge": null,
+"predio:pitangua": null,
 "predio:polaris": null,
 "predio:portal da goias": null,
 "predio:portal fazenda": null,
@@ -1691,6 +1770,7 @@
 "building"
 ],
 "predio:riverside": null,
+"predio:royal euro": null,
 "predio:royal forest londrina": null,
 "predio:royal garden edificio": null,
 "predio:royal park": null,
@@ -1729,6 +1809,7 @@
 "predio:solar monet": null,
 "predio:solar montreux": null,
 "predio:solar philadelpho garcia apartamento": null,
+"predio:spazio la traviata": null,
 "predio:spezia": null,
 "predio:spot centro": null,
 "predio:spot destaques do imovel": null,
@@ -1740,6 +1821,7 @@
 "predio:sun lake regiao sul de londrina": null,
 "predio:sun lake residence": null,
 "predio:sunny downtown apartamento": null,
+"predio:sunset": null,
 "predio:sunset boulevard": null,
 "predio:tambore": null,
 "predio:tambore londrina": null,
@@ -1781,6 +1863,7 @@
 -51.153686,
 "building"
 ],
+"predio:vale do arvoredo localizado": null,
 "predio:veneza": null,
 "predio:veneza.na rua fernando de noronha": null,
 "predio:venice": null,
@@ -1824,6 +1907,11 @@
 "rua:alameda pe vermelho|51": [
 -23.329383,
 -51.180275,
+"highway"
+],
+"rua:avenida adhemar pereira de barros|820": [
+-23.337105,
+-51.162773,
 "highway"
 ],
 "rua:avenida celso garcia cid|1300": [
@@ -1906,10 +1994,40 @@
 -51.233113,
 "highway"
 ],
+"rua:rua alemanha|375": [
+-23.340725,
+-51.14454,
+"highway"
+],
 "rua:rua amapa|1000": [
 -23.303268,
 -51.162221,
 "building"
+],
+"rua:rua antonio lima da silva filho|199": [
+-23.355871,
+-51.153399,
+"highway"
+],
+"rua:rua antonio lima da silva filho|295": [
+-23.355871,
+-51.153399,
+"highway"
+],
+"rua:rua antonio niero|242": [
+-23.355214,
+-51.153627,
+"highway"
+],
+"rua:rua antonio niero|45": [
+-23.355214,
+-51.153627,
+"highway"
+],
+"rua:rua antonio pacheco franco|239": [
+-23.36887,
+-51.15341,
+"highway"
 ],
 "rua:rua antonio pisicchio|300": [
 -23.332912,
@@ -1921,9 +2039,29 @@
 -51.166721,
 "highway"
 ],
+"rua:rua benjamin jorge|89": [
+-23.356393,
+-51.152863,
+"highway"
+],
+"rua:rua braga|274": [
+-23.34853,
+-51.142097,
+"highway"
+],
+"rua:rua campo grande|70": [
+-23.322395,
+-51.183044,
+"highway"
+],
 "rua:rua caracas|1421": [
 -23.3324,
 -51.172164,
+"highway"
+],
+"rua:rua claudio damiano stasiak|70": [
+-23.347596,
+-51.192089,
 "highway"
 ],
 "rua:rua da lapa|474": [
@@ -1934,6 +2072,11 @@
 "rua:rua das palmeiras|168": [
 -23.347563,
 -51.189621,
+"highway"
+],
+"rua:rua emiliano perneta|260": [
+-23.352217,
+-51.169441,
 "highway"
 ],
 "rua:rua ernani lacerda de athayde|1035": [
@@ -1961,6 +2104,21 @@
 -51.174452,
 "highway"
 ],
+"rua:rua francisco burali|35": [
+-23.370978,
+-51.142423,
+"highway"
+],
+"rua:rua gra-bretanha|190": [
+-23.345246,
+-51.145841,
+"highway"
+],
+"rua:rua henrique vicente|335": [
+-23.392235,
+-51.112253,
+"highway"
+],
 "rua:rua joao huss|200": [
 -23.328303,
 -51.176634,
@@ -1986,11 +2144,48 @@
 -51.182888,
 "building"
 ],
+"rua:rua joao weffort|357": [
+-23.353811,
+-51.152951,
+"highway"
+],
+"rua:rua jose evanildo clovis de souza|275": [
+-23.35861,
+-51.140494,
+"highway"
+],
+"rua:rua jose roque salton|1096": [
+-23.352895,
+-51.180052,
+"highway"
+],
+"rua:rua jose roque salton|1326": [
+-23.352895,
+-51.180052,
+"highway"
+],
+"rua:rua jose roque salton|950": [
+-23.352895,
+-51.180052,
+"highway"
+],
+"rua:rua jose roque salton|959": [
+-23.352895,
+-51.180052,
+"highway"
+],
+"rua:rua lituania|70": [
+-23.348206,
+-51.149614,
+"highway"
+],
 "rua:rua luiz lerco|797": [
 -23.355588,
 -51.181863,
 "highway"
 ],
+"rua:rua manuel barbosa lima|66": null,
+"rua:rua manuel barbosa lima|68": null,
 "rua:rua maria lucia da paz|301": [
 -23.333823,
 -51.18153,
@@ -2010,6 +2205,11 @@
 -23.313175,
 -51.156167,
 "building"
+],
+"rua:rua noemia barroso machado|277": [
+-23.354744,
+-51.144365,
+"highway"
 ],
 "rua:rua paranagua|55": [
 -23.312297,
@@ -2041,12 +2241,22 @@
 -51.153888,
 "highway"
 ],
+"rua:rua santiago|90": [
+-23.334878,
+-51.163625,
+"highway"
+],
 "rua:rua sao francisco de assis|109": [
 -23.319256,
 -51.164169,
 "highway"
 ],
 "rua:rua sebastiao buranello|87": null,
+"rua:rua thomaz fabricio|105": [
+-23.373379,
+-51.145559,
+"highway"
+],
 "rua:rua ulrico zuimglio|365": null,
 "rua:rua ulrico zuinglio|450": [
 -23.334336,
@@ -2061,6 +2271,16 @@
 "rua:rua ulrico zuinglio|600": [
 -23.334336,
 -51.18288,
+"highway"
+],
+"rua:rua wenceslau zamuner|255": [
+-23.354692,
+-51.15409,
+"highway"
+],
+"rua:rua zinia|65": [
+-23.357749,
+-51.148843,
 "highway"
 ]
 }
