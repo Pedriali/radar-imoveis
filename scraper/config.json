@@ -5,6 +5,234 @@
     "initial_recent_days": 7,
     "max_age_days_new": 30
   },
+  "condominios_alvo": [
+    {
+      "nome": "Alphaville",
+      "chaves": [
+        "alphaville",
+        "alphaville imbuias",
+        "alphaville jacarandas"
+      ]
+    },
+    {
+      "nome": "Alphaville 2",
+      "chaves": [
+        "alphaville 2",
+        "alphaville ii",
+        "alphaville londrina 2",
+        "alphaville londrina ii",
+        "alphaville2"
+      ]
+    },
+    {
+      "nome": "Sun Lake",
+      "chaves": [
+        "sun lake",
+        "sunlake"
+      ]
+    },
+    {
+      "nome": "Santana Residence",
+      "chaves": [
+        "santana residence"
+      ]
+    },
+    {
+      "nome": "Royal Forest",
+      "chaves": [
+        "royal forest"
+      ]
+    },
+    {
+      "nome": "Royal Maison",
+      "chaves": [
+        "royal maison"
+      ]
+    },
+    {
+      "nome": "Acácia Imperial",
+      "chaves": [
+        "acacia imperial"
+      ]
+    },
+    {
+      "nome": "Royal Tennis",
+      "chaves": [
+        "royal tennis",
+        "royal tenis"
+      ]
+    },
+    {
+      "nome": "Royal Park",
+      "chaves": [
+        "royal park"
+      ]
+    },
+    {
+      "nome": "Royal Golf",
+      "chaves": [
+        "royal golf"
+      ]
+    },
+    {
+      "nome": "Euro Royal",
+      "chaves": [
+        "euro royal",
+        "royal euro"
+      ]
+    },
+    {
+      "nome": "Golden Hill",
+      "chaves": [
+        "golden hill"
+      ]
+    },
+    {
+      "nome": "Recanto do Salto",
+      "chaves": [
+        "recanto do salto"
+      ]
+    },
+    {
+      "nome": "Estância Santa Paula",
+      "chaves": [
+        "santa paula",
+        "estancia santa paula"
+      ]
+    },
+    {
+      "nome": "Estância Cabral",
+      "chaves": [
+        "estancia cabral"
+      ]
+    },
+    {
+      "nome": "Artesano",
+      "chaves": [
+        "artesano"
+      ]
+    },
+    {
+      "nome": "Parque das Artes",
+      "chaves": [
+        "parque das artes"
+      ]
+    },
+    {
+      "nome": "Autoral Harmonia",
+      "chaves": [
+        "autoral",
+        "autoral harmonia"
+      ]
+    },
+    {
+      "nome": "Vale das Araucárias",
+      "chaves": [
+        "vale das araucarias"
+      ]
+    },
+    {
+      "nome": "Bela Manhã",
+      "chaves": [
+        "bela manha"
+      ]
+    },
+    {
+      "nome": "Recanto Pitanguá",
+      "chaves": [
+        "pitangua",
+        "recanto pitangua"
+      ]
+    },
+    {
+      "nome": "Village Premium",
+      "chaves": [
+        "village premium"
+      ]
+    },
+    {
+      "nome": "Tamboré",
+      "chaves": [
+        "tambore"
+      ]
+    },
+    {
+      "nome": "Condomínio Tucanos",
+      "chaves": [
+        "tucanos"
+      ],
+      "nao": [
+        "vale dos tucanos",
+        "vale do tucanos"
+      ]
+    },
+    {
+      "nome": "The Line",
+      "chaves": [
+        "the line"
+      ]
+    },
+    {
+      "nome": "Catuaí Parque Residence",
+      "chaves": [
+        "catuai parque",
+        "catuai parque residence",
+        "catuai park residence",
+        "catuai park"
+      ]
+    },
+    {
+      "nome": "Residencial Sonora",
+      "chaves": [
+        "sonora",
+        "residencial sonora"
+      ]
+    },
+    {
+      "nome": "Estância Bom Tempo",
+      "chaves": [
+        "bom tempo",
+        "estancia bom tempo",
+        "bomtempo"
+      ]
+    },
+    {
+      "nome": "Terras de Canaã",
+      "chaves": [
+        "terras de canaa",
+        "terra de canaa"
+      ]
+    },
+    {
+      "nome": "Ville Campestre",
+      "chaves": [
+        "ville campestre"
+      ]
+    }
+  ],
+  "condominios_outros": [
+    "villa noah",
+    "vale do arvoredo",
+    "vivendas do arvoredo",
+    "maanaim",
+    "meari",
+    "maison jardin",
+    "maison jardim",
+    "sunset dream",
+    "terra de santana",
+    "terras de santana",
+    "garnet",
+    "moradas do vale",
+    "malie",
+    "alohi",
+    "koa",
+    "morada imperial",
+    "saltinho village",
+    "graciosa",
+    "prime house",
+    "golden ville",
+    "golden park"
+  ],
   "perfis": {
     "apartamentos": {
       "aba": "Gleba Palhano",
@@ -121,8 +349,10 @@
         "bella vit",
         "bela vit",
         "montecatini",
-        "jardim alphaville"
-      ]
+        "jardim alphaville",
+        "nova esperanca"
+      ],
+      "por_condominio": true
     },
     "terrenos": {
       "aba": "Terrenos em condomínio",
@@ -159,52 +389,6 @@
         "alcantara",
         "jamile dequech"
       ],
-      "condominios": [
-        "alphaville",
-        "alphaville 2",
-        "alphaville ii",
-        "sun lake",
-        "sunset dream",
-        "royal forest",
-        "royal park",
-        "royal tennis",
-        "royal maison",
-        "royal golf",
-        "maison jardin",
-        "euro royal",
-        "villa noah",
-        "terra de santana",
-        "terras de santana",
-        "santana residence",
-        "parque das artes",
-        "terra bonita",
-        "ville campestre",
-        "estancia santa paula",
-        "bom tempo",
-        "bomtempo",
-        "vale do arvoredo",
-        "artesano",
-        "maanaim",
-        "golden hill",
-        "acacia imperial",
-        "meari",
-        "garnet",
-        "moradas do vale",
-        "autoral harmonia",
-        "malie",
-        "alohi",
-        "tambore",
-        "estancia cabral",
-        "alphaville londrina 2",
-        "alphaville londrina ii"
-      ],
-      "condominios_iguais": {
-        "alphaville ii": "alphaville 2",
-        "terra de santana": "terras de santana",
-        "bomtempo": "bom tempo",
-        "alphaville londrina 2": "alphaville 2",
-        "alphaville londrina ii": "alphaville 2"
-      },
       "excluir": [
         "taua",
         "arangua",
@@ -231,7 +415,8 @@
         "min_amostra": 4,
         "pct_alerta": 15,
         "pct_suspeito": 50
-      }
+      },
+      "por_condominio": true
     }
   }
 }
