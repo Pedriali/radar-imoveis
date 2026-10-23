@@ -1,9 +1,20 @@
 {
+"bairro:alto da boa vista": [
+-23.284599,
+-51.185671,
+"landuse"
+],
 "bairro:bela suica": [
 -23.335235,
 -51.163522,
 "place"
 ],
+"bairro:catuai parque residence": [
+-23.346868,
+-51.182574,
+"landuse"
+],
+"bairro:condominio terras de canaa": null,
 "bairro:conjunto habitacional jamile dequech": [
 -23.390586,
 -51.138818,
@@ -19,6 +30,7 @@
 -51.222362,
 "landuse"
 ],
+"bairro:estancia cabral": null,
 "bairro:guanabara": [
 -23.33317,
 -51.171994,
@@ -70,6 +82,87 @@
 "place"
 ],
 "bairro:terra bonita": null,
+"bairro:terras de canaa": null,
+"local:Alphaville": [
+-23.34855,
+-51.18652
+],
+"local:Alphaville 2": [
+-23.35544,
+-51.188155
+],
+"local:Artesano": [
+-23.36622,
+-51.20012
+],
+"local:Autoral Harmonia": [
+-23.34666,
+-51.21162
+],
+"local:Estância Bom Tempo": [
+-23.365785,
+-51.219748
+],
+"local:Estância Cabral": [
+-23.364539,
+-51.219989
+],
+"local:Estância Santa Paula": [
+-23.358044,
+-51.244311
+],
+"local:Euro Royal": [
+-23.361004,
+-51.19648
+],
+"local:Parque das Artes": [
+-23.365851,
+-51.207248
+],
+"local:Recanto do Salto": [
+-23.366158,
+-51.220816
+],
+"local:Royal Forest": [
+-23.347029,
+-51.212776
+],
+"local:Royal Golf": [
+-23.350037,
+-51.199129
+],
+"local:Royal Maison": [
+-23.34938,
+-51.20712
+],
+"local:Royal Park": [
+-23.349199,
+-51.208136
+],
+"local:Royal Tennis": [
+-23.349123,
+-51.207308
+],
+"local:Santana Residence": [
+-23.346104,
+-51.190573
+],
+"local:Sun Lake": [
+-23.365295,
+-51.206554
+],
+"local:Terras de Canaã": [
+-23.349722,
+-51.212338
+],
+"local:The Line": [
+-23.365824,
+-51.208775
+],
+"local:Ville Campestre": [
+-23.337892,
+-51.175431
+],
 "local:alcides turini|150": [
 -23.366573,
 -51.220339
@@ -1482,6 +1575,10 @@
 -23.346404,
 -51.193102
 ],
+"local:tucanos": [
+-23.34453,
+-51.16153
+],
 "local:vale do arvoredo": [
 -23.35174,
 -51.172371
@@ -1509,6 +1606,7 @@
 -51.206691,
 "landuse"
 ],
+"predio:acacia imperial 4 suites 497": null,
 "predio:acacias": [
 -23.315181,
 -51.16779,
@@ -1518,6 +1616,7 @@
 "predio:alcantara": null,
 "predio:alcantara londrina": null,
 "predio:alohi": null,
+"predio:alphaville 2": null,
 "predio:alphaville jacaran": null,
 "predio:amarilis": null,
 "predio:ana carolina": null,
@@ -1617,6 +1716,7 @@
 "predio:estancia cabral": null,
 "predio:estancia santa paula": null,
 "predio:exclusividade lharmonie allure": null,
+"predio:fechado alphaville 2": null,
 "predio:fechado conforto": null,
 "predio:fechado londrina": null,
 "predio:fechado villa noah": null,
@@ -1786,10 +1886,13 @@
 -51.220339,
 "building"
 ],
+"predio:residencial catuai": null,
 "predio:riverside": null,
 "predio:royal euro": null,
+"predio:royal forest": null,
 "predio:royal forest londrina": null,
 "predio:royal garden edificio": null,
+"predio:royal maison": null,
 "predio:royal park": null,
 "predio:sagres": [
 -23.307922,
@@ -1852,6 +1955,7 @@
 "predio:terralis jardin": null,
 "predio:terras de canaa": null,
 "predio:terras de canaa exclusividade": null,
+"predio:terras de canaa home resort": null,
 "predio:terras de cannaa": null,
 "predio:terrasse jardim": null,
 "predio:terrasse jardin": null,
@@ -1880,6 +1984,12 @@
 -51.153686,
 "building"
 ],
+"predio:tucanos": [
+-23.358171,
+-51.144287,
+"landuse"
+],
+"predio:vale das araucarias": null,
 "predio:vale do arvoredo localizado": null,
 "predio:veneza": null,
 "predio:veneza.na rua fernando de noronha": null,
@@ -2137,6 +2247,11 @@
 -51.112253,
 "highway"
 ],
+"rua:rua joao gilberto santos|547": [
+-23.346603,
+-51.157331,
+"highway"
+],
 "rua:rua joao huss|200": [
 -23.328303,
 -51.176634,
@@ -2214,6 +2329,11 @@
 -51.181338,
 "place"
 ],
+"rua:rua mario diniz de oliveira|550": [
+-23.340974,
+-51.170384,
+"building"
+],
 "rua:rua mato grosso|1056": [
 -23.323495,
 -51.156366,
@@ -2270,6 +2390,11 @@
 "highway"
 ],
 "rua:rua sebastiao buranello|87": null,
+"rua:rua takabumi murata|500": [
+-23.34175,
+-51.191637,
+"highway"
+],
 "rua:rua thomaz fabricio|105": [
 -23.373379,
 -51.145559,
