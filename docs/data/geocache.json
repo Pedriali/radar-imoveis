@@ -675,8 +675,8 @@
 -51.160102
 ],
 "local:centro|pontevedra": [
--23.314456,
--51.162694
+-23.314377,
+-51.156393
 ],
 "local:centro|pontevedraexcelente": [
 -23.314645,
@@ -745,6 +745,10 @@
 "local:centro|rio de janeiro|211": [
 -23.31067,
 -51.158805
+],
+"local:centro|rio de janeiro|929": [
+-23.317191,
+-51.158975
 ],
 "local:centro|rio de janeiro|932": [
 -23.317101,
@@ -1022,6 +1026,10 @@
 -23.31186,
 -51.16096
 ],
+"local:consolidado": [
+-23.358044,
+-51.244311
+],
 "local:estancia cabral": [
 -23.364539,
 -51.219989
@@ -1053,6 +1061,10 @@
 "local:gil de abreu souza|2335": [
 -23.345506,
 -51.215203
+],
+"local:gil de abreu souza|500": [
+-23.349649,
+-51.201365
 ],
 "local:gil de abreu souza|750": [
 -23.349515,
@@ -1135,7 +1147,7 @@
 -51.183827
 ],
 "local:palhano|atrio": [
--23.33047,
+-23.330472,
 -51.18318
 ],
 "local:palhano|aura": [
@@ -1211,8 +1223,8 @@
 -51.185842
 ],
 "local:palhano|greenwichpark": [
--23.334418,
--51.186459
+-23.337091,
+-51.18606
 ],
 "local:palhano|harmonie": [
 -23.329499,
@@ -1496,6 +1508,11 @@
 -23.347543,
 -51.206691,
 "landuse"
+],
+"predio:acacias": [
+-23.315181,
+-51.16779,
+"building"
 ],
 "predio:aguas claras": null,
 "predio:alcantara": null,
@@ -1876,6 +1893,7 @@
 "building"
 ],
 "predio:vila capri": null,
+"predio:vila noah": null,
 "predio:villa noah londrina": null,
 "predio:villa sardegna": null,
 "predio:ville campestre": null,
