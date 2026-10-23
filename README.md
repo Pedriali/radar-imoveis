@@ -4,7 +4,7 @@ Varredura automática (3× ao dia: 09h, 14h e 20h) de imóveis à venda em Londr
 
 - **Gleba Palhano** — apartamentos de 100–200 m² na Gleba Palhano, Santa Rosa, Guanabara e arredores.
 - **Centro** — apartamentos no Centro, a partir de R$ 300 mil (`preco_min`), qualquer área. Aviso de preço abaixo da média só pelo mesmo prédio (`media.bases`), porque o bairro mistura prédios novos e antigos.
-- **Casas em condomínio** — casas e terrenos dos condomínios da lista `condominios_alvo` (config.json, zona sul).
+- **Casas em condomínio** — só casas (terrenos ficam na aba de terrenos) dos condomínios da lista `condominios_alvo` (config.json, zona sul).
 - **Terrenos em condomínio** — só terrenos dos condomínios de `condominios_alvo`, sem filtro de área ou preço. Cards com R$/m² 15% ou mais abaixo da mediana do condomínio (ou do bairro) ganham um aviso.
 
 Fontes: Zap Imóveis, Viva Real, OLX, Chaves na Mão e as imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco e Cube Imóveis (Imovelweb bloqueia robôs; QuintoAndar não vende em Londrina).

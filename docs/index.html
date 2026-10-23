@@ -302,8 +302,8 @@ const ABAS = [
   {id:'centro', nome:'CENTRO', dados:'centro.json', item:'apartamento', predio:'Edifício', media:'apartamentos',
    sub:'SETOR LONDRINA/PR · CENTRO · APARTAMENTOS A PARTIR DE R$ 300 MIL · VENDA',
    busca:'Buscar prédio, rua…'},
-  {id:'casas', nome:'CASAS EM CONDOMÍNIO', dados:'casas.json', item:'imóvel', predio:'Condomínio', tipos:true,
-   sub:'SETOR LONDRINA/PR · ZONA SUL · CASAS E TERRENOS EM CONDOMÍNIO FECHADO · VENDA',
+  {id:'casas', nome:'CASAS EM CONDOMÍNIO', dados:'casas.json', item:'casa', predio:'Condomínio',
+   sub:'SETOR LONDRINA/PR · ZONA SUL · CASAS EM CONDOMÍNIO FECHADO · VENDA',
    busca:'Buscar condomínio, bairro, rua…'},
   {id:'terrenos', nome:'TERRENOS EM CONDOMÍNIO', dados:'terrenos.json', item:'terreno', predio:'Condomínio', media:'terrenos',
    sub:'SETOR LONDRINA/PR · ZONA SUL · TERRENOS EM CONDOMÍNIO FECHADO · QUALQUER ÁREA E PREÇO · VENDA',
@@ -338,7 +338,7 @@ function card(x, i){
       ${x.detectado === LAST ? '<span class="stamp">NOVO</span>' : ''}
       <span class="tag age" title="Dias anunciado">⌛ ${ageTxt}</span>
       ${n > 1 ? `<span class="tag dup">${n} ANÚNCIOS</span>` : ''}
-      ${x.tipo && ABA.item !== 'terreno' ? `<span class="tag tipo">${x.tipo === 'terreno' ? 'TERRENO' : 'CASA'}</span>` : ''}
+      ${x.tipo && ABA.tipos ? `<span class="tag tipo">${x.tipo === 'terreno' ? 'TERRENO' : 'CASA'}</span>` : ''}
     </div>
     <div class="body">
       ${name}

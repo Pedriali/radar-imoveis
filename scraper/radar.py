@@ -449,7 +449,7 @@ def grupo_buscas(portal):
         return [(lotes + GRUPO_FECHADO, tipos_lote, False), (lotes, tipos_lote, True)]
     casas = ("https://www.zapimoveis.com.br/venda/casas-de-condominio/pr+londrina/?" if portal == "zap" else
              "https://www.vivareal.com.br/venda/parana/londrina/condominio_residencial/?")
-    return [(casas, ("CONDOMINIUM",), False), (lotes + GRUPO_FECHADO, ("RESIDENTIAL_ALLOTMENT_LAND",), False)]
+    return [(casas, ("CONDOMINIUM",), False)]
 
 
 def parar(known, sem_novos):
@@ -528,7 +528,7 @@ def olx_tipo(a, props):
     c = norm(a.get("category") or props.get("category"))
     if c.startswith("casa"):
         return None if terrenos() else "casa"
-    if c.startswith("terreno") or c.startswith("lote"):
+    if (c.startswith("terreno") or c.startswith("lote")) and terrenos():
         return "terreno"
     return None
 
@@ -687,7 +687,7 @@ def _rf_publicado(o):
 
 def scan_raulfulgencio(found):
     """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
-    q = {"type": "S", "idtCityList": [RF_LONDRINA], "idtsCategories": [1] if apto() else [5] if terrenos() else [2, 5],
+    q = {"type": "S", "idtCityList": [RF_LONDRINA], "idtsCategories": [1] if apto() else [5] if terrenos() else [2],
          "start": 0, "numRows": 3000,
          "getAccess": True, "fieldList": RF_FIELDS}
     resp = _rf_search(q)
@@ -707,7 +707,7 @@ def scan_raulfulgencio(found):
                 continue
             tipo, area = None, _rf_int(o.get("prop_char_95"))
         else:
-            if o.get("idtCategory") not in ((5,) if terrenos() else (2, 5)):
+            if o.get("idtCategory") != (5 if terrenos() else 2):
                 continue
             if o.get("idtSubCategory") not in RF_COND_SUBS and not predio and not (
                     terrenos() and condominio_ok(o.get("desTitleSite"))):
@@ -787,7 +787,7 @@ def scan_gleba(found):
     if apto():
         return _scan_gleba(f"{GLEBA_BASE}/imoveis/a-venda/apartamento/londrina"
                            f"?area={CFG['area_min']}~{CFG['area_max']}&", "apartamento", found)
-    tipos = ("terreno",) if terrenos() else ("casa", "terreno")
+    tipos = ("terreno",) if terrenos() else ("casa",)
     st = [_scan_gleba(f"{GLEBA_BASE}/imoveis/a-venda/{t}/londrina?", t, found) for t in tipos]
     return "ok" if "ok" in st else "falhou"
 
@@ -927,7 +927,7 @@ def scan_santamerica(found):
             q += f"&a_util_min={CFG['area_min']}&a_util_max={CFG['area_max']}"
         else:  # a zona é filtrada aqui, pelo bairro/nome do condomínio
             q = "locacao_venda=V&id_cidade[]=2&" + "&".join(
-                f"id_tipo_imovel[]={t}" for t, tp in SA_TIPOS_COND.items() if not terrenos() or tp == "terreno")
+                f"id_tipo_imovel[]={t}" for t, tp in SA_TIPOS_COND.items() if (tp == "terreno") == terrenos())
         cards, seen, ok_pages = [], set(), 0
         for pag in range(1, 12):
             page = fetch(f"{SA_BASE}/pesquisa-de-imoveis/?{q}" + (f"&pag={pag}" if pag > 1 else ""))
@@ -1094,7 +1094,7 @@ def scan_perez(found):
         buscas = {"Apartamento": dict(base, propertyType="Apartamento", minArea=max(0, CFG["area_min"] - 1),
                                       maxArea=CFG["area_max"] + 1)}
     else:
-        buscas = {t: dict(base, propertyType=t) for t, tp in PZ_TIPOS.items() if not terrenos() or tp == "terreno"}
+        buscas = {t: dict(base, propertyType=t) for t, tp in PZ_TIPOS.items() if (tp == "terreno") == terrenos()}
     itens = []
     for t, q in buscas.items():
         r = _pz_busca(q)
@@ -1190,8 +1190,7 @@ def scan_catuai(found):
         searches = [f"{base}/imoveis/terreno-em-condominio/a-venda/londrina-pr?x=1",
                     f"{base}/imoveis/terreno/a-venda/londrina-pr?x=1"]
     else:
-        searches = [f"{base}/imoveis/casa-em-condominio/a-venda/londrina-pr?x=1",
-                    f"{base}/imoveis/terreno-em-condominio/a-venda/londrina-pr?x=1"]
+        searches = [f"{base}/imoveis/casa-em-condominio/a-venda/londrina-pr?x=1"]
 
     def num(s):
         d = re.sub(r"\D", "", (s or "").split(",")[0])
@@ -1346,9 +1345,8 @@ def scan_inglaterra(found):
                  f"?area={CFG['area_min']}~{CFG['area_max']}&size=48", None)]
     elif terrenos():  # todos os terrenos; os sem a etiqueta de condomínio precisam de prova (_scan_inglaterra)
         urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/terreno/londrina?size=48", "terreno")]
-    else:  # não há tipo "em condomínio"; casa e terreno com a etiqueta de condomínio fechado
-        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/{t}/londrina?size=48&tags=GATED_COMMUNITY", t)
-                for t in ("casa", "terreno")]
+    else:  # não há tipo "em condomínio": casas, com a etiqueta de condomínio fechado
+        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/casa/londrina?size=48&tags=GATED_COMMUNITY", "casa")]
     items, total = [], 0
     for url, tipo in urls:
         got = _in_lista(url)
@@ -1488,7 +1486,7 @@ def cm_buscas():
     lotes = "/terrenos-em-condominio-a-venda/pr-londrina/?filtro=or:6"
     if terrenos():  # lotes de condomínio + todos os lotes (com prova de condomínio)
         return [(lotes, "terreno", False), ("/terrenos-a-venda/pr-londrina/?filtro=or:6", "terreno", True)]
-    return [("/casas-em-condominio-a-venda/pr-londrina/?filtro=or:6", "casa", False), (lotes, "terreno", False)]
+    return [("/casas-em-condominio-a-venda/pr-londrina/?filtro=or:6", "casa", False)]
 
 
 def cm_area(v, decimal):
@@ -1698,7 +1696,7 @@ def _kenlo_buscas(base):
         return [(f"{api}/apartamento/londrina{b}?area={CFG['area_min']}~{CFG['area_max']}&size=48", None)]
     if terrenos():  # todos os terrenos; os sem marca de condomínio precisam de prova
         return [(f"{api}/terreno/londrina?size=48", "terreno")]
-    return [(f"{api}/{t}/londrina?size=48&tags=GATED_COMMUNITY", t) for t in ("casa", "terreno")]
+    return [(f"{api}/casa/londrina?size=48&tags=GATED_COMMUNITY", "casa")]
 
 
 def _kenlo_detalhe(base, ref, rec):
@@ -1818,7 +1816,7 @@ def _cube_buscas():
         return [(f"{q}Apartamento{b}&areaPrivativaMin={CFG['area_min']}&areaPrivativaMax={CFG['area_max']}", None, False)]
     t = urllib.parse.quote("Casa em Condomínio")
     # não há "Terreno em Condomínio": lotes de condomínio vêm em "Terreno" (com prova de condomínio)
-    return ([] if terrenos() else [(q + t, "casa", False)]) + [(q + "Terreno", "terreno", True)]
+    return [(q + "Terreno", "terreno", True)] if terrenos() else [(q + t, "casa", False)]
 
 
 def _cube_link(o):
@@ -2023,8 +2021,13 @@ def dif_preco(a, b):
     return abs(pa - pb) / max(pa, pb) if pa and pb else 1
 
 
+def tipo_ok(x):
+    """Casas e terrenos são abas excludentes: casa não entra em Terrenos, terreno não entra em Casas."""
+    return apto() or x.get("tipo") == ("terreno" if terrenos() else "casa")
+
+
 def group_imoveis(L):
-    ads = [x for x in L.values() if x.get("links") and x.get("area")]
+    ads = [x for x in L.values() if x.get("links") and x.get("area") and tipo_ok(x)]
     ads.sort(key=lambda x: (not x.get("visivel"), x.get("detectado") or "", x["id"]))
     grupos = []
     for a in ads:
@@ -2410,10 +2413,13 @@ def main(perfil):
 
     # Perfil com "preco_min": fica de fora o que tem preço abaixo dele (sem preço = "sob consulta", entra).
     # Localização exata fora da "caixa" do perfil também sai, venha de qualquer fonte (bairro cadastrado errado).
-    for k in [k for k, x in found.items() if not preco_ok(x.get("preco")) or (x.get("lat") and not na_caixa(x["lat"], x["lon"]))]:
+    for k in [k for k, x in found.items() if not preco_ok(x.get("preco")) or not tipo_ok(x)
+              or (x.get("lat") and not na_caixa(x["lat"], x["lon"]))]:
         del found[k]
     for k in [k for k, x in L.items() if x.get("lat") and not na_caixa(x["lat"], x["lon"])]:
         del L[k]  # guardados antes da caixa existir
+    for k in [k for k, x in L.items() if not tipo_ok(x)]:
+        del L[k]  # terrenos guardados quando a aba de casas também tinha terrenos
 
     new_ids = [k for k in found if k not in L]
     log(f"{len(found)} anúncios no filtro, {len(new_ids)} novos")
