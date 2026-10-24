@@ -100,8 +100,8 @@
 -51.21162
 ],
 "local:Estância Bom Tempo": [
--23.365785,
--51.219748
+-23.366126,
+-51.221356
 ],
 "local:Estância Cabral": [
 -23.364539,
@@ -128,8 +128,8 @@
 -51.212776
 ],
 "local:Royal Golf": [
--23.350037,
--51.199129
+-23.352374,
+-51.19681
 ],
 "local:Royal Maison": [
 -23.34938,
@@ -205,7 +205,7 @@
 ],
 "local:bela suica|terrazzadirimini": [
 -23.34515,
--51.1635
+-51.163559
 ],
 "local:benezer luiz da costa|5": [
 -23.362413,
@@ -358,6 +358,10 @@
 "local:centro|casahorizonte": [
 -23.31174,
 -51.166737
+],
+"local:centro|castelfranco4suites211": [
+-23.315868,
+-51.164217
 ],
 "local:centro|caviuna": [
 -23.314785,
@@ -644,8 +648,8 @@
 -51.161567
 ],
 "local:centro|montblanc": [
--23.316553,
--51.166851
+-23.316675,
+-51.166498
 ],
 "local:centro|montpellier": [
 -23.31409,
@@ -735,6 +739,10 @@
 -23.314695,
 -51.167337
 ],
+"local:centro|para|1907": [
+-23.314663,
+-51.169865
+],
 "local:centro|para|984": [
 -23.314285,
 -51.160889
@@ -791,6 +799,14 @@
 -23.321407,
 -51.154016
 ],
+"local:centro|prefeito hugo cabral|1072": [
+-23.316264,
+-51.164116
+],
+"local:centro|prefeito hugo cabral|250": [
+-23.309292,
+-51.164164
+],
 "local:centro|prefeito hugo cabral|784": [
 -23.313671,
 -51.1641
@@ -830,6 +846,10 @@
 "local:centro|princesaizabel": [
 -23.315073,
 -51.16132
+],
+"local:centro|pugesi": [
+-23.316788,
+-51.156468
 ],
 "local:centro|pugesimatogrosso": [
 -23.316699,
@@ -896,12 +916,12 @@
 -51.161693
 ],
 "local:centro|santos": [
--23.317096,
--51.167729
-],
-"local:centro|santos1250": [
 -23.31699,
 -51.16826
+],
+"local:centro|santos1250": [
+-23.317018,
+-51.168181
 ],
 "local:centro|santos125085": [
 -23.316975,
@@ -1020,8 +1040,8 @@
 -51.167782
 ],
 "local:centro|spotcentroresidence": [
--23.306538,
--51.168185
+-23.306469,
+-51.168233
 ],
 "local:centro|spotresidence": [
 -23.306516,
@@ -1184,8 +1204,8 @@
 -51.17627
 ],
 "local:guanabara|potylazzarotto": [
--23.33566,
--51.17604
+-23.33574,
+-51.17627
 ],
 "local:hauscasa": [
 -23.33531,
@@ -1252,7 +1272,7 @@
 -51.183827
 ],
 "local:palhano|atrio": [
--23.330472,
+-23.330475,
 -51.18318
 ],
 "local:palhano|aura": [
@@ -1296,8 +1316,8 @@
 -51.179106
 ],
 "local:palhano|eurico hummig|405": [
--23.331155,
--51.179656
+-23.331241,
+-51.179597
 ],
 "local:palhano|evidence": [
 -23.33532,
@@ -1329,7 +1349,7 @@
 ],
 "local:palhano|greenwichpark": [
 -23.337091,
--51.185938
+-51.185842
 ],
 "local:palhano|harmonie": [
 -23.329499,
@@ -1368,8 +1388,8 @@
 -51.179271
 ],
 "local:palhano|maisonlegacy": [
--23.330978,
--51.181573
+-23.331069,
+-51.179715
 ],
 "local:palhano|maisonprovence": [
 -23.329018,
@@ -1499,6 +1519,10 @@
 -23.348075,
 -51.210711
 ],
+"local:royalpark": [
+-23.349456,
+-51.207137
+],
 "local:royaltennis": [
 -23.348634,
 -51.209199
@@ -1556,8 +1580,8 @@
 -51.212389
 ],
 "local:sonora": [
--23.357545,
--51.181718
+-23.355309,
+-51.181609
 ],
 "local:sun lake": [
 -23.365295,
@@ -1899,6 +1923,11 @@
 -51.220339,
 "building"
 ],
+"predio:regina izabel centro de londrina": [
+-23.313546,
+-51.156953,
+"building"
+],
 "predio:residencial catuai": null,
 "predio:riverside": null,
 "predio:royal euro": null,
@@ -1913,6 +1942,11 @@
 "building"
 ],
 "predio:saint simon": [
+-23.321311,
+-51.161695,
+"building"
+],
+"predio:saint simon residence": [
 -23.321311,
 -51.161695,
 "building"
