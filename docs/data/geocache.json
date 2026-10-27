@@ -255,6 +255,10 @@
 -23.309292,
 -51.164164
 ],
+"local:centro|arcoiris": [
+-23.310392,
+-51.169376
+],
 "local:centro|arkadia": [
 -23.316855,
 -51.166949
@@ -631,6 +635,10 @@
 -23.325732,
 -51.156212
 ],
+"local:centro|mato grosso|564": [
+-23.313785,
+-51.156478
+],
 "local:centro|mato grosso|789": [
 -23.315858,
 -51.156085
@@ -646,6 +654,10 @@
 "local:centro|mediterraneecentrodelondrina": [
 -23.321484,
 -51.161595
+],
+"local:centro|mediterraneo": [
+-23.311331,
+-51.166912
 ],
 "local:centro|minasgerais": [
 -23.314948,
@@ -783,6 +795,10 @@
 -23.326487,
 -51.153967
 ],
+"local:centro|piaui|61": [
+-23.313514,
+-51.15692
+],
 "local:centro|piemonte": [
 -23.32341,
 -51.15662
@@ -792,12 +808,12 @@
 -51.160102
 ],
 "local:centro|pontevedra": [
--23.314377,
--51.156393
+-23.31464,
+-51.169692
 ],
 "local:centro|pontevedraexcelente": [
--23.314645,
--51.169692
+-23.314273,
+-51.155688
 ],
 "local:centro|portaldagoiascentrodelondrina": [
 -23.315698,
@@ -855,6 +871,10 @@
 -23.315073,
 -51.16132
 ],
+"local:centro|professor joao candido|333": [
+-23.311686,
+-51.161324
+],
 "local:centro|pugesi": [
 -23.316788,
 -51.156468
@@ -902,6 +922,10 @@
 "local:centro|riversideresidences": [
 -23.317631,
 -51.167248
+],
+"local:centro|saintjames": [
+-23.32387,
+-51.158747
 ],
 "local:centro|saintpatrick": [
 -23.32389,
@@ -990,6 +1014,10 @@
 "local:centro|serraverde": [
 -23.316778,
 -51.164544
+],
+"local:centro|simoes": [
+-23.316823,
+-51.161371
 ],
 "local:centro|smartcitymairinkgoes": [
 -23.313261,
@@ -1082,6 +1110,10 @@
 "local:centro|terradourada": [
 -23.316026,
 -51.168181
+],
+"local:centro|terrassejardin": [
+-23.307058,
+-51.168118
 ],
 "local:centro|terrassejardinres": [
 -23.30715,
@@ -1212,6 +1244,10 @@
 -51.202823
 ],
 "local:goldenhill": [
+-23.33776,
+-51.214076
+],
+"local:goldenhillpermuta": [
 -23.33776,
 -51.214076
 ],
@@ -1697,6 +1733,7 @@
 "predio:botanico": null,
 "predio:boulevar park": null,
 "predio:boulevard village": null,
+"predio:cambrigie": null,
 "predio:caminhoto": [
 -23.311347,
 -51.160929,
@@ -1913,6 +1950,11 @@
 -51.164643,
 "building"
 ],
+"predio:parana": [
+-23.313269,
+-51.199028,
+"landuse"
+],
 "predio:paranagua": [
 -23.30963,
 -51.169554,
@@ -1980,6 +2022,11 @@
 -23.347917,
 -51.191289,
 "landuse"
+],
+"predio:santos centro londrina": [
+-23.315181,
+-51.16779,
+"building"
 ],
 "predio:santos se": null,
 "predio:serra dourada": null,
