@@ -808,7 +808,7 @@
 -51.160102
 ],
 "local:centro|pontevedra": [
--23.31464,
+-23.314642,
 -51.169692
 ],
 "local:centro|pontevedraexcelente": [
@@ -1368,8 +1368,8 @@
 -51.179106
 ],
 "local:palhano|eurico hummig|405": [
--23.331241,
--51.179597
+-23.331155,
+-51.179656
 ],
 "local:palhano|evidence": [
 -23.33532,
@@ -1440,12 +1440,16 @@
 -51.179271
 ],
 "local:palhano|maisonlegacy": [
--23.331069,
--51.179715
+-23.330978,
+-51.181573
 ],
 "local:palhano|maisonprovence": [
 -23.328579,
 -51.177409
+],
+"local:palhano|maisonvillalobos": [
+-23.334488,
+-51.180043
 ],
 "local:palhano|marcchagal": [
 -23.333452,
@@ -1608,8 +1612,8 @@
 -51.184034
 ],
 "local:santa rosa|villasolare": [
--23.332625,
--51.173202
+-23.332479,
+-51.180486
 ],
 "local:santana residence": [
 -23.346104,
@@ -1707,6 +1711,7 @@
 "predio:alphaville 2": null,
 "predio:alphaville jacaran": null,
 "predio:alphaville jacarandas": null,
+"predio:alphaville londrina 2": null,
 "predio:amarilis": null,
 "predio:ana carolina": null,
 "predio:andorra": null,
@@ -1874,6 +1879,11 @@
 "predio:joao nicolau": null,
 "predio:jose b almeida": null,
 "predio:jose garcia de souza": null,
+"predio:l essence": [
+-23.332912,
+-51.175553,
+"building"
+],
 "predio:l'harmonie": null,
 "predio:lac royal": [
 -23.328303,
@@ -1907,6 +1917,7 @@
 "predio:maria del carmem": null,
 "predio:marques de herval": null,
 "predio:marques do herval centro de londrina": null,
+"predio:matisse": null,
 "predio:matisse londrina": null,
 "predio:maximus": null,
 "predio:mediterraneo": null,
