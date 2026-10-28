@@ -89,7 +89,7 @@
 ],
 "local:Alphaville 2": [
 -23.35544,
--51.188155
+-51.18812
 ],
 "local:Artesano": [
 -23.36622,
@@ -984,8 +984,8 @@
 -51.16826
 ],
 "local:centro|santos1250": [
--23.317018,
--51.168181
+-23.31699,
+-51.16826
 ],
 "local:centro|santos125085": [
 -23.316975,
@@ -1383,6 +1383,10 @@
 -23.333073,
 -51.185547
 ],
+"local:palhano|completo": [
+-23.3318,
+-51.17395
+],
 "local:palhano|coracoralina": [
 -23.334427,
 -51.180905
@@ -1429,7 +1433,7 @@
 ],
 "local:palhano|greenwichpark": [
 -23.337091,
--51.185842
+-51.185816
 ],
 "local:palhano|harmonie": [
 -23.329499,
@@ -1745,8 +1749,14 @@
 "building"
 ],
 "predio:aguas claras": null,
+"predio:alameda miguel blasi": [
+-23.312475,
+-51.1607,
+"building"
+],
 "predio:alcantara": null,
 "predio:alcantara londrina": null,
+"predio:algarve": null,
 "predio:alohi": null,
 "predio:alphaville 2": null,
 "predio:alphaville jacaran": null,
@@ -1757,9 +1767,11 @@
 "predio:andorra": null,
 "predio:anita malfatti londrina": null,
 "predio:aqua jardim residencial & resort": null,
+"predio:arbo plaenge": null,
 "predio:arch palhano": null,
 "predio:arch palhano londrina": null,
 "predio:art home": null,
+"predio:artsy": null,
 "predio:associacao rural": [
 -23.31288,
 -51.158359,
@@ -1962,6 +1974,11 @@
 "predio:matisse": null,
 "predio:matisse londrina": null,
 "predio:maximus": null,
+"predio:mediterranee jardim ipiranga": [
+-23.321552,
+-51.161672,
+"building"
+],
 "predio:mediterraneo": null,
 "predio:mogno": [
 -23.330805,
