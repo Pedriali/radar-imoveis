@@ -219,6 +219,10 @@
 -23.366126,
 -51.221356
 ],
+"local:catuaiparqueresidence": [
+-23.346062,
+-51.18203
+],
 "local:centro|acacias": [
 -23.315344,
 -51.168059
@@ -543,6 +547,10 @@
 -23.316084,
 -51.164238
 ],
+"local:centro|ipe": [
+-23.313586,
+-51.162236
+],
 "local:centro|itauna": [
 -23.317826,
 -51.163317
@@ -691,6 +699,10 @@
 -23.306622,
 -51.167286
 ],
+"local:centro|mundonovo": [
+-23.317566,
+-51.161465
+],
 "local:centro|neworleans": [
 -23.317255,
 -51.168026
@@ -781,7 +793,7 @@
 ],
 "local:centro|paseosantos": [
 -23.31244,
--51.167732
+-51.167816
 ],
 "local:centro|paseosantosruasantos": [
 -23.31244,
@@ -1592,8 +1604,8 @@
 -51.212786
 ],
 "local:royalmaison": [
--23.348075,
--51.210711
+-23.347979,
+-51.21061
 ],
 "local:royalpark": [
 -23.349456,
@@ -1915,6 +1927,7 @@
 -51.176634,
 "building"
 ],
+"predio:lago azul": null,
 "predio:las palmas": null,
 "predio:le corbusier": [
 -23.332693,
@@ -2113,6 +2126,7 @@
 -51.167727,
 "building"
 ],
+"predio:terrnoir residence": null,
 "predio:terroir gleba fazenda palhano": [
 -23.331818,
 -51.174151,
