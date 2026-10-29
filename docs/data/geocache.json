@@ -648,8 +648,8 @@
 -51.170263
 ],
 "local:centro|martiniano do valle filho|575": [
--23.314711,
--51.1444
+-23.314375,
+-51.1465
 ],
 "local:centro|mato grosso|1893": [
 -23.325732,
@@ -828,8 +828,8 @@
 -51.162932
 ],
 "local:centro|petropolis": [
--23.326487,
--51.153967
+-23.32648,
+-51.15398
 ],
 "local:centro|piaui|61": [
 -23.313514,
@@ -924,8 +924,8 @@
 -51.156079
 ],
 "local:centro|reginaizabel": [
--23.313513,
--51.15692
+-23.313403,
+-51.156946
 ],
 "local:centro|residpetropolis": [
 -23.326493,
@@ -1668,8 +1668,8 @@
 -51.18219
 ],
 "local:santa rosa|fernandopessoa": [
--23.332234,
--51.175603
+-23.332467,
+-51.174258
 ],
 "local:santa rosa|kensingtongardenssemimobiliado": [
 -23.33249,
@@ -1996,6 +1996,11 @@
 ],
 "predio:maison villa lobos": null,
 "predio:malie": null,
+"predio:malvina pedriali": [
+-23.318575,
+-51.157947,
+"building"
+],
 "predio:maria del carmem": null,
 "predio:marques de herval": null,
 "predio:marques do herval centro de londrina": null,
@@ -2216,6 +2221,7 @@
 ],
 "predio:vila capri": null,
 "predio:vila noah": null,
+"predio:vilhena": null,
 "predio:villa noah londrina": null,
 "predio:villa sardegna": null,
 "predio:ville campestre": null,
