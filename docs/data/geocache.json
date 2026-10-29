@@ -31,6 +31,7 @@
 "landuse"
 ],
 "bairro:estancia cabral": null,
+"bairro:estancia santa paula": null,
 "bairro:guanabara": [
 -23.33317,
 -51.171994,
@@ -662,6 +663,10 @@
 "local:centro|mato grosso|789": [
 -23.315858,
 -51.156085
+],
+"local:centro|mato grosso|887": [
+-23.316699,
+-51.156079
 ],
 "local:centro|maximus": [
 -23.323508,
@@ -1891,6 +1896,7 @@
 "predio:estancia bom tempo": null,
 "predio:estancia cabral": null,
 "predio:estancia santa paula": null,
+"predio:estancia santa paula 198": null,
 "predio:exclusividade lharmonie allure": null,
 "predio:fechado alphaville 2": null,
 "predio:fechado conforto": null,
@@ -2074,6 +2080,7 @@
 "predio:polaris": null,
 "predio:portal da goias": null,
 "predio:portal fazenda": null,
+"predio:portaria": null,
 "predio:porto velho": null,
 "predio:premiatto": null,
 "predio:prime house": null,
