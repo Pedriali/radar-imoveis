@@ -37,6 +37,7 @@
 -51.171994,
 "place"
 ],
+"bairro:guanabara parque boulevard": null,
 "bairro:igapo": [
 -23.334272,
 -51.159789,
@@ -644,6 +645,10 @@
 -23.31079,
 -51.15844
 ],
+"local:centro|marcilia": [
+-23.315595,
+-51.16306
+],
 "local:centro|mariajoana": [
 -23.314774,
 -51.162896
@@ -839,6 +844,10 @@
 "local:centro|paulnewman": [
 -23.31494,
 -51.161672
+],
+"local:centro|pernambuco|10": [
+-23.307883,
+-51.163043
 ],
 "local:centro|pernambuco|600": [
 -23.313531,
@@ -1313,8 +1322,8 @@
 -51.19554
 ],
 "local:gil de abreu souza|2335": [
--23.345506,
--51.215203
+-23.347029,
+-51.212786
 ],
 "local:gil de abreu souza|500": [
 -23.349649,
@@ -1492,6 +1501,10 @@
 -23.337091,
 -51.185816
 ],
+"local:palhano|haikai": [
+-23.334016,
+-51.179856
+],
 "local:palhano|harmonie": [
 -23.332121,
 -51.183185
@@ -1576,6 +1589,10 @@
 -23.327132,
 -51.180841
 ],
+"local:palhano|poema": [
+-23.330079,
+-51.178714
+],
 "local:palhano|solarrivera": [
 -23.333582,
 -51.175819
@@ -1621,8 +1638,8 @@
 -51.1488
 ],
 "local:palhano|vert": [
--23.329278,
--51.182819
+-23.331857,
+-51.181882
 ],
 "local:palhano|vertresidence": [
 -23.328931,
@@ -1692,9 +1709,17 @@
 -23.348145,
 -51.211091
 ],
+"local:santa rosa|atrio": [
+-23.332817,
+-51.184041
+],
 "local:santa rosa|caracas|1000": [
 -23.33268,
 -51.18145
+],
+"local:santa rosa|caracas|200": [
+-23.332108,
+-51.171918
 ],
 "local:santa rosa|casapalhano": [
 -23.332516,
@@ -1703,6 +1728,10 @@
 "local:santa rosa|chelseatower": [
 -23.33254,
 -51.18219
+],
+"local:santa rosa|corbusier": [
+-23.332697,
+-51.177029
 ],
 "local:santa rosa|fernandopessoa": [
 -23.332467,
@@ -1717,8 +1746,8 @@
 -51.174217
 ],
 "local:santa rosa|tay": [
--23.332817,
--51.184034
+-23.332625,
+-51.173202
 ],
 "local:santa rosa|villasolare": [
 -23.332479,
@@ -1754,7 +1783,7 @@
 ],
 "local:sunlake": [
 -23.359838,
--51.209464
+-51.208009
 ],
 "local:sunlakeexcelentelocalizacao": [
 -23.366573,
@@ -1832,6 +1861,7 @@
 "predio:andorra": null,
 "predio:anita malfatti londrina": null,
 "predio:aqua jardim residencial & resort": null,
+"predio:arbo": null,
 "predio:arbo plaenge": null,
 "predio:arch palhano": null,
 "predio:arch palhano londrina": null,
@@ -2040,6 +2070,7 @@
 -51.157947,
 "building"
 ],
+"predio:malvina pedrialli": null,
 "predio:marcilia": null,
 "predio:maria del carmem": null,
 "predio:marques de herval": null,
@@ -2117,6 +2148,7 @@
 "predio:portaria": null,
 "predio:porto velho": null,
 "predio:premiatto": null,
+"predio:premiatto residence": null,
 "predio:prime house": null,
 "predio:principe de gales": null,
 "predio:queen elizabeth": null,
