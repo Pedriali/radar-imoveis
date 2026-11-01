@@ -386,8 +386,8 @@
 -51.164217
 ],
 "local:centro|caviuna": [
--23.314785,
--51.162091
+-23.313785,
+-51.156478
 ],
 "local:centro|cenarioresidence": [
 -23.311052,
@@ -1010,6 +1010,10 @@
 -51.16566
 ],
 "local:centro|sanfrancistower": [
+-23.31053,
+-51.16814
+],
+"local:centro|sanfrancistowers": [
 -23.31053,
 -51.16814
 ],
@@ -2139,6 +2143,7 @@
 -51.169554,
 "building"
 ],
+"predio:parc guell andar alto com": null,
 "predio:park avenue": [
 -23.315945,
 -51.156155,
