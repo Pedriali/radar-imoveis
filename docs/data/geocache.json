@@ -951,8 +951,8 @@
 -51.169793
 ],
 "local:centro|princesaizabel": [
--23.315073,
--51.16132
+-23.315089,
+-51.161344
 ],
 "local:centro|professor joao candido|333": [
 -23.311686,
@@ -1550,6 +1550,10 @@
 -23.328286,
 -51.176516
 ],
+"local:palhano|lagoazul": [
+-23.3301,
+-51.17675
+],
 "local:palhano|lumiere": [
 -23.329947,
 -51.180613
@@ -1682,6 +1686,10 @@
 -23.374955,
 -51.212389
 ],
+"local:rodovia mabio goncalves palhano|150": [
+-23.343672,
+-51.188541
+],
 "local:royal forest": [
 -23.347029,
 -51.212776
@@ -1755,8 +1763,8 @@
 -51.177029
 ],
 "local:santa rosa|fernandopessoa": [
--23.332467,
--51.174258
+-23.332234,
+-51.175603
 ],
 "local:santa rosa|kensingtongardenssemimobiliado": [
 -23.33249,
@@ -1809,6 +1817,10 @@
 "local:sunlakeexcelentelocalizacao": [
 -23.366573,
 -51.220339
+],
+"local:sunlakeresidence": [
+-23.365295,
+-51.206554
 ],
 "local:sunset dream": [
 -23.36529,
@@ -1961,6 +1973,7 @@
 "building"
 ],
 "predio:cond.edif resid petropolis": null,
+"predio:contemporaneo": null,
 "predio:copenhague conforto": null,
 "predio:coral gables": null,
 "predio:d. joao vi": null,
