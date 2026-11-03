@@ -85,6 +85,11 @@
 ],
 "bairro:terra bonita": null,
 "bairro:terras de canaa": null,
+"bairro:vale das araucarias": [
+-23.341705,
+-51.171884,
+"landuse"
+],
 "local:Alphaville": [
 -23.34855,
 -51.18652
@@ -332,6 +337,10 @@
 "local:centro|boulevardpark": [
 -23.311898,
 -51.161124
+],
+"local:centro|brasil|878": [
+-23.316913,
+-51.153991
 ],
 "local:centro|brickell": [
 -23.314134,
@@ -608,6 +617,10 @@
 "local:centro|luisdecamoes": [
 -23.309033,
 -51.16822
+],
+"local:centro|luizdecamoes": [
+-23.30904,
+-51.1681
 ],
 "local:centro|luizxvi": [
 -23.309993,
@@ -2618,6 +2631,7 @@
 -51.181863,
 "highway"
 ],
+"rua:rua manaca-da-serra|132": null,
 "rua:rua manuel barbosa lima|66": null,
 "rua:rua manuel barbosa lima|68": null,
 "rua:rua maria lucia da paz|301": [
