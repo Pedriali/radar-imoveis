@@ -258,6 +258,10 @@
 -23.310816,
 -51.162114
 ],
+"local:centro|anaflavia": [
+-23.31658,
+-51.167448
+],
 "local:centro|angelobazo": [
 -23.314704,
 -51.156541
@@ -281,6 +285,10 @@
 "local:centro|artesano": [
 -23.330708,
 -51.178148
+],
+"local:centro|arthur": [
+-23.31265,
+-51.16108
 ],
 "local:centro|atlantis": [
 -23.315765,
@@ -751,8 +759,8 @@
 -51.156079
 ],
 "local:centro|maximus": [
--23.323508,
--51.152953
+-23.3213,
+-51.15278
 ],
 "local:centro|maximusresidence": [
 -23.323508,
@@ -912,7 +920,7 @@
 ],
 "local:centro|paseosantos": [
 -23.31244,
--51.167816
+-51.167732
 ],
 "local:centro|paseosantosruasantos": [
 -23.31244,
@@ -1023,7 +1031,7 @@
 -51.169398
 ],
 "local:centro|primepiaui": [
--23.313494,
+-23.313468,
 -51.169793
 ],
 "local:centro|princesaizabel": [
@@ -1321,6 +1329,10 @@
 "local:centro|terraazulcentrodelondrina": [
 -23.316284,
 -51.160416
+],
+"local:centro|terradosimigrantes": [
+-23.31316,
+-51.162482
 ],
 "local:centro|terradourada": [
 -23.316026,
@@ -1921,6 +1933,10 @@
 "local:santa rosa|casapalhano": [
 -23.332241,
 -51.181027
+],
+"local:santa rosa|casapalhanoglebapalhano": [
+-23.33268,
+-51.18145
 ],
 "local:santa rosa|chelseatower": [
 -23.33254,
@@ -2711,6 +2727,11 @@
 "highway"
 ],
 "rua:rua ernani lacerda de athayde|1050": [
+-23.331692,
+-51.190557,
+"highway"
+],
+"rua:rua ernani lacerda de athayde|400": [
 -23.331692,
 -51.190557,
 "highway"
