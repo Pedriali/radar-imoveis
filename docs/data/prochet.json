@@ -64,8 +64,8 @@
    }
   },
   {
-   "em": "2026-11-06T17:16:09Z",
-   "novos": 0,
+   "em": "2026-11-06T17:53:53Z",
+   "novos": 3,
    "portais": {
     "zap": "ok",
     "vivareal": "ok",
@@ -85,45 +85,45 @@
    "inicial": false,
    "fora_da_zona": {
     "Gleba Palhano": 663,
-    "Centro": 569,
-    "Gleba Fazenda Palhano": 428,
-    "Terra Bonita": 144,
+    "Centro": 571,
+    "Gleba Fazenda Palhano": 429,
+    "Terra Bonita": 146,
     "Aurora": 88,
     "Parque Jamaica": 74,
     "Vale dos Tucanos": 65,
-    "Santa Rosa": 57,
+    "Santa Rosa": 59,
     "Acquaville": 44,
     "Vitória": 30,
+    "Jardim Higienópolis": 27,
     "Bela Suiça": 27,
-    "Jardim Higienópolis": 26,
     "Gleba Esperança": 26,
     "Cidade Industrial II": 26,
+    "Igapó": 24,
     "San Fernando": 24,
     "Vila Brasil": 23,
-    "Igapó": 23,
     "Jardim Maria Celina": 22,
     "Guanabara Parque Boulevard": 20,
     "Judith": 20,
     "Jardim das Américas": 19,
+    "Jardim Presidente": 17,
     "Vila Ipiranga": 17,
     "Vila Larsen 1": 17,
     "Caiçaras": 16,
-    "Jardim Presidente": 16,
     "Champagnat": 16,
     "Jardim São Paulo II": 16,
+    "Esperança": 15,
+    "Colinas": 15,
+    "Petrópolis": 14,
     "Ouro Verde": 14,
-    "Nova Prochet": 14,
     "Portal de Versalhes 1": 14,
     "Jardim Morumbi": 13,
-    "Petrópolis": 13,
-    "Colinas": 13,
     "Pacaembu": 13,
     "Residencial do Lago": 13,
     "Vila Siam": 12,
     "Jardim Londrilar": 12,
-    "Jardim Maria Luiza": 12,
-    "Guanabara": 11,
-    "Jardim Agari": 11
+    "Nova Prochet": 12,
+    "Industrial": 11,
+    "Andrade": 11
    }
   }
  ],
@@ -147,11 +147,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-11-05T23:58:06Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2921079647": {
    "id": "g2921079647",
@@ -178,7 +178,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2920893708": {
    "id": "g2920893708",
@@ -201,10 +201,10 @@
    "lon": -51.16366,
    "origem": "grupo",
    "publicado": "2026-11-04T21:23:34Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2920752969": {
    "id": "g2920752969",
@@ -227,11 +227,11 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2026-11-03T23:54:41Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2920751776": {
    "id": "g2920751776",
@@ -254,10 +254,10 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-11-03T23:54:40Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2920748506": {
    "id": "g2920748506",
@@ -280,10 +280,10 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-11-03T23:54:40Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2920729073": {
    "id": "g2920729073",
@@ -306,10 +306,10 @@
    "lon": -51.174,
    "origem": "grupo",
    "publicado": "2026-11-03T20:48:33Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2920581751": {
    "id": "g2920581751",
@@ -359,11 +359,11 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-11-02T22:47:45Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2920053861": {
    "id": "g2920053861",
@@ -384,10 +384,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-10-30T13:04:08Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2919827373": {
    "id": "g2919827373",
@@ -410,11 +410,11 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-10-29T03:18:24Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2919779548": {
    "id": "g2919779548",
@@ -437,10 +437,10 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-10-28T20:02:26Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2919756970": {
    "id": "g2919756970",
@@ -464,7 +464,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2919714462": {
    "id": "g2919714462",
@@ -490,7 +490,7 @@
    "condominio": "Gaia",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2919542392": {
    "id": "g2919542392",
@@ -513,10 +513,10 @@
    "lon": -51.168745,
    "origem": "grupo",
    "publicado": "2026-10-27T10:14:43Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2919462141": {
    "id": "g2919462141",
@@ -542,7 +542,7 @@
    "condominio": "Oscar",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2919090279": {
    "id": "g2919090279",
@@ -563,10 +563,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-10-24T08:07:56Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2919072370": {
    "id": "g2919072370",
@@ -613,11 +613,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-10-24T03:35:02Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2919023538": {
    "id": "g2919023538",
@@ -640,11 +640,11 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-10-23T22:25:39Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2918383410": {
    "id": "g2918383410",
@@ -665,10 +665,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-10-20T03:25:58Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2918354463": {
    "id": "g2918354463",
@@ -743,7 +743,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2917396062": {
    "id": "g2917396062",
@@ -770,7 +770,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2916466748": {
    "id": "g2916466748",
@@ -793,11 +793,11 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2026-10-08T05:12:35Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2915346737": {
    "id": "g2915346737",
@@ -824,7 +824,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2915037987": {
    "id": "g2915037987",
@@ -850,7 +850,7 @@
    "condominio": "Palazzo di Cesare",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2914905380": {
    "id": "g2914905380",
@@ -877,7 +877,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2914813392": {
    "id": "g2914813392",
@@ -904,7 +904,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2914422275": {
    "id": "g2914422275",
@@ -955,7 +955,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2913831652": {
    "id": "g2913831652",
@@ -976,11 +976,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-23T13:28:55Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2913760361": {
    "id": "g2913760361",
@@ -1007,7 +1007,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2913491118": {
    "id": "g2913491118",
@@ -1028,10 +1028,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-22T00:40:38Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2913486945": {
    "id": "g2913486945",
@@ -1052,10 +1052,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-22T00:54:41Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2912898123": {
    "id": "g2912898123",
@@ -1078,10 +1078,10 @@
    "lon": -51.168745,
    "origem": "grupo",
    "publicado": "2026-09-19T02:51:37Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2912570429": {
    "id": "g2912570429",
@@ -1102,10 +1102,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-17T12:40:57Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2912406375": {
    "id": "g2912406375",
@@ -1128,11 +1128,11 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2026-09-16T18:44:57Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2911227122": {
    "id": "g2911227122",
@@ -1155,11 +1155,11 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-09-11T04:24:53Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2911015915": {
    "id": "g2911015915",
@@ -1180,11 +1180,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-10T04:21:19Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2910739053": {
    "id": "g2910739053",
@@ -1261,11 +1261,11 @@
    "lon": -51.180592,
    "origem": "grupo",
    "publicado": "2026-09-04T16:44:09Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2909660952": {
    "id": "g2909660952",
@@ -1286,10 +1286,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-09-03T09:34:35Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2908519547": {
    "id": "g2908519547",
@@ -1312,10 +1312,10 @@
    "lon": -51.164051,
    "origem": "grupo",
    "publicado": "2026-08-29T02:31:05Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2908189742": {
    "id": "g2908189742",
@@ -1363,11 +1363,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-08-26T11:04:06Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2907121619": {
    "id": "g2907121619",
@@ -1415,11 +1415,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-08-22T06:19:59Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2907105324": {
    "id": "g2907105324",
@@ -1600,11 +1600,11 @@
    "lon": -51.163752,
    "origem": "grupo",
    "publicado": "2026-08-18T04:41:34Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2906160243": {
    "id": "g2906160243",
@@ -1627,11 +1627,11 @@
    "lon": -51.163752,
    "origem": "grupo",
    "publicado": "2026-08-18T04:41:34Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2905631649": {
    "id": "g2905631649",
@@ -1652,11 +1652,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-08-15T08:00:45Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "g2905463517": {
    "id": "g2905463517",
@@ -1677,10 +1677,10 @@
    },
    "origem": "grupo",
    "publicado": "2026-08-14T14:23:20Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2905150842": {
    "id": "g2905150842",
@@ -1783,10 +1783,10 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-08-05T06:42:07Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2903464354": {
    "id": "g2903464354",
@@ -1809,11 +1809,11 @@
    "lon": -51.164785,
    "origem": "grupo",
    "publicado": "2026-08-05T06:18:19Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2902095993": {
    "id": "g2902095993",
@@ -1861,11 +1861,11 @@
    },
    "origem": "grupo",
    "publicado": "2026-07-29T19:18:14Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2901364894": {
    "id": "g2901364894",
@@ -1888,10 +1888,10 @@
    "lon": -51.175223,
    "origem": "grupo",
    "publicado": "2026-07-26T03:51:06Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2901160421": {
    "id": "g2901160421",
@@ -1914,11 +1914,11 @@
    "lon": -51.164866,
    "origem": "grupo",
    "publicado": "2026-07-25T03:52:20Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2898780773": {
    "id": "g2898780773",
@@ -1966,11 +1966,11 @@
    "lon": -51.164536,
    "origem": "grupo",
    "publicado": "2026-07-03T13:25:22Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2896582186": {
    "id": "g2896582186",
@@ -1993,11 +1993,11 @@
    "lon": -51.16362,
    "origem": "grupo",
    "publicado": "2026-07-03T00:19:25Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "g2896582002": {
    "id": "g2896582002",
@@ -2020,7 +2020,6 @@
    "lon": -51.16362,
    "origem": "grupo",
    "publicado": "2026-07-03T00:19:22Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2073,7 +2072,6 @@
    "lon": -51.18,
    "origem": "grupo",
    "publicado": "2026-07-02T13:22:59Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2129,7 +2127,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2895861784": {
    "id": "g2895861784",
@@ -2152,10 +2150,9 @@
    "lon": -51.156043,
    "origem": "grupo",
    "publicado": "2026-06-29T22:34:02Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2895861686": {
    "id": "g2895861686",
@@ -2178,10 +2175,9 @@
    "lon": -51.156946,
    "origem": "grupo",
    "publicado": "2026-06-29T22:34:02Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2895860515": {
    "id": "g2895860515",
@@ -2204,10 +2200,9 @@
    "lon": -51.155089,
    "origem": "grupo",
    "publicado": "2026-06-29T22:34:02Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2895860305": {
    "id": "g2895860305",
@@ -2230,10 +2225,9 @@
    "lon": -51.156684,
    "origem": "grupo",
    "publicado": "2026-06-29T22:34:02Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2895245118": {
    "id": "g2895245118",
@@ -2283,7 +2277,6 @@
    "lon": -51.164,
    "origem": "grupo",
    "publicado": "2026-06-26T06:21:23Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2310,7 +2303,6 @@
    "lon": -51.18,
    "origem": "grupo",
    "publicado": "2026-06-24T09:30:53Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2338,7 +2330,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2892126579": {
    "id": "g2892126579",
@@ -2359,7 +2351,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-06-11T05:27:02Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2383,7 +2374,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-06-11T05:27:10Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2411,7 +2401,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2892120963": {
    "id": "g2892120963",
@@ -2457,7 +2447,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-06-10T05:35:30Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2484,7 +2473,6 @@
    "lon": -51.180592,
    "origem": "grupo",
    "publicado": "2026-06-10T01:58:38Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2508,7 +2496,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-06-06T04:30:16Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2534,7 +2521,6 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2026-06-02T04:23:35Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2561,7 +2547,6 @@
    "lon": -51.164244,
    "origem": "grupo",
    "publicado": "2026-05-30T01:42:15Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2638,7 +2623,6 @@
    "lon": -51.16468,
    "origem": "grupo",
    "publicado": "2026-05-20T07:15:33Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -2693,7 +2677,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2884641281": {
    "id": "g2884641281",
@@ -2716,7 +2700,6 @@
    "lon": -51.174021,
    "origem": "grupo",
    "publicado": "2026-05-05T09:30:20Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2764,7 +2747,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-05-01T06:40:46Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2788,7 +2770,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-05-01T06:40:46Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2812,7 +2793,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-04-30T03:45:00Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2861,7 +2841,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-04-25T02:06:36Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2885,7 +2864,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-04-24T09:44:19Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2909,7 +2887,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-04-24T08:25:05Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2933,7 +2910,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-04-17T12:50:37Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2959,7 +2935,6 @@
    "lon": -51.164051,
    "origem": "grupo",
    "publicado": "2026-04-16T11:13:01Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -2985,7 +2960,6 @@
    "lon": -51.16468,
    "origem": "grupo",
    "publicado": "2026-04-15T10:27:05Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -3038,7 +3012,6 @@
    "lon": -51.180592,
    "origem": "grupo",
    "publicado": "2026-04-01T14:36:25Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3065,7 +3038,6 @@
    "lon": -51.164077,
    "origem": "grupo",
    "publicado": "2026-04-01T14:36:31Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -3095,7 +3067,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2878463310": {
    "id": "g2878463310",
@@ -3218,7 +3190,6 @@
    "origem": "grupo",
    "publicado": "2026-03-11T04:26:21Z",
    "area_anunciada": 115,
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3249,7 +3220,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2873683078": {
    "id": "g2873683078",
@@ -3276,7 +3247,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2866534956": {
    "id": "g2866534956",
@@ -3303,7 +3274,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2865739072": {
    "id": "g2865739072",
@@ -3324,7 +3295,6 @@
    },
    "origem": "grupo",
    "publicado": "2026-01-17T08:50:56Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3353,7 +3323,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2865720382": {
    "id": "g2865720382",
@@ -3378,7 +3348,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2863969739": {
    "id": "g2863969739",
@@ -3425,7 +3395,6 @@
    "lon": -51.164077,
    "origem": "grupo",
    "publicado": "2026-01-05T16:05:52Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -3449,7 +3418,6 @@
    },
    "origem": "grupo",
    "publicado": "2025-12-18T08:58:35Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3476,7 +3444,6 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2025-12-06T11:34:09Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3507,7 +3474,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2853569015": {
    "id": "g2853569015",
@@ -3605,7 +3572,6 @@
    },
    "origem": "grupo",
    "publicado": "2025-11-07T01:37:11Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3657,7 +3623,6 @@
    "lon": -51.178767,
    "origem": "grupo",
    "publicado": "2025-10-24T03:01:48Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3688,7 +3653,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2841292427": {
    "id": "g2841292427",
@@ -3715,7 +3680,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2841145718": {
    "id": "g2841145718",
@@ -3738,7 +3703,6 @@
    "lon": -51.16468,
    "origem": "grupo",
    "publicado": "2025-10-04T00:58:19Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3789,7 +3753,6 @@
    },
    "origem": "grupo",
    "publicado": "2025-09-17T00:58:09Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -3813,7 +3776,6 @@
    },
    "origem": "grupo",
    "publicado": "2025-09-12T05:10:14Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3945,7 +3907,6 @@
    "lon": -51.164077,
    "origem": "grupo",
    "publicado": "2025-07-21T17:45:29Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3972,7 +3933,6 @@
    "lon": -51.175036,
    "origem": "grupo",
    "publicado": "2025-07-05T11:10:30Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -3997,7 +3957,6 @@
    },
    "origem": "grupo",
    "publicado": "2025-07-01T18:23:36Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
@@ -4049,7 +4008,6 @@
    "lon": -51.164785,
    "origem": "grupo",
    "publicado": "2025-05-09T14:05:27Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -4130,7 +4088,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2783271731": {
    "id": "g2783271731",
@@ -4180,11 +4138,10 @@
    "lon": -51.156114,
    "origem": "grupo",
    "publicado": "2025-02-18T23:25:37Z",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2775927724": {
    "id": "g2775927724",
@@ -4206,11 +4163,10 @@
    "origem": "grupo",
    "publicado": "2025-02-01T07:12:32Z",
    "area_anunciada": 154,
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2771216841": {
    "id": "g2771216841",
@@ -4236,7 +4192,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2771216840": {
    "id": "g2771216840",
@@ -4259,7 +4215,6 @@
    "lon": -51.163618,
    "origem": "grupo",
    "publicado": "2025-01-15T01:09:10Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -4289,7 +4244,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "g2736451818": {
    "id": "g2736451818",
@@ -4337,7 +4292,6 @@
    "lon": -51.16468,
    "origem": "grupo",
    "publicado": "2024-08-03T04:20:37Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -4363,7 +4317,6 @@
    "lon": -51.174021,
    "origem": "grupo",
    "publicado": "2024-07-26T04:20:39Z",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
    "visto": "2026-11-06T15:13:36Z"
@@ -4547,7 +4500,7 @@
    "condominio": "Palazzo di Cesare",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1515239823": {
    "id": "o1515239823",
@@ -4571,7 +4524,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1540061219": {
    "id": "o1540061219",
@@ -4594,7 +4547,7 @@
    "condominio": "Palazzo di Cesare",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1528508779": {
    "id": "o1528508779",
@@ -4618,7 +4571,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1386375893": {
    "id": "o1386375893",
@@ -4642,7 +4595,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1525356280": {
    "id": "o1525356280",
@@ -4666,7 +4619,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1169410233": {
    "id": "o1169410233",
@@ -4689,7 +4642,7 @@
    "condominio": "Palazzo di Cesare",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1517940125": {
    "id": "o1517940125",
@@ -4713,7 +4666,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1491076890": {
    "id": "o1491076890",
@@ -4737,7 +4690,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1479085141": {
    "id": "o1479085141",
@@ -4761,7 +4714,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1456449979": {
    "id": "o1456449979",
@@ -4785,7 +4738,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1331000143": {
    "id": "o1331000143",
@@ -4809,7 +4762,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1525959034": {
    "id": "o1525959034",
@@ -4833,7 +4786,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1522250019": {
    "id": "o1522250019",
@@ -4857,7 +4810,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1509596109": {
    "id": "o1509596109",
@@ -4881,7 +4834,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1494232195": {
    "id": "o1494232195",
@@ -4904,7 +4857,7 @@
    "condominio": "Palazzo Veronese",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1452736401": {
    "id": "o1452736401",
@@ -4927,7 +4880,7 @@
    "condominio": "Palazzo Veronese",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1442190381": {
    "id": "o1442190381",
@@ -4951,7 +4904,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1435985103": {
    "id": "o1435985103",
@@ -4975,7 +4928,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1428471278": {
    "id": "o1428471278",
@@ -4999,7 +4952,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1326005343": {
    "id": "o1326005343",
@@ -5022,7 +4975,7 @@
    "condominio": "Palazzo Veronese",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1502470882": {
    "id": "o1502470882",
@@ -5046,7 +4999,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1450879384": {
    "id": "o1450879384",
@@ -5070,7 +5023,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1511972432": {
    "id": "o1511972432",
@@ -5093,7 +5046,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1490590567": {
    "id": "o1490590567",
@@ -5116,7 +5069,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1438296899": {
    "id": "o1438296899",
@@ -5139,7 +5092,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1410366562": {
    "id": "o1410366562",
@@ -5162,7 +5115,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1384509611": {
    "id": "o1384509611",
@@ -5185,7 +5138,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1306551356": {
    "id": "o1306551356",
@@ -5209,7 +5162,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1230221246": {
    "id": "o1230221246",
@@ -5232,7 +5185,7 @@
    "condominio": "Lakeside Residence",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1171700406": {
    "id": "o1171700406",
@@ -5256,7 +5209,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1436074036": {
    "id": "o1436074036",
@@ -5279,7 +5232,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1430372492": {
    "id": "o1430372492",
@@ -5302,7 +5255,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1539658939": {
    "id": "o1539658939",
@@ -5326,7 +5279,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1529462612": {
    "id": "o1529462612",
@@ -5350,7 +5303,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1528440891": {
    "id": "o1528440891",
@@ -5374,7 +5327,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527247635": {
    "id": "o1527247635",
@@ -5397,7 +5350,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1524711932": {
    "id": "o1524711932",
@@ -5420,7 +5373,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1523576240": {
    "id": "o1523576240",
@@ -5443,7 +5396,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1516039243": {
    "id": "o1516039243",
@@ -5466,7 +5419,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1515464060": {
    "id": "o1515464060",
@@ -5490,7 +5443,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1490591119": {
    "id": "o1490591119",
@@ -5514,7 +5467,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1486699927": {
    "id": "o1486699927",
@@ -5537,7 +5490,7 @@
    "condominio": "Wave",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1436356136": {
    "id": "o1436356136",
@@ -5561,7 +5514,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1407692803": {
    "id": "o1407692803",
@@ -5585,7 +5538,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1383098281": {
    "id": "o1383098281",
@@ -5609,7 +5562,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1513477298": {
    "id": "o1513477298",
@@ -5633,7 +5586,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1544601497": {
    "id": "o1544601497",
@@ -5656,7 +5609,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1296888339": {
    "id": "o1296888339",
@@ -5680,7 +5633,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1447064404": {
    "id": "o1447064404",
@@ -5704,7 +5657,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1498409960": {
    "id": "o1498409960",
@@ -5727,7 +5680,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1497826315": {
    "id": "o1497826315",
@@ -5751,7 +5704,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1494821637": {
    "id": "o1494821637",
@@ -5774,7 +5727,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1485435349": {
    "id": "o1485435349",
@@ -5797,7 +5750,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1466625377": {
    "id": "o1466625377",
@@ -5820,7 +5773,7 @@
    "condominio": "La Torre",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1197156022": {
    "id": "o1197156022",
@@ -5844,7 +5797,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1544019301": {
    "id": "o1544019301",
@@ -5868,7 +5821,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1539806293": {
    "id": "o1539806293",
@@ -5891,7 +5844,7 @@
    "condominio": "Torre Verona",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1525645480": {
    "id": "o1525645480",
@@ -5914,7 +5867,7 @@
    "condominio": "Torre Verona",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1497796783": {
    "id": "o1497796783",
@@ -5938,7 +5891,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1493278071": {
    "id": "o1493278071",
@@ -5962,7 +5915,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1550610163": {
    "id": "o1550610163",
@@ -5986,7 +5939,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1549782511": {
    "id": "o1549782511",
@@ -6009,7 +5962,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1372415201": {
    "id": "o1372415201",
@@ -6033,7 +5986,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1547034881": {
    "id": "o1547034881",
@@ -6057,7 +6010,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1545687276": {
    "id": "o1545687276",
@@ -6081,7 +6034,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1352600657": {
    "id": "o1352600657",
@@ -6104,7 +6057,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1542379933": {
    "id": "o1542379933",
@@ -6128,7 +6081,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1540564493": {
    "id": "o1540564493",
@@ -6152,7 +6105,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1539807931": {
    "id": "o1539807931",
@@ -6176,7 +6129,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1538286228": {
    "id": "o1538286228",
@@ -6200,7 +6153,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1536130816": {
    "id": "o1536130816",
@@ -6224,7 +6177,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527922291": {
    "id": "o1527922291",
@@ -6248,7 +6201,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527256626": {
    "id": "o1527256626",
@@ -6272,7 +6225,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527247940": {
    "id": "o1527247940",
@@ -6296,7 +6249,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1522395601": {
    "id": "o1522395601",
@@ -6320,7 +6273,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1501613587": {
    "id": "o1501613587",
@@ -6343,7 +6296,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1469982667": {
    "id": "o1469982667",
@@ -6366,7 +6319,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1468020044": {
    "id": "o1468020044",
@@ -6389,7 +6342,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1430366906": {
    "id": "o1430366906",
@@ -6412,7 +6365,7 @@
    "condominio": "Terrazza di Rimini",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1463123472": {
    "id": "o1463123472",
@@ -6436,7 +6389,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1486696135": {
    "id": "o1486696135",
@@ -6460,7 +6413,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1550171933": {
    "id": "o1550171933",
@@ -6483,7 +6436,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1546733187": {
    "id": "o1546733187",
@@ -6507,7 +6460,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1544886694": {
    "id": "o1544886694",
@@ -6530,7 +6483,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1489666388": {
    "id": "o1489666388",
@@ -6554,7 +6507,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1531294148": {
    "id": "o1531294148",
@@ -6578,7 +6531,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1296831265": {
    "id": "o1296831265",
@@ -6602,7 +6555,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1511434359": {
    "id": "o1511434359",
@@ -6626,7 +6579,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1509595911": {
    "id": "o1509595911",
@@ -6649,7 +6602,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1508281750": {
    "id": "o1508281750",
@@ -6673,7 +6626,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1505237858": {
    "id": "o1505237858",
@@ -6697,7 +6650,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1491910479": {
    "id": "o1491910479",
@@ -6721,7 +6674,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1483517272": {
    "id": "o1483517272",
@@ -6745,7 +6698,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1481253616": {
    "id": "o1481253616",
@@ -6769,7 +6722,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1477485103": {
    "id": "o1477485103",
@@ -6793,7 +6746,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1389712387": {
    "id": "o1389712387",
@@ -6816,7 +6769,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1435985872": {
    "id": "o1435985872",
@@ -6840,7 +6793,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1432195770": {
    "id": "o1432195770",
@@ -6863,7 +6816,7 @@
    "condominio": "Wonder",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1549419824": {
    "id": "o1549419824",
@@ -6886,7 +6839,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1227634599": {
    "id": "o1227634599",
@@ -6910,7 +6863,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1370280521": {
    "id": "o1370280521",
@@ -6934,7 +6887,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1542651324": {
    "id": "o1542651324",
@@ -6958,7 +6911,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1542382140": {
    "id": "o1542382140",
@@ -6982,7 +6935,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1541921269": {
    "id": "o1541921269",
@@ -7006,7 +6959,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1537633170": {
    "id": "o1537633170",
@@ -7030,7 +6983,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527647867": {
    "id": "o1527647867",
@@ -7054,7 +7007,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1524239276": {
    "id": "o1524239276",
@@ -7078,7 +7031,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1522246884": {
    "id": "o1522246884",
@@ -7101,7 +7054,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1522246826": {
    "id": "o1522246826",
@@ -7124,7 +7077,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1522124731": {
    "id": "o1522124731",
@@ -7148,7 +7101,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1510850902": {
    "id": "o1510850902",
@@ -7171,7 +7124,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1510833630": {
    "id": "o1510833630",
@@ -7194,7 +7147,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1507239332": {
    "id": "o1507239332",
@@ -7217,7 +7170,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1502508118": {
    "id": "o1502508118",
@@ -7240,7 +7193,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1498415003": {
    "id": "o1498415003",
@@ -7263,7 +7216,7 @@
    "condominio": "Mayfair",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1496794825": {
    "id": "o1496794825",
@@ -7287,7 +7240,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1493747099": {
    "id": "o1493747099",
@@ -7311,7 +7264,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1490590609": {
    "id": "o1490590609",
@@ -7335,7 +7288,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1487383484": {
    "id": "o1487383484",
@@ -7359,7 +7312,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1411210018": {
    "id": "o1411210018",
@@ -7383,7 +7336,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1407689868": {
    "id": "o1407689868",
@@ -7407,7 +7360,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1547034892": {
    "id": "o1547034892",
@@ -7431,7 +7384,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1546959301": {
    "id": "o1546959301",
@@ -7455,7 +7408,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1541015415": {
    "id": "o1541015415",
@@ -7479,7 +7432,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1523792377": {
    "id": "o1523792377",
@@ -7503,7 +7456,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1513212812": {
    "id": "o1513212812",
@@ -7527,7 +7480,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1502208028": {
    "id": "o1502208028",
@@ -7550,7 +7503,7 @@
    "condominio": "Wynn",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1495266818": {
    "id": "o1495266818",
@@ -7573,7 +7526,7 @@
    "condominio": "Wynn",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1550651548": {
    "id": "o1550651548",
@@ -7597,7 +7550,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1418914869": {
    "id": "o1418914869",
@@ -7621,7 +7574,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1527581563": {
    "id": "o1527581563",
@@ -7645,7 +7598,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1423676900": {
    "id": "o1423676900",
@@ -7669,7 +7622,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1510632536": {
    "id": "o1510632536",
@@ -7693,7 +7646,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1384152640": {
    "id": "o1384152640",
@@ -7717,7 +7670,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1456995844": {
    "id": "o1456995844",
@@ -7741,7 +7694,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1526538454": {
    "id": "o1526538454",
@@ -7765,7 +7718,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1483131483": {
    "id": "o1483131483",
@@ -7789,7 +7742,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1469977679": {
    "id": "o1469977679",
@@ -7813,7 +7766,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1516046081": {
    "id": "o1516046081",
@@ -7837,7 +7790,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1509597440": {
    "id": "o1509597440",
@@ -7861,7 +7814,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1471276190": {
    "id": "o1471276190",
@@ -7885,7 +7838,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1442349132": {
    "id": "o1442349132",
@@ -7909,7 +7862,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1514804807": {
    "id": "o1514804807",
@@ -7933,7 +7886,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1483422922": {
    "id": "o1483422922",
@@ -7957,7 +7910,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1510632333": {
    "id": "o1510632333",
@@ -7981,7 +7934,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1470982891": {
    "id": "o1470982891",
@@ -8005,7 +7958,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1469969655": {
    "id": "o1469969655",
@@ -8029,7 +7982,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1375096136": {
    "id": "o1375096136",
@@ -8054,7 +8007,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1420035609": {
    "id": "o1420035609",
@@ -8078,7 +8031,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1483517261": {
    "id": "o1483517261",
@@ -8102,7 +8055,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1510632323": {
    "id": "o1510632323",
@@ -8126,7 +8079,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1526268402": {
    "id": "o1526268402",
@@ -8150,7 +8103,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1533465512": {
    "id": "o1533465512",
@@ -8174,7 +8127,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1548763727": {
    "id": "o1548763727",
@@ -8194,11 +8147,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-no-edif-horizon-com-3-quartos-a-venda-104-m-por-r-1-200-000-nova-prochet-1548763727"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1538162500": {
    "id": "o1538162500",
@@ -8218,11 +8171,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-nova-prochet-londrina-pr-1538162500"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1527958122": {
    "id": "o1527958122",
@@ -8242,11 +8195,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-nova-prochet-londrina-pr-1527958122"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1379992631": {
    "id": "o1379992631",
@@ -8266,11 +8219,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-121-m-por-r-1-430-000-00-nova-prochet-londrin-1379992631"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1522678260": {
    "id": "o1522678260",
@@ -8290,11 +8243,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-nova-prochet-londrina-pr-1522678260"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1520133162": {
    "id": "o1520133162",
@@ -8318,7 +8271,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1515138011": {
    "id": "o1515138011",
@@ -8338,11 +8291,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-100-m-bela-suica-londrina-pr-1515138011"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1499574069": {
    "id": "o1499574069",
@@ -8458,11 +8411,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-terraza-de-rimini-nova-prochet-1407690235"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1321881944": {
    "id": "o1321881944",
@@ -8506,10 +8459,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-4-dormitorios-a-venda-283-m-nova-prochet-londrina-pr-1302996090"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1550783285": {
    "id": "o1550783285",
@@ -8529,10 +8482,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-gleba-palhano-londrina-pr-1550783285"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1550713886": {
    "id": "o1550713886",
@@ -8552,11 +8505,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-97-m-por-r-550-000-00-bela-suica-londrina-pr-1550713886"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1524742893": {
    "id": "o1524742893",
@@ -8576,10 +8529,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-edif-due-torri-com-3-quartos-a-venda-69-m-por-r-580-000-gleba-palhano-1524742893"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1362273538": {
    "id": "o1362273538",
@@ -8599,10 +8552,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-no-edif-vivaldi-boulevard-com-3-quartos-a-venda-73-m-por-r-490-000-gleba-1362273538"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1550356697": {
    "id": "o1550356697",
@@ -8622,10 +8575,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-em-londrina-gleba-palhano-com-2-suites-com-87-41-m-rf-home-1550356697"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1550052130": {
    "id": "o1550052130",
@@ -8645,11 +8598,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-115-m-por-r-1-290-000-00-bela-suica-londrina-1550052130"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1550051625": {
    "id": "o1550051625",
@@ -8669,10 +8622,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-94-m-por-r-550-000-00-bela-suica-londrina-pr-1550051625"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1550050764": {
    "id": "o1550050764",
@@ -8692,10 +8645,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-94-m-venda-por-r-580-000-00-ou-aluguel-por-r-3-680-00-1550050764"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1549987493": {
    "id": "o1549987493",
@@ -8715,10 +8668,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-em-londrina-bela-suica-com-3-quartos-com-74-m-ravel-boulevard-1549987493"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1549064422": {
    "id": "o1549064422",
@@ -8738,10 +8691,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/ravel-boulevard-r-499-000-apartamento-a-venda-3-dormitorios-1-suite-74-m-1-vaga-1549064422"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1548836446": {
    "id": "o1548836446",
@@ -8761,10 +8714,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-venda-residencial-morada-do-sol-zona-sul-de-londrina-1548836446"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1451767594": {
    "id": "o1451767594",
@@ -8784,10 +8737,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-69-m-por-r-600-000-00-gleba-palhano-londrina-pr-1451767594"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1548406710": {
    "id": "o1548406710",
@@ -8807,11 +8760,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/residencial-morada-do-sol-apartamento-3-quartos-1-suite-a-venda-97m-no-morada-do-sol-1548406710"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1548324145": {
    "id": "o1548324145",
@@ -8831,10 +8784,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-para-venda-em-londrina-bela-suica-3-dormitorios-2-banheiros-1-vaga-1548324145"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1548280776": {
    "id": "o1548280776",
@@ -8854,10 +8807,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-97-m-por-r-550-000-00-gleba-palhano-londrina-1548280776"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1547879066": {
    "id": "o1547879066",
@@ -8877,10 +8830,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-bela-suica-londrina-pr-1547879066"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1547811312": {
    "id": "o1547811312",
@@ -8900,10 +8853,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-no-ed-due-torri-na-gleba-palhano-1547811312"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1499776636": {
    "id": "o1499776636",
@@ -8927,7 +8880,7 @@
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "o1323352370": {
    "id": "o1323352370",
@@ -8947,10 +8900,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/due-torri-r-600-000-apartamento-a-venda-2-quartos-1-suite-69m-2-vagas-analisa-1323352370"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1516183379": {
    "id": "o1516183379",
@@ -8970,10 +8923,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-condominio-morada-do-sol-1516183379"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1433337305": {
    "id": "o1433337305",
@@ -8993,10 +8946,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/casa-palhano-3-suites-2-vagas-paralelas-pronto-para-morar-1433337305"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1547093744": {
    "id": "o1547093744",
@@ -9016,10 +8969,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-morada-do-sol-3-dormitorios-a-venda-1547093744"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1546989658": {
    "id": "o1546989658",
@@ -9039,11 +8992,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-venda-bela-suica-londrina-1546989658"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1546792722": {
    "id": "o1546792722",
@@ -9063,10 +9016,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/morada-do-sol-apartamento-com-3-dormitorios-a-venda-na-gleba-palhano-londrina-pr-1546792722"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1545741539": {
    "id": "o1545741539",
@@ -9086,10 +9039,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-morada-do-sol-gleba-palhano-1545741539"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1543701880": {
    "id": "o1543701880",
@@ -9109,10 +9062,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apto-gleba-palhano-dispenso-corretores-1543701880"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1504009786": {
    "id": "o1504009786",
@@ -9132,10 +9085,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/due-torri-lindo-apto-gleba-palhano-venda-e-locacao-1504009786"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z",
+   "condominio": ""
   },
   "o1542952323": {
    "id": "o1542952323",
@@ -9155,10 +9108,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-no-edificio-matisse-londrina-1542952323"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1542632921": {
    "id": "o1542632921",
@@ -9178,10 +9131,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-quartos-e-2-suite-ao-lado-do-super-muffato-da-madre-1542632921"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1524349770": {
    "id": "o1524349770",
@@ -9201,11 +9154,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/ginga-empreendimento-1524349770"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1540427728": {
    "id": "o1540427728",
@@ -9225,10 +9178,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/studio-a-venda-28-m-bela-suica-londrina-pr-1540427728"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1539809433": {
    "id": "o1539809433",
@@ -9272,10 +9225,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-4-quartos-a-venda-no-edificio-strauss-boulevard-na-gleba-palhano-londrina-1538637133"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1513245714": {
    "id": "o1513245714",
@@ -9295,10 +9248,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/torres-do-horizonte-vendo-apartamento-dispenso-corretores-1513245714"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1538080712": {
    "id": "o1538080712",
@@ -9342,10 +9295,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-no-ginga-lancamento-da-vanguard-em-londrina-1537694674"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1537692288": {
    "id": "o1537692288",
@@ -9365,10 +9318,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-due-torri-gleba-palhano-1537692288"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1537664071": {
    "id": "o1537664071",
@@ -9389,10 +9342,10 @@
    },
    "origem": "olx",
    "area_anunciada": 118,
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1536869442": {
    "id": "o1536869442",
@@ -9412,10 +9365,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-edificio-matisse-londrina-pr-1536869442"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1536357433": {
    "id": "o1536357433",
@@ -9435,10 +9388,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-e-locacao-edificio-marc-chagall-andar-alto-03-quartos-01-suite-s-1536357433"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1535427654": {
    "id": "o1535427654",
@@ -9458,10 +9411,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/invista-em-studios-1535427654"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1534407629": {
    "id": "o1534407629",
@@ -9481,11 +9434,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/condominio-morada-do-sol-apartamento-a-venda-em-londrina-bela-suica-com-3-quartos-com-1534407629"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1534085789": {
    "id": "o1534085789",
@@ -9505,11 +9458,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-2-dormitorios-a-venda-80-m-por-r-974-000-00-bela-suica-londrina-pr-1534085789"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1533799675": {
    "id": "o1533799675",
@@ -9529,10 +9482,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-no-edif-due-torri-com-3-quartos-a-venda-70-m-por-r-560-000-gleba-palhano-1533799675"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1533680183": {
    "id": "o1533680183",
@@ -9576,10 +9529,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-a-venda-e-locacao-edf-strauss-sala-estendida-03-quartos-01-suite-c-ar-cond-1532051833"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1530441244": {
    "id": "o1530441244",
@@ -9599,10 +9552,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-altissimo-padrao-com-4-suites-427-m-venda-por-r-7-349-000-ou-aluguel-por-1530441244"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1530431895": {
    "id": "o1530431895",
@@ -9622,10 +9575,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-4-suites-a-venda-427m-por-r-6-500-000-bela-suica-londrina-pr-1530431895"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1530178588": {
    "id": "o1530178588",
@@ -9669,11 +9622,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/morada-do-sol-apartamento-a-venda-r-560-000-00-com-02-quartos-01-suite-master-no-1529586442"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1529205301": {
    "id": "o1529205301",
@@ -9693,10 +9646,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-com-3-dormitorios-a-venda-69-m-por-r-480-000-00-gleba-palhano-londrina-1529205301"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1528508428": {
    "id": "o1528508428",
@@ -9716,11 +9669,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-para-venda-na-madre-leonia-edificio-strauss-boulevard-com-4-quartos-em-londri-1528508428"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1528499808": {
    "id": "o1528499808",
@@ -9764,11 +9717,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/ginga-lancamento-vanguard-a-venda-no-bela-suica-londrina-pr-1527236219"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1527236001": {
    "id": "o1527236001",
@@ -9788,11 +9741,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/ginga-lancamento-vanguard-a-venda-no-bela-suica-londrina-pr-1527236001"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1447607825": {
    "id": "o1447607825",
@@ -9812,11 +9765,11 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/complexo-raul-fulgencio-r-1-125-000-apartamento-a-venda-2-suites-87m-2-vagas-gle-1447607825"
    },
    "origem": "olx",
-   "condominio": "",
    "contexto": true,
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1526320884": {
    "id": "o1526320884",
@@ -9836,10 +9789,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/complexo-rf-home-apartamento-de-luxo-87m-util-2-suites-lavabo-sacada-com-churrasq-1526320884"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "o1525740200": {
    "id": "o1525740200",
@@ -9859,10 +9812,10 @@
     "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/cobertura-duplex-com-4-suites-e-piscina-vista-lago-1525740200"
    },
    "origem": "olx",
-   "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T15:13:36Z"
+   "visto": "2026-11-06T15:13:36Z",
+   "condominio": ""
   },
   "rf8135": {
    "id": "rf8135",
@@ -9886,7 +9839,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf8130": {
    "id": "rf8130",
@@ -9910,7 +9863,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20148": {
    "id": "rf20148",
@@ -9932,7 +9885,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20958": {
    "id": "rf20958",
@@ -9956,7 +9909,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21917": {
    "id": "rf21917",
@@ -9978,7 +9931,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf18136": {
    "id": "rf18136",
@@ -10000,7 +9953,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20376": {
    "id": "rf20376",
@@ -10024,7 +9977,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20482": {
    "id": "rf20482",
@@ -10048,7 +10001,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf18251": {
    "id": "rf18251",
@@ -10072,7 +10025,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf19710": {
    "id": "rf19710",
@@ -10096,7 +10049,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf11844": {
    "id": "rf11844",
@@ -10118,7 +10071,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf19231": {
    "id": "rf19231",
@@ -10142,7 +10095,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20325": {
    "id": "rf20325",
@@ -10166,7 +10119,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf19300": {
    "id": "rf19300",
@@ -10190,7 +10143,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf19301": {
    "id": "rf19301",
@@ -10214,7 +10167,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf20802": {
    "id": "rf20802",
@@ -10236,7 +10189,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf4552": {
    "id": "rf4552",
@@ -10258,7 +10211,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21586": {
    "id": "rf21586",
@@ -10280,7 +10233,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21827": {
    "id": "rf21827",
@@ -10304,7 +10257,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21854": {
    "id": "rf21854",
@@ -10328,7 +10281,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21884": {
    "id": "rf21884",
@@ -10352,7 +10305,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21967": {
    "id": "rf21967",
@@ -10376,7 +10329,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf21973": {
    "id": "rf21973",
@@ -10400,7 +10353,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf14025": {
    "id": "rf14025",
@@ -10422,7 +10375,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf22825": {
    "id": "rf22825",
@@ -10446,7 +10399,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf23198": {
    "id": "rf23198",
@@ -10468,7 +10421,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "rf8148": {
    "id": "rf8148",
@@ -10492,7 +10445,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3898-GLI": {
    "id": "giAP3898-GLI",
@@ -10514,7 +10467,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3353-GLI": {
    "id": "giAP3353-GLI",
@@ -10536,7 +10489,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3733-GLI": {
    "id": "giAP3733-GLI",
@@ -10558,7 +10511,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3296-GLI": {
    "id": "giAP3296-GLI",
@@ -10580,7 +10533,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP2829-GLI": {
    "id": "giAP2829-GLI",
@@ -10602,7 +10555,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3667-GLI": {
    "id": "giAP3667-GLI",
@@ -10624,7 +10577,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP2755-GLI": {
    "id": "giAP2755-GLI",
@@ -10646,7 +10599,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3476-GLI": {
    "id": "giAP3476-GLI",
@@ -10668,7 +10621,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3141-GLI": {
    "id": "giAP3141-GLI",
@@ -10690,7 +10643,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3669-GLI": {
    "id": "giAP3669-GLI",
@@ -10712,7 +10665,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3605-GLI": {
    "id": "giAP3605-GLI",
@@ -10734,7 +10687,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3042-GLI": {
    "id": "giAP3042-GLI",
@@ -10756,7 +10709,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3494-GLI": {
    "id": "giAP3494-GLI",
@@ -10778,7 +10731,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "giAP3481-GLI": {
    "id": "giAP3481-GLI",
@@ -10800,7 +10753,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "sa55621": {
    "id": "sa55621",
@@ -10822,7 +10775,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "sa55337": {
    "id": "sa55337",
@@ -10844,7 +10797,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z",
+   "visto": "2026-11-06T17:53:53Z",
    "preco_anterior": 1390000
   },
   "sa54339": {
@@ -10867,7 +10820,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "sa54096": {
    "id": "sa54096",
@@ -10889,7 +10842,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "sa50975": {
    "id": "sa50975",
@@ -10911,7 +10864,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz11281": {
    "id": "pz11281",
@@ -10935,7 +10888,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz7860": {
    "id": "pz7860",
@@ -10959,7 +10912,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz12341": {
    "id": "pz12341",
@@ -10983,7 +10936,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz12176": {
    "id": "pz12176",
@@ -11007,7 +10960,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz12627": {
    "id": "pz12627",
@@ -11031,7 +10984,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz12602": {
    "id": "pz12602",
@@ -11055,7 +11008,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz12004": {
    "id": "pz12004",
@@ -11079,7 +11032,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz11099": {
    "id": "pz11099",
@@ -11103,7 +11056,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10993": {
    "id": "pz10993",
@@ -11127,7 +11080,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10991": {
    "id": "pz10991",
@@ -11151,7 +11104,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10987": {
    "id": "pz10987",
@@ -11175,7 +11128,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10948": {
    "id": "pz10948",
@@ -11199,7 +11152,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10938": {
    "id": "pz10938",
@@ -11223,7 +11176,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10933": {
    "id": "pz10933",
@@ -11247,7 +11200,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10931": {
    "id": "pz10931",
@@ -11271,7 +11224,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "pz10929": {
    "id": "pz10929",
@@ -11295,7 +11248,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ct212350": {
    "id": "ct212350",
@@ -11317,7 +11270,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP204712": {
    "id": "ctAP204712",
@@ -11339,7 +11292,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP192535": {
    "id": "ctAP192535",
@@ -11361,7 +11314,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP287593": {
    "id": "ctAP287593",
@@ -11383,7 +11336,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ct785822": {
    "id": "ct785822",
@@ -11405,7 +11358,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP287645": {
    "id": "ctAP287645",
@@ -11427,7 +11380,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP305073": {
    "id": "ctAP305073",
@@ -11449,7 +11402,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "ctAP192204": {
    "id": "ctAP192204",
@@ -11471,7 +11424,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP5947-INIC": {
    "id": "inAP5947-INIC",
@@ -11493,7 +11446,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP5730-INIC": {
    "id": "inAP5730-INIC",
@@ -11515,7 +11468,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP5995-INIC": {
    "id": "inAP5995-INIC",
@@ -11537,7 +11490,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP2702-INIC": {
    "id": "inAP2702-INIC",
@@ -11559,7 +11512,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP3851-INIC": {
    "id": "inAP3851-INIC",
@@ -11581,7 +11534,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP5983-INIC": {
    "id": "inAP5983-INIC",
@@ -11603,7 +11556,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "inAP6097-INIC": {
    "id": "inAP6097-INIC",
@@ -11625,7 +11578,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cm48544606": {
    "id": "cm48544606",
@@ -11674,7 +11627,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13506-AURO": {
    "id": "auAP13506-AURO",
@@ -11698,7 +11651,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13124-AURO": {
    "id": "auAP13124-AURO",
@@ -11722,7 +11675,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13923-AURO": {
    "id": "auAP13923-AURO",
@@ -11746,7 +11699,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12603-AURO": {
    "id": "auAP12603-AURO",
@@ -11768,7 +11721,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13609-AURO": {
    "id": "auAP13609-AURO",
@@ -11792,7 +11745,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13442-AURO": {
    "id": "auAP13442-AURO",
@@ -11816,7 +11769,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12612-AURO": {
    "id": "auAP12612-AURO",
@@ -11838,7 +11791,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12598-AURO": {
    "id": "auAP12598-AURO",
@@ -11862,7 +11815,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13784-AURO": {
    "id": "auAP13784-AURO",
@@ -11884,7 +11837,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13872-AURO": {
    "id": "auAP13872-AURO",
@@ -11906,7 +11859,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12600-AURO": {
    "id": "auAP12600-AURO",
@@ -11928,7 +11881,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12596-AURO": {
    "id": "auAP12596-AURO",
@@ -11950,7 +11903,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13938-AURO": {
    "id": "auAP13938-AURO",
@@ -11972,7 +11925,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP12597-AURO": {
    "id": "auAP12597-AURO",
@@ -11994,7 +11947,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13594-AURO": {
    "id": "auAP13594-AURO",
@@ -12016,7 +11969,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP14010-AURO": {
    "id": "auAP14010-AURO",
@@ -12038,7 +11991,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP14017-AURO": {
    "id": "auAP14017-AURO",
@@ -12060,7 +12013,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "auAP13093-AURO": {
    "id": "auAP13093-AURO",
@@ -12082,7 +12035,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "mnAP4074-MONA": {
    "id": "mnAP4074-MONA",
@@ -12104,7 +12057,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "mnAP4111-MONA": {
    "id": "mnAP4111-MONA",
@@ -12126,7 +12079,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI78": {
    "id": "cbCI78",
@@ -12148,7 +12101,7 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI79": {
    "id": "cbCI79",
@@ -12170,7 +12123,7 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI80": {
    "id": "cbCI80",
@@ -12192,7 +12145,7 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI31": {
    "id": "cbCI31",
@@ -12216,7 +12169,7 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI11": {
    "id": "cbCI11",
@@ -12240,7 +12193,7 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
   },
   "cbCI207": {
    "id": "cbCI207",
@@ -12264,7 +12217,75 @@
    "origem": "cube",
    "visivel": true,
    "detectado": "2026-11-06T15:13:36Z",
-   "visto": "2026-11-06T17:16:09Z"
+   "visto": "2026-11-06T17:53:53Z"
+  },
+  "o1550837889": {
+   "id": "o1550837889",
+   "tipo": null,
+   "predio": null,
+   "endereco": null,
+   "bairro": "Santa Rosa",
+   "foto": "https://img.olx.com.br/images/72/727654466781826.jpg",
+   "area": 116,
+   "preco": 1350000,
+   "quartos": 3,
+   "banheiros": 4,
+   "vagas": 2,
+   "titulo": "OASE 3 Suítes 116m Direitos - Apartamento ",
+   "publicado": "2026-11-06T16:35:16Z",
+   "links": {
+    "olx": "https://pr.olx.com.br/regiao-de-londrina/imoveis/oase-3-suites-116m-direitos-apartamento-1550837889"
+   },
+   "origem": "olx",
+   "condominio": "Oase",
+   "contexto": true,
+   "visivel": true,
+   "detectado": "2026-11-06T17:53:53Z",
+   "visto": "2026-11-06T17:53:53Z"
+  },
+  "auAP13417-AURO": {
+   "id": "auAP13417-AURO",
+   "tipo": null,
+   "predio": "Edifício Oase",
+   "endereco": "Avenida Harry Prochet, 10",
+   "bairro": "Nova Prochet",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0xky9JT0Q00tdcbQK2XhiWHwJqy9dqbvnySyLOOp+-a9Pr8RP2Dzbt61-bIKVXymIB5WfoOYnBcSuhwaSzyAKy-EmdbnRWdjXXKd+BbeVN40CYZiFIIxH+aA7yr1mUz3nyhLNH+lzyuSK+7OGdsDrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9Kn6AHiAmWT+NP7xy5wITPgPCoO02DMFE1oLmb-PGwO6unG6jxOUypk5AE+NiKf9leKM-0XWhKX3M5MDwUqVy2qvTa4hirYXjWtl0VWAvF3NE=.jpg",
+   "area": 113,
+   "preco": 1259900,
+   "quartos": 3,
+   "banheiros": 4,
+   "vagas": 2,
+   "titulo": "Apartamento de 113 m² na Harry Prochet - Nova Prochet - Londrina - PR, à venda por R$ 1.259.900",
+   "publicado": null,
+   "links": {
+    "aurora": "https://www.auroraimobi.com.br/imovel/apartamento-londrina-3-quartos-113-m/AP13417-AURO"
+   },
+   "origem": "aurora",
+   "visivel": true,
+   "detectado": "2026-11-06T17:53:53Z",
+   "visto": "2026-11-06T17:53:53Z"
+  },
+  "auAP13413-AURO": {
+   "id": "auAP13413-AURO",
+   "tipo": null,
+   "predio": "Edifício Oase",
+   "endereco": "Avenida Harry Prochet, 10",
+   "bairro": "Nova Prochet",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2dFzMpH-TQcvPs0e7KsmBG1hp2Uxeyd9W+GwaLqmqjsz83Adebkma4x2v-uPmS046JCSvkdE35-arUhWhjSQ6mYHCdjjQO+nW7DfqoZYXBsmlExj0952XepB5KS6AEHxQaZEenHpwmQc-jtCGUFErMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9Kn6AHiAmWT+NP7xy5wITPgPCoO02DMFE1oLmb-PGwO6unG6jxOUypk5AE+NiKf9leKM-0XWhKX3M5MDwUqVy2qvTa4hirYXjWtl0VWAvF3NE=.jpg",
+   "area": 98,
+   "preco": 938893,
+   "quartos": 3,
+   "banheiros": 2,
+   "vagas": 2,
+   "titulo": "Apartamento de 98 m² na Harry Prochet - Nova Prochet - Londrina - PR, à venda por R$ 938.893",
+   "publicado": null,
+   "links": {
+    "aurora": "https://www.auroraimobi.com.br/imovel/apartamento-londrina-3-quartos-98-m/AP13413-AURO"
+   },
+   "origem": "aurora",
+   "visivel": true,
+   "detectado": "2026-11-06T17:53:53Z",
+   "visto": "2026-11-06T17:53:53Z"
   }
  },
  "imoveis": [
@@ -13243,8 +13264,8 @@
      "area_anunciada": null
     }
    ],
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -13272,8 +13293,8 @@
      "area_anunciada": null
     }
    ],
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -13301,8 +13322,8 @@
      "area_anunciada": null
     }
    ],
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -17706,8 +17727,8 @@
     "n": 16,
     "pct": 14
    },
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -17918,8 +17939,8 @@
     "n": 16,
     "pct": 4
    },
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -17953,8 +17974,8 @@
     "n": 16,
     "pct": -7
    },
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -17988,8 +18009,8 @@
     "n": 5,
     "pct": 5
    },
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -18023,8 +18044,8 @@
     "n": 16,
     "pct": -4
    },
-   "lat": -23.340928,
-   "lon": -51.155956,
+   "lat": -23.341099,
+   "lon": -51.156166,
    "geo": "bairro"
   },
   {
@@ -21120,7 +21141,94 @@
    "lat": -23.345206,
    "lon": -51.163618,
    "geo": "predio"
+  },
+  {
+   "id": "auAP13413-AURO",
+   "tipo": null,
+   "predio": "Oase",
+   "endereco": "Avenida Harry Prochet, 10",
+   "bairro": "Nova Prochet",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2dFzMpH-TQcvPs0e7KsmBG1hp2Uxeyd9W+GwaLqmqjsz83Adebkma4x2v-uPmS046JCSvkdE35-arUhWhjSQ6mYHCdjjQO+nW7DfqoZYXBsmlExj0952XepB5KS6AEHxQaZEenHpwmQc-jtCGUFErMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9Kn6AHiAmWT+NP7xy5wITPgPCoO02DMFE1oLmb-PGwO6unG6jxOUypk5AE+NiKf9leKM-0XWhKX3M5MDwUqVy2qvTa4hirYXjWtl0VWAvF3NE=.jpg",
+   "area": 98,
+   "preco": 938893,
+   "preco_anterior": null,
+   "quartos": 3,
+   "banheiros": 2,
+   "vagas": 2,
+   "titulo": "Apartamento de 98 m² na Harry Prochet - Nova Prochet - Londrina - PR, à venda por R$ 938.893",
+   "publicado": null,
+   "detectado": "2026-11-06T17:53:53Z",
+   "fontes": [
+    {
+     "portal": "aurora",
+     "url": "https://www.auroraimobi.com.br/imovel/apartamento-londrina-3-quartos-98-m/AP13413-AURO",
+     "preco": 938893,
+     "area": 98,
+     "area_anunciada": null
+    }
+   ],
+   "lat": -23.34764,
+   "lon": -51.16515,
+   "geo": "rua"
+  },
+  {
+   "id": "auAP13417-AURO",
+   "tipo": null,
+   "predio": "Oase",
+   "endereco": "Avenida Harry Prochet, 10",
+   "bairro": "Nova Prochet",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0xky9JT0Q00tdcbQK2XhiWHwJqy9dqbvnySyLOOp+-a9Pr8RP2Dzbt61-bIKVXymIB5WfoOYnBcSuhwaSzyAKy-EmdbnRWdjXXKd+BbeVN40CYZiFIIxH+aA7yr1mUz3nyhLNH+lzyuSK+7OGdsDrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9Kn6AHiAmWT+NP7xy5wITPgPCoO02DMFE1oLmb-PGwO6unG6jxOUypk5AE+NiKf9leKM-0XWhKX3M5MDwUqVy2qvTa4hirYXjWtl0VWAvF3NE=.jpg",
+   "area": 113,
+   "preco": 1259900,
+   "preco_anterior": null,
+   "quartos": 3,
+   "banheiros": 4,
+   "vagas": 2,
+   "titulo": "Apartamento de 113 m² na Harry Prochet - Nova Prochet - Londrina - PR, à venda por R$ 1.259.900",
+   "publicado": null,
+   "detectado": "2026-11-06T17:53:53Z",
+   "fontes": [
+    {
+     "portal": "aurora",
+     "url": "https://www.auroraimobi.com.br/imovel/apartamento-londrina-3-quartos-113-m/AP13417-AURO",
+     "preco": 1259900,
+     "area": 113,
+     "area_anunciada": null
+    }
+   ],
+   "lat": -23.34764,
+   "lon": -51.16515,
+   "geo": "rua"
+  },
+  {
+   "id": "o1550837889",
+   "tipo": null,
+   "predio": "Oase",
+   "endereco": null,
+   "bairro": "Santa Rosa",
+   "foto": "https://img.olx.com.br/images/72/727654466781826.jpg",
+   "area": 116,
+   "preco": 1350000,
+   "preco_anterior": null,
+   "quartos": 3,
+   "banheiros": 4,
+   "vagas": 2,
+   "titulo": "OASE 3 Suítes 116m Direitos - Apartamento ",
+   "publicado": "2026-11-06T16:35:16Z",
+   "detectado": "2026-11-06T17:53:53Z",
+   "fontes": [
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/oase-3-suites-116m-direitos-apartamento-1550837889",
+     "preco": 1350000,
+     "area": 116,
+     "area_anunciada": null
+    }
+   ],
+   "lat": -23.30879,
+   "lon": -51.143535,
+   "geo": "bairro"
   }
  ],
- "atualizado": "2026-11-06T17:16:09Z"
+ "atualizado": "2026-11-06T17:53:53Z"
 }

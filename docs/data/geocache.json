@@ -2565,6 +2565,7 @@
 "predio:novitta": null,
 "predio:novitta residence": null,
 "predio:novo mundo": null,
+"predio:oase": null,
 "predio:oro": null,
 "predio:oscar": [
 -23.312183,
@@ -2852,6 +2853,11 @@
 "rua:avenida gil de abreu souza|750": [
 -23.348865,
 -51.208465,
+"highway"
+],
+"rua:avenida harry prochet|10": [
+-23.34764,
+-51.16515,
 "highway"
 ],
 "rua:avenida martiniano do valle filho|333": [
