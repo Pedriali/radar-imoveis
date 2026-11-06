@@ -2094,6 +2094,10 @@ def group_imoveis(L):
         if CFG.get("por_condominio") and (not alvo(cond) or not contexto_ok(g) or any(
                 excluido(x.get("bairro"), x.get("predio"), x.get("titulo")) for x in g)):
             continue
+        # "excluir_predios": prédios que não entram nesta aba (Oase fica só na aba Nova Prochet)
+        if CFG.get("excluir_predios") and any(re.search(rf"\b{re.escape(norm(n))}\b", norm(" ".join(
+                str(x.get(k) or "") for k in ("predio", "titulo")))) for x in g for n in CFG["excluir_predios"]):
+            continue
         # Principal: o anúncio visível mais completo
         main_ = max(vis, key=lambda x: sum(bool(x.get(k)) for k in ("predio", "endereco", "foto", "quartos", "vagas", "publicado")))
         im = {k: main_.get(k) for k in ("id", "tipo", "predio", "endereco", "bairro", "foto", "area", "preco",

@@ -261,7 +261,10 @@
         "faixa_area": 1.5,
         "pct_alerta": 15,
         "pct_suspeito": 50
-      }
+      },
+      "excluir_predios": [
+        "oase"
+      ]
     },
     "centro": {
       "aba": "Centro",

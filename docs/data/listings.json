@@ -49680,41 +49680,6 @@
    "lat": -23.329951,
    "lon": -51.180798,
    "geo": "predio"
-  },
-  {
-   "id": "o1550837889",
-   "tipo": null,
-   "predio": null,
-   "endereco": null,
-   "bairro": "Santa Rosa",
-   "foto": "https://img.olx.com.br/images/72/727654466781826.jpg",
-   "area": 116,
-   "preco": 1350000,
-   "preco_anterior": null,
-   "quartos": 3,
-   "banheiros": 4,
-   "vagas": 2,
-   "titulo": "OASE 3 Suítes 116m Direitos - Apartamento ",
-   "publicado": "2026-11-06T16:35:16Z",
-   "detectado": "2026-11-06T17:16:09Z",
-   "fontes": [
-    {
-     "portal": "olx",
-     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/oase-3-suites-116m-direitos-apartamento-1550837889",
-     "preco": 1350000,
-     "area": 116,
-     "area_anunciada": null
-    }
-   ],
-   "media": {
-    "ref_m2": 11000,
-    "base": "bairro Santa Rosa",
-    "n": 105,
-    "pct": 6
-   },
-   "lat": -23.332479,
-   "lon": -51.176957,
-   "geo": "bairro"
   }
  ]
 }
