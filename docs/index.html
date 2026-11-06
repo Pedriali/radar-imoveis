@@ -31,7 +31,21 @@ a{color:inherit}
 
 /* cabeçalho: tela de radar varrendo */
 header{display:flex;gap:20px;align-items:center;padding:22px 0 18px;border-bottom:1px solid var(--line)}
-header > div:last-child{min-width:0}
+header > div:nth-child(2){min-width:0;flex:1}
+/* varrer agora */
+.varrer{flex:none;align-self:flex-start;background:none;border:1px solid var(--green);color:var(--green);font-family:var(--head);
+  font-size:13px;letter-spacing:.14em;padding:9px 14px;cursor:pointer;box-shadow:0 0 10px rgba(57,255,136,.15)}
+.varrer:hover:not(:disabled){background:var(--green);color:var(--bg)}
+.varrer:disabled{border-color:var(--amber);color:var(--amber);cursor:default;animation:blink 1.6s infinite}
+.varrer:focus-visible{outline:1px solid var(--green);outline-offset:2px}
+.vz{padding:14px 16px 16px;font-size:13.5px;line-height:1.55}
+.vz ol{margin:8px 0 12px;padding-left:20px} .vz a{color:var(--green)}
+.vz input{width:100%;box-sizing:border-box;background:var(--bg);color:var(--fg);border:1px solid var(--line);font:inherit;padding:8px 10px}
+.vz input:focus{border-color:var(--green);outline:none}
+.vz .row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.vz .row button{background:none;border:1px solid var(--green);color:var(--green);font:inherit;padding:7px 12px;cursor:pointer}
+.vz .row button.pri{background:var(--green);color:var(--bg)}
+.vz .err{color:var(--red);margin-top:8px;min-height:1em}
 .scope{flex:none;width:92px;height:92px;border-radius:50%;position:relative;overflow:hidden;
   border:1.5px solid var(--green);box-shadow:0 0 18px rgba(57,255,136,.25),inset 0 0 22px rgba(57,255,136,.15);
   background:radial-gradient(circle,transparent 0 31%,rgba(57,255,136,.35) 31.5% 32%,transparent 32.5% 64%,rgba(57,255,136,.35) 64.5% 65%,transparent 65.5%),
@@ -201,7 +215,8 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
 
 @media (max-width:560px){
-  header{gap:14px}
+  header{gap:14px;flex-wrap:wrap}
+  .varrer{width:100%}
   .scope{width:64px;height:64px}
   .grid{grid-template-columns:1fr}
 }
@@ -220,6 +235,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
       <div class="sub" id="sub"></div>
       <div class="telemetry" id="tele">Carregando dados…</div>
     </div>
+    <button type="button" class="varrer" id="varrer" title="Pede uma varredura agora ao GitHub (leva uns 15–20 minutos)">VARRER AGORA</button>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Buscas" id="tabs"></nav>
@@ -281,6 +297,23 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   <div class="dlg-h"><div><b id="dlg-t"></b><span>Mesmo imóvel anunciado em mais de um lugar</span></div>
   <button class="dlg-x" id="dlg-x" aria-label="Fechar">✕</button></div>
   <ul class="paths" id="dlg-l"></ul>
+</dialog>
+
+<dialog id="vz" aria-labelledby="vz-t">
+  <div class="dlg-h"><div><b id="vz-t">VARRER AGORA</b><span>Configuração única neste aparelho</span></div>
+  <button class="dlg-x" id="vz-x" aria-label="Fechar">✕</button></div>
+  <div class="vz">
+    Para o botão poder pedir a varredura ao GitHub, ele precisa de uma chave sua (fica guardada só neste navegador):
+    <ol>
+      <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">esta página do GitHub</a>.</li>
+      <li>Nome: <i>radar</i>. Expiração: a mais longa. <b>Repository access</b> → <i>Only select repositories</i> → <i>radar-imoveis</i>.</li>
+      <li><b>Permissions</b> → <i>Actions</i> → <i>Read and write</i>. Gere e copie a chave.</li>
+    </ol>
+    <input id="vz-tk" type="password" placeholder="github_pat_…" autocomplete="off" aria-label="Chave do GitHub">
+    <div class="err" id="vz-err"></div>
+    <div class="row"><button type="button" class="pri" id="vz-ok">SALVAR E VARRER</button>
+      <a href="https://github.com/Pedriali/radar-imoveis/actions/workflows/radar.yml" target="_blank" rel="noopener" style="align-self:center">ou rodar pelo site do GitHub</a></div>
+  </div>
 </dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -550,6 +583,56 @@ async function mostrar(a){
   DATA = d; LAST = d.runs.length ? d.runs[d.runs.length-1].em : null;
   telemetry(); render();
 }
+
+// ---------- varrer agora (workflow_dispatch da Action "varredura") ----------
+const GH = 'https://api.github.com/repos/Pedriali/radar-imoveis/actions/workflows/radar.yml';
+const tk = { get(){ try { return localStorage.getItem('radar-gh') || ''; } catch { return ''; } },
+             set(v){ try { v ? localStorage.setItem('radar-gh', v) : localStorage.removeItem('radar-gh'); } catch {} } };
+let VZ_DESDE = null, VZ_T = null;
+function vzBotao(txt){ const b = $('#varrer'); b.disabled = !!txt; b.textContent = txt || 'VARRER AGORA'; }
+async function vzStatus(){
+  // última execução da Action (API pública, sem chave): rodando → botão ocupado; acabou → recarrega os dados
+  try {
+    const r = await fetch(GH + '/runs?per_page=1&t=' + Date.now()).then(r => r.json());
+    const run = r.workflow_runs?.[0];
+    if (run && run.status !== 'completed' && Date.now() - new Date(run.created_at) < 2 * 3600e3) {
+      vzBotao('VARRENDO… ' + Math.max(0, Math.round((Date.now() - new Date(run.created_at)) / 60e3)) + ' MIN');
+      VZ_DESDE = VZ_DESDE || run.created_at;
+    } else if (VZ_DESDE) {
+      VZ_DESDE = null; vzBotao('PUBLICANDO…');
+      setTimeout(() => location.reload(), 120e3);  // GitHub Pages leva ~1–2 min para publicar
+      return;
+    } else vzBotao('');
+  } catch { if (!VZ_DESDE) vzBotao(''); }
+  clearTimeout(VZ_T);
+  if (VZ_DESDE) VZ_T = setTimeout(vzStatus, 45e3);
+}
+async function vzDisparar(chave){
+  const r = await fetch(GH + '/dispatches', {method: 'POST', headers: {Accept: 'application/vnd.github+json',
+    Authorization: 'Bearer ' + chave, 'X-GitHub-Api-Version': '2022-11-28'}, body: JSON.stringify({ref: 'main'})});
+  if (r.status === 204) { VZ_DESDE = new Date().toISOString(); vzBotao('VARRENDO… 0 MIN'); clearTimeout(VZ_T); VZ_T = setTimeout(vzStatus, 20e3); return ''; }
+  if (r.status === 401 || r.status === 403 || r.status === 404) return 'Chave recusada pelo GitHub (confira o repositório e a permissão Actions: Read and write).';
+  return 'O GitHub não aceitou o pedido agora (' + r.status + '). Tente de novo em instantes.';
+}
+$('#varrer').addEventListener('click', async () => {
+  const chave = tk.get();
+  if (!chave) { $('#vz-err').textContent = ''; $('#vz').showModal(); return; }
+  vzBotao('PEDINDO…');
+  const err = await vzDisparar(chave).catch(() => 'Sem conexão com o GitHub.');
+  if (err) { vzBotao(''); if (err.startsWith('Chave')) { tk.set(''); $('#vz-err').textContent = err; $('#vz').showModal(); } else alertaVz(err); }
+});
+function alertaVz(m){ $('#tele').insertAdjacentHTML('beforeend', `<span class="st-bad">${esc(m)}</span>`); }
+$('#vz-ok').addEventListener('click', async () => {
+  const chave = $('#vz-tk').value.trim();
+  if (!chave) { $('#vz-err').textContent = 'Cole a chave do GitHub.'; return; }
+  $('#vz-err').textContent = 'Pedindo…';
+  const err = await vzDisparar(chave).catch(() => 'Sem conexão com o GitHub.');
+  if (err) { $('#vz-err').textContent = err; return; }
+  tk.set(chave); $('#vz-tk').value = ''; $('#vz').close();
+});
+$('#vz-x').addEventListener('click', () => $('#vz').close());
+$('#vz').addEventListener('click', e => { if (e.target === $('#vz')) $('#vz').close(); });
+vzStatus();
 
 let inicial = null;
 try { inicial = ABAS.find(a => a.id === location.hash.slice(1)) || ABAS.find(a => a.id === localStorage.getItem('radar-aba')); } catch {}
