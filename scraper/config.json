@@ -417,6 +417,178 @@
         "pct_suspeito": 50
       },
       "por_condominio": true
+    },
+    "prochet": {
+      "aba": "Nova Prochet / Bela Suíça",
+      "dados": "prochet.json",
+      "tipo": "apartamento",
+      "area_min": 20,
+      "area_max": 2000,
+      "por_condominio": true,
+      "alvos": "predios_alvo",
+      "bairros": [
+        "prochet",
+        "bela suica",
+        "nikko",
+        "sao jorge",
+        "mediterraneo"
+      ],
+      "contexto": [
+        "prochet",
+        "vectra",
+        "yoshii",
+        "ayoshii",
+        "adhemar",
+        "ademar",
+        "bela suica"
+      ],
+      "grupo_zap_searches": [
+        "pr+londrina++bela-suica",
+        "pr+londrina++nikko",
+        "pr+londrina++mediterraneo"
+      ],
+      "olx_extra": [
+        "nova prochet",
+        "bela suica"
+      ],
+      "inicial_mostra_tudo": true,
+      "media": {
+        "area_min": 30,
+        "dias": 30,
+        "min_amostra": 4,
+        "min_amostra_predio": 3,
+        "faixa_area": 1.5,
+        "pct_alerta": 15,
+        "pct_suspeito": 50,
+        "bases": [
+          "predio"
+        ]
+      }
     }
-  }
+  },
+  "predios_alvo": [
+    {
+      "nome": "Palazzo di Cesare",
+      "chaves": [
+        "palazzo di cesare",
+        "palazzo di cesari",
+        "palazo di cesare"
+      ]
+    },
+    {
+      "nome": "Palazzo Veronese",
+      "chaves": [
+        "palazzo veronese",
+        "palazzo veronesi",
+        "palazo veronese",
+        "palazo veronesi"
+      ],
+      "busca": "palazzo veronesi"
+    },
+    {
+      "nome": "Lakeside Residence",
+      "chaves": [
+        "lakeside",
+        "lake side"
+      ]
+    },
+    {
+      "nome": "Wave",
+      "chaves": [
+        "wave"
+      ]
+    },
+    {
+      "nome": "La Torre",
+      "chaves": [
+        "la torre"
+      ]
+    },
+    {
+      "nome": "Torre Verona",
+      "chaves": [
+        "torre verona"
+      ]
+    },
+    {
+      "nome": "Terrazza di Rimini",
+      "chaves": [
+        "terrazza di rimini",
+        "terraza di rimini",
+        "terrazza rimini",
+        "terraza rimini"
+      ]
+    },
+    {
+      "nome": "Wonder",
+      "chaves": [
+        "wonder"
+      ]
+    },
+    {
+      "nome": "Mayfair",
+      "chaves": [
+        "mayfair",
+        "may fair"
+      ]
+    },
+    {
+      "nome": "Wynn",
+      "chaves": [
+        "wynn"
+      ]
+    },
+    {
+      "nome": "ORO",
+      "chaves": [
+        "oro"
+      ],
+      "busca": "oro vectra"
+    },
+    {
+      "nome": "Hera",
+      "chaves": [
+        "hera"
+      ],
+      "busca": "hera vectra"
+    },
+    {
+      "nome": "Lina",
+      "chaves": [
+        "lina"
+      ],
+      "busca": "lina vectra"
+    },
+    {
+      "nome": "Oscar",
+      "chaves": [
+        "oscar"
+      ],
+      "busca": "oscar vectra",
+      "nao": [
+        "oscar niemeyer",
+        "oscar freire"
+      ]
+    },
+    {
+      "nome": "Zahra",
+      "chaves": [
+        "zahra"
+      ]
+    },
+    {
+      "nome": "Lotus",
+      "chaves": [
+        "lotus"
+      ],
+      "busca": "lotus vectra"
+    },
+    {
+      "nome": "Gaia",
+      "chaves": [
+        "gaia"
+      ],
+      "busca": "gaia vectra"
+    }
+  ]
 }

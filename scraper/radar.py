@@ -33,7 +33,7 @@ S = requests.Session(impersonate="chrome")
 # completar dados (prédio, endereço, área, quartos) não são abertas de novo; o resto vem da busca.
 CONHECIDOS = {}
 CAMPOS_DETALHE = ("tipo", "predio", "endereco", "bairro", "foto", "area", "quartos", "banheiros", "vagas", "titulo",
-                  "publicado", "lat", "lon", "condominio")
+                  "publicado", "lat", "lon", "condominio", "contexto")
 
 
 def conhecido(rid, links, **novos):
@@ -59,15 +59,19 @@ def usar_perfil(nome):
     CFG["perfil"] = nome
     ALVOS.clear()
     cond_citado.cache_clear()
+    CTX.clear()
+    if CFG.get("contexto"):
+        CTX.append(re.compile(r"\b(?:" + "|".join(re.escape(norm(c)) for c in CFG["contexto"]) + r")\b"))
     if CFG.get("por_condominio"):
-        for a in CONFIG["condominios_alvo"]:
+        # "alvos": a lista de config.json com os condomínios/prédios do perfil (Nova Prochet: "predios_alvo")
+        for a in CONFIG[CFG.get("alvos", "condominios_alvo")]:
             chaves = sorted((norm(c) for c in a["chaves"]), key=len, reverse=True)
             # "nao": trechos que não contam para este condomínio (o bairro Vale dos Tucanos × Condomínio Tucanos)
             nao = re.compile("|".join(re.escape(norm(x)) for x in a["nao"])) if a.get("nao") else None
             ALVOS.append((a["nome"], re.compile(r"\b(?:" + "|".join(map(re.escape, chaves)) + r")\b"), True, nao))
         # outros condomínios conhecidos: não entram, mas separam um condomínio do outro (lote de 360 m² do
         # Royal Forest × do Ville Campestre) e barram o anúncio de outro condomínio que só cita um alvo
-        for c in CONFIG.get("condominios_outros", []):
+        for c in (CONFIG.get("condominios_outros", []) if not apto() else []):
             ALVOS.append((c.title(), re.compile(r"\b" + re.escape(norm(c)) + r"\b"), False, None))
 
 
@@ -76,6 +80,19 @@ def usar_perfil(nome):
 # do anúncio (Zap, OLX e Chaves na Mão também na descrição, ver alvo_detalhe). A primeira palavra-chave
 # é o termo da busca por condomínio na OLX.
 ALVOS = []  # [(nome, regex das palavras-chave, é alvo?, regex do que não conta)] do perfil em uso
+# Perfil de apartamentos "por_condominio" (Nova Prochet / Bela Suíça): só os prédios de "predios_alvo".
+# Os nomes são curtos (Hera, Lina, Oscar, Wave...), então o anúncio também precisa estar num dos
+# "bairros" ou citar uma palavra de "contexto" (prochet, vectra, adhemar...) — ver contexto_ok.
+CTX = []
+
+
+def contexto_ok(g):
+    """Grupo de anúncios com um dos bairros do perfil ou palavra de "contexto" (também na descrição)."""
+    if not CTX:
+        return True
+    return any(x.get("contexto") or bairro_ok(x.get("bairro")) or
+               CTX[0].search(norm(" ".join(str(x.get(k) or "") for k in ("predio", "titulo", "endereco", "bairro"))))
+               for x in g)
 
 
 def apto():
@@ -143,7 +160,7 @@ def local_ok(bairro, *textos, pendente=False):
     """Apartamentos: bairro na lista. Casas/terrenos: nome de um condomínio-alvo no bairro/textos (ver
     alvo); com pendente=True, sem o nome mas com o bairro na lista da zona também passa — o nome é
     procurado depois na página do anúncio e, sem ele, o imóvel não vira card (group_imoveis)."""
-    if apto():
+    if apto() and not CFG.get("por_condominio"):
         return bairro_ok(bairro)
     if excluido(bairro, *textos):
         return False
@@ -191,6 +208,8 @@ def alvo_detalhe(rec, *textos):
     if CFG.get("por_condominio"):
         c = cond_citado(rec.get("predio"), rec.get("titulo"), rec.get("bairro")) or cond_citado(*textos)
         rec["condominio"] = c[0] if c else ""
+        if CTX and CTX[0].search(norm(" ".join(t for t in textos if t))):
+            rec["contexto"] = True
 
 
 def cond_rec(x, peso=False):
@@ -519,18 +538,23 @@ OLX_LONDRINA = "estado-pr/regiao-de-londrina/londrina"
 
 
 def olx_buscas():
-    if apto():
+    if apto() and not CFG.get("por_condominio"):
         return [(f"{CFG['olx_search']}?ss={CFG['area_min']}&se={CFG['area_max']}&", None)]
     # Uma busca por condomínio-alvo (a primeira palavra-chave) em todos os imóveis à venda; o tipo
     # (casa/terreno) sai da categoria de cada anúncio (olx_tipo)
     cat = "terrenos/lotes" if terrenos() else "venda"
-    return [(f"https://www.olx.com.br/imoveis/{cat}/{OLX_LONDRINA}?sst=s&q={urllib.parse.quote(a['chaves'][0])}&", "auto")
-            for a in CONFIG["condominios_alvo"]]
+    return [(f"https://www.olx.com.br/imoveis/{cat}/{OLX_LONDRINA}?sst=s&q={urllib.parse.quote(a.get('busca') or a['chaves'][0])}&",
+             "auto") for a in CONFIG[CFG.get("alvos", "condominios_alvo")]] + [
+        # Nova Prochet: também a busca pelo bairro (o prédio sai da descrição, olx_detail)
+        (f"https://www.olx.com.br/imoveis/{cat}/{OLX_LONDRINA}?sst=s&q={urllib.parse.quote(q)}&", "auto")
+        for q in CFG.get("olx_extra", [])]
 
 
 def olx_tipo(a, props):
     """"casa", "terreno" ou None (outra categoria), para as buscas por condomínio."""
     c = norm(a.get("category") or props.get("category"))
+    if apto():
+        return "apartamento" if c.startswith("apartamento") else None
     if c.startswith("casa"):
         return None if terrenos() else "casa"
     if (c.startswith("terreno") or c.startswith("lote")) and terrenos():
@@ -539,7 +563,7 @@ def olx_tipo(a, props):
 
 
 def olx_tipo_ok(tipo, props, subject):
-    if tipo is None:
+    if tipo in (None, "apartamento"):
         return "venda" in norm(props.get("real_estate_type", "venda"))
     if "venda" not in norm(props.get("real_estate_type", "venda")):
         return False
@@ -593,7 +617,7 @@ def _scan_olx(url0, tipo0, known, max_pages, found):
             rid = f"o{a['listId']}"
             rec = {
                 "id": rid,
-                "tipo": tipo,
+                "tipo": None if tipo == "apartamento" else tipo,
                 "predio": building_from_olx_subject(a.get("subject", "")) or building_from_text(a.get("subject")),
                 "endereco": None,
                 "bairro": loc.get("neighbourhood"),
@@ -2067,8 +2091,8 @@ def group_imoveis(L):
             continue
         # Só condomínio-alvo (o nome às vezes só aparece depois de abrir o anúncio: "condominio")
         cond = chave_cond(g) if CFG.get("por_condominio") else None
-        if CFG.get("por_condominio") and (not alvo(cond) or any(excluido(x.get("bairro"), x.get("predio"), x.get("titulo"))
-                                                                for x in g)):
+        if CFG.get("por_condominio") and (not alvo(cond) or not contexto_ok(g) or any(
+                excluido(x.get("bairro"), x.get("predio"), x.get("titulo")) for x in g)):
             continue
         # Principal: o anúncio visível mais completo
         main_ = max(vis, key=lambda x: sum(bool(x.get(k)) for k in ("predio", "endereco", "foto", "quartos", "vagas", "publicado")))
@@ -2099,7 +2123,8 @@ def group_imoveis(L):
                     fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area"),
                                    "area_anunciada": x.get("area_anunciada")})
         im["fontes"] = fontes
-        if cond and alvo(im["predio"]) != cond:  # sem nome ou com o do bairro (Vivendas do Arvoredo)
+        # sem nome ou com o do bairro (Vivendas do Arvoredo); prédios-alvo sempre com o nome da lista
+        if cond and (apto() or alvo(im["predio"]) != cond):
             im["predio"] = cond
         if medias:
             im.update(abaixo_da_media(g, medias))

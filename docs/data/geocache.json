@@ -9,6 +9,11 @@
 -51.163522,
 "place"
 ],
+"bairro:brasilia": [
+-23.320134,
+-51.137968,
+"place"
+],
 "bairro:catuai parque residence": [
 -23.346868,
 -51.182574,
@@ -48,6 +53,7 @@
 -51.157234,
 "place"
 ],
+"bairro:jardim do lago": null,
 "bairro:jardim marissol": [
 -23.294232,
 -51.121179,
@@ -58,6 +64,11 @@
 -23.356296,
 -51.143958,
 "water"
+],
+"bairro:mediterraneo": [
+-23.299,
+-51.245807,
+"highway"
 ],
 "bairro:olimpico": [
 -23.324987,
@@ -210,17 +221,85 @@
 -23.34666,
 -51.21162
 ],
+"local:bela suica|adhemar pereira de barros|1400": [
+-23.34274,
+-51.16434
+],
 "local:bela suica|adhemar pereira de barros|1600": [
 -23.34515,
 -51.1635
 ],
+"local:bela suica|doutor adhemar pereira de barros|1200": [
+-23.341287,
+-51.16468
+],
+"local:bela suica|doutor adhemar pereira de barros|1300": [
+-23.341922,
+-51.164536
+],
+"local:bela suica|doutor adhemar pereira de barros|1400": [
+-23.343187,
+-51.164077
+],
+"local:bela suica|doutor adhemar pereira de barros|1455": [
+-23.342806,
+-51.163714
+],
+"local:bela suica|doutor adhemar pereira de barros|1600": [
+-23.345206,
+-51.163618
+],
+"local:bela suica|lakeside": [
+-23.342806,
+-51.163714
+],
+"local:bela suica|lakesideresidence": [
+-23.342,
+-51.163
+],
+"local:bela suica|latorre": [
+-23.342867,
+-51.164244
+],
+"local:bela suica|palazzo": [
+-23.341922,
+-51.164536
+],
+"local:bela suica|palazzodicesar": [
+-23.341922,
+-51.164536
+],
 "local:bela suica|palazzodicesare": [
--23.34207,
--51.16477
+-23.341922,
+-51.164536
+],
+"local:bela suica|palazzoveronesi": [
+-23.341287,
+-51.16468
+],
+"local:bela suica|terraza": [
+-23.345206,
+-51.163618
+],
+"local:bela suica|terrazadirimini": [
+-23.345178,
+-51.163559
 ],
 "local:bela suica|terrazzadirimini": [
--23.34515,
--51.163559
+-23.345206,
+-51.163618
+],
+"local:bela suica|verona": [
+-23.342954,
+-51.164093
+],
+"local:bela suica|wave": [
+-23.342076,
+-51.164051
+],
+"local:bela suica|wonder": [
+-23.340264,
+-51.15598
 ],
 "local:benezer luiz da costa|5": [
 -23.362413,
@@ -1486,6 +1565,10 @@
 -23.31186,
 -51.16096
 ],
+"local:colonial|wave": [
+-23.341548,
+-51.16343
+],
 "local:consolidado": [
 -23.358044,
 -51.244311
@@ -1585,6 +1668,38 @@
 "local:moradasdovalelondrina": [
 -23.25013,
 -51.18841
+],
+"local:nikko|doutor carlos da costa branco|238": [
+-23.34181,
+-51.155089
+],
+"local:nikko|doutor carlos da costa branco|30": [
+-23.340403,
+-51.156946
+],
+"local:nikko|doutor carlos da costa branco|60": [
+-23.340976,
+-51.156043
+],
+"local:nikko|doutor carlos da costa branco|65": [
+-23.34,
+-51.156
+],
+"local:nikko|hera": [
+-23.340757,
+-51.156376
+],
+"local:nikko|lina": [
+-23.34181,
+-51.155089
+],
+"local:nikko|oscar": [
+-23.340281,
+-51.156684
+],
+"local:nikko|zahra": [
+-23.340976,
+-51.156043
 ],
 "local:palhano|allure": [
 -23.329951,
@@ -1886,6 +2001,42 @@
 -23.351387,
 -51.20761
 ],
+"local:prochet|doutor carlos da costa branco|60": [
+-23.34194,
+-51.154368
+],
+"local:prochet|gaia": [
+-23.340403,
+-51.156944
+],
+"local:prochet|hera": [
+-23.340757,
+-51.156376
+],
+"local:prochet|lina": [
+-23.342108,
+-51.154122
+],
+"local:prochet|lotus": [
+-23.340674,
+-51.154887
+],
+"local:prochet|oro": [
+-23.341099,
+-51.154405
+],
+"local:prochet|oscarvectra": [
+-23.340281,
+-51.156684
+],
+"local:prochet|terrazzadirimini": [
+-23.345206,
+-51.163618
+],
+"local:prochet|wonder": [
+-23.340145,
+-51.155956
+],
 "local:recantodosalto": [
 -23.36665,
 -51.222288
@@ -2017,6 +2168,30 @@
 "local:santiago|280": [
 -23.333046,
 -51.167381
+],
+"local:sao jorge|camilo castelo branco|270": [
+-23.341094,
+-51.154412
+],
+"local:sao jorge|camilo castelo branco|80": [
+-23.340264,
+-51.15598
+],
+"local:sao jorge|mayfair": [
+-23.340473,
+-51.157776
+],
+"local:sao jorge|vectragaia": [
+-23.340602,
+-51.157193
+],
+"local:sao jorge|wonder": [
+-23.340264,
+-51.15598
+],
+"local:sao jorge|wynn": [
+-23.341271,
+-51.155293
 ],
 "local:sebastiao buranello|141": [
 -23.340761,
@@ -2236,6 +2411,7 @@
 -51.158691,
 "building"
 ],
+"predio:gaia": null,
 "predio:giardini": null,
 "predio:gleba esperanca": [
 -23.347543,
@@ -2264,6 +2440,7 @@
 "predio:greenwich": null,
 "predio:greenwich par": null,
 "predio:haus casa": null,
+"predio:hera": null,
 "predio:horizontal de alto padrao": null,
 "predio:horizontal koa": null,
 "predio:horizonte": [
@@ -2296,12 +2473,14 @@
 "building"
 ],
 "predio:l'harmonie": null,
+"predio:la torre": null,
 "predio:lac royal": [
 -23.328303,
 -51.176634,
 "building"
 ],
 "predio:lago azul": null,
+"predio:lakeside residence": null,
 "predio:las palmas": null,
 "predio:le corbusier": [
 -23.332693,
@@ -2309,6 +2488,7 @@
 "building"
 ],
 "predio:lharmonie": null,
+"predio:lina": null,
 "predio:lord lovat": null,
 "predio:los angeles": null,
 "predio:maanain": null,
@@ -2341,6 +2521,7 @@
 "predio:matisse": null,
 "predio:matisse londrina": null,
 "predio:maximus": null,
+"predio:mayfair": null,
 "predio:mediterranee jardim ipiranga": [
 -23.321552,
 -51.161672,
@@ -2379,6 +2560,12 @@
 "predio:novitta": null,
 "predio:novitta residence": null,
 "predio:novo mundo": null,
+"predio:oro": null,
+"predio:oscar": [
+-23.312183,
+-51.156984,
+"building"
+],
 "predio:otimo": null,
 "predio:ouro fino": null,
 "predio:oxford village": null,
@@ -2520,6 +2707,7 @@
 -51.167727,
 "building"
 ],
+"predio:terrazza di rimini": null,
 "predio:terrnoir residence": null,
 "predio:terroir gleba fazenda palhano": [
 -23.331818,
@@ -2578,9 +2766,13 @@
 "building"
 ],
 "predio:vivendas do arvoredo": null,
+"predio:wave": null,
 "predio:willie davids": null,
+"predio:wonder": null,
 "predio:wood": null,
+"predio:wynn": null,
 "predio:ype": null,
+"predio:zahra": null,
 "rua:alameda eliana maria tarasconi peixe|300": [
 -23.347072,
 -51.196176,
@@ -2667,6 +2859,11 @@
 -51.160213,
 "highway"
 ],
+"rua:avenida waldemar spranger|199": [
+-23.345689,
+-51.167403,
+"highway"
+],
 "rua:rodovia mabio goncalves palhano|100": [
 -23.377506,
 -51.212912,
@@ -2742,6 +2939,11 @@
 -51.142097,
 "highway"
 ],
+"rua:rua camilo castelo branco|270": [
+-23.340649,
+-51.154929,
+"highway"
+],
 "rua:rua campo grande|70": [
 -23.322395,
 -51.183044,
@@ -2750,6 +2952,11 @@
 "rua:rua caracas|1421": [
 -23.3324,
 -51.172164,
+"highway"
+],
+"rua:rua carlos da costa branco|164": [
+-23.342108,
+-51.154122,
 "highway"
 ],
 "rua:rua claudio damiano stasiak|70": [
