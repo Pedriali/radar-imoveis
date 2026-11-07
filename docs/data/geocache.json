@@ -19,6 +19,7 @@
 -51.182574,
 "landuse"
 ],
+"bairro:condominio royal golf residence": null,
 "bairro:condominio terras de canaa": null,
 "bairro:conjunto habitacional jamile dequech": [
 -23.390586,
@@ -289,6 +290,10 @@
 -23.345178,
 -51.163559
 ],
+"local:bela suica|terrazza": [
+-23.345206,
+-51.163618
+],
 "local:bela suica|terrazzadirimini": [
 -23.345206,
 -51.163618
@@ -404,6 +409,10 @@
 "local:centro|belacintra": [
 -23.31285,
 -51.169527
+],
+"local:centro|belacintracentro": [
+-23.312917,
+-51.169424
 ],
 "local:centro|belacintraseu": [
 -23.31298,
@@ -1589,6 +1598,10 @@
 -23.341548,
 -51.16343
 ],
+"local:com4suitesavenda": [
+-23.354846,
+-51.155272
+],
 "local:consolidado": [
 -23.358044,
 -51.244311
@@ -1722,8 +1735,8 @@
 -51.156043
 ],
 "local:palhano|allure": [
--23.329951,
--51.180798
+-23.32958,
+-51.181213
 ],
 "local:palhano|almeria": [
 -23.330079,
@@ -1798,8 +1811,8 @@
 -51.180945
 ],
 "local:palhano|elegance": [
--23.33137,
--51.182312
+-23.331065,
+-51.182358
 ],
 "local:palhano|eurico hummig|255": [
 -23.333236,
@@ -2174,8 +2187,8 @@
 -51.174217
 ],
 "local:santa rosa|tay": [
--23.332625,
--51.173202
+-23.332,
+-51.184
 ],
 "local:santa rosa|villasolare": [
 -23.332479,
@@ -2316,6 +2329,7 @@
 "predio:amarilis": null,
 "predio:ana carolina": null,
 "predio:andorra": null,
+"predio:anita mafaltti": null,
 "predio:anita malfatti londrina": null,
 "predio:aqua jardim residencial & resort": null,
 "predio:arbo": null,
@@ -2342,6 +2356,7 @@
 "predio:botanico": null,
 "predio:boulevar park": null,
 "predio:boulevard village": null,
+"predio:cambridge": null,
 "predio:cambrigie": null,
 "predio:caminhoto": [
 -23.311347,
@@ -2648,8 +2663,10 @@
 "predio:royal forest londrina": null,
 "predio:royal forest residencia": null,
 "predio:royal garden edificio": null,
+"predio:royal golf": null,
 "predio:royal maison": null,
 "predio:royal park": null,
+"predio:royal park residence": null,
 "predio:royal tennis": null,
 "predio:sagres": [
 -23.307922,
@@ -2733,6 +2750,7 @@
 -51.167727,
 "building"
 ],
+"predio:terrazza": null,
 "predio:terrazza di rimini": null,
 "predio:terrnoir residence": null,
 "predio:terroir gleba fazenda palhano": [
@@ -2979,6 +2997,11 @@
 -23.322395,
 -51.183044,
 "highway"
+],
+"rua:rua caracas|1001": [
+-23.332614,
+-51.18052,
+"building"
 ],
 "rua:rua caracas|1421": [
 -23.3324,
