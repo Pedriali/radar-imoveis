@@ -8785,8 +8785,7 @@
    },
    "quartos": 3,
    "banheiros": 4,
-   "vagas": 2,
-   "preco_anterior": 1790000
+   "vagas": 2
   },
   "o1530449976": {
    "id": "o1530449976",
@@ -11210,8 +11209,7 @@
    "detectado": "2026-10-07T17:41:44Z",
    "visto": "2026-11-10T12:00:15Z",
    "lat": -23.3326,
-   "lon": -51.17423,
-   "preco_anterior": 1790000
+   "lon": -51.17423
   },
   "rf21672": {
    "id": "rf21672",
@@ -12915,7 +12913,7 @@
    "endereco": null,
    "bairro": "Santa Rosa",
    "area": 104,
-   "preco": 4600,
+   "preco": 1250000,
    "quartos": 3,
    "banheiros": 2,
    "vagas": 2,
@@ -12926,8 +12924,7 @@
    "origem": "santamerica",
    "visivel": false,
    "detectado": "2026-10-07T17:41:44Z",
-   "visto": "2026-11-10T12:00:15Z",
-   "preco_anterior": 1250000
+   "visto": "2026-11-10T12:00:15Z"
   },
   "sa55771": {
    "id": "sa55771",
@@ -13011,7 +13008,7 @@
    "endereco": null,
    "bairro": "Bela Suiça",
    "area": 115,
-   "preco": 5300,
+   "preco": 1390000,
    "quartos": 3,
    "banheiros": 1,
    "vagas": 2,
@@ -13022,8 +13019,7 @@
    "origem": "santamerica",
    "visivel": false,
    "detectado": "2026-10-07T17:41:44Z",
-   "visto": "2026-11-10T12:00:15Z",
-   "preco_anterior": 1390000
+   "visto": "2026-11-10T12:00:15Z"
   },
   "sa54882": {
    "id": "sa54882",
@@ -35682,9 +35678,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11511,
+    "ref_m2": 11504,
     "base": "bairro Palhano",
-    "n": 364,
+    "n": 363,
     "pct": 14
    }
   },
@@ -36088,9 +36084,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": -22,
     "suspeito": false
    },
@@ -36213,12 +36209,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11450,
+    "ref_m2": 11445,
     "base": "bairro Palhano",
-    "n": 440,
+    "n": 439,
     "pct": 16
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -36512,7 +36508,7 @@
     "n": 203,
     "pct": 0
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -36565,6 +36561,13 @@
      "area_anunciada": null
     },
     {
+     "portal": "santamerica",
+     "url": "https://www.santamerica.com.br/comprar/Londrina/Apartamento/Padrao/Bela-Suica/55337",
+     "preco": 1390000,
+     "area": 115,
+     "area_anunciada": null
+    },
+    {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/apartamento-londrina-3-quartos-115-m/AP13751-AURO",
      "preco": 1390000,
@@ -36580,10 +36583,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11130,
+    "ref_m2": 11217,
     "base": "Terrazza Di Rimini",
-    "n": 8,
-    "pct": 9
+    "n": 7,
+    "pct": 8
    }
   },
   {
@@ -36636,9 +36639,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 457,
+    "n": 456,
     "pct": -22,
     "suspeito": false
    },
@@ -36827,9 +36830,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11491,
+    "ref_m2": 11489,
     "base": "bairro Palhano",
-    "n": 377,
+    "n": 376,
     "pct": -38,
     "suspeito": false
    },
@@ -36957,7 +36960,7 @@
    "media": {
     "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 353,
+    "n": 352,
     "pct": -2
    }
   },
@@ -37015,9 +37018,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11489,
+    "ref_m2": 11488,
     "base": "bairro Palhano",
-    "n": 412,
+    "n": 411,
     "pct": -25,
     "suspeito": false
    },
@@ -37251,9 +37254,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": -19,
     "suspeito": false
    },
@@ -37427,12 +37430,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": 12
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -37640,9 +37643,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 457,
+    "n": 456,
     "pct": 1
    }
   },
@@ -37717,10 +37720,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11546,
+    "ref_m2": 11875,
     "base": "Terrazza Di Rimini",
-    "n": 8,
-    "pct": -4
+    "n": 7,
+    "pct": -7
    }
   },
   {
@@ -37749,12 +37752,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11450,
+    "ref_m2": 11445,
     "base": "bairro Palhano",
-    "n": 440,
+    "n": 439,
     "pct": 30
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -38304,14 +38307,14 @@
     }
    ],
    "media": {
-    "ref_m2": 11553,
+    "ref_m2": 11549,
     "base": "bairro Palhano",
-    "n": 313,
+    "n": 312,
     "pct": -21,
     "suspeito": false
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -38460,10 +38463,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11082,
+    "ref_m2": 11121,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": -31,
+    "n": 27,
+    "pct": -32,
     "suspeito": false
    },
    "abaixo": true,
@@ -39046,9 +39049,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11511,
+    "ref_m2": 11504,
     "base": "bairro Palhano",
-    "n": 364,
+    "n": 363,
     "pct": 14
    }
   },
@@ -39214,9 +39217,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11489,
+    "ref_m2": 11488,
     "base": "bairro Palhano",
-    "n": 412,
+    "n": 411,
     "pct": -36,
     "suspeito": false
    },
@@ -39330,7 +39333,7 @@
     "n": 313,
     "pct": -5
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -39360,14 +39363,14 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": -33,
     "suspeito": false
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -39414,9 +39417,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11440,
+    "ref_m2": 11434,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": -13
    }
   },
@@ -39497,12 +39500,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 457,
+    "n": 456,
     "pct": 8
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -39688,7 +39691,7 @@
    "media": {
     "ref_m2": 11000,
     "base": "bairro Santa Rosa",
-    "n": 105,
+    "n": 103,
     "pct": 0
    },
    "lat": -23.332466,
@@ -39740,7 +39743,7 @@
    "media": {
     "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": 16
    }
   },
@@ -39836,10 +39839,10 @@
     }
    ],
    "media": {
-    "ref_m2": 10239,
+    "ref_m2": 10529,
     "base": "Tay",
-    "n": 12,
-    "pct": 41
+    "n": 11,
+    "pct": 37
    }
   },
   {
@@ -39885,9 +39888,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11431,
+    "ref_m2": 11429,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": 1
    }
   },
@@ -40710,7 +40713,7 @@
    "media": {
     "ref_m2": 10989,
     "base": "bairro Santa Rosa",
-    "n": 119,
+    "n": 117,
     "pct": 3
    },
    "lat": -23.33186,
@@ -40834,12 +40837,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": 0
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -41530,9 +41533,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11549,
+    "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 350,
+    "n": 349,
     "pct": -15,
     "suspeito": false
    },
@@ -41914,12 +41917,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11488,
+    "ref_m2": 11487,
     "base": "bairro Palhano",
-    "n": 377,
+    "n": 376,
     "pct": 2
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -42225,9 +42228,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11488,
+    "ref_m2": 11487,
     "base": "bairro Palhano",
-    "n": 409,
+    "n": 408,
     "pct": -28,
     "suspeito": false
    },
@@ -42406,9 +42409,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 441,
+    "n": 440,
     "pct": -10
    },
    "lat": -23.337272,
@@ -42443,7 +42446,7 @@
    "media": {
     "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": 13
    },
    "lat": -23.333845,
@@ -42483,9 +42486,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 421,
+    "n": 420,
     "pct": 3
    },
    "lat": -23.331692,
@@ -42934,9 +42937,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11549,
+    "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 350,
+    "n": 349,
     "pct": -6
    }
   },
@@ -42966,9 +42969,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": -18,
     "suspeito": false
    },
@@ -43038,10 +43041,10 @@
     }
    ],
    "media": {
-    "ref_m2": 10994,
+    "ref_m2": 11043,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": 5
+    "n": 27,
+    "pct": 4
    },
    "lat": -23.345178,
    "lon": -51.163559,
@@ -43073,12 +43076,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11431,
+    "ref_m2": 11429,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": 8
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -43216,9 +43219,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 15
    }
   },
@@ -43372,7 +43375,7 @@
    "media": {
     "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 418,
+    "n": 417,
     "pct": 12
    }
   },
@@ -43484,7 +43487,7 @@
    "media": {
     "ref_m2": 10992,
     "base": "bairro Santa Rosa",
-    "n": 106,
+    "n": 104,
     "pct": 8
    }
   },
@@ -43832,9 +43835,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11488,
+    "ref_m2": 11487,
     "base": "bairro Palhano",
-    "n": 409,
+    "n": 408,
     "pct": -6
    }
   },
@@ -44016,7 +44019,7 @@
    "media": {
     "ref_m2": 11000,
     "base": "bairro Santa Rosa",
-    "n": 119,
+    "n": 117,
     "pct": -1
    }
   },
@@ -44205,10 +44208,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11130,
+    "ref_m2": 11217,
     "base": "Terrazza Di Rimini",
-    "n": 8,
-    "pct": 7
+    "n": 7,
+    "pct": 6
    }
   },
   {
@@ -44270,7 +44273,7 @@
    "media": {
     "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 358,
+    "n": 357,
     "pct": 2
    }
   },
@@ -44625,9 +44628,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": 11
    }
   },
@@ -44662,7 +44665,7 @@
     "n": 313,
     "pct": 11
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -44695,9 +44698,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11489,
+    "ref_m2": 11488,
     "base": "bairro Palhano",
-    "n": 378,
+    "n": 377,
     "pct": -37,
     "suspeito": false
    },
@@ -44734,7 +44737,7 @@
    "media": {
     "ref_m2": 11518,
     "base": "bairro Palhano",
-    "n": 364,
+    "n": 363,
     "pct": -66,
     "suspeito": true
    },
@@ -45079,7 +45082,7 @@
    "media": {
     "ref_m2": 11518,
     "base": "bairro Palhano",
-    "n": 364,
+    "n": 363,
     "pct": -27,
     "suspeito": false
    },
@@ -45277,7 +45280,7 @@
     "n": 10,
     "pct": -6
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -45307,14 +45310,14 @@
     }
    ],
    "media": {
-    "ref_m2": 11486,
+    "ref_m2": 11474,
     "base": "bairro Palhano",
-    "n": 405,
+    "n": 404,
     "pct": -50,
     "suspeito": true
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -45522,9 +45525,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 441,
+    "n": 440,
     "pct": -6
    }
   },
@@ -45836,12 +45839,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 421,
+    "n": 420,
     "pct": -9
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -46177,9 +46180,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11440,
+    "ref_m2": 11434,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": -43,
     "suspeito": false
    },
@@ -46295,9 +46298,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11541,
+    "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 358,
+    "n": 357,
     "pct": -31,
     "suspeito": false
    },
@@ -46630,9 +46633,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11082,
+    "ref_m2": 11121,
     "base": "bairro Bela Suica",
-    "n": 28,
+    "n": 27,
     "pct": -10
    },
    "lat": -23.34515,
@@ -46665,12 +46668,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": -4
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -46878,10 +46881,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11459,
+    "ref_m2": 11875,
     "base": "Terrazza Di Rimini",
-    "n": 8,
-    "pct": -2
+    "n": 7,
+    "pct": -6
    }
   },
   {
@@ -47081,9 +47084,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 15
    }
   },
@@ -47211,12 +47214,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 15
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -47337,12 +47340,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 30
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -47384,7 +47387,7 @@
     "n": 300,
     "pct": -10
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -47449,10 +47452,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11082,
+    "ref_m2": 11121,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": -36,
+    "n": 27,
+    "pct": -37,
     "suspeito": false
    },
    "abaixo": true,
@@ -47505,7 +47508,7 @@
     "n": 313,
     "pct": -12
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -47680,7 +47683,7 @@
    "media": {
     "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 418,
+    "n": 417,
     "pct": 21
    }
   },
@@ -47722,7 +47725,7 @@
    "media": {
     "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 418,
+    "n": 417,
     "pct": 10
    }
   },
@@ -47762,9 +47765,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11431,
+    "ref_m2": 11429,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": 4
    }
   },
@@ -48116,9 +48119,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11549,
+    "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 350,
+    "n": 349,
     "pct": -6
    },
    "lat": -23.330748,
@@ -48156,7 +48159,7 @@
     "n": 305,
     "pct": 32
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -48219,7 +48222,7 @@
    "media": {
     "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 360,
+    "n": 359,
     "pct": -48,
     "suspeito": false
    },
@@ -48253,12 +48256,12 @@
    "media": {
     "ref_m2": 11518,
     "base": "bairro Palhano",
-    "n": 364,
+    "n": 363,
     "pct": -27,
     "suspeito": false
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -48337,7 +48340,7 @@
    "media": {
     "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 360,
+    "n": 359,
     "pct": -26,
     "suspeito": false
    },
@@ -48432,12 +48435,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11431,
+    "ref_m2": 11429,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": 4
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -48547,9 +48550,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": -8
    }
   },
@@ -48726,7 +48729,7 @@
     "suspeito": false
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -48775,7 +48778,7 @@
    "media": {
     "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 418,
+    "n": 417,
     "pct": 12
    }
   },
@@ -48810,7 +48813,7 @@
     "n": 3,
     "pct": 14
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -48875,10 +48878,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11094,
+    "ref_m2": 11660,
     "base": "Tay",
-    "n": 12,
-    "pct": -20,
+    "n": 11,
+    "pct": -24,
     "suspeito": false
    },
    "abaixo": true,
@@ -48980,7 +48983,7 @@
    "media": {
     "ref_m2": 11000,
     "base": "bairro Santa Rosa",
-    "n": 105,
+    "n": 103,
     "pct": -2
    }
   },
@@ -49052,12 +49055,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 421,
+    "n": 420,
     "pct": -8
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -49308,10 +49311,10 @@
     }
    ],
    "media": {
-    "ref_m2": 10994,
+    "ref_m2": 11043,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": 10
+    "n": 27,
+    "pct": 9
    },
    "lat": -23.345178,
    "lon": -51.163559,
@@ -49486,9 +49489,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11431,
+    "ref_m2": 11429,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": 1
    }
   },
@@ -49520,7 +49523,7 @@
    "media": {
     "ref_m2": 11000,
     "base": "bairro Santa Rosa",
-    "n": 105,
+    "n": 103,
     "pct": -5
    },
    "lat": -23.332466,
@@ -49553,12 +49556,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 42
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -49588,10 +49591,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11130,
+    "ref_m2": 11217,
     "base": "Terrazza Di Rimini",
-    "n": 8,
-    "pct": 9
+    "n": 7,
+    "pct": 8
    },
    "lat": -23.34515,
    "lon": -51.1635,
@@ -49611,7 +49614,7 @@
    "banheiros": 3,
    "vagas": 2,
    "titulo": "Apartamento de 113 m² na Ernâni Lacerda de Athayde - Gleba Palhano - Londrina - PR, à venda por R$ 1.400.000",
-   "publicado": null,
+   "publicado": "2026-11-04T06:17:36Z",
    "detectado": "2026-11-03T17:12:09Z",
    "fontes": [
     {
@@ -49620,13 +49623,20 @@
      "preco": 1400000,
      "area": 113,
      "area_anunciada": null
+    },
+    {
+     "portal": "olx",
+     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-no-edif-torre-com-3-quartos-112-m-venda-por-r-1-400-000-ou-aluguel-por-r-1550097811",
+     "preco": 1400000,
+     "area": 113,
+     "area_anunciada": null
     }
    ],
    "media": {
-    "ref_m2": 11528,
+    "ref_m2": 11518,
     "base": "bairro Palhano",
-    "n": 360,
-    "pct": 7
+    "n": 359,
+    "pct": 8
    },
    "lat": -23.331692,
    "lon": -51.190557,
@@ -49672,11 +49682,13 @@
     }
    ],
    "media": {
-    "ref_m2": 11094,
+    "ref_m2": 11660,
     "base": "Tay",
-    "n": 12,
-    "pct": -14
+    "n": 11,
+    "pct": -18,
+    "suspeito": false
    },
+   "abaixo": true,
    "lat": -23.332,
    "lon": -51.184,
    "geo": "predio"
@@ -50048,7 +50060,7 @@
    "media": {
     "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 360,
+    "n": 359,
     "pct": -16,
     "suspeito": false
    },
@@ -50391,9 +50403,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11487,
+    "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 384,
+    "n": 383,
     "pct": -17,
     "suspeito": false
    },
@@ -50651,7 +50663,7 @@
    "media": {
     "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 313,
+    "n": 312,
     "pct": 4
    }
   },
@@ -50697,10 +50709,10 @@
    "media": {
     "ref_m2": 11486,
     "base": "bairro Palhano",
-    "n": 409,
+    "n": 408,
     "pct": 13
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -50758,9 +50770,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11488,
+    "ref_m2": 11487,
     "base": "bairro Palhano",
-    "n": 409,
+    "n": 408,
     "pct": 0
    },
    "lat": -23.328924,
@@ -50800,41 +50812,6 @@
    },
    "lat": -23.33389,
    "lon": -51.18123,
-   "geo": "predio"
-  },
-  {
-   "id": "o1550097811",
-   "tipo": null,
-   "predio": "Torre",
-   "endereco": null,
-   "bairro": "Gleba Fazenda Palhano",
-   "foto": "https://img.olx.com.br/images/33/331603940321180.jpg",
-   "area": 113,
-   "preco": 1400000,
-   "preco_anterior": null,
-   "quartos": 3,
-   "banheiros": 3,
-   "vagas": 2,
-   "titulo": "Apartamento com 3 dormitórios à venda, 112 m² por R$ 1.400.000,00 - Gleba Palhano - Londri",
-   "publicado": "2026-11-04T06:17:36Z",
-   "detectado": "2026-11-04T12:00:15Z",
-   "fontes": [
-    {
-     "portal": "olx",
-     "url": "https://pr.olx.com.br/regiao-de-londrina/imoveis/apartamento-no-edif-torre-com-3-quartos-112-m-venda-por-r-1-400-000-ou-aluguel-por-r-1550097811",
-     "preco": 1400000,
-     "area": 113,
-     "area_anunciada": null
-    }
-   ],
-   "media": {
-    "ref_m2": 11528,
-    "base": "bairro Palhano",
-    "n": 360,
-    "pct": 7
-   },
-   "lat": -23.330216,
-   "lon": -51.174732,
    "geo": "predio"
   },
   {
@@ -50882,7 +50859,7 @@
     "n": 242,
     "pct": -6
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -50929,9 +50906,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11549,
+    "ref_m2": 11544,
     "base": "bairro Palhano",
-    "n": 350,
+    "n": 349,
     "pct": -14
    }
   },
@@ -50963,7 +50940,7 @@
    "media": {
     "ref_m2": 11538,
     "base": "bairro Palhano",
-    "n": 360,
+    "n": 359,
     "pct": -49,
     "suspeito": false
    },
@@ -51166,14 +51143,14 @@
     }
    ],
    "media": {
-    "ref_m2": 11440,
+    "ref_m2": 11434,
     "base": "bairro Palhano",
-    "n": 460,
+    "n": 459,
     "pct": -50,
     "suspeito": true
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -51409,10 +51386,10 @@
     }
    ],
    "media": {
-    "ref_m2": 10994,
+    "ref_m2": 11043,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": 7
+    "n": 27,
+    "pct": 6
    }
   },
   {
@@ -51476,9 +51453,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": -34,
     "suspeito": false
    },
@@ -51518,7 +51495,7 @@
     "n": 6,
     "pct": -10
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -51548,12 +51525,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11434,
+    "ref_m2": 11431,
     "base": "bairro Palhano",
-    "n": 421,
+    "n": 420,
     "pct": -3
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -51583,10 +51560,10 @@
     }
    ],
    "media": {
-    "ref_m2": 11082,
+    "ref_m2": 11121,
     "base": "bairro Bela Suica",
-    "n": 28,
-    "pct": -15,
+    "n": 27,
+    "pct": -16,
     "suspeito": false
    },
    "abaixo": true,
@@ -51634,12 +51611,12 @@
     }
    ],
    "media": {
-    "ref_m2": 11491,
+    "ref_m2": 11489,
     "base": "bairro Palhano",
-    "n": 377,
+    "n": 376,
     "pct": -4
    },
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -51858,14 +51835,14 @@
     }
    ],
    "media": {
-    "ref_m2": 11604,
+    "ref_m2": 11600,
     "base": "bairro Palhano",
-    "n": 322,
+    "n": 321,
     "pct": -17,
     "suspeito": false
    },
    "abaixo": true,
-   "lat": -23.330813,
+   "lat": -23.330841,
    "lon": -51.180796,
    "geo": "bairro"
   },
@@ -52112,9 +52089,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11082,
+    "ref_m2": 11121,
     "base": "bairro Bela Suica",
-    "n": 28,
+    "n": 27,
     "pct": -6
    },
    "lat": -23.345206,
@@ -52199,9 +52176,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11429,
+    "ref_m2": 11419,
     "base": "bairro Palhano",
-    "n": 449,
+    "n": 448,
     "pct": 13
    }
   },
@@ -52462,9 +52439,9 @@
     }
    ],
    "media": {
-    "ref_m2": 11445,
+    "ref_m2": 11440,
     "base": "bairro Palhano",
-    "n": 443,
+    "n": 442,
     "pct": -19,
     "suspeito": false
    },

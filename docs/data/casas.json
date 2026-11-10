@@ -3992,7 +3992,6 @@
    "visivel": true,
    "detectado": "2026-10-08T19:00:17Z",
    "visto": "2026-10-11T16:27:01Z",
-   "preco_anterior": 3599430,
    "detalhe_pendente": true
   },
   "g2916095848": {
@@ -12969,7 +12968,7 @@
    "endereco": null,
    "bairro": "Alphaville I Imbuias",
    "area": 499,
-   "preco": 20000,
+   "preco": 5700000,
    "quartos": 4,
    "banheiros": 2,
    "vagas": 4,
@@ -12980,8 +12979,7 @@
    "origem": "santamerica",
    "visivel": false,
    "detectado": "2026-10-08T19:00:17Z",
-   "visto": "2026-11-10T12:00:15Z",
-   "preco_anterior": 5700000
+   "visto": "2026-11-10T12:00:15Z"
   },
   "sa44117": {
    "id": "sa44117",
@@ -16627,7 +16625,6 @@
    "visivel": false,
    "detectado": "2026-10-14T23:00:16Z",
    "visto": "2026-10-28T17:03:05Z",
-   "preco_anterior": null,
    "lat": -23.349123,
    "lon": -51.207308
   },

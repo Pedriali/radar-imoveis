@@ -234,8 +234,9 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
       <h1>RADAR IMÓVEIS</h1>
       <div class="sub" id="sub"></div>
       <div class="telemetry" id="tele">Carregando dados…</div>
+      <div class="telemetry st-bad" id="vz-msg" hidden></div>
     </div>
-    <button type="button" class="varrer" id="varrer" title="Pede uma varredura agora ao GitHub (leva uns 15–20 minutos)">VARRER AGORA</button>
+    <button type="button" class="varrer" id="varrer" title="Pede uma varredura agora ao GitHub (leva uns 20–30 minutos)">VARRER AGORA</button>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Buscas" id="tabs"></nav>
@@ -286,7 +287,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
     O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.<br>
     Terrenos: “abaixo da média” = R$/m² pelo menos 15% menor que a mediana dos terrenos do mesmo condomínio (ou do bairro, quando o condomínio tem menos de 4) vistos nos últimos 30 dias. Terreno maior costuma ter R$/m² menor.<br>
-    Apartamentos: mesma regra, comparando com outros apartamentos do mesmo prédio (pelo menos 3) ou, se não houver, do bairro, de área parecida (até 50% maior ou menor). Abaixo da média do bairro pode ser só prédio mais antigo ou mais simples.<br>
+    Apartamentos: mesma regra, comparando com outros apartamentos do mesmo prédio (pelo menos 3) ou, se não houver, do bairro, de área parecida (até 1,5× maior ou menor). Abaixo da média do bairro pode ser só prédio mais antigo ou mais simples.<br>
     Centro: só compara com o mesmo prédio (o bairro mistura prédios novos e antigos).<br>
     Nova Prochet / Bela Suíça: só os prédios da lista (Palazzo di Cesare, Palazzo Veronese, Lakeside, Wave, La Torre, Torre Verona, Terrazza di Rimini, Wonder, Mayfair, Wynn, ORO, Hera, Lina, Oscar, Zahra, Lotus, Gaia e Oase); compara só com o mesmo prédio.<br>
     Mapa: alvo cheio = endereço do anúncio ou do prédio; alvo vazado = local aproximado (rua ou bairro). Mapa © colaboradores do OpenStreetMap.
@@ -331,7 +332,7 @@ const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX', raulfulgencio:'RAUL 
 // Uma aba por perfil de busca (scraper/config.json → "perfis"); "dados" é o arquivo em docs/data/
 const ABAS = [
   {id:'palhano', nome:'GLEBA PALHANO', dados:'listings.json', item:'apartamento', predio:'Edifício', media:'apartamentos',
-   sub:'SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · APTO 100–200 M² · VENDA',
+   sub:'SETOR LONDRINA/PR · PALHANO · SANTA ROSA · GUANABARA · BELA SUÍÇA · LEONOR · APTO 100–200 M² · VENDA',
    busca:'Buscar prédio, bairro, rua…'},
   {id:'centro', nome:'CENTRO', dados:'centro.json', item:'apartamento', predio:'Edifício', media:'apartamentos',
    sub:'SETOR LONDRINA/PR · CENTRO · APARTAMENTOS A PARTIR DE R$ 300 MIL · VENDA',
@@ -354,7 +355,7 @@ function card(x, i){
   const ageTxt = d === null ? 'DATA N/D' : d === 0 ? 'HOJE' : d === 1 ? '1 DIA' : `${d} DIAS`;
   const name = x.predio ? `<div class="name">${esc(x.predio)}</div>` : `<div class="name unk">${ABA.predio} não identificado</div>`;
   const loc = [x.endereco, x.bairro].filter(Boolean).join(' · ');
-  const old = x.preco_anterior && x.preco_anterior !== x.preco ? `<small>${fmtBRL(x.preco_anterior)}</small>` : '';
+  const old = x.preco_anterior && x.preco && x.preco_anterior > x.preco ? `<small>${fmtBRL(x.preco_anterior)}</small>` : '';
   const m2 = x.preco && x.area ? `R$ ${Math.round(x.preco/x.area).toLocaleString('pt-BR')}/m²` : '';
   const v = n => n ?? '–';
   const terreno = x.tipo === 'terreno';
@@ -547,7 +548,8 @@ function nextRun(){
 
 function telemetry(){
   const r = DATA.runs[DATA.runs.length-1];
-  if (!r) { $('#tele').innerHTML = '<span class="st-bad"><i class="lamp bad"></i>SEM DADOS — aguardando a primeira varredura.</span>'; return; }
+  if (!r) { $('#tele').innerHTML = DATA.falhou ? '<span class="st-bad"><i class="lamp bad"></i>FALHA AO CARREGAR — recarregue a página.</span>'
+                                     : '<span class="st-bad"><i class="lamp bad"></i>SEM DADOS — aguardando a primeira varredura.</span>'; return; }
   // Portais só aparecem quando falham
   const st = Object.entries(r.portais).filter(([, v]) => v !== 'ok')
     .map(([k]) => `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
@@ -558,7 +560,7 @@ function telemetry(){
 // data/pagina/: só o que a página usa (o estado completo do scraper fica em data/)
 const carregar = a => CACHE[a.id] ??= fetch('data/pagina/' + a.dados + '?t=' + Date.now())
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .catch(() => ({runs: [], imoveis: []}));
+  .catch(() => { delete CACHE[a.id]; return {runs: [], imoveis: [], falhou: true}; });
 
 function abas(){
   $('#tabs').innerHTML = ABAS.map(a => `<button role="tab" data-aba="${a.id}" aria-selected="${a === ABA}">${a.nome}<span class="n" id="tn-${a.id}"></span></button>`).join('');
@@ -590,27 +592,49 @@ const tk = { get(){ try { return localStorage.getItem('radar-gh') || ''; } catch
              set(v){ try { v ? localStorage.setItem('radar-gh', v) : localStorage.removeItem('radar-gh'); } catch {} } };
 let VZ_DESDE = null, VZ_T = null;
 function vzBotao(txt){ const b = $('#varrer'); b.disabled = !!txt; b.textContent = txt || 'VARRER AGORA'; }
+function vzAgendar(ms){ clearTimeout(VZ_T); VZ_T = setTimeout(vzStatus, ms); }
 async function vzStatus(){
-  // última execução da Action (API pública, sem chave): rodando → botão ocupado; acabou → recarrega os dados
+  // execuções da Action (API pública; com a chave salva o limite sobe de 60 para 5000 consultas/hora).
+  // Só conta a que está varrendo de fato: as reservas de hora em hora que pulam acabam em segundos.
+  let runs;
   try {
-    const r = await fetch(GH + '/runs?per_page=1&t=' + Date.now()).then(r => r.json());
-    const run = r.workflow_runs?.[0];
-    if (run && run.status !== 'completed' && Date.now() - new Date(run.created_at) < 2 * 3600e3) {
-      vzBotao('VARRENDO… ' + Math.max(0, Math.round((Date.now() - new Date(run.created_at)) / 60e3)) + ' MIN');
-      VZ_DESDE = VZ_DESDE || run.created_at;
-    } else if (VZ_DESDE) {
-      VZ_DESDE = null; vzBotao('PUBLICANDO…');
-      setTimeout(() => location.reload(), 120e3);  // GitHub Pages leva ~1–2 min para publicar
-      return;
-    } else vzBotao('');
-  } catch { if (!VZ_DESDE) vzBotao(''); }
-  clearTimeout(VZ_T);
-  if (VZ_DESDE) VZ_T = setTimeout(vzStatus, 45e3);
+    const h = tk.get() ? {Authorization: 'Bearer ' + tk.get()} : {};
+    const r = await fetch(GH + '/runs?per_page=5&t=' + Date.now(), {headers: h});
+    if (!r.ok) throw new Error(r.status);
+    runs = (await r.json()).workflow_runs || [];
+  } catch { if (VZ_DESDE) vzAgendar(120e3); return; }  // limite/erro: mantém o estado e tenta depois
+  const desde = VZ_DESDE ? new Date(VZ_DESDE) - 60e3 : 0;
+  const ativo = runs.find(x => x.status !== 'completed' && Date.now() - new Date(x.created_at) < 2 * 3600e3
+                              && new Date(x.created_at) >= desde);
+  if (ativo) {
+    VZ_DESDE = VZ_DESDE || ativo.created_at;
+    vzBotao('VARRENDO… ' + Math.max(0, Math.round((Date.now() - new Date(ativo.created_at)) / 60e3)) + ' MIN');
+    return vzAgendar(60e3);
+  }
+  if (!VZ_DESDE) return vzBotao('');
+  const fim = runs.find(x => x.status === 'completed' && new Date(x.created_at) >= desde
+                             && new Date(x.updated_at) - new Date(x.created_at) > 120e3);
+  if (!fim) {  // pedido ainda não apareceu na lista
+    if (Date.now() - new Date(VZ_DESDE) < 10 * 60e3) return vzAgendar(30e3);
+    VZ_DESDE = null; return vzBotao('');
+  }
+  VZ_DESDE = null;
+  if (fim.conclusion !== 'success') { vzBotao(''); return alertaVz('A varredura terminou com erro no GitHub (' + fim.conclusion + ').'); }
+  vzBotao('PUBLICANDO…');
+  vzPublicado();
+}
+async function vzPublicado(tentativas = 0){
+  // o GitHub Pages leva 1–3 min para publicar: espera o resumo mudar e recarrega
+  try {
+    const r = await fetch('data/pagina/' + ABA.dados + '?t=' + Date.now()).then(r => r.json());
+    if (r.atualizado && r.atualizado !== DATA?.atualizado) return location.reload();
+  } catch {}
+  if (tentativas < 20) setTimeout(() => vzPublicado(tentativas + 1), 20e3); else location.reload();
 }
 async function vzDisparar(chave){
   const r = await fetch(GH + '/dispatches', {method: 'POST', headers: {Accept: 'application/vnd.github+json',
     Authorization: 'Bearer ' + chave, 'X-GitHub-Api-Version': '2022-11-28'}, body: JSON.stringify({ref: 'main'})});
-  if (r.status === 204) { VZ_DESDE = new Date().toISOString(); vzBotao('VARRENDO… 0 MIN'); clearTimeout(VZ_T); VZ_T = setTimeout(vzStatus, 20e3); return ''; }
+  if (r.status === 204) { VZ_DESDE = new Date().toISOString(); vzBotao('VARRENDO… 0 MIN'); vzAgendar(30e3); return ''; }
   if (r.status === 401 || r.status === 403 || r.status === 404) return 'Chave recusada pelo GitHub (confira o repositório e a permissão Actions: Read and write).';
   return 'O GitHub não aceitou o pedido agora (' + r.status + '). Tente de novo em instantes.';
 }
@@ -621,7 +645,7 @@ $('#varrer').addEventListener('click', async () => {
   const err = await vzDisparar(chave).catch(() => 'Sem conexão com o GitHub.');
   if (err) { vzBotao(''); if (err.startsWith('Chave')) { tk.set(''); $('#vz-err').textContent = err; $('#vz').showModal(); } else alertaVz(err); }
 });
-function alertaVz(m){ $('#tele').insertAdjacentHTML('beforeend', `<span class="st-bad">${esc(m)}</span>`); }
+function alertaVz(m){ const e = $('#vz-msg'); e.textContent = m; e.hidden = false; setTimeout(() => { e.hidden = true; }, 15e3); }
 $('#vz-ok').addEventListener('click', async () => {
   const chave = $('#vz-tk').value.trim();
   if (!chave) { $('#vz-err').textContent = 'Cole a chave do GitHub.'; return; }

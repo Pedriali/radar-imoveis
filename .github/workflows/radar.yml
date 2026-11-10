@@ -3,7 +3,11 @@ name: varredura
 # O agendamento do GitHub atrasa horas, então quem dispara no horário é o Mac
 # (scraper/agendador: `gh workflow run radar.yml -f agendada=true`). O cron daqui
 # é reserva: roda de hora em hora e só varre se o horário mais recente ainda
-# não teve varredura. Disparo manual pelo botão sempre varre.
+# não teve varredura. Disparo manual (Run workflow ou o botão VARRER AGORA da página) sempre varre.
+#
+# A conferência "horário já varrido?" roda num job separado, fora do grupo de concorrência:
+# assim as reservas que não vão varrer não entram na fila (no GitHub, um run novo na fila
+# cancela o que estava esperando — era assim que um pedido do botão podia sumir).
 on:
   schedule:
     - cron: '17 * * * *'
@@ -15,40 +19,50 @@ on:
         default: false
 permissions:
   contents: write
-concurrency: varredura
 jobs:
+  trava:
+    runs-on: ubuntu-latest
+    outputs:
+      pular: ${{ steps.trava.outputs.pular }}
+    steps:
+      - uses: actions/checkout@v5
+        with: { ref: main }
+      - id: trava
+        if: github.event_name == 'schedule' || inputs.agendada
+        run: python3 .github/trava.py docs/data/listings.json >> "$GITHUB_OUTPUT"
   varredura:
+    needs: trava
+    if: needs.trava.outputs.pular != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    concurrency: varredura
     steps:
-      - uses: actions/checkout@v4
-      - name: Horário já varrido?
+      # ref: main = o estado mais novo quando o job começa (não o de quando foi disparado):
+      # quem esperou outra varredura terminar parte dos dados dela e não dá conflito no push
+      - uses: actions/checkout@v5
+        with: { ref: main }
+      - name: Horário já varrido? (outra varredura pode ter rodado enquanto este esperava)
         id: trava
         if: github.event_name == 'schedule' || inputs.agendada
-        run: |
-          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
-          import json, datetime as dt
-          agora = dt.datetime.now(dt.timezone.utc)
-          slots = [agora.replace(hour=h, minute=0, second=0, microsecond=0) - dt.timedelta(days=d)
-                   for d in (0, 1) for h in (12, 17, 23)]
-          slot = max(s for s in slots if s <= agora + dt.timedelta(minutes=10))
-          runs = json.load(open('docs/data/listings.json')).get('runs', [])
-          ultima = dt.datetime.fromisoformat(runs[-1]['em'].replace('Z', '+00:00')) if runs else None
-          feita = ultima is not None and ultima >= slot - dt.timedelta(minutes=15)
-          print(f"pular={'true' if feita else 'false'}")
-          EOF
+        run: python3 .github/trava.py docs/data/listings.json >> "$GITHUB_OUTPUT"
       - if: steps.trava.outputs.pular != 'true'
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with: { python-version: '3.12' }
       - if: steps.trava.outputs.pular != 'true'
-        run: pip install curl_cffi
+        run: pip install curl_cffi==0.13.0
       - if: steps.trava.outputs.pular != 'true'
         run: python scraper/radar.py
+      # Salva mesmo se algum perfil falhou (os outros perfis e o geocache não se perdem)
       - name: Salvar dados
-        if: steps.trava.outputs.pular != 'true'
+        if: ${{ !cancelled() && steps.trava.outputs.pular != 'true' }}
         run: |
           git config user.name "radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data
-          git diff --cached --quiet || git commit -m "Varredura $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase && git push
+          git diff --cached --quiet && exit 0
+          git commit -m "Varredura $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs && git push && exit 0
+            git rebase --abort 2>/dev/null; sleep 10
+          done
+          exit 1

@@ -75,7 +75,7 @@ def usar_perfil(nome):
             ALVOS.append((c.title(), re.compile(r"\b" + re.escape(norm(c)) + r"\b"), False, None))
 
 
-# Perfis "por_condominio" (casas e terrenos): só entram imóveis dos condomínios de "condominios_alvo"
+# Perfis "por_condominio" (casas, terrenos e Nova Prochet): só entram imóveis da lista do perfil ("alvos", padrão "condominios_alvo")
 # (config.json), reconhecidos pelas palavras-chave de cada um no nome do condomínio, título ou bairro
 # do anúncio (Zap, OLX e Chaves na Mão também na descrição, ver alvo_detalhe). A primeira palavra-chave
 # é o termo da busca por condomínio na OLX.
@@ -166,7 +166,8 @@ def local_ok(bairro, *textos, pendente=False):
         return False
     if alvo(*textos, bairro) or (pendente and bairro_ok(bairro)):
         return True
-    fora(bairro)
+    if not apto():
+        fora(bairro)
     return False
 
 
@@ -267,20 +268,36 @@ def corrige_area(rec, *textos):
         rec["area"] = u
 
 
+FETCH_404 = set()  # URLs que responderam 404 nesta varredura (anúncio retirado)
+
+
 def fetch(url, tries=3):
     for i in range(tries):
         try:
             r = S.get(url, timeout=45)
             if r.status_code == 200:
                 return r.text
-            if r.status_code == 404:
-                log(f"  HTTP 404 {url}")
+            if r.status_code in (404, 410):
+                log(f"  HTTP {r.status_code} {url}")
+                FETCH_404.add(url)
                 return None
             log(f"  HTTP {r.status_code} {url}")
         except Exception as e:  # noqa: BLE001
             log(f"  erro {e} {url}")
-        time.sleep(3 * (i + 1))
+        if i < tries - 1:
+            time.sleep(3 * (i + 1))
     return None
+
+
+def retirado(rec, url):
+    """Página do anúncio respondeu 404: saiu do portal. Não vira card nem é aberto de novo."""
+    if url not in FETCH_404:
+        return False
+    rec.pop("detalhe_pendente", None)
+    rec.setdefault("condominio", "")
+    rec["visivel"] = False
+    rec["retirado"] = NOW_ISO
+    return True
 
 
 def rsc(page):
@@ -409,7 +426,7 @@ def grupo_detail(rec):
     url = rec["links"].get("zap") or rec["links"].get("vivareal")
     page = fetch(url, tries=1) if url else None
     if not page:
-        return False
+        return retirado(rec, url)
     rec.pop("detalhe_pendente", None)
     m = re.search(r'\\?"createdAt\\?":\\?"(\d{4}-\d\d-\d\dT[\d:.]+Z)', page)
     if m:
@@ -495,9 +512,9 @@ def scan_grupo(known, max_pages, found):
                 if page is None:
                     break
                 items = parse_grupo(page)
-                ok += 1
                 if not items:
                     break
+                ok += 1
                 fresh = 0
                 for o in items:
                     if o.get("business") != "SALE" or o.get("unitType") not in tipos:
@@ -542,7 +559,7 @@ def olx_buscas():
         return [(f"{CFG['olx_search']}?ss={CFG['area_min']}&se={CFG['area_max']}&", None)]
     # Uma busca por condomínio-alvo (a primeira palavra-chave) em todos os imóveis à venda; o tipo
     # (casa/terreno) sai da categoria de cada anúncio (olx_tipo)
-    cat = "terrenos/lotes" if terrenos() else "venda"
+    cat = "terrenos/lotes" if terrenos() else "venda/apartamentos" if apto() else "venda"
     return [(f"https://www.olx.com.br/imoveis/{cat}/{OLX_LONDRINA}?sst=s&q={urllib.parse.quote(a.get('busca') or a['chaves'][0])}&",
              "auto") for a in CONFIG[CFG.get("alvos", "condominios_alvo")]] + [
         # Nova Prochet: também a busca pelo bairro (o prédio sai da descrição, olx_detail)
@@ -646,6 +663,7 @@ def _scan_olx(url0, tipo0, known, max_pages, found):
 def olx_detail(rec):
     page = fetch(rec["links"]["olx"])
     if not page:
+        retirado(rec, rec["links"]["olx"])
         return
     t = htmllib.unescape(page)
     m = re.search(r'"body":"(.{0,4000}?)","', t)
@@ -767,9 +785,10 @@ def scan_raulfulgencio(found):
             **coords(o.get("latitude"), o.get("longitude"), aproximada=not o.get("flgShowMapSite")),
         }
     # Fotos (campo pesado) só para os que passaram no filtro.
-    if recs:
+    novos = [p for p in recs if f"rf{p}" not in CONHECIDOS]
+    if novos:
         time.sleep(1)
-        ph = _rf_search({"idtsPropertys": list(recs), "start": 0, "numRows": len(recs) + 10,
+        ph = _rf_search({"idtsPropertys": novos, "start": 0, "numRows": len(recs) + 10,
                          "fieldList": ["idtProperty", "jsonPhotos", "jsonPhotosCondominium"]})
         for o in (ph or {}).get("docs") or []:
             r = recs.get(o.get("idtProperty"))
@@ -1000,7 +1019,7 @@ def scan_santamerica(found):
                     m = re.search(r"(\d{2,4}(?:[.,]\d+)?)\s*m(?:²|2)\s*(?:de\s+[áa]rea\s+)?(?:privativ|constru|[úu]til)",
                                   titulo + " " + c["desc"], re.I)
                     a = m.group(1) if m else None
-            area = round(float(a.replace(".", "").replace(",", ".") if "," in a else a)) if a else None
+            area = _num_area(a) if a else None
             if not area_ok(area):
                 continue
             if not apto() and not local_ok(c["bairro"], c["titulo"], titulo):
@@ -1177,7 +1196,6 @@ def scan_perez(found):
         publicado = None
         if criado and criado[:10] >= PZ_MIGRACAO_ATE:
             publicado = criado[:19] + "Z"
-        fotos = o.get("photos") or []
         found[f"pz{o['code']}"] = {
             "id": f"pz{o['code']}",
             "tipo": tipo,
@@ -1189,7 +1207,7 @@ def scan_perez(found):
             "preco": int(o["price"]) if o.get("price") else None,
             "quartos": o.get("bedrooms") or None,
             "banheiros": o.get("bathrooms") or None,
-            "vagas": o.get("parkingSpaces") if o.get("parkingSpaces") is not None else None,
+            "vagas": o.get("parkingSpaces"),
             "titulo": o.get("title"),
             "publicado": publicado,
             "links": {"perez": _pz_link(o)},
@@ -1954,7 +1972,7 @@ def name_key(p):
     n = re.sub(r"\s+", " ", n).strip()
     while True:
         m = NAME_PREFIX.sub("", n)
-        if m == n:
+        if m == n or not m:  # "La Torre": tirando "la" e "torre" não sobra nada, fica "latorre"
             return n.replace(" ", "")
         n = m
 
@@ -1995,6 +2013,15 @@ def conflito(a, b):
         # o que separa é o condomínio (ver chave_cond), a área e o preço.
         ca, cb = chave_cond([a]), chave_cond([b])
         return bool(ca and cb and ca != cb) or abs(a["area"] - b["area"]) > 3 or preco_conflita(a, b)
+    if apto() and CFG.get("por_condominio"):  # prédios-alvo (Nova Prochet): o prédio da lista decide
+        ca, cb = chave_cond([a]), chave_cond([b])
+        if ca and cb:
+            if ca != cb:
+                return True
+            for f in ("quartos", "vagas"):
+                if a.get(f) and b.get(f) and a[f] != b[f]:
+                    return True
+            return abs(a["area"] - b["area"]) > 3 or preco_conflita(a, b)
     if bairro_key(a.get("bairro")) != bairro_key(b.get("bairro")):
         return True
     for f in ("quartos", "vagas"):
@@ -2020,8 +2047,10 @@ def preco_conflita(a, b):
 
 
 def mesmo_predio(a, b):
-    if terrenos():
-        return bool(chave_cond([a])) and chave_cond([a]) == chave_cond([b])
+    if terrenos() or (apto() and CFG.get("por_condominio")):
+        ca = chave_cond([a])
+        if ca or terrenos():
+            return bool(ca) and ca == chave_cond([b])
     if a.get("predio") and b.get("predio"):
         return True  # sem conflito, então são o mesmo nome
     ra, rb = street(a.get("endereco"))[0], street(b.get("endereco"))[0]
@@ -2083,6 +2112,11 @@ def group_imoveis(L):
             if juntou:
                 break
 
+    # "excluir_predios": prédios que não entram nesta aba nem na média dela (Oase fica só na aba Nova Prochet)
+    if CFG.get("excluir_predios"):
+        rx = re.compile(r"\b(?:" + "|".join(re.escape(norm(n)) for n in CFG["excluir_predios"]) + r")\b")
+        grupos = [g for g in grupos if not any(rx.search(norm(f"{x.get('predio') or ''} {x.get('titulo') or ''}"))
+                                               for x in g)]
     medias = medias_m2(grupos) if CFG.get("media") else {}
     out = []
     for g in grupos:
@@ -2093,10 +2127,6 @@ def group_imoveis(L):
         cond = chave_cond(g) if CFG.get("por_condominio") else None
         if CFG.get("por_condominio") and (not alvo(cond) or not contexto_ok(g) or any(
                 excluido(x.get("bairro"), x.get("predio"), x.get("titulo")) for x in g)):
-            continue
-        # "excluir_predios": prédios que não entram nesta aba (Oase fica só na aba Nova Prochet)
-        if CFG.get("excluir_predios") and any(re.search(rf"\b{re.escape(norm(n))}\b", norm(" ".join(
-                str(x.get(k) or "") for k in ("predio", "titulo")))) for x in g for n in CFG["excluir_predios"]):
             continue
         # Principal: o anúncio visível mais completo
         main_ = max(vis, key=lambda x: sum(bool(x.get(k)) for k in ("predio", "endereco", "foto", "quartos", "vagas", "publicado")))
@@ -2265,7 +2295,7 @@ class Geo:
         self.consultas = 0
 
     def salvar(self):
-        GEOCACHE.write_text(json.dumps(self.cache, ensure_ascii=False, indent=0, sort_keys=True))
+        gravar(GEOCACHE, json.dumps(self.cache, ensure_ascii=False, indent=0, sort_keys=True))
 
     def buscar(self, chave, params, aceita=lambda r: True):
         if chave in self.cache:
@@ -2382,6 +2412,12 @@ def localizar(imoveis):
 PAGINA_DIR = DATA_DIR / "pagina"
 
 
+def gravar(path, texto):
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(texto)
+    tmp.replace(path)
+
+
 def enxuto(v):
     if isinstance(v, dict):
         return {k: enxuto(x) for k, x in v.items() if x not in (None, "", [], {})}
@@ -2393,14 +2429,14 @@ def enxuto(v):
 def pagina(state):
     PAGINA_DIR.mkdir(exist_ok=True)
     p = {"atualizado": state["atualizado"], "runs": state["runs"][-1:], "imoveis": enxuto(state["imoveis"])}
-    (PAGINA_DIR / CFG["dados"]).write_text(json.dumps(p, ensure_ascii=False, separators=(",", ":")))
+    gravar(PAGINA_DIR / CFG["dados"], json.dumps(p, ensure_ascii=False, separators=(",", ":")))
     f = PAGINA_DIR / "resumo.json"
     try:
         resumo = json.loads(f.read_text())
     except (OSError, ValueError):
         resumo = {}
     resumo[CFG["dados"]] = len(state["imoveis"])
-    f.write_text(json.dumps(resumo, ensure_ascii=False, indent=0, sort_keys=True))
+    gravar(f, json.dumps(resumo, ensure_ascii=False, indent=0, sort_keys=True))
 
 
 # ---------- principal ----------
@@ -2470,9 +2506,16 @@ def main(perfil):
             for f in ("predio", "endereco", "bairro", "quartos", "banheiros", "vagas", "lat", "lon"):
                 if cur.get(f) is None and rec.get(f) is not None:
                     cur[f] = rec[f]
-            if rec.get("preco") and rec["preco"] != cur.get("preco"):
-                cur.setdefault("preco_anterior", cur.get("preco"))
-                cur["preco"] = rec["preco"]
+            novo, velho = rec.get("preco"), cur.get("preco")
+            if novo and novo != velho:
+                if velho and not 0.4 <= novo / velho <= 2.5:
+                    log(f"  preço ignorado {k}: {velho} -> {novo} (aluguel ou erro do anúncio?)")
+                    continue
+                if velho and not cur.get("preco_anterior"):
+                    cur["preco_anterior"] = velho
+                cur["preco"] = novo
+                if cur.get("preco_anterior") == novo:
+                    del cur["preco_anterior"]
 
     # Grupo Zap: IDs crescem com o tempo, então os maiores são os mais novos. Ao encontrar
     # vários anúncios seguidos mais velhos que o limite, os restantes não precisam ser abertos.
@@ -2503,7 +2546,7 @@ def main(perfil):
         corrige_area(rec)
         if not area_ok(rec.get("area")):  # a área útil do texto ficou fora da faixa do perfil
             recente = False
-        rec["visivel"] = recente
+        rec["visivel"] = recente and not rec.get("retirado")
         if not recente:
             rec.pop("foto", None)
             rec.pop("titulo", None)
@@ -2512,7 +2555,8 @@ def main(perfil):
         L[k] = rec
 
     # Páginas de anúncio que ficaram para depois (bloqueio do Zap), só dos que estão na página
-    pend = [x for x in L.values() if x.get("detalhe_pendente") and x.get("visivel") and x["id"] not in new_ids]
+    pend = sorted((x for x in L.values() if x.get("detalhe_pendente") and x.get("visivel") and x["id"] not in new_ids),
+                  key=lambda x: x.get("visto") or "", reverse=True)
     for rec in pend[:DETALHES_POR_VARREDURA]:
         if not det.abrir(rec) and det.falhas >= 3:
             break
@@ -2547,7 +2591,7 @@ def main(perfil):
     state["runs"] = state["runs"][-60:]
     state["atualizado"] = NOW_ISO
     DATA.parent.mkdir(parents=True, exist_ok=True)
-    DATA.write_text(json.dumps(state, ensure_ascii=False, indent=1))
+    gravar(DATA, json.dumps(state, ensure_ascii=False, indent=1))
     pagina(state)
     log(f"Status: {status}. Imóveis novos: {novos}. Imóveis na página: {len(state['imoveis'])}. Anúncios armazenados: {len(L)}")
     return not all(v == "falhou" for v in status.values())
@@ -2555,6 +2599,15 @@ def main(perfil):
 
 if __name__ == "__main__":
     perfis = sys.argv[1:] or list(CONFIG["perfis"])
-    falhos = [p for p in perfis if not main(p)]
+    falhos = []
+    for p in perfis:
+        try:
+            if not main(p):
+                falhos.append(p)
+        except Exception as e:  # noqa: BLE001 — os outros perfis seguem; os dados deles são salvos
+            log(f"Perfil {p}: erro {e!r}")
+            import traceback
+            traceback.print_exc()
+            falhos.append(p)
     if falhos:
         sys.exit(f"Todos os portais falharam: {', '.join(falhos)}")

@@ -13521,8 +13521,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-21T00:48:04Z",
-   "visto": "2026-11-10T12:00:15Z",
-   "preco_anterior": 450000
+   "visto": "2026-11-10T12:00:15Z"
   },
   "inAP5784-INIC": {
    "id": "inAP5784-INIC",
@@ -30338,8 +30337,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-30T23:00:30Z",
-   "visto": "2026-11-08T12:14:45Z",
-   "preco_anterior": 440000
+   "visto": "2026-11-08T12:14:45Z"
   },
   "cm48319393": {
    "id": "cm48319393",
@@ -69443,7 +69441,7 @@
    "foto": "https://www.chavesnamao.com.br/imn/0340X0250/N/80/imoveis/193234/48319428/pr-londrina-centro-rua-santa-catarina-apartamento-a-venda-3-quartos-6ae4e263-1.jpg",
    "area": 110,
    "preco": 440000,
-   "preco_anterior": 440000,
+   "preco_anterior": null,
    "quartos": 3,
    "banheiros": 3,
    "vagas": 1,
