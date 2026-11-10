@@ -446,6 +446,10 @@
 -23.312705,
 -51.1671
 ],
+"local:centro|benjamin constant|1974": [
+-23.30865,
+-51.16975
+],
 "local:centro|boulevard": [
 -23.311716,
 -51.165116
@@ -665,6 +669,10 @@
 "local:centro|giacomini": [
 -23.323489,
 -51.153869
+],
+"local:centro|giardini": [
+-23.314662,
+-51.16855
 ],
 "local:centro|goias|1223": [
 -23.315525,
@@ -1486,6 +1494,10 @@
 -23.316026,
 -51.168181
 ],
+"local:centro|terralisjardimresidence": [
+-23.311011,
+-51.168519
+],
 "local:centro|terralisjardin": [
 -23.31082,
 -51.168794
@@ -1813,6 +1825,10 @@
 "local:palhano|chelsea": [
 -23.333073,
 -51.185547
+],
+"local:palhano|chelseatower": [
+-23.332563,
+-51.180687
 ],
 "local:palhano|chelseatowerconta": [
 -23.333356,
@@ -3033,6 +3049,11 @@
 "rua:rua carlos da costa branco|164": [
 -23.342108,
 -51.154122,
+"highway"
+],
+"rua:rua chile|185": [
+-23.323119,
+-51.151332,
 "highway"
 ],
 "rua:rua claudio damiano stasiak|70": [
