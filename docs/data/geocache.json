@@ -238,6 +238,10 @@
 -23.34515,
 -51.1635
 ],
+"local:bela suica|belasuica": [
+-23.34249,
+-51.164232
+],
 "local:bela suica|doutor adhemar pereira de barros|1200": [
 -23.341287,
 -51.16468
@@ -734,6 +738,10 @@
 -23.3171,
 -51.1588
 ],
+"local:centro|imperatriz": [
+-23.313689,
+-51.164159
+],
 "local:centro|inedito": [
 -23.306347,
 -51.164914
@@ -1223,8 +1231,8 @@
 -51.153954
 ],
 "local:centro|rimini": [
--23.315103,
--51.157066
+-23.313927,
+-51.153893
 ],
 "local:centro|rio de janeiro|211": [
 -23.31067,
@@ -2039,8 +2047,8 @@
 -51.175819
 ],
 "local:palhano|sunflowers": [
--23.331944,
--51.174878
+-23.332179,
+-51.174766
 ],
 "local:palhano|sunflowersresidence": [
 -23.332179,
@@ -2433,6 +2441,7 @@
 -51.158669,
 "building"
 ],
+"predio:aura plaenge residencial dos lagos": null,
 "predio:barao do rio branco": null,
 "predio:bela cintra centro": null,
 "predio:bela cintra conforto": null,
@@ -2479,6 +2488,7 @@
 -51.161331,
 "building"
 ],
+"predio:cobertura central": null,
 "predio:coimbra": [
 -23.316221,
 -51.163734,
@@ -2725,6 +2735,11 @@
 "predio:portaria": null,
 "predio:porto velho": null,
 "predio:potty lazarotto.este": null,
+"predio:poty": [
+-23.335631,
+-51.176061,
+"building"
+],
 "predio:premiatto": null,
 "predio:premiatto residence": null,
 "predio:presiden": null,
@@ -2747,6 +2762,7 @@
 "predio:royal euro": null,
 "predio:royal forest": null,
 "predio:royal forest londrina": null,
+"predio:royal forest residence e resort": null,
 "predio:royal forest residencia": null,
 "predio:royal garden edificio": null,
 "predio:royal golf": null,
@@ -2788,6 +2804,7 @@
 "building"
 ],
 "predio:santos se": null,
+"predio:scala de mi": null,
 "predio:serra dourada": null,
 "predio:slaviero essential flat hotel": null,
 "predio:smartcity": null,
@@ -2883,6 +2900,7 @@
 -51.183944,
 "building"
 ],
+"predio:vert residenc": null,
 "predio:vila capri": null,
 "predio:vila noah": null,
 "predio:vilhena": null,
