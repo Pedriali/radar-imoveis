@@ -1,69 +1,6 @@
 {
  "runs": [
   {
-   "em": "2026-10-23T23:02:58Z",
-   "novos": 1,
-   "portais": {
-    "zap": "ok",
-    "vivareal": "ok",
-    "olx": "ok",
-    "raulfulgencio": "ok",
-    "gleba": "ok",
-    "santamerica": "ok",
-    "perez": "ok",
-    "catuai": "ok",
-    "inglaterra": "ok",
-    "chavesnamao": "ok",
-    "aurora": "ok",
-    "casttelo": "ok",
-    "monaco": "ok",
-    "cube": "ok"
-   },
-   "inicial": false,
-   "fora_da_zona": {
-    "Centro": 41,
-    "Esperança": 24,
-    "Maanaim": 23,
-    "Olímpico": 17,
-    "Condomínio Villa Noah": 17,
-    "Colúmbia": 15,
-    "Gleba Esperança": 14,
-    "Califórnia": 13,
-    "Gleba Palhano": 11,
-    "Colinas": 11,
-    "Jardim Morumbi": 10,
-    "Condomínio Royal Golf Residence": 10,
-    "Tucano": 10,
-    "Jardim Agari": 10,
-    "Jardim Tókio": 10,
-    "Bandeirantes": 9,
-    "Jardim Nova Londrina": 9,
-    "Cidade Industrial 1": 9,
-    "Jardim Olímpico": 8,
-    "Parque Leblon": 8,
-    "Portal de Versalhes 1": 8,
-    "Jardim Tropical": 8,
-    "Indústrias Leves": 7,
-    "Leonor": 7,
-    "Guanabara": 7,
-    "Columbia": 7,
-    "Jardim Higienópolis": 6,
-    "Terras de Santana II": 6,
-    "Residencial José B Almeida": 6,
-    "Conjunto Vivi Xavier": 6,
-    "Distrito Maravilha": 6,
-    "Jardim Neman Sahyun": 6,
-    "Helena": 6,
-    "Jardim Imagawa": 5,
-    "Gleba Fazenda Palhano": 5,
-    "Rodocentro": 5,
-    "Vila Matarazzo": 5,
-    "Nikko": 5,
-    "Vila Brasil": 5,
-    "Conjunto Cafezal 1": 5
-   }
-  },
-  {
    "em": "2026-10-24T12:00:32Z",
    "novos": 0,
    "portais": {
@@ -3779,6 +3716,69 @@
     "Vitória": 5,
     "Vila Matarazzo": 5
    }
+  },
+  {
+   "em": "2026-11-12T23:11:21Z",
+   "novos": 1,
+   "portais": {
+    "zap": "falhou",
+    "vivareal": "ok",
+    "olx": "ok",
+    "raulfulgencio": "ok",
+    "gleba": "ok",
+    "santamerica": "ok",
+    "perez": "ok",
+    "catuai": "ok",
+    "inglaterra": "ok",
+    "chavesnamao": "ok",
+    "aurora": "ok",
+    "casttelo": "ok",
+    "monaco": "ok",
+    "cube": "ok"
+   },
+   "inicial": false,
+   "fora_da_zona": {
+    "Centro": 42,
+    "Esperança": 24,
+    "Olímpico": 23,
+    "Condomínio Royal Golf Residence": 19,
+    "Condomínio Villa Noah": 17,
+    "Maanaim": 17,
+    "Colúmbia": 15,
+    "Jardim Olímpico": 15,
+    "Gleba Esperança": 14,
+    "Califórnia": 12,
+    "Jardim Morumbi": 11,
+    "Gleba Palhano": 11,
+    "Colinas": 11,
+    "Tucano": 10,
+    "Jardim Tókio": 10,
+    "Bandeirantes": 9,
+    "Jardim Nova Londrina": 9,
+    "Cidade Industrial 1": 9,
+    "Jardim Agari": 8,
+    "Portal de Versalhes 1": 8,
+    "Parque Leblon": 7,
+    "Indústrias Leves": 7,
+    "Leonor": 7,
+    "Guanabara": 7,
+    "Columbia": 7,
+    "Ideal": 6,
+    "Terras de Santana II": 6,
+    "Residencial José B Almeida": 6,
+    "Conjunto Vivi Xavier": 6,
+    "Jardim Tropical": 6,
+    "Distrito Maravilha": 6,
+    "Jardim Neman Sahyun": 6,
+    "Helena": 6,
+    "Conjunto Habitacional Alexandre Urbanas": 5,
+    "Jardim Higienópolis": 5,
+    "Jardim Imagawa": 5,
+    "Vila Matarazzo": 5,
+    "Nikko": 5,
+    "Vila Brasil": 5,
+    "Conjunto Cafezal 1": 5
+   }
   }
  ],
  "listings": {
@@ -3803,7 +3803,7 @@
    "publicado": "2026-10-10T02:12:21Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347029,
    "lon": -51.212786
   },
@@ -3828,7 +3828,7 @@
    "publicado": "2026-10-09T04:54:39Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2916600334": {
    "id": "g2916600334",
@@ -3851,7 +3851,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -3877,7 +3877,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -3903,7 +3903,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -3929,7 +3929,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -3955,7 +3955,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -3981,7 +3981,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4007,7 +4007,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4033,7 +4033,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4059,7 +4059,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4085,7 +4085,7 @@
    "publicado": "2026-10-09T00:19:08Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.366236,
    "lon": -51.204158
   },
@@ -4110,7 +4110,7 @@
    "publicado": "2026-10-09T00:19:08Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.354846,
    "lon": -51.155272
   },
@@ -4135,7 +4135,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4161,7 +4161,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4187,7 +4187,7 @@
    "publicado": "2026-10-09T00:01:07Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.374955,
    "lon": -51.212389,
    "condominio": "Villa Noah"
@@ -4213,7 +4213,7 @@
    "publicado": "2026-10-06T13:12:11Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "condominio": "Royal Forest"
   },
   "g2916084338": {
@@ -4237,7 +4237,7 @@
    "publicado": "2026-10-06T07:39:18Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2915630253": {
    "id": "g2915630253",
@@ -4260,7 +4260,7 @@
    "publicado": "2026-10-03T07:04:33Z",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347029,
    "lon": -51.212786
   },
@@ -29164,7 +29164,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.360326,
    "lon": -51.196517,
    "preco_anterior": 4545000
@@ -29237,7 +29237,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29261,7 +29261,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.34666,
    "lon": -51.21162
   },
@@ -29285,7 +29285,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.34855,
    "lon": -51.18652
   },
@@ -29333,7 +29333,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -29357,7 +29357,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf22851": {
    "id": "rf22851",
@@ -29379,7 +29379,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.35544,
    "lon": -51.18819
   },
@@ -29451,7 +29451,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.359838,
    "lon": -51.209464
   },
@@ -29475,7 +29475,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.355351,
    "lon": -51.18812
   },
@@ -29523,7 +29523,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29594,7 +29594,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf19401": {
    "id": "rf19401",
@@ -29616,7 +29616,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29664,7 +29664,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29688,7 +29688,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29736,7 +29736,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.355351,
    "lon": -51.18812
   },
@@ -29760,7 +29760,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -29806,7 +29806,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.372553,
    "lon": -51.181225
   },
@@ -29830,7 +29830,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.34938,
    "lon": -51.20712
   },
@@ -29854,7 +29854,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29927,7 +29927,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -29951,7 +29951,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf20408": {
    "id": "rf20408",
@@ -30019,7 +30019,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf22932": {
    "id": "rf22932",
@@ -30089,7 +30089,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf22398": {
    "id": "rf22398",
@@ -30111,7 +30111,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -30135,7 +30135,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -30159,7 +30159,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -30183,7 +30183,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf20060": {
    "id": "rf20060",
@@ -30205,7 +30205,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.347075,
    "lon": -51.212776
   },
@@ -30229,7 +30229,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0409-GLI": {
    "id": "giTE0409-GLI",
@@ -30251,7 +30251,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0410-GLI": {
    "id": "giTE0410-GLI",
@@ -30273,7 +30273,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0373-GLI": {
    "id": "giTE0373-GLI",
@@ -30295,7 +30295,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 847000
   },
   "giTE0381-GLI": {
@@ -30318,7 +30318,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0411-GLI": {
    "id": "giTE0411-GLI",
@@ -30340,7 +30340,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0413-GLI": {
    "id": "giTE0413-GLI",
@@ -30362,7 +30362,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 700000
   },
   "giTE0403-GLI": {
@@ -30429,7 +30429,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "sa53719": {
    "id": "sa53719",
@@ -30495,7 +30495,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "pz11446": {
    "id": "pz11446",
@@ -30611,7 +30611,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.366665,
    "lon": -51.222599
   },
@@ -30635,7 +30635,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.369614,
    "lon": -51.228707
   },
@@ -30659,7 +30659,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.368583,
    "lon": -51.228311
   },
@@ -30683,7 +30683,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.368623,
    "lon": -51.228344
   },
@@ -30707,7 +30707,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.337892,
    "lon": -51.175431
   },
@@ -30731,7 +30731,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.361033,
    "lon": -51.182432
   },
@@ -30779,7 +30779,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.346922,
    "lon": -51.212724
   },
@@ -30803,7 +30803,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.346991,
    "lon": -51.212322
   },
@@ -30851,7 +30851,7 @@
    "origem": "perez",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.360072,
    "lon": -51.196444
   },
@@ -30875,7 +30875,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC287662": {
    "id": "ctTC287662",
@@ -30897,7 +30897,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC187286": {
    "id": "ctTC187286",
@@ -30919,7 +30919,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC287666": {
    "id": "ctTC287666",
@@ -30941,7 +30941,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC194660": {
    "id": "ctTC194660",
@@ -30963,7 +30963,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC310610": {
    "id": "ctTC310610",
@@ -30985,7 +30985,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ct694897": {
    "id": "ct694897",
@@ -31007,7 +31007,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ct708661": {
    "id": "ct708661",
@@ -31029,7 +31029,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC287657": {
    "id": "ctTC287657",
@@ -31051,7 +31051,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTE287660": {
    "id": "ctTE287660",
@@ -31073,7 +31073,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0973-INIC": {
    "id": "inTE0973-INIC",
@@ -31117,7 +31117,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1309-INIC": {
    "id": "inTE1309-INIC",
@@ -31205,7 +31205,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1640-INIC": {
    "id": "inTE1640-INIC",
@@ -31227,7 +31227,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1782-INIC": {
    "id": "inTE1782-INIC",
@@ -31249,7 +31249,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0892-INIC": {
    "id": "inTE0892-INIC",
@@ -31271,7 +31271,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1807-INIC": {
    "id": "inTE1807-INIC",
@@ -31293,7 +31293,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1417-INIC": {
    "id": "inTE1417-INIC",
@@ -31359,7 +31359,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1817-INIC": {
    "id": "inTE1817-INIC",
@@ -31381,7 +31381,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1829-INIC": {
    "id": "inTE1829-INIC",
@@ -31447,7 +31447,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0976-INIC": {
    "id": "inTE0976-INIC",
@@ -31491,7 +31491,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1788-INIC": {
    "id": "inTE1788-INIC",
@@ -31513,7 +31513,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1348-INIC": {
    "id": "inTE1348-INIC",
@@ -31535,7 +31535,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0967-INIC": {
    "id": "inTE0967-INIC",
@@ -31579,7 +31579,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1635-INIC": {
    "id": "inTE1635-INIC",
@@ -31601,7 +31601,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0977-INIC": {
    "id": "inTE0977-INIC",
@@ -31645,7 +31645,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1145-INIC": {
    "id": "inTE1145-INIC",
@@ -31667,7 +31667,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1799-INIC": {
    "id": "inTE1799-INIC",
@@ -31799,7 +31799,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1403-INIC": {
    "id": "inTE1403-INIC",
@@ -31821,7 +31821,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1045-INIC": {
    "id": "inTE1045-INIC",
@@ -31843,7 +31843,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1633-INIC": {
    "id": "inTE1633-INIC",
@@ -31865,7 +31865,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1581-INIC": {
    "id": "inTE1581-INIC",
@@ -31887,7 +31887,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1814-INIC": {
    "id": "inTE1814-INIC",
@@ -31909,7 +31909,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1315-INIC": {
    "id": "inTE1315-INIC",
@@ -31931,7 +31931,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1368-INIC": {
    "id": "inTE1368-INIC",
@@ -31975,7 +31975,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1091-INIC": {
    "id": "inTE1091-INIC",
@@ -31997,7 +31997,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1641-INIC": {
    "id": "inTE1641-INIC",
@@ -32019,7 +32019,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1748-INIC": {
    "id": "inTE1748-INIC",
@@ -32041,7 +32041,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 2890000
   },
   "inTE1615-INIC": {
@@ -32460,7 +32460,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0811-INIC": {
    "id": "inTE0811-INIC",
@@ -32548,7 +32548,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1595-INIC": {
    "id": "inTE1595-INIC",
@@ -32592,7 +32592,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE0975-INIC": {
    "id": "inTE0975-INIC",
@@ -32680,7 +32680,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1365-INIC": {
    "id": "inTE1365-INIC",
@@ -32702,7 +32702,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1596-INIC": {
    "id": "inTE1596-INIC",
@@ -32790,7 +32790,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1815-INIC": {
    "id": "inTE1815-INIC",
@@ -32812,7 +32812,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1259-INIC": {
    "id": "inTE1259-INIC",
@@ -32834,7 +32834,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-13T19:04:02Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "o1534229022": {
    "id": "o1534229022",
@@ -32876,7 +32876,7 @@
    "origem": "santamerica",
    "visivel": true,
    "detectado": "2026-10-13T22:52:56Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2917393567": {
    "id": "g2917393567",
@@ -32963,7 +32963,7 @@
    "origem": "raulfulgencio",
    "visivel": false,
    "detectado": "2026-10-14T17:04:45Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.36622,
    "lon": -51.20012
   },
@@ -33032,7 +33032,7 @@
    "origem": "raulfulgencio",
    "visivel": false,
    "detectado": "2026-10-14T23:00:16Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "lat": -23.349123,
    "lon": -51.207308
   },
@@ -33057,7 +33057,7 @@
    "publicado": "2026-10-15T07:53:05Z",
    "visivel": true,
    "detectado": "2026-10-15T12:02:42Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2917563080": {
    "id": "g2917563080",
@@ -33324,7 +33324,7 @@
    "publicado": "2026-10-16T07:30:45Z",
    "visivel": true,
    "detectado": "2026-10-16T12:00:14Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "condominio": "Malie"
   },
   "o1544642182": {
@@ -33369,7 +33369,7 @@
    "origem": "grupo",
    "visivel": true,
    "detectado": "2026-10-17T12:00:14Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "publicado": "2026-10-16T23:31:51Z"
   },
   "g2911295723": {
@@ -33720,7 +33720,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47695693": {
    "id": "cm47695693",
@@ -33740,7 +33740,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47695618": {
    "id": "cm47695618",
@@ -33760,7 +33760,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47695591": {
    "id": "cm47695591",
@@ -33780,7 +33780,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47695538": {
    "id": "cm47695538",
@@ -33800,7 +33800,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47695380": {
    "id": "cm47695380",
@@ -33820,7 +33820,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47610877": {
    "id": "cm47610877",
@@ -33882,7 +33882,7 @@
    "origem": "chavesnamao",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47438157": {
    "id": "cm47438157",
@@ -39196,7 +39196,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 4545000
   },
   "auTE1611-AURO": {
@@ -39217,7 +39217,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1627-AURO": {
    "id": "auTE1627-AURO",
@@ -39257,7 +39257,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1747-AURO": {
    "id": "auTE1747-AURO",
@@ -39277,7 +39277,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1484-AURO": {
    "id": "auTE1484-AURO",
@@ -39297,7 +39297,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1764-AURO": {
    "id": "auTE1764-AURO",
@@ -39317,7 +39317,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1126-AURO": {
    "id": "auTE1126-AURO",
@@ -39359,7 +39359,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1716-AURO": {
    "id": "auTE1716-AURO",
@@ -39379,7 +39379,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1485-AURO": {
    "id": "auTE1485-AURO",
@@ -39399,7 +39399,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1745-AURO": {
    "id": "auTE1745-AURO",
@@ -39419,7 +39419,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1779-AURO": {
    "id": "auTE1779-AURO",
@@ -39439,7 +39439,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1646-AURO": {
    "id": "auTE1646-AURO",
@@ -39459,7 +39459,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1690-AURO": {
    "id": "auTE1690-AURO",
@@ -39499,7 +39499,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1778-AURO": {
    "id": "auTE1778-AURO",
@@ -39519,7 +39519,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1678-AURO": {
    "id": "auTE1678-AURO",
@@ -39559,7 +39559,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1775-AURO": {
    "id": "auTE1775-AURO",
@@ -39579,7 +39579,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1776-AURO": {
    "id": "auTE1776-AURO",
@@ -39599,7 +39599,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1683-AURO": {
    "id": "auTE1683-AURO",
@@ -39621,7 +39621,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1703-AURO": {
    "id": "auTE1703-AURO",
@@ -39661,7 +39661,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1772-AURO": {
    "id": "auTE1772-AURO",
@@ -39681,7 +39681,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1774-AURO": {
    "id": "auTE1774-AURO",
@@ -39701,7 +39701,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1780-AURO": {
    "id": "auTE1780-AURO",
@@ -39721,7 +39721,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1783-AURO": {
    "id": "auTE1783-AURO",
@@ -39741,7 +39741,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1771-AURO": {
    "id": "auTE1771-AURO",
@@ -39761,7 +39761,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1784-AURO": {
    "id": "auTE1784-AURO",
@@ -39781,7 +39781,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1768-AURO": {
    "id": "auTE1768-AURO",
@@ -39801,7 +39801,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1769-AURO": {
    "id": "auTE1769-AURO",
@@ -39821,7 +39821,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1770-AURO": {
    "id": "auTE1770-AURO",
@@ -39841,7 +39841,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1767-AURO": {
    "id": "auTE1767-AURO",
@@ -39861,7 +39861,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1773-AURO": {
    "id": "auTE1773-AURO",
@@ -39881,7 +39881,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1781-AURO": {
    "id": "auTE1781-AURO",
@@ -39901,7 +39901,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1782-AURO": {
    "id": "auTE1782-AURO",
@@ -39921,7 +39921,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1474-AURO": {
    "id": "auTE1474-AURO",
@@ -40041,7 +40041,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1634-AURO": {
    "id": "auTE1634-AURO",
@@ -40061,7 +40061,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1656-AURO": {
    "id": "auTE1656-AURO",
@@ -40101,7 +40101,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1679-AURO": {
    "id": "auTE1679-AURO",
@@ -40243,7 +40243,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 490000
   },
   "auTE1796-AURO": {
@@ -40324,7 +40324,7 @@
    "origem": "aurora",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1576-AURO": {
    "id": "auTE1576-AURO",
@@ -40444,7 +40444,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1258-MONA": {
    "id": "mnTE1258-MONA",
@@ -40464,7 +40464,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1234-MONA": {
    "id": "mnTE1234-MONA",
@@ -40484,7 +40484,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0995-MONA": {
    "id": "mnTE0995-MONA",
@@ -40524,7 +40524,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 1390000
   },
   "mnTE0561-MONA": {
@@ -40545,7 +40545,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1008-MONA": {
    "id": "mnTE1008-MONA",
@@ -40565,7 +40565,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0861-MONA": {
    "id": "mnTE0861-MONA",
@@ -40585,7 +40585,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1000-MONA": {
    "id": "mnTE1000-MONA",
@@ -40705,7 +40705,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0914-MONA": {
    "id": "mnTE0914-MONA",
@@ -40725,7 +40725,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0788-MONA": {
    "id": "mnTE0788-MONA",
@@ -40745,7 +40745,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0564-MONA": {
    "id": "mnTE0564-MONA",
@@ -40765,7 +40765,7 @@
    "origem": "monaco",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI241": {
    "id": "cbCI241",
@@ -40809,7 +40809,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI170": {
    "id": "cbCI170",
@@ -40831,7 +40831,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI153": {
    "id": "cbCI153",
@@ -40875,7 +40875,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI69": {
    "id": "cbCI69",
@@ -40897,7 +40897,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI70": {
    "id": "cbCI70",
@@ -40919,7 +40919,7 @@
    "origem": "cube",
    "visivel": false,
    "detectado": "2026-10-21T01:14:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cbCI6": {
    "id": "cbCI6",
@@ -41010,7 +41010,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-21T12:00:13Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1808-AURO": {
    "id": "auTE1808-AURO",
@@ -41032,7 +41032,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-10-21T17:04:53Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2918759165": {
    "id": "g2918759165",
@@ -41056,7 +41056,7 @@
    "origem": "grupo",
    "visivel": true,
    "detectado": "2026-10-22T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "publicado": "2026-10-22T07:45:43Z"
   },
   "o1546482046": {
@@ -41103,7 +41103,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-22T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "condominio": ""
   },
   "rf23416": {
@@ -41126,7 +41126,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-22T17:14:51Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "rf23415": {
    "id": "rf23415",
@@ -41148,7 +41148,7 @@
    "origem": "raulfulgencio",
    "visivel": true,
    "detectado": "2026-10-22T17:14:51Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "o1546682943": {
    "id": "o1546682943",
@@ -41193,7 +41193,7 @@
    "publicado": "2026-10-23T08:06:17Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2918924259": {
    "id": "g2918924259",
@@ -41216,7 +41216,7 @@
    "publicado": "2026-10-23T08:06:17Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2918895352": {
    "id": "g2918895352",
@@ -41266,7 +41266,7 @@
    "publicado": "2026-10-23T03:30:08Z",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2918864742": {
    "id": "g2918864742",
@@ -41401,7 +41401,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48042419": {
    "id": "cm48042419",
@@ -41423,7 +41423,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48039247": {
    "id": "cm48039247",
@@ -41445,7 +41445,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48039097": {
    "id": "cm48039097",
@@ -41467,7 +41467,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T12:01:01Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47610873": {
    "id": "cm47610873",
@@ -41513,7 +41513,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T17:09:38Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48047178": {
    "id": "cm48047178",
@@ -41535,7 +41535,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-23T17:09:38Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "condominio": ""
   },
   "csTE0319-CBEX": {
@@ -41558,7 +41558,7 @@
    "origem": "casttelo",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "csTE0482-CBEX": {
    "id": "csTE0482-CBEX",
@@ -41580,7 +41580,7 @@
    "origem": "casttelo",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1038-MONA": {
    "id": "mnTE1038-MONA",
@@ -41602,7 +41602,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE0964-MONA": {
    "id": "mnTE0964-MONA",
@@ -41624,7 +41624,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-10-23T17:45:31Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "inTE1842-INIC": {
    "id": "inTE1842-INIC",
@@ -41646,7 +41646,7 @@
    "origem": "inglaterra",
    "visivel": true,
    "detectado": "2026-10-23T23:02:58Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919075635": {
    "id": "g2919075635",
@@ -41672,7 +41672,7 @@
    "condominio": "",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919074048": {
    "id": "g2919074048",
@@ -41698,7 +41698,7 @@
    "condominio": "",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919074047": {
    "id": "g2919074047",
@@ -41724,7 +41724,7 @@
    "condominio": "Vivendas Do Arvoredo",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48079304": {
    "id": "cm48079304",
@@ -41747,7 +41747,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48076266": {
    "id": "cm48076266",
@@ -41772,7 +41772,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48076265": {
    "id": "cm48076265",
@@ -41797,7 +41797,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48035178": {
    "id": "cm48035178",
@@ -41822,7 +41822,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-24T12:00:32Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48152507": {
    "id": "cm48152507",
@@ -41845,7 +41845,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-27T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919611050": {
    "id": "g2919611050",
@@ -41895,7 +41895,7 @@
    "condominio": "Garnet",
    "visivel": true,
    "detectado": "2026-10-28T12:00:14Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48195982": {
    "id": "cm48195982",
@@ -41918,7 +41918,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-28T12:00:14Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919844694": {
    "id": "g2919844694",
@@ -41944,7 +41944,7 @@
    "condominio": "Royal Park",
    "visivel": true,
    "detectado": "2026-10-29T12:05:10Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919822783": {
    "id": "g2919822783",
@@ -41968,7 +41968,7 @@
    "condominio": "Vivendas Do Arvoredo",
    "visivel": true,
    "detectado": "2026-10-29T12:05:10Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47857570": {
    "id": "cm47857570",
@@ -41991,7 +41991,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-29T12:05:10Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm47366330": {
    "id": "cm47366330",
@@ -42174,7 +42174,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-29T17:05:55Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "giTE0426-GLI": {
    "id": "giTE0426-GLI",
@@ -42196,7 +42196,7 @@
    "origem": "gleba",
    "visivel": true,
    "detectado": "2026-10-29T17:05:55Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2920004358": {
    "id": "g2920004358",
@@ -42222,7 +42222,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-10-30T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2920003509": {
    "id": "g2920003509",
@@ -42272,7 +42272,7 @@
    "condominio": "Recanto do Salto",
    "visivel": true,
    "detectado": "2026-10-30T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2919968539": {
    "id": "g2919968539",
@@ -42298,7 +42298,7 @@
    "condominio": "Sunset Dream",
    "visivel": true,
    "detectado": "2026-10-30T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48291495": {
    "id": "cm48291495",
@@ -42321,7 +42321,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-30T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48283919": {
    "id": "cm48283919",
@@ -42344,7 +42344,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-30T12:00:16Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "auTE1407-AURO": {
    "id": "auTE1407-AURO",
@@ -42368,7 +42368,7 @@
    "origem": "aurora",
    "visivel": true,
    "detectado": "2026-10-30T17:04:52Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48382839": {
    "id": "cm48382839",
@@ -42393,7 +42393,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-10-31T17:10:32Z",
-   "visto": "2026-11-12T17:12:01Z",
+   "visto": "2026-11-12T23:11:21Z",
    "preco_anterior": 1000000
   },
   "g2919759438": {
@@ -42442,7 +42442,7 @@
    "condominio": "Euro Royal",
    "visivel": true,
    "detectado": "2026-11-04T23:05:51Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2920900690": {
    "id": "g2920900690",
@@ -42466,7 +42466,7 @@
    "condominio": "Alphaville 2",
    "visivel": true,
    "detectado": "2026-11-04T23:05:51Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921206657": {
    "id": "g2921206657",
@@ -42490,7 +42490,7 @@
    "condominio": "Vivendas Do Arvoredo",
    "visivel": true,
    "detectado": "2026-11-06T12:00:13Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921164162": {
    "id": "g2921164162",
@@ -42516,7 +42516,7 @@
    "condominio": "Villa Noah",
    "visivel": true,
    "detectado": "2026-11-06T12:00:13Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921161176": {
    "id": "g2921161176",
@@ -42542,7 +42542,7 @@
    "condominio": "",
    "visivel": true,
    "detectado": "2026-11-06T12:00:13Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921236639": {
    "id": "g2921236639",
@@ -42568,7 +42568,7 @@
    "condominio": "Tamboré",
    "visivel": true,
    "detectado": "2026-11-06T17:16:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "ctTC329787": {
    "id": "ctTC329787",
@@ -42590,7 +42590,7 @@
    "origem": "catuai",
    "visivel": true,
    "detectado": "2026-11-06T17:16:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48571296": {
    "id": "cm48571296",
@@ -42613,7 +42613,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-06T17:16:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48564300": {
    "id": "cm48564300",
@@ -42636,7 +42636,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-06T17:16:09Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48595502": {
    "id": "cm48595502",
@@ -42661,7 +42661,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-07T02:55:22Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48505663": {
    "id": "cm48505663",
@@ -42684,7 +42684,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-07T02:55:22Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921365036": {
    "id": "g2921365036",
@@ -42708,7 +42708,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-11-07T12:01:59Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921363094": {
    "id": "g2921363094",
@@ -42732,7 +42732,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-11-07T12:01:59Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921363093": {
    "id": "g2921363093",
@@ -42756,7 +42756,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-11-07T12:01:59Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921359445": {
    "id": "g2921359445",
@@ -42782,7 +42782,7 @@
    "condominio": "Estância Santa Paula",
    "visivel": true,
    "detectado": "2026-11-07T12:01:59Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921353299": {
    "id": "g2921353299",
@@ -42808,7 +42808,7 @@
    "condominio": "Vivendas Do Arvoredo",
    "visivel": true,
    "detectado": "2026-11-07T12:01:59Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48625741": {
    "id": "cm48625741",
@@ -42831,7 +42831,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-07T16:53:21Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921779540": {
    "id": "g2921779540",
@@ -42857,7 +42857,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-11-10T12:00:15Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921776288": {
    "id": "g2921776288",
@@ -42883,7 +42883,7 @@
    "condominio": "Parque das Artes",
    "visivel": true,
    "detectado": "2026-11-10T12:00:15Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921774716": {
    "id": "g2921774716",
@@ -42909,7 +42909,7 @@
    "condominio": "Royal Golf",
    "visivel": true,
    "detectado": "2026-11-10T12:00:15Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48698777": {
    "id": "cm48698777",
@@ -42955,7 +42955,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-10T12:00:15Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48283670": {
    "id": "cm48283670",
@@ -42978,7 +42978,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-10T12:00:15Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921834454": {
    "id": "g2921834454",
@@ -43002,7 +43002,7 @@
    "condominio": "Vivendas Do Arvoredo",
    "visivel": true,
    "detectado": "2026-11-10T17:03:06Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48716897": {
    "id": "cm48716897",
@@ -43027,7 +43027,7 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-10T17:03:06Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "mnTE1236-MONA": {
    "id": "mnTE1236-MONA",
@@ -43049,7 +43049,7 @@
    "origem": "monaco",
    "visivel": true,
    "detectado": "2026-11-10T17:03:06Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2921989653": {
    "id": "g2921989653",
@@ -43073,7 +43073,7 @@
    "condominio": "Alphaville 2",
    "visivel": true,
    "detectado": "2026-11-11T23:13:31Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2922191934": {
    "id": "g2922191934",
@@ -43097,7 +43097,7 @@
    "condominio": "Garnet",
    "visivel": true,
    "detectado": "2026-11-12T12:00:26Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "g2922123509": {
    "id": "g2922123509",
@@ -43123,7 +43123,7 @@
    "condominio": "Royal Forest",
    "visivel": true,
    "detectado": "2026-11-12T12:00:26Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
   },
   "cm48800370": {
    "id": "cm48800370",
@@ -43146,7 +43146,51 @@
    "origem": "chavesnamao",
    "visivel": true,
    "detectado": "2026-11-12T12:00:26Z",
-   "visto": "2026-11-12T17:12:01Z"
+   "visto": "2026-11-12T23:11:21Z"
+  },
+  "giTE0428-GLI": {
+   "id": "giTE0428-GLI",
+   "tipo": "terreno",
+   "predio": "Parque Das Artes - 1 - Ateliê",
+   "endereco": "R. Alcides Turini",
+   "bairro": "Parque Das Artes",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux03iYlC5QoCqvQGX7Cg5SymwoKX7oiQ8Gef6IncpaPBkMf0Xs7Q17A1gLDWHn2+jYA9YswQYlx8XuQhHSayB4C4BX1b8gKjoXn1EZ8bb29y-DAuoBBX7Qrhf4T8r2Yh8RaDN8r+kg+xbKvfD3ZuOLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwXd5NnLxXkQbFH7Md6ki4lIzBgvaoZ0vQYVU6o+zM+vrnaK2jG7SNe2+jxctTxZLUO8sVNYShTyoHQnlkYmhR+BW29rnGsACzNGqH.jpg",
+   "area": 422,
+   "preco": 825000,
+   "quartos": null,
+   "banheiros": null,
+   "vagas": null,
+   "titulo": "Terreno, 423 m²",
+   "publicado": null,
+   "links": {
+    "gleba": "https://www.glebaimoveis.com/imovel/terreno-londrina-423-m/TE0428-GLI"
+   },
+   "origem": "gleba",
+   "visivel": true,
+   "detectado": "2026-11-12T23:11:21Z",
+   "visto": "2026-11-12T23:11:21Z"
+  },
+  "inTE1855-INIC": {
+   "id": "inTE1855-INIC",
+   "tipo": "terreno",
+   "predio": "Artesano",
+   "endereco": "Joaquim Barbosa",
+   "bairro": "Artesano Londrina",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2h53N5PoxIZ1-BFe73mgTuf4rq9-8eA8nuf+c2NkK-xkJihd5vy9YAV+KfuC3y0mYA1f9IIa11gSLV0H1nKbr6ONn4O-B+jiVndHod5Y0d1hys8wRNq7mqaZ4Hx+wA7hRuAFfHTrjG+Q4bGDH1XItZHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXn6oAlg3cG+Ad6Bm9ldXEgKWsZknSYVs-o7yf8aC5O-b6GKGgJzHhp6s2xrKdfZpyC62KLFJgYERWZWBDuV7ktPyL7AD5bSnYrhAGWB3fg9xq7GV3clU=.jpg",
+   "area": 501,
+   "preco": 1090000,
+   "quartos": null,
+   "banheiros": null,
+   "vagas": null,
+   "titulo": "Terreno à venda, 501 m² - Artesano Londrina - Londrina/PR",
+   "publicado": null,
+   "links": {
+    "inglaterra": "https://www.imobiliariainglaterra.com.br/imovel/terreno-londrina-501-m/TE1855-INIC"
+   },
+   "origem": "inglaterra",
+   "visivel": true,
+   "detectado": "2026-11-12T23:11:21Z",
+   "visto": "2026-11-12T23:11:21Z"
   }
  },
  "imoveis": [
@@ -43183,10 +43227,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -10
+    "n": 15,
+    "pct": -11
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -43225,11 +43269,13 @@
     }
    ],
    "media": {
-    "ref_m2": 646,
+    "ref_m2": 655,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": -14
+    "n": 14,
+    "pct": -16,
+    "suspeito": false
    },
+   "abaixo": true,
    "lat": -23.358044,
    "lon": -51.244311,
    "geo": "predio"
@@ -43298,10 +43344,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 28
+    "n": 26,
+    "pct": 30
    }
   },
   {
@@ -43337,9 +43383,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -7
    },
    "lat": -23.355647,
@@ -43372,10 +43418,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 13
+    "n": 29,
+    "pct": 17
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -43445,10 +43491,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -13
+    "n": 29,
+    "pct": -11
    }
   },
   {
@@ -43536,10 +43582,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2732,
+    "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": 2
+    "n": 17,
+    "pct": 3
    }
   },
   {
@@ -43575,10 +43621,10 @@
     }
    ],
    "media": {
-    "ref_m2": 642,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": 3
+    "n": 15,
+    "pct": 2
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -43667,13 +43713,7 @@
      "area": 365,
      "area_anunciada": null
     }
-   ],
-   "media": {
-    "ref_m2": 2722,
-    "base": "Ville Campestre",
-    "n": 5,
-    "pct": -1
-   }
+   ]
   },
   {
    "id": "ctTE287660",
@@ -43734,7 +43774,7 @@
    "media": {
     "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 23,
+    "n": 18,
     "pct": 52
    }
   },
@@ -43785,10 +43825,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -10
+    "n": 15,
+    "pct": -11
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -43879,10 +43919,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -5
+    "n": 29,
+    "pct": -3
    }
   },
   {
@@ -43998,9 +44038,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 0
    }
   },
@@ -44044,10 +44084,10 @@
     }
    ],
    "media": {
-    "ref_m2": 980,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": -30,
+    "n": 6,
+    "pct": -25,
     "suspeito": false
    },
    "abaixo": true,
@@ -44210,10 +44250,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 4
+    "n": 29,
+    "pct": 7
    }
   },
   {
@@ -44263,10 +44303,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2679,
+    "ref_m2": 2633,
     "base": "bairro Esperanca",
-    "n": 109,
-    "pct": 86
+    "n": 63,
+    "pct": 89
    },
    "lat": -23.349123,
    "lon": -51.207308,
@@ -44340,10 +44380,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -2
+    "n": 30,
+    "pct": 1
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -44405,7 +44445,7 @@
    "media": {
     "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": 1
    },
    "lat": -23.355647,
@@ -44461,7 +44501,7 @@
    "media": {
     "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 18,
     "pct": 6
    },
    "lat": -23.365295,
@@ -44560,9 +44600,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 4
    }
   },
@@ -44770,9 +44810,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2742,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 28,
+    "n": 21,
     "pct": -12
    }
   },
@@ -44839,7 +44879,7 @@
    "media": {
     "ref_m2": 702,
     "base": "Terras de Canaã",
-    "n": 10,
+    "n": 6,
     "pct": -7
    },
    "lat": -23.349722,
@@ -44942,10 +44982,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 11
+    "n": 29,
+    "pct": 15
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -44991,10 +45031,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 3
+    "n": 29,
+    "pct": 6
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -45047,10 +45087,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 655,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -1
+    "n": 16,
+    "pct": -2
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -45096,10 +45136,10 @@
     }
    ],
    "media": {
-    "ref_m2": 959,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": 8
+    "n": 6,
+    "pct": 13
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -45152,10 +45192,10 @@
     }
    ],
    "media": {
-    "ref_m2": 3685,
+    "ref_m2": 3675,
     "base": "Alphaville 2",
-    "n": 28,
-    "pct": 24
+    "n": 19,
+    "pct": 25
    },
    "lat": -23.355647,
    "lon": -51.187876,
@@ -45201,10 +45241,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 9
+    "n": 22,
+    "pct": 14
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -45250,10 +45290,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": -3
+    "n": 17,
+    "pct": -2
    },
    "lat": -23.365295,
    "lon": -51.206554,
@@ -45313,10 +45353,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2469,
+    "ref_m2": 2392,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": -6
+    "n": 20,
+    "pct": -3
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -45364,7 +45404,7 @@
    "media": {
     "ref_m2": 1156,
     "base": "Recanto do Salto",
-    "n": 17,
+    "n": 11,
     "pct": -4
    },
    "lat": -23.366004,
@@ -45411,10 +45451,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 6
+    "n": 23,
+    "pct": 10
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -45453,13 +45493,11 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -18,
-    "suspeito": false
+    "n": 23,
+    "pct": -14
    },
-   "abaixo": true,
    "lat": -23.366004,
    "lon": -51.215929,
    "geo": "predio"
@@ -45584,10 +45622,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2793,
+    "ref_m2": 2763,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": -6
+    "n": 26,
+    "pct": -5
    }
   },
   {
@@ -45630,10 +45668,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 9
+    "n": 30,
+    "pct": 11
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -45686,10 +45724,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2680,
+    "ref_m2": 2601,
     "base": "bairro Esperanca",
-    "n": 108,
-    "pct": -6
+    "n": 65,
+    "pct": -3
    },
    "lat": -23.34666,
    "lon": -51.21162,
@@ -45785,10 +45823,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 17
+    "n": 22,
+    "pct": 19
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -45841,10 +45879,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 28
+    "n": 26,
+    "pct": 30
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -45932,10 +45970,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2679,
+    "ref_m2": 2633,
     "base": "bairro Esperanca",
-    "n": 109,
-    "pct": 50
+    "n": 63,
+    "pct": 52
    },
    "lat": -23.349123,
    "lon": -51.207308,
@@ -45995,10 +46033,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 42,
-    "pct": -12
+    "n": 29,
+    "pct": -11
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -46051,10 +46089,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 42,
-    "pct": -7
+    "n": 29,
+    "pct": -6
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -46100,10 +46138,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 19
+    "n": 27,
+    "pct": 20
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -46149,9 +46187,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1933,
+    "ref_m2": 1934,
     "base": "Tamboré",
-    "n": 7,
+    "n": 4,
     "pct": 14
    },
    "lat": -23.365962,
@@ -46191,11 +46229,13 @@
     }
    ],
    "media": {
-    "ref_m2": 2130,
-    "base": "Alphaville",
-    "n": 4,
-    "pct": 3
+    "ref_m2": 2633,
+    "base": "bairro Esperanca",
+    "n": 61,
+    "pct": -16,
+    "suspeito": false
    },
+   "abaixo": true,
    "lat": -23.34855,
    "lon": -51.18652,
    "geo": "predio"
@@ -46250,10 +46290,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 37
+    "n": 26,
+    "pct": 39
    }
   },
   {
@@ -46303,9 +46343,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 2
    },
    "lat": -23.355647,
@@ -46397,10 +46437,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2742,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 28,
-    "pct": -24,
+    "n": 21,
+    "pct": -23,
     "suspeito": false
    },
    "abaixo": true
@@ -46452,10 +46492,10 @@
     }
    ],
    "media": {
-    "ref_m2": 642,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": 4
+    "n": 15,
+    "pct": 2
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -46494,10 +46534,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 25
+    "n": 24,
+    "pct": 31
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -46553,10 +46593,10 @@
     }
    ],
    "media": {
-    "ref_m2": 642,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": 4
+    "n": 15,
+    "pct": 3
    }
   },
   {
@@ -46599,10 +46639,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1872,
-    "base": "Tamboré",
-    "n": 6,
-    "pct": 18
+    "ref_m2": 962,
+    "base": "bairro Esperanca",
+    "n": 68,
+    "pct": 130
    },
    "lat": -23.365962,
    "lon": -51.205617,
@@ -46658,10 +46698,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2264,
+    "ref_m2": 2395,
     "base": "Parque das Artes",
-    "n": 7,
-    "pct": -44,
+    "n": 5,
+    "pct": -47,
     "suspeito": false
    },
    "abaixo": true
@@ -46737,10 +46777,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 5
+    "n": 28,
+    "pct": 6
    }
   },
   {
@@ -46821,10 +46861,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": -2
+    "n": 27,
+    "pct": 0
    }
   },
   {
@@ -46874,10 +46914,10 @@
     }
    ],
    "media": {
-    "ref_m2": 633,
+    "ref_m2": 647,
     "base": "bairro Esperanca",
-    "n": 55,
-    "pct": 115
+    "n": 41,
+    "pct": 111
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -46961,10 +47001,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 4
+    "n": 28,
+    "pct": 5
    }
   },
   {
@@ -47007,10 +47047,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 42,
-    "pct": -59,
+    "n": 30,
+    "pct": -58,
     "suspeito": true
    },
    "abaixo": true,
@@ -47072,10 +47112,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 4
+    "n": 28,
+    "pct": 6
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -47128,10 +47168,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -14
+    "n": 23,
+    "pct": -9
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -47177,10 +47217,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1056,
+    "ref_m2": 1067,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": 11
+    "n": 8,
+    "pct": 10
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -47299,10 +47339,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2685,
-    "base": "Ville Campestre",
-    "n": 5,
-    "pct": 1
+    "ref_m2": 2594,
+    "base": "bairro Esperanca",
+    "n": 66,
+    "pct": 5
    }
   },
   {
@@ -47408,9 +47448,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 23
    },
    "lat": -23.355647,
@@ -47450,10 +47490,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 5
+    "n": 30,
+    "pct": 8
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -47506,9 +47546,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -1
    },
    "lat": -23.355647,
@@ -47625,9 +47665,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 12
    },
    "lat": -23.355647,
@@ -47716,10 +47756,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2732,
+    "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": 41
+    "n": 17,
+    "pct": 42
    },
    "lat": -23.365295,
    "lon": -51.206554,
@@ -47831,10 +47871,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2732,
+    "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": 42
+    "n": 17,
+    "pct": 44
    }
   },
   {
@@ -47877,10 +47917,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2555,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": 10
+    "n": 28,
+    "pct": 11
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -48041,10 +48081,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2777,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 0
+    "n": 29,
+    "pct": 4
    }
   },
   {
@@ -48087,10 +48127,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 20
+    "n": 22,
+    "pct": 22
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -48136,10 +48176,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2685,
+    "ref_m2": 2704,
     "base": "Ville Campestre",
-    "n": 5,
-    "pct": 14
+    "n": 4,
+    "pct": 13
    },
    "lat": -23.337892,
    "lon": -51.175431,
@@ -48178,10 +48218,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1159,
+    "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": -17,
+    "n": 10,
+    "pct": -16,
     "suspeito": false
    },
    "abaixo": true,
@@ -48222,10 +48262,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": 1
+    "n": 21,
+    "pct": 3
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -48277,12 +48317,6 @@
      "area_anunciada": null
     }
    ],
-   "media": {
-    "ref_m2": 2722,
-    "base": "Ville Campestre",
-    "n": 5,
-    "pct": -14
-   },
    "lat": -23.337892,
    "lon": -51.175431,
    "geo": "predio"
@@ -48341,10 +48375,10 @@
     }
    ],
    "media": {
-    "ref_m2": 980,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": -2
+    "n": 6,
+    "pct": 4
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -48397,10 +48431,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 0
+    "n": 30,
+    "pct": 3
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -48481,10 +48515,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 7
+    "n": 28,
+    "pct": 9
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -48539,7 +48573,7 @@
    "media": {
     "ref_m2": 702,
     "base": "Terras de Canaã",
-    "n": 10,
+    "n": 6,
     "pct": -14
    },
    "lat": -23.349722,
@@ -48645,9 +48679,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -22,
     "suspeito": false
    },
@@ -48815,10 +48849,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -1
+    "n": 29,
+    "pct": 3
    }
   },
   {
@@ -48885,10 +48919,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2742,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 4
+    "n": 26,
+    "pct": 6
    }
   },
   {
@@ -48924,10 +48958,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -26,
+    "n": 23,
+    "pct": -22,
     "suspeito": false
    },
    "abaixo": true,
@@ -48968,10 +49002,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -8
+    "n": 23,
+    "pct": -3
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -49031,10 +49065,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 4
+    "n": 28,
+    "pct": 5
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -49080,10 +49114,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -2
+    "n": 22,
+    "pct": 4
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -49129,10 +49163,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": 5
+    "n": 20,
+    "pct": 9
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -49192,10 +49226,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -10
+    "n": 29,
+    "pct": -8
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -49255,10 +49289,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 1
+    "n": 26,
+    "pct": 2
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -49318,10 +49352,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2180,
+    "ref_m2": 2248,
     "base": "bairro Terras De Santana",
-    "n": 6,
-    "pct": 3
+    "n": 5,
+    "pct": 0
    },
    "lat": -23.346104,
    "lon": -51.190573,
@@ -49369,7 +49403,7 @@
    "media": {
     "ref_m2": 4636,
     "base": "Alphaville",
-    "n": 9,
+    "n": 5,
     "pct": -3
    },
    "lat": -23.34855,
@@ -49566,10 +49600,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 2
+    "n": 29,
+    "pct": 5
    }
   },
   {
@@ -49619,10 +49653,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4165,
+    "ref_m2": 3445,
     "base": "Royal Park",
-    "n": 14,
-    "pct": 5
+    "n": 8,
+    "pct": 27
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -49668,10 +49702,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2262,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 58
+    "n": 23,
+    "pct": 67
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -49734,10 +49768,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2784,
+    "ref_m2": 2726,
     "base": "Royal Golf",
-    "n": 7,
-    "pct": 1
+    "n": 6,
+    "pct": 3
    }
   },
   {
@@ -49773,10 +49807,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 2
+    "n": 23,
+    "pct": 5
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -49907,10 +49941,10 @@
     }
    ],
    "media": {
-    "ref_m2": 639,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": 5
+    "n": 15,
+    "pct": 4
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -49963,10 +49997,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2551,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": -1
+    "n": 28,
+    "pct": 0
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -50050,10 +50084,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1148,
+    "ref_m2": 1140,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": 4
+    "n": 9,
+    "pct": 5
    }
   },
   {
@@ -50106,10 +50140,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1151,
+    "ref_m2": 1140,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": 0
+    "n": 9,
+    "pct": 1
    }
   },
   {
@@ -50145,10 +50179,10 @@
     }
    ],
    "media": {
-    "ref_m2": 397,
+    "ref_m2": 417,
     "base": "Estância Cabral",
-    "n": 6,
-    "pct": 51
+    "n": 5,
+    "pct": 44
    },
    "lat": -23.364539,
    "lon": -51.219989,
@@ -50194,10 +50228,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2262,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 5
+    "n": 23,
+    "pct": 11
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -50236,13 +50270,11 @@
     }
    ],
    "media": {
-    "ref_m2": 2467,
+    "ref_m2": 2325,
     "base": "Recanto do Salto",
-    "n": 36,
-    "pct": -18,
-    "suspeito": false
+    "n": 22,
+    "pct": -13
    },
-   "abaixo": true,
    "lat": -23.366004,
    "lon": -51.215929,
    "geo": "predio"
@@ -50289,7 +50321,7 @@
    "media": {
     "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 28,
+    "n": 20,
     "pct": 7
    },
    "lat": -23.355647,
@@ -50339,10 +50371,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2262,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 7
+    "n": 23,
+    "pct": 13
    }
   },
   {
@@ -50399,10 +50431,10 @@
     }
    ],
    "media": {
-    "ref_m2": 960,
+    "ref_m2": 838,
     "base": "Estância Bom Tempo",
-    "n": 15,
-    "pct": 4
+    "n": 5,
+    "pct": 19
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -50458,10 +50490,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2450,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 36,
-    "pct": -1
+    "n": 27,
+    "pct": 0
    }
   },
   {
@@ -50556,10 +50588,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -11
+    "n": 27,
+    "pct": -10
    }
   },
   {
@@ -50595,10 +50627,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 67
+    "n": 22,
+    "pct": 70
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -50637,10 +50669,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2414,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 38,
-    "pct": 55
+    "n": 21,
+    "pct": 57
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -50693,10 +50725,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -9
+    "n": 15,
+    "pct": -11
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -50752,10 +50784,10 @@
     }
    ],
    "media": {
-    "ref_m2": 959,
+    "ref_m2": 838,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": 12
+    "n": 5,
+    "pct": 28
    }
   },
   {
@@ -50826,10 +50858,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -8
+    "n": 15,
+    "pct": -9
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -50868,10 +50900,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 29
+    "n": 27,
+    "pct": 31
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -50966,10 +50998,10 @@
     }
    ],
    "media": {
-    "ref_m2": 646,
+    "ref_m2": 655,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": -17,
+    "n": 14,
+    "pct": -18,
     "suspeito": false
    },
    "abaixo": true,
@@ -51062,10 +51094,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2680,
+    "ref_m2": 2601,
     "base": "bairro Esperanca",
-    "n": 108,
-    "pct": -10
+    "n": 65,
+    "pct": -7
    }
   },
   {
@@ -51139,10 +51171,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -10
+    "n": 27,
+    "pct": -9
    }
   },
   {
@@ -51185,10 +51217,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2469,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": -20,
+    "n": 21,
+    "pct": -17,
     "suspeito": false
    },
    "abaixo": true,
@@ -51271,10 +51303,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 63
+    "n": 24,
+    "pct": 71
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -51313,10 +51345,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2389,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 41,
-    "pct": 13
+    "n": 24,
+    "pct": 18
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -51355,10 +51387,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2414,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 38,
-    "pct": 59
+    "n": 21,
+    "pct": 61
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -51403,12 +51435,6 @@
      "area_anunciada": null
     }
    ],
-   "media": {
-    "ref_m2": 2685,
-    "base": "Ville Campestre",
-    "n": 5,
-    "pct": 2
-   },
    "lat": -23.337892,
    "lon": -51.175431,
    "geo": "predio"
@@ -51453,10 +51479,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -2
+    "n": 30,
+    "pct": 1
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -51547,9 +51573,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 1
    }
   },
@@ -51631,10 +51657,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 8
+    "n": 29,
+    "pct": 12
    }
   },
   {
@@ -51691,10 +51717,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 7
+    "n": 26,
+    "pct": 8
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -51740,10 +51766,10 @@
     }
    ],
    "media": {
-    "ref_m2": 646,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": -3
+    "n": 15,
+    "pct": -4
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -51782,10 +51808,10 @@
     }
    ],
    "media": {
-    "ref_m2": 682,
+    "ref_m2": 685,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": 47
+    "n": 7,
+    "pct": 46
    },
    "lat": -23.349722,
    "lon": -51.212338,
@@ -51824,10 +51850,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -28,
+    "n": 22,
+    "pct": -26,
     "suspeito": false
    },
    "abaixo": true,
@@ -51885,10 +51911,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 6
+    "n": 29,
+    "pct": 9
    }
   },
   {
@@ -51924,10 +51950,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": 14
+    "n": 19,
+    "pct": 16
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -52004,10 +52030,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -6
+    "n": 27,
+    "pct": -5
    }
   },
   {
@@ -52066,7 +52092,7 @@
    "media": {
     "ref_m2": 2463,
     "base": "bairro Esperanca",
-    "n": 76,
+    "n": 46,
     "pct": 63
    },
    "lat": -23.349123,
@@ -52130,10 +52156,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -3
+    "n": 29,
+    "pct": -2
    }
   },
   {
@@ -52176,10 +52202,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2796,
+    "ref_m2": 2784,
     "base": "Royal Golf",
-    "n": 8,
-    "pct": 2
+    "n": 7,
+    "pct": 3
    },
    "lat": -23.35048,
    "lon": -51.197902,
@@ -52246,10 +52272,10 @@
     }
    ],
    "media": {
-    "ref_m2": 642,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 13,
-    "pct": 40
+    "n": 11,
+    "pct": 36
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -52387,10 +52413,10 @@
     }
    ],
    "media": {
-    "ref_m2": 639,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": 4
+    "n": 15,
+    "pct": 2
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -52443,9 +52469,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -4
    },
    "lat": -23.355647,
@@ -52485,10 +52511,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -20,
+    "n": 26,
+    "pct": -19,
     "suspeito": false
    },
    "abaixo": true,
@@ -52550,10 +52576,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2742,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 0
+    "n": 26,
+    "pct": 2
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -52599,10 +52625,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 655,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -11
+    "n": 16,
+    "pct": -12
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -52641,10 +52667,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2451,
+    "ref_m2": 2392,
     "base": "Recanto do Salto",
-    "n": 38,
-    "pct": -44,
+    "n": 20,
+    "pct": -43,
     "suspeito": false
    },
    "abaixo": true,
@@ -52692,9 +52718,9 @@
     }
    ],
    "media": {
-    "ref_m2": 646,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
+    "n": 15,
     "pct": -2
    },
    "lat": -23.358044,
@@ -52751,9 +52777,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -5
    }
   },
@@ -52800,10 +52826,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -13
+    "n": 29,
+    "pct": -12
    }
   },
   {
@@ -52856,10 +52882,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
-    "pct": -1
+    "n": 27,
+    "pct": 0
    }
   },
   {
@@ -52905,10 +52931,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -6
+    "n": 29,
+    "pct": -5
    }
   },
   {
@@ -52954,10 +52980,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4530,
-    "base": "Royal Park",
-    "n": 7,
-    "pct": -9
+    "ref_m2": 710,
+    "base": "bairro Esperanca",
+    "n": 50,
+    "pct": 483
    }
   },
   {
@@ -52996,10 +53022,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2395,
+    "ref_m2": 2286,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": 11
+    "n": 22,
+    "pct": 17
    }
   },
   {
@@ -53061,7 +53087,7 @@
    "media": {
     "ref_m2": 2325,
     "base": "Recanto do Salto",
-    "n": 26,
+    "n": 16,
     "pct": -17,
     "suspeito": false
    },
@@ -53128,10 +53154,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2742,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 7
+    "n": 26,
+    "pct": 8
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -53187,10 +53213,10 @@
     }
    ],
    "media": {
-    "ref_m2": 639,
+    "ref_m2": 625,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": 23
+    "n": 14,
+    "pct": 26
    }
   },
   {
@@ -53231,7 +53257,7 @@
    "media": {
     "ref_m2": 2325,
     "base": "Recanto do Salto",
-    "n": 26,
+    "n": 16,
     "pct": -18,
     "suspeito": false
    },
@@ -53293,7 +53319,7 @@
    "media": {
     "ref_m2": 1000,
     "base": "Estância Bom Tempo",
-    "n": 21,
+    "n": 9,
     "pct": 13
    },
    "lat": -23.366126,
@@ -53357,10 +53383,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2742,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 2
+    "n": 26,
+    "pct": 3
    }
   },
   {
@@ -53403,10 +53429,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2414,
+    "ref_m2": 2262,
     "base": "Recanto do Salto",
-    "n": 34,
-    "pct": -12
+    "n": 19,
+    "pct": -6
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -53483,10 +53509,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -7
+    "n": 29,
+    "pct": -6
    }
   },
   {
@@ -53515,10 +53541,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": -18,
+    "n": 27,
+    "pct": -17,
     "suspeito": false
    },
    "abaixo": true,
@@ -53558,12 +53584,6 @@
      "area_anunciada": null
     }
    ],
-   "media": {
-    "ref_m2": 1935,
-    "base": "Tamboré",
-    "n": 7,
-    "pct": -10
-   },
    "lat": -23.365962,
    "lon": -51.205617,
    "geo": "predio"
@@ -53594,10 +53614,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2451,
+    "ref_m2": 2392,
     "base": "Recanto do Salto",
-    "n": 38,
-    "pct": -40,
+    "n": 20,
+    "pct": -39,
     "suspeito": false
    },
    "abaixo": true,
@@ -53630,14 +53650,6 @@
      "area_anunciada": null
     }
    ],
-   "media": {
-    "ref_m2": 4530,
-    "base": "Royal Park",
-    "n": 7,
-    "pct": -24,
-    "suspeito": false
-   },
-   "abaixo": true,
    "lat": -23.349348,
    "lon": -51.207552,
    "geo": "predio"
@@ -53668,9 +53680,9 @@
     }
    ],
    "media": {
-    "ref_m2": 4636,
+    "ref_m2": 4647,
     "base": "Alphaville",
-    "n": 9,
+    "n": 4,
     "pct": -17,
     "suspeito": false
    },
@@ -53719,9 +53731,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 4
    },
    "lat": -23.36622,
@@ -53761,10 +53773,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -8
+    "n": 27,
+    "pct": -7
    },
    "lat": -23.36622,
    "lon": -51.20012,
@@ -53810,9 +53822,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 27
    },
    "lat": -23.36622,
@@ -53845,9 +53857,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1159,
+    "ref_m2": 1156,
     "base": "Recanto do Salto",
-    "n": 14,
+    "n": 9,
     "pct": -7
    },
    "lat": -23.366004,
@@ -53940,10 +53952,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2555,
+    "ref_m2": 2532,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": 4
+    "n": 27,
+    "pct": 5
    }
   },
   {
@@ -53972,9 +53984,9 @@
     }
    ],
    "media": {
-    "ref_m2": 682,
+    "ref_m2": 685,
     "base": "Terras de Canaã",
-    "n": 10,
+    "n": 7,
     "pct": 16
    },
    "lat": -23.349722,
@@ -54007,9 +54019,9 @@
     }
    ],
    "media": {
-    "ref_m2": 646,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
+    "n": 15,
     "pct": -12
    },
    "lat": -23.358044,
@@ -54042,10 +54054,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1123,
+    "ref_m2": 1140,
     "base": "bairro Recanto Do Salto",
-    "n": 22,
-    "pct": -47,
+    "n": 11,
+    "pct": -48,
     "suspeito": false
    },
    "abaixo": true,
@@ -54089,9 +54101,9 @@
     }
    ],
    "media": {
-    "ref_m2": 397,
+    "ref_m2": 395,
     "base": "Estância Cabral",
-    "n": 6,
+    "n": 4,
     "pct": 11
    }
   },
@@ -54121,10 +54133,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2722,
+    "ref_m2": 2704,
     "base": "Ville Campestre",
-    "n": 5,
-    "pct": -3
+    "n": 4,
+    "pct": -2
    },
    "lat": -23.337892,
    "lon": -51.175431,
@@ -54156,10 +54168,10 @@
     }
    ],
    "media": {
-    "ref_m2": 702,
+    "ref_m2": 685,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": -3
+    "n": 7,
+    "pct": -1
    },
    "lat": -23.349722,
    "lon": -51.212338,
@@ -54191,10 +54203,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": -21,
+    "n": 18,
+    "pct": -19,
     "suspeito": false
    },
    "abaixo": true,
@@ -54235,10 +54247,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4359,
-    "base": "Alphaville",
-    "n": 10,
-    "pct": 7
+    "ref_m2": 2501,
+    "base": "bairro Vivendas Do Arvoredo",
+    "n": 78,
+    "pct": 86
    },
    "lat": -23.34855,
    "lon": -51.18652,
@@ -54299,10 +54311,10 @@
     }
    ],
    "media": {
-    "ref_m2": 425,
+    "ref_m2": 417,
     "base": "Estância Cabral",
-    "n": 6,
-    "pct": -11
+    "n": 5,
+    "pct": -10
    },
    "lat": -23.364539,
    "lon": -51.219989,
@@ -54334,10 +54346,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 18
+    "n": 27,
+    "pct": 20
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -54376,10 +54388,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -2
+    "n": 21,
+    "pct": 4
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -54418,13 +54430,11 @@
     }
    ],
    "media": {
-    "ref_m2": 1000,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 15,
-    "pct": -15,
-    "suspeito": false
+    "n": 6,
+    "pct": -8
    },
-   "abaixo": true,
    "lat": -23.366126,
    "lon": -51.221356,
    "geo": "predio"
@@ -54455,10 +54465,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 9
+    "n": 27,
+    "pct": 10
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -54499,7 +54509,7 @@
    "media": {
     "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": 10
    },
    "lat": -23.355647,
@@ -54532,10 +54542,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 37
+    "n": 27,
+    "pct": 39
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -54567,10 +54577,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 42
+    "n": 27,
+    "pct": 44
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -54602,10 +54612,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4165,
+    "ref_m2": 3445,
     "base": "Royal Park",
-    "n": 14,
-    "pct": 21
+    "n": 8,
+    "pct": 46
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -54647,9 +54657,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 3
    }
   },
@@ -54679,10 +54689,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4032,
-    "base": "Alphaville",
-    "n": 8,
-    "pct": -8
+    "ref_m2": 2506,
+    "base": "bairro Vivendas Do Arvoredo",
+    "n": 71,
+    "pct": 48
    },
    "lat": -23.34855,
    "lon": -51.18652,
@@ -54714,10 +54724,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1000,
+    "ref_m2": 1038,
     "base": "Estância Bom Tempo",
-    "n": 21,
-    "pct": 11
+    "n": 10,
+    "pct": 7
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -54763,9 +54773,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 28,
     "pct": -11
    },
    "lat": -23.365851,
@@ -54805,9 +54815,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
+    "n": 27,
     "pct": -45,
     "suspeito": false
    },
@@ -54856,10 +54866,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": -22,
+    "n": 27,
+    "pct": -21,
     "suspeito": false
    },
    "abaixo": true,
@@ -54910,9 +54920,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 28,
     "pct": -11
    }
   },
@@ -54959,10 +54969,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 2
+    "n": 26,
+    "pct": 3
    }
   },
   {
@@ -55049,10 +55059,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4165,
+    "ref_m2": 3445,
     "base": "Royal Park",
-    "n": 14,
-    "pct": 13
+    "n": 8,
+    "pct": 36
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -55084,9 +55094,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1169,
+    "ref_m2": 1167,
     "base": "Estância Bom Tempo",
-    "n": 11,
+    "n": 6,
     "pct": -14
    },
    "lat": -23.366126,
@@ -55136,10 +55146,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": -11
+    "n": 28,
+    "pct": -10
    }
   },
   {
@@ -55175,10 +55185,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 1
+    "n": 28,
+    "pct": 2
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -55210,10 +55220,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 42,
-    "pct": -12
+    "n": 29,
+    "pct": -11
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -55245,10 +55255,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2556,
+    "ref_m2": 2311,
     "base": "Recanto do Salto",
-    "n": 25,
-    "pct": -88,
+    "n": 15,
+    "pct": -87,
     "suspeito": true
    },
    "abaixo": true,
@@ -55282,10 +55292,10 @@
     }
    ],
    "media": {
-    "ref_m2": 682,
+    "ref_m2": 669,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": 8
+    "n": 6,
+    "pct": 10
    },
    "lat": -23.349722,
    "lon": -51.212338,
@@ -55326,7 +55336,7 @@
    "media": {
     "ref_m2": 1134,
     "base": "Estância Bom Tempo",
-    "n": 11,
+    "n": 5,
     "pct": 10
    },
    "lat": -23.366126,
@@ -55359,10 +55369,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 36
+    "n": 27,
+    "pct": 38
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -55459,9 +55469,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 17,
     "pct": -5
    },
    "lat": -23.365295,
@@ -55496,7 +55506,7 @@
    "media": {
     "ref_m2": 4636,
     "base": "Alphaville",
-    "n": 9,
+    "n": 5,
     "pct": -9
    },
    "lat": -23.34855,
@@ -55529,10 +55539,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2697,
+    "ref_m2": 2576,
     "base": "bairro Esperanca",
-    "n": 61,
-    "pct": 31
+    "n": 39,
+    "pct": 38
    },
    "lat": -23.34938,
    "lon": -51.20712,
@@ -55574,9 +55584,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 8
    }
   },
@@ -55615,7 +55625,7 @@
    "media": {
     "ref_m2": 1000,
     "base": "Estância Bom Tempo",
-    "n": 15,
+    "n": 5,
     "pct": -31,
     "suspeito": false
    },
@@ -55649,12 +55659,6 @@
      "area_anunciada": null
     }
    ],
-   "media": {
-    "ref_m2": 1933,
-    "base": "Tamboré",
-    "n": 7,
-    "pct": 0
-   },
    "lat": -23.365962,
    "lon": -51.205617,
    "geo": "predio"
@@ -55687,7 +55691,7 @@
    "media": {
     "ref_m2": 4595,
     "base": "Alphaville",
-    "n": 8,
+    "n": 4,
     "pct": 1
    },
    "lat": -23.34855,
@@ -55836,10 +55840,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2764,
+    "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 23,
-    "pct": -6
+    "n": 18,
+    "pct": -5
    }
   },
   {
@@ -55868,9 +55872,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1169,
+    "ref_m2": 1167,
     "base": "Estância Bom Tempo",
-    "n": 11,
+    "n": 6,
     "pct": -14
    },
    "lat": -23.366126,
@@ -55934,10 +55938,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 7
+    "n": 26,
+    "pct": 8
    }
   },
   {
@@ -55990,9 +55994,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 17,
     "pct": -14
    }
   },
@@ -56087,10 +56091,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4122,
-    "base": "Alphaville",
-    "n": 8,
-    "pct": -14
+    "ref_m2": 2506,
+    "base": "bairro Vivendas Do Arvoredo",
+    "n": 71,
+    "pct": 41
    },
    "lat": -23.34855,
    "lon": -51.18652,
@@ -56129,10 +56133,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1000,
+    "ref_m2": 1038,
     "base": "Estância Bom Tempo",
-    "n": 21,
-    "pct": 21
+    "n": 10,
+    "pct": 17
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -56178,10 +56182,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1872,
-    "base": "Tamboré",
-    "n": 6,
-    "pct": 12
+    "ref_m2": 2361,
+    "base": "bairro Recanto Do Salto",
+    "n": 63,
+    "pct": -11
    },
    "lat": -23.365962,
    "lon": -51.205617,
@@ -56213,9 +56217,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1935,
+    "ref_m2": 1934,
     "base": "Tamboré",
-    "n": 7,
+    "n": 4,
     "pct": -55,
     "suspeito": true
    },
@@ -56250,10 +56254,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4279,
+    "ref_m2": 3123,
     "base": "Royal Park",
-    "n": 12,
-    "pct": -2
+    "n": 6,
+    "pct": 34
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -56357,9 +56361,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -1
    },
    "lat": -23.355647,
@@ -56394,7 +56398,7 @@
    "media": {
     "ref_m2": 3675,
     "base": "Alphaville 2",
-    "n": 27,
+    "n": 19,
     "pct": 12
    },
    "lat": -23.355647,
@@ -56427,13 +56431,11 @@
     }
    ],
    "media": {
-    "ref_m2": 4279,
+    "ref_m2": 3123,
     "base": "Royal Park",
-    "n": 12,
-    "pct": -32,
-    "suspeito": false
+    "n": 6,
+    "pct": -7
    },
-   "abaixo": true,
    "lat": -23.349348,
    "lon": -51.207552,
    "geo": "predio"
@@ -56580,9 +56582,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": -4
    },
    "lat": -23.355647,
@@ -56615,10 +56617,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4518,
+    "ref_m2": 4636,
     "base": "Alphaville",
-    "n": 11,
-    "pct": 26
+    "n": 5,
+    "pct": 23
    },
    "lat": -23.34855,
    "lon": -51.18652,
@@ -56693,9 +56695,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": -10
    },
    "lat": -23.355647,
@@ -56728,10 +56730,10 @@
     }
    ],
    "media": {
-    "ref_m2": 978,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": -2
+    "n": 6,
+    "pct": 5
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -56763,9 +56765,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": -2
    },
    "lat": -23.355647,
@@ -56829,7 +56831,7 @@
    "media": {
     "ref_m2": 702,
     "base": "Terras de Canaã",
-    "n": 10,
+    "n": 6,
     "pct": -10
    },
    "lat": -23.349722,
@@ -56879,9 +56881,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3687,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": 0
    }
   },
@@ -56911,10 +56913,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4195,
+    "ref_m2": 4139,
     "base": "Royal Park",
-    "n": 11,
-    "pct": 28
+    "n": 5,
+    "pct": 30
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -56946,10 +56948,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": -7
+    "n": 29,
+    "pct": -6
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -57019,7 +57021,7 @@
    "media": {
     "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 18,
     "pct": 34
    },
    "lat": -23.365295,
@@ -57052,9 +57054,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2450,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 36,
+    "n": 28,
     "pct": -23,
     "suspeito": false
    },
@@ -57089,10 +57091,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2697,
+    "ref_m2": 2576,
     "base": "bairro Esperanca",
-    "n": 61,
-    "pct": 41
+    "n": 39,
+    "pct": 48
    },
    "lat": -23.34938,
    "lon": -51.20712,
@@ -57124,10 +57126,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4193,
+    "ref_m2": 3123,
     "base": "Royal Park",
-    "n": 12,
-    "pct": 12
+    "n": 6,
+    "pct": 50
    },
    "lat": -23.349348,
    "lon": -51.207552,
@@ -57159,10 +57161,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2555,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": 5
+    "n": 28,
+    "pct": 6
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -57196,7 +57198,7 @@
    "media": {
     "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 14,
+    "n": 10,
     "pct": 13
    },
    "lat": -23.366004,
@@ -57229,10 +57231,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -2
+    "n": 28,
+    "pct": -1
    },
    "lat": -23.36622,
    "lon": -51.20012,
@@ -57278,10 +57280,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1159,
+    "ref_m2": 1156,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": -2
+    "n": 9,
+    "pct": -1
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -57313,10 +57315,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 11
+    "n": 29,
+    "pct": 13
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -57369,10 +57371,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2737,
+    "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": 1
+    "n": 17,
+    "pct": 2
    },
    "lat": -23.365295,
    "lon": -51.206554,
@@ -57406,7 +57408,7 @@
    "media": {
     "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 14,
+    "n": 10,
     "pct": 22
    },
    "lat": -23.366004,
@@ -57439,10 +57441,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 10
+    "n": 27,
+    "pct": 11
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -57474,10 +57476,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 27
+    "n": 27,
+    "pct": 29
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -57509,9 +57511,9 @@
     }
    ],
    "media": {
-    "ref_m2": 1935,
+    "ref_m2": 1934,
     "base": "Tamboré",
-    "n": 7,
+    "n": 4,
     "pct": -6
    },
    "lat": -23.365962,
@@ -57551,10 +57553,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": -13
+    "n": 27,
+    "pct": -12
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -57596,10 +57598,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4165,
+    "ref_m2": 3429,
     "base": "Royal Park",
-    "n": 14,
-    "pct": 1
+    "n": 7,
+    "pct": 22
    }
   },
   {
@@ -57659,10 +57661,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2679,
+    "ref_m2": 2633,
     "base": "bairro Esperanca",
-    "n": 109,
-    "pct": 44
+    "n": 63,
+    "pct": 47
    }
   },
   {
@@ -57691,10 +57693,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 4
+    "n": 28,
+    "pct": 5
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -57726,10 +57728,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2730,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -10
+    "n": 29,
+    "pct": -8
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -57790,10 +57792,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 14
+    "n": 27,
+    "pct": 15
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -57832,9 +57834,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 17,
     "pct": -8
    },
    "lat": -23.365295,
@@ -57876,7 +57878,7 @@
    "media": {
     "ref_m2": 2271,
     "base": "Artesano",
-    "n": 6,
+    "n": 4,
     "pct": -3
    },
    "lat": -23.36622,
@@ -57938,9 +57940,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": -14
    },
    "lat": -23.36622,
@@ -57990,10 +57992,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4359,
-    "base": "Alphaville",
+    "ref_m2": 3431,
+    "base": "bairro Palhano",
     "n": 10,
-    "pct": 4
+    "pct": 32
    }
   },
   {
@@ -58032,10 +58034,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -7
+    "n": 22,
+    "pct": -4
    }
   },
   {
@@ -58071,10 +58073,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 26,
+    "pct": -10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58120,10 +58122,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 26,
+    "pct": -10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58162,10 +58164,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 27,
+    "pct": -9
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58211,10 +58213,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 26,
+    "pct": -10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58246,10 +58248,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 27,
+    "pct": -9
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58281,10 +58283,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 27,
+    "pct": -10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58328,7 +58330,7 @@
    "media": {
     "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 23,
+    "n": 18,
     "pct": 40
    }
   },
@@ -58360,7 +58362,7 @@
    "media": {
     "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": 21
    },
    "lat": -23.355647,
@@ -58403,10 +58405,10 @@
     }
    ],
    "media": {
-    "ref_m2": 700,
+    "ref_m2": 687,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": -2
+    "n": 6,
+    "pct": 0
    }
   },
   {
@@ -58442,10 +58444,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2834,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 20,
-    "pct": -8
+    "n": 17,
+    "pct": -6
    },
    "lat": -23.365295,
    "lon": -51.206554,
@@ -58501,10 +58503,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 0
+    "n": 29,
+    "pct": 3
    }
   },
   {
@@ -58547,10 +58549,10 @@
     }
    ],
    "media": {
-    "ref_m2": 3695,
+    "ref_m2": 3685,
     "base": "Alphaville 2",
-    "n": 29,
-    "pct": 3
+    "n": 20,
+    "pct": 4
    },
    "lat": -23.355647,
    "lon": -51.187876,
@@ -58582,10 +58584,10 @@
     }
    ],
    "media": {
-    "ref_m2": 980,
+    "ref_m2": 919,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": -11
+    "n": 6,
+    "pct": -5
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -58624,10 +58626,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 10
+    "n": 26,
+    "pct": 11
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58661,7 +58663,7 @@
    "media": {
     "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
+    "n": 28,
     "pct": 6
    },
    "lat": -23.36622,
@@ -58696,7 +58698,7 @@
    "media": {
     "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
+    "n": 28,
     "pct": 4
    },
    "lat": -23.36622,
@@ -58729,10 +58731,10 @@
     }
    ],
    "media": {
-    "ref_m2": 639,
+    "ref_m2": 650,
     "base": "Estância Santa Paula",
-    "n": 22,
-    "pct": 5
+    "n": 15,
+    "pct": 3
    },
    "lat": -23.358044,
    "lon": -51.244311,
@@ -58764,10 +58766,10 @@
     }
    ],
    "media": {
-    "ref_m2": 702,
+    "ref_m2": 685,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": -14
+    "n": 7,
+    "pct": -11
    },
    "lat": -23.349722,
    "lon": -51.212338,
@@ -58799,10 +58801,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 10
+    "n": 27,
+    "pct": 12
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -58836,7 +58838,7 @@
    "media": {
     "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": 7
    },
    "lat": -23.355647,
@@ -58871,7 +58873,7 @@
    "media": {
     "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 14,
+    "n": 10,
     "pct": 1
    },
    "lat": -23.366004,
@@ -58906,7 +58908,7 @@
    "media": {
     "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
+    "n": 28,
     "pct": 6
    },
    "lat": -23.36622,
@@ -58975,9 +58977,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2764,
     "base": "Sun Lake",
-    "n": 22,
+    "n": 17,
     "pct": -10
    },
    "lat": -23.365295,
@@ -59010,10 +59012,10 @@
     }
    ],
    "media": {
-    "ref_m2": 683,
+    "ref_m2": 786,
     "base": "bairro Esperanca",
-    "n": 31,
-    "pct": 70
+    "n": 23,
+    "pct": 48
    },
    "lat": -23.349123,
    "lon": -51.207308,
@@ -59045,10 +59047,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1000,
+    "ref_m2": 1038,
     "base": "Estância Bom Tempo",
-    "n": 21,
-    "pct": 60
+    "n": 10,
+    "pct": 54
    },
    "lat": -23.366126,
    "lon": -51.221356,
@@ -59080,10 +59082,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -21,
+    "n": 26,
+    "pct": -20,
     "suspeito": false
    },
    "abaixo": true,
@@ -59117,10 +59119,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4359,
+    "ref_m2": 4583,
     "base": "Alphaville",
-    "n": 10,
-    "pct": 17
+    "n": 4,
+    "pct": 11
    },
    "lat": -23.34855,
    "lon": -51.18652,
@@ -59152,10 +59154,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2308,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -25,
+    "n": 27,
+    "pct": -24,
     "suspeito": false
    },
    "abaixo": true,
@@ -59189,10 +59191,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -11
+    "n": 26,
+    "pct": -10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -59238,10 +59240,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -9
+    "n": 27,
+    "pct": -8
    },
    "lat": -23.36622,
    "lon": -51.20012,
@@ -59336,6 +59338,13 @@
      "area_anunciada": null
     },
     {
+     "portal": "inglaterra",
+     "url": "https://www.imobiliariainglaterra.com.br/imovel/terreno-londrina-501-m/TE1855-INIC",
+     "preco": 1090000,
+     "area": 501,
+     "area_anunciada": null
+    },
+    {
      "portal": "aurora",
      "url": "https://www.auroraimobi.com.br/imovel/terreno-londrina-501-m/TE1784-AURO",
      "preco": 1090000,
@@ -59344,10 +59353,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -12
+    "n": 27,
+    "pct": -11
    },
    "lat": -23.36622,
    "lon": -51.20012,
@@ -59379,10 +59388,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -3
+    "n": 30,
+    "pct": 0
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -59416,7 +59425,7 @@
    "media": {
     "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 23,
+    "n": 19,
     "pct": 11
    },
    "lat": -23.365295,
@@ -59642,7 +59651,7 @@
    "media": {
     "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 23,
+    "n": 18,
     "pct": 48
    }
   },
@@ -59682,10 +59691,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2732,
+    "ref_m2": 2700,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": 37
+    "n": 17,
+    "pct": 39
    }
   },
   {
@@ -59743,9 +59752,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 4
    },
    "lat": -23.36622,
@@ -59785,10 +59794,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -12
+    "n": 22,
+    "pct": -9
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -59872,10 +59881,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2764,
+    "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 23,
-    "pct": -2
+    "n": 18,
+    "pct": -1
    }
   },
   {
@@ -59904,10 +59913,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2781,
+    "ref_m2": 2753,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": 44
+    "n": 27,
+    "pct": 45
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -59939,10 +59948,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 5
+    "n": 29,
+    "pct": 6
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -59976,7 +59985,7 @@
    "media": {
     "ref_m2": 2438,
     "base": "Artesano",
-    "n": 36,
+    "n": 28,
     "pct": 5
    },
    "lat": -23.36622,
@@ -60019,9 +60028,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 10
    }
   },
@@ -60051,10 +60060,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 55
+    "n": 28,
+    "pct": 57
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -60086,13 +60095,11 @@
     }
    ],
    "media": {
-    "ref_m2": 4279,
+    "ref_m2": 2816,
     "base": "Royal Park",
-    "n": 12,
-    "pct": -20,
-    "suspeito": false
+    "n": 5,
+    "pct": 22
    },
-   "abaixo": true,
    "lat": -23.349348,
    "lon": -51.207552,
    "geo": "predio"
@@ -60123,9 +60130,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 15
    },
    "lat": -23.36622,
@@ -60187,10 +60194,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2774,
+    "ref_m2": 2706,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": 8
+    "n": 30,
+    "pct": 10
    },
    "lat": -23.347029,
    "lon": -51.212781,
@@ -60239,10 +60246,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -17,
+    "n": 27,
+    "pct": -16,
     "suspeito": false
    },
    "abaixo": true
@@ -60273,10 +60280,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 0
+    "n": 29,
+    "pct": 2
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -60337,10 +60344,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 9
+    "n": 28,
+    "pct": 10
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -60372,10 +60379,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1159,
+    "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": -9
+    "n": 10,
+    "pct": -8
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -60414,9 +60421,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 3
    },
    "lat": -23.36622,
@@ -60451,7 +60458,7 @@
    "media": {
     "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
+    "n": 28,
     "pct": 2
    },
    "lat": -23.36622,
@@ -60491,9 +60498,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 36,
+    "n": 27,
     "pct": 3
    },
    "lat": -23.36622,
@@ -60526,9 +60533,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 3
    },
    "lat": -23.36622,
@@ -60561,10 +60568,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2769,
+    "ref_m2": 2732,
     "base": "Sun Lake",
-    "n": 22,
-    "pct": -22,
+    "n": 18,
+    "pct": -21,
     "suspeito": false
    },
    "abaixo": true,
@@ -60598,9 +60605,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -5
    },
    "lat": -23.355647,
@@ -60633,9 +60640,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3695,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 21,
     "pct": -9
    },
    "lat": -23.355647,
@@ -60675,10 +60682,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2808,
+    "ref_m2": 2796,
     "base": "Royal Golf",
-    "n": 7,
-    "pct": -10
+    "n": 6,
+    "pct": -9
    },
    "lat": -23.35048,
    "lon": -51.197902,
@@ -60717,10 +60724,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2784,
+    "ref_m2": 2726,
     "base": "Royal Golf",
-    "n": 7,
-    "pct": 12
+    "n": 6,
+    "pct": 15
    },
    "lat": -23.35048,
    "lon": -51.197902,
@@ -60752,9 +60759,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2450,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 36,
+    "n": 27,
     "pct": -19,
     "suspeito": false
    },
@@ -60799,10 +60806,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -6
+    "n": 27,
+    "pct": -5
    }
   },
   {
@@ -60885,7 +60892,7 @@
    "media": {
     "ref_m2": 1134,
     "base": "Estância Bom Tempo",
-    "n": 11,
+    "n": 5,
     "pct": 7
    }
   },
@@ -60915,9 +60922,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 28,
     "pct": -47,
     "suspeito": false
    },
@@ -60954,7 +60961,7 @@
    "media": {
     "ref_m2": 425,
     "base": "Estância Cabral",
-    "n": 6,
+    "n": 4,
     "pct": -14
    },
    "lat": -23.364539,
@@ -60987,10 +60994,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
-    "pct": -1
+    "n": 27,
+    "pct": 0
    },
    "lat": -23.36622,
    "lon": -51.20012,
@@ -61022,9 +61029,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 29,
     "pct": -59,
     "suspeito": true
    },
@@ -61059,10 +61066,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 4
+    "n": 28,
+    "pct": 5
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -61094,10 +61101,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": -2
+    "n": 27,
+    "pct": 0
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -61139,10 +61146,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2461,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 35,
-    "pct": -9
+    "n": 27,
+    "pct": -8
    }
   },
   {
@@ -61171,10 +61178,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2555,
+    "ref_m2": 2532,
     "base": "Parque das Artes",
-    "n": 40,
-    "pct": 4
+    "n": 27,
+    "pct": 5
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -61206,11 +61213,13 @@
     }
    ],
    "media": {
-    "ref_m2": 980,
+    "ref_m2": 1000,
     "base": "Estância Bom Tempo",
-    "n": 14,
-    "pct": -14
+    "n": 5,
+    "pct": -16,
+    "suspeito": false
    },
+   "abaixo": true,
    "lat": -23.366126,
    "lon": -51.221356,
    "geo": "predio"
@@ -61277,10 +61286,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2700,
+    "ref_m2": 3240,
     "base": "Sun Lake",
-    "n": 9,
-    "pct": -29,
+    "n": 6,
+    "pct": -41,
     "suspeito": false
    },
    "abaixo": true,
@@ -61314,10 +61323,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2540,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": -4
+    "n": 29,
+    "pct": -3
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -61366,10 +61375,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2200,
+    "ref_m2": 2169,
     "base": "bairro Recanto Do Salto",
-    "n": 61,
-    "pct": -13
+    "n": 42,
+    "pct": -11
    }
   },
   {
@@ -61398,9 +61407,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
+    "n": 26,
     "pct": -51,
     "suspeito": true
    },
@@ -61442,9 +61451,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 28,
     "pct": -85,
     "suspeito": true
    },
@@ -61486,10 +61495,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -4
+    "n": 26,
+    "pct": -3
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61535,10 +61544,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -2
+    "n": 26,
+    "pct": -1
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61577,10 +61586,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 13
+    "n": 26,
+    "pct": 15
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61619,10 +61628,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -9
+    "n": 26,
+    "pct": -8
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61661,10 +61670,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -5
+    "n": 26,
+    "pct": -3
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61703,10 +61712,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -5
+    "n": 26,
+    "pct": -3
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61745,10 +61754,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2324,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -4
+    "n": 26,
+    "pct": -3
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -61822,10 +61831,10 @@
     }
    ],
    "media": {
-    "ref_m2": 397,
+    "ref_m2": 395,
     "base": "Estância Cabral",
-    "n": 6,
-    "pct": 9
+    "n": 4,
+    "pct": 10
    },
    "lat": -23.364539,
    "lon": -51.219989,
@@ -61871,9 +61880,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 11
    },
    "lat": -23.36622,
@@ -61909,10 +61918,10 @@
     }
    ],
    "media": {
-    "ref_m2": 633,
+    "ref_m2": 665,
     "base": "bairro Esperanca",
-    "n": 37,
-    "pct": 32
+    "n": 27,
+    "pct": 25
    }
   },
   {
@@ -61965,10 +61974,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2697,
+    "ref_m2": 2555,
     "base": "bairro Esperanca",
-    "n": 61,
-    "pct": 26
+    "n": 38,
+    "pct": 33
    }
   },
   {
@@ -62007,9 +62016,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2438,
+    "ref_m2": 2437,
     "base": "Artesano",
-    "n": 35,
+    "n": 27,
     "pct": 19
    }
   },
@@ -62046,9 +62055,9 @@
     }
    ],
    "media": {
-    "ref_m2": 405,
+    "ref_m2": 403,
     "base": "Estância Cabral",
-    "n": 6,
+    "n": 4,
     "pct": 3
    },
    "lat": -23.364539,
@@ -62105,10 +62114,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2180,
+    "ref_m2": 2248,
     "base": "bairro Terras De Santana",
-    "n": 6,
-    "pct": 74
+    "n": 5,
+    "pct": 68
    }
   },
   {
@@ -62154,10 +62163,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2793,
+    "ref_m2": 2763,
     "base": "Royal Forest",
-    "n": 39,
-    "pct": -22,
+    "n": 26,
+    "pct": -21,
     "suspeito": false
    },
    "abaixo": true
@@ -62188,10 +62197,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1156,
+    "ref_m2": 1148,
     "base": "Recanto do Salto",
-    "n": 15,
-    "pct": 30
+    "n": 10,
+    "pct": 31
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -62223,10 +62232,10 @@
     }
    ],
    "media": {
-    "ref_m2": 682,
+    "ref_m2": 669,
     "base": "Terras de Canaã",
-    "n": 10,
-    "pct": 41
+    "n": 6,
+    "pct": 44
    },
    "lat": -23.349722,
    "lon": -51.212338,
@@ -62258,10 +62267,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1148,
+    "ref_m2": 1140,
     "base": "Recanto do Salto",
-    "n": 14,
-    "pct": 29
+    "n": 9,
+    "pct": 30
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -62322,9 +62331,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2555,
     "base": "Parque das Artes",
-    "n": 41,
+    "n": 28,
     "pct": -80,
     "suspeito": true
    },
@@ -62369,10 +62378,10 @@
     }
    ],
    "media": {
-    "ref_m2": 1548,
+    "ref_m2": 1500,
     "base": "Recanto do Salto",
-    "n": 10,
-    "pct": -22,
+    "n": 7,
+    "pct": -19,
     "suspeito": false
    },
    "abaixo": true
@@ -62424,10 +62433,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 81
+    "n": 26,
+    "pct": 83
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -62459,10 +62468,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2024,
+    "ref_m2": 1972,
     "base": "bairro Recanto Do Salto",
-    "n": 13,
-    "pct": 42
+    "n": 12,
+    "pct": 46
    },
    "lat": -23.365824,
    "lon": -51.208775,
@@ -62496,7 +62505,7 @@
    "media": {
     "ref_m2": 1134,
     "base": "Estância Bom Tempo",
-    "n": 11,
+    "n": 5,
     "pct": 6
    },
    "lat": -23.366126,
@@ -62539,10 +62548,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2024,
+    "ref_m2": 2004,
     "base": "Recanto do Salto",
-    "n": 5,
-    "pct": 42
+    "n": 4,
+    "pct": 43
    }
   },
   {
@@ -62588,10 +62597,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2779,
+    "ref_m2": 2681,
     "base": "Royal Forest",
-    "n": 42,
-    "pct": -2
+    "n": 29,
+    "pct": 2
    }
   },
   {
@@ -62620,10 +62629,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2357,
+    "ref_m2": 2323,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": -2
+    "n": 26,
+    "pct": -1
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -62713,10 +62722,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -10
+    "n": 22,
+    "pct": -7
    },
    "lat": -23.366004,
    "lon": -51.215929,
@@ -62748,10 +62757,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2556,
+    "ref_m2": 2353,
     "base": "Recanto do Salto",
-    "n": 25,
-    "pct": -87,
+    "n": 14,
+    "pct": -86,
     "suspeito": true
    },
    "abaixo": true,
@@ -62814,9 +62823,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2450,
+    "ref_m2": 2438,
     "base": "Artesano",
-    "n": 36,
+    "n": 27,
     "pct": -14
    },
    "lat": -23.36622,
@@ -62859,10 +62868,10 @@
     }
    ],
    "media": {
-    "ref_m2": 4165,
+    "ref_m2": 3429,
     "base": "Royal Park",
-    "n": 14,
-    "pct": 9
+    "n": 7,
+    "pct": 32
    }
   },
   {
@@ -62929,9 +62938,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2575,
+    "ref_m2": 2578,
     "base": "Parque das Artes",
-    "n": 32,
+    "n": 22,
     "pct": 0
    }
   },
@@ -62968,10 +62977,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2569,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 35
+    "n": 28,
+    "pct": 37
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -63042,10 +63051,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2389,
     "base": "Recanto do Salto",
-    "n": 37,
-    "pct": 42
+    "n": 19,
+    "pct": 45
    }
   },
   {
@@ -63084,9 +63093,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -14
    }
   },
@@ -63123,10 +63132,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2340,
+    "ref_m2": 2307,
     "base": "Euro Royal",
-    "n": 37,
-    "pct": 9
+    "n": 26,
+    "pct": 10
    },
    "lat": -23.361004,
    "lon": -51.19648,
@@ -63168,11 +63177,13 @@
     }
    ],
    "media": {
-    "ref_m2": 1935,
-    "base": "Tamboré",
-    "n": 7,
-    "pct": 0
-   }
+    "ref_m2": 2361,
+    "base": "bairro Recanto Do Salto",
+    "n": 63,
+    "pct": -18,
+    "suspeito": false
+   },
+   "abaixo": true
   },
   {
    "id": "cm48505663",
@@ -63200,10 +63211,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2433,
+    "ref_m2": 2350,
     "base": "Recanto do Salto",
-    "n": 39,
-    "pct": -21,
+    "n": 22,
+    "pct": -18,
     "suspeito": false
    },
    "abaixo": true,
@@ -63247,10 +63258,10 @@
     }
    ],
    "media": {
-    "ref_m2": 650,
+    "ref_m2": 661,
     "base": "Estância Santa Paula",
-    "n": 23,
-    "pct": -20,
+    "n": 15,
+    "pct": -22,
     "suspeito": false
    },
    "abaixo": true
@@ -63288,10 +63299,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2570,
+    "ref_m2": 2536,
     "base": "Parque das Artes",
-    "n": 41,
-    "pct": 0
+    "n": 28,
+    "pct": 1
    },
    "lat": -23.365851,
    "lon": -51.207248,
@@ -63362,9 +63373,9 @@
     }
    ],
    "media": {
-    "ref_m2": 2808,
+    "ref_m2": 2796,
     "base": "Royal Golf",
-    "n": 7,
+    "n": 6,
     "pct": -5
    }
   },
@@ -63404,10 +63415,10 @@
     }
    ],
    "media": {
-    "ref_m2": 2555,
+    "ref_m2": 2532,
     "base": "Parque das Artes",
-    "n": 42,
-    "pct": 10
+    "n": 29,
+    "pct": 11
    }
   },
   {
@@ -63450,9 +63461,9 @@
     }
    ],
    "media": {
-    "ref_m2": 3700,
+    "ref_m2": 3697,
     "base": "Alphaville 2",
-    "n": 29,
+    "n": 20,
     "pct": -18,
     "suspeito": false
    },
@@ -63460,7 +63471,44 @@
    "lat": -23.355647,
    "lon": -51.187876,
    "geo": "predio"
+  },
+  {
+   "id": "giTE0428-GLI",
+   "tipo": "terreno",
+   "predio": "Parque Das Artes - 1 - Ateliê",
+   "endereco": "R. Alcides Turini",
+   "bairro": "Parque Das Artes",
+   "foto": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux03iYlC5QoCqvQGX7Cg5SymwoKX7oiQ8Gef6IncpaPBkMf0Xs7Q17A1gLDWHn2+jYA9YswQYlx8XuQhHSayB4C4BX1b8gKjoXn1EZ8bb29y-DAuoBBX7Qrhf4T8r2Yh8RaDN8r+kg+xbKvfD3ZuOLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwXd5NnLxXkQbFH7Md6ki4lIzBgvaoZ0vQYVU6o+zM+vrnaK2jG7SNe2+jxctTxZLUO8sVNYShTyoHQnlkYmhR+BW29rnGsACzNGqH.jpg",
+   "area": 422,
+   "preco": 825000,
+   "preco_anterior": null,
+   "quartos": null,
+   "banheiros": null,
+   "vagas": null,
+   "titulo": "Terreno, 423 m²",
+   "publicado": null,
+   "detectado": "2026-11-12T23:11:21Z",
+   "fontes": [
+    {
+     "portal": "gleba",
+     "url": "https://www.glebaimoveis.com/imovel/terreno-londrina-423-m/TE0428-GLI",
+     "preco": 825000,
+     "area": 422,
+     "area_anunciada": null
+    }
+   ],
+   "media": {
+    "ref_m2": 2540,
+    "base": "Parque das Artes",
+    "n": 27,
+    "pct": -23,
+    "suspeito": false
+   },
+   "abaixo": true,
+   "lat": -23.365851,
+   "lon": -51.207248,
+   "geo": "predio"
   }
  ],
- "atualizado": "2026-11-12T17:12:01Z"
+ "atualizado": "2026-11-12T23:11:21Z"
 }

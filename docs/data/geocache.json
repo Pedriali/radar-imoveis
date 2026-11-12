@@ -995,7 +995,7 @@
 -51.166415
 ],
 "local:centro|odyssey": [
--23.30755,
+-23.307597,
 -51.173264
 ],
 "local:centro|odysseycentrolondrinaexcelente": [
@@ -2013,6 +2013,10 @@
 "local:palhano|maisonlegacy": [
 -23.33134,
 -51.179579
+],
+"local:palhano|maisonprivilege": [
+-23.330344,
+-51.179489
 ],
 "local:palhano|maisonprovence": [
 -23.32814,
@@ -3045,6 +3049,11 @@
 "rua:avenida harry prochet|10": [
 -23.34764,
 -51.16515,
+"highway"
+],
+"rua:avenida juscelino kubitscheck|1361": [
+-23.319918,
+-51.165287,
 "highway"
 ],
 "rua:avenida martiniano do valle filho|333": [
