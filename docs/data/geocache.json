@@ -107,8 +107,8 @@
 -51.18652
 ],
 "local:Alphaville 2": [
--23.35544,
--51.18812
+-23.355647,
+-51.187876
 ],
 "local:Artesano": [
 -23.36622,
@@ -879,8 +879,8 @@
 -51.156082
 ],
 "local:centro|mato grosso|1893": [
--23.325732,
--51.156212
+-23.321133,
+-51.156291
 ],
 "local:centro|mato grosso|218": [
 -23.31079,
@@ -925,6 +925,10 @@
 "local:centro|mediterraneo": [
 -23.311525,
 -51.166957
+],
+"local:centro|miguelbespalhok": [
+-23.31072,
+-51.16184
 ],
 "local:centro|minasgerais": [
 -23.314948,
@@ -1034,6 +1038,10 @@
 -23.310684,
 -51.16944
 ],
+"local:centro|paranagua|1199": [
+-23.31239,
+-51.169244
+],
 "local:centro|paranagua|55": [
 -23.305961,
 -51.169109
@@ -1115,8 +1123,8 @@
 -51.15398
 ],
 "local:centro|piaui|191": [
--23.313115,
--51.158359
+-23.313257,
+-51.158353
 ],
 "local:centro|piaui|61": [
 -23.313514,
@@ -1329,6 +1337,10 @@
 "local:centro|santos125085": [
 -23.316975,
 -51.167922
+],
+"local:centro|santos1250londrina": [
+-23.317,
+-51.168
 ],
 "local:centro|santos|1111": [
 -23.315784,
@@ -1791,8 +1803,8 @@
 -51.156043
 ],
 "local:palhano|allure": [
--23.329383,
--51.180798
+-23.329667,
+-51.181213
 ],
 "local:palhano|almeria": [
 -23.330079,
@@ -1878,6 +1890,10 @@
 -23.331065,
 -51.182358
 ],
+"local:palhano|ernani lacerda de athayde|1075": [
+-23.33,
+-51.183
+],
 "local:palhano|eurico hummig|255": [
 -23.333236,
 -51.179752
@@ -1950,9 +1966,17 @@
 -23.32814,
 -51.179018
 ],
+"local:palhano|joao wycliff|420": [
+-23.331818,
+-51.174151
+],
 "local:palhano|joao wyclif|420": [
 -23.331715,
 -51.174159
+],
+"local:palhano|kensingtongardens": [
+-23.328,
+-51.183
 ],
 "local:palhano|lacroyal": [
 -23.328286,
@@ -2023,8 +2047,8 @@
 -51.180738
 ],
 "local:palhano|pe vermelho|50": [
--23.329947,
--51.180613
+-23.329,
+-51.18
 ],
 "local:palhano|pe vermelho|51": [
 -23.32921,
@@ -2051,12 +2075,12 @@
 -51.174766
 ],
 "local:palhano|sunflowersresidence": [
--23.332179,
--51.174766
+-23.33209,
+-51.174383
 ],
 "local:palhano|terrabrasil": [
--23.33301,
--51.18082
+-23.3331,
+-51.180885
 ],
 "local:palhano|terroir": [
 -23.333023,
@@ -2214,6 +2238,10 @@
 -23.348145,
 -51.21109
 ],
+"local:royaltennisreseresort": [
+-23.349123,
+-51.207308
+],
 "local:royaltennisresidenceresort": [
 -23.348145,
 -51.211091
@@ -2269,6 +2297,14 @@
 "local:santa rosa|fernandopessoa": [
 -23.332234,
 -51.175603
+],
+"local:santa rosa|fernandopessoa3suites": [
+-23.332234,
+-51.175603
+],
+"local:santa rosa|kensingtongardens": [
+-23.332528,
+-51.181854
 ],
 "local:santa rosa|kensingtongardenssemimobiliado": [
 -23.33249,
@@ -2518,6 +2554,7 @@
 "predio:david pansolin": null,
 "predio:diamond residence 148": null,
 "predio:dom camilo": null,
+"predio:dunas dourada regiao central de londrina": null,
 "predio:edificio visconde de barbacena": null,
 "predio:embaixador": null,
 "predio:escalada": [
