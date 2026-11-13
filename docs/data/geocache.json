@@ -366,6 +366,10 @@
 -23.310816,
 -51.162114
 ],
+"local:centro|amarilis": [
+-23.311455,
+-51.17045
+],
 "local:centro|anaflavia": [
 -23.31658,
 -51.167448
@@ -398,6 +402,10 @@
 -23.31265,
 -51.16108
 ],
+"local:centro|associacaorural": [
+-23.31346,
+-51.157247
+],
 "local:centro|atenas": [
 -23.317155,
 -51.163932
@@ -419,8 +427,8 @@
 -51.164859
 ],
 "local:centro|belacintra": [
--23.31285,
--51.169527
+-23.312915,
+-51.169464
 ],
 "local:centro|belacintracentro": [
 -23.312917,
@@ -1003,7 +1011,7 @@
 -51.166415
 ],
 "local:centro|odyssey": [
--23.307597,
+-23.30755,
 -51.173264
 ],
 "local:centro|odysseycentrolondrinaexcelente": [
@@ -1402,6 +1410,14 @@
 -23.318913,
 -51.156252
 ],
+"local:centro|senador souza naves|2615": [
+-23.316569,
+-51.157693
+],
+"local:centro|senador souza naves|2645": [
+-23.316567,
+-51.157693
+],
 "local:centro|sergipe|1468": [
 -23.309512,
 -51.167274
@@ -1473,6 +1489,10 @@
 "local:centro|solaris": [
 -23.31554,
 -51.161981
+],
+"local:centro|solarmonet": [
+-23.316407,
+-51.167432
 ],
 "local:centro|solarmontreaux": [
 -23.317548,
@@ -1735,8 +1755,8 @@
 -51.214076
 ],
 "local:guanabara|pottylazarottoeste": [
--23.335,
--51.176
+-23.33566,
+-51.17604
 ],
 "local:guanabara|potylazarotto": [
 -23.33574,
@@ -1895,8 +1915,8 @@
 -51.180687
 ],
 "local:palhano|chelseatowerconta": [
--23.333356,
--51.188859
+-23.33254,
+-51.18219
 ],
 "local:palhano|completo": [
 -23.3318,
@@ -1913,6 +1933,10 @@
 "local:palhano|ernani lacerda de athayde|1075": [
 -23.33,
 -51.183
+],
+"local:palhano|eurico hummig|107": [
+-23.334488,
+-51.180043
 ],
 "local:palhano|eurico hummig|255": [
 -23.333236,
@@ -2071,8 +2095,8 @@
 -51.18123
 ],
 "local:palhano|parcrocher": [
--23.328924,
--51.180738
+-23.329211,
+-51.180767
 ],
 "local:palhano|pe vermelho|50": [
 -23.329,
@@ -2093,6 +2117,10 @@
 "local:palhano|queenspark": [
 -23.332548,
 -51.181238
+],
+"local:palhano|sebastiao chapp galindo|167": [
+-23.2766,
+-51.19726
 ],
 "local:palhano|solarrivera": [
 -23.333582,
@@ -2804,6 +2832,7 @@
 "predio:portal da goias": null,
 "predio:portal fazenda": null,
 "predio:portaria": null,
+"predio:portinari": null,
 "predio:porto velho": null,
 "predio:potty lazarotto.este": null,
 "predio:poty": [
