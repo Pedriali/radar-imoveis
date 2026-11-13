@@ -790,6 +790,10 @@
 -23.322177,
 -51.153216
 ],
+"local:centro|juscelino kubitscheck|1361": [
+-23.31146,
+-51.170451
+],
 "local:centro|kennedy": [
 -23.316707,
 -51.160492
@@ -910,6 +914,10 @@
 -23.3213,
 -51.15278
 ],
+"local:centro|mediterranee": [
+-23.321484,
+-51.161595
+],
 "local:centro|mediterraneecentrodelondrina": [
 -23.321484,
 -51.161595
@@ -1027,8 +1035,8 @@
 -51.16456
 ],
 "local:centro|ouropreto": [
--23.308931,
--51.166786
+-23.308979,
+-51.16686
 ],
 "local:centro|parana": [
 -23.315779,
@@ -1133,6 +1141,10 @@
 "local:centro|piemonte": [
 -23.32341,
 -51.15662
+],
+"local:centro|pio xii|335": [
+-23.312095,
+-51.164843
 ],
 "local:centro|plazadelastorres": [
 -23.302161,
@@ -1721,6 +1733,10 @@
 "local:goldenhillpermuta": [
 -23.33776,
 -51.214076
+],
+"local:guanabara|pottylazarottoeste": [
+-23.335,
+-51.176
 ],
 "local:guanabara|potylazarotto": [
 -23.33574,
@@ -2516,6 +2532,7 @@
 -51.176337,
 "building"
 ],
+"predio:casablanca": null,
 "predio:cassete": null,
 "predio:catuai park": null,
 "predio:catuai parque residence": null,
@@ -2740,6 +2757,7 @@
 -51.158663,
 "building"
 ],
+"predio:nova jersey": null,
 "predio:novitta": null,
 "predio:novitta residence": null,
 "predio:novo mundo": null,
