@@ -482,6 +482,10 @@
 -23.311898,
 -51.161124
 ],
+"local:centro|boulevardvillage": [
+-23.31572,
+-51.145055
+],
 "local:centro|brasil|878": [
 -23.316913,
 -51.153991
@@ -562,9 +566,13 @@
 -23.313785,
 -51.156478
 ],
+"local:centro|cenario": [
+-23.31109,
+-51.17
+],
 "local:centro|cenarioresidence": [
 -23.311052,
--51.169971
+-51.169942
 ],
 "local:centro|centrocomercial": [
 -23.313392,
@@ -573,6 +581,10 @@
 "local:centro|charleville": [
 -23.31539,
 -51.16631
+],
+"local:centro|cinquentenario": [
+-23.307023,
+-51.158633
 ],
 "local:centro|coimbra": [
 -23.316196,
@@ -603,8 +615,8 @@
 -51.16371
 ],
 "local:centro|costad": [
--23.314231,
--51.166413
+-23.314273,
+-51.166396
 ],
 "local:centro|costadocaribe": [
 -23.314695,
@@ -699,8 +711,8 @@
 -51.153869
 ],
 "local:centro|giardini": [
--23.314662,
--51.16855
+-23.314457,
+-51.168581
 ],
 "local:centro|goias|1223": [
 -23.315525,
@@ -1463,8 +1475,8 @@
 -51.156038
 ],
 "local:centro|smartcitymayrinkgoes": [
--23.308158,
--51.169118
+-23.31071,
+-51.162578
 ],
 "local:centro|soho": [
 -23.310684,
@@ -1942,9 +1954,13 @@
 -23.334435,
 -51.180945
 ],
+"local:palhano|corbusier": [
+-23.332878,
+-51.185703
+],
 "local:palhano|elegance": [
--23.331065,
--51.182358
+-23.33137,
+-51.182312
 ],
 "local:palhano|ernani lacerda de athayde|1075": [
 -23.33,
@@ -2082,6 +2098,10 @@
 -23.327828,
 -51.179651
 ],
+"local:palhano|maisonveyron2suites": [
+-23.327,
+-51.179
+],
 "local:palhano|maisonvictoria": [
 -23.332684,
 -51.174329
@@ -2146,6 +2166,10 @@
 -23.333582,
 -51.175819
 ],
+"local:palhano|sonneto": [
+-23.329178,
+-51.179737
+],
 "local:palhano|sunflowers": [
 -23.332179,
 -51.174766
@@ -2159,8 +2183,8 @@
 -51.180885
 ],
 "local:palhano|terroir": [
--23.333023,
--51.177556
+-23.331612,
+-51.174167
 ],
 "local:palhano|terroirglebafazendapalhano": [
 -23.331435,
@@ -2345,6 +2369,10 @@
 "local:santa rosa|caracas|200": [
 -23.332108,
 -51.171918
+],
+"local:santa rosa|caracas|377": [
+-23.332786,
+-51.174106
 ],
 "local:santa rosa|caracas|440": [
 -23.332234,
@@ -2834,6 +2862,7 @@
 -51.164643,
 "building"
 ],
+"predio:palazzo di cezari": null,
 "predio:parana": [
 -23.313269,
 -51.199028,
@@ -2878,6 +2907,7 @@
 -51.220339,
 "building"
 ],
+"predio:recanto pitangua": null,
 "predio:regina izabel centro de londrina": [
 -23.313546,
 -51.156953,
@@ -2959,6 +2989,7 @@
 "predio:sunset boulevard": null,
 "predio:tambore": null,
 "predio:tambore londrina": null,
+"predio:tay": null,
 "predio:terr": null,
 "predio:terra azul": [
 -23.316211,
@@ -3475,6 +3506,11 @@
 "highway"
 ],
 "rua:rua ulrico zuimglio|365": null,
+"rua:rua ulrico zuinglio|100": [
+-23.334163,
+-51.179369,
+"highway"
+],
 "rua:rua ulrico zuinglio|450": [
 -23.334336,
 -51.18288,
