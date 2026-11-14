@@ -386,6 +386,10 @@
 -23.309292,
 -51.164164
 ],
+"local:centro|araguaia": [
+-23.311449,
+-51.17045
+],
 "local:centro|arcoiris": [
 -23.310392,
 -51.169376
@@ -834,6 +838,10 @@
 -23.310261,
 -51.164295
 ],
+"local:centro|maestro egidio camargo do amaral|118": [
+-23.31346,
+-51.157247
+],
 "local:centro|maisondetoulon": [
 -23.30722,
 -51.16784
@@ -1177,6 +1185,10 @@
 "local:centro|portaldagoiascentrodelondrina": [
 -23.315698,
 -51.162177
+],
+"local:centro|portinari": [
+-23.313554,
+-51.164462
 ],
 "local:centro|portoseguro": [
 -23.321407,
@@ -1730,6 +1742,10 @@
 -23.348989,
 -51.20693
 ],
+"local:gil de abreu souza|2000": [
+-23.347883,
+-51.210508
+],
 "local:gil de abreu souza|22": [
 -23.34979,
 -51.20388
@@ -1848,7 +1864,7 @@
 ],
 "local:palhano|almeria": [
 -23.330079,
--51.178714
+-51.178722
 ],
 "local:palhano|anitamalfatti": [
 -23.333778,
@@ -2061,6 +2077,10 @@
 "local:palhano|maisonprovence": [
 -23.32814,
 -51.179018
+],
+"local:palhano|maisonveyron": [
+-23.327828,
+-51.179651
 ],
 "local:palhano|maisonvictoria": [
 -23.332684,
@@ -2281,6 +2301,10 @@
 "local:royalforestresidence": [
 -23.347029,
 -51.212786
+],
+"local:royalgolf": [
+-23.347826,
+-51.201684
 ],
 "local:royalmaison": [
 -23.347883,
@@ -2736,6 +2760,7 @@
 -51.178988,
 "building"
 ],
+"predio:maison provence gleba palhano": null,
 "predio:maison veyron": null,
 "predio:maison villa lobos": null,
 "predio:malie": null,
@@ -2866,6 +2891,7 @@
 "predio:royal forest residencia": null,
 "predio:royal garden edificio": null,
 "predio:royal golf": null,
+"predio:royal golf residence": null,
 "predio:royal maison": null,
 "predio:royal park": null,
 "predio:royal park residence": null,
@@ -2932,6 +2958,7 @@
 "predio:sunset boulevard": null,
 "predio:tambore": null,
 "predio:tambore londrina": null,
+"predio:terr": null,
 "predio:terra azul": [
 -23.316211,
 -51.160403,
