@@ -21,6 +21,11 @@
 ],
 "bairro:condominio royal golf residence": null,
 "bairro:condominio terras de canaa": null,
+"bairro:conjunto cafezal 1": [
+-23.368832,
+-51.144315,
+"place"
+],
 "bairro:conjunto habitacional jamile dequech": [
 -23.390586,
 -51.138818,
@@ -1394,6 +1399,10 @@
 -23.315963,
 -51.167825
 ],
+"local:centro|santos|1259": [
+-23.317096,
+-51.167729
+],
 "local:centro|santos|150": [
 -23.307058,
 -51.168118
@@ -1447,8 +1456,8 @@
 -51.167274
 ],
 "local:centro|sergipe|506": [
--23.309739,
--51.157772
+-23.309,
+-51.158
 ],
 "local:centro|sergipe|894": [
 -23.30971,
@@ -2025,6 +2034,10 @@
 "local:palhano|harmonie": [
 -23.329723,
 -51.180783
+],
+"local:palhano|harmonietorreallure": [
+-23.329499,
+-51.180796
 ],
 "local:palhano|hause": [
 -23.330813,
