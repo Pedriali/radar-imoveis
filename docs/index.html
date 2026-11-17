@@ -283,7 +283,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   </section>
 
   <footer>
-    Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX, Chaves na Mão e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco e Cube Imóveis.<br>
+    Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX, Chaves na Mão, Loft e Arbo (dezenas de imobiliárias de Londrina) e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco, Humaitá, Cruciol, Cube Imóveis, 88 Imóveis e Galmo. Imóvel que saiu do ar (página do anúncio removida, ou sumiu da lista da imobiliária) some da página.<br>
     O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
     “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.<br>
     Terrenos: “abaixo da média” = R$/m² pelo menos 15% menor que a mediana dos terrenos do mesmo condomínio (ou do bairro, quando o condomínio tem menos de 4) vistos nos últimos 30 dias. Terreno maior costuma ter R$/m² menor.<br>
@@ -327,7 +327,8 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const PORTAL = {zap:'ZAP', vivareal:'VIVA REAL', olx:'OLX', raulfulgencio:'RAUL FULGÊNCIO', gleba:'GLEBA IMÓVEIS',
   santamerica:'SANTAMERICA', perez:'PEREZ', catuai:'CATUAÍ', inglaterra:'INGLATERRA', grupo:'ZAP/VIVA REAL',
-  chavesnamao:'CHAVES NA MÃO', aurora:'AURORA IMOBI', casttelo:'CASTTELO', monaco:'MONACO', cube:'CUBE IMÓVEIS'};
+  chavesnamao:'CHAVES NA MÃO', aurora:'AURORA IMOBI', casttelo:'CASTTELO', monaco:'MONACO', cube:'CUBE IMÓVEIS',
+  humaita:'HUMAITÁ', cruciol:'CRUCIOL', arbo:'ARBO', '88imoveis':'88 IMÓVEIS', loft:'LOFT', galmo:'GALMO'};
 
 // Uma aba por perfil de busca (scraper/config.json → "perfis"); "dados" é o arquivo em docs/data/
 const ABAS = [

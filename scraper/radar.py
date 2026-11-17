@@ -14,7 +14,7 @@ import time
 import unicodedata
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from curl_cffi import requests
@@ -33,7 +33,7 @@ S = requests.Session(impersonate="chrome")
 # completar dados (prédio, endereço, área, quartos) não são abertas de novo; o resto vem da busca.
 CONHECIDOS = {}
 CAMPOS_DETALHE = ("tipo", "predio", "endereco", "bairro", "foto", "area", "quartos", "banheiros", "vagas", "titulo",
-                  "publicado", "lat", "lon", "condominio", "contexto")
+                  "publicado", "lat", "lon", "condominio", "contexto", "det")
 
 
 def conhecido(rid, links, **novos):
@@ -97,6 +97,11 @@ def contexto_ok(g):
 
 def apto():
     return CFG["tipo"] == "apartamento"
+
+
+def por_predio():
+    """Aba de apartamentos por prédio da lista (Nova Prochet): o nome pode estar só na página do anúncio."""
+    return apto() and bool(CFG.get("por_condominio"))
 
 
 def terrenos():
@@ -493,10 +498,14 @@ def grupo_buscas(portal):
     return [(casas, ("CONDOMINIUM",), False)]
 
 
+COMPLETA = [False]  # varredura completa desta rodada (ver main): as buscas vão até o fim
+
+
 def parar(known, sem_novos):
     """Busca incremental: para depois de N páginas seguidas sem anúncio desconhecido no filtro
-    (perfil "paginas_sem_novos"; buscas amplas têm muitas páginas sem nada do filtro)."""
-    return bool(known) and sem_novos >= CFG.get("paginas_sem_novos", 1)
+    (perfil "paginas_sem_novos"; buscas amplas têm muitas páginas sem nada do filtro).
+    Na varredura completa do dia não para: é ela que confirma quais anúncios continuam no ar."""
+    return not COMPLETA[0] and bool(known) and sem_novos >= CFG.get("paginas_sem_novos", 1)
 
 
 def scan_grupo(known, max_pages, found):
@@ -600,7 +609,7 @@ def scan_olx(known, max_pages, found):
 def _scan_olx(url0, tipo0, known, max_pages, found):
     pages_ok = sem_novos = 0
     # busca de um condomínio: poucas páginas (a busca por palavra traz depois o que só se parece com ela)
-    paginas = CFG.get("max_pages_condominio", 2) if tipo0 == "auto" else max_pages * 2
+    paginas = (CFG.get("max_pages_condominio", 2) * (3 if COMPLETA[0] else 1)) if tipo0 == "auto" else max_pages * 2
     for p in range(1, paginas + 1):
         url = f"{url0}sf=1&o={p}"
         page = fetch(url)
@@ -842,7 +851,7 @@ def scan_gleba(found):
 
 def _scan_gleba(url0, tipo, found):
     page, total, n = 1, None, 0
-    while page <= 15:
+    while page <= 60:
         html = fetch(url0 + f"pagina={page}")
         if not html:
             return "falhou" if page == 1 else "ok"
@@ -867,7 +876,8 @@ def _scan_gleba(url0, tipo, found):
                 continue
             bairro = o.get("neighborhood_display") or o.get("neighborhood") or ""
             area = _gleba_first(o.get("area"))
-            if not local_ok(bairro, o.get("condo_name"), o.get("website_title")) or not area_ok(area):
+            desc = [o.get("listing_description")] if por_predio() else []
+            if not local_ok(bairro, o.get("condo_name"), o.get("website_title"), *desc) or not area_ok(area):
                 continue
             ref = o.get("property_full_reference") or o.get("property_reference")
             if not ref:
@@ -894,6 +904,7 @@ def _scan_gleba(url0, tipo, found):
                 "publicado": None,  # o site só expõe updated_at
                 "links": {"gleba": GLEBA_BASE + o["url"] if o.get("url") else None},
             }
+            alvo_detalhe(found["gi" + ref], o.get("listing_description"))
             corrige_area(found["gi" + ref], o.get("listing_description"))
             n += 1
         if not data or page * 12 >= total:
@@ -994,7 +1005,7 @@ def scan_santamerica(found):
         log(f"  santamerica: {len(cards)} cards na busca")
         n = 0
         for c in cards:
-            if "londrina" not in norm(c["cidade"]) or not local_ok(c["bairro"], c["titulo"]):
+            if "londrina" not in norm(c["cidade"]) or not local_ok(c["bairro"], c["titulo"], pendente=por_predio()):
                 continue
             rec = conhecido("sa" + c["cod"], {"santamerica": c["url"]}, preco=c["preco"])
             if rec:
@@ -1032,9 +1043,12 @@ def scan_santamerica(found):
             predio = None
             if ed:
                 predio = re.sub(r"(?i)^(?:(?:ed\.|edif\.|edif[ií]cio|residencial|condom[ií]nio)\s+)+", "", _sa_txt(ed.group(1))) or None
-            if not predio:
-                ld = re.search(r'"description":"(.*?)","', page)
+            ld = re.search(r'"description":"(.*?)","', page)
+            try:
                 desc = json.loads('"' + ld.group(1) + '"') if ld else c["desc"]
+            except ValueError:
+                desc = c["desc"]
+            if not predio:
                 predio = building_from_text(titulo, c["titulo"], desc)
             if not predio:
                 pm = re.search(r"(?i)\b(?:edif[ií]cio|condom[ií]nio|residencial)\s+(.{2,40}?)(?:,|\.|\s+(?:n[ao]s?|em|localizado|com|-)\s|$)", titulo or "")
@@ -1060,6 +1074,7 @@ def scan_santamerica(found):
                 "publicado": None,
                 "links": {"santamerica": c["url"]},
             }
+            alvo_detalhe(found[rid], desc)
             n += 1
         log(f"  santamerica: {n} anúncios no filtro")
         return "ok"
@@ -1168,7 +1183,7 @@ def scan_perez(found):
             area = round(o["totalArea"]) if o.get("totalArea") else None
         else:  # builtArea = área privativa/construída
             area = round(o.get("builtArea") or (o.get("totalArea") if tipo else 0) or 0) or None
-        if not local_ok(bairro, o.get("title")) or not area_ok(area):
+        if not local_ok(bairro, o.get("title"), pendente=por_predio()) or not area_ok(area):
             continue
         fotos = o.get("photos") or []
         rec = conhecido(f"pz{o['code']}", {"perez": _pz_link(o)}, preco=int(o["price"]) if o.get("price") else None,
@@ -1181,7 +1196,7 @@ def scan_perez(found):
         det = _pz_get(f"/property/{o['code']}", {})
         time.sleep(1)
         if det:
-            rua, num = (det.get("street") or "").strip(), (det.get("number") or "").strip()
+            rua, num = str(det.get("street") or "").strip(), str(det.get("number") or "").strip()
             if rua:
                 if not re.match(r"(?i)(rua|r\.|av|avenida|alameda|al\.|travessa|rodovia|estrada|pra[cç]a)\b", rua):
                     rua = "Rua " + rua
@@ -1213,6 +1228,7 @@ def scan_perez(found):
             "links": {"perez": _pz_link(o)},
             **coords(o.get("latitude"), o.get("longitude")),
         }
+        alvo_detalhe(found[f"pz{o['code']}"], (det or {}).get("description"))
         n += 1
     log(f"  perez: {n} no filtro")
     return "ok"
@@ -1264,7 +1280,7 @@ def scan_catuai(found):
     for url0 in searches:
         last = 1
         p = 1
-        while p <= last and p <= 10:
+        while p <= last and p <= 40:
             page = fetch(url0 + (f"&page={p}" if p > 1 else ""))
             if page is None:
                 break
@@ -1284,7 +1300,7 @@ def scan_catuai(found):
                 if not slug or not addr:
                     continue
                 bairro, _, cidade = clean(addr.group(1)).rpartition(" - ")
-                if norm(cidade) != "londrina" or not local_ok(bairro, titulo):
+                if norm(cidade) != "londrina" or not local_ok(bairro, titulo, pendente=por_predio()):
                     continue
                 if "/terreno/" in url0 and not condominio_ok(titulo):
                     continue
@@ -1340,6 +1356,7 @@ def scan_catuai(found):
             m = re.search(r"DESCRI[ÇC][ÃA]O DO IM[ÓO]VEL.*?<article>(.*?)</article>", page, re.S)
             desc = clean(re.sub(r"<[^>]+>", " ", m.group(1))) if m else ""
             rec["predio"] = predio_from_title(rec["titulo"]) or building_from_text(rec["titulo"], desc)
+            alvo_detalhe(rec, desc)
         else:
             rec["predio"] = predio_from_title(rec["titulo"]) or building_from_text(rec["titulo"])
         if area_ok(rec["area"]):
@@ -1353,8 +1370,6 @@ def scan_catuai(found):
 # devolve {"data": [...], "count": N}. Filtra bairro aqui (bairro_ok), pois a API só aceita
 # um bairro por slug e os nomes variam. Para os anúncios no filtro sem nome de prédio,
 # consulta /api/listing/<ref> (traz "building" e endereço com número), com limite.
-INGLATERRA_BASE = "https://www.imobiliariainglaterra.com.br"
-INGLATERRA_DETAIL_MAX = 25
 KENLO_PAGINAS = 40  # de 48 anúncios (casas e terrenos de Londrina inteira: ~900)
 
 
@@ -1383,127 +1398,6 @@ def _in_street(full_address):
 
 def _in_title_ok(t):
     return bool(t) and len(t) > 20 and "ilustrativa" not in norm(t)
-
-
-def scan_inglaterra(found):
-    """Adiciona em found[id] os anúncios no filtro. Retorna "ok" ou "falhou"."""
-    if apto():
-        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/apartamento/londrina"
-                 f"?area={CFG['area_min']}~{CFG['area_max']}&size=48", None)]
-    elif terrenos():  # todos os terrenos; os sem a etiqueta de condomínio precisam de prova (_scan_inglaterra)
-        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/terreno/londrina?size=48", "terreno")]
-    else:  # não há tipo "em condomínio": casas, com a etiqueta de condomínio fechado
-        urls = [(f"{INGLATERRA_BASE}/api/listings/a-venda/casa/londrina?size=48&tags=GATED_COMMUNITY", "casa")]
-    items, total = [], 0
-    for url, tipo in urls:
-        got = _in_lista(url)
-        if got is None:
-            if apto():
-                return "falhou"
-            continue
-        for x in got[0]:
-            x["_tipo"] = tipo
-        items += got[0]
-        total += got[1]
-    if not items and total == 0:
-        return "falhou"
-    return _scan_inglaterra(items, total, found)
-
-
-def _in_lista(url):
-    items, total, page = [], None, 1
-    while page <= KENLO_PAGINAS:
-        try:
-            r = S.get(url + f"&pagina={page}", timeout=45, headers={"Accept": "application/json"})
-            j = r.json() if r.status_code == 200 else None
-        except Exception as e:  # noqa: BLE001
-            log(f"  inglaterra erro {e}")
-            j = None
-        if not j or not isinstance(j.get("data"), list):
-            log(f"  inglaterra: falha na página {page}")
-            return None if page == 1 else (items, total)
-        total = j.get("count") or 0
-        items += j["data"]
-        if not j["data"] or len(items) >= total:
-            break
-        page += 1
-        time.sleep(1)
-    return items, total
-
-
-def _scan_inglaterra(items, total, found):
-    recs = []
-    for x in items:
-        if x.get("type") != "imob_property":  # "imob_condo" = página de empreendimento
-            continue
-        if "FOR_SALE" not in str(x.get("property_purposes")):
-            continue
-        bairro = x.get("neighborhood_display") or x.get("neighborhood") or ""
-        if norm(x.get("city")) != "londrina" or not local_ok(bairro, x.get("condo_name"), x.get("picture_title"),
-                                                              x.get("website_title")):
-            continue
-        # tags=GATED_COMMUNITY deixou de filtrar (2026-10-23: a API devolve todas as casas): a marca é
-        # conferida em cada anúncio
-        if not apto() and not (x.get("condo_name") or "GATED_COMMUNITY" in (x.get("amenities") or [])
-                               or condominio_ok(x.get("picture_title"), x.get("website_title"))):
-            continue
-        area = _in_int(x.get("area"))
-        if not area_ok(area):
-            continue
-        ref = x.get("property_full_reference")
-        if not ref:
-            continue
-        ptitle = x.get("picture_title")
-        titulo = ptitle if _in_title_ok(ptitle) else (x.get("website_title") or x.get("heading1"))
-        condo = (x.get("condo_name") or "").split("|")[0].strip() or None
-        predio = condo or building_from_text(ptitle, x.get("listing_description"))
-        rec = {
-            "id": "in" + ref,
-            "tipo": x["_tipo"],
-            "predio": predio,
-            "endereco": _in_street(x.get("full_address")),
-            "bairro": bairro,
-            "foto": x.get("picture_full") or x.get("picture_thumb"),
-            "area": area,
-            "preco": _in_int(x.get("sale_price")),
-            "quartos": _in_int(x.get("bedrooms")),
-            "banheiros": _in_int(x.get("bathrooms")),
-            "vagas": _in_int(x.get("garages")),
-            "titulo": titulo,
-            "publicado": None,  # o site só expõe updated_at (data de atualização)
-            "links": {"inglaterra": INGLATERRA_BASE + x["url"] if x.get("url") else INGLATERRA_BASE},
-        }
-        corrige_area(rec, x.get("listing_description"))
-        recs.append((ref, rec))
-
-    # detalhe (prédio + endereço com número) para quem ficou sem nome de prédio
-    n = 0
-    for ref, rec in recs:
-        if rec["predio"] or n >= INGLATERRA_DETAIL_MAX or rec["id"] in CONHECIDOS or not preco_ok(rec["preco"]):
-            continue
-        n += 1
-        time.sleep(1)
-        try:
-            r = S.get(f"{INGLATERRA_BASE}/api/listing/{ref}", timeout=45, headers={"Accept": "application/json"})
-            d = r.json() if r.status_code == 200 else None
-        except Exception:  # noqa: BLE001
-            d = None
-        if not isinstance(d, dict):
-            continue
-        b = (d.get("building") or "").split("|")[0].strip()
-        rec["predio"] = b or building_from_text(d.get("title"), rec["titulo"])
-        fa = d.get("full_address") or ""
-        street = fa.split(" - ")[0].strip()
-        if street and "," in street:
-            rec["endereco"] = street
-        ua = _in_int(d.get("usable_floor_area")) or _in_int(d.get("private_floor_area"))
-        if ua and area_ok(ua) and rec["tipo"] != "terreno":
-            rec["area"] = ua
-
-    for ref, rec in recs:
-        found[rec["id"]] = rec
-    log(f"  inglaterra: {len(recs)} no filtro ({len(items)} de {total} lidos, {n} detalhes)")
-    return "ok"
 
 
 # ---------- Chaves na Mão (chavesnamao.com.br) ----------
@@ -1642,6 +1536,7 @@ def cm_detalhe(rec):
     if not rec.get("predio"):
         rec["predio"] = building_from_text(rec.get("titulo"), d.get("descriptionRaw"))
     alvo_detalhe(rec, d.get("descriptionRaw"))
+    rec["det"] = True
 
 
 def scan_chavesnamao(known, max_pages, found):
@@ -1677,10 +1572,11 @@ def scan_chavesnamao(known, max_pages, found):
                     continue
                 if rec["id"] not in known:
                     fresh += 1
-                    if detalhes < CM_DETALHES_MAX:
-                        detalhes += 1
-                        time.sleep(1)
-                        cm_detalhe(rec)
+                k = known.get(rec["id"])  # guardado: a página é lida uma vez (o guardado é atualizado no lugar)
+                if detalhes < CM_DETALHES_MAX and not (k or rec).get("det") and not (k or {}).get("publicado"):
+                    detalhes += 1
+                    time.sleep(1)
+                    cm_detalhe(k or rec)
                 found[rec["id"]] = rec
             log(f"  chavesnamao {path.split('/')[1]}{' (ampla)' if prova else ''} p{p}: "
                 f"{len(itens)} anúncios, {fresh} desconhecidos")
@@ -1699,6 +1595,8 @@ def scan_chavesnamao(known, max_pages, found):
 # e latitude/longitude: aberto para os anúncios no filtro, até KENLO_DETALHES_MAX por site e varredura
 # (coordenadas só quando o endereço tem número; sem ele a posição é aproximada).
 KENLO_SITES = {  # chave do portal: (site, prefixo do id)
+    "humaita": ("https://www.imobiliariahumaita.com.br", "hu"),
+    "cruciol": ("https://www.cruciol.com.br", "cr"),
     "aurora": ("https://www.auroraimobi.com.br", "au"),
     "casttelo": ("https://www.imobiliariacasttelo.com.br", "cs"),
     "monaco": ("https://www.imobiliariamonaco.com.br", "mn"),
@@ -1750,16 +1648,18 @@ def _kenlo_detalhe(base, ref, rec):
     d = _kenlo_json(f"{base}/api/listing/{ref}")
     if not isinstance(d, dict):
         return
-    if not rec["predio"]:
-        rec["predio"] = (d.get("building") or "").split("|")[0].strip() or building_from_text(
+    if not rec.get("predio"):
+        rec["predio"] = (d.get("building") or "").split("|")[0].split("\n")[0].strip() or building_from_text(
             d.get("title"), d.get("listing_description"))
     rua = (d.get("full_address") or "").split(" - ")[0].strip()
     if re.search(r",\s*\d+", rua):
         rec["endereco"] = rua
         rec.update(coords(d.get("latitude"), d.get("longitude")))
     ua = _in_int(d.get("usable_floor_area")) or _in_int(d.get("private_floor_area"))
-    if ua and area_ok(ua) and rec["tipo"] is None:
+    if ua and area_ok(ua) and rec.get("tipo") != "terreno":
         rec["area"] = ua
+    alvo_detalhe(rec, d.get("listing_description"), d.get("title"))
+    rec["det"] = True
 
 
 def _scan_kenlo(chave, found):
@@ -1783,8 +1683,9 @@ def _scan_kenlo(chave, found):
         if x.get("type") != "imob_property" or "FOR_SALE" not in str(x.get("property_purposes")):
             continue
         bairro = x.get("neighborhood_display") or x.get("neighborhood") or ""
+        desc = [x.get("listing_description")] if por_predio() else []
         if norm(x.get("city")) != "londrina" or not local_ok(bairro, x.get("condo_name"), x.get("picture_title"),
-                                                              x.get("website_title")):
+                                                              x.get("website_title"), *desc):
             continue
         # tags=GATED_COMMUNITY deixou de filtrar (2026-10-23: a API devolve todas as casas): a marca é
         # conferida em cada anúncio
@@ -1814,16 +1715,21 @@ def _scan_kenlo(chave, found):
             "links": {chave: base + x["url"] if x.get("url") else base},
         }
         corrige_area(recs[ref], x.get("listing_description"))
+        alvo_detalhe(recs[ref], x.get("listing_description"))
     # detalhe: primeiro os que estão sem nome de prédio
     for ref, rec in recs.items():  # já guardado: o detalhe foi aberto antes
         k = conhecido(rec["id"], rec["links"], preco=rec["preco"], foto=rec["foto"])
         if k:
             recs[ref] = k
-    fila = sorted((r for r in recs if recs[r]["id"] not in CONHECIDOS and preco_ok(recs[r]["preco"])),
-                  key=lambda r: bool(recs[r]["predio"]))[:KENLO_DETALHES_MAX]
+    # detalhe ainda não lido (novos e os que passaram da cota antes); o guardado é atualizado no lugar
+    def falta(r):
+        k = CONHECIDOS.get(recs[r]["id"])
+        return not (k or recs[r]).get("det") and not (k or {}).get("lat") and preco_ok(recs[r]["preco"])
+    fila = sorted((r for r in recs if falta(r)), key=lambda r: (recs[r]["id"] in CONHECIDOS, bool(recs[r]["predio"])))
+    fila = fila[:KENLO_DETALHES_MAX]
     for ref in fila:
         time.sleep(1)
-        _kenlo_detalhe(base, ref, recs[ref])
+        _kenlo_detalhe(base, ref, CONHECIDOS.get(recs[ref]["id"]) or recs[ref])
     for rec in recs.values():
         found[rec["id"]] = rec
     log(f"  {chave}: {len(recs)} no filtro ({len(items)} de {total} lidos, {len(fila)} detalhes)")
@@ -1880,7 +1786,7 @@ def scan_cube(found):
     dec = json.JSONDecoder()
     for q, tipo, prova in _cube_buscas():
         page, total = 1, 0
-        while page <= 20:
+        while page <= 60:
             html = fetch(f"{CUBE_BASE}/busca?{q}&page={page}")
             if not html:
                 break
@@ -1908,7 +1814,7 @@ def scan_cube(found):
                 desc = o.get("DescricaoWebResumo") or ""
                 if prova and not condominio_ok(titulo, emp, desc):
                     continue
-                if not local_ok(bairro, emp, titulo):
+                if not local_ok(bairro, emp, titulo, desc, pendente=por_predio()):
                     continue
                 if tipo == "terreno":
                     area = round(o.get("AreaTotal") or o.get("AreaPrivativa") or 0) or None
@@ -1939,6 +1845,7 @@ def scan_cube(found):
                     "links": {"cube": _cube_link(o)},
                 }
                 rec.update(coords(o.get("Latitude"), o.get("Longitude")))
+                alvo_detalhe(rec, desc)
                 found[rec["id"]] = rec
                 n += 1
             if not props or page * qtd >= total:
@@ -1948,6 +1855,297 @@ def scan_cube(found):
         time.sleep(1)
     log(f"  cube: {n} no filtro ({lidos} lidos)")
     return "ok" if ok else "falhou"
+
+
+# ---------- Fontes novas (2026-11-17): Arbo, Loft, Inglaterra (site novo), Galmo ----------
+def _rec_novo(chave, rid, tipo, *, predio, endereco, bairro, foto, area, preco, quartos=None, banheiros=None,
+              vagas=None, titulo=None, publicado=None, link, lat=None, lon=None, desc=None, exato=True):
+    """Registro comum das fontes novas, já com os filtros do perfil (local, área, preço, condomínio).
+    None se o anúncio não entra. O nome do prédio/condomínio também é procurado na descrição."""
+    if not area_ok(area) or not preco_ok(preco):
+        return None
+    extra = [desc] if por_predio() else []
+    if not local_ok(bairro or "", predio, titulo, *extra, pendente=por_predio()):
+        return None
+    if terrenos() and not condominio_ok(predio, titulo, bairro, desc):
+        return None
+    rec = {"id": rid, "tipo": tipo, "predio": predio or building_from_text(titulo, desc), "endereco": endereco,
+           "bairro": bairro, "foto": foto, "area": area, "preco": preco, "quartos": quartos, "banheiros": banheiros,
+           "vagas": vagas, "titulo": titulo, "publicado": publicado, "links": {chave: link}}
+    try:
+        rec.update(coords(float(lat), float(lon), aproximada=not exato) if lat and lon else {})
+    except (TypeError, ValueError):
+        pass
+    corrige_area(rec, desc)
+    alvo_detalhe(rec, desc)
+    return rec
+
+
+def _tipo_perfil():
+    return None if apto() else "terreno" if terrenos() else "casa"
+
+
+# Arbo (arboimoveis.com.br, CRM Superlógica): portal de ~18 imobiliárias de Londrina (Human, GEUM, Mitral,
+# CRV...). A API pública do site devolve a carteira de todas quando o Origin é o portal, ou só a de uma
+# imobiliária quando é o site dela (88 Imóveis usa o mesmo sistema e não está no portal). Duas etapas:
+# find-by-polygon-new (ids da busca, sem paginação, até 3000) e get-imoveis-new (100 registros por vez).
+ARBO_API = "https://api-site.arboimoveis.com.br/api/imoveis-replica"
+ARBO_SITES = {"arbo": "https://www.arboimoveis.com.br", "88imoveis": "https://www.88imoveis.com.br"}
+
+
+def _arbo_params(d):
+    out = []
+    for k, v in d.items():
+        if isinstance(v, list):
+            out += [(k + "[]", json.dumps(x) if isinstance(x, (dict, list)) else str(x)) for x in v]
+        elif isinstance(v, dict):
+            out.append((k, json.dumps(v, ensure_ascii=False)))
+        elif v is not None:
+            out.append((k, str(v).lower() if isinstance(v, bool) else str(v)))
+    return out
+
+
+def _arbo_get(site, path, params):
+    for i in range(2):
+        try:
+            r = S.get(f"{ARBO_API}/{path}", params=params, timeout=60, headers={"Origin": site, "Referer": site + "/"})
+            if r.status_code == 200:
+                return r.json()
+            log(f"  arbo HTTP {r.status_code} {path}")
+        except Exception as e:  # noqa: BLE001
+            log(f"  arbo erro {e}")
+        time.sleep(3)
+    return None
+
+
+def _arbo_ids(site, tipos, pmin, pmax, condominio):
+    """ids da busca; com 3000 (limite) divide a faixa de preço."""
+    f = {"tipovar": "a-venda", "order": "mais_relevantes", "mobilia": "talvez", "tipoimovel": tipos,
+         "muncep_id": 5207, "localidade": "Londrina, PR", "search_name": "Londrina", "cidade": "londrina-pr",
+         "precovenda": [pmin, pmax], "hasTypeSearch": True, "limit_imv": 3000,
+         "center": {"lat": -14.235004, "lng": -51.92528}, "north_east": {"lat": -33.751279, "lng": -73.982661},
+         "south_west": {"lat": 5.2716701, "lng": -32.388698}}
+    if apto():
+        f["area"] = [CFG["area_min"], CFG["area_max"]]
+    if condominio:
+        f["condominio"] = "sim"
+    j = _arbo_get(site, "find-by-polygon-new", _arbo_params(f))
+    time.sleep(1)
+    if not isinstance(j, dict) or not isinstance(j.get("data"), list):
+        return None
+    if len(j["data"]) >= 3000 and pmax - pmin > 50000:
+        meio = (pmin + pmax) // 2
+        a, b = _arbo_ids(site, tipos, pmin, meio, condominio), _arbo_ids(site, tipos, meio + 1, pmax, condominio)
+        return None if a is None or b is None else a + b
+    return [x["id"] for x in j["data"] if x.get("id")]
+
+
+def _scan_arbo(chave, found):
+    site = ARBO_SITES[chave]
+    tipos = ({"apartamento": True} if apto() else {"terreno": True} if terrenos() else {"casa": True, "sobrado": True})
+    ids = _arbo_ids(site, tipos, CFG.get("preco_min_busca") or CFG.get("preco_min") or 0, 100_000_000, not apto())
+    if ids is None:
+        return "falhou"
+    n = 0
+    for i in range(0, len(ids), 100):
+        where = json.dumps({"id": {"inq": ids[i:i + 100]}})
+        j = _arbo_get(site, "get-imoveis-new", [("where", where), ("tipovar", "a-venda"), ("order", "mais_relevantes")])
+        time.sleep(1)
+        lote = j if isinstance(j, list) else (j or {}).get("data") if isinstance(j, dict) else None
+        for o in lote or []:
+            if norm(o.get("imv_cidade") or "londrina") != "londrina" or not o.get("imv_cod_gaia"):
+                continue
+            loc = o.get("imv_location") or {}
+            rua, num = (o.get("imv_endereco") or "").strip(), o.get("imv_end_numero")
+            fotos = o.get("fotos") or []
+            area = o.get("imv_area_total") if terrenos() else (o.get("imv_area_util") or o.get("imv_area_total"))
+            rec = _rec_novo(
+                chave, "ar" + o["imv_cod_gaia"], _tipo_perfil(),
+                predio=(o.get("imv_nome_cond") or "").strip() or None,
+                endereco=(f"{rua}, {num}" if num else rua) or None, bairro=o.get("imv_bairro"),
+                foto=fotos[0].get("imvft_url") if fotos and isinstance(fotos[0], dict) else None,
+                area=round(area) if area else None, preco=round(o["imv_preco_venda"]) if o.get("imv_preco_venda") else None,
+                quartos=o.get("imv_qtd_dorm") or None, banheiros=o.get("imv_qtd_banheiros") or None,
+                vagas=o.get("imv_qtd_vagas") if o.get("imv_qtd_vagas") is not None else None,
+                titulo=o.get("imv_titulo"), publicado=(o.get("createdAt") or "")[:19] + "Z" if o.get("createdAt") else None,
+                link=o.get("url_amiga") or site, lat=loc.get("lat"), lon=loc.get("lng"), desc=o.get("imv_obs"),
+                exato=bool(num))
+            if rec:
+                found[rec["id"]] = rec
+                n += 1
+    log(f"  {chave}: {n} no filtro ({len(ids)} na busca)")
+    return "ok"
+
+
+def scan_arbo(found):
+    return _scan_arbo("arbo", found)
+
+
+def scan_88imoveis(found):
+    return _scan_arbo("88imoveis", found)
+
+
+# Loft (loft.com.br): marketplace das imobiliárias do CRM Vista (~25 em Londrina: FR, C M Souza, Gomes e
+# Borini, Nantes, Senador...). API landscape-api /listing/v3/search, 100 por página. Sem número da rua.
+LOFT_API = "https://landscape-api.loft.com.br/listing/v3/search"
+
+
+def scan_loft(found):
+    if terrenos():
+        return "ok"  # a Loft não separa lote de condomínio
+    q = [("orderBy[]", "rankA"), ("cities[]", "londrina, pr"), ("transactionType[]", "for_sale"),
+         ("realState[]", "apartment_default" if apto() else "house_condominium"), ("hitsPerPage", "100")]
+    if apto():
+        q += [("areaMin", str(CFG["area_min"])), ("areaMax", str(CFG["area_max"]))]
+        if CFG.get("bairro_exato") and len(CFG["bairros"]) == 1:
+            q.append(("neighborhood[]", f"{CFG['bairros'][0].title()}, Londrina, PR"))
+    pmin = CFG.get("preco_min_busca") or CFG.get("preco_min")
+    if pmin:
+        q.append(("priceMin", str(pmin)))
+    n, page, total_pages, ok = 0, 1, 1, False
+    while page <= min(total_pages, 60):
+        try:
+            r = S.get(LOFT_API, params=q + [("page", str(page))], timeout=45,
+                      headers={"Origin": "https://loft.com.br", "Referer": "https://loft.com.br/"})
+            j = r.json() if r.status_code == 200 else None
+        except Exception as e:  # noqa: BLE001
+            log(f"  loft erro {e}")
+            j = None
+        if not isinstance(j, dict) or not isinstance(j.get("listings"), list):
+            break
+        ok = True
+        total_pages = (j.get("pagination") or {}).get("totalPages") or 1
+        for o in j["listings"]:
+            if o.get("status") not in (None, "FOR_SALE") or not o.get("id"):
+                continue
+            a = o.get("address") or {}
+            if norm(a.get("city") or "londrina") != "londrina":
+                continue
+            fotos = o.get("photos") or []
+            rec = _rec_novo(
+                "loft", "lf" + o["id"], _tipo_perfil(), predio=(a.get("complexName") or "").strip() or None,
+                endereco=a.get("streetName"), bairro=a.get("neighborhood"),
+                foto=f"https://content.loft.com.br/homes/{o['id']}/{fotos[0]}" if fotos else None,
+                area=round(o["area"]) if o.get("area") else None, preco=o.get("price") or None,
+                quartos=o.get("bedrooms") or None, banheiros=o.get("restrooms") or None, vagas=o.get("parkingSpots"),
+                titulo=o.get("title") or None, publicado=(o.get("createdAt") or "")[:19] + "Z" if o.get("createdAt") else None,
+                link=f"https://loft.com.br/home/{o['id']}", lat=a.get("lat"), lon=a.get("lng"),
+                desc=o.get("description"), exato=False)
+            if rec:
+                found[rec["id"]] = rec
+                n += 1
+        page += 1
+        time.sleep(1)
+    log(f"  loft: {n} no filtro ({page - 1} de {total_pages} páginas)")
+    return "ok" if ok else "falhou"
+
+
+# Inglaterra: o site novo (Next.js, 2026-11) tem POST /api/imoveis/search (48 por página). A página do
+# anúncio traz a descrição e a rua com número no JSON-LD: lida para os novos, até 40 por varredura.
+INGLATERRA_BASE = "https://www.imobiliariainglaterra.com.br"
+
+
+def scan_inglaterra(found):
+    tipo = "Apartamento" if apto() else "Terreno" if terrenos() else "Casa"
+    body = {"bairro": None, "condominio": None, "tipo": tipo, "negocio": "Comprar", "valorMinimo": None,
+            "valorMaximo": None, "suitesMinimas": None, "quartosMinimos": None, "vagasMinimas": None,
+            "areaMinima": CFG["area_min"] if apto() else None, "areaMaxima": CFG["area_max"] if apto() else None,
+            "mobiliado": None, "order": "relevancia", "perPage": 48}
+    itens, page = [], 1
+    while page <= 60:
+        try:
+            r = S.post(INGLATERRA_BASE + "/api/imoveis/search", json=dict(body, page=page), timeout=45,
+                       headers={"Origin": INGLATERRA_BASE, "Referer": INGLATERRA_BASE + "/imoveis"})
+            j = r.json() if r.status_code == 200 else None
+        except Exception as e:  # noqa: BLE001
+            log(f"  inglaterra erro {e}")
+            j = None
+        if not isinstance(j, dict) or not isinstance(j.get("imoveis"), list):
+            if page == 1:
+                return "falhou"
+            break
+        itens += j["imoveis"]
+        if not j.get("hasMore") or not j["imoveis"]:
+            break
+        page += 1
+        time.sleep(1)
+    n = det = 0
+    for o in itens:
+        if not o.get("codigo") or norm(o.get("cidade") or "londrina") != "londrina" or not o.get("precoVenda"):
+            continue
+        rid = "in" + o["codigo"] + "-INIC"  # mesmo id do site antigo (Kenlo)
+        link = INGLATERRA_BASE + "/imoveis/" + o["slug"]
+        k = CONHECIDOS.get(rid)
+        desc = endereco = None
+        if not k and det < 40 and o.get("slug"):  # novo: a página traz descrição e rua com número
+            det += 1
+            time.sleep(1)
+            page_ = fetch(link, tries=1) or ""
+            for m in CM_LDJSON.finditer(page_):
+                try:
+                    ld = json.loads(m.group(1))
+                except ValueError:
+                    continue
+                if isinstance(ld, dict) and "RealEstateListing" in str(ld.get("@type")):
+                    desc = ld.get("description")
+                    endereco = (((ld.get("about") or ld.get("itemOffered") or {}).get("address") or {})
+                                .get("streetAddress")) or None
+        rec = _rec_novo(
+            "inglaterra", rid, _tipo_perfil(), predio=o.get("condominio") or None, endereco=endereco,
+            bairro=o.get("bairro"), foto=o.get("image"), area=o.get("area"), preco=o.get("precoVenda"),
+            quartos=o.get("dormitorios"), vagas=o.get("vagas"), titulo=o.get("titulo"), link=link, desc=desc)
+        if rec:
+            found[rid] = rec
+            n += 1
+    log(f"  inglaterra: {n} no filtro ({len(itens)} lidos, {det} páginas de anúncio)")
+    return "ok"
+
+
+# Galmo (galmo.com.br): construtora com imobiliária própria; vende unidades dos prédios dela (Torre Verona,
+# Latorre, TorreBlanca, Madri, Valverde...). Só apartamentos; HTML do site (WordPress + Vista), 9 por página.
+GALMO_BASE = "https://galmo.com.br"
+
+
+def scan_galmo(found):
+    if not apto():
+        return "ok"
+    n, lidos = 0, 0
+    for p in range(1, 20):
+        page = fetch(f"{GALMO_BASE}/busca/?finalidade=Venda&listagem=grid&pagina={p}")
+        if page is None:
+            return "falhou" if p == 1 else "ok"
+        cards = page.split("pgl-property animation")[1:]
+        if not cards:
+            break
+        for c in cards:
+            def g(rx):
+                m = re.search(rx, c, re.S)
+                return m.group(1) if m else None
+            lidos += 1
+            if norm(g(r'data-categoria="([^"]*)"')) not in ("apartamento", "cobertura", "apartamento duplex"):
+                continue
+            cod = g(r'data-codigo="(\d+)"')
+            mod = re.sub(r"\s+", " ", htmllib.unescape(re.sub(r"<[^>]+>", " ", g(r'class="modalidade">(.*?)</span>') or ""))).strip()
+            predio, _, bairro = mod.rpartition(" - ")
+            venda = g(r"Venda:\s*</strong>(?:\s*</span>\s*<span[^>]*>)?\s*R\$\s*([\d.,]+)")
+            preco = _num_area(venda) if venda else None
+            area = _num_area(g(r"<small>([\d.,]+)\s*m<sup>") or "")
+            dorm = g(r"(\d+)\s*(?:<[^>]+>\s*)*(?:Dorm|Quarto)")
+            vag = g(r"(\d+)\s*(?:<[^>]+>\s*)*Vaga")
+            link = g(r'href="(https://galmo\.com\.br/imovel/[^"]+)"') or f"{GALMO_BASE}/imovel/{cod}/x"
+            if not cod:
+                continue
+            rec = _rec_novo("galmo", "gm" + cod, None, predio=predio or None, endereco=None, bairro=bairro or None,
+                            foto=g(r"url\((https://cdn[^)]+)\)"), area=area, preco=preco,
+                            quartos=int(dorm) if dorm else None, vagas=int(vag) if vag else None,
+                            titulo=f"Apartamento {predio} - Galmo" if predio else None, link=link.split("?")[0],
+                            desc="Galmo")
+            if rec:
+                found[rec["id"]] = rec
+                n += 1
+        time.sleep(1)
+    log(f"  galmo: {n} no filtro ({lidos} lidos)")
+    return "ok"
 
 
 # ---------- desduplicação ----------
@@ -2079,6 +2277,57 @@ def dif_preco(a, b):
     return abs(pa - pb) / max(pa, pb) if pa and pb else 1
 
 
+PAGINADOS = ("grupo", "olx", "chavesnamao")  # buscas que param no meio: "visto" não prova que saiu
+COMPLETO = {}  # portal de lista inteira -> última varredura em que leu a lista toda (state["completo_em"])
+
+
+def iso_dias_atras(d):
+    return (NOW - timedelta(days=d)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def sumido(x):
+    """Anúncio que saiu do ar: a página dele deu 404/410 ("retirado"), ou é de uma imobiliária cuja lista
+    inteira é lida a cada varredura e ele não aparece nela há 3 dias. Zap/Viva Real, OLX e Chaves na Mão
+    nem sempre são lidos até o fim: para eles vale só a página (ver verificar_sumidos)."""
+    if x.get("retirado"):
+        return True
+    o = origem(x) or ""
+    if o in PAGINADOS:
+        return False
+    visto = x.get("visto") or x.get("detectado") or NOW_ISO
+    return visto < iso_dias_atras(3) and (COMPLETO.get(o) or "") >= iso_dias_atras(1)
+
+
+def verificar_sumidos(L, det):
+    """Anúncios do Zap/Viva Real, OLX e Chaves na Mão sem aparecer na busca há 7 dias: abre a página.
+    404/410 = retirado; página no ar = continua (visto renovado). Cota por varredura."""
+    cota = {"grupo": 40, "olx": 80, "chavesnamao": 80}
+    velhos = sorted((x for x in L.values() if x.get("visivel") and not x.get("retirado") and origem(x) in cota
+                     and (x.get("visto") or "") < iso_dias_atras(7)), key=lambda x: x.get("visto") or "")
+    saiu = ficou = 0
+    for x in velhos:
+        o = origem(x)
+        if cota[o] <= 0 or (o == "grupo" and det.falhas >= 3):
+            continue
+        cota[o] -= 1
+        url = (x["links"].get("zap") or x["links"].get("vivareal")) if o == "grupo" else x["links"].get(o)
+        if not url:
+            continue
+        page = fetch(url, tries=1)
+        time.sleep(1.5 if o == "grupo" else 1)
+        if retirado(x, url):
+            saiu += 1
+        elif page and (o != "chavesnamao" or x["id"][2:] in page):
+            x["visto"] = NOW_ISO
+            ficou += 1
+            if o == "grupo":
+                det.falhas = 0
+        elif o == "grupo":
+            det.falhas += 1
+    if velhos:
+        log(f"  sem aparecer há 7 dias: {len(velhos)}; abertos agora: {saiu} saíram do ar, {ficou} continuam")
+
+
 def tipo_ok(x):
     """Casas e terrenos são abas excludentes: casa não entra em Terrenos, terreno não entra em Casas."""
     return apto() or x.get("tipo") == ("terreno" if terrenos() else "casa")
@@ -2114,13 +2363,16 @@ def group_imoveis(L):
 
     # "excluir_predios": prédios que não entram nesta aba nem na média dela (Oase fica só na aba Nova Prochet)
     if CFG.get("excluir_predios"):
-        rx = re.compile(r"\b(?:" + "|".join(re.escape(norm(n)) for n in CFG["excluir_predios"]) + r")\b")
+        # "@lista" = todos os nomes de uma lista de config.json (Gleba Palhano: "@predios_alvo")
+        nomes = [c for n in CFG["excluir_predios"] for c in
+                 ([c for a in CONFIG[n[1:]] for c in a["chaves"]] if n.startswith("@") else [n])]
+        rx = re.compile(r"\b(?:" + "|".join(re.escape(norm(n)) for n in nomes) + r")\b")
         grupos = [g for g in grupos if not any(rx.search(norm(f"{x.get('predio') or ''} {x.get('titulo') or ''}"))
                                                for x in g)]
     medias = medias_m2(grupos) if CFG.get("media") else {}
     out = []
     for g in grupos:
-        vis = [x for x in g if x.get("visivel")]
+        vis = [x for x in g if x.get("visivel") and not sumido(x)]
         if not vis:
             continue
         # Só condomínio-alvo (o nome às vezes só aparece depois de abrir o anúncio: "condominio")
@@ -2455,6 +2707,12 @@ SCANNERS = [
     ("casttelo", scan_casttelo, False),
     ("monaco", scan_monaco, False),
     ("cube", scan_cube, False),
+    ("humaita", lambda f: _scan_kenlo("humaita", f), False),
+    ("cruciol", lambda f: _scan_kenlo("cruciol", f), False),
+    ("arbo", scan_arbo, False),
+    ("88imoveis", scan_88imoveis, False),
+    ("loft", scan_loft, False),
+    ("galmo", scan_galmo, False),
 ]
 
 
@@ -2465,8 +2723,13 @@ def main(perfil):
     state = json.loads(DATA.read_text()) if DATA.exists() else {"runs": [], "listings": {}}
     L = state["listings"]
     initial = not L
-    max_pages = CFG["max_pages_initial"] if initial else CFG["max_pages"]
-    log(f"Varredura {perfil} {NOW_ISO} ({'inicial' if initial else 'incremental'})")
+    # Uma varredura por dia (a primeira, pela data de Brasília) é completa: as buscas paginadas
+    # (Zap/Viva Real, OLX, Chaves na Mão) vão até o fim, para "visto" valer para todo o estoque.
+    hoje = (NOW - timedelta(hours=3)).strftime("%Y-%m-%d")
+    COMPLETA[0] = not initial and state.get("completa") != hoje
+    max_pages = (CFG.get("max_pages_completa", 30) if COMPLETA[0] else
+                 CFG["max_pages_initial"] if initial else CFG["max_pages"])
+    log(f"Varredura {perfil} {NOW_ISO} ({'inicial' if initial else 'completa' if COMPLETA[0] else 'incremental'})")
     conhecidos = {origem(x) for x in L.values()}
     CONHECIDOS.clear()
     CONHECIDOS.update(L)
@@ -2529,17 +2792,25 @@ def main(perfil):
         rec = found[k]
         estreante = rec["origem"] not in conhecidos  # primeira varredura deste portal
         limite = CFG["initial_recent_days"] if initial or estreante else CFG["max_age_days_new"]
+        decidir = antigo = False
         if rec["origem"] == "grupo":
             if tudo or old_streak < 6:
-                det.abrir(rec)
+                decidir = not det.abrir(rec) and not tudo  # sem a data: decide quando a página for lida
                 idade = age_days(rec.get("publicado"))
                 old_streak = old_streak + 1 if idade is not None and idade > limite else 0
             recente = tudo or (old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite)
+            if decidir:
+                recente, rec["decidir"] = False, limite
         else:
             idade = age_days(rec.get("publicado"))
             # Sem data de publicação: na estreia do portal não dá para saber se é novo, então o
             # estoque atual entra só como referência (links extras em imóveis já mostrados).
             recente = tudo or (idade <= limite if idade is not None else not estreante)
+            # Portal estreando: o estoque dele entra na página, mas como anterior (não "novo"),
+            # para não encher a seção de novos com o que já estava à venda
+            antigo = estreante and not tudo and not recente
+            if antigo:
+                recente = True
             if recente and rec["origem"] == "olx":
                 olx_detail(rec)
                 time.sleep(1)
@@ -2547,19 +2818,30 @@ def main(perfil):
         if not area_ok(rec.get("area")):  # a área útil do texto ficou fora da faixa do perfil
             recente = False
         rec["visivel"] = recente and not rec.get("retirado")
-        if not recente:
+        if not recente and not decidir:
             rec.pop("foto", None)
             rec.pop("titulo", None)
-        rec["detectado"] = NOW_ISO
+        rec["detectado"] = min(rec.get("publicado") or NOW_ISO, iso_dias_atras(1)) if antigo else NOW_ISO
         rec["visto"] = NOW_ISO
         L[k] = rec
 
     # Páginas de anúncio que ficaram para depois (bloqueio do Zap), só dos que estão na página
-    pend = sorted((x for x in L.values() if x.get("detalhe_pendente") and x.get("visivel") and x["id"] not in new_ids),
-                  key=lambda x: x.get("visto") or "", reverse=True)
+    pend = sorted((x for x in L.values() if x.get("detalhe_pendente") and (x.get("visivel") or x.get("decidir"))
+                   and x["id"] not in new_ids), key=lambda x: x.get("visto") or "", reverse=True)
     for rec in pend[:DETALHES_POR_VARREDURA]:
-        if not det.abrir(rec) and det.falhas >= 3:
-            break
+        if not det.abrir(rec):
+            if det.falhas >= 3:
+                break
+            continue
+        if "decidir" in rec:  # anúncio novo que esperava a data de publicação
+            idade = age_days(rec.get("publicado"))
+            ok = (idade is None or idade <= rec.pop("decidir")) and area_ok(rec.get("area")) and not rec.get("retirado")
+            rec["visivel"] = ok
+            if ok:
+                rec["detectado"] = NOW_ISO  # aparece como novo agora
+            else:
+                rec.pop("foto", None)
+                rec.pop("titulo", None)
 
     # Por condomínio: anúncios guardados sem o nome de um condomínio-alvo no título/bairro, cuja página
     # ainda não foi lida procurando por ele (de antes da busca por condomínio ou que ficaram para depois)
@@ -2581,6 +2863,21 @@ def main(perfil):
                 time.sleep(1)
         if falta:
             log(f"  condomínio procurado na página de {lidos} de {len(falta)} anúncios")
+
+    # Imobiliárias de lista inteira que responderam: quem não aparece nelas há 3 dias saiu (ver sumido)
+    state.pop("portal_ok", None)
+    COMPLETO.clear()
+    COMPLETO.update(state.get("completo_em") or {})
+    for chave, st in status.items():
+        if st == "ok" and chave not in ("zap", "vivareal", "olx", "chavesnamao"):
+            COMPLETO[chave] = NOW_ISO
+    state["completo_em"] = dict(COMPLETO)
+    verificar_sumidos(L, det)
+    if COMPLETA[0] and status and all(v == "ok" for k, v in status.items() if k in ("zap", "vivareal", "olx", "chavesnamao")):
+        state["completa"] = hoje
+    # Guardados há mais de 90 dias sem aparecer: fora do estado (já não servem nem para a média)
+    for k in [k for k, x in L.items() if (x.get("visto") or x.get("detectado") or NOW_ISO) < iso_dias_atras(90)]:
+        del L[k]
 
     state["imoveis"] = group_imoveis(L)
     novos = sum(1 for im in state["imoveis"] if im["detectado"] == NOW_ISO)

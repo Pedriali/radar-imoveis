@@ -263,7 +263,7 @@
         "pct_suspeito": 50
       },
       "excluir_predios": [
-        "oase"
+        "@predios_alvo"
       ]
     },
     "centro": {
@@ -467,7 +467,8 @@
         "bases": [
           "predio"
         ]
-      }
+      },
+      "preco_min_busca": 700000
     }
   },
   "predios_alvo": [
@@ -505,7 +506,8 @@
     {
       "nome": "La Torre",
       "chaves": [
-        "la torre"
+        "la torre",
+        "latorre"
       ]
     },
     {
