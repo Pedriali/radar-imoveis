@@ -1724,8 +1724,8 @@ def _scan_kenlo(chave, found):
     # detalhe ainda não lido (novos e os que passaram da cota antes); o guardado é atualizado no lugar
     def falta(r):
         k = CONHECIDOS.get(recs[r]["id"])
-        return not (k or recs[r]).get("det") and not (k or {}).get("lat") and preco_ok(recs[r]["preco"])
-    fila = sorted((r for r in recs if falta(r)), key=lambda r: (recs[r]["id"] in CONHECIDOS, bool(recs[r]["predio"])))
+        return not (k or recs[r]).get("det") and not (k or {}).get("lat") and preco_ok(recs[r].get("preco") or 0)
+    fila = sorted((r for r in recs if falta(r)), key=lambda r: (recs[r]["id"] in CONHECIDOS, bool(recs[r].get("predio"))))
     fila = fila[:KENLO_DETALHES_MAX]
     for ref in fila:
         time.sleep(1)
