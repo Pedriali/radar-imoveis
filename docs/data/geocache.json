@@ -751,6 +751,10 @@
 -23.31157,
 -51.16815
 ],
+"local:centro|guarapari": [
+-23.316729,
+-51.153373
+],
 "local:centro|hedi": [
 -23.314861,
 -51.160317
@@ -912,8 +916,8 @@
 -51.16419
 ],
 "local:centro|marrocos": [
--23.309553,
--51.170263
+-23.309652,
+-51.170277
 ],
 "local:centro|martiniano do valle filho|575": [
 -23.314711,
@@ -3221,6 +3225,11 @@
 "rua:avenida waldemar spranger|199": [
 -23.345689,
 -51.167403,
+"highway"
+],
+"rua:eliana maria tarasconi peixe|300": [
+-23.347072,
+-51.196176,
 "highway"
 ],
 "rua:rodovia mabio goncalves palhano|100": [
