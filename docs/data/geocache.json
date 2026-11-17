@@ -1595,6 +1595,10 @@
 -23.322598,
 -51.169425
 ],
+"local:centro|studiovdescubra": [
+-23.322598,
+-51.169425
+],
 "local:centro|sunnydowntown": [
 -23.31445,
 -51.14557
@@ -2958,6 +2962,11 @@
 -23.313546,
 -51.156953,
 "building"
+],
+"predio:residencial": [
+-23.313269,
+-51.199028,
+"landuse"
 ],
 "predio:residencial catuai": null,
 "predio:riverside": null,
