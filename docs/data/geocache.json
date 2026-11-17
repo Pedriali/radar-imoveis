@@ -167,8 +167,8 @@
 -51.207248
 ],
 "local:Royal Forest": [
--23.347468,
--51.208337
+-23.347075,
+-51.209769
 ],
 "local:Royal Golf": [
 -23.349134,
@@ -408,7 +408,7 @@
 ],
 "local:bela suica|wave": [
 -23.342076,
--51.164026
+-51.164
 ],
 "local:bela suica|wavelvectra": [
 -23.336517,
@@ -452,7 +452,7 @@
 ],
 "local:centro|acapulco": [
 -23.31435,
--51.160889
+-51.160822
 ],
 "local:centro|acquajardin": [
 -23.309292,
@@ -519,8 +519,8 @@
 -51.156482
 ],
 "local:centro|aquajardim": [
--23.310057,
--51.164039
+-23.309292,
+-51.164059
 ],
 "local:centro|aquajardimresidenceeresort": [
 -23.309292,
@@ -759,7 +759,7 @@
 -51.16937
 ],
 "local:centro|caravelas": [
--23.318187,
+-23.318144,
 -51.157402
 ],
 "local:centro|carelli": [
@@ -882,6 +882,10 @@
 -23.31534,
 -51.16996
 ],
+"local:centro|copenhagueconforto": [
+-23.315502,
+-51.170013
+],
 "local:centro|coralgables": [
 -23.310401,
 -51.169122
@@ -971,8 +975,8 @@
 -51.166705
 ],
 "local:centro|esmeraldacristina": [
--23.310903,
--51.161797
+-23.310932,
+-51.162513
 ],
 "local:centro|espirito santo|1276": [
 -23.31631,
@@ -1031,8 +1035,8 @@
 -51.167832
 ],
 "local:centro|fredericolundgren": [
--23.31067,
--51.158805
+-23.310623,
+-51.158936
 ],
 "local:centro|gallery": [
 -23.313793,
@@ -1115,16 +1119,24 @@
 -51.153893
 ],
 "local:centro|horizonte": [
--23.31,
--51.166548
+-23.304934,
+-51.166893
 ],
 "local:centro|ilhadamadeira": [
 -23.308366,
 -51.167743
 ],
+"local:centro|ilhadeitaparica": [
+-23.306908,
+-51.15905
+],
 "local:centro|ilhaderhodes": [
 -23.3171,
 -51.1588
+],
+"local:centro|ilhaderodes": [
+-23.317191,
+-51.158975
 ],
 "local:centro|imperador": [
 -23.31516,
@@ -1442,6 +1454,10 @@
 -23.313788,
 -51.156464
 ],
+"local:centro|montecarloapartamento": [
+-23.306637,
+-51.169609
+],
 "local:centro|montereal": [
 -23.317551,
 -51.15638
@@ -1711,8 +1727,8 @@
 -51.156195
 ],
 "local:centro|piemonte": [
--23.32341,
--51.15662
+-23.316436,
+-51.156195
 ],
 "local:centro|pio xii|335": [
 -23.312095,
@@ -1727,8 +1743,8 @@
 -51.166365
 ],
 "local:centro|pontevedra": [
--23.31464,
--51.169692
+-23.314551,
+-51.168112
 ],
 "local:centro|pontevedraexcelente": [
 -23.314273,
@@ -1835,7 +1851,7 @@
 -51.169368
 ],
 "local:centro|primepiaui": [
--23.31329,
+-23.313257,
 -51.168402
 ],
 "local:centro|princesaizabel": [
@@ -1859,12 +1875,12 @@
 -51.157968
 ],
 "local:centro|pugesi": [
--23.316699,
--51.156079
+-23.316567,
+-51.156137
 ],
 "local:centro|pugesimatogrosso": [
--23.316436,
--51.156195
+-23.316699,
+-51.156079
 ],
 "local:centro|queenelizabeth": [
 -23.314593,
@@ -1963,8 +1979,8 @@
 -51.16159
 ],
 "local:centro|salvadordali": [
--23.314771,
--51.163764
+-23.314768,
+-51.16381
 ],
 "local:centro|salvadortorres": [
 -23.310954,
@@ -2228,7 +2244,7 @@
 ],
 "local:centro|solarphiladelphogarcia": [
 -23.317203,
--51.166472
+-51.166528
 ],
 "local:centro|solarreimbrant": [
 -23.314292,
@@ -2239,7 +2255,7 @@
 -51.167726
 ],
 "local:centro|solarsainthonore": [
--23.312951,
+-23.312942,
 -51.169073
 ],
 "local:centro|solarsainthonore106": [
@@ -2303,12 +2319,12 @@
 -51.169425
 ],
 "local:centro|sunnydowntown": [
--23.31445,
--51.14557
+-23.314331,
+-51.146232
 ],
 "local:centro|terraazul": [
--23.316216,
--51.160332
+-23.315048,
+-51.160272
 ],
 "local:centro|terraazulcentrodelondrina": [
 -23.316284,
@@ -2335,8 +2351,8 @@
 -51.169506
 ],
 "local:centro|terrasejardim": [
--23.307058,
--51.168118
+-23.307184,
+-51.168007
 ],
 "local:centro|terrassejardim": [
 -23.308633,
@@ -2442,9 +2458,17 @@
 -23.314211,
 -51.146894
 ],
+"local:centro|venicedowtown": [
+-23.314584,
+-51.14411
+],
 "local:centro|verano": [
 -23.308752,
 -51.165647
+],
+"local:centro|veredatropical": [
+-23.32192,
+-51.156399
 ],
 "local:centro|verona": [
 -23.317518,
@@ -2727,8 +2751,8 @@
 -51.156043
 ],
 "local:nikko|doutor carlos da costa branco|65": [
--23.340281,
--51.156684
+-23.340141,
+-51.156342
 ],
 "local:nikko|gaia": [
 -23.341034,
@@ -2744,7 +2768,7 @@
 ],
 "local:nikko|oscar": [
 -23.340281,
--51.156342
+-51.156684
 ],
 "local:nikko|zahra": [
 -23.341034,
@@ -2792,7 +2816,7 @@
 ],
 "local:palhano|arboeflora": [
 -23.328709,
--51.179802
+-51.179901
 ],
 "local:palhano|arboflora": [
 -23.328512,
@@ -2815,7 +2839,7 @@
 -51.182829
 ],
 "local:palhano|atrio": [
--23.33047,
+-23.330466,
 -51.182417
 ],
 "local:palhano|atrioplaenge": [
@@ -2911,7 +2935,7 @@
 -51.181703
 ],
 "local:palhano|elegance": [
--23.330943,
+-23.331011,
 -51.182417
 ],
 "local:palhano|ernani lacerda de athayde|1075": [
@@ -2959,7 +2983,7 @@
 -51.17874
 ],
 "local:palhano|flora": [
--23.328634,
+-23.328609,
 -51.182998
 ],
 "local:palhano|floraisecoresortresidence": [
@@ -3327,8 +3351,8 @@
 -51.180867
 ],
 "local:palhano|ulrico zuinglio|50": [
--23.33396,
--51.17851
+-23.3339,
+-51.17854
 ],
 "local:palhano|valverde": [
 -23.328709,
@@ -3341,6 +3365,10 @@
 "local:palhano|verti3quartosi": [
 -23.334435,
 -51.180945
+],
+"local:palhano|vertresidenc": [
+-23.328764,
+-51.182701
 ],
 "local:palhano|vertresidence": [
 -23.328764,
@@ -3464,7 +3492,7 @@
 ],
 "local:royalforest": [
 -23.347075,
--51.212
+-51.212151
 ],
 "local:royalforestesperanca": [
 -23.347029,
@@ -3650,6 +3678,10 @@
 -23.332786,
 -51.174217
 ],
+"local:santa rosa|maisonvitoria": [
+-23.332563,
+-51.174489
+],
 "local:santa rosa|nycpalhano": [
 -23.332423,
 -51.177232
@@ -3747,7 +3779,7 @@
 -51.191651
 ],
 "local:sonora": [
--23.353073,
+-23.351941,
 -51.181552
 ],
 "local:sun lake": [
@@ -3892,6 +3924,7 @@
 "predio:aqua jardim residencial & resort": null,
 "predio:aquajardim residencial & resort": null,
 "predio:arbo": null,
+"predio:arbo 148": null,
 "predio:arbo plaenge": null,
 "predio:arch palhano": null,
 "predio:arch palhano londrina": null,
