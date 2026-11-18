@@ -207,8 +207,8 @@
 -51.208775
 ],
 "local:Ville Campestre": [
--23.337721,
--51.17554
+-23.337726,
+-51.175486
 ],
 "local:acaciaimperial": [
 -23.349094,
@@ -235,12 +235,12 @@
 -51.18819
 ],
 "local:alphaville2": [
--23.35547,
--51.187164
+-23.355707,
+-51.187032
 ],
 "local:alphavilleii": [
--23.352956,
--51.187631
+-23.349539,
+-51.187331
 ],
 "local:alphavilleimbuias": [
 -23.348771,
@@ -326,8 +326,12 @@
 -23.345206,
 -51.163618
 ],
+"local:bela suica|edificio": [
+-23.334579,
+-51.172949
+],
 "local:bela suica|lakeside": [
--23.342249,
+-23.342527,
 -51.163714
 ],
 "local:bela suica|lakesideresidence": [
@@ -355,8 +359,8 @@
 -51.172949
 ],
 "local:bela suica|moradadosol": [
--23.335041,
--51.174065
+-23.335503,
+-51.175181
 ],
 "local:bela suica|palazzo": [
 -23.341922,
@@ -624,7 +628,7 @@
 ],
 "local:centro|belacintra": [
 -23.31285,
--51.169527
+-51.169476
 ],
 "local:centro|belacintracentro": [
 -23.312917,
@@ -795,8 +799,8 @@
 -51.151094
 ],
 "local:centro|castelfranco": [
--23.31597,
--51.16415
+-23.315919,
+-51.164184
 ],
 "local:centro|castelfranco4suites211": [
 -23.315868,
@@ -867,8 +871,8 @@
 -51.160432
 ],
 "local:centro|conjuntofolhadelondrinablocoangelica": [
--23.313652,
--51.15878
+-23.314392,
+-51.158935
 ],
 "local:centro|conjuntofolhadelondrinablocoangelicagaleriavillarica": [
 -23.313652,
@@ -879,7 +883,7 @@
 -51.168015
 ],
 "local:centro|copenhague": [
--23.31534,
+-23.315348,
 -51.16996
 ],
 "local:centro|copenhagueconforto": [
@@ -903,8 +907,8 @@
 -51.167337
 ],
 "local:centro|costadouro": [
--23.314329,
--51.166466
+-23.314246,
+-51.16643
 ],
 "local:centro|daunak": [
 -23.314292,
@@ -954,6 +958,10 @@
 -23.314148,
 -51.164626
 ],
+"local:centro|dunasdourada": [
+-23.318,
+-51.154
+],
 "local:centro|dunasdouradaregiaocentraldelondrina": [
 -23.318,
 -51.154
@@ -966,6 +974,14 @@
 -23.317882,
 -51.162114
 ],
+"local:centro|edificio": [
+-23.310823,
+-51.163843
+],
+"local:centro|edificiovilalobos": [
+-23.31187,
+-51.15577
+],
 "local:centro|eldorado": [
 -23.313334,
 -51.162757
@@ -975,8 +991,8 @@
 -51.166705
 ],
 "local:centro|esmeraldacristina": [
--23.310932,
--51.162513
+-23.310808,
+-51.161314
 ],
 "local:centro|espirito santo|1276": [
 -23.31631,
@@ -1055,8 +1071,8 @@
 -51.163154
 ],
 "local:centro|goias|1347": [
--23.315572,
--51.164133
+-23.315382,
+-51.16404
 ],
 "local:centro|goias|1354": [
 -23.3154,
@@ -1287,8 +1303,8 @@
 -51.155833
 ],
 "local:centro|manhattamresidence": [
--23.312139,
--51.167973
+-23.311057,
+-51.168122
 ],
 "local:centro|manhattamresidencelondrina": [
 -23.309975,
@@ -1407,8 +1423,8 @@
 -51.152528
 ],
 "local:centro|mediterranee": [
--23.321484,
--51.161595
+-23.320382,
+-51.161563
 ],
 "local:centro|mediterraneecentrodelondrina": [
 -23.321484,
@@ -1452,7 +1468,7 @@
 ],
 "local:centro|montecarlo": [
 -23.313788,
--51.156464
+-51.160416
 ],
 "local:centro|montecarloapartamento": [
 -23.306637,
@@ -1531,7 +1547,7 @@
 -51.166415
 ],
 "local:centro|odyssey": [
--23.307566,
+-23.307582,
 -51.17324
 ],
 "local:centro|odysseycentrolondrinaexcelente": [
@@ -1655,7 +1671,7 @@
 -51.167803
 ],
 "local:centro|paseosantos": [
--23.313217,
+-23.313755,
 -51.167803
 ],
 "local:centro|paseosantosplaenge": [
@@ -1743,8 +1759,8 @@
 -51.166365
 ],
 "local:centro|pontevedra": [
--23.314551,
--51.168112
+-23.314462,
+-51.166533
 ],
 "local:centro|pontevedraexcelente": [
 -23.314273,
@@ -1839,7 +1855,7 @@
 -51.156398
 ],
 "local:centro|presidente": [
--23.31407,
+-23.314045,
 -51.168091
 ],
 "local:centro|presidentecentrodelondrina": [
@@ -1855,12 +1871,12 @@
 -51.168402
 ],
 "local:centro|princesaizabel": [
--23.315271,
--51.161421
+-23.315104,
+-51.161369
 ],
 "local:centro|principedegales": [
--23.316845,
--51.16097
+-23.31671,
+-51.160581
 ],
 "local:centro|professor joao candido|1380": [
 -23.32158,
@@ -1869,6 +1885,10 @@
 "local:centro|professor joao candido|333": [
 -23.311686,
 -51.161324
+],
+"local:centro|professor joao candido|398": [
+-23.312391,
+-51.161645
 ],
 "local:centro|professor joao candido|685": [
 -23.313098,
@@ -1893,6 +1913,10 @@
 "local:centro|reno": [
 -23.30972,
 -51.169073
+],
+"local:centro|residencial": [
+-23.316315,
+-51.161678
 ],
 "local:centro|residpetropolis": [
 -23.326493,
@@ -1943,8 +1967,8 @@
 -51.165019
 ],
 "local:centro|royalgarden": [
--23.312006,
--51.169073
+-23.312172,
+-51.168156
 ],
 "local:centro|royalgardenedificio": [
 -23.312338,
@@ -1967,8 +1991,8 @@
 -51.158747
 ],
 "local:centro|saintpatrick": [
--23.323799,
--51.156154
+-23.323708,
+-51.156167
 ],
 "local:centro|saintsimon": [
 -23.319692,
@@ -2008,7 +2032,7 @@
 ],
 "local:centro|santamonica": [
 -23.31237,
--51.161645
+-51.161639
 ],
 "local:centro|santamonicalondrinaa88imoveis": [
 -23.312359,
@@ -2020,7 +2044,7 @@
 ],
 "local:centro|santos1250": [
 -23.31699,
--51.168102
+-51.168051
 ],
 "local:centro|santos125085": [
 -23.316975,
@@ -2059,8 +2083,8 @@
 -51.167729
 ],
 "local:centro|santos|1299": [
--23.31749,
--51.16781
+-23.317493,
+-51.167775
 ],
 "local:centro|santos|150": [
 -23.307058,
@@ -2079,8 +2103,8 @@
 -51.16768
 ],
 "local:centro|santos|488": [
--23.310751,
--51.168143
+-23.309975,
+-51.168271
 ],
 "local:centro|santos|738": [
 -23.312357,
@@ -2143,8 +2167,8 @@
 -51.161672
 ],
 "local:centro|serranegra": [
--23.31697,
--51.169028
+-23.31699,
+-51.16906
 ],
 "local:centro|serraverde": [
 -23.316764,
@@ -2214,6 +2238,10 @@
 -23.310754,
 -51.166422
 ],
+"local:centro|solariojardim": [
+-23.313064,
+-51.16988
+],
 "local:centro|solariojardimapartamento": [
 -23.313064,
 -51.16988
@@ -2235,8 +2263,8 @@
 -51.152422
 ],
 "local:centro|solarmontreaux": [
--23.317496,
--51.167803
+-23.317493,
+-51.167806
 ],
 "local:centro|solarmontreux": [
 -23.317496,
@@ -2275,8 +2303,8 @@
 -51.169017
 ],
 "local:centro|spot": [
--23.306516,
--51.168185
+-23.306565,
+-51.167851
 ],
 "local:centro|spotcentro": [
 -23.306622,
@@ -2291,8 +2319,8 @@
 -51.167286
 ],
 "local:centro|spotcentroresidencial": [
--23.306622,
--51.167286
+-23.306629,
+-51.167735
 ],
 "local:centro|spotdestaquesdoimovel": [
 -23.306622,
@@ -2319,12 +2347,12 @@
 -51.169425
 ],
 "local:centro|sunnydowntown": [
--23.314331,
--51.146232
+-23.314211,
+-51.146894
 ],
 "local:centro|terraazul": [
--23.315048,
--51.160272
+-23.31621,
+-51.160332
 ],
 "local:centro|terraazulcentrodelondrina": [
 -23.316284,
@@ -2376,7 +2404,7 @@
 ],
 "local:centro|tokio": [
 -23.30968,
--51.158
+-51.158346
 ],
 "local:centro|toquio": [
 -23.309833,
@@ -2487,8 +2515,8 @@
 -51.167648
 ],
 "local:centro|vilalobos": [
--23.31558,
--51.161048
+-23.319291,
+-51.166326
 ],
 "local:centro|vilhena": [
 -23.30972,
@@ -2550,6 +2578,10 @@
 -23.344257,
 -51.163557
 ],
+"local:com4suitesa": [
+-23.354846,
+-51.155272
+],
 "local:com4suitesavenda": [
 -23.354846,
 -51.155272
@@ -2570,6 +2602,10 @@
 -23.340538,
 -51.154734
 ],
+"local:elocacaorecanto": [
+-23.366181,
+-51.220816
+],
 "local:estancia cabral": [
 -23.364539,
 -51.219989
@@ -2587,7 +2623,7 @@
 -51.219811
 ],
 "local:estanciasantapaula": [
--23.360542,
+-23.359293,
 -51.244271
 ],
 "local:estanciasantapaulalondrina": [
@@ -2675,8 +2711,8 @@
 -51.17635
 ],
 "local:guanabara|potylazzarotto": [
--23.335812,
--51.17631
+-23.335884,
+-51.17635
 ],
 "local:guanabara|potylazzarotto192m2total104m2": [
 -23.33607,
@@ -2771,8 +2807,8 @@
 -51.156684
 ],
 "local:nikko|zahra": [
--23.341034,
--51.15547
+-23.341005,
+-51.155756
 ],
 "local:oro vectra|orovectra": [
 -23.340538,
@@ -2783,16 +2819,16 @@
 -51.204868
 ],
 "local:palhano|absoluto": [
--23.330839,
--51.184112
+-23.330553,
+-51.182621
 ],
 "local:palhano|absolutoplaenge": [
 -23.330463,
 -51.182417
 ],
 "local:palhano|allure": [
--23.329383,
--51.180798
+-23.329365,
+-51.18077
 ],
 "local:palhano|allure3": [
 -23.329365,
@@ -2814,9 +2850,13 @@
 -23.328659,
 -51.18301
 ],
+"local:palhano|arboarboflora": [
+-23.328659,
+-51.18301
+],
 "local:palhano|arboeflora": [
 -23.328709,
--51.179901
+-51.179802
 ],
 "local:palhano|arboflora": [
 -23.328512,
@@ -2891,8 +2931,8 @@
 -51.174734
 ],
 "local:palhano|champselysees": [
--23.329287,
--51.180741
+-23.32921,
+-51.180712
 ],
 "local:palhano|champselyseesresidence": [
 -23.329151,
@@ -2951,8 +2991,8 @@
 -51.178908
 ],
 "local:palhano|essence": [
--23.332951,
--51.175797
+-23.33299,
+-51.176
 ],
 "local:palhano|eurico hummig|107": [
 -23.334488,
@@ -2975,16 +3015,16 @@
 -51.17312
 ],
 "local:palhano|fernandopessoa": [
--23.331322,
--51.179099
+-23.33248,
+-51.17874
 ],
 "local:palhano|fernandopessoaoportunidade": [
 -23.33248,
 -51.17874
 ],
 "local:palhano|flora": [
--23.328609,
--51.182998
+-23.32861,
+-51.182999
 ],
 "local:palhano|floraisecoresortresidence": [
 -23.333236,
@@ -2993,6 +3033,10 @@
 "local:palhano|florase": [
 -23.331126,
 -51.185603
+],
+"local:palhano|fontaineblanc": [
+-23.32743,
+-51.17934
 ],
 "local:palhano|fontaineblancresidence": [
 -23.32743,
@@ -3039,8 +3083,8 @@
 -51.18077
 ],
 "local:palhano|harmonietorreallure": [
--23.329432,
--51.180783
+-23.329499,
+-51.180796
 ],
 "local:palhano|hause": [
 -23.330463,
@@ -3051,7 +3095,7 @@
 -51.182417
 ],
 "local:palhano|huma": [
--23.32713,
+-23.327145,
 -51.182462
 ],
 "local:palhano|humaplaenge": [
@@ -3060,7 +3104,11 @@
 ],
 "local:palhano|joanmiro": [
 -23.32826,
--51.178106
+-51.178033
+],
+"local:palhano|joao huss|10000": [
+-23.32927,
+-51.186103
 ],
 "local:palhano|joao huss|380": [
 -23.32826,
@@ -3119,8 +3167,8 @@
 -51.180705
 ],
 "local:palhano|lumini": [
--23.334141,
--51.179715
+-23.334212,
+-51.181272
 ],
 "local:palhano|luminiglebapalhano": [
 -23.334284,
@@ -3159,8 +3207,8 @@
 -51.179018
 ],
 "local:palhano|maisonveyron": [
--23.328997,
--51.179554
+-23.327828,
+-51.179458
 ],
 "local:palhano|maisonveyron2suites": [
 -23.327,
@@ -3263,8 +3311,8 @@
 -51.179451
 ],
 "local:palhano|queenspark": [
--23.332548,
--51.181188
+-23.332709,
+-51.181091
 ],
 "local:palhano|sebastiao chapp galindo|167": [
 -23.327159,
@@ -3315,8 +3363,8 @@
 -51.174167
 ],
 "local:palhano|theedge": [
--23.328511,
--51.180207
+-23.328314,
+-51.180466
 ],
 "local:palhano|theedgei3suites": [
 -23.328314,
@@ -3329,6 +3377,10 @@
 "local:palhano|torre": [
 -23.330079,
 -51.178714
+],
+"local:palhano|toulouse": [
+-23.3292,
+-51.17663
 ],
 "local:palhano|trianon": [
 -23.328856,
@@ -3375,8 +3427,8 @@
 -51.182701
 ],
 "local:palhano|villasolare": [
--23.332423,
--51.177232
+-23.332467,
+-51.178101
 ],
 "local:parque das artes": [
 -23.365851,
@@ -3491,8 +3543,8 @@
 -51.207308
 ],
 "local:royalforest": [
--23.347075,
--51.212151
+-23.347036,
+-51.212577
 ],
 "local:royalforestesperanca": [
 -23.347029,
@@ -3503,8 +3555,8 @@
 -51.211893
 ],
 "local:royalforestreseresort": [
--23.347583,
--51.209502
+-23.34966,
+-51.2038
 ],
 "local:royalforestresidence": [
 -23.349244,
@@ -3523,8 +3575,8 @@
 -51.212726
 ],
 "local:royalgolf": [
--23.349511,
--51.201639
+-23.349244,
+-51.201019
 ],
 "local:royalgolfresidence": [
 -23.347437,
@@ -3539,8 +3591,12 @@
 -51.20712
 ],
 "local:royalmaisonresidence": [
--23.347794,
--51.210585
+-23.347935,
+-51.210648
+],
+"local:royalmaisonresidenceeresort": [
+-23.349094,
+-51.206905
 ],
 "local:royalmaisonresidenceresort": [
 -23.349094,
@@ -3643,7 +3699,7 @@
 -51.171918
 ],
 "local:santa rosa|chelseatower": [
--23.332524,
+-23.332625,
 -51.177232
 ],
 "local:santa rosa|corbusier": [
@@ -3708,7 +3764,7 @@
 ],
 "local:santanaresidence": [
 -23.346104,
--51.19063
+-51.190601
 ],
 "local:santiago|280": [
 -23.333046,
@@ -3727,8 +3783,8 @@
 -51.15598
 ],
 "local:sao jorge|gaia": [
--23.342777,
--51.159728
+-23.344952,
+-51.162264
 ],
 "local:sao jorge|mayfair": [
 -23.344952,
@@ -3787,8 +3843,8 @@
 -51.206554
 ],
 "local:sunlake": [
--23.36525,
--51.20653
+-23.365266,
+-51.206539
 ],
 "local:sunlakeexcelentelocalizacao": [
 -23.366573,
@@ -3847,8 +3903,8 @@
 -51.172371
 ],
 "local:valedasaraucarias": [
--23.341904,
--51.172041
+-23.341468,
+-51.171961
 ],
 "local:valedoarvoredo": [
 -23.350541,
@@ -3944,6 +4000,7 @@
 "predio:aura edificio aura plaenge": null,
 "predio:aura plaenge residencial dos lagos": null,
 "predio:baixo": null,
+"predio:barao do catuai": null,
 "predio:barao do rio branco": null,
 "predio:bela cintra centro": null,
 "predio:bela cintra conforto": null,
@@ -3976,6 +4033,7 @@
 "predio:cassete": null,
 "predio:catuai park": null,
 "predio:catuai parque residence": null,
+"predio:cenario- apartamento a": null,
 "predio:cenario- apartamento a venda": null,
 "predio:cessao de direitos": null,
 "predio:chatelle": [
@@ -4048,6 +4106,7 @@
 "predio:estancia cabral": null,
 "predio:estancia santa paula": null,
 "predio:estancia santa paula 198": null,
+"predio:estancia santa paula viva": null,
 "predio:excelente": null,
 "predio:exclusividade lharmonie allure": null,
 "predio:fechado alphaville 2": null,
@@ -4058,6 +4117,11 @@
 "predio:fernando pessoa londrina": [
 -23.33186,
 -51.175483,
+"building"
+],
+"predio:flor da mata": [
+-23.311777,
+-51.166928,
 "building"
 ],
 "predio:florenza": null,
@@ -4117,8 +4181,14 @@
 -51.166501,
 "building"
 ],
+"predio:igapo": [
+-23.335131,
+-51.153743,
+"building"
+],
 "predio:igapo viver": null,
 "predio:ilha de itaparica": null,
+"predio:ilha rhodes": null,
 "predio:imperador": [
 -23.314876,
 -51.165817,
@@ -4158,6 +4228,11 @@
 -51.176975,
 "building"
 ],
+"predio:le jardim": [
+-23.332693,
+-51.176975,
+"building"
+],
 "predio:le jardim excelente": null,
 "predio:lharmonie": null,
 "predio:liberty towers": null,
@@ -4167,6 +4242,11 @@
 "predio:los angeles": null,
 "predio:maanain": null,
 "predio:maimi garden": null,
+"predio:maison chamonix": [
+-23.31817,
+-51.162503,
+"building"
+],
 "predio:maison de savigny": [
 -23.315773,
 -51.16721,
@@ -4189,6 +4269,7 @@
 "building"
 ],
 "predio:malvina pedrialli": null,
+"predio:manaus e santarem": null,
 "predio:manhattan residentes": null,
 "predio:marcilia": null,
 "predio:maria del carmem": null,
@@ -4226,6 +4307,11 @@
 "building"
 ],
 "predio:montese": null,
+"predio:montpellier residences": [
+-23.314119,
+-51.167719,
+"building"
+],
 "predio:montserrat": null,
 "predio:mundo novo": null,
 "predio:nicola dinardi": [
@@ -4284,6 +4370,7 @@
 "predio:pitangua": null,
 "predio:polaris": null,
 "predio:portal da goias": null,
+"predio:portal de belo horizonte": null,
 "predio:portal fazenda": null,
 "predio:portaria": null,
 "predio:portinari": null,
@@ -4313,6 +4400,7 @@
 -51.156953,
 "building"
 ],
+"predio:res. valter f. pruner": null,
 "predio:residence du soleil": [
 -23.317874,
 -51.162123,
@@ -4349,6 +4437,11 @@
 ],
 "predio:saint raphael residence": null,
 "predio:saint simon": [
+-23.321311,
+-51.161695,
+"building"
+],
+"predio:saint simon centro": [
 -23.321311,
 -51.161695,
 "building"
@@ -4534,6 +4627,11 @@
 "rua:alameda pe vermelho|51": [
 -23.329383,
 -51.180275,
+"highway"
+],
+"rua:avenida adhemar pereira de barros|1075": [
+-23.337105,
+-51.162773,
 "highway"
 ],
 "rua:avenida adhemar pereira de barros|820": [
