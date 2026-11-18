@@ -506,6 +506,10 @@
 -23.30767,
 -51.16798
 ],
+"local:centro|amaralina": [
+-23.31131,
+-51.15838
+],
 "local:centro|amarilis": [
 -23.315084,
 -51.170292
@@ -525,6 +529,10 @@
 "local:centro|angelobazo": [
 -23.314708,
 -51.156482
+],
+"local:centro|angelobazzocentrodelondrinaencontre": [
+-23.314712,
+-51.156424
 ],
 "local:centro|aquajardim": [
 -23.309292,
@@ -994,6 +1002,10 @@
 -23.31063,
 -51.16684
 ],
+"local:centro|escalada": [
+-23.31829,
+-51.156393
+],
 "local:centro|esmeraldacristina": [
 -23.310808,
 -51.161314
@@ -1199,8 +1211,8 @@
 -51.159152
 ],
 "local:centro|itatiaia": [
--23.317515,
--51.156217
+-23.317602,
+-51.15986
 ],
 "local:centro|itauna": [
 -23.317826,
@@ -1265,6 +1277,10 @@
 "local:centro|lordlovat": [
 -23.31355,
 -51.163582
+],
+"local:centro|losangeles": [
+-23.320082,
+-51.16056
 ],
 "local:centro|luisdecamoes": [
 -23.309033,
@@ -2910,6 +2926,10 @@
 -23.327159,
 -51.182462
 ],
+"local:palhano|bellver": [
+-23.334,
+-51.17576
+],
 "local:palhano|bosquewilmarberbert": [
 -23.328709,
 -51.179802
@@ -4117,6 +4137,7 @@
 "predio:edificio visconde de barbacena": null,
 "predio:edificios manaus e santarem": null,
 "predio:embaixador": null,
+"predio:enseadas": null,
 "predio:escalada": [
 -23.318295,
 -51.162474,
@@ -4308,6 +4329,7 @@
 "predio:matisse": null,
 "predio:matisse londrina": null,
 "predio:maximus": null,
+"predio:maximus aceita": null,
 "predio:mayfair": null,
 "predio:mediterranee centro de londrinamore": null,
 "predio:mediterranee jardim ipiranga": [
@@ -4439,6 +4461,7 @@
 ],
 "predio:residencial albatroz": null,
 "predio:residencial catuai": null,
+"predio:resort": null,
 "predio:riverside": null,
 "predio:royal euro": null,
 "predio:royal forest": null,
