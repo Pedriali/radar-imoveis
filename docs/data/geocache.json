@@ -163,12 +163,12 @@
 -51.207248
 ],
 "local:Recanto do Salto": [
--23.365485,
+-23.36557,
 -51.207248
 ],
 "local:Royal Forest": [
--23.347075,
--51.209769
+-23.347052,
+-51.211067
 ],
 "local:Royal Golf": [
 -23.349134,
@@ -257,6 +257,10 @@
 "local:antonio fabricio ribeiro|10": [
 -23.358812,
 -51.208451
+],
+"local:aproveite": [
+-23.365295,
+-51.206554
 ],
 "local:artesano": [
 -23.366228,
@@ -391,15 +395,15 @@
 -51.163523
 ],
 "local:bela suica|terrazadirimini": [
--23.345014,
--51.163618
+-23.345103,
+-51.163309
 ],
 "local:bela suica|terrazza": [
 -23.345206,
 -51.163618
 ],
 "local:bela suica|terrazzadirimini": [
--23.343807,
+-23.344745,
 -51.163618
 ],
 "local:bela suica|torre": [
@@ -491,8 +495,8 @@
 -51.159795
 ],
 "local:centro|alaska": [
--23.312109,
--51.16672
+-23.314448,
+-51.161594
 ],
 "local:centro|alcobaca": [
 -23.310816,
@@ -987,8 +991,8 @@
 -51.162757
 ],
 "local:centro|embaixador": [
--23.309106,
--51.166705
+-23.31063,
+-51.16684
 ],
 "local:centro|esmeraldacristina": [
 -23.310808,
@@ -1103,8 +1107,8 @@
 -51.169073
 ],
 "local:centro|graopara": [
--23.314357,
--51.160779
+-23.312918,
+-51.15939
 ],
 "local:centro|greenpark": [
 -23.31157,
@@ -1547,7 +1551,7 @@
 -51.166415
 ],
 "local:centro|odyssey": [
--23.307582,
+-23.30755,
 -51.17324
 ],
 "local:centro|odysseycentrolondrinaexcelente": [
@@ -1654,6 +1658,10 @@
 -23.314695,
 -51.167337
 ],
+"local:centro|para|1895": [
+-23.314376,
+-51.159349
+],
 "local:centro|para|1907": [
 -23.314663,
 -51.169865
@@ -1759,8 +1767,8 @@
 -51.166365
 ],
 "local:centro|pontevedra": [
--23.314462,
--51.166533
+-23.314419,
+-51.162941
 ],
 "local:centro|pontevedraexcelente": [
 -23.314273,
@@ -1867,8 +1875,8 @@
 -51.169368
 ],
 "local:centro|primepiaui": [
--23.313257,
--51.168402
+-23.31318,
+-51.16733
 ],
 "local:centro|princesaizabel": [
 -23.315104,
@@ -2027,7 +2035,7 @@
 -51.16097
 ],
 "local:centro|santahelena": [
--23.310921,
+-23.310929,
 -51.161493
 ],
 "local:centro|santamonica": [
@@ -2650,6 +2658,10 @@
 -23.347702,
 -51.19554
 ],
+"local:gil de abreu souza|1501": [
+-23.34938,
+-51.20712
+],
 "local:gil de abreu souza|1770": [
 -23.348989,
 -51.20693
@@ -2859,8 +2871,8 @@
 -51.179802
 ],
 "local:palhano|arboflora": [
--23.328512,
--51.18124
+-23.328659,
+-51.182678
 ],
 "local:palhano|arch": [
 -23.333845,
@@ -2890,6 +2902,10 @@
 -23.327159,
 -51.182462
 ],
+"local:palhano|auradaconstrutoraplaenge": [
+-23.32766,
+-51.183229
+],
 "local:palhano|auraplaenge": [
 -23.327159,
 -51.182462
@@ -2907,8 +2923,8 @@
 -51.180994
 ],
 "local:palhano|cambridge": [
--23.334799,
--51.181143
+-23.33367,
+-51.18123
 ],
 "local:palhano|cambridgevillage": [
 -23.33367,
@@ -2991,8 +3007,8 @@
 -51.178908
 ],
 "local:palhano|essence": [
--23.33299,
--51.176
+-23.332951,
+-51.175797
 ],
 "local:palhano|eurico hummig|107": [
 -23.334488,
@@ -3013,6 +3029,10 @@
 "local:palhano|evidence": [
 -23.33532,
 -51.17312
+],
+"local:palhano|evolutionhome": [
+-23.3338,
+-51.180867
 ],
 "local:palhano|fernandopessoa": [
 -23.33248,
@@ -3151,8 +3171,8 @@
 -51.181176
 ],
 "local:palhano|lessence": [
--23.333576,
--51.176116
+-23.333283,
+-51.176058
 ],
 "local:palhano|lharmonie": [
 -23.329365,
@@ -3544,7 +3564,7 @@
 ],
 "local:royalforest": [
 -23.347036,
--51.212302
+-51.21244
 ],
 "local:royalforestesperanca": [
 -23.347029,
@@ -3843,7 +3863,7 @@
 -51.206554
 ],
 "local:sunlake": [
--23.365266,
+-23.365282,
 -51.206539
 ],
 "local:sunlakeexcelentelocalizacao": [
@@ -3851,7 +3871,7 @@
 -51.220339
 ],
 "local:sunlakeresidence": [
--23.365295,
+-23.365246,
 -51.206554
 ],
 "local:sunset dream": [
@@ -3963,6 +3983,7 @@
 "predio:alcantara": null,
 "predio:alcantara londrina": null,
 "predio:algarve": null,
+"predio:allure 136 m2 de area": null,
 "predio:alohi": null,
 "predio:alphaville": null,
 "predio:alphaville 2": null,
@@ -4214,6 +4235,11 @@
 "building"
 ],
 "predio:l'harmonie": null,
+"predio:la coruna": [
+-23.31572,
+-51.16744,
+"building"
+],
 "predio:la torre": null,
 "predio:lac royal": [
 -23.328303,
