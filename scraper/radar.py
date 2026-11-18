@@ -262,12 +262,87 @@ def area_util_texto(*textos):
     return min(vals) if vals else None
 
 
+AREA_TOTAL_TXT = [
+    re.compile(_NUM + r"\s*" + _M2 + r"\s*(?:de\s+)?(?:area\s+)?total"),
+    re.compile(r"(?:area|metragem)\s+total\s*(?:de|:|-|=|com|e)?\s*(?:aprox\w*\.?\s*)?" + _NUM + r"\s*" + _M2),
+]
+# Pares área total -> privativa por prédio, aprendidos das descrições que citam as duas ("104 m² privativos,
+# 192 m² de área total"): anúncio do mesmo prédio que traz só a total no campo da área é corrigido
+# (aplica_areas_predio). Guardados no estado do perfil ("areas_predio").
+AREAS_PREDIO = {}
+
+
+def area_total_texto(*textos):
+    t = norm(" ".join(x for x in textos if x)).replace("\\n", " ")
+    vals = [_num_area(m.group(1)) for rx in AREA_TOTAL_TXT for m in rx.finditer(t)]
+    vals = [v for v in vals if v and v >= 25]
+    return max(vals) if vals else None
+
+
+def chave_area(rec):
+    return name_key(limpa_predio(rec.get("condominio") or rec.get("predio")) or "") if (
+        rec.get("condominio") or rec.get("predio")) else ""
+
+
+def aprende_area(rec, util, total):
+    k = chave_area(rec)
+    if k and len(k) >= 3 and util and total and 1.1 <= total / util <= 2.5:
+        AREAS_PREDIO.setdefault(k, {})[str(total)] = util
+
+
+def aprende_por_preco(L):
+    """Mesmo prédio, mesmo preço (±2%) e mesmos quartos, uma área 15% a 130% maior que a outra: é a mesma
+    unidade, anunciada com a total num portal e a privativa noutro (Gaia: 198 m² e 111 m² por R$ 2,2 mi)."""
+    por = {}
+    for x in L.values():
+        if x.get("visivel") and x.get("area") and x.get("preco") and x.get("tipo") != "terreno":
+            k = chave_area(x)
+            if k and len(k) >= 3:
+                por.setdefault(k, []).append(x)
+    for k, g in por.items():
+        privs = {u for u in (AREAS_PREDIO.get(k) or {}).values()}
+        for a in g:
+            for b in g:
+                if not (1.15 <= b["area"] / a["area"] <= 2.3) or abs(a["preco"] - b["preco"]) > 0.02 * b["preco"]:
+                    continue
+                if a.get("quartos") and b.get("quartos") and a["quartos"] != b["quartos"]:
+                    continue
+                if any(abs(b["area"] - u) <= 2 for u in privs):  # a maior é planta de verdade do prédio
+                    continue
+                AREAS_PREDIO.setdefault(k, {}).setdefault(str(b["area"]), a["area"])
+
+
+def aplica_areas_predio(L):
+    """Anúncio cuja área é a total de uma planta conhecida do prédio passa a mostrar a privativa dela.
+    Não mexe quando a mesma metragem também é a privativa de outra planta do prédio."""
+    n = 0
+    for x in L.values():
+        if not x.get("visivel") or not x.get("area") or x.get("tipo") == "terreno":
+            continue
+        m = AREAS_PREDIO.get(chave_area(x))
+        if not m:
+            continue
+        privs = set(m.values())
+        if any(abs(x["area"] - u) <= 2 for u in privs):
+            continue
+        for t, u in m.items():
+            if abs(x["area"] - int(t)) <= 2 and u < x["area"]:
+                x.setdefault("area_anunciada", x["area"])
+                x["area"] = u
+                n += 1
+                break
+    if n:
+        log(f"  área privativa do prédio aplicada em {n} anúncios que traziam a total")
+
+
 def corrige_area(rec, *textos):
     """Troca a área do anúncio pela área útil citada no texto, se esta for menor (o campo do portal
     trazia a total). Terreno fica com a área do lote. Guarda a original em area_anunciada."""
     if rec.get("tipo") == "terreno" or not rec.get("area"):
         return
     u = area_util_texto(rec.get("titulo"), *textos)
+    if u:
+        aprende_area(rec, u, area_total_texto(rec.get("titulo"), *textos))
     if u and u < rec["area"] - 1 and u >= rec["area"] * 0.4:
         rec.setdefault("area_anunciada", rec["area"])
         rec["area"] = u
@@ -344,6 +419,41 @@ NAME_RE = re.compile(
 )
 STOP_PREFIX = ("apartamento", "apto", "vendo", "venda", "lindo", "excelente", "oportunidade", "otimo", "ótimo", "imovel", "imóvel",
                "casa", "sobrado", "terreno", "lote")
+
+
+# Nome do prédio como vem dos portais: "Fernando Pessoa\r\n\r\nOPORTUNIDADE", "BOTÂNICO 122M",
+# "Lumini Gleba Palhano", "À Venda Condomínio Sun Lake", "Pronto para morar"... limpa_predio deixa só o nome.
+_PRED_ANTES = re.compile(r"(?i)^(?:(?:[àa]\s+venda|vendo|venda|exclusividade|fechado|lindo|linda|excelente|"
+                         r"oportunidade|apartamento|apto|cobertura)\b[\s:,-]*)+")
+_PRED_PREFIXO = re.compile(r"(?i)^(?:(?:condom[ií]n?io|condomnio|cond|edif[ií]cios?|edif|ed|sociedade(?:\s+civil)?)\b\.?\s*)+")
+_PRED_DEPOIS = re.compile(
+    r"(?i)[\s,.-]+(?:(?:centro|regi[aã]o central)\s+de\s+londrina\w*|londrina\w*|gleba(?:\s+fazenda)?\s+palhano|"
+    r"jardim\s+ipiranga\w*|zona\s+sul|\d+\s*(?:m²|m2|m|mts?)\b|\d{3}|\d+\s+(?:su[ií]tes?|quartos?|dorm\w*)|"
+    r"i\s+\d+.*|apartamento|apto|venda|vista|excelente\w*(?:\s+localiza\w+)?|lindo\w*|conforto|"
+    r"oportunidade|exclusividade|andar\s+alto(?:\s+com)?|alto\s+padr[aã]o|88\s+im[oó]veis|com|edif[ií]cio|"
+    r"mais|more|completo|apresentamos|sobrado|\d+\s*su[ií]tes)\s*$")
+_PRED_RUIM = re.compile(r"(?i)^(?:completo|excelente|gleba(?: fazenda)? palhano|centro|sta|portaria \d+|torre \d+|"
+                        r"bloco \d+|central|pronto para morar|com lazer.*|casa no .*|apartamento.*|"
+                        r"\d+|lindo.*|oportunidade.*|venda.*)$")
+
+
+def limpa_predio(nome):
+    if not nome:
+        return nome
+    n = re.split(r"[\r\n|]|\s{2,}|\.(?=\s*(?:na|no|em|com)\b)", str(nome).strip())[0]
+    n = re.sub(r"([a-zà-ÿ])([A-ZÀ-Ý][a-zà-ÿ])", r"\1 \2", n)          # "IpirangaMais"
+    n = re.sub(r"([A-ZÀ-Ý]{3,})([A-ZÀ-Ý][a-zà-ÿ])", r"\1 \2", n)      # "LONDRINAApartamento"
+    n = n.strip(" .,-:")
+    for _ in range(4):
+        m = _PRED_DEPOIS.sub("", _PRED_PREFIXO.sub("", _PRED_ANTES.sub("", n))).strip(" .,-:")
+        if not m or m == n:
+            break
+        n = m
+    if not n or len(n) < 2 or _PRED_RUIM.match(n):
+        return None
+    if (n.isupper() and len(n) > 3) or n.islower():
+        n = " ".join(w if w in ("NYC", "II", "III", "IV", "VI", "XV", "XVI") else w.capitalize() for w in n.split())
+    return n
 
 
 def building_from_text(*texts):
@@ -2148,6 +2258,66 @@ def scan_galmo(found):
     return "ok"
 
 
+# X5 Imóveis (x5imoveis.com.br, Tecimob/Next.js): a lista vem pronta no __NEXT_DATA__ das páginas
+# /comprar/<tipo>/londrina-pr?offset=N (21 por página). O robots.txt bloqueia /api/ e os filtros da
+# busca (bairro, preço, área), não a paginação. A faixa colorida do card (stripe_text) é o prédio.
+X5_BASE = "https://x5imoveis.com.br"
+
+
+def _x5_area(areas, tipo):
+    a = areas or {}
+    ordem = ("total_area",) if tipo == "terreno" else ("private_area", "primary_area", "total_area")
+    for k in ordem:
+        v = _num_area(str((a.get(k) or {}).get("value") or ""))
+        if v:
+            return v
+    return None
+
+
+def scan_x5(found):
+    tipo = _tipo_perfil()
+    slug = {"casa": "casa", "terreno": "terreno"}.get(tipo, "apartamento")
+    n = lidos = 0
+    for off in range(1, 40):
+        page = fetch(f"{X5_BASE}/comprar/{slug}/londrina-pr?offset={off}")
+        if page is None:
+            return "falhou" if off == 1 else "ok"
+        m = re.search(r'__NEXT_DATA__[^>]*>(.*?)</script>', page, re.S)
+        try:
+            P = json.loads(m.group(1))["props"]["initialState"]["properties"]
+        except (AttributeError, KeyError, TypeError, ValueError):
+            return "falhou" if off == 1 else "ok"
+        for x in P.get("data") or []:
+            lidos += 1
+            sub = ((x.get("subtype") or {}).get("id")) or ""
+            if x.get("transaction") != "VENDA" or (tipo == "casa" and "condominio" not in sub):
+                continue
+            preco = re.sub(r"\D", "", x.get("price") or "")
+            local = ((x.get("address") or {}).get("formatted") or "").split(" - ")
+            stripe = (x.get("stripe_text") or "").strip()
+            # a faixa às vezes é chamada ("Pronto para morar"): vale se o título cita o nome
+            predio = stripe if stripe and name_key(stripe) and name_key(stripe) in name_key(x.get("title_formatted") or "") else None
+            imgs = x.get("images") or []
+            foto = ((imgs[0].get("file_url") or {}).get("medium")) if imgs else None
+            rooms = x.get("rooms") or {}
+            rec = _rec_novo("x5", "x5" + str(x.get("reference") or x.get("id")), tipo, predio=predio, endereco=None,
+                            bairro=local[0] if len(local) > 1 else None, foto=foto,
+                            area=_x5_area(x.get("areas"), tipo), preco=int(preco) if preco else None,
+                            quartos=(rooms.get("bedroom") or {}).get("value"),
+                            banheiros=(rooms.get("bathroom") or {}).get("value"),
+                            vagas=(rooms.get("garage") or {}).get("value"), titulo=x.get("title_formatted"),
+                            link=f"{X5_BASE}/imovel/{x.get('url')}", desc=x.get("meta_title"))
+            if rec:
+                found[rec["id"]] = rec
+                n += 1
+        pg = (P.get("meta") or {}).get("pagination") or {}
+        if off >= (pg.get("total_pages") or 0):
+            break
+        time.sleep(1)
+    log(f"  x5: {n} no filtro ({lidos} lidos)")
+    return "ok"
+
+
 # ---------- desduplicação ----------
 # O mesmo apartamento costuma aparecer em vários portais (e às vezes 2× no mesmo portal, por
 # imobiliárias diferentes). Cada anúncio fica guardado separado em "listings"; a cada varredura
@@ -2713,6 +2883,7 @@ SCANNERS = [
     ("88imoveis", scan_88imoveis, False),
     ("loft", scan_loft, False),
     ("galmo", scan_galmo, False),
+    ("x5", scan_x5, False),
 ]
 
 
@@ -2723,6 +2894,8 @@ def main(perfil):
     state = json.loads(DATA.read_text()) if DATA.exists() else {"runs": [], "listings": {}}
     L = state["listings"]
     initial = not L
+    AREAS_PREDIO.clear()
+    AREAS_PREDIO.update(state.get("areas_predio") or {})
     # Uma varredura por dia (a primeira, pela data de Brasília) é completa: as buscas paginadas
     # (Zap/Viva Real, OLX, Chaves na Mão) vão até o fim, para "visto" valer para todo o estoque.
     hoje = (NOW - timedelta(hours=3)).strftime("%Y-%m-%d")
@@ -2879,6 +3052,12 @@ def main(perfil):
     for k in [k for k, x in L.items() if (x.get("visto") or x.get("detectado") or NOW_ISO) < iso_dias_atras(90)]:
         del L[k]
 
+    for x in L.values():
+        if x.get("predio"):
+            x["predio"] = limpa_predio(x["predio"])
+    aprende_por_preco(L)
+    aplica_areas_predio(L)
+    state["areas_predio"] = {k: AREAS_PREDIO[k] for k in sorted(AREAS_PREDIO)}
     state["imoveis"] = group_imoveis(L)
     novos = sum(1 for im in state["imoveis"] if im["detectado"] == NOW_ISO)
     run = {"em": NOW_ISO, "novos": novos, "portais": status, "inicial": initial}
