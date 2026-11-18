@@ -285,6 +285,8 @@ def chave_area(rec):
 
 
 def aprende_area(rec, util, total):
+    if not apto():  # casa: "total" é o lote e a chave é o condomínio inteiro, não um prédio
+        return
     k = chave_area(rec)
     if k and len(k) >= 3 and util and total and 1.1 <= total / util <= 2.5:
         AREAS_PREDIO.setdefault(k, {})[str(total)] = util
@@ -293,6 +295,8 @@ def aprende_area(rec, util, total):
 def aprende_por_preco(L):
     """Mesmo prédio, mesmo preço (±2%) e mesmos quartos, uma área 15% a 130% maior que a outra: é a mesma
     unidade, anunciada com a total num portal e a privativa noutro (Gaia: 198 m² e 111 m² por R$ 2,2 mi)."""
+    if not apto():  # casa: "total" é o lote e a chave é o condomínio inteiro, não um prédio
+        return
     por = {}
     for x in L.values():
         if x.get("visivel") and x.get("area") and x.get("preco") and x.get("tipo") != "terreno":
@@ -315,6 +319,8 @@ def aprende_por_preco(L):
 def aplica_areas_predio(L):
     """Anúncio cuja área é a total de uma planta conhecida do prédio passa a mostrar a privativa dela.
     Não mexe quando a mesma metragem também é a privativa de outra planta do prédio."""
+    if not apto():  # casa: "total" é o lote e a chave é o condomínio inteiro, não um prédio
+        return
     n = 0
     for x in L.values():
         if not x.get("visivel") or not x.get("area") or x.get("tipo") == "terreno":
