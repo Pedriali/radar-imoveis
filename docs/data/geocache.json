@@ -147,8 +147,8 @@
 -51.22147
 ],
 "local:Estância Cabral": [
--23.354846,
--51.212129
+-23.354729,
+-51.205315
 ],
 "local:Estância Santa Paula": [
 -23.358044,
@@ -521,6 +521,10 @@
 "local:centro|anaflavia": [
 -23.31658,
 -51.167448
+],
+"local:centro|angelica": [
+-23.314392,
+-51.158935
 ],
 "local:centro|angelicacentro": [
 -23.314392,
@@ -3006,6 +3010,10 @@
 -23.3318,
 -51.17395
 ],
+"local:palhano|condominio": [
+-23.32927,
+-51.186103
+],
 "local:palhano|condomnioresidencialtoulouse": [
 -23.3292,
 -51.17663
@@ -4438,6 +4446,11 @@
 "predio:polaris": null,
 "predio:portal da goias": null,
 "predio:portal de belo horizonte": null,
+"predio:portal do lago": [
+-23.327711,
+-51.181882,
+"building"
+],
 "predio:portal fazenda": null,
 "predio:portaria": null,
 "predio:portinari": null,
@@ -4451,6 +4464,7 @@
 "predio:premiatto": null,
 "predio:premiatto residence": null,
 "predio:presiden": null,
+"predio:presidente rua santos": null,
 "predio:prime house": null,
 "predio:princesa isabel": null,
 "predio:principe de gales": null,
@@ -4657,6 +4671,7 @@
 "predio:vert residenc": null,
 "predio:vila capri": null,
 "predio:vila noah": null,
+"predio:vila sardegna": null,
 "predio:vilhena": null,
 "predio:villa noah londrina": null,
 "predio:villa romana": null,
