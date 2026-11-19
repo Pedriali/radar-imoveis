@@ -411,8 +411,8 @@
 -51.164077
 ],
 "local:bela suica|verona": [
--23.343168,
--51.164015
+-23.343171,
+-51.164013
 ],
 "local:bela suica|wave": [
 -23.342057,
@@ -936,7 +936,7 @@
 ],
 "local:centro|delrio": [
 -23.316436,
--51.16097
+-51.160581
 ],
 "local:centro|deviena": [
 -23.31628,
@@ -1011,8 +1011,8 @@
 -51.16684
 ],
 "local:centro|escalada": [
--23.31829,
--51.156393
+-23.318295,
+-51.162431
 ],
 "local:centro|esmeraldacristina": [
 -23.310808,
@@ -1617,6 +1617,10 @@
 "local:centro|ouropreto": [
 -23.308979,
 -51.166995
+],
+"local:centro|palmares": [
+-23.307089,
+-51.159798
 ],
 "local:centro|para": [
 -23.314196,
@@ -2878,6 +2882,10 @@
 -23.329365,
 -51.18077
 ],
+"local:palhano|allure136m2dearea": [
+-23.330813,
+-51.183106
+],
 "local:palhano|allure3": [
 -23.329365,
 -51.18077
@@ -2885,6 +2893,10 @@
 "local:palhano|almeria": [
 -23.330277,
 -51.17874
+],
+"local:palhano|anitamafaltti": [
+-23.333738,
+-51.178884
 ],
 "local:palhano|anitamalfatti": [
 -23.334401,
@@ -2911,8 +2923,8 @@
 -51.182678
 ],
 "local:palhano|arch": [
--23.333845,
--51.183827
+-23.333422,
+-51.183414
 ],
 "local:palhano|archpalhano": [
 -23.334284,
@@ -2927,7 +2939,7 @@
 -51.182829
 ],
 "local:palhano|atrio": [
--23.330466,
+-23.33047,
 -51.182417
 ],
 "local:palhano|atrioplaenge": [
@@ -3038,6 +3050,10 @@
 -23.331011,
 -51.182417
 ],
+"local:palhano|elegancemobiliado": [
+-23.33137,
+-51.182312
+],
 "local:palhano|ernani lacerda de athayde|1075": [
 -23.33,
 -51.183
@@ -3087,8 +3103,8 @@
 -51.17874
 ],
 "local:palhano|flora": [
--23.32861,
--51.182999
+-23.328612,
+-51.182998
 ],
 "local:palhano|floraisecoresortresidence": [
 -23.333236,
@@ -3099,8 +3115,8 @@
 -51.185603
 ],
 "local:palhano|fontaineblanc": [
--23.32743,
--51.17934
+-23.31008,
+-51.176273
 ],
 "local:palhano|fontaineblancresidence": [
 -23.32743,
@@ -3139,7 +3155,7 @@
 -51.181342
 ],
 "local:palhano|harmonie": [
--23.329432,
+-23.329499,
 -51.18077
 ],
 "local:palhano|harmoniecondominio": [
@@ -3168,7 +3184,7 @@
 ],
 "local:palhano|joanmiro": [
 -23.32826,
--51.178033
+-51.178106
 ],
 "local:palhano|joao huss|10000": [
 -23.32927,
@@ -3207,8 +3223,8 @@
 -51.17715
 ],
 "local:palhano|lacroyal": [
--23.328709,
--51.177073
+-23.328632,
+-51.176516
 ],
 "local:palhano|lagoazul": [
 -23.330613,
@@ -3226,13 +3242,17 @@
 -23.329365,
 -51.18077
 ],
+"local:palhano|londonvillage": [
+-23.333858,
+-51.181372
+],
 "local:palhano|lumiere": [
 -23.329723,
 -51.180705
 ],
 "local:palhano|lumini": [
--23.334212,
--51.181272
+-23.334141,
+-51.179715
 ],
 "local:palhano|luminiglebapalhano": [
 -23.334284,
@@ -3255,8 +3275,8 @@
 -51.179139
 ],
 "local:palhano|maisonlegacy": [
--23.33134,
--51.179579
+-23.331241,
+-51.179597
 ],
 "local:palhano|maisonlegacyresidence": [
 -23.330344,
@@ -3291,8 +3311,8 @@
 -51.174659
 ],
 "local:palhano|marcchagall": [
--23.333417,
--51.174654
+-23.333435,
+-51.174656
 ],
 "local:palhano|marcchagall2": [
 -23.33356,
@@ -3339,8 +3359,8 @@
 -51.180018
 ],
 "local:palhano|parcrocher": [
--23.32921,
--51.18077
+-23.329164,
+-51.180874
 ],
 "local:palhano|pe vermelho|180": [
 -23.32918,
@@ -3359,7 +3379,7 @@
 -51.180841
 ],
 "local:palhano|poema": [
--23.327635,
+-23.327558,
 -51.180841
 ],
 "local:palhano|potylazzarotto": [
@@ -3427,8 +3447,8 @@
 -51.174167
 ],
 "local:palhano|theedge": [
--23.328709,
--51.179802
+-23.328313,
+-51.180612
 ],
 "local:palhano|theedgei3suites": [
 -23.328314,
@@ -3471,8 +3491,8 @@
 -51.17854
 ],
 "local:palhano|valverde": [
--23.328709,
--51.179802
+-23.328705,
+-51.179721
 ],
 "local:palhano|vert": [
 -23.32894,
@@ -3487,12 +3507,12 @@
 -51.182701
 ],
 "local:palhano|vertresidence": [
--23.328764,
--51.182701
+-23.328848,
+-51.18276
 ],
 "local:palhano|villasolare": [
--23.332467,
--51.178101
+-23.332512,
+-51.178971
 ],
 "local:parque das artes": [
 -23.365851,
@@ -3551,8 +3571,8 @@
 -51.155956
 ],
 "local:prochet|wynn": [
--23.3414,
--51.1556
+-23.342849,
+-51.159925
 ],
 "local:prochet|zahra": [
 -23.341034,
@@ -3767,8 +3787,8 @@
 -51.177232
 ],
 "local:santa rosa|corbusier": [
--23.332531,
--51.177035
+-23.332466,
+-51.177029
 ],
 "local:santa rosa|fernandopessoa": [
 -23.332423,
@@ -3907,8 +3927,8 @@
 -51.206554
 ],
 "local:sunlake": [
--23.365295,
--51.206539
+-23.365288,
+-51.20654
 ],
 "local:sunlakeexcelentelocalizacao": [
 -23.366573,
