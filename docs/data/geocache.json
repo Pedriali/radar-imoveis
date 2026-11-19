@@ -167,8 +167,8 @@
 -51.207248
 ],
 "local:Royal Forest": [
--23.347052,
--51.211067
+-23.347029,
+-51.212366
 ],
 "local:Royal Golf": [
 -23.349134,
@@ -235,7 +235,7 @@
 -51.18819
 ],
 "local:alphaville2": [
--23.35547,
+-23.355455,
 -51.187164
 ],
 "local:alphavilleii": [
@@ -1124,7 +1124,7 @@
 ],
 "local:centro|granville": [
 -23.311586,
--51.169073
+-51.16899
 ],
 "local:centro|graopara": [
 -23.312918,
@@ -1255,8 +1255,8 @@
 -51.170451
 ],
 "local:centro|kennedy": [
--23.316562,
--51.160492
+-23.316498,
+-51.160543
 ],
 "local:centro|lagodouro": [
 -23.317613,
@@ -1703,7 +1703,7 @@
 -51.167803
 ],
 "local:centro|paseosantos": [
--23.313755,
+-23.313217,
 -51.167803
 ],
 "local:centro|paseosantosplaenge": [
@@ -1840,7 +1840,7 @@
 ],
 "local:centro|portovelho": [
 -23.314284,
--51.166533
+-51.162145
 ],
 "local:centro|prefeito hugo cabral|1046": [
 -23.315868,
@@ -2146,6 +2146,10 @@
 -23.312332,
 -51.168038
 ],
+"local:centro|santos|78": [
+-23.306473,
+-51.16821
+],
 "local:centro|santos|924": [
 -23.314095,
 -51.16798
@@ -2304,7 +2308,7 @@
 ],
 "local:centro|solarphiladelphogarcia": [
 -23.317203,
--51.166528
+-51.166525
 ],
 "local:centro|solarreimbrant": [
 -23.314292,
@@ -3127,7 +3131,7 @@
 -51.181342
 ],
 "local:palhano|harmonie": [
--23.329499,
+-23.329432,
 -51.18077
 ],
 "local:palhano|harmoniecondominio": [
@@ -3415,8 +3419,8 @@
 -51.174167
 ],
 "local:palhano|theedge": [
--23.328314,
--51.180466
+-23.328709,
+-51.179802
 ],
 "local:palhano|theedgei3suites": [
 -23.328314,
@@ -3655,7 +3659,7 @@
 -51.206905
 ],
 "local:royalpark": [
--23.349244,
+-23.34938,
 -51.206905
 ],
 "local:royalparkreseresort": [
@@ -3903,8 +3907,8 @@
 -51.220339
 ],
 "local:sunlakeresidence": [
--23.365196,
--51.206554
+-23.364864,
+-51.206567
 ],
 "local:sunset dream": [
 -23.36529,
@@ -4075,6 +4079,7 @@
 -51.158635,
 "building"
 ],
+"predio:caravelas 3": null,
 "predio:casa blanca": null,
 "predio:casa mila": null,
 "predio:casa palhano": [
@@ -4389,6 +4394,7 @@
 "predio:novitta residence": null,
 "predio:novo mundo": null,
 "predio:oase": null,
+"predio:odussei": null,
 "predio:oro": null,
 "predio:oscar": [
 -23.312183,
@@ -4406,6 +4412,7 @@
 "predio:palazzo di cezari": null,
 "predio:pallazo di cesare": null,
 "predio:palma d oro": null,
+"predio:palmares": null,
 "predio:parana": [
 -23.313269,
 -51.199028,
