@@ -404,8 +404,8 @@
 -51.163523
 ],
 "local:bela suica|terrazadirimini": [
--23.345103,
--51.163309
+-23.345,
+-51.163
 ],
 "local:bela suica|terrazza": [
 -23.345206,
@@ -560,8 +560,8 @@
 -51.164164
 ],
 "local:centro|aquajardimresidencialeresort": [
--23.307955,
--51.164112
+-23.306618,
+-51.164059
 ],
 "local:centro|aquajardin": [
 -23.310823,
@@ -852,8 +852,8 @@
 -51.167806
 ],
 "local:centro|centrocomercial": [
--23.313399,
--51.158348
+-23.313392,
+-51.158353
 ],
 "local:centro|charleville": [
 -23.31539,
@@ -1728,7 +1728,7 @@
 -51.167803
 ],
 "local:centro|paseosantos": [
--23.313217,
+-23.313755,
 -51.167803
 ],
 "local:centro|paseosantosplaenge": [
@@ -2020,8 +2020,8 @@
 -51.167248
 ],
 "local:centro|riversideresidences": [
--23.317635,
--51.165019
+-23.317639,
+-51.162789
 ],
 "local:centro|roland": [
 -23.310031,
@@ -2088,7 +2088,7 @@
 -51.16097
 ],
 "local:centro|santahelena": [
--23.310929,
+-23.310921,
 -51.161493
 ],
 "local:centro|santamonica": [
@@ -2348,7 +2348,7 @@
 -51.167726
 ],
 "local:centro|solarsainthonore": [
--23.312942,
+-23.312934,
 -51.169073
 ],
 "local:centro|solarsainthonore106": [
@@ -2780,8 +2780,8 @@
 -51.176061
 ],
 "local:guanabara|potylazarotto": [
--23.335884,
--51.17635
+-23.335812,
+-51.17631
 ],
 "local:guanabara|potylazzarotto": [
 -23.335884,
@@ -4399,6 +4399,7 @@
 ],
 "predio:malvina pedrialli": null,
 "predio:manaus e santarem": null,
+"predio:manhattan duplex centro": null,
 "predio:manhattan residentes": null,
 "predio:marcilia": null,
 "predio:maria del carmem": null,
