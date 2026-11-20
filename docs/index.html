@@ -160,58 +160,67 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 .vista button[aria-pressed="true"]{background:var(--green);color:var(--bg)}
 .vista button:focus-visible{outline:1px solid var(--green);outline-offset:2px}
 
-/* mapa: Londrina na tela do radar */
+/* mapa: Londrina em mapa claro, no estilo do Google (fundo Esri World Street Map) */
 #sec-map{margin-top:18px}
-.mapbox{position:relative;height:min(72vh,720px);min-height:380px;border:1px solid var(--green);
-  box-shadow:0 0 24px rgba(57,255,136,.15);overflow:hidden;background:#020604}
-#mapa{position:absolute;inset:0;background:#020604}
-#mapa .leaflet-tile-pane{filter:invert(1) grayscale(1) brightness(.55) contrast(1.6) sepia(1) hue-rotate(75deg) saturate(2.6)}
-.varre{position:absolute;inset:0;pointer-events:none;z-index:500;overflow:hidden}
-.varre::before{content:"";position:absolute;left:50%;top:50%;width:250vmax;height:250vmax;margin:-125vmax 0 0 -125vmax;border-radius:50%;
-  background:conic-gradient(from 0deg,transparent 0 300deg,rgba(57,255,136,.04) 300deg,rgba(57,255,136,.32) 359.4deg,rgba(57,255,136,.9) 359.6deg,transparent 360deg);
-  animation:sweep var(--T,6s) linear infinite}
-.varre::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%,transparent 0 calc(16% - 1px),rgba(57,255,136,.22) 16%,transparent calc(16% + 1px) calc(33% - 1px),
-    rgba(57,255,136,.18) 33%,transparent calc(33% + 1px) calc(50% - 1px),rgba(57,255,136,.14) 50%,transparent calc(50% + 1px) calc(67% - 1px),
-    rgba(57,255,136,.1) 67%,transparent calc(67% + 1px)),
-    linear-gradient(transparent calc(50% - .5px),rgba(57,255,136,.18) 50%,transparent calc(50% + .5px)),
-    linear-gradient(90deg,transparent calc(50% - .5px),rgba(57,255,136,.18) 50%,transparent calc(50% + .5px)),
-    radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55))}
-.hud{position:absolute;z-index:600;pointer-events:none;font-size:11.5px;letter-spacing:.12em;color:var(--green);
-  background:rgba(2,6,4,.78);border:1px solid var(--line);padding:6px 9px;line-height:1.6}
-.hud.tl{top:10px;left:10px} .hud.bl{bottom:22px;left:10px}
-.hud i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-.hud .k1{background:var(--hi);box-shadow:0 0 6px var(--green)} .hud .k2{background:var(--amber);box-shadow:0 0 6px var(--amber)}
-.hud .k3{background:var(--green)} .hud .k4{border:1px solid var(--green);opacity:.7}
+.mapbox{position:relative;height:min(72vh,720px);min-height:380px;border:1px solid var(--line);border-radius:8px;
+  overflow:hidden;background:#f2efe9}
+#mapa{position:absolute;inset:0;background:#f2efe9}
+.hud{position:absolute;z-index:600;pointer-events:none;font:12.5px/1.6 Roboto,"Helvetica Neue",Arial,sans-serif;color:#3c4043;
+  background:#fff;border-radius:8px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.hud b{color:#202124}
+.hud.tl{top:10px;left:10px} .hud.bl{bottom:24px;left:10px}
+.hud i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:-1px;border:1.5px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.hud .k1{background:#1a73e8} .hud .k2{background:#f29900} .hud .k3{background:#ea4335} .hud .k4{background:#9aa0a6}
 
-.alvo b{position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 8px var(--green);animation:acende var(--T,6s) linear infinite;animation-delay:var(--d,0s)}
-.alvo.aprox b{background:transparent;border:1.5px solid var(--green);box-shadow:none;width:10px;height:10px;margin:-5px 0 0 -5px}
-.alvo.abx b{background:var(--amber);box-shadow:0 0 10px var(--amber)}
-.alvo.novo b{width:12px;height:12px;margin:-6px 0 0 -6px;background:var(--hi);box-shadow:0 0 12px var(--green),0 0 3px #fff}
-.alvo.novo::after{content:"";position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;
-  border:1px solid var(--green);animation:ping 2s ease-out infinite}
-.alvo:hover b{transform:scale(1.6)}
-@keyframes acende{0%{opacity:1;transform:scale(1.5)}12%{opacity:1;transform:scale(1)}70%{opacity:.38}100%{opacity:.38}}
-@keyframes ping{from{transform:scale(.3);opacity:1}to{transform:scale(1.4);opacity:0}}
-@media (prefers-reduced-motion:reduce){.varre::before,.alvo b,.alvo.novo::after{animation:none}}
-.leaflet-container{font-family:var(--mono)}
-.leaflet-control-attribution{background:rgba(2,6,4,.8)!important;color:var(--dim)!important;font-size:10px}
-.leaflet-control-attribution a{color:var(--fg)!important}
-.leaflet-bar a{background:var(--panel)!important;color:var(--green)!important;border-color:var(--line)!important}
-.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--fg);border:1px solid var(--green);border-radius:0;
-  box-shadow:0 0 18px rgba(57,255,136,.25)}
+/* alvos: alfinetes (cor por situação) */
+.alvo{background:none;border:none}
+.alvo svg{display:block;width:26px;height:36px;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.35));transition:transform .12s;transform-origin:50% 100%}
+.alvo .pin{fill:#ea4335;stroke:#b31412;stroke-width:1}
+.alvo.abx .pin{fill:#f29900;stroke:#b06f00}
+.alvo.novo .pin{fill:#1a73e8;stroke:#0b57d0}
+.alvo.aprox .pin{fill:#9aa0a6;stroke:#5f6368}
+.alvo.aprox svg{opacity:.85;transform:scale(.8)}
+.alvo .miolo{fill:#fff}
+.alvo:hover svg{transform:scale(1.18)}
+/* de longe (zoom < 15): bolinhas, como o Google faz com muitos resultados; de perto, alfinetes */
+.alvo i{display:none;position:absolute;left:50%;bottom:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;
+  background:#ea4335;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.4)}
+.alvo.abx i{background:#f29900} .alvo.novo i{background:#1a73e8;width:15px;height:15px;margin-left:-7.5px;bottom:-7.5px}
+.alvo.aprox i{background:#9aa0a6}
+.longe .alvo svg{display:none} .longe .alvo i{display:block}
+.longe .alvo:hover i{transform:scale(1.4)}
+.longe .alvo.novo::after{bottom:-10px;height:26px}
+.alvo.novo::after{content:"";position:absolute;left:50%;bottom:-2px;width:26px;height:10px;margin-left:-13px;border-radius:50%;
+  border:2px solid #1a73e8;animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{transform:scale(.3);opacity:1}to{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.alvo.novo::after{animation:none}}
+
+.leaflet-container{font-family:Roboto,"Helvetica Neue",Arial,sans-serif}
+.leaflet-control-attribution{font-size:10px}
+.leaflet-bar{border:none!important;box-shadow:0 1px 4px rgba(0,0,0,.3)!important;border-radius:8px!important;overflow:hidden}
+.leaflet-bar a{background:#fff!important;color:#5f6368!important;border-color:#e8eaed!important;width:36px!important;height:36px!important;
+  line-height:36px!important;font-size:20px!important}
+.leaflet-bar a:hover{background:#f1f3f4!important;color:#202124!important}
+.leaflet-popup-content-wrapper{background:#fff;color:#202124;border-radius:10px;padding:0;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.leaflet-popup-tip{background:#fff}
 .leaflet-popup-content{margin:0;width:250px!important}
-.leaflet-container a.leaflet-popup-close-button{color:var(--green)}
-.pop img{display:block;width:100%;height:130px;object-fit:cover;filter:saturate(.85)}
-.pop .pb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:5px}
-.pop .name{font-size:15px} .pop .price{font-size:19px} .pop .loc{margin:0;font-size:11.5px}
-.pop .ln{font-size:12px;color:var(--fg)} .pop .aprox{font-size:11px;color:var(--amber)}
-.pop .alerta{font-size:11.5px;padding:4px 8px}
-.pop button{margin-top:4px;background:none;border:1px solid var(--green);color:var(--green);font:inherit;font-size:12px;letter-spacing:.1em;
-  padding:7px;cursor:pointer}
-.pop button:hover{background:var(--green);color:var(--bg)}
-.vazio-mapa{position:absolute;inset:0;z-index:650;display:grid;place-items:center;color:var(--dim);font-size:13px;pointer-events:none}
+.leaflet-container a.leaflet-popup-close-button{color:#fff;text-shadow:0 0 3px rgba(0,0,0,.8);font-size:22px;top:4px;right:6px}
+.pop img{display:block;width:100%;height:130px;object-fit:cover}
+.pop .pb{padding:10px 14px 14px;display:flex;flex-direction:column;gap:4px}
+.pop .name{font:500 16px/1.25 Roboto,"Helvetica Neue",Arial,sans-serif;color:#202124}
+.pop .name.unk{color:#5f6368;font-weight:400}
+.pop .loc{margin:0;font-size:12.5px;color:#5f6368}
+.pop .price{font:500 20px/1.2 Roboto,"Helvetica Neue",Arial,sans-serif;color:#188038;text-shadow:none}
+.pop .price small{color:#80868b}
+.pop .ln{font-size:12.5px;color:#3c4043} .pop .aprox{font-size:11.5px;color:#b06f00}
+.pop .alerta{font-size:12px;padding:5px 8px;border-radius:6px;border-color:#188038;background:#e6f4ea;color:#137333;box-shadow:none}
+.pop .alerta b{text-shadow:none}
+.pop .alerta.susp{border-color:#f29900;background:#fef7e0;color:#b06f00}
+.pop button{margin-top:6px;background:#1a73e8;border:none;border-radius:18px;color:#fff;font:500 13px Roboto,"Helvetica Neue",Arial,sans-serif;
+  padding:8px;cursor:pointer}
+.pop button:hover{background:#1765cc;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.vazio-mapa{position:absolute;inset:0;z-index:650;display:grid;place-items:center;color:#5f6368;font-size:13px;pointer-events:none}
 
 footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
 
@@ -267,9 +276,8 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   <section id="sec-map" hidden>
     <div class="mapbox">
       <div id="mapa"></div>
-      <div class="varre" aria-hidden="true"></div>
       <div class="hud tl" id="hud"></div>
-      <div class="hud bl"><i class="k1"></i>NOVO<br><i class="k2"></i>ABAIXO DA MÉDIA<br><i class="k3"></i>ALVO<br><i class="k4"></i>LOCAL APROXIMADO</div>
+      <div class="hud bl"><i class="k1"></i>Novo<br><i class="k2"></i>Abaixo da média<br><i class="k3"></i>Imóvel<br><i class="k4"></i>Local aproximado</div>
       <div class="vazio-mapa" id="vazio-mapa" hidden></div>
     </div>
   </section>
@@ -444,6 +452,7 @@ function render(){
 // Cada alvo acende quando a varredura passa por ele (atraso da animação = ângulo a partir do centro).
 const T_VARRE = 6;
 let MAPA = null, CAMADA = null, MARCAS = [], VISTA = 'lista', ENQUADRADO = null;
+const PIN = '<svg viewBox="0 0 26 36" aria-hidden="true"><path class="pin" d="M13 1C6.4 1 1 6.3 1 12.9 1 21.8 13 35 13 35s12-13.2 12-22.1C25 6.3 19.6 1 13 1z"/><circle class="miolo" cx="13" cy="13" r="4.6"/></svg><i></i>';
 const hash = s => { let h = 2166136261; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return (h >>> 0) / 4294967296; };
 
 function posicao(x, usados){
@@ -456,14 +465,17 @@ function posicao(x, usados){
 }
 
 function iniciarMapa(){
-  MAPA = L.map('mapa', {zoomControl: false, attributionControl: true, minZoom: 11, maxZoom: 18, zoomSnap: 0.5})
+  MAPA = L.map('mapa', {zoomControl: false, attributionControl: true, minZoom: 11, maxZoom: 19, zoomSnap: 1})  // zoom inteiro: blocos do mapa sempre nítidos
     .setView([-23.318, -51.17], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  // Fundo claro no estilo do Google: Esri World Street Map (sem chave; o CARTO passou a exigir chave em 2026)
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19, attribution: 'Mapa &copy; <a href="https://www.esri.com">Esri</a>, HERE, Garmin, &copy; OpenStreetMap'
   }).addTo(MAPA);
   L.control.zoom({position: 'topright'}).addTo(MAPA);
   CAMADA = L.layerGroup().addTo(MAPA);
   MAPA.on('move zoom resize', sincronizar);
+  const longe = () => MAPA.getContainer().classList.toggle('longe', MAPA.getZoom() < 15);
+  MAPA.on('zoomend', longe); longe();
   document.querySelector('.mapbox').style.setProperty('--T', T_VARRE + 's');
 }
 
@@ -507,7 +519,7 @@ function desenharMapa(lista, q){
     const cls = ['alvo', x.detectado === LAST ? 'novo' : '', ABA.media && x.abaixo && !x.media?.suspeito ? 'abx' : '',
                  x.geo === 'bairro' || x.geo === 'rua' ? 'aprox' : ''].filter(Boolean).join(' ');
     const m = L.marker(posicao(x, usados), {
-      icon: L.divIcon({className: cls, html: '<b></b>', iconSize: [22, 22]}),
+      icon: L.divIcon({className: cls, html: PIN, iconSize: [26, 36], iconAnchor: [13, 35], popupAnchor: [0, -30]}),
       title: (x.predio || x.bairro || '') + ' · ' + fmtBRL(x.preco),
       zIndexOffset: x.detectado === LAST ? 1000 : x.abaixo ? 500 : 0,
     }).bindPopup(() => popup(x, i), {maxWidth: 260, minWidth: 250, autoPanPadding: [30, 30]});
@@ -515,9 +527,9 @@ function desenharMapa(lista, q){
   }
   const novos = com.filter(([x]) => x.detectado === LAST).length;
   const aprox = com.filter(([x]) => x.geo === 'bairro').length;
-  $('#hud').innerHTML = `ALVOS NO MAPA <b>${com.length}</b>${novos ? ` · NOVOS <b>${novos}</b>` : ''}${aprox ? `<br>${aprox} com local aproximado` : ''}${lista.length > com.length ? `<br>${lista.length - com.length} sem localização` : ''}`;
+  $('#hud').innerHTML = `<b>${com.length}</b> imóveis no mapa${novos ? ` · <b>${novos}</b> novos` : ''}${aprox ? `<br>${aprox} com local aproximado` : ''}${lista.length > com.length ? `<br>${lista.length - com.length} sem localização` : ''}`;
   $('#vazio-mapa').hidden = com.length > 0;
-  $('#vazio-mapa').textContent = q ? 'Nenhum alvo corresponde à busca.' : 'Ainda não há alvos localizados nesta aba (a próxima varredura localiza).';
+  $('#vazio-mapa').textContent = q ? 'Nenhum imóvel corresponde à busca.' : 'Ainda não há imóveis localizados nesta aba (a próxima varredura localiza).';
   // enquadra os alvos ao trocar de aba (não a cada tecla da busca)
   if (com.length && ENQUADRADO !== ABA.id) {
     // enquadra o miolo (sem os 3% mais afastados de cada lado, que costumam ser erro de cadastro)
