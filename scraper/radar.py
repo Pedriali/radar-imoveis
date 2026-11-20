@@ -364,6 +364,18 @@ def corrige_area(rec, *textos):
 FETCH_404 = set()  # URLs que responderam 404 nesta varredura (anúncio retirado)
 
 
+# Fontes fora do ar nesta execução (todas as abas): chave -> motivo. Não são consultadas de novo nem
+# entram na segunda tentativa — antes, Santamerica (desafio do Cloudflare) e Arbo (API em 503) gastavam
+# uns 10 minutos por execução em tentativas que não tinham como dar certo.
+FORA_DO_AR = {}
+DESAFIO = set()  # hosts que responderam com o desafio do Cloudflare ("Just a moment...") nesta execução
+
+
+def desafio_cloudflare(r):
+    return r.status_code in (403, 503) and (r.headers.get("cf-mitigated") == "challenge"
+                                            or "<title>Just a moment...</title>" in r.text[:3000])
+
+
 def fetch(url, tries=3):
     for i in range(tries):
         try:
@@ -375,6 +387,9 @@ def fetch(url, tries=3):
                 FETCH_404.add(url)
                 return None
             log(f"  HTTP {r.status_code} {url}")
+            if desafio_cloudflare(r):  # exige navegador de verdade: tentar de novo agora não adianta
+                DESAFIO.add(urllib.parse.urlsplit(url).netloc)
+                return None
             # 403/429 = bloqueio de robô: insistir em segundos não adianta. Uma tentativa a mais e a busca
             # fica para a segunda rodada, no fim da varredura (ver REPETIR em main).
             if r.status_code in (403, 429) and i >= 1:
@@ -1221,6 +1236,8 @@ def scan_santamerica(found):
             if not novos or f"pag={pag + 1}" not in page:
                 break
         if not ok_pages:
+            if urllib.parse.urlsplit(SA_BASE).netloc in DESAFIO:
+                FORA_DO_AR["santamerica"] = "desafio do Cloudflare nas páginas de busca"
             return "falhou"
         log(f"  santamerica: {len(cards)} cards na busca")
         n = 0
@@ -2134,12 +2151,18 @@ def _arbo_params(d):
 
 
 def _arbo_get(site, path, params):
+    if "arbo" in FORA_DO_AR:
+        return None
     for i in range(2):
         try:
             r = S.get(f"{ARBO_API}/{path}", params=params, timeout=60, headers={"Origin": site, "Referer": site + "/"})
             if r.status_code == 200:
                 return r.json()
             log(f"  arbo HTTP {r.status_code} {path}")
+            if r.status_code in (502, 503, 504) and i >= 1:  # API fora do ar (serve a Arbo e a 88 Imóveis)
+                motivo = f"API da Arbo respondendo {r.status_code}"
+                FORA_DO_AR.update(arbo=motivo, **{"88imoveis": motivo})
+                return None
         except Exception as e:  # noqa: BLE001
             log(f"  arbo erro {e}")
         time.sleep(3)
@@ -3050,11 +3073,15 @@ def main(perfil):
             found[k]["origem"] = chave
 
     for chave, fn, paginado in SCANNERS:
+        if chave in FORA_DO_AR:
+            log(f"  {chave}: pulado ({FORA_DO_AR[chave]}, visto antes nesta execução)")
+            status[chave] = "falhou"
+            continue
         rodar(chave, fn, paginado)
 
     # Segunda tentativa, no fim: buscas paginadas que não responderam (403/429 costuma passar depois de
     # alguns minutos, com sessão nova) e imobiliárias que falharam inteiras.
-    falhas = [(c, fn) for c, fn, pag in SCANNERS if not pag and status.get(c) == "falhou"]
+    falhas = [(c, fn) for c, fn, pag in SCANNERS if not pag and status.get(c) == "falhou" and c not in FORA_DO_AR]
     if REPETIR or falhas:
         partes = ([f"{len(REPETIR)} buscas ({', '.join(sorted({p for p, _ in REPETIR}))})"] if REPETIR else []) + [
             c for c, _ in falhas]
