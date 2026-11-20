@@ -95,6 +95,11 @@
 "bairro:reserva saltinho": null,
 "bairro:residencial jose b almeida": null,
 "bairro:residencial jose lazaro gouvea": null,
+"bairro:royal tennis residence & resort": [
+-23.351093,
+-51.212571,
+"landuse"
+],
 "bairro:santa rosa": [
 -23.30879,
 -51.143535,
@@ -235,7 +240,7 @@
 -51.18819
 ],
 "local:alphaville2": [
--23.355455,
+-23.35547,
 -51.187164
 ],
 "local:alphavilleii": [
@@ -355,6 +360,10 @@
 -51.172949
 ],
 "local:bela suica|matisse": [
+-23.334579,
+-51.172949
+],
+"local:bela suica|matisseresidence": [
 -23.334579,
 -51.172949
 ],
@@ -799,8 +808,8 @@
 -51.164602
 ],
 "local:centro|casabella": [
--23.316256,
--51.164048
+-23.313535,
+-51.163912
 ],
 "local:centro|casablanca": [
 -23.312006,
@@ -819,8 +828,8 @@
 -51.151094
 ],
 "local:centro|castelfranco": [
--23.315919,
--51.164184
+-23.315962,
+-51.164141
 ],
 "local:centro|castelfranco4suites211": [
 -23.315868,
@@ -1146,13 +1155,17 @@
 -23.316729,
 -51.153373
 ],
+"local:centro|harmonie": [
+-23.310261,
+-51.164295
+],
 "local:centro|hedi": [
 -23.311498,
 -51.160126
 ],
 "local:centro|hedy": [
--23.314887,
--51.160209
+-23.312859,
+-51.160071
 ],
 "local:centro|hedycentrodelondrinaexcelente": [
 -23.314861,
@@ -1187,8 +1200,12 @@
 -51.165649
 ],
 "local:centro|imperatriz": [
--23.312107,
--51.164019
+-23.312518,
+-51.164022
+],
+"local:centro|imperial": [
+-23.312332,
+-51.168038
 ],
 "local:centro|inconfidencia": [
 -23.306566,
@@ -1391,8 +1408,8 @@
 -51.166544
 ],
 "local:centro|marquesdeolinda": [
--23.313334,
--51.162229
+-23.31318,
+-51.164
 ],
 "local:centro|marquesdoherval": [
 -23.31634,
@@ -1452,7 +1469,7 @@
 ],
 "local:centro|maximusresidence": [
 -23.318843,
--51.152528
+-51.152433
 ],
 "local:centro|mediterranee": [
 -23.321484,
@@ -1743,8 +1760,8 @@
 -51.162932
 ],
 "local:centro|pernambuco|888": [
--23.31617,
--51.16287
+-23.316156,
+-51.162995
 ],
 "local:centro|petropolis": [
 -23.32648,
@@ -1871,8 +1888,8 @@
 -51.164443
 ],
 "local:centro|prefeito hugo cabral|784": [
--23.313696,
--51.164062
+-23.313671,
+-51.1641
 ],
 "local:centro|prefeito hugo cabral|907": [
 -23.314771,
@@ -2006,6 +2023,10 @@
 -23.317635,
 -51.165019
 ],
+"local:centro|roland": [
+-23.310031,
+-51.167624
+],
 "local:centro|royalgarden": [
 -23.312172,
 -51.168156
@@ -2103,8 +2124,8 @@
 -51.167704
 ],
 "local:centro|santos|1127": [
--23.315934,
--51.167912
+-23.315956,
+-51.167773
 ],
 "local:centro|santos|1161": [
 -23.31617,
@@ -2211,7 +2232,7 @@
 -51.161672
 ],
 "local:centro|serranegra": [
--23.31699,
+-23.316999,
 -51.16906
 ],
 "local:centro|serraverde": [
@@ -2444,7 +2465,7 @@
 ],
 "local:centro|terrazasjardin": [
 -23.314292,
--51.167805
+-51.167806
 ],
 "local:centro|tokio": [
 -23.30968,
@@ -2577,6 +2598,10 @@
 "local:centro|villagesanfernando": [
 -23.310944,
 -51.16803
+],
+"local:centro|villaromana": [
+-23.313083,
+-51.168078
 ],
 "local:centro|villasardegna": [
 -23.307322,
@@ -2731,8 +2756,8 @@
 -51.202823
 ],
 "local:goldenhill": [
--23.338257,
--51.21409
+-23.338013,
+-51.214076
 ],
 "local:goldenhillpermuta": [
 -23.33776,
@@ -2879,8 +2904,8 @@
 -51.182417
 ],
 "local:palhano|allure": [
--23.329365,
--51.18077
+-23.329374,
+-51.180784
 ],
 "local:palhano|allure136m2dearea": [
 -23.330813,
@@ -2975,8 +3000,8 @@
 -51.180994
 ],
 "local:palhano|cambridge": [
--23.33367,
--51.18123
+-23.334799,
+-51.181143
 ],
 "local:palhano|cambridgevillage": [
 -23.33367,
@@ -3103,8 +3128,8 @@
 -51.17874
 ],
 "local:palhano|flora": [
--23.328612,
--51.182998
+-23.328615,
+-51.182997
 ],
 "local:palhano|floraisecoresortresidence": [
 -23.333236,
@@ -3115,8 +3140,8 @@
 -51.185603
 ],
 "local:palhano|fontaineblanc": [
--23.31008,
--51.176273
+-23.32743,
+-51.17934
 ],
 "local:palhano|fontaineblancresidence": [
 -23.32743,
@@ -3131,12 +3156,12 @@
 -51.18038
 ],
 "local:palhano|gloria": [
--23.330735,
--51.182417
+-23.330931,
+-51.182294
 ],
 "local:palhano|gloriaresidence": [
 -23.330588,
--51.178907
+-51.180662
 ],
 "local:palhano|gloriariaresidence": [
 -23.331126,
@@ -3163,8 +3188,8 @@
 -51.18077
 ],
 "local:palhano|harmonietorreallure": [
--23.329499,
--51.180796
+-23.329432,
+-51.180783
 ],
 "local:palhano|hause": [
 -23.330463,
@@ -3267,28 +3292,28 @@
 -51.174786
 ],
 "local:palhano|maisongiverny": [
--23.32923,
--51.179271
+-23.32894,
+-51.180056
 ],
 "local:palhano|maisonlazuli": [
 -23.331083,
 -51.179139
 ],
 "local:palhano|maisonlegacy": [
--23.331241,
--51.179597
+-23.331165,
+-51.17956
 ],
 "local:palhano|maisonlegacyresidence": [
--23.330344,
--51.179489
+-23.330878,
+-51.179718
 ],
 "local:palhano|maisonprivilege": [
 -23.330165,
 -51.179458
 ],
 "local:palhano|maisonprovence": [
--23.32827,
--51.179018
+-23.328359,
+-51.179017
 ],
 "local:palhano|maisonveyron": [
 -23.327828,
@@ -3311,8 +3336,8 @@
 -51.174659
 ],
 "local:palhano|marcchagall": [
--23.333435,
--51.174656
+-23.333417,
+-51.174654
 ],
 "local:palhano|marcchagall2": [
 -23.33356,
@@ -3411,12 +3436,12 @@
 -51.17944
 ],
 "local:palhano|sunflowers": [
--23.332109,
--51.174766
+-23.332041,
+-51.174718
 ],
 "local:palhano|sunflowersresidence": [
--23.332,
--51.174493
+-23.33209,
+-51.174383
 ],
 "local:palhano|takabumi murata|303": [
 -23.34206,
@@ -3487,8 +3512,8 @@
 -51.180867
 ],
 "local:palhano|ulrico zuinglio|50": [
--23.3339,
--51.17854
+-23.33384,
+-51.17857
 ],
 "local:palhano|valverde": [
 -23.328705,
@@ -3571,8 +3596,8 @@
 -51.155956
 ],
 "local:prochet|wynn": [
--23.342849,
--51.159925
+-23.341996,
+-51.157456
 ],
 "local:prochet|zahra": [
 -23.341034,
@@ -3775,15 +3800,15 @@
 -51.18145
 ],
 "local:santa rosa|chelsea": [
--23.332423,
--51.177232
+-23.332581,
+-51.179718
 ],
 "local:santa rosa|chelsealondrina": [
 -23.332108,
 -51.171918
 ],
 "local:santa rosa|chelseatower": [
--23.332625,
+-23.332423,
 -51.177232
 ],
 "local:santa rosa|corbusier": [
@@ -3797,6 +3822,10 @@
 "local:santa rosa|fernandopessoa3suites": [
 -23.332234,
 -51.175603
+],
+"local:santa rosa|kensigtongardensa": [
+-23.332528,
+-51.181854
 ],
 "local:santa rosa|kensingtongarden": [
 -23.332476,
@@ -3858,6 +3887,10 @@
 -23.340473,
 -51.157776
 ],
+"local:sao jorge|betkeley": [
+-23.340516,
+-51.157743
+],
 "local:sao jorge|camilo castelo branco|270": [
 -23.341094,
 -51.154412
@@ -3870,9 +3903,13 @@
 -23.344952,
 -51.162264
 ],
+"local:sao jorge|harry prochet|220": [
+-23.340516,
+-51.157743
+],
 "local:sao jorge|mayfair": [
--23.344952,
--51.162264
+-23.342871,
+-51.160192
 ],
 "local:sao jorge|mayfairayoshii": [
 -23.344952,
@@ -3891,16 +3928,16 @@
 -51.157193
 ],
 "local:sao jorge|wonder": [
--23.340538,
--51.154734
+-23.340264,
+-51.155
 ],
 "local:sao jorge|wondervectra": [
 -23.340538,
 -51.154734
 ],
 "local:sao jorge|wynn": [
--23.342125,
--51.157763
+-23.3414,
+-51.1556
 ],
 "local:sebastiao buranello|141": [
 -23.340761,
@@ -3935,8 +3972,8 @@
 -51.220339
 ],
 "local:sunlakeresidence": [
--23.364864,
--51.206567
+-23.365196,
+-51.206554
 ],
 "local:sunset dream": [
 -23.36529,
@@ -3987,8 +4024,8 @@
 -51.172371
 ],
 "local:valedasaraucarias": [
--23.341468,
--51.171961
+-23.341904,
+-51.17165
 ],
 "local:valedoarvoredo": [
 -23.350541,
@@ -4376,6 +4413,7 @@
 "predio:maximus": null,
 "predio:maximus aceita": null,
 "predio:mayfair": null,
+"predio:mayson veyron": null,
 "predio:mediterranee centro de londrinamore": null,
 "predio:mediterranee jardim ipiranga": [
 -23.321552,
@@ -4423,6 +4461,7 @@
 "predio:novo mundo": null,
 "predio:oase": null,
 "predio:odussei": null,
+"predio:odyssei": null,
 "predio:oro": null,
 "predio:oscar": [
 -23.312183,
@@ -4532,6 +4571,7 @@
 "predio:royal park conforto": null,
 "predio:royal park residence": null,
 "predio:royal tennis": null,
+"predio:royal tennis residencial": null,
 "predio:sagres": [
 -23.307922,
 -51.168187,
@@ -4678,6 +4718,7 @@
 "predio:vale do arvoredo localizado": null,
 "predio:veneza": null,
 "predio:veneza.na rua fernando de noronha": null,
+"predio:venha morar no melhor de": null,
 "predio:venice": null,
 "predio:venice downtown conforto": null,
 "predio:venice dowtown": null,
