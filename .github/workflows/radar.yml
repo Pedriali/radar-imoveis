@@ -1,13 +1,16 @@
 name: varredura
 # Horários: 09h, 14h e 20h de Brasília (12h, 17h e 23h UTC).
-# O agendamento do GitHub atrasa horas, então quem dispara no horário é o Mac
-# (scraper/agendador: `gh workflow run radar.yml -f agendada=true`). O cron daqui
-# é reserva: roda de hora em hora e só varre se o horário mais recente ainda
-# não teve varredura. Disparo manual (Run workflow ou o botão VARRER AGORA da página) sempre varre.
+#
+# Onde roda: Zap e OLX bloqueiam (HTTP 403) os IPs dos servidores do GitHub, então a varredura roda no
+# Mac (runner próprio com o rótulo radar-mac, IP residencial). O Mac dispara no horário
+# (scraper/agendador: `gh workflow run radar.yml -f agendada=true`); o botão VARRER AGORA também vai
+# para o Mac. O cron daqui é a reserva na nuvem (ubuntu-latest): roda de hora em hora e só varre se o
+# horário mais recente ainda não teve varredura (Mac desligado ou dormindo).
 #
 # A conferência "horário já varrido?" roda num job separado, fora do grupo de concorrência:
 # assim as reservas que não vão varrer não entram na fila (no GitHub, um run novo na fila
 # cancela o que estava esperando — era assim que um pedido do botão podia sumir).
+# Pedido preso esperando o Mac há mais de 20 min é cancelado pela reserva (.github/destrava.py).
 on:
   schedule:
     - cron: '17 * * * *'
@@ -17,11 +20,12 @@ on:
         description: 'Pular se este horário já foi varrido'
         type: boolean
         default: false
-permissions:
-  contents: write
 jobs:
   trava:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     outputs:
       pular: ${{ steps.trava.outputs.pular }}
     steps:
@@ -30,10 +34,19 @@ jobs:
       - id: trava
         if: github.event_name == 'schedule' || inputs.agendada
         run: python3 .github/trava.py docs/data/listings.json >> "$GITHUB_OUTPUT"
+      - name: Pedidos presos esperando o Mac
+        if: github.event_name == 'schedule' && steps.trava.outputs.pular != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: python3 .github/destrava.py
   varredura:
     needs: trava
     if: needs.trava.outputs.pular != 'true'
-    runs-on: ubuntu-latest
+    # reserva (cron) na nuvem; pedidos do Mac e do botão no Mac
+    runs-on: ${{ github.event_name == 'schedule' && 'ubuntu-latest' || 'radar-mac' }}
+    permissions:
+      contents: write
     timeout-minutes: 90
     concurrency: varredura
     steps:
@@ -45,11 +58,18 @@ jobs:
         id: trava
         if: github.event_name == 'schedule' || inputs.agendada
         run: python3 .github/trava.py docs/data/listings.json >> "$GITHUB_OUTPUT"
-      - if: steps.trava.outputs.pular != 'true'
+      - if: steps.trava.outputs.pular != 'true' && runner.os != 'macOS'
         uses: actions/setup-python@v6
         with: { python-version: '3.12' }
-      - if: steps.trava.outputs.pular != 'true'
+      - if: steps.trava.outputs.pular != 'true' && runner.os != 'macOS'
         run: pip install curl_cffi==0.13.0
+      # No Mac: venv fixo com o Python do sistema (3.9) — radar.py precisa continuar compatível com ele
+      - name: Python do Mac
+        if: steps.trava.outputs.pular != 'true' && runner.os == 'macOS'
+        run: |
+          [ -x "$HOME/.radar-venv/bin/python" ] || /usr/bin/python3 -m venv "$HOME/.radar-venv"
+          "$HOME/.radar-venv/bin/pip" install -q --disable-pip-version-check curl_cffi==0.13.0
+          echo "$HOME/.radar-venv/bin" >> "$GITHUB_PATH"
       - if: steps.trava.outputs.pular != 'true'
         run: python scraper/radar.py
       # Salva mesmo se algum perfil falhou (os outros perfis e o geocache não se perdem)

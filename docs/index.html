@@ -64,7 +64,8 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .telemetry b{color:var(--green);font-weight:400}
 .lamp{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:0;background:var(--green);box-shadow:0 0 6px var(--green)}
 .lamp.bad{background:var(--red);box-shadow:0 0 6px var(--red)}
-.st-ok{color:var(--green)} .st-bad{color:var(--red)}
+.st-ok{color:var(--green)} .st-bad{color:var(--red)} .st-warn{color:var(--amber)}
+.lamp.warn{background:var(--amber);box-shadow:0 0 6px var(--amber)}
 
 /* abas */
 .tabs{display:flex;gap:0;margin-top:18px;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
@@ -553,7 +554,9 @@ function telemetry(){
                                      : '<span class="st-bad"><i class="lamp bad"></i>SEM DADOS — aguardando a primeira varredura.</span>'; return; }
   // Portais só aparecem quando falham
   const st = Object.entries(r.portais).filter(([, v]) => v !== 'ok')
-    .map(([k]) => `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
+    .map(([k, v]) => v === 'parcial'
+      ? `<span class="st-warn"><i class="lamp warn"></i>${PORTAL[k]||k}: PARCIAL</span>`
+      : `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
   const total = DATA.imoveis.length;
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA <b>${fmtDT(nextRun())}</b></span><span>ALVOS <b>${total}</b></span>${st}`;
 }

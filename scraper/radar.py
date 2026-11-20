@@ -4,6 +4,7 @@ Cada perfil de config.json ("perfis") é uma busca independente que vira uma aba
     python scraper/radar.py              # todos os perfis
     python scraper/radar.py casas        # só um
 """
+import bisect
 import difflib
 import functools
 import html as htmllib
@@ -27,6 +28,12 @@ NOW = datetime.now(timezone.utc)
 NOW_ISO = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 S = requests.Session(impersonate="chrome")
+
+
+def nova_sessao():
+    """Sessão nova (cookies zerados), para a segunda tentativa depois de um bloqueio."""
+    global S
+    S = requests.Session(impersonate="chrome")
 
 
 # Anúncios já guardados do perfil em uso (preenchido em main): as páginas de anúncio que só servem para
@@ -368,6 +375,10 @@ def fetch(url, tries=3):
                 FETCH_404.add(url)
                 return None
             log(f"  HTTP {r.status_code} {url}")
+            # 403/429 = bloqueio de robô: insistir em segundos não adianta. Uma tentativa a mais e a busca
+            # fica para a segunda rodada, no fim da varredura (ver REPETIR em main).
+            if r.status_code in (403, 429) and i >= 1:
+                return None
         except Exception as e:  # noqa: BLE001
             log(f"  erro {e} {url}")
         if i < tries - 1:
@@ -552,6 +563,7 @@ def grupo_detail(rec):
     m = re.search(r'\\?"createdAt\\?":\\?"(\d{4}-\d\d-\d\dT[\d:.]+Z)', page)
     if m:
         rec["publicado"] = m.group(1)[:19] + "Z"
+        rec.pop("data_estimada", None)
     descs = re.findall(r'"description":"(.{20,4000}?)"[,}]', rsc(page))
     desc = htmllib.unescape(re.sub(r"<[^>]+>", " ", max(descs, key=len))) if descs else ""
     corrige_area(rec, desc)
@@ -559,6 +571,31 @@ def grupo_detail(rec):
         rec["predio"] = building_from_text(rec.get("titulo"), desc)
     alvo_detalhe(rec, desc)
     return True
+
+
+def pontos_id_data(L):
+    """[(id numérico, publicado)] dos anúncios do Zap/Viva Real com data lida na página, em ordem de id."""
+    return sorted((int(x["id"][1:]), x["publicado"]) for x in L.values()
+                  if origem(x) == "grupo" and x.get("publicado") and not x.get("data_estimada")
+                  and x["id"][1:].isdigit())
+
+
+def data_por_id(rid, pontos):
+    """Data de publicação estimada pelo id (no Zap/Viva Real os ids crescem com o tempo: em 1.726
+    anúncios guardados só 2 fogem da ordem). Serve quando a página do anúncio está bloqueada e a data
+    não pode ser lida. Interpola entre os vizinhos; id além do maior conhecido fica com a data dele."""
+    if len(pontos) < 50 or not rid[1:].isdigit():
+        return None
+    n = int(rid[1:])
+    i = bisect.bisect_left(pontos, (n, ""))
+    if i == 0:
+        return pontos[0][1]
+    if i >= len(pontos):
+        return pontos[-1][1]
+    (a, da), (b, db) = pontos[i - 1], pontos[i]
+    ta, tb = (datetime.fromisoformat(d.replace("Z", "+00:00")) for d in (da, db))
+    t = ta + (tb - ta) * ((n - a) / (b - a) if b > a else 0)
+    return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 DETALHES_POR_VARREDURA = 40  # anúncios do Zap/Viva Real cuja página ficou para depois (bloqueio 429)
@@ -597,11 +634,17 @@ def grupo_buscas(portal):
     """[(url com '?' e parâmetros, unitTypes aceitos, exige prova de condomínio)] da busca do perfil no portal."""
     if apto():
         out = []
-        for slug in CFG["grupo_zap_searches"]:
-            if portal == "zap":
-                url0 = f"https://www.zapimoveis.com.br/venda/apartamentos/{slug}/"
+        # cada item: "pr+londrina++bairro" (mesmo nome nos dois portais) ou {"zap": ..., "vivareal": ...}
+        # quando o nome difere (o Zap abrevia: sta-rosa, jd-s-jorge; o Viva Real usa santa-rosa, jardim-sao-jorge)
+        for item in CFG["grupo_zap_searches"]:
+            if isinstance(item, dict):
+                zap_slug, vr_slug = item["zap"], item["vivareal"]
             else:
-                url0 = f"https://www.vivareal.com.br/venda/parana/londrina/bairros/{slug.split('++')[1]}/apartamento_residencial/"
+                zap_slug, vr_slug = item, item.split("++")[1]
+            if portal == "zap":
+                url0 = f"https://www.zapimoveis.com.br/venda/apartamentos/{zap_slug}/"
+            else:
+                url0 = f"https://www.vivareal.com.br/venda/parana/londrina/bairros/{vr_slug}/apartamento_residencial/"
             out.append((f"{url0}?areaMinima={CFG['area_min']}&areaMaxima={CFG['area_max']}&", ("APARTMENT", None), False))
         return out
     lotes = ("https://www.zapimoveis.com.br/venda/terrenos-lotes-condominios/pr+londrina/?" if portal == "zap" else
@@ -614,57 +657,92 @@ def grupo_buscas(portal):
     return [(casas, ("CONDOMINIUM",), False)]
 
 
-COMPLETA = [False]  # varredura completa desta rodada (ver main): as buscas vão até o fim
+# Portais paginados (buscas com muitas páginas). Cada um faz uma varredura completa por dia (data de
+# Brasília): as buscas vão até o fim, para "visto" valer para todo o estoque. A completa só conta como
+# feita quando o portal respondeu a todas as buscas, e são no máximo 2 tentativas por dia, para um portal
+# bloqueado não fazer toda varredura percorrer 30 páginas (mais acessos = mais bloqueio).
+PORTAIS_PAGINADOS = ("zap", "vivareal", "olx", "chavesnamao")
+COMPLETA = set()  # portais que fazem a completa nesta rodada (ver main)
+PAGINAS = {"completa": 30, "normal": 6}  # ajustado em main pelo perfil
+BUSCAS = {}  # portal -> [buscas feitas, buscas que responderam]
+REPETIR = []  # (portal, função) das buscas que não responderam: segunda tentativa no fim (ver main)
 
 
-def parar(known, sem_novos):
+def limite(portal):
+    return PAGINAS["completa"] if portal in COMPLETA else PAGINAS["normal"]
+
+
+def parar(portal, known, sem_novos):
     """Busca incremental: para depois de N páginas seguidas sem anúncio desconhecido no filtro
     (perfil "paginas_sem_novos"; buscas amplas têm muitas páginas sem nada do filtro).
     Na varredura completa do dia não para: é ela que confirma quais anúncios continuam no ar."""
-    return not COMPLETA[0] and bool(known) and sem_novos >= CFG.get("paginas_sem_novos", 1)
+    return portal not in COMPLETA and bool(known) and sem_novos >= CFG.get("paginas_sem_novos", 1)
+
+
+def conta_busca(portal, paginas_ok, refazer):
+    """Registra uma busca do portal; a que não respondeu (0 páginas) vai para a segunda tentativa."""
+    b = BUSCAS.setdefault(portal, [0, 0])
+    b[0] += 1
+    if paginas_ok:
+        b[1] += 1
+    else:
+        REPETIR.append((portal, refazer))
+
+
+def status_buscas(portal):
+    """ok = todas as buscas responderam; parcial = só algumas; falhou = nenhuma."""
+    total, ok = BUSCAS.get(portal, (0, 0))
+    return "falhou" if not ok else "ok" if ok == total else "parcial"
 
 
 def scan_grupo(known, max_pages, found):
-    status = {}
     for portal in ("zap", "vivareal"):
-        ok = 0
         for url0, tipos, prova in grupo_buscas(portal):
-            slug = url0.split("/venda/")[1].split("?")[0].strip("/") + (" (ampla)" if prova else "")
-            sem_novos = 0
-            for p in range(1, max_pages + 1):
-                url = f"{url0}ordem=MOST_RECENT&pagina={p}"
-                page = fetch(url)
-                if page is None:
-                    break
-                items = parse_grupo(page)
-                if not items:
-                    break
-                ok += 1
-                fresh = 0
-                for o in items:
-                    if o.get("business") != "SALE" or o.get("unitType") not in tipos:
-                        continue
-                    addr = o.get("address") or {}
-                    if prova and not condominio_ok(o.get("title"), addr.get("neighborhood")):
-                        continue
-                    # o nome do condomínio quase nunca está no título do Zap: sai da descrição (grupo_detail)
-                    if not local_ok(addr.get("neighborhood"), o.get("title"), o.get("condominiumName"),
-                                    pendente=not prova) or not coord_ok(addr):
-                        continue
-                    rec = grupo_record(o)
-                    if not rec:
-                        continue
-                    cur = found.setdefault(rec["id"], rec)
-                    cur["links"][portal] = o.get("href")
-                    if rec["id"] not in known:
-                        fresh += 1
-                log(f"  {portal} {slug} p{p}: {len(items)} anúncios, {fresh} desconhecidos")
-                sem_novos = 0 if fresh else sem_novos + 1
-                if parar(known, sem_novos):
-                    break
-                time.sleep(1.5)
-        status[portal] = "ok" if ok else "falhou"
-    return status
+            n = _busca_grupo(portal, url0, tipos, prova, known, found)
+            conta_busca(portal, n, functools.partial(_busca_grupo, portal, url0, tipos, prova, known, found))
+    return {p: status_buscas(p) for p in ("zap", "vivareal")}
+
+
+def _busca_grupo(portal, url0, tipos, prova, known, found):
+    """Uma busca do Zap/Viva Real. Retorna quantas páginas responderam."""
+    ok = 0
+    slug = url0.split("/venda/")[1].split("?")[0].strip("/") + (" (ampla)" if prova else "")
+    sem_novos = 0
+    for p in range(1, limite(portal) + 1):
+        url = f"{url0}ordem=MOST_RECENT&pagina={p}"
+        page = fetch(url)
+        if page is None:
+            if p == 1 and url in FETCH_404:
+                log(f"  {portal} {slug}: a busca não existe (404) — revisar grupo_zap_searches em config.json")
+            break
+        items = parse_grupo(page)
+        if not items:
+            break
+        ok += 1
+        fresh = 0
+        for o in items:
+            if o.get("business") != "SALE" or o.get("unitType") not in tipos:
+                continue
+            addr = o.get("address") or {}
+            if prova and not condominio_ok(o.get("title"), addr.get("neighborhood")):
+                continue
+            # o nome do condomínio quase nunca está no título do Zap: sai da descrição (grupo_detail)
+            if not local_ok(addr.get("neighborhood"), o.get("title"), o.get("condominiumName"),
+                            pendente=not prova) or not coord_ok(addr):
+                continue
+            rec = grupo_record(o)
+            if not rec:
+                continue
+            cur = found.setdefault(rec["id"], rec)
+            cur["links"][portal] = o.get("href")
+            if rec["id"] not in known:
+                fresh += 1
+        log(f"  {portal} {slug} p{p}: {len(items)} anúncios, {fresh} desconhecidos")
+        sem_novos = 0 if fresh else sem_novos + 1
+        if parar(portal, known, sem_novos):
+            break
+        time.sleep(1.5)
+    return ok
 
 
 # ---------- OLX ----------
@@ -716,16 +794,17 @@ def olx_tipo_ok(tipo, props, subject):
 
 
 def scan_olx(known, max_pages, found):
-    pages_ok = 0
     for url0, tipo in olx_buscas():
-        pages_ok += _scan_olx(url0, tipo, known, max_pages, found)
-    return {"olx": "ok" if pages_ok else "falhou"}
+        n = _scan_olx(url0, tipo, known, found)
+        conta_busca("olx", n, functools.partial(_scan_olx, url0, tipo, known, found))
+    return {"olx": status_buscas("olx")}
 
 
-def _scan_olx(url0, tipo0, known, max_pages, found):
+def _scan_olx(url0, tipo0, known, found):
     pages_ok = sem_novos = 0
     # busca de um condomínio: poucas páginas (a busca por palavra traz depois o que só se parece com ela)
-    paginas = (CFG.get("max_pages_condominio", 2) * (3 if COMPLETA[0] else 1)) if tipo0 == "auto" else max_pages * 2
+    paginas = ((CFG.get("max_pages_condominio", 2) * (3 if "olx" in COMPLETA else 1)) if tipo0 == "auto"
+               else limite("olx") * 2)
     for p in range(1, paginas + 1):
         url = f"{url0}sf=1&o={p}"
         page = fetch(url)
@@ -779,7 +858,7 @@ def _scan_olx(url0, tipo0, known, max_pages, found):
         q = re.search(r"[?&]q=([^&]+)", url0)
         log(f"  olx {urllib.parse.unquote(q.group(1)) if q else tipo0 or ''} p{p}: {len(ads)} anúncios, {fresh} desconhecidos")
         sem_novos = 0 if fresh else sem_novos + 1
-        if not ads or parar(known, sem_novos):
+        if not ads or parar("olx", known, sem_novos):
             break
         time.sleep(1.5)
     return pages_ok
@@ -939,6 +1018,31 @@ def scan_raulfulgencio(found):
 # área (útil) em ?area=MIN~MAX, paginação em ?pagina=N (12 por página).
 GLEBA_BASE = "https://www.glebaimoveis.com"
 GLEBA_MARKO = re.compile(r"window\.markoVars\['listings-[a-z0-9]+'\]\s*=\s*")
+# Desde 2026-11-18 o JSON vem dentro de uma função que troca o prefixo das fotos:
+# (function(o,p,f){...return o})({...}, "https://img.kenlo.io", "https://imgs.kenlo.io")
+GLEBA_FOTOS = ("picture_thumb", "picture_full", "picture_banner")
+
+
+def _gleba_json(html, pos):
+    """Objeto de window.markoVars['listings-…'] a partir de pos (literal ou embrulhado na função das fotos)."""
+    dec = json.JSONDecoder()
+    if html.startswith("(function", pos):
+        i = html.find("})(", pos)
+        if i < 0:
+            raise ValueError("embrulho sem chamada")
+        o, end = dec.raw_decode(html, i + 3)
+        args = re.match(r'\s*,\s*("(?:[^"\\]|\\.)*")\s*,\s*("(?:[^"\\]|\\.)*")', html[end:end + 300])
+        if args:
+            de, para = json.loads(args.group(1)), json.loads(args.group(2))
+            for x in ((o.get("settings") or {}).get("listings") or {}).get("data") or []:
+                for f in GLEBA_FOTOS:
+                    v = x.get(f)
+                    if isinstance(v, str) and v.startswith(de):
+                        x[f] = para + v[len(de):]
+                    elif isinstance(v, list):
+                        x[f] = [para + s[len(de):] if isinstance(s, str) and s.startswith(de) else s for s in v]
+        return o
+    return dec.raw_decode(html, pos)[0]
 
 
 def _gleba_first(v):
@@ -976,7 +1080,7 @@ def _scan_gleba(url0, tipo, found):
             log("  gleba: JSON de listagem não encontrado")
             return "falhou" if page == 1 else "ok"
         try:
-            listings = json.JSONDecoder().raw_decode(html, m.end())[0]["settings"]["listings"]
+            listings = _gleba_json(html, m.end())["settings"]["listings"]
         except (ValueError, KeyError, TypeError):
             log("  gleba: JSON de listagem inválido")
             return "falhou" if page == 1 else "ok"
@@ -1656,51 +1760,59 @@ def cm_detalhe(rec):
 
 
 def scan_chavesnamao(known, max_pages, found):
-    pages_ok, detalhes = 0, 0
+    cota = {"detalhes": 0}  # páginas de anúncio lidas nesta varredura (todas as buscas)
     for path, tipo, prova in cm_buscas():
-        sem_novos = 0
-        for p in range(1, max_pages + 1):
-            page = fetch(CM_BASE + path + (f"&pg={p}" if p > 1 else ""))
-            if page is None:
-                break
-            itens = cm_itens(rsc(page))
-            ld = cm_ld(page)
-            pages_ok += 1
-            fresh = 0
-            for o in itens:
-                if o.get("transaction") != "SELL" or not o.get("url") or not o.get("id"):
-                    continue
-                loc = o.get("location") or {}
-                if norm((loc.get("city") or {}).get("name")) != "londrina":
-                    continue
-                bairro = (loc.get("neighborhood") or {}).get("name")
-                if prova and not condominio_ok(o.get("title"), bairro):
-                    continue
-                if not local_ok(bairro, o.get("title"), pendente=not prova):  # nome na descrição: cm_detalhe
-                    continue
-                rec = cm_record(o, ld, tipo)
-                if not rec:
-                    continue
-                if rec.get("lat") and not coord_ok({"coordinates": {"latitude": rec["lat"], "longitude": rec["lon"]},
-                                                     "neighborhood": bairro}):
-                    continue
-                if rec["id"] in found:
-                    continue
-                if rec["id"] not in known:
-                    fresh += 1
-                k = known.get(rec["id"])  # guardado: a página é lida uma vez (o guardado é atualizado no lugar)
-                if detalhes < CM_DETALHES_MAX and not (k or rec).get("det") and not (k or {}).get("publicado"):
-                    detalhes += 1
-                    time.sleep(1)
-                    cm_detalhe(k or rec)
-                found[rec["id"]] = rec
-            log(f"  chavesnamao {path.split('/')[1]}{' (ampla)' if prova else ''} p{p}: "
-                f"{len(itens)} anúncios, {fresh} desconhecidos")
-            sem_novos = 0 if fresh else sem_novos + 1
-            if len(itens) < 15 or parar(known, sem_novos):
-                break
-            time.sleep(1)
-    return {"chavesnamao": "ok" if pages_ok else "falhou"}
+        n = _busca_cm(path, tipo, prova, known, found, cota)
+        conta_busca("chavesnamao", n, functools.partial(_busca_cm, path, tipo, prova, known, found, cota))
+    return {"chavesnamao": status_buscas("chavesnamao")}
+
+
+def _busca_cm(path, tipo, prova, known, found, cota):
+    """Uma busca do Chaves na Mão. Retorna quantas páginas responderam."""
+    pages_ok = 0
+    sem_novos = 0
+    for p in range(1, limite("chavesnamao") + 1):
+        page = fetch(CM_BASE + path + (f"&pg={p}" if p > 1 else ""))
+        if page is None:
+            break
+        itens = cm_itens(rsc(page))
+        ld = cm_ld(page)
+        pages_ok += 1
+        fresh = 0
+        for o in itens:
+            if o.get("transaction") != "SELL" or not o.get("url") or not o.get("id"):
+                continue
+            loc = o.get("location") or {}
+            if norm((loc.get("city") or {}).get("name")) != "londrina":
+                continue
+            bairro = (loc.get("neighborhood") or {}).get("name")
+            if prova and not condominio_ok(o.get("title"), bairro):
+                continue
+            if not local_ok(bairro, o.get("title"), pendente=not prova):  # nome na descrição: cm_detalhe
+                continue
+            rec = cm_record(o, ld, tipo)
+            if not rec:
+                continue
+            if rec.get("lat") and not coord_ok({"coordinates": {"latitude": rec["lat"], "longitude": rec["lon"]},
+                                                 "neighborhood": bairro}):
+                continue
+            if rec["id"] in found:
+                continue
+            if rec["id"] not in known:
+                fresh += 1
+            k = known.get(rec["id"])  # guardado: a página é lida uma vez (o guardado é atualizado no lugar)
+            if cota["detalhes"] < CM_DETALHES_MAX and not (k or rec).get("det") and not (k or {}).get("publicado"):
+                cota["detalhes"] += 1
+                time.sleep(1)
+                cm_detalhe(k or rec)
+            found[rec["id"]] = rec
+        log(f"  chavesnamao {path.split('/')[1]}{' (ampla)' if prova else ''} p{p}: "
+            f"{len(itens)} anúncios, {fresh} desconhecidos")
+        sem_novos = 0 if fresh else sem_novos + 1
+        if len(itens) < 15 or parar("chavesnamao", known, sem_novos):
+            break
+        time.sleep(1)
+    return pages_ok
 
 
 # ---------- Imobiliárias Aurora Imobi, Casttelo e Monaco (Londrina) — sites Kenlo ----------
@@ -2902,20 +3014,31 @@ def main(perfil):
     initial = not L
     AREAS_PREDIO.clear()
     AREAS_PREDIO.update(state.get("areas_predio") or {})
-    # Uma varredura por dia (a primeira, pela data de Brasília) é completa: as buscas paginadas
-    # (Zap/Viva Real, OLX, Chaves na Mão) vão até o fim, para "visto" valer para todo o estoque.
+    # Varredura completa por portal paginado, uma por dia (ver PORTAIS_PAGINADOS)
     hoje = (NOW - timedelta(hours=3)).strftime("%Y-%m-%d")
-    COMPLETA[0] = not initial and state.get("completa") != hoje
-    max_pages = (CFG.get("max_pages_completa", 30) if COMPLETA[0] else
-                 CFG["max_pages_initial"] if initial else CFG["max_pages"])
-    log(f"Varredura {perfil} {NOW_ISO} ({'inicial' if initial else 'completa' if COMPLETA[0] else 'incremental'})")
+    feitas = dict(state.get("completa_portais") or {})
+    if state.pop("completa", None) == hoje:  # formato antigo: um dia para todos os portais
+        feitas.update({p: hoje for p in PORTAIS_PAGINADOS})
+    tentativas = {p: t for p, t in (state.get("completa_tentativas") or {}).items() if t[0] == hoje}
+    COMPLETA.clear()
+    if not initial:
+        COMPLETA.update(p for p in PORTAIS_PAGINADOS
+                        if feitas.get(p) != hoje and (tentativas.get(p) or [hoje, 0])[1] < 2)
+    PAGINAS["completa"] = CFG.get("max_pages_completa", 30)
+    PAGINAS["normal"] = CFG["max_pages_initial"] if initial else CFG["max_pages"]
+    max_pages = PAGINAS["normal"]
+    BUSCAS.clear()
+    REPETIR.clear()
+    log(f"Varredura {perfil} {NOW_ISO} ("
+        + ("inicial" if initial else f"completa: {', '.join(sorted(COMPLETA))}" if COMPLETA else "incremental") + ")")
     conhecidos = {origem(x) for x in L.values()}
     CONHECIDOS.clear()
     CONHECIDOS.update(L)
 
     found = {}
     status = {}
-    for chave, fn, paginado in SCANNERS:
+
+    def rodar(chave, fn, paginado):
         antes = set(found)
         try:
             st = fn(L, max_pages, found) if paginado else {chave: fn(found)}
@@ -2925,6 +3048,41 @@ def main(perfil):
         status.update(st)
         for k in set(found) - antes:
             found[k]["origem"] = chave
+
+    for chave, fn, paginado in SCANNERS:
+        rodar(chave, fn, paginado)
+
+    # Segunda tentativa, no fim: buscas paginadas que não responderam (403/429 costuma passar depois de
+    # alguns minutos, com sessão nova) e imobiliárias que falharam inteiras.
+    falhas = [(c, fn) for c, fn, pag in SCANNERS if not pag and status.get(c) == "falhou"]
+    if REPETIR or falhas:
+        partes = ([f"{len(REPETIR)} buscas ({', '.join(sorted({p for p, _ in REPETIR}))})"] if REPETIR else []) + [
+            c for c, _ in falhas]
+        log(f"  segunda tentativa: {', '.join(partes)}")
+        time.sleep(20)
+        nova_sessao()
+        origem_portal = {"zap": "grupo", "vivareal": "grupo", "olx": "olx", "chavesnamao": "chavesnamao"}
+        for portal, refazer in list(REPETIR):
+            antes = set(found)
+            try:
+                n = refazer()
+            except Exception as e:  # noqa: BLE001
+                log(f"  {portal}: erro {e!r}")
+                n = 0
+            if n:
+                BUSCAS[portal][1] += 1
+            for k in set(found) - antes:
+                found[k]["origem"] = origem_portal[portal]
+        status.update({p: status_buscas(p) for p in BUSCAS})
+        for chave, fn in falhas:
+            rodar(chave, fn, False)
+    for p in COMPLETA:
+        if status.get(p) == "ok":
+            feitas[p] = hoje
+        else:
+            tentativas[p] = [hoje, (tentativas.get(p) or [hoje, 0])[1] + 1]
+    state["completa_portais"] = feitas
+    state["completa_tentativas"] = tentativas
 
     # Perfil com "preco_min": fica de fora o que tem preço abaixo dele (sem preço = "sob consulta", entra).
     # Localização exata fora da "caixa" do perfil também sai, venha de qualquer fonte (bairro cadastrado errado).
@@ -2966,25 +3124,31 @@ def main(perfil):
     # Perfil com "inicial_mostra_tudo": na estreia todo o estoque vira card (mercado, não só lançamentos).
     tudo = initial and CFG.get("inicial_mostra_tudo")
     det = Detalhes(3 if tudo else 1)
+    pontos = pontos_id_data(L)
     old_streak = 0
     for k in grupo_new + outros_new:
         rec = found[k]
         estreante = rec["origem"] not in conhecidos  # primeira varredura deste portal
-        limite = CFG["initial_recent_days"] if initial or estreante else CFG["max_age_days_new"]
+        limite_dias = CFG["initial_recent_days"] if initial or estreante else CFG["max_age_days_new"]
         decidir = antigo = False
         if rec["origem"] == "grupo":
             if tudo or old_streak < 6:
                 decidir = not det.abrir(rec) and not tudo  # sem a data: decide quando a página for lida
+                if decidir and not rec.get("publicado"):
+                    # página bloqueada: data estimada pelo id (a página é lida depois e corrige)
+                    est = data_por_id(k, pontos)
+                    if est:
+                        rec["publicado"], rec["data_estimada"], decidir = est, True, False
                 idade = age_days(rec.get("publicado"))
-                old_streak = old_streak + 1 if idade is not None and idade > limite else 0
-            recente = tudo or (old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite)
+                old_streak = old_streak + 1 if idade is not None and idade > limite_dias else 0
+            recente = tudo or (old_streak < 6 and (age_days(rec.get("publicado")) or 0) <= limite_dias)
             if decidir:
-                recente, rec["decidir"] = False, limite
+                recente, rec["decidir"] = False, limite_dias
         else:
             idade = age_days(rec.get("publicado"))
             # Sem data de publicação: na estreia do portal não dá para saber se é novo, então o
             # estoque atual entra só como referência (links extras em imóveis já mostrados).
-            recente = tudo or (idade <= limite if idade is not None else not estreante)
+            recente = tudo or (idade <= limite_dias if idade is not None else not estreante)
             # Portal estreando: o estoque dele entra na página, mas como anterior (não "novo"),
             # para não encher a seção de novos com o que já estava à venda
             antigo = estreante and not tudo and not recente
@@ -3004,14 +3168,39 @@ def main(perfil):
         rec["visto"] = NOW_ISO
         L[k] = rec
 
+    # Anúncios novos que esperavam a página para saber a data (bloqueio do Zap): decididos pela data
+    # estimada pelo id, sem esperar mais (a página continua pendente e corrige a data quando abrir)
+    presos = 0
+    for rec in L.values():
+        if "decidir" in rec and not rec.get("publicado"):
+            est = data_por_id(rec["id"], pontos)
+            if not est:
+                continue
+            rec["publicado"], rec["data_estimada"] = est, True
+            ok = age_days(est) <= rec.pop("decidir") and area_ok(rec.get("area")) and not rec.get("retirado")
+            rec["visivel"] = ok
+            presos += 1
+            if ok:
+                rec["detectado"] = NOW_ISO
+            else:
+                rec.pop("foto", None)
+                rec.pop("titulo", None)
+    if presos:
+        log(f"  {presos} anúncios que esperavam a página decididos pela data estimada pelo id")
+
     # Páginas de anúncio que ficaram para depois (bloqueio do Zap), só dos que estão na página
     pend = sorted((x for x in L.values() if x.get("detalhe_pendente") and (x.get("visivel") or x.get("decidir"))
                    and x["id"] not in new_ids), key=lambda x: x.get("visto") or "", reverse=True)
     for rec in pend[:DETALHES_POR_VARREDURA]:
+        estimada = rec.get("data_estimada")
         if not det.abrir(rec):
             if det.falhas >= 3:
                 break
             continue
+        if estimada and not rec.get("data_estimada") and rec.get("visivel"):
+            # a data lida na página substitui a estimada: anúncio velho sai da lista de novos
+            if (age_days(rec.get("publicado")) or 0) > CFG["max_age_days_new"] or not area_ok(rec.get("area")):
+                rec["visivel"] = False
         if "decidir" in rec:  # anúncio novo que esperava a data de publicação
             idade = age_days(rec.get("publicado"))
             ok = (idade is None or idade <= rec.pop("decidir")) and area_ok(rec.get("area")) and not rec.get("retirado")
@@ -3052,8 +3241,6 @@ def main(perfil):
             COMPLETO[chave] = NOW_ISO
     state["completo_em"] = dict(COMPLETO)
     verificar_sumidos(L, det)
-    if COMPLETA[0] and status and all(v == "ok" for k, v in status.items() if k in ("zap", "vivareal", "olx", "chavesnamao")):
-        state["completa"] = hoje
     # Guardados há mais de 90 dias sem aparecer: fora do estado (já não servem nem para a média)
     for k in [k for k, x in L.items() if (x.get("visto") or x.get("detectado") or NOW_ISO) < iso_dias_atras(90)]:
         del L[k]

@@ -249,7 +249,7 @@
       ],
       "grupo_zap_searches": [
         "pr+londrina++gleba-palhano",
-        "pr+londrina++santa-rosa",
+        {"zap": "pr+londrina++sta-rosa", "vivareal": "santa-rosa"},
         "pr+londrina++guanabara"
       ],
       "olx_search": "https://www.olx.com.br/imoveis/venda/apartamentos/estado-pr/regiao-de-londrina/londrina",
@@ -449,7 +449,8 @@
       "grupo_zap_searches": [
         "pr+londrina++bela-suica",
         "pr+londrina++nikko",
-        "pr+londrina++mediterraneo"
+        {"zap": "pr+londrina++s-jorge", "vivareal": "sao-jorge"},
+        {"zap": "pr+londrina++jd-s-jorge", "vivareal": "jardim-sao-jorge"}
       ],
       "olx_extra": [
         "nova prochet",
