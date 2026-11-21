@@ -20,6 +20,10 @@ on:
         description: 'Pular se este horário já foi varrido'
         type: boolean
         default: false
+      nuvem:
+        description: 'Rodar na nuvem (o Mac pede isso quando o runner dele está fora do ar)'
+        type: boolean
+        default: false
 jobs:
   trava:
     runs-on: ubuntu-latest
@@ -43,8 +47,8 @@ jobs:
   varredura:
     needs: trava
     if: needs.trava.outputs.pular != 'true'
-    # reserva (cron) na nuvem; pedidos do Mac e do botão no Mac
-    runs-on: ${{ github.event_name == 'schedule' && 'ubuntu-latest' || 'radar-mac' }}
+    # reserva (cron) e pedido "nuvem" na nuvem; pedidos do Mac e do botão no Mac
+    runs-on: ${{ (github.event_name == 'schedule' || inputs.nuvem) && 'ubuntu-latest' || 'radar-mac' }}
     permissions:
       contents: write
     timeout-minutes: 90
@@ -70,8 +74,10 @@ jobs:
           [ -x "$HOME/.radar-venv/bin/python" ] || /usr/bin/python3 -m venv "$HOME/.radar-venv"
           "$HOME/.radar-venv/bin/pip" install -q --disable-pip-version-check curl_cffi==0.13.0
           echo "$HOME/.radar-venv/bin" >> "$GITHUB_PATH"
+      # No Mac, caffeinate impede o sono enquanto a varredura roda (2026-11-20: o Mac acordou só para
+      # manutenção, começou a varredura e voltou a dormir no meio — o job morreu)
       - if: steps.trava.outputs.pular != 'true'
-        run: python scraper/radar.py
+        run: ${{ runner.os == 'macOS' && 'caffeinate -i -s' || '' }} python scraper/radar.py
       # Salva mesmo se algum perfil falhou (os outros perfis e o geocache não se perdem)
       - name: Salvar dados
         if: ${{ !cancelled() && steps.trava.outputs.pular != 'true' }}
@@ -81,6 +87,7 @@ jobs:
           git add docs/data
           git diff --cached --quiet && exit 0
           git commit -m "Varredura $(date -u +%Y-%m-%dT%H:%MZ)"
+          ${{ runner.os == 'macOS' && 'caffeinate -i -s -t 120 &' || '' }}
           for i in 1 2 3; do
             git pull --rebase -X theirs && git push && exit 0
             git rebase --abort 2>/dev/null; sleep 10
