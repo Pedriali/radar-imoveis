@@ -252,8 +252,8 @@
 -51.186589
 ],
 "local:alphavillelondrina2": [
--23.355729,
--51.187331
+-23.355707,
+-51.187032
 ],
 "local:alphavillelondrinaii": [
 -23.355707,
@@ -1276,8 +1276,8 @@
 -51.170451
 ],
 "local:centro|kennedy": [
--23.316498,
--51.160543
+-23.316434,
+-51.160594
 ],
 "local:centro|lagodouro": [
 -23.317613,
@@ -1288,8 +1288,8 @@
 -51.168016
 ],
 "local:centro|lancaster": [
--23.312872,
--51.152461
+-23.312673,
+-51.15225
 ],
 "local:centro|lenoca": [
 -23.307582,
@@ -1452,8 +1452,8 @@
 -51.156424
 ],
 "local:centro|mato grosso|789": [
--23.315829,
--51.156242
+-23.315858,
+-51.156085
 ],
 "local:centro|mato grosso|815": [
 -23.316227,
@@ -1580,8 +1580,8 @@
 -51.161272
 ],
 "local:centro|novoinaja": [
--23.31611,
--51.156192
+-23.316106,
+-51.156193
 ],
 "local:centro|novomundo": [
 -23.317297,
@@ -1633,7 +1633,7 @@
 ],
 "local:centro|ouropreto": [
 -23.308979,
--51.166995
+-51.16686
 ],
 "local:centro|palmares": [
 -23.307089,
@@ -2328,8 +2328,8 @@
 -51.152422
 ],
 "local:centro|solarmontreaux": [
--23.317493,
--51.167806
+-23.31749,
+-51.16781
 ],
 "local:centro|solarmontreux": [
 -23.317496,
@@ -2469,7 +2469,7 @@
 ],
 "local:centro|tokio": [
 -23.30968,
--51.158346
+-51.158692
 ],
 "local:centro|toquio": [
 -23.309833,
@@ -3035,6 +3035,10 @@
 -23.333073,
 -51.185547
 ],
+"local:palhano|chelseamobiliado": [
+-23.33254,
+-51.18219
+],
 "local:palhano|chelseatower": [
 -23.332423,
 -51.178656
@@ -3140,8 +3144,8 @@
 -51.185603
 ],
 "local:palhano|fontaineblanc": [
--23.32743,
--51.17934
+-23.31008,
+-51.176273
 ],
 "local:palhano|fontaineblancresidence": [
 -23.32743,
@@ -3384,8 +3388,8 @@
 -51.180018
 ],
 "local:palhano|parcrocher": [
--23.329164,
--51.180874
+-23.329119,
+-51.180977
 ],
 "local:palhano|pe vermelho|180": [
 -23.32918,
@@ -3404,7 +3408,7 @@
 -51.180841
 ],
 "local:palhano|poema": [
--23.327558,
+-23.327545,
 -51.180841
 ],
 "local:palhano|potylazzarotto": [
@@ -3416,8 +3420,8 @@
 -51.179458
 ],
 "local:palhano|premiattoresidence": [
--23.3313,
--51.179451
+-23.332434,
+-51.179445
 ],
 "local:palhano|queenspark": [
 -23.332709,
@@ -3532,8 +3536,8 @@
 -51.182701
 ],
 "local:palhano|vertresidence": [
--23.328848,
--51.18276
+-23.328764,
+-51.182701
 ],
 "local:palhano|villasolare": [
 -23.332512,
@@ -3653,7 +3657,7 @@
 ],
 "local:royalforest": [
 -23.347036,
--51.21244
+-51.212302
 ],
 "local:royalforestesperanca": [
 -23.347029,
@@ -3673,7 +3677,7 @@
 ],
 "local:royalforestresidenceeresort": [
 -23.34701,
--51.212706
+-51.212803
 ],
 "local:royalforestresidenceresort": [
 -23.349207,
@@ -3833,7 +3837,7 @@
 ],
 "local:santa rosa|kensingtongardens": [
 -23.33249,
--51.18179
+-51.179511
 ],
 "local:santa rosa|kensingtongardensaltopadrao": [
 -23.332528,
@@ -3974,6 +3978,10 @@
 "local:sunlakeresidence": [
 -23.365196,
 -51.206554
+],
+"local:sunset": [
+-23.36529,
+-51.211042
 ],
 "local:sunset dream": [
 -23.36529,
@@ -4243,6 +4251,11 @@
 -51.175483,
 "building"
 ],
+"predio:fiore d": [
+-23.317696,
+-51.143448,
+"building"
+],
 "predio:flor da mata": [
 -23.311777,
 -51.166928,
@@ -4411,6 +4424,7 @@
 "predio:marrocos com": null,
 "predio:matisse": null,
 "predio:matisse londrina": null,
+"predio:matisse residen": null,
 "predio:maximus": null,
 "predio:maximus aceita": null,
 "predio:mayfair": null,
