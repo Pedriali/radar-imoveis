@@ -23,6 +23,13 @@ def api(path, method="GET"):
 
 
 agora = dt.datetime.now(dt.timezone.utc)
+# Com uma varredura rodando, o pedido na fila está só esperando a vez (grupo de concorrência), não preso:
+# não cancela (2026-11-21: cancelou o das 14h que esperava a das 09h terminar no Mac)
+rodando = api("actions/workflows/radar.yml/runs?status=in_progress&per_page=30").get("workflow_runs", [])
+if any(j["name"] == "varredura" and j["status"] == "in_progress"
+       for r in rodando for j in api(f"actions/runs/{r['id']}/jobs").get("jobs", [])):
+    print("há varredura rodando: os pedidos na fila estão só esperando a vez")
+    raise SystemExit(0)
 runs = api("actions/workflows/radar.yml/runs?status=queued&per_page=30").get("workflow_runs", [])
 for run in runs:
     criado = dt.datetime.fromisoformat(run["created_at"].replace("Z", "+00:00"))

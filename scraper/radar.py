@@ -11,7 +11,9 @@ import html as htmllib
 import json
 import re
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -27,13 +29,27 @@ DATA_DIR = ROOT / "docs" / "data"
 NOW = datetime.now(timezone.utc)
 NOW_ISO = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-S = requests.Session(impersonate="chrome")
+class _Sessao:
+    """Uma sessão curl_cffi por thread: as fontes rodam em paralelo (ver main) e a sessão não é thread-safe.
+    Uso igual ao de uma sessão: S.get(...), S.post(...)."""
+
+    def __init__(self):
+        self._local = threading.local()
+        self._geracao = 0
+
+    def __getattr__(self, nome):
+        loc = self._local
+        if getattr(loc, "geracao", None) != self._geracao:
+            loc.sessao, loc.geracao = requests.Session(impersonate="chrome"), self._geracao
+        return getattr(loc.sessao, nome)
+
+
+S = _Sessao()
 
 
 def nova_sessao():
-    """Sessão nova (cookies zerados), para a segunda tentativa depois de um bloqueio."""
-    global S
-    S = requests.Session(impersonate="chrome")
+    """Sessões novas (cookies zerados), para a segunda tentativa depois de um bloqueio."""
+    S._geracao += 1
 
 
 # Anúncios já guardados do perfil em uso (preenchido em main): as páginas de anúncio que só servem para
@@ -66,6 +82,7 @@ def usar_perfil(nome):
     CFG["perfil"] = nome
     ALVOS.clear()
     cond_citado.cache_clear()
+    bairro_key.cache_clear()
     CTX.clear()
     if CFG.get("contexto"):
         CTX.append(re.compile(r"\b(?:" + "|".join(re.escape(norm(c)) for c in CFG["contexto"]) + r")\b"))
@@ -121,6 +138,7 @@ def log(*a):
     print(*a, flush=True)
 
 
+@functools.lru_cache(maxsize=None)
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
     return re.sub(r"\s+", " ", s.lower()).strip()
@@ -2471,11 +2489,13 @@ NAME_PREFIX = re.compile(r"^(?:ed|edif|edificio|residencial|res|condominio|cond|
 STREET_PREFIX = re.compile(r"^(?:rua|r|avenida|av|alameda|al|travessa|tv)\b\.?\s*")
 
 
+@functools.lru_cache(maxsize=None)  # depende de CFG["bairros"]: limpo em usar_perfil
 def bairro_key(b):
     n = norm(b)
     return next((k for k in CFG["bairros"] if k in n), n)
 
 
+@functools.lru_cache(maxsize=None)
 def name_key(p):
     n = re.sub(r"[^a-z0-9 ]", " ", norm(p))
     n = re.sub(r"\s+", " ", n).strip()
@@ -2491,6 +2511,7 @@ def same_name(a, b):
     return bool(x and y) and (x == y or (min(len(x), len(y)) >= 5 and (x in y or y in x)))
 
 
+@functools.lru_cache(maxsize=None)
 def street(e):
     """("joao wyclif", "420") a partir de "Rua João Wyclif, 420"."""
     if not e:
@@ -2501,6 +2522,7 @@ def street(e):
     return nome or None, num or None
 
 
+@functools.lru_cache(maxsize=None)
 def mesma_rua(a, b):
     # Tolera grafias diferentes entre portais ("Zuimglio" × "Zuínglio")
     return a == b or difflib.SequenceMatcher(None, a, b).ratio() >= 0.8
@@ -2520,10 +2542,10 @@ def conflito(a, b):
     if terrenos():
         # Lotes: o bairro varia entre portais (a OLX erra muito) e o Zap inventa número de rua;
         # o que separa é o condomínio (ver chave_cond), a área e o preço.
-        ca, cb = chave_cond([a]), chave_cond([b])
+        ca, cb = cond1(a), cond1(b)
         return bool(ca and cb and ca != cb) or abs(a["area"] - b["area"]) > 3 or preco_conflita(a, b)
     if apto() and CFG.get("por_condominio"):  # prédios-alvo (Nova Prochet): o prédio da lista decide
-        ca, cb = chave_cond([a]), chave_cond([b])
+        ca, cb = cond1(a), cond1(b)
         if ca and cb:
             if ca != cb:
                 return True
@@ -2557,9 +2579,9 @@ def preco_conflita(a, b):
 
 def mesmo_predio(a, b):
     if terrenos() or (apto() and CFG.get("por_condominio")):
-        ca = chave_cond([a])
+        ca = cond1(a)
         if ca or terrenos():
-            return bool(ca) and ca == chave_cond([b])
+            return bool(ca) and ca == cond1(b)
     if a.get("predio") and b.get("predio"):
         return True  # sem conflito, então são o mesmo nome
     ra, rb = street(a.get("endereco"))[0], street(b.get("endereco"))[0]
@@ -2644,29 +2666,54 @@ def tipo_ok(x):
     return apto() or x.get("tipo") == ("terreno" if terrenos() else "casa")
 
 
+def _faixa(x):
+    """Chaves (tipo, área inteira) de um anúncio. Dois anúncios só podem ser o mesmo imóvel com o mesmo
+    tipo e área até 3 m² de diferença (conflito): a comparação em pares fica só entre os da mesma faixa."""
+    return (x.get("tipo"), int(x["area"] // 1))
+
+
+def _vizinhas(chaves):
+    return {(t, k + d) for t, k in chaves for d in range(-4, 5)}
+
+
 def group_imoveis(L):
+    COND1.clear()
     ads = [x for x in L.values() if x.get("links") and x.get("area") and tipo_ok(x)]
     ads.sort(key=lambda x: (not x.get("visivel"), x.get("detectado") or "", x["id"]))
     grupos = []
+    # Índice faixa -> posições dos grupos com algum anúncio nela. O resultado é o mesmo de comparar
+    # todos com todos (só ficam de fora pares que conflito() descartaria), em segundos em vez de minutos.
+    indice = {}
     for a in ads:
         # Entra no grupo se casar com algum anúncio dele e não conflitar com nenhum; havendo mais de
         # um grupo possível (unidades parecidas no mesmo prédio), fica no de preço mais próximo.
-        aptos = [g for g in grupos if any(pair_ok(a, b) for b in g) and not any(conflito(a, b) for b in g)]
+        cand = sorted({i for f in _vizinhas([_faixa(a)]) for i in indice.get(f, ())})
+        aptos = [grupos[i] for i in cand
+                 if any(pair_ok(a, b) for b in grupos[i]) and not any(conflito(a, b) for b in grupos[i])]
         g = min(aptos, key=lambda g: min(dif_preco(a, b) for b in g)) if aptos else None
-        if g is not None:
-            g.append(a)
-        else:
+        if g is None:
+            pos = len(grupos)
             grupos.append([a])
+        else:
+            pos = next(i for i in cand if grupos[i] is g)
+            g.append(a)
+        indice.setdefault(_faixa(a), set()).add(pos)
     # A ordem de chegada pode deixar separados grupos que se casam (A~C só se nota depois de B entrar)
+    faixas = [{_faixa(x) for x in g} for g in grupos]
+    viz = [_vizinhas(f) for f in faixas]
     juntou = True
     while juntou:
         juntou = False
         for i in range(len(grupos)):
             for j in range(i + 1, len(grupos)):
+                if viz[i].isdisjoint(faixas[j]):
+                    continue
                 gi, gj = grupos[i], grupos[j]
                 if any(pair_ok(a, b) for a in gi for b in gj) and not any(conflito(a, b) for a in gi for b in gj):
                     gi.extend(gj)
-                    del grupos[j]
+                    faixas[i] |= faixas[j]
+                    viz[i] = _vizinhas(faixas[i])
+                    del grupos[j], faixas[j], viz[j]
                     juntou = True
                     break
             if juntou:
@@ -2739,6 +2786,16 @@ def group_imoveis(L):
 # Referência: mediana do R$/m² dos imóveis (grupos, já sem anúncios repetidos) do mesmo condomínio
 # vistos nos últimos dias; com poucos no condomínio, a do bairro. Inclui o estoque de referência
 # (anúncios que não viraram card), para a mediana ter mais base.
+COND1 = {}  # id do anúncio -> chave_cond([anúncio]), durante group_imoveis (comparações em pares)
+
+
+def cond1(x):
+    k = id(x)
+    if k not in COND1:
+        COND1[k] = chave_cond([x])
+    return COND1[k]
+
+
 def chave_cond(g):
     """Condomínio do grupo (alvo ou outro): o mais citado nos anúncios (ver cond_rec)."""
     pesos = {}
@@ -3003,6 +3060,9 @@ def pagina(state):
 
 
 # ---------- principal ----------
+FONTES_AO_MESMO_TEMPO = 8
+FILA_DA_FONTE = {"88imoveis": "arbo"}  # mesma API (api-site.arboimoveis.com.br): uma depois da outra
+
 SCANNERS = [
     # (chave, função, recebe (known, max_pages, found)?)
     ("grupo", scan_grupo, True),
@@ -3045,8 +3105,15 @@ def main(perfil):
     tentativas = {p: t for p, t in (state.get("completa_tentativas") or {}).items() if t[0] == hoje}
     COMPLETA.clear()
     if not initial:
+        # "completa_dias": de quantos em quantos dias cada portal faz a completa (padrão 1). A OLX faz a cada
+        # 3: é a busca mais longa (~25 min) e serve só para renovar "visto"; quem some é conferido abrindo a
+        # página do anúncio depois de 7 dias sem aparecer (verificar_sumidos), e os novos vêm em toda varredura.
+        dias = CFG.get("completa_dias", {})
+        def em_dia(p):
+            f = feitas.get(p)
+            return bool(f) and (datetime.fromisoformat(hoje) - datetime.fromisoformat(f)).days < dias.get(p, 1)
         COMPLETA.update(p for p in PORTAIS_PAGINADOS
-                        if feitas.get(p) != hoje and (tentativas.get(p) or [hoje, 0])[1] < 2)
+                        if not em_dia(p) and (tentativas.get(p) or [hoje, 0])[1] < 2)
     PAGINAS["completa"] = CFG.get("max_pages_completa", 30)
     PAGINAS["normal"] = CFG["max_pages_initial"] if initial else CFG["max_pages"]
     max_pages = PAGINAS["normal"]
@@ -3060,24 +3127,42 @@ def main(perfil):
 
     found = {}
     status = {}
+    coletas = {}  # fonte -> anúncios que ela achou (cada fonte escreve só na sua; ver juntar)
 
     def rodar(chave, fn, paginado):
-        antes = set(found)
+        coleta = coletas.setdefault(chave, {})
         try:
-            st = fn(L, max_pages, found) if paginado else {chave: fn(found)}
+            st = fn(L, max_pages, coleta) if paginado else {chave: fn(coleta)}
         except Exception as e:  # noqa: BLE001 — um portal quebrado não derruba os outros
             log(f"  {chave}: erro {e!r}")
             st = {chave: "falhou"}
         status.update(st)
-        for k in set(found) - antes:
-            found[k]["origem"] = chave
 
-    for chave, fn, paginado in SCANNERS:
-        if chave in FORA_DO_AR:
-            log(f"  {chave}: pulado ({FORA_DO_AR[chave]}, visto antes nesta execução)")
-            status[chave] = "falhou"
-            continue
-        rodar(chave, fn, paginado)
+    def juntar():
+        """Junta as coletas em found na ordem de SCANNERS (resultado igual ao de rodar uma fonte por vez)."""
+        for chave, _, _ in SCANNERS:
+            for k, rec in (coletas.get(chave) or {}).items():
+                if k not in found:
+                    rec["origem"] = chave
+                    found[k] = rec
+
+    def fila(itens):
+        for chave, fn, paginado in itens:
+            if chave in FORA_DO_AR:
+                log(f"  {chave}: pulado ({FORA_DO_AR[chave]}, visto antes nesta execução)")
+                status[chave] = "falhou"
+                continue
+            rodar(chave, fn, paginado)
+
+    # Sites diferentes ao mesmo tempo; cada site continua com uma requisição por vez e as mesmas pausas.
+    # Fontes do mesmo servidor ficam na mesma fila (FILA_DA_FONTE).
+    filas = {}
+    for item in SCANNERS:
+        filas.setdefault(FILA_DA_FONTE.get(item[0], item[0]), []).append(item)
+    with ThreadPoolExecutor(max_workers=FONTES_AO_MESMO_TEMPO) as ex:
+        for f in [ex.submit(fila, itens) for itens in filas.values()]:
+            f.result()
+    juntar()
 
     # Segunda tentativa, no fim: buscas paginadas que não responderam (403/429 costuma passar depois de
     # alguns minutos, com sessão nova) e imobiliárias que falharam inteiras.
@@ -3088,9 +3173,7 @@ def main(perfil):
         log(f"  segunda tentativa: {', '.join(partes)}")
         time.sleep(20)
         nova_sessao()
-        origem_portal = {"zap": "grupo", "vivareal": "grupo", "olx": "olx", "chavesnamao": "chavesnamao"}
-        for portal, refazer in list(REPETIR):
-            antes = set(found)
+        for portal, refazer in list(REPETIR):  # refazer escreve na coleta da fonte (ver conta_busca)
             try:
                 n = refazer()
             except Exception as e:  # noqa: BLE001
@@ -3098,11 +3181,10 @@ def main(perfil):
                 n = 0
             if n:
                 BUSCAS[portal][1] += 1
-            for k in set(found) - antes:
-                found[k]["origem"] = origem_portal[portal]
         status.update({p: status_buscas(p) for p in BUSCAS})
         for chave, fn in falhas:
             rodar(chave, fn, False)
+        juntar()
     for p in COMPLETA:
         if status.get(p) == "ok":
             feitas[p] = hoje

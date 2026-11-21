@@ -3,7 +3,8 @@
     "max_pages_initial": 5,
     "max_pages": 6,
     "initial_recent_days": 7,
-    "max_age_days_new": 30
+    "max_age_days_new": 30,
+    "completa_dias": {"olx": 3}
   },
   "condominios_alvo": [
     {
