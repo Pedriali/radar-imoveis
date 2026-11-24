@@ -22,6 +22,8 @@ from pathlib import Path
 
 from curl_cffi import requests
 
+import predios
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = json.loads((ROOT / "scraper" / "config.json").read_text())
 CFG = {}  # perfil em uso: CONFIG["comum"] + CONFIG["perfis"][nome] (ver usar_perfil)
@@ -3058,9 +3060,38 @@ def enxuto(v):
     return v
 
 
+# Fichas dos prédios (scraper/predios.py): cada imóvel ganha "ficha" (o arquivo em data/pagina/predios/), que o
+# painel do prédio no mapa abre
+PREDIOS_JSON = DATA_DIR / "predios.json"
+_INDICE = []
+
+
+def fichas(imoveis):
+    if not _INDICE:
+        _INDICE.append(predios.Indice(PREDIOS_JSON))
+    idx = _INDICE[0]
+    if not idx:
+        return
+    todas = None
+    pasta = PAGINA_DIR / "predios"
+    pasta.mkdir(exist_ok=True)
+    for im in imoveis:
+        fid = idx.casar(im.get("predio"), im.get("bairro"), im.get("endereco"))
+        if not fid:
+            continue
+        nome = fid.replace("/", "-")
+        im["ficha"] = nome
+        arq = pasta / (nome + ".json")
+        if not arq.exists() or arq.stat().st_mtime < PREDIOS_JSON.stat().st_mtime:
+            if todas is None:
+                todas = json.loads(PREDIOS_JSON.read_text())["predios"]
+            gravar(arq, json.dumps(todas[fid], ensure_ascii=False, separators=(",", ":")))
+
+
 def pagina(state):
     PAGINA_DIR.mkdir(exist_ok=True)
     p = {"atualizado": state["atualizado"], "runs": state["runs"][-1:], "imoveis": enxuto(state["imoveis"])}
+    fichas(p["imoveis"])
     gravar(PAGINA_DIR / CFG["dados"], json.dumps(p, ensure_ascii=False, separators=(",", ":")))
     f = PAGINA_DIR / "resumo.json"
     try:
@@ -3390,6 +3421,7 @@ def main(perfil):
 if __name__ == "__main__":
     perfis = sys.argv[1:] or list(CONFIG["perfis"])
     falhos = []
+    predios.atualizar(PREDIOS_JSON, requests.Session(impersonate="chrome"), log)  # 1x por semana
     for p in perfis:
         try:
             if not main(p):

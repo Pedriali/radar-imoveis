@@ -155,6 +155,48 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 .paths .d em{font-style:normal;color:var(--amber)}
 .paths .go{color:var(--green)}
 
+/* painel do prédio (mapa): ficha do Diário dos Imóveis + imóveis do radar no prédio */
+dialog.pr{width:min(1060px,calc(100vw - 32px));max-height:calc(100vh - 32px)}
+.pr-b{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0}
+.pr-f,.pr-u{padding:14px 16px;min-width:0;max-height:calc(100vh - 110px);overflow:auto}
+.pr-u{border-left:1px solid var(--line)}
+.pr-b h3{font-family:var(--head);font-size:13px;letter-spacing:.1em;color:var(--green);margin:0 0 10px}
+.fatos{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.fatos div{border:1px solid var(--line);background:var(--panel2);padding:7px 9px;font-size:14px;color:var(--hi)}
+.fatos span{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);margin-bottom:2px}
+.pr-end{font-size:12.5px;color:var(--dim);margin-bottom:12px}
+.pr-btn{background:var(--panel2);border:1px solid var(--green);color:var(--green);font:13px var(--head);letter-spacing:.06em;cursor:pointer;padding:8px 12px;width:100%}
+.pr-btn:hover{background:var(--green);color:var(--bg)}
+.galeria{margin-top:10px}
+.galeria .grande{position:relative;background:#000;border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.galeria .grande img{max-width:100%;max-height:100%;object-fit:contain}
+.galeria .grande button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(5,10,7,.8);border:1px solid var(--line);color:var(--green);font-size:22px;cursor:pointer;padding:6px 11px}
+.galeria .grande .ant{left:6px} .galeria .grande .prox{right:6px}
+.galeria .grande .cont{position:absolute;bottom:6px;right:8px;font-size:11px;color:var(--dim);background:rgba(5,10,7,.8);padding:1px 6px}
+.miniaturas{display:flex;gap:6px;overflow-x:auto;padding:8px 0}
+.miniaturas img{width:74px;height:56px;object-fit:cover;border:1px solid var(--line);cursor:pointer;flex:none;opacity:.7}
+.miniaturas img.on,.miniaturas img:hover{border-color:var(--green);opacity:1}
+.pr-txt{margin-top:10px;font-size:12.5px;color:var(--dim)}
+.pr-txt summary{cursor:pointer;color:var(--fg)}
+.pr-txt pre{white-space:pre-wrap;font:inherit;margin:8px 0 0;max-height:260px;overflow:auto}
+.pr-cred{margin-top:12px;font-size:11.5px;color:var(--dim)} .pr-cred a{color:var(--green)}
+.uni{border:1px solid var(--line);background:var(--panel2);padding:10px;margin-bottom:10px}
+.uni .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.uni .pz{font-family:var(--head);color:var(--hi);font-size:17px}
+.uni .pz small{color:var(--dim);text-decoration:line-through;font-size:12px;margin-left:6px}
+.uni .sp{font-size:12.5px;color:var(--dim)}
+.uni .et{display:inline-block;font-size:10.5px;letter-spacing:.08em;padding:1px 6px;margin-right:4px;border:1px solid var(--green);color:var(--green)}
+.uni .et.re{border-color:var(--amber);color:var(--amber)} .uni .et.abx{border-color:var(--amber);color:var(--bg);background:var(--amber)}
+.uni ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.uni li a{display:inline-block;border:1px solid var(--line);padding:4px 8px;font-size:12px;text-decoration:none;color:var(--fg)}
+.uni li a:hover{border-color:var(--green);color:var(--green)}
+.uni li a em{font-style:normal;color:var(--amber)} .uni li a b{color:var(--amber);font-weight:400}
+.pr-vazio{color:var(--dim);font-size:13px}
+@media (max-width:760px){.pr-b{grid-template-columns:1fr;max-height:calc(100vh - 110px);overflow:auto}
+  .pr-f,.pr-u{max-height:none;overflow:visible}.pr-u{border-left:none;border-top:1px solid var(--line)}}
+.pop button.sec{background:#fff;color:#1a73e8;border:1px solid #dadce0}
+.pop button.sec:hover{background:#f1f3f4;box-shadow:none}
+
 /* lista × mapa */
 .vista{display:flex;border:1px solid var(--line)}
 .vista button{background:var(--panel);color:var(--dim);border:none;font-family:var(--head);font-weight:500;font-size:13px;
@@ -314,6 +356,12 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   <div class="dlg-h"><div><b id="dlg-t"></b><span>Mesmo imóvel anunciado em mais de um lugar</span></div>
   <button class="dlg-x" id="dlg-x" aria-label="Fechar">✕</button></div>
   <ul class="paths" id="dlg-l"></ul>
+</dialog>
+
+<dialog id="pr" class="pr" aria-labelledby="pr-t">
+  <div class="dlg-h"><div><b id="pr-t"></b><span id="pr-s"></span></div>
+  <button class="dlg-x" id="pr-x" aria-label="Fechar">✕</button></div>
+  <div class="pr-b"><div class="pr-f" id="pr-f"></div><div class="pr-u" id="pr-u"></div></div>
 </dialog>
 
 <dialog id="vz" aria-labelledby="vz-t">
@@ -520,8 +568,83 @@ function popup(x, i){
       <div class="ln">${specs}${x.preco && x.area ? ' · R$ ' + Math.round(x.preco / x.area).toLocaleString('pt-BR') + '/m²' : ''}</div>
       ${alertaHTML(x)}
       ${aprox && x.geo !== 'predio' ? `<div class="aprox">◌ ${aprox}</div>` : ''}
-      <button type="button" data-abre="${i}">${n > 1 ? 'VER ' + n + ' ANÚNCIOS ›' : 'ABRIR ANÚNCIO ›'}</button>
+      ${x.ficha ? `<button type="button" data-predio="${i}">VER PRÉDIO ›</button>` : ''}
+      <button type="button" data-abre="${i}"${x.ficha ? ' class="sec"' : ''}>${n > 1 ? 'VER ' + n + ' ANÚNCIOS ›' : 'ABRIR ANÚNCIO ›'}</button>
     </div></div>`;
+}
+
+// ---------- painel do prédio ----------
+// Ficha (data/pagina/predios/<ficha>.json, do Diário dos Imóveis de Londrina): fatos, plantas e fotos (carregadas
+// do próprio blog) e o texto do post; ao lado, os imóveis do radar no mesmo prédio, com os anúncios.
+const FICHAS = {};
+const imgBlog = (u, s) => u.replace('{S}', s);
+const fmtM2 = v => (v || []).map(n => n.toLocaleString('pt-BR')).join(' · ') + ' m²';
+
+function abrirPredio(x){
+  $('#pr-t').textContent = x.predio || 'Prédio';
+  $('#pr-s').textContent = 'carregando a ficha…';
+  $('#pr-f').innerHTML = ''; $('#pr-u').innerHTML = unidadesHTML(x);
+  $('#pr').showModal();
+  (FICHAS[x.ficha] ??= fetch('data/pagina/predios/' + x.ficha + '.json').then(r => { if (!r.ok) throw 0; return r.json(); }))
+    .then(f => mostrarFicha(f, x))
+    .catch(() => { delete FICHAS[x.ficha]; $('#pr-s').textContent = 'Ficha indisponível agora.'; });
+}
+
+function mostrarFicha(f, x){
+  $('#pr-s').textContent = [f.construtora, f.ano && (f.ano > new Date().getFullYear() ? 'entrega ' : '') + f.ano].filter(Boolean).join(' · ');
+  const fato = (rot, v) => v ? `<div><span>${rot}</span>${esc(String(v))}</div>` : '';
+  const imgs = f.imagens || [];
+  $('#pr-f').innerHTML = `<h3>FICHA DO PRÉDIO</h3>
+    ${f.endereco ? `<div class="pr-end">${esc(f.endereco)}</div>` : ''}
+    <div class="fatos">
+      ${fato('CONSTRUTORA', f.construtora)}${fato('ENTREGA', f.entrega)}
+      ${fato('TORRES', f.torres)}${fato('PAVIMENTOS', f.pavimentos)}${fato('APTOS POR ANDAR', f.aptos_andar)}
+      ${fato('ELEVADORES', f.elevadores)}${fato('UNIDADES', f.unidades)}
+      ${fato('ÁREA ÚTIL', f.area_util && fmtM2(f.area_util))}${fato('ÁREA TOTAL', f.area_total && fmtM2(f.area_total))}
+      ${fato('TERRENO', f.terreno && f.terreno.toLocaleString('pt-BR') + ' m²')}
+    </div>
+    ${imgs.length ? `<button type="button" class="pr-btn" id="pr-ver">VER PLANTAS E FOTOS (${imgs.length}) ▾</button><div class="galeria" id="pr-gal" hidden></div>` : ''}
+    ${f.texto ? `<details class="pr-txt"><summary>Texto completo da ficha</summary><pre>${esc(f.texto)}</pre></details>` : ''}
+    <div class="pr-cred">Ficha e imagens: <a href="${esc(f.url)}" target="_blank" rel="noopener">Diário dos Imóveis de Londrina ↗</a>${f.fonte ? ` · fonte deles: <a href="${esc(f.fonte)}" target="_blank" rel="noopener noreferrer">site da construtora ↗</a>` : ''}</div>`;
+  const ver = $('#pr-ver');
+  if (ver) ver.onclick = () => {
+    const g = $('#pr-gal'), abrir = g.hidden;
+    g.hidden = !abrir; ver.textContent = `${abrir ? 'ESCONDER' : 'VER'} PLANTAS E FOTOS (${imgs.length}) ${abrir ? '▴' : '▾'}`;
+    if (abrir && !g.innerHTML) galeria(g, imgs);
+  };
+}
+
+function galeria(g, imgs){
+  let i = 0;
+  g.innerHTML = `<div class="grande"><img alt="" referrerpolicy="no-referrer"><button type="button" class="ant" aria-label="Anterior">‹</button>
+    <button type="button" class="prox" aria-label="Próxima">›</button><span class="cont"></span></div>
+    <div class="miniaturas">${imgs.map((u, k) => `<img src="${esc(imgBlog(u, 200))}" data-k="${k}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join('')}</div>`;
+  const big = g.querySelector('.grande img'), minis = [...g.querySelectorAll('.miniaturas img')];
+  const ir = k => {
+    i = (k + imgs.length) % imgs.length;
+    big.src = imgBlog(imgs[i], 1600);
+    big.onclick = () => window.open(imgBlog(imgs[i], 0), '_blank', 'noopener');
+    g.querySelector('.cont').textContent = (i + 1) + ' / ' + imgs.length;
+    minis.forEach((m, k2) => m.classList.toggle('on', k2 === i));
+    minis[i].scrollIntoView({block: 'nearest', inline: 'nearest'});
+  };
+  g.querySelector('.ant').onclick = () => ir(i - 1);
+  g.querySelector('.prox').onclick = () => ir(i + 1);
+  g.querySelector('.miniaturas').onclick = e => { const m = e.target.closest('img'); if (m) ir(+m.dataset.k); };
+  ir(0);
+}
+
+function unidadesHTML(x){
+  const us = DATA.imoveis.filter(y => y.ficha === x.ficha).sort((a, b) => (a.preco || 9e12) - (b.preco || 9e12));
+  return `<h3>NO RADAR AGORA · ${us.length} ${us.length === 1 ? ABA.item.toUpperCase() : 'IMÓVEIS'}</h3>` + (us.map(y => {
+    const old = y.preco_anterior && y.preco && y.preco_anterior > y.preco ? `<small>${fmtBRL(y.preco_anterior)}</small>` : '';
+    const ets = [y.detectado === LAST ? '<span class="et">NOVO</span>' : '', reAnuncio(y) ? '<span class="et re">NOVO ANÚNCIO</span>' : '',
+                 ABA.media && y.abaixo && !y.media?.suspeito ? `<span class="et abx">▼ ${-y.media.pct}%</span>` : ''].join('');
+    const fontes = [...y.fontes].sort((a, b) => !!b.novo - !!a.novo);
+    return `<div class="uni"><div class="top"><span class="pz">${fmtBRL(y.preco)}${old}</span><span>${ets}</span></div>
+      <div class="sp">${y.area ?? '–'} m² · ${y.quartos ?? '–'} qts · ${y.vagas ?? '–'} vagas${y.preco && y.area ? ' · R$ ' + Math.round(y.preco / y.area).toLocaleString('pt-BR') + '/m²' : ''}</div>
+      <ul>${fontes.map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">${f.novo && reAnuncio(y) ? '<b>NOVO</b> ' : ''}${PORTAL[f.portal] || f.portal.toUpperCase()} · <em>${fmtBRL(f.preco)}</em> ↗</a></li>`).join('')}</ul></div>`;
+  }).join('') || '<div class="pr-vazio">Nenhum imóvel deste prédio no radar agora.</div>');
 }
 
 function desenharMapa(lista, q){
@@ -711,6 +834,10 @@ mostrar(ABA).then(() => {
     document.addEventListener('click', pick);
     document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('card')) { e.preventDefault(); pick(e); } });
     $('#dlg-x').addEventListener('click', () => $('#dlg').close());
+    document.addEventListener('click', e => { const b = e.target.closest('[data-predio]'); if (b) abrirPredio(SHOWN[+b.dataset.predio]); });
+    $('#pr-x').addEventListener('click', () => $('#pr').close());
+    $('#pr').addEventListener('click', e => { if (e.target === $('#pr')) $('#pr').close(); });
+    $('#pr').addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const b = $('#pr .galeria ' + (e.key === 'ArrowRight' ? '.prox' : '.ant')); if (b) b.click(); } });
     $('#dlg').addEventListener('click', e => { if (e.target === $('#dlg')) $('#dlg').close(); });
 });
 </script>
