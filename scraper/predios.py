@@ -16,6 +16,7 @@ import re
 import time
 import unicodedata
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 BLOG = "https://www.diariodosimoveisdelondrina.com.br"
 FEED = BLOG + "/feeds/posts/default?alt=json&max-results=150&start-index={}"
@@ -29,16 +30,23 @@ def _norm(s):
 
 
 # Palavras que não distinguem prédios ("Ed. Casa Palhano" = "Casa Palhano" = "Edifício Casa Palhano")
-_GENERICAS = r"\b(ed|edif|edificio|edificios|resid|residencial|residence|residences|cond|condominio|condominios|" \
-             r"horizontal|vertical|torre|torres|the|le|la|les|di|de|do|da|dos|das|del|l|e|predio|apto|apartamentos|" \
-             r"plaenge|yoshii|vectra|galmo|mobiliado|mobiliada)\b"
+_GENERICAS = r"\b(ed|edif|edificio|edificios|resid|res|residencial|residence|residences|residente|cond|condominio|condominios|" \
+             r"horizontal|vertical|torre|torres|the|le|la|les|di|de|do|da|dos|das|del|l|e|o|predio|apto|apartamentos|" \
+             r"plaenge|yoshii|vectra|galmo|mobiliado|mobiliada|resort|home|clube|club|londrina|implantacao|lancamento)\b"
+_TROCAS = [(r"\bparque\b", "park"), (r"\biii\b", "3"), (r"\bii\b", "2"), (r"\bi\b", "1"), (r"&", " "),
+           (r"\bjacarandas\b", "jacaranda")]
 
 
 def chave(nome):
     s = _norm(nome).replace("'", " ").replace("’", " ")
     s = re.sub(r"\(.*?\)", " ", s)
-    s = re.sub(_GENERICAS, " ", s)
-    return re.sub(r"[^a-z0-9]", "", s)
+    s = re.sub(r"\s+-\s+(implanta[çc]ao|lan[çc]amento)\b.*", " ", s)
+    for de, para in _TROCAS:
+        s = re.sub(de, para, s)
+    k = re.sub(r"[^a-z0-9]", "", re.sub(_GENERICAS, " ", s))
+    if len(k) < 3:  # o nome é só palavras genéricas ("La Torre"): fica sem tirar o artigo/torre
+        k = re.sub(r"[^a-z0-9]", "", re.sub(r"\b(ed|edif|edificio|cond|condominio|residencial)\b", " ", s))
+    return k
 
 
 def _texto(conteudo):
@@ -175,27 +183,72 @@ def _palavras(s):
     return {w for w in re.findall(r"[a-z0-9]+", _norm(s)) if len(w) >= 4 and w not in _NAO_LOCAL}
 
 
+# Prédios fora do blog (os mais novos): fichas tiradas à mão dos sites das construtoras, com "aliases" (outros
+# nomes nos anúncios) e "url" da página usada. Entram junto com as do blog, com id "construtora/<nome>".
+EXTRA = Path(__file__).with_name("predios_extra.json")
+
+
+def carregar(path):
+    try:
+        predios = json.loads(path.read_text())["predios"]
+    except (OSError, ValueError, KeyError):
+        predios = {}
+    try:
+        extras = json.loads(EXTRA.read_text())["predios"]
+    except (OSError, ValueError, KeyError):
+        extras = []
+    for e in extras:
+        f = dict(e, origem="construtora")
+        f["id"] = "construtora/" + re.sub(r"[^a-z0-9]+", "-", _norm(f["nome"])).strip("-")
+        predios[f["id"]] = f
+    return predios
+
+
+def modificado(path):
+    """Quando as fichas mudaram pela última vez (blog ou extras)."""
+    return max((p.stat().st_mtime for p in (path, EXTRA) if p.exists()), default=0)
+
+
+_TIPO_RUA = r"^(rua|r|avenida|av|alameda|al|travessa|tv|rodovia|rod|estrada)\.?\s+"
+
+
+def _rua_num(end):
+    """"Rua Caracas, 1000 - Gleba Palhano" -> "caracas|1000" (sem número: None)."""
+    m = re.match(r"\s*([^,\d]+?)\s*,?\s*(?:n[º°o.]*\s*)?(\d{1,5})\b", _norm(end or ""))
+    if not m:
+        return None
+    rua = re.sub(_TIPO_RUA, "", m.group(1).strip())
+    rua = re.sub(r"\b(doutor|dr|professor|prof|prefeito|engenheiro|eng|madre|padre|reverendo|senador|deputado|dom)\b\.?", " ", rua)
+    rua = re.sub(r"[^a-z]", "", rua)
+    return f"{rua}|{int(m.group(2))}" if len(rua) >= 4 else None
+
+
 class Indice:
     """Nome de prédio do radar -> id da ficha. Igual pela chave; senão (começo do nome igual, ou nome parecido —
     erro de digitação nos anúncios), só com o bairro ou a rua do imóvel no endereço/texto da ficha, e com uma
     ficha só. Posts repetidos: fica o mais completo; outra cidade só se não houver de Londrina."""
 
     def __init__(self, path):
-        try:
-            predios = json.loads(path.read_text())["predios"]
-        except (OSError, ValueError, KeyError):
-            predios = {}
+        predios = carregar(path)
         por = {}
         for f in predios.values():
             if not any(f.get(c) for c in ("construtora", "entrega", "pavimentos", "area_util", "torres", "aptos_andar",
                                           "unidades", "terreno")) \
                     and not re.match(r"(?i)(ed|edif|cond|resid|loteamento|jardim|parque|vila|residencial)\b", f.get("nome", "")):
                 continue  # post que não é de um prédio (notícia, artigo)
-            k = chave(f.get("nome"))
-            if len(k) >= 3:
-                por.setdefault(k, []).append(f)
-        peso = lambda f: (not f.get("outra_cidade"), len(f.get("imagens", [])) + len(f) * 3)
+            for nome in [f.get("nome")] + f.get("aliases", []):
+                k = chave(nome)
+                if len(k) >= 3:
+                    por.setdefault(k, []).append(f)
+        peso = lambda f: (f.get("origem") == "construtora", not f.get("outra_cidade"), len(f.get("imagens", [])) + len(f) * 3)
         self.chaves = {k: max(v, key=peso)["id"] for k, v in por.items()}
+        # rua + número -> ficha (para imóvel sem nome de prédio); endereço repetido em mais de uma ficha não vale
+        ends = {}
+        for k, i in self.chaves.items():
+            e = _rua_num(predios[i].get("endereco"))
+            if e:
+                ends.setdefault(e, set()).add(i)
+        self.enderecos = {e: v.pop() for e, v in ends.items() if len(v) == 1}
         self.local = {f["id"]: _palavras((f.get("endereco") or "") + " " + (f.get("texto") or "")[:400])
                       for f in predios.values()}
         self.cache = {}
@@ -205,7 +258,7 @@ class Indice:
 
     def casar(self, nome, bairro=None, endereco=None):
         if not nome:
-            return None
+            return self.enderecos.get(_rua_num(endereco))
         rua = (endereco or "").split(",")[0]
         ck = (nome, bairro, rua)
         if ck in self.cache:
@@ -217,9 +270,13 @@ class Indice:
             ctx_bairro = _palavras(bairro) | {"palhano", "centro"}
             perto = lambda i: bool(ctx & self.local.get(i, set()))
             # começo igual: nome curto (Arch, Spot) só se o resto for o bairro ("Arch Palhano", "Spot Centro")
-            cand = {i for c, i in self.chaves.items() if len(c) >= 4 and (c.startswith(k) or k.startswith(c))
+            cand = {i for c, i in self.chaves.items() if len(c) >= 3 and (c.startswith(k) or k.startswith(c))
                     and (min(len(c), len(k)) >= 6 or (c[len(k):] or k[len(c):]) in ctx_bairro)}
             if not cand:
+                quase = difflib.get_close_matches(k, self.chaves, n=2, cutoff=0.93)
+                if len(quase) == 1 and len(k) >= 8:  # quase igual (uma letra): não precisa do bairro
+                    self.cache[ck] = self.chaves[quase[0]]
+                    return self.cache[ck]
                 cand = {self.chaves[c] for c in difflib.get_close_matches(k, self.chaves, n=3, cutoff=0.86)}
             cand = {i for i in cand if perto(i)}
             achou = cand.pop() if len(cand) == 1 else None

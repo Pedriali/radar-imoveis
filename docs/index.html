@@ -176,6 +176,8 @@ dialog.pr{width:min(1060px,calc(100vw - 32px));max-height:calc(100vh - 32px)}
 .miniaturas{display:flex;gap:6px;overflow-x:auto;padding:8px 0}
 .miniaturas img{width:74px;height:56px;object-fit:cover;border:1px solid var(--line);cursor:pointer;flex:none;opacity:.7}
 .miniaturas img.on,.miniaturas img:hover{border-color:var(--green);opacity:1}
+.pr-lazer{font-size:12.5px;color:var(--fg);margin-bottom:12px;line-height:1.6}
+.pr-lazer span{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim)}
 .pr-txt{margin-top:10px;font-size:12.5px;color:var(--dim)}
 .pr-txt summary{cursor:pointer;color:var(--fg)}
 .pr-txt pre{white-space:pre-wrap;font:inherit;margin:8px 0 0;max-height:260px;overflow:auto}
@@ -591,6 +593,7 @@ function abrirPredio(x){
 }
 
 function mostrarFicha(f, x){
+  if (!x.predio && f.nome) $('#pr-t').textContent = f.nome.replace(/^(ED\.?|EDIF[ÍI]CIO|EDIF\.|COND\.?|CONDOM[ÍI]NIO)\s+/i, '');
   $('#pr-s').textContent = [f.construtora, f.ano && (f.ano > new Date().getFullYear() ? 'entrega ' : '') + f.ano].filter(Boolean).join(' · ');
   const fato = (rot, v) => v ? `<div><span>${rot}</span>${esc(String(v))}</div>` : '';
   const imgs = f.imagens || [];
@@ -603,9 +606,12 @@ function mostrarFicha(f, x){
       ${fato('ÁREA ÚTIL', f.area_util && fmtM2(f.area_util))}${fato('ÁREA TOTAL', f.area_total && fmtM2(f.area_total))}
       ${fato('TERRENO', f.terreno && f.terreno.toLocaleString('pt-BR') + ' m²')}
     </div>
+    ${f.lazer?.length ? `<div class="pr-lazer"><span>LAZER E ÁREA COMUM</span>${f.lazer.map(esc).join(' · ')}</div>` : ''}
     ${imgs.length ? `<button type="button" class="pr-btn" id="pr-ver">VER PLANTAS E FOTOS (${imgs.length}) ▾</button><div class="galeria" id="pr-gal" hidden></div>` : ''}
     ${f.texto ? `<details class="pr-txt"><summary>Texto completo da ficha</summary><pre>${esc(f.texto)}</pre></details>` : ''}
-    <div class="pr-cred">Ficha e imagens: <a href="${esc(f.url)}" target="_blank" rel="noopener">Diário dos Imóveis de Londrina ↗</a>${f.fonte ? ` · fonte deles: <a href="${esc(f.fonte)}" target="_blank" rel="noopener noreferrer">site da construtora ↗</a>` : ''}</div>`;
+    <div class="pr-cred">${f.origem === 'construtora'
+      ? `Ficha e imagens: <a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">site da construtora ↗</a>`
+      : `Ficha e imagens: <a href="${esc(f.url)}" target="_blank" rel="noopener">Diário dos Imóveis de Londrina ↗</a>${f.fonte ? ` · fonte deles: <a href="${esc(f.fonte)}" target="_blank" rel="noopener noreferrer">site da construtora ↗</a>` : ''}`}</div>`;
   const ver = $('#pr-ver');
   if (ver) ver.onclick = () => {
     const g = $('#pr-gal'), abrir = g.hidden;

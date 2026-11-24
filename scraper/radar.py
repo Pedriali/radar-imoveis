@@ -3082,9 +3082,9 @@ def fichas(imoveis):
         nome = fid.replace("/", "-")
         im["ficha"] = nome
         arq = pasta / (nome + ".json")
-        if not arq.exists() or arq.stat().st_mtime < PREDIOS_JSON.stat().st_mtime:
+        if not arq.exists() or arq.stat().st_mtime < predios.modificado(PREDIOS_JSON):
             if todas is None:
-                todas = json.loads(PREDIOS_JSON.read_text())["predios"]
+                todas = predios.carregar(PREDIOS_JSON)
             gravar(arq, json.dumps(todas[fid], ensure_ascii=False, separators=(",", ":")))
 
 
