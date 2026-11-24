@@ -387,6 +387,9 @@ FETCH_404 = set()  # URLs que responderam 404 nesta varredura (anúncio retirado
 # uns 10 minutos por execução em tentativas que não tinham como dar certo.
 FORA_DO_AR = {}
 DESAFIO = set()  # hosts que responderam com o desafio do Cloudflare ("Just a moment...") nesta execução
+# Fontes que bloqueiam robôs de propósito (desafio do Cloudflare): status "bloqueado", não "falhou" — a página
+# mostra em cinza, à parte das falhas de verdade (não se tenta passar pelo desafio)
+BLOQUEADO = set()
 
 
 def desafio_cloudflare(r):
@@ -1256,6 +1259,8 @@ def scan_santamerica(found):
         if not ok_pages:
             if urllib.parse.urlsplit(SA_BASE).netloc in DESAFIO:
                 FORA_DO_AR["santamerica"] = "desafio do Cloudflare nas páginas de busca"
+                BLOQUEADO.add("santamerica")
+                return "bloqueado"
             return "falhou"
         log(f"  santamerica: {len(cards)} cards na busca")
         n = 0
@@ -3150,7 +3155,7 @@ def main(perfil):
         for chave, fn, paginado in itens:
             if chave in FORA_DO_AR:
                 log(f"  {chave}: pulado ({FORA_DO_AR[chave]}, visto antes nesta execução)")
-                status[chave] = "falhou"
+                status[chave] = "bloqueado" if chave in BLOQUEADO else "falhou"
                 continue
             rodar(chave, fn, paginado)
 

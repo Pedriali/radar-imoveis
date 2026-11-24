@@ -66,6 +66,7 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .lamp.bad{background:var(--red);box-shadow:0 0 6px var(--red)}
 .st-ok{color:var(--green)} .st-bad{color:var(--red)} .st-warn{color:var(--amber)}
 .lamp.warn{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.st-off{color:var(--dim)} .lamp.off{background:var(--dim);box-shadow:none}
 
 /* abas */
 .tabs{display:flex;gap:0;margin-top:18px;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
@@ -568,6 +569,8 @@ function telemetry(){
   const st = Object.entries(r.portais).filter(([, v]) => v !== 'ok')
     .map(([k, v]) => v === 'parcial'
       ? `<span class="st-warn"><i class="lamp warn"></i>${PORTAL[k]||k}: PARCIAL</span>`
+      : v === 'bloqueado'
+      ? `<span class="st-off" title="O site bloqueia buscas automáticas"><i class="lamp off"></i>${PORTAL[k]||k}: BLOQUEADO</span>`
       : `<span class="st-bad"><i class="lamp bad"></i>${PORTAL[k]||k}: FALHOU</span>`).join('');
   const total = DATA.imoveis.length;
   $('#tele').innerHTML = `<span>ÚLTIMA VARREDURA <b>${fmtDT(r.em)}</b></span><span>PRÓXIMA <b>${fmtDT(nextRun())}</b></span><span>ALVOS <b>${total}</b></span>${st}`;
