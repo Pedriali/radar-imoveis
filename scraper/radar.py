@@ -2764,13 +2764,20 @@ def group_imoveis(L):
         datas = [x["publicado"] for x in g if x.get("publicado")]
         im["publicado"] = min(datas) if datas else None
         im["detectado"] = min(x["detectado"] for x in vis)
+        # Imóvel já conhecido que ganhou anúncio depois (outro corretor, anúncio refeito): a página mostra
+        # "NOVO ANÚNCIO" — sem isso a movimentação do dia ficava invisível (o imóvel não é novo)
+        ultimo = max(x["detectado"] for x in vis)
+        if ultimo > im["detectado"]:
+            im["anuncio_novo"] = ultimo
         fontes, vistos = [], set()
         for x in vis + [x for x in g if not x.get("visivel")]:
             for portal, url in x["links"].items():
                 if url and url not in vistos:
                     vistos.add(url)
                     fontes.append({"portal": portal, "url": url, "preco": x.get("preco"), "area": x.get("area"),
-                                   "area_anunciada": x.get("area_anunciada")})
+                                   "area_anunciada": x.get("area_anunciada"),
+                                   "novo": bool(x.get("visivel") and x["detectado"] > im["detectado"]
+                                                and x["detectado"] >= iso_dias_atras(3)) or None})
         im["fontes"] = fontes
         # sem nome ou com o do bairro (Vivendas do Arvoredo); prédios-alvo sempre com o nome da lista
         if cond and (apto() or alvo(im["predio"]) != cond):

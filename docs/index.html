@@ -110,6 +110,8 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:.14em;margin:0;font-si
 .tag,.stamp{position:absolute;background:rgba(5,10,7,.85);border:1px solid var(--green);color:var(--green);
   font-size:11px;letter-spacing:.12em;padding:2px 6px}
 .stamp{top:8px;left:8px;background:var(--green);color:var(--bg);box-shadow:0 0 10px rgba(57,255,136,.5)}
+.stamp.re{background:var(--amber);border-color:var(--amber);box-shadow:none}
+.novo-anuncio{color:var(--amber);font-weight:700;margin-right:4px}
 .tag.age{top:8px;right:8px;border-color:var(--amber);color:var(--amber)}
 .tag.dup{bottom:8px;left:8px}
 .tag.tipo{bottom:8px;right:8px;border-color:var(--fg);color:var(--fg)}
@@ -287,6 +289,10 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
     <h2><span class="t">ALVOS NOVOS</span> <span class="n" id="n-new">0</span></h2>
     <div class="grid" id="g-new"></div>
   </section>
+  <section class="sec" id="sec-re">
+    <h2><span class="t">NOVOS ANÚNCIOS DE IMÓVEIS JÁ VISTOS</span> <span class="n" id="n-re">0</span></h2>
+    <div class="grid" id="g-re"></div>
+  </section>
   <section class="sec old" id="sec-old">
     <h2><span class="t">ALVOS ANTERIORES</span><span class="n" id="n-old">0</span></h2>
     <div class="grid" id="g-old"></div>
@@ -295,7 +301,7 @@ footer{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(
   <footer>
     Varredura automática 3× ao dia (09h, 14h e 20h, horário de Brasília) em Zap Imóveis, Viva Real, OLX, Chaves na Mão, Loft e Arbo (dezenas de imobiliárias de Londrina) e nas imobiliárias Raul Fulgêncio, Gleba Imóveis, Santamerica, Perez, Catuaí, Inglaterra, Aurora Imobi, Casttelo, Monaco, Humaitá, Cruciol, Cube Imóveis, 88 Imóveis, X5 Imóveis e Galmo. Imóvel que saiu do ar (página do anúncio removida, ou sumiu da lista da imobiliária) some da página.<br>
     O mesmo imóvel anunciado em vários lugares aparece uma vez só; clique no card para ver todos os anúncios.<br>
-    “Novos” = detectados na última varredura. Dias anunciado = desde a data de publicação informada pelo portal.<br>
+    “Novos” = detectados na última varredura. “Novo anúncio” = imóvel que o radar já conhecia e ganhou um anúncio nos últimos 3 dias (outro corretor, anúncio refeito); no card, o anúncio novo vem marcado. Dias anunciado = desde a data de publicação informada pelo portal.<br>
     Terrenos: “abaixo da média” = R$/m² pelo menos 15% menor que a mediana dos terrenos do mesmo condomínio (ou do bairro, quando o condomínio tem menos de 4) vistos nos últimos 30 dias. Terreno maior costuma ter R$/m² menor.<br>
     Apartamentos: mesma regra, comparando com outros apartamentos do mesmo prédio (pelo menos 3) ou, se não houver, do bairro, de área parecida (até 1,5× maior ou menor). Abaixo da média do bairro pode ser só prédio mais antigo ou mais simples.<br>
     Centro: só compara com o mesmo prédio (o bairro mistura prédios novos e antigos).<br>
@@ -384,7 +390,7 @@ function card(x, i){
     <div class="thumb">
       <div class="noimg">SEM IMAGEM</div>
       ${x.foto ? `<img src="${esc(x.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
-      ${x.detectado === LAST ? '<span class="stamp">NOVO</span>' : ''}
+      ${x.detectado === LAST ? '<span class="stamp">NOVO</span>' : reAnuncio(x) ? '<span class="stamp re">NOVO ANÚNCIO</span>' : ''}
       <span class="tag age" title="Dias anunciado">⌛ ${ageTxt}</span>
       ${n > 1 ? `<span class="tag dup">${n} ANÚNCIOS</span>` : ''}
       ${x.tipo && ABA.tipos ? `<span class="tag tipo">${x.tipo === 'terreno' ? 'TERRENO' : 'CASA'}</span>` : ''}
@@ -411,13 +417,17 @@ function alertaHTML(x){
     : `<div class="media">${md.pct >= 0 ? '+' : ''}${md.pct}% vs média de ${esc(md.base)} (${brl(md.ref_m2)}/m², ${md.n} ${ABA.media})</div>`;
 }
 
+// Imóvel já conhecido com anúncio novo nos últimos 3 dias (até a última varredura)
+const reAnuncio = x => !!(x.anuncio_novo && LAST && Date.parse(LAST) - Date.parse(x.anuncio_novo) < 3 * 864e5);
+
 let SHOWN = [];
 function open_(x){
   if (x.fontes.length === 1) { window.open(x.fontes[0].url, '_blank', 'noopener'); return; }
   $('#dlg-t').textContent = x.predio || [x.endereco, x.bairro].filter(Boolean).join(' · ') || 'Imóvel';
-  $('#dlg-l').innerHTML = x.fontes.map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
+  const fontes = reAnuncio(x) ? [...x.fontes].sort((a, b) => !!b.novo - !!a.novo) : x.fontes;  // anúncio novo no topo
+  $('#dlg-l').innerHTML = fontes.map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
     <span class="p">${PORTAL[f.portal]||f.portal.toUpperCase()}</span>
-    <span class="d"><em>${fmtBRL(f.preco)}</em> · ${f.area ?? '–'} m²${f.area_anunciada ? ` útil (anúncio diz ${f.area_anunciada})` : ''}</span><span class="go">↗</span></a></li>`).join('');
+    <span class="d">${f.novo && reAnuncio(x) ? '<span class="novo-anuncio">NOVO</span> ' : ''}<em>${fmtBRL(f.preco)}</em> · ${f.area ?? '–'} m²${f.area_anunciada ? ` útil (anúncio diz ${f.area_anunciada})` : ''}</span><span class="go">↗</span></a></li>`).join('');
   $('#dlg').showModal();
 }
 
@@ -438,15 +448,19 @@ function render(){
   const hit = x => (!tipo || x.tipo === tipo) && (!q || norm([x.predio, x.bairro, x.endereco, x.titulo].join(' ')).includes(q));
   const sorter = SORTS[$('#sort').value];
   const nw = all.filter(x => x.detectado === LAST && hit(x)).sort(sorter);
-  const od = all.filter(x => x.detectado !== LAST && hit(x)).sort(sorter);
-  $('#n-new').textContent = nw.length; $('#n-old').textContent = od.length;
-  SHOWN = nw.concat(od);
+  const re = all.filter(x => x.detectado !== LAST && reAnuncio(x) && hit(x))
+    .sort($('#sort').value === 'rec' ? (a,b) => b.anuncio_novo.localeCompare(a.anuncio_novo) : sorter);
+  const od = all.filter(x => x.detectado !== LAST && !reAnuncio(x) && hit(x)).sort(sorter);
+  $('#n-new').textContent = nw.length; $('#n-re').textContent = re.length; $('#n-old').textContent = od.length;
+  SHOWN = nw.concat(re, od);
   const mapa = VISTA === 'mapa';
   $('#sec-map').hidden = !mapa;
   $('#sec-new').hidden = $('#sec-old').hidden = mapa;
+  $('#sec-re').hidden = mapa || !re.length;
   if (mapa) { desenharMapa(SHOWN, q); return; }
   $('#g-new').innerHTML = nw.map((x, i) => card(x, i)).join('') || `<div class="empty">${q ? 'Nenhum alvo novo corresponde à busca.' : 'Nenhum alvo novo detectado na última varredura.'}</div>`;
-  $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
+  $('#g-re').innerHTML = re.map((x, i) => card(x, nw.length + i)).join('');
+  $('#g-old').innerHTML = od.map((x, i) => card(x, nw.length + re.length + i)).join('') || `<div class="empty">${q ? 'Nenhum alvo anterior corresponde à busca.' : 'Ainda não há alvos de varreduras anteriores.'}</div>`;
 }
 
 // ---------- mapa: os imóveis como alvos na tela do radar ----------
