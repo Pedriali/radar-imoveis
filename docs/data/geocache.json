@@ -173,7 +173,7 @@
 ],
 "local:Royal Forest": [
 -23.347029,
--51.212366
+-51.211067
 ],
 "local:Royal Golf": [
 -23.349134,
@@ -707,6 +707,10 @@
 -23.312705,
 -51.1671
 ],
+"local:centro|belo horizonte|99": [
+-23.304978,
+-51.166386
+],
 "local:centro|belohorizonte": [
 -23.307582,
 -51.166548
@@ -812,8 +816,8 @@
 -51.163912
 ],
 "local:centro|casablanca": [
--23.312006,
--51.169073
+-23.312188,
+-51.166886
 ],
 "local:centro|casahorizonte": [
 -23.311521,
@@ -1056,8 +1060,8 @@
 -51.17324
 ],
 "local:centro|fernando de noronha|651": [
--23.3079,
--51.16899
+-23.307706,
+-51.169111
 ],
 "local:centro|fernaodemagalhaes": [
 -23.310397,
@@ -1140,8 +1144,8 @@
 -51.168908
 ],
 "local:centro|graopara": [
--23.312918,
--51.15939
+-23.314357,
+-51.160779
 ],
 "local:centro|greenpark": [
 -23.31157,
@@ -1655,6 +1659,10 @@
 -23.315779,
 -51.161549
 ],
+"local:centro|paranagua": [
+-23.311527,
+-51.168016
+],
 "local:centro|paranaguasoho": [
 -23.310696,
 -51.169335
@@ -1680,8 +1688,8 @@
 -51.169047
 ],
 "local:centro|paranagua|689": [
--23.31102,
--51.168888
+-23.311039,
+-51.169776
 ],
 "local:centro|paranagua|800": [
 -23.312655,
@@ -1772,8 +1780,8 @@
 -51.162995
 ],
 "local:centro|petropolis": [
--23.32648,
--51.15398
+-23.326487,
+-51.153967
 ],
 "local:centro|piaui|102": [
 -23.31315,
@@ -1979,6 +1987,10 @@
 -23.30972,
 -51.169073
 ],
+"local:centro|residence": [
+-23.317882,
+-51.162114
+],
 "local:centro|residencial": [
 -23.316315,
 -51.161678
@@ -2160,8 +2172,8 @@
 -51.168118
 ],
 "local:centro|santos|177": [
--23.307242,
--51.167781
+-23.306769,
+-51.168175
 ],
 "local:centro|santos|250": [
 -23.308048,
@@ -3289,7 +3301,7 @@
 ],
 "local:palhano|lumini": [
 -23.334141,
--51.179286
+-51.179715
 ],
 "local:palhano|luminiglebapalhano": [
 -23.334284,
@@ -4174,6 +4186,7 @@
 "predio:catuai parque residence": null,
 "predio:cenario- apartamento a": null,
 "predio:cenario- apartamento a venda": null,
+"predio:centro comercial londrina localizado": null,
 "predio:cessao de direitos": null,
 "predio:chatelle": [
 -23.306433,
@@ -4435,6 +4448,7 @@
 "predio:matisse residen": null,
 "predio:maximus": null,
 "predio:maximus aceita": null,
+"predio:maximus se": null,
 "predio:mayfair": null,
 "predio:mayson veyron": null,
 "predio:mediterranee centro de londrinamore": null,
@@ -4564,6 +4578,7 @@
 -51.156953,
 "building"
 ],
+"predio:renoir": null,
 "predio:res. valter f. pruner": null,
 "predio:residence du soleil": [
 -23.317874,
