@@ -764,8 +764,8 @@
 -51.1681
 ],
 "local:centro|buenosayres": [
--23.312914,
--51.167891
+-23.308633,
+-51.167976
 ],
 "local:centro|buriti": [
 -23.311465,
@@ -900,8 +900,8 @@
 -51.161515
 ],
 "local:centro|comodoro": [
--23.312245,
--51.166812
+-23.312705,
+-51.166816
 ],
 "local:centro|concorde": [
 -23.316022,
@@ -910,6 +910,10 @@
 "local:centro|concordeuma": [
 -23.316022,
 -51.160432
+],
+"local:centro|condominio": [
+-23.31404,
+-51.1486
 ],
 "local:centro|conjuntofolhadelondrinablocoangelica": [
 -23.314392,
@@ -1272,8 +1276,8 @@
 -51.167593
 ],
 "local:centro|jardin": [
--23.314665,
--51.169081
+-23.314916,
+-51.169073
 ],
 "local:centro|joaodinardi": [
 -23.31097,
@@ -1320,8 +1324,8 @@
 -51.158312
 ],
 "local:centro|lilian": [
--23.30914,
--51.16291
+-23.308955,
+-51.162815
 ],
 "local:centro|lordlovat": [
 -23.31355,
@@ -1356,8 +1360,8 @@
 -51.157247
 ],
 "local:centro|maisonchamonix": [
--23.31818,
--51.162479
+-23.318329,
+-51.162834
 ],
 "local:centro|maisondetoulon": [
 -23.30722,
@@ -1490,6 +1494,10 @@
 "local:centro|maximus": [
 -23.3213,
 -51.15278
+],
+"local:centro|maximusreformadoearejado": [
+-23.32357,
+-51.15265
 ],
 "local:centro|maximusresidence": [
 -23.318843,
@@ -1660,8 +1668,8 @@
 -51.16686
 ],
 "local:centro|palmares": [
--23.307089,
--51.159798
+-23.303269,
+-51.160104
 ],
 "local:centro|para": [
 -23.314196,
@@ -1852,8 +1860,8 @@
 -51.166365
 ],
 "local:centro|pontevedra": [
--23.314419,
--51.162941
+-23.314376,
+-51.166533
 ],
 "local:centro|pontevedraexcelente": [
 -23.314273,
@@ -2107,6 +2115,10 @@
 -23.32135,
 -51.16159
 ],
+"local:centro|sainttropez": [
+-23.30972,
+-51.169073
+],
 "local:centro|salvadordali": [
 -23.314768,
 -51.16381
@@ -2149,7 +2161,7 @@
 ],
 "local:centro|santos1250": [
 -23.31699,
--51.168051
+-51.168
 ],
 "local:centro|santos125085": [
 -23.316975,
@@ -2180,8 +2192,8 @@
 -51.16812
 ],
 "local:centro|santos|1250": [
--23.316975,
--51.167922
+-23.317023,
+-51.168005
 ],
 "local:centro|santos|1259": [
 -23.317096,
@@ -2348,8 +2360,8 @@
 -51.166422
 ],
 "local:centro|solariojardim": [
--23.313059,
--51.169988
+-23.313053,
+-51.170095
 ],
 "local:centro|solariojardimapartamento": [
 -23.313064,
@@ -2392,7 +2404,7 @@
 -51.167726
 ],
 "local:centro|solarsainthonore": [
--23.312951,
+-23.312934,
 -51.169073
 ],
 "local:centro|solarsainthonore106": [
@@ -3286,6 +3298,10 @@
 "local:palhano|joao wycliff|420": [
 -23.331818,
 -51.174151
+],
+"local:palhano|joao wyclif|405": [
+-23.332179,
+-51.174766
 ],
 "local:palhano|joao wyclif|420": [
 -23.331818,
@@ -4314,6 +4330,11 @@
 "predio:fontaine blanc i 3 suites": null,
 "predio:frederico lundgreen": null,
 "predio:frederico lundgren": [
+-23.310537,
+-51.158691,
+"building"
+],
+"predio:frederico lundgren_ centro": [
 -23.310537,
 -51.158691,
 "building"
