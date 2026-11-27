@@ -248,7 +248,7 @@
 -51.187631
 ],
 "local:alphavilleimbuias": [
--23.348681,
+-23.348771,
 -51.186589
 ],
 "local:alphavillelondrina2": [
@@ -674,6 +674,10 @@
 "local:centro|belo horizonte|1037": [
 -23.31349,
 -51.166443
+],
+"local:centro|belo horizonte|111": [
+-23.307582,
+-51.166548
 ],
 "local:centro|belo horizonte|1445": [
 -23.317233,
@@ -1548,8 +1552,8 @@
 -51.152422
 ],
 "local:centro|montecarlo": [
--23.313788,
--51.160416
+-23.310212,
+-51.163037
 ],
 "local:centro|montecarloapartamento": [
 -23.306637,
@@ -2001,7 +2005,7 @@
 ],
 "local:centro|pugesi": [
 -23.316567,
--51.156137
+-51.156195
 ],
 "local:centro|pugesimatogrosso": [
 -23.316699,
@@ -2436,8 +2440,8 @@
 -51.168281
 ],
 "local:centro|spotcentroresidence": [
--23.306493,
--51.167286
+-23.306504,
+-51.167735
 ],
 "local:centro|spotcentroresidencial": [
 -23.306629,
@@ -2816,7 +2820,7 @@
 -51.202823
 ],
 "local:goldenhill": [
--23.338013,
+-23.338257,
 -51.214076
 ],
 "local:goldenhillpermuta": [
@@ -3600,8 +3604,8 @@
 -51.182701
 ],
 "local:palhano|vertresidence": [
--23.328764,
--51.182701
+-23.328848,
+-51.18276
 ],
 "local:palhano|villasolare": [
 -23.332512,
@@ -3936,7 +3940,7 @@
 -51.174324
 ],
 "local:santa rosa|villasolare": [
--23.332479,
+-23.332451,
 -51.180486
 ],
 "local:santana residence": [
@@ -4161,6 +4165,7 @@
 "predio:alphaville": null,
 "predio:alphaville 2": null,
 "predio:alphaville i imbuias": null,
+"predio:alphaville imbuias residencia": null,
 "predio:alphaville imbuias sobrado": null,
 "predio:alphaville jacaran": null,
 "predio:alphaville jacarandas": null,
